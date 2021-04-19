@@ -1,2 +1,6 @@
+include ':pay'
+include ':frameWork'
+include ':net'
+include ':user'
 include ':app'
 rootProject.name = "GitProject"
