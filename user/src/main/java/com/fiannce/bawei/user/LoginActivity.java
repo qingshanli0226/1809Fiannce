@@ -1,19 +1,18 @@
-package com.fiannce.bawei.a1809fiannce;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.fiannce.bawei.user;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.fiannce.bawei.framework.BaseActivity;
-import com.fiannce.bawei.pay.PayActivity;
-import com.fiannce.bawei.user.LoginActivity;
 
-public class MainActivity extends BaseActivity {
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class LoginActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.activity_login;
     }
 
     @Override
