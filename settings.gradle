@@ -1,2 +1,6 @@
+include ':user'
+include ':pay'
+include ':net'
+include ':framework'
 include ':app'
 rootProject.name = "zg6"
