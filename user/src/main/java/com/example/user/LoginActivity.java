@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Subscribe(sticky = true)
     public void get(String str){
-        Log.i("123", "get: 123456789");
+//        Log.i("123", "get: 123456789");
         if (str.equals("login")){
             Toast.makeText(this, "这是登录页面", Toast.LENGTH_SHORT).show();
         }
