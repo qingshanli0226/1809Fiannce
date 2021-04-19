@@ -1,18 +1,30 @@
 package com.fiance.chengtianle;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
+import com.fiance.user.UserActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this, "为各位强强强强强强强强强强", Toast.LENGTH_SHORT).show();
+
+        EventBus.getDefault().postSticky("tz");
+
+        Intent intent = new Intent(MainActivity.this, UserActivity.class);
+        startActivity(intent);
+
+
+
     }
+
 }
