@@ -1,2 +1,6 @@
+include ':fragment'
+include ':user'
+include ':pay'
+include ':net'
 include ':app'
 rootProject.name = "1809zg"
