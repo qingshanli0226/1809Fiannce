@@ -1,18 +1,17 @@
-package com.Fiannce.myapplication;
+package com.fiannce.pay;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.fiannce.framework.BaseActivity;
 
-public class MainActivity extends BaseActivity {
+public class PayActivity  extends BaseActivity {
 
 
     @Override
     protected void initView() {
-        
+
     }
 
     @Override
@@ -27,6 +26,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutid() {
-        return R.layout.activity_main;
+        return R.layout.activity_pay;
     }
 }
