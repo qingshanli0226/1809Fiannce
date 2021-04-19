@@ -29,7 +29,7 @@ android {
 }
 
 dependencies {
-
+    implementation 'org.greenrobot:eventbus:3.1.1'// EventBus依赖  带值  Subscribe
     implementation project(path: ':net')
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
