@@ -13,9 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toast.makeText(this, "zzz", Toast.LENGTH_SHORT).show();
-        Log.e("","不正经的赵岩博");
-
-
-
+        Log.e("","正经");
     }
 }
