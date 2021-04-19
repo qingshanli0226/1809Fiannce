@@ -35,6 +35,7 @@ dependencies {
 
     implementation project(":net")
     implementation project(":frameWork")
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
 
     testImplementation 'junit:junit:4.+'
