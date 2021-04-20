@@ -11,13 +11,13 @@ public class BasePresenter<V> {
         list.add(disposable);
     }
 
-    private V iView;
-    public void attchView(V iView){
-        this.iView = iView;
+    protected V mView;
+    public void attchView(V mView){
+        this.mView = mView;
     }
 
     public void detachView(){
-        this.iView = null;
+        this.mView = null;
         for (Disposable disposable : list) {
             if(disposable.isDisposed()){
                 disposable.dispose();

@@ -9,16 +9,16 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitManager {
-    private HttpApiService httpApiService;
+    private static HttpApiService httpApiService;
 
-    public HttpApiService getHttpApiService(){
+    public static HttpApiService getHttpApiService(){
         if(httpApiService == null){
             httpApiService = serviceCreator();
         }
         return httpApiService;
     }
 
-    private HttpApiService serviceCreator() {
+    private static HttpApiService serviceCreator() {
         OkHttpClient build = new OkHttpClient.Builder()
                 .readTimeout(2, TimeUnit.MINUTES)
                 .writeTimeout(2, TimeUnit.MINUTES)
