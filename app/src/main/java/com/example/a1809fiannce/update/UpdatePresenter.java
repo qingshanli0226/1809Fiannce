@@ -1,5 +1,10 @@
 package com.example.a1809fiannce.update;
 
-public class UpdatePresenter {
-    
+import com.example.a1809fiannce.CallBack;
+import com.example.network.BasePresenter;
+
+public class UpdatePresenter extends BasePresenter<CallBack> {
+    public UpdatePresenter() {
+        
+    }
 }
