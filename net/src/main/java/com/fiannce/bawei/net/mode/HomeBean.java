@@ -59,6 +59,14 @@ public class HomeBean {
             return imageArr;
         }
 
+        @Override
+        public String toString() {
+            return "ResultBean{" +
+                    "proInfo=" + proInfo +
+                    ", imageArr=" + imageArr +
+                    '}';
+        }
+
         public void setImageArr(List<ImageArrBean> imageArr) {
             this.imageArr = imageArr;
         }
