@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/1809Fiannce.iml" filepath="$PROJECT_DIR$/.idea/1809Fiannce.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/1809Fiannce.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/1809Fiannce.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/framework/1809Fiannce.framework.iml" filepath="$PROJECT_DIR$/.idea/modules/framework/1809Fiannce.framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net/1809Fiannce.net.iml" filepath="$PROJECT_DIR$/.idea/modules/net/1809Fiannce.net.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pay/1809Fiannce.pay.iml" filepath="$PROJECT_DIR$/.idea/modules/pay/1809Fiannce.pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/user/1809Fiannce.user.iml" filepath="$PROJECT_DIR$/.idea/modules/user/1809Fiannce.user.iml" />
+    </modules>
+  </component>
+</project>

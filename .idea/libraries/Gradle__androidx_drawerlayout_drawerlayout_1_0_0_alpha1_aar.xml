@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.drawerlayout:drawerlayout:1.0.0-alpha1@aar">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/../../../.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0-alpha1.aar/7ca1292e519397e2845bfe54ebf606a7/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0-alpha1.aar/7ca1292e519397e2845bfe54ebf606a7/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0-alpha1.aar/7ca1292e519397e2845bfe54ebf606a7/res" />
+      <root url="file://$PROJECT_DIR$/../../../.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0-alpha1.aar/7ca1292e519397e2845bfe54ebf606a7/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../.gradle/caches/modules-2/files-2.1/androidx.drawerlayout/drawerlayout/1.0.0-alpha1/7a2db03bf2aaca502d4ba8e52c16bc2cf8447cc1/drawerlayout-1.0.0-alpha1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
