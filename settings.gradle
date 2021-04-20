@@ -1,2 +1,6 @@
+include ':user'
+include ':pay'
+include ':net'
+include ':frameWork'
 include ':app'
 rootProject.name = "My Application"
