@@ -146,6 +146,5 @@
     <orderEntry type="library" name="Gradle: cn.jzvd:jiaozivideoplayer:6.2.12@aar" level="project" />
     <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxandroid:2.1.0@aar" level="project" />
     <orderEntry type="module" module-name="net" />
-    <orderEntry type="module" module-name="net" />
   </component>
 </module>

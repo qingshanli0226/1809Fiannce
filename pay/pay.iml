@@ -188,7 +188,5 @@
     <orderEntry type="library" name="Gradle: com.youth.banner:banner:2.1.0@aar" level="project" />
     <orderEntry type="module" module-name="net" />
     <orderEntry type="module" module-name="framework" />
-    <orderEntry type="module" module-name="net" />
-    <orderEntry type="module" module-name="framework" />
   </component>
 </module>
