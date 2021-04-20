@@ -199,6 +199,30 @@ public class HomeBean implements Serializable {
             private String imapaurl;
             @SerializedName("IMAURL")
             private String imaurl;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public String getImapaurl() {
+                return imapaurl;
+            }
+
+            public void setImapaurl(String imapaurl) {
+                this.imapaurl = imapaurl;
+            }
+
+            public String getImaurl() {
+                return imaurl;
+            }
+
+            public void setImaurl(String imaurl) {
+                this.imaurl = imaurl;
+            }
         }
     }
 }
