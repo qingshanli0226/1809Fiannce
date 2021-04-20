@@ -1397,6 +1397,7 @@ id content
 id contentPanel
 id contentTv
 id coordinator
+id countDownTv
 id current
 id custom
 id customPanel
@@ -1516,6 +1517,7 @@ id pin
 id preview_layout
 id progress
 id progressBar
+id progressTv
 id progress_circular
 id progress_horizontal
 id radio

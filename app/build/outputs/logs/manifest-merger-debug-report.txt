@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:framework] D:\zgsix\1809Fiannce\framework\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -23,6 +23,8 @@ MERGED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transfo
 MERGED from [cn.jzvd:jiaozivideoplayer:6.2.12] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3bcf3f6b761a204cd4426b5736be2141\jetified-jiaozivideoplayer-6.2.12\AndroidManifest.xml:2:1-13:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\875a3df80a78edacc2bfcb8ec05b3a79\rxandroid-2.1.0\AndroidManifest.xml:15:1-20:12
 MERGED from [com.jakewharton:butterknife:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1f155579a16e24a6a774f2c25a5ad576\butterknife-10.2.3\AndroidManifest.xml:2:1-7:12
+MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\38be5e762284f9e7a9f0b71da15711ff\jetified-arouter-api-1.5.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\01d333055a983e736e0a5fac950ffa8f\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\65eb695d8f60c47c48deea4b4bc97d22\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -74,20 +76,20 @@ MERGED from [com.shuyu:gsyVideoPlayer-base:7.1.4] C:\Users\lenovo\.gradle\caches
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\fba01d97d009b8201bc51c25d1e794d5\ijkplayer-java-0.8.8\AndroidManifest.xml:2:1-9:12
 MERGED from [com.shuyu:gsyvideoplayer-androidvideocache:7.1.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\da99fc6e83caa1ad36cbbf304ec9831a\gsyvideoplayer-androidvideocache-7.1.4\AndroidManifest.xml:2:1-17:12
 MERGED from [net.butterflytv.utils:rtmp-client:3.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f0f3bb22d0347c455b4fc0ce05bc2991\rtmp-client-3.1.0\AndroidManifest.xml:2:1-13:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:11-69
@@ -98,7 +100,7 @@ MERGED from [net.butterflytv.utils:rtmp-client:3.1.0] C:\Users\lenovo\.gradle\ca
 	android:name
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:4:18-60
 application
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:5:5-22:19
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:5:5-23:19
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
 MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
@@ -140,35 +142,37 @@ MERGED from [com.shuyu:gsyvideoplayer-androidvideocache:7.1.4] C:\Users\lenovo\.
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:11:9-35
 	android:label
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:9:9-41
 	android:roundIcon
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:10:9-54
 	android:icon
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:8:9-43
 	android:allowBackup
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:7:9-35
 	android:theme
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:9-40
+	android:name
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:6:9-43
 activity#com.Fiannce.myapplication.welcome.WelcomeActivity
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:9-19:20
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:19-58
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:19-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:13-17:29
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:13-18:29
 action#android.intent.action.MAIN
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:17-69
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:25-66
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:17-77
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:27-74
 activity#com.Fiannce.myapplication.MainActivity
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:9-21:20
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:9-22:20
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:19-47
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:19-47
 uses-sdk
 INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
@@ -211,6 +215,10 @@ MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] C:\Users\lenovo\.gradle\cache
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\875a3df80a78edacc2bfcb8ec05b3a79\rxandroid-2.1.0\AndroidManifest.xml:18:5-43
 MERGED from [com.jakewharton:butterknife:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1f155579a16e24a6a774f2c25a5ad576\butterknife-10.2.3\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton:butterknife:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1f155579a16e24a6a774f2c25a5ad576\butterknife-10.2.3\AndroidManifest.xml:5:5-44
+MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\38be5e762284f9e7a9f0b71da15711ff\jetified-arouter-api-1.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\38be5e762284f9e7a9f0b71da15711ff\jetified-arouter-api-1.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\01d333055a983e736e0a5fac950ffa8f\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
