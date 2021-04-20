@@ -67,7 +67,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
         Log.d("WelcomeActivity", homeBean.toString());
         geth = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
-        CaCheHome.getHomeBean(homeBean);
+        CaCheHome.getInstance().setHomeBean(homeBean);
     }
 
     @Override
