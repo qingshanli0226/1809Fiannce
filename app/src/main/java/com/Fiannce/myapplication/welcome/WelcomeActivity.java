@@ -35,7 +35,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected int getLayoutid() {
-        return R.layout.activity_main;
+        return R.layout.activity_welcome;
     }
 
     @Override

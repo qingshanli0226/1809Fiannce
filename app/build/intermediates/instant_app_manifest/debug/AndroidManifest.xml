@@ -22,13 +22,14 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.Fiannce.myapplication.welcome.WelcomeActivity" />
-        <activity android:name="com.Fiannce.myapplication.MainActivity" >
+        <activity android:name="com.Fiannce.myapplication.welcome.WelcomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.Fiannce.myapplication.MainActivity" >
         </activity>
         <activity android:name="com.fiannce.pay.PayActivity" />
         <activity android:name="com.fiannce.user.LoginActivity" />

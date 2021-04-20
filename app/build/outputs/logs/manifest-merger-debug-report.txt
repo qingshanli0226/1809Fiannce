@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-22:12
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:framework] D:\zgsix\1809Fiannce\framework\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -74,20 +74,20 @@ MERGED from [com.shuyu:gsyVideoPlayer-base:7.1.4] C:\Users\lenovo\.gradle\caches
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\fba01d97d009b8201bc51c25d1e794d5\ijkplayer-java-0.8.8\AndroidManifest.xml:2:1-9:12
 MERGED from [com.shuyu:gsyvideoplayer-androidvideocache:7.1.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\da99fc6e83caa1ad36cbbf304ec9831a\gsyvideoplayer-androidvideocache-7.1.4\AndroidManifest.xml:2:1-17:12
 MERGED from [net.butterflytv.utils:rtmp-client:3.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f0f3bb22d0347c455b4fc0ce05bc2991\rtmp-client-3.1.0\AndroidManifest.xml:2:1-13:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
 	package
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-22:12
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-22:12
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-24:12
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:11-69
@@ -98,7 +98,7 @@ MERGED from [net.butterflytv.utils:rtmp-client:3.1.0] C:\Users\lenovo\.gradle\ca
 	android:name
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:4:18-60
 application
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:5:5-20:19
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:5:5-22:19
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
 MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
@@ -152,23 +152,23 @@ MERGED from [com.shuyu:gsyvideoplayer-androidvideocache:7.1.4] C:\Users\lenovo\.
 	android:theme
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:11:9-40
 activity#com.Fiannce.myapplication.welcome.WelcomeActivity
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:9-70
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:9-18:20
 	android:name
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:19-58
-activity#com.Fiannce.myapplication.MainActivity
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:9-19:20
-	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:13-18:29
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:13-17:29
 action#android.intent.action.MAIN
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:17-69
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:17-69
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:25-66
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:17-77
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:27-74
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:16:27-74
+activity#com.Fiannce.myapplication.MainActivity
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:9-21:20
+	android:name
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:19-47
 uses-sdk
 INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
