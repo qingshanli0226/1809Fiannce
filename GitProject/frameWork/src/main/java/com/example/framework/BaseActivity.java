@@ -6,7 +6,8 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<P extends  BasePresenter> extends AppCompatActivity {
+    protected P mPresenter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +27,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract void initData();
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        destroy();
+    }
 
-
-
-
+    private void destroy() {
+        if (mPresenter == null) {
+            mPresenter.detachView();
+        }
+    }
 }
