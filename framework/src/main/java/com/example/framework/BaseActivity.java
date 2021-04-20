@@ -33,7 +33,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
      public void destroy(){
         if (mPresenter!=null){
-
+            mPresenter.destroy();
         }
      }
 }
