@@ -17,14 +17,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
     
     @LayoutRes
-    protected abstract int getLayoutid();
+    public abstract int getLayoutid();
 
-    protected abstract void initView();
+    public abstract void initView();
 
-    protected abstract void initPresenter();
+    public abstract void initPresenter();
 
 
-    protected abstract void initData();
+    public abstract void initData();
 
 
 
