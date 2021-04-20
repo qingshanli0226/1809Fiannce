@@ -1,27 +1,111 @@
 package com.example.a1809fiannce.welcome;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.LinearInterpolator;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
 import com.blankj.utilcode.util.LogUtils;
+import com.example.a1809fiannce.MainActivity;
 import com.example.a1809fiannce.R;
 import com.example.framework.BaseActivity;
+import com.example.framework.manager.CacheManager;
 import com.example.net.mode.HomeBean;
 import com.example.net.mode.VersionBean;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
     private TextView text;
     private ProgressBar pro;
+    private RelativeLayout re;
+    private TextView time;
+    private PackageManager packageManager;
+    private int D_code;
+
+    private boolean TIME=false;
+    private boolean HOME=false;
+    private boolean VERSION=false;
+
+    private VersionBean version;
+
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            if (msg.what==1){
+                if (TIME&&HOME&&VERSION){
+                    if (D_code < version.getResult().getVersionCode()) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+
+                        builder.setTitle("下载最新版本");
+                        builder.setMessage("解决一些bug，优化网络请求！");
+
+                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
+
+                                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+
+                                progressDialog.setCanceledOnTouchOutside(false);
+
+                                progressDialog.show();
+                            }
+                        });
+
+                        builder.show();
+                    }else {
+                        Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            }
+        }
+    };
 
     @Override
     public void onHomeData(HomeBean homeBean) {
+        HOME=true;
+
+        CacheManager.getInstance().setHomeBean(homeBean);
+
+        handler.sendEmptyMessage(1);
+
         text.setText(homeBean.toString());
     }
 
     @Override
     public void onVersionData(VersionBean versionBean) {
+        version=versionBean;
+
+        VERSION=true;
+
+        handler.sendEmptyMessage(1);
+
         Toast.makeText(this, "版本信息："+versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
     }
 
@@ -32,6 +116,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initView() {
+        time = (TextView) findViewById(R.id.time);
+        re = (RelativeLayout) findViewById(R.id.re);
         text = (TextView) findViewById(R.id.text);
         pro = (ProgressBar) findViewById(R.id.pro);
     }
@@ -40,6 +126,19 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void initData() {
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
+
+        packageManager = getPackageManager();
+
+        D_code = getCode();
+
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0f, 1f);
+
+        alphaAnimation.setInterpolator(new LinearInterpolator());
+        alphaAnimation.setDuration(2000);
+
+        re.startAnimation(alphaAnimation);
+
+        getTime();
     }
 
     @Override
@@ -61,5 +160,55 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void Error(String error) {
         LogUtils.d(error);
         Toast.makeText(this, "请求错误："+error, Toast.LENGTH_SHORT).show();
+    }
+
+    public void getTime() {
+        Timer timer = new Timer();
+
+        timer.schedule(new TimerTask() {
+            int count = 3;
+
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        time.setText("倒计时：" + count);
+
+                        count--;
+
+                        if (count < 0) {
+                            TIME=true;
+
+                            handler.sendEmptyMessage(1);
+                            
+                            timer.cancel();
+                        }
+                    }
+                });
+            }
+        }, 0, 1000);
+    }
+
+    private String getName() {
+        try {
+            String versionName = packageManager.getPackageInfo(getPackageName(), 0).versionName;
+
+            return versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private int getCode() {
+        try {
+            int versionCode = packageManager.getPackageInfo(getPackageName(), 0).versionCode;
+
+            return versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

@@ -59,6 +59,22 @@ public class HomeBean implements Serializable {
         private ProInfoBean proInfo;
         private List<ImageArrBean> imageArr;
 
+        public ProInfoBean getProInfo() {
+            return proInfo;
+        }
+
+        public void setProInfo(ProInfoBean proInfo) {
+            this.proInfo = proInfo;
+        }
+
+        public List<ImageArrBean> getImageArr() {
+            return imageArr;
+        }
+
+        public void setImageArr(List<ImageArrBean> imageArr) {
+            this.imageArr = imageArr;
+        }
+
         public static class ProInfoBean implements Serializable {
             /**
              * id : 1
