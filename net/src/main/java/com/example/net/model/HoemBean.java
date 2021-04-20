@@ -3,7 +3,10 @@ package com.example.net.model;
 import java.util.List;
 
 
+
+
 public class HoemBean {
+
 
     public Integer getCode() {
         return code;
@@ -21,108 +24,176 @@ public class HoemBean {
         this.msg = msg;
     }
 
-    public List<ResultBean> getResult() {
+    public ResultBean getResult() {
         return result;
     }
 
-    public void setResult(List<ResultBean> result) {
+    public void setResult(ResultBean result) {
         this.result = result;
     }
 
     /**
      * code : 200
      * msg : 请求成功
-     * result : [{"id":"1","name":"新手福利计划","money":"10","yearRate":"8.00","suodingDays":"30","minTouMoney":"100","memberNum":"100","progress":"50"},{"id":"2","name":"财神道90天计划","money":"20","yearRate":"8.00","suodingDays":"40","minTouMoney":"1000","memberNum":"100","progress":"60"},{"id":"3","name":"月月升理财计划","money":"200","yearRate":"11.00","suodingDays":"100","minTouMoney":"10000","memberNum":"400","progress":"90"},{"id":"4","name":"180天理财计划(加息5%)","money":"40","yearRate":"15.00","suodingDays":"80","minTouMoney":"10000","memberNum":"200","progress":"30"},{"id":"5","name":"中情局投资商业经营","money":"500","yearRate":"10.00","suodingDays":"150","minTouMoney":"50000","memberNum":"150","progress":"40"},{"id":"6","name":"中学老师购买车辆","money":"10","yearRate":"8.00","suodingDays":"60","minTouMoney":"5000","memberNum":"60","progress":"40"},{"id":"7","name":"屌丝下海经商计划","money":"20","yearRate":"13.00","suodingDays":"120","minTouMoney":"10000","memberNum":"80","progress":"90"},{"id":"8","name":"美人鱼影视拍摄投资","money":"500","yearRate":"14.00","suodingDays":"100","minTouMoney":"2000","memberNum":"1000","progress":"80"},{"id":"9","name":"android老师自己周转","money":"5","yearRate":"8.00","suodingDays":"90","minTouMoney":"1000","memberNum":"100","progress":"40"},{"id":"10","name":"摩托罗拉洗钱计划","money":"1000","yearRate":"10.00","suodingDays":"200","minTouMoney":"100000","memberNum":"1000","progress":"60"}]
+     * result : {"imageArr":[{"ID":"1","IMAPAURL":"http://fund.eastmoney.com/f10/jjjl_002939.html","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index01.png"},{"ID":"2","IMAPAURL":"http://fund.eastmoney.com/519983.html","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index02.png"},{"ID":"3","IMAPAURL":"http://www.gffunds.com.cn/funds/?fundcode=004997","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index03.png"},{"ID":"5","IMAPAURL":"http://fund.eastmoney.com/002939.html","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index04.png"}],"proInfo":{"id":"1","memberNum":"100","minTouMoney":"100","money":"10","name":"硅谷彩虹新手计划","progress":"90","suodingDays":"30","yearRate":"8.00"}}
      */
+
 
     private Integer code;
     private String msg;
-    private List<ResultBean> result;
+    private ResultBean result;
 
 
     public static class ResultBean {
-        public String getId() {
-            return id;
+        public ProInfoBean getProInfo() {
+            return proInfo;
         }
 
-        public void setId(String id) {
-            this.id = id;
+        public void setProInfo(ProInfoBean proInfo) {
+            this.proInfo = proInfo;
         }
 
-        public String getName() {
-            return name;
+        public List<ImageArrBean> getImageArr() {
+            return imageArr;
         }
 
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getMoney() {
-            return money;
-        }
-
-        public void setMoney(String money) {
-            this.money = money;
-        }
-
-        public String getYearRate() {
-            return yearRate;
-        }
-
-        public void setYearRate(String yearRate) {
-            this.yearRate = yearRate;
-        }
-
-        public String getSuodingDays() {
-            return suodingDays;
-        }
-
-        public void setSuodingDays(String suodingDays) {
-            this.suodingDays = suodingDays;
-        }
-
-        public String getMinTouMoney() {
-            return minTouMoney;
-        }
-
-        public void setMinTouMoney(String minTouMoney) {
-            this.minTouMoney = minTouMoney;
-        }
-
-        public String getMemberNum() {
-            return memberNum;
-        }
-
-        public void setMemberNum(String memberNum) {
-            this.memberNum = memberNum;
-        }
-
-        public String getProgress() {
-            return progress;
-        }
-
-        public void setProgress(String progress) {
-            this.progress = progress;
+        public void setImageArr(List<ImageArrBean> imageArr) {
+            this.imageArr = imageArr;
         }
 
         /**
-         * id : 1
-         * name : 新手福利计划
-         * money : 10
-         * yearRate : 8.00
-         * suodingDays : 30
-         * minTouMoney : 100
-         * memberNum : 100
-         * progress : 50
+         * imageArr : [{"ID":"1","IMAPAURL":"http://fund.eastmoney.com/f10/jjjl_002939.html","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index01.png"},{"ID":"2","IMAPAURL":"http://fund.eastmoney.com/519983.html","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index02.png"},{"ID":"3","IMAPAURL":"http://www.gffunds.com.cn/funds/?fundcode=004997","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index03.png"},{"ID":"5","IMAPAURL":"http://fund.eastmoney.com/002939.html","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index04.png"}]
+         * proInfo : {"id":"1","memberNum":"100","minTouMoney":"100","money":"10","name":"硅谷彩虹新手计划","progress":"90","suodingDays":"30","yearRate":"8.00"}
          */
 
-        private String id;
-        private String name;
-        private String money;
-        private String yearRate;
-        private String suodingDays;
-        private String minTouMoney;
-        private String memberNum;
-        private String progress;
+
+        private ProInfoBean proInfo;
+        private List<ImageArrBean> imageArr;
+
+
+        public static class ProInfoBean {
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public String getMemberNum() {
+                return memberNum;
+            }
+
+            public void setMemberNum(String memberNum) {
+                this.memberNum = memberNum;
+            }
+
+            public String getMinTouMoney() {
+                return minTouMoney;
+            }
+
+            public void setMinTouMoney(String minTouMoney) {
+                this.minTouMoney = minTouMoney;
+            }
+
+            public String getMoney() {
+                return money;
+            }
+
+            public void setMoney(String money) {
+                this.money = money;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public String getProgress() {
+                return progress;
+            }
+
+            public void setProgress(String progress) {
+                this.progress = progress;
+            }
+
+            public String getSuodingDays() {
+                return suodingDays;
+            }
+
+            public void setSuodingDays(String suodingDays) {
+                this.suodingDays = suodingDays;
+            }
+
+            public String getYearRate() {
+                return yearRate;
+            }
+
+            public void setYearRate(String yearRate) {
+                this.yearRate = yearRate;
+            }
+
+            /**
+             * id : 1
+             * memberNum : 100
+             * minTouMoney : 100
+             * money : 10
+             * name : 硅谷彩虹新手计划
+             * progress : 90
+             * suodingDays : 30
+             * yearRate : 8.00
+             */
+
+
+            private String id;
+            private String memberNum;
+            private String minTouMoney;
+            private String money;
+            private String name;
+            private String progress;
+            private String suodingDays;
+            private String yearRate;
+        }
+
+
+        public static class ImageArrBean {
+            public String getID() {
+                return ID;
+            }
+
+            public void setID(String ID) {
+                this.ID = ID;
+            }
+
+            public String getIMAPAURL() {
+                return IMAPAURL;
+            }
+
+            public void setIMAPAURL(String IMAPAURL) {
+                this.IMAPAURL = IMAPAURL;
+            }
+
+            public String getIMAURL() {
+                return IMAURL;
+            }
+
+            public void setIMAURL(String IMAURL) {
+                this.IMAURL = IMAURL;
+            }
+
+            /**
+             * ID : 1
+             * IMAPAURL : http://fund.eastmoney.com/f10/jjjl_002939.html
+             * IMAURL : http://49.233.0.68:8080/atguigu/img/P2PInvest/index01.png
+             */
+
+
+            private String ID;
+            private String IMAPAURL;
+            private String IMAURL;
+        }
     }
 }
