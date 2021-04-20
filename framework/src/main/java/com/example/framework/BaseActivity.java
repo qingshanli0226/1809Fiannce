@@ -12,8 +12,9 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         super.onCreate(savedInstanceState);
         setContentView(getbandLayout());
         initView();
-        initData();
         initPresenter();
+        initData();
+
     }
 
     protected abstract void initPresenter();

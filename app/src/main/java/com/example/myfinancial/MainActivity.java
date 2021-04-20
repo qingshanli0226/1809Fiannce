@@ -1,17 +1,16 @@
 package com.example.myfinancial;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.framework.BaseActivity;
 import com.example.pay.PayActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
+@Route(path = "/main/MainActivity")
 public class MainActivity extends BaseActivity {
 
     @Override
@@ -34,8 +33,5 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-    public void startpay(View view) {
-        EventBus.getDefault().postSticky("11");
-        startActivity(new Intent(this, PayActivity.class));
-    }
+
 }

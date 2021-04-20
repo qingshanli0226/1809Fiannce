@@ -7,10 +7,5 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:text="跳到pay"
-        android:onClick="startpay"
-        android:layout_height="wrap_content"></Button>
 
 </LinearLayout>
