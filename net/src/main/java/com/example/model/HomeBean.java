@@ -38,6 +38,15 @@ public class HomeBean {
         this.result = result;
     }
 
+    @Override
+    public String toString() {
+        return "HomeBean{" +
+                "code=" + code +
+                ", msg='" + msg + '\'' +
+                ", result=" + result +
+                '}';
+    }
+
     public static class ResultBean {
         /**
          * imageArr : [{"ID":"1","IMAPAURL":"http://fund.eastmoney.com/f10/jjjl_002939.html","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index01.png"},{"ID":"2","IMAPAURL":"http://fund.eastmoney.com/519983.html","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index02.png"},{"ID":"3","IMAPAURL":"http://www.gffunds.com.cn/funds/?fundcode=004997","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index03.png"},{"ID":"5","IMAPAURL":"http://fund.eastmoney.com/002939.html","IMAURL":"http://49.233.0.68:8080/atguigu/img/P2PInvest/index04.png"}]
@@ -83,6 +92,8 @@ public class HomeBean {
             private String progress;
             private String suodingDays;
             private String yearRate;
+
+
 
             public String getId() {
                 return id;
@@ -161,6 +172,7 @@ public class HomeBean {
                         ", yearRate='" + yearRate + '\'' +
                         '}';
             }
+
         }
 
         public static class ImageArrBean {
@@ -209,12 +221,4 @@ public class HomeBean {
         }
     }
 
-    @Override
-    public String toString() {
-        return "HomeBean{" +
-                "code=" + code +
-                ", msg='" + msg + '\'' +
-                ", result=" + result +
-                '}';
-    }
 }

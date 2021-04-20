@@ -30,7 +30,7 @@ public class RetrofitCretor {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(build)
-                .baseUrl("").build();
+                .baseUrl("http://49.233.0.68:8080/").build();
 
 
         return retrofit.create(FiannceApiService.class);
