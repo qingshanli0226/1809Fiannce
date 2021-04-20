@@ -9,18 +9,17 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitManager {
-    private static RetrofitManager manager;
+    private static Api api;
 
-    public static RetrofitManager getManager() {
-        if (manager==null){
-            manager=new RetrofitManager();
+    public static Api getApi() {
+        if (api==null){
+            api=getRetrofit();
         }
-        return manager;
+        return api;
     }
-    private Retrofit retrofit;
 
-    public Retrofit getRetrofit() {
-        if (retrofit==null){
+    public static Api getRetrofit() {
+
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
                     .connectTimeout(60 * 1000, TimeUnit.MILLISECONDS)
                     .writeTimeout(60 * 1000, TimeUnit.MILLISECONDS)
@@ -33,8 +32,7 @@ public class RetrofitManager {
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            retrofit=build;
-        }
-        return retrofit;
+
+       return build.create(Api.class);
     }
 }
