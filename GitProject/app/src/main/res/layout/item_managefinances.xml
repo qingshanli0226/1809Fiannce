@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -232,6 +233,8 @@
             <com.example.framework.view.ProgressView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
+                app:app_color="#03A9F4"
+                app:app_textsize="15dp"
                 android:id="@+id/finances_progress"></com.example.framework.view.ProgressView>
 
         </LinearLayout>

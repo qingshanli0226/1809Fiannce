@@ -1,6 +1,7 @@
 package com.example.framework.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -14,6 +15,8 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.framework.R;
+
 public class ProgressView extends View {
     private Paint paint;
     private final int START_ANGLE = 0;
@@ -23,6 +26,38 @@ public class ProgressView extends View {
 
     private int progressAngle = 0;
     private int percentage_angle = 0;
+
+
+    private int textSize = 20;
+    private int back_color=Color.GRAY;
+    private int color = Color.RED;
+
+    public int getBack_color() {
+        return back_color;
+    }
+
+    public void setBack_color(int back_color) {
+        this.back_color = back_color;
+        invalidate();
+    }
+
+    public int getTextSize() {
+        return textSize;
+    }
+
+    public void setTextSize(int textSize) {
+        this.textSize = textSize;
+        invalidate();
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+        invalidate();
+    }
 
     public ProgressView(Context context) {
         this(context,null);
@@ -40,6 +75,11 @@ public class ProgressView extends View {
 
     private void init(Context context, AttributeSet attrs) {
         paint = new Paint();
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
+        back_color = typedArray.getColor(R.styleable.ProgressView_app_back_color, back_color);
+        textSize = (int) typedArray.getDimension(R.styleable.ProgressView_app_textsize, textSize);
+        color = typedArray.getColor(R.styleable.ProgressView_app_color, this.color);
+        typedArray.recycle();
     }
 
     @Override
@@ -87,7 +127,7 @@ public class ProgressView extends View {
 
         //画底层
         paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.GRAY);
+        paint.setColor(back_color);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(20);
         int measuredWidth = getMeasuredWidth();
@@ -102,7 +142,7 @@ public class ProgressView extends View {
         RectF rectF = new RectF(measuredWidth/2-radius,measuredHeight/2-radius,
                 measuredWidth/2+radius,measuredHeight/2+radius);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.RED);
+        paint.setColor(color);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(20);
         canvas.drawArc(rectF,START_ANGLE,progressAngle,false,paint);
@@ -111,7 +151,7 @@ public class ProgressView extends View {
         //画文字
 
         paint.setStyle(Paint.Style.FILL);
-        paint.setTextSize(40);
+        paint.setTextSize(textSize);
         paint.setColor(Color.BLACK);
         paint.setAntiAlias(true);
 

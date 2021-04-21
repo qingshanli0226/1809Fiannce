@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.HomeFragment">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -70,6 +71,7 @@
         android:layout_marginTop="60dp"
         android:id="@+id/home_progress"
         android:layout_width="150dp"
+        app:app_textsize="50dp"
         android:layout_height="150dp"/>
     <LinearLayout
         android:layout_below="@id/home_progress"

@@ -3,6 +3,7 @@ package com.example.gitproject.Invest.manageFinances;
 import com.example.framework.BasePresenter;
 import com.example.net.RetrofitManager;
 import com.example.net.bean.ProductBean;
+import com.example.net.bean.UpdateBean;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,9 +16,17 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public class ManageFinancesPresenter extends BasePresenter<ManageFinancesView> {
+
+    public ManageFinancesPresenter(ManageFinancesView manageFinancesView) {
+        attchView(manageFinancesView);
+    }
+
     public void getIvnest(){
-        RetrofitManager.getHttpApiService().getProduct()
+        RetrofitManager.getHttpApiService()
+                .getProduct()
                 .delay(2, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
@@ -25,14 +34,9 @@ public class ManageFinancesPresenter extends BasePresenter<ManageFinancesView> {
                         add(disposable);
                     }
                 })
-                .doFinally(new Action() {
-                    @Override
-                    public void run() throws Exception {
-                        mView.hideLoading();
-                    }
+                .doFinally(() -> {
+                    mView.hideLoading();
                 })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<ProductBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
@@ -58,5 +62,48 @@ public class ManageFinancesPresenter extends BasePresenter<ManageFinancesView> {
 
                     }
                 });
+
+
+
+//        RetrofitManager.getHttpApiService()
+//                .getProduct()
+//                .subscribeOn(Schedulers.io())
+//                .delay(2, TimeUnit.SECONDS)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .doOnSubscribe(new Consumer<Disposable>() {
+//                    @Override
+//                    public void accept(Disposable disposable) throws Exception {
+//                        add(disposable);
+//                        mView.showLoading();
+//                    }
+//                })
+//                .doFinally(() -> {
+//                    mView.hideLoading();
+//                })
+//                .subscribe(new Observer<ProductBean>() {
+//                    @Override
+//                    public void onSubscribe(@NonNull Disposable d) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(@NonNull ProductBean productBean) {
+//                        if (mView != null) {
+//                            mView.onProduct(productBean);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onError(@NonNull Throwable e) {
+//                        if (mView != null) {
+//                            mView.showError(e.getMessage());
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//
+//                    }
+//                });
     }
 }
