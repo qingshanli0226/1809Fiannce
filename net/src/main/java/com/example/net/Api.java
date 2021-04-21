@@ -12,4 +12,6 @@ public interface Api {
     Observable<HomeBean> getHomeData();
 @GET("atguigu/json/P2PInvest/update.json")
     Observable<UpdataBean>getUpdataData();
+@GET("atguigu/json/P2PInvest/update.json")
+    Observable<UpdataBean>getUpdata();
 }
