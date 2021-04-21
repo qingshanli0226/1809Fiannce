@@ -36,8 +36,8 @@ public class MainActivity extends BaseActivity {
     private android.widget.RadioButton btnHome;
     private android.widget.RadioButton btnMoney;
     private android.widget.RadioButton btnMymoney;
-    private android.widget.RadioButton btnMore;
-    private android.widget.RadioGroup group;
+    private RadioButton btnMore;
+    private RadioGroup group;
     private HomeFragment homeFragment;
     private MoneyFragment moneyFragment;
     private MymoneyFragment mymoneyFragment;

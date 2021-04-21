@@ -1,6 +1,7 @@
 package com.example.framework.manager;
 
 import com.example.model.HomeBean;
+import com.example.model.ProductBean;
 
 public class CacheManager {
 
@@ -24,4 +25,6 @@ public class CacheManager {
     public HomeBean getHomeBean() {
         return homeBean;
     }
+
+
 }

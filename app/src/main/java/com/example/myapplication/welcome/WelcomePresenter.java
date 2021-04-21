@@ -3,6 +3,7 @@ package com.example.myapplication.welcome;
 import com.blankj.utilcode.util.LogUtils;
 import com.example.framework.BasePresenter;
 import com.example.model.HomeBean;
+import com.example.model.ProductBean;
 import com.example.model.VersionBean;
 import com.example.net.RetrofitCretor;
 
@@ -52,6 +53,53 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
                         if (IView!=null){
                             IView.onHomeData(homeBean);
                             LogUtils.json(homeBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (IView!=null){
+                            IView.showError(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public void getProductData(){
+        RetrofitCretor.getFiannceApiService()
+                .getProductData()
+                .delay(2, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        add(disposable);
+                        IView.showLoading();
+                    }
+                })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        IView.hideLoading();
+                    }
+                })
+                .subscribe(new Observer<ProductBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull ProductBean productBean) {
+                        if (IView!=null){
+                            IView.onProductDara(productBean);
+                            LogUtils.json(productBean);
                         }
                     }
 

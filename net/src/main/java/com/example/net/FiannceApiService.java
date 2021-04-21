@@ -1,6 +1,7 @@
 package com.example.net;
 
 import com.example.model.HomeBean;
+import com.example.model.ProductBean;
 import com.example.model.VersionBean;
 
 import io.reactivex.Observable;
@@ -11,4 +12,7 @@ public interface FiannceApiService {
     Observable<HomeBean> getHomeData();
     @GET("atguigu/json/P2PInvest/update.json")
     Observable<VersionBean> getServerVersion();
+    @GET("atguigu/json/P2PInvest/product.json")
+    Observable<ProductBean> getProductData();
+
 }

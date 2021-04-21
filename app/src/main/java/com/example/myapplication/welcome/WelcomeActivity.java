@@ -16,6 +16,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
 import com.example.model.HomeBean;
+import com.example.model.ProductBean;
 import com.example.model.VersionBean;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
@@ -76,6 +77,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         version_finish = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
     }
+
+    @Override
+    public void onProductDara(ProductBean productBean) {
+
+    }
+
 
     @Override
     public void showLoading() {
