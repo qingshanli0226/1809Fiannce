@@ -3,64 +3,83 @@ package com.example.a1809fiannce.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.a1809fiannce.R;
+import com.example.a1809fiannce.TabCus;
+import com.example.a1809fiannce.fragment.InFragment.AllFragment;
+import com.example.a1809fiannce.fragment.InFragment.HotFragment;
+import com.example.a1809fiannce.fragment.InFragment.RecomFragment;
+import com.flyco.tablayout.CommonTabLayout;
+import com.flyco.tablayout.listener.CustomTabEntity;
+import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.google.android.material.tabs.TabLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link InvestFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class InvestFragment extends Fragment {
+    private CommonTabLayout comTab;
+    private LinearLayout vp;
+    private ArrayList<CustomTabEntity> mTabEntitys = new ArrayList<>();
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public InvestFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment InvestFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static InvestFragment newInstance(String param1, String param2) {
-        InvestFragment fragment = new InvestFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_invest, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_invest, container, false);
+        comTab = (CommonTabLayout) inflate.findViewById(R.id.com_tab);
+        vp = (LinearLayout) inflate.findViewById(R.id.vp);
+//        mTabEntitys.add(new TabCus("全部理财",R.mipmap.home_true,R.mipmap.home_fase));
+//        mTabEntitys.add(new TabCus("推荐理财",R.mipmap.home_true,R.mipmap.home_fase));
+//        mTabEntitys.add(new TabCus("热门理财",R.mipmap.home_true,R.mipmap.home_fase));
+//
+//        comTab.setTabData(mTabEntitys);
+//        AllFragment allFragment = new AllFragment();
+//        RecomFragment recomFragment = new RecomFragment();
+//        HotFragment hotFragment = new HotFragment();
+//        FragmentTransaction beginTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+//        beginTransaction.add(R.id.vp,allFragment);
+//        beginTransaction.add(R.id.vp,allFragment);
+//        beginTransaction.add(R.id.vp,allFragment);
+//        beginTransaction.show(allFragment);
+//        beginTransaction.hide(recomFragment);
+//        beginTransaction.hide(hotFragment);
+//        beginTransaction.commit();
+//        comTab.setOnTabSelectListener(new OnTabSelectListener() {
+//            @Override
+//            public void onTabSelect(int position) {
+//                FragmentTransaction beginTransaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+//                if (position==0){
+//                    beginTransaction.show(allFragment);
+//                    beginTransaction.hide(recomFragment);
+//                    beginTransaction.hide(hotFragment);
+//                }else if (position==1){
+//                    beginTransaction.show(recomFragment);
+//                    beginTransaction.hide(allFragment);
+//                    beginTransaction.hide(hotFragment);
+//                }else if (position==2){
+//                    beginTransaction.show(hotFragment);
+//                    beginTransaction.hide(recomFragment);
+//                    beginTransaction.hide(allFragment);
+//                    beginTransaction1.commit();
+//                }
+//                beginTransaction1.commit();
+//            }
+//
+//            @Override
+//            public void onTabReselect(int position) {
+//
+//            }
+//        });
+        return inflate;
     }
 }

@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment {
         });
         bar.start();
 
-        cus.SealedProgress(50);
+        cus.SealedProgress(50,false);
         return inflate;
     }
 }
