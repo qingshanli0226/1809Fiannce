@@ -46,8 +46,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initData() {
 
-
-
         homeFragment = new HomeFragment();
         moneyFragment = new MoneyFragment();
         mymoneyFragment = new MymoneyFragment();
