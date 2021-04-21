@@ -9,6 +9,13 @@
         android:id="@+id/wel_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/countDown"
+        android:textColor="#ff0000"
+        android:layout_alignParentRight="true"
+        android:layout_margin="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <ProgressBar
         android:id="@+id/wel_progress"
         android:visibility="gone"

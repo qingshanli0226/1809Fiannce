@@ -14,6 +14,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -26,9 +31,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
+
 dependencies {
+    implementation ('com.alibaba:arouter-api:1.4.1')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'//ARouter依赖
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2' //ARouter依赖
+    implementation 'com.youth.banner:banner:1.4.10'//轮播图
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'//flycotablayout
+    implementation 'com.github.bumptech.glide:glide:4.11.0'  //图片
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'

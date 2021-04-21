@@ -33,7 +33,7 @@ public abstract class BaseActivity<P extends  BasePresenter> extends AppCompatAc
         destroy();
     }
 
-    private void destroy() {
+    public void destroy() {
         if (mPresenter != null) {
             mPresenter.detachView();
         }

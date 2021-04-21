@@ -104,4 +104,5 @@ public class WelcomePresenter extends BasePresenter<WelcomeView> {
                     }
                 });
     }
+
 }
