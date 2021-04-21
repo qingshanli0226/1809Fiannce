@@ -14,10 +14,15 @@
         android:orientation="vertical"
         android:id="@+id/ll"></LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3883D1"></View>
+
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:tl_textSelectColor="#ff0000"
+        app:tl_textSelectColor="#3883D1"
         app:tl_iconHeight="30dp"
         app:tl_iconWidth="30dp"
         app:tl_textUnselectColor="#000000"

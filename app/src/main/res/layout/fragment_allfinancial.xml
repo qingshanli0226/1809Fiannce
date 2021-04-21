@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".investment.allfinancial.AllfinancialFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="28dp"
+        android:textColor="#FB4257"
+        android:gravity="center"
+        android:lines="1"
+        android:text="有道金融壕运当头，首投返现最高达"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/allfinancial_rv"></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

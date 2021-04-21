@@ -1,4 +1,4 @@
-package com.example.a1809fiannce;
+package com.example.a1809fiannce.bean;
 
 import com.flyco.tablayout.listener.CustomTabEntity;
 
@@ -20,11 +20,11 @@ public class MyCustomTabEntity implements CustomTabEntity {
 
     @Override
     public int getTabSelectedIcon() {
-        return a;
+        return b;
     }
 
     @Override
     public int getTabUnselectedIcon() {
-        return b;
+        return a;
     }
 }
