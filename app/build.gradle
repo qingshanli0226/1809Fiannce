@@ -44,7 +44,10 @@ dependencies {
     implementation project(":pay")
     implementation project(":user")
 
-    implementation ('com.alibaba:arouter-api:1.4.1') //ARouter依赖
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'//flycotablayout
+
+    implementation ('com.alibaba:arouter-api:1.4.1')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'//ARouter依赖
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2' //ARouter依赖
     implementation 'com.youth.banner:banner:1.4.10'//轮播图
     testImplementation 'junit:junit:4.+'

@@ -23,6 +23,8 @@ public abstract class BaseFragment <T extends BasePresenter> extends Fragment {
         return mView = inflater.inflate(getLayoutId(),container,false);
     }
 
+
+
     protected abstract void initData();
 
     protected abstract void initPresenter();
