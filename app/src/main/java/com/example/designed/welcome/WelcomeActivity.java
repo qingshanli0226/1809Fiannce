@@ -1,6 +1,7 @@
 package com.example.designed.welcome;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
@@ -149,7 +150,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
+                            progressDialog.setMax(100);
+                            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
+
+                            progressDialog.show();
                         }
                     });
 
