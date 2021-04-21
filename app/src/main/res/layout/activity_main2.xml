@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main"
+    android:orientation="vertical"
     tools:context=".MainActivity2">
-    <com.youth.banner.Banner
+    <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/bar"></com.youth.banner.Banner>
-
-</LinearLayout>
+        android:layout_height="wrap_content"
+        app:tl_textUnselectColor="#8c8c8c"
+        app:tl_textSelectColor="#3883d1"
+        app:tl_textsize="20dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tab"></com.flyco.tablayout.CommonTabLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main"
+        android:orientation="vertical"></LinearLayout>
+</RelativeLayout>

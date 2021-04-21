@@ -99,11 +99,13 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
 
     @Override
     public void ShowLoading() {
+        Log.i("load", "ShowLoading: 111");
         bar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void HideLoading() {
+
         bar.setVisibility(View.GONE);
     }
 

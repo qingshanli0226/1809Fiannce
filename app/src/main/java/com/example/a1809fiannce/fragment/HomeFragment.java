@@ -1,66 +1,59 @@
 package com.example.a1809fiannce.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.example.a1809fiannce.HomeCallBack;
+import com.example.a1809fiannce.MainActivity2;
 import com.example.a1809fiannce.R;
+import com.example.a1809fiannce.view.CusView;
+import com.example.formwork.model.HomeBean;
+import com.youth.banner.Banner;
+import com.youth.banner.loader.ImageLoader;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class HomeFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private Banner bar;
+    private List<String> list=new ArrayList<>();
+    private CusView cus;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_home, container, false);
+        bar = (Banner) inflate.findViewById(R.id.bar);
+        cus = (CusView) inflate.findViewById(R.id.cus);
+        HomeBean homeBean = HomeCallBack.getHomeCallBack().getHomeBean();
+        List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
+        for (HomeBean.ResultBean.ImageArrBean imageArrBean : imageArr) {
+            list.add(imageArrBean.getImaurl());
+        }
+        // HomeAdapter homeAdapter = new HomeAdapter(R.layout.item_home, imageArr);
+        bar.setImages(list);
+        bar.setImageLoader(new ImageLoader() {
+            @Override
+            public void displayImage(Context context, Object path, ImageView imageView) {
+                String s= (String) path;
+                Log.i("zx", "displayImage: "+s);
+                Glide.with(getActivity()).load(s).into(imageView);
+            }
+        });
+        bar.start();
+
+        cus.SealedProgress(50);
+        return inflate;
     }
 }
