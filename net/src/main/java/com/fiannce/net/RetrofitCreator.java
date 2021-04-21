@@ -11,7 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitCreator {
 
     private static FiannceApiService fiannceApiService;
-    public static FiannceApiService getFiannceApiService(){
+
+    public static FiannceApiService getFiannceApiService() {
         if (fiannceApiService == null){
             fiannceApiService = createKSApiService();
         }

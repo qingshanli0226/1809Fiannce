@@ -7,17 +7,57 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <com.youth.banner.Banner
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/banner"
-        ></com.youth.banner.Banner>
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        ></LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressTv"
-        ></TextView>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/home_radio"
+            android:text="首页"
+            android:gravity="center"
+            android:button="@null"
+            android:drawableTop="@drawable/home_radio"
+            ></RadioButton>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/investment_radio"
+            android:text="投资"
+            android:gravity="center"
+            android:button="@null"
+            ></RadioButton>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/property_radio"
+            android:text="我的资产"
+            android:gravity="center"
+            android:button="@null"
+            ></RadioButton>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/more_radio"
+            android:text="更多"
+            android:gravity="center"
+            android:button="@null"
+            ></RadioButton>
+    </RadioGroup>
+
+
 
 </LinearLayout>

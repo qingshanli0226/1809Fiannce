@@ -10,6 +10,7 @@ public class CacheManager {
     private CacheManager(){
 
     }
+
     public static synchronized CacheManager getInstance(){
         if (instance == null){
             instance = new CacheManager();
