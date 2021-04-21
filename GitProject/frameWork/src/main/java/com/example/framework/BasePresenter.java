@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 
 public class BasePresenter<V> {
     private List<Disposable> list = new ArrayList<>();
-    public void add(Disposable disposable){
+    public synchronized void add(Disposable disposable){
         list.add(disposable);
     }
 

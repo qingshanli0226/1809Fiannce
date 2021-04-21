@@ -1,10 +1,14 @@
 package com.example.gitproject.Invest;
 
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.framework.BaseFragment;
+import com.example.gitproject.Invest.manageFinances.ManageFinancesFragment;
 import com.example.gitproject.R;
 import com.flyco.tablayout.SlidingTabLayout;
+
+import java.util.ArrayList;
 
 
 public class InvestFragment extends BaseFragment {
@@ -27,7 +31,11 @@ public class InvestFragment extends BaseFragment {
 
     @Override
     protected void initPrensenter() {
-        pathspec 'study' did not match any file(s) known to git
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new ManageFinancesFragment());
+        fragments.add(new ManageFinancesFragment());
+        fragments.add(new ManageFinancesFragment());
+        investSliding.setViewPager(investViewpage,new String[]{"全部理财","推荐理财","热门理财"},getActivity(),fragments);
 
     }
 

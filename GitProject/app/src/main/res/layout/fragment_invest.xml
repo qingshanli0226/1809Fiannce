@@ -25,14 +25,14 @@
         android:background="#f1f1f1"
         android:layout_weight="1">
         <com.flyco.tablayout.SlidingTabLayout
-            android:backgroundTint=""
             android:id="@+id/invest_sliding"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:tl_divider_color="#03A9F4"
+            app:tl_indicator_height="100dp"
             app:tl_tab_space_equal="true"
             app:tl_textUnselectColor="#000000"
             app:tl_textSelectColor="#ff0000"
-
             />
     </LinearLayout>
     <LinearLayout
