@@ -1,17 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.HomeFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#919191"
+        android:layout_height="60dp">
+        <TextView
+            android:text="首页"
+            android:textColor="#03A9F4"
+            android:textSize="30dp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
     <com.youth.banner.Banner
         android:id="@+id/home_banner"
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
-
     <TextView
+        android:id="@+id/home_name"
         android:text="你好"
+        android:layout_below="@id/home_banner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textColor="#F44336"
+        android:text="推荐"
+        android:layout_toRightOf="@id/home_name"
+        android:layout_alignTop="@id/home_name"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/home_name"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="本息保障"
+            android:background="@drawable/cir_btn"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="30dp"/>
+        <Button
+            android:text="每日计息  "
+            android:gravity="center"
+            android:background="@drawable/cir_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+        <Button
+            android:text="高额收益"
+            android:gravity="center"
+            android:background="@drawable/cir_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+    </LinearLayout>
+
+
+    <com.example.framework.view.ProgressView
+        android:layout_below="@id/home_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:id="@+id/home_progress"
+        android:layout_width="150dp"
+        android:layout_height="150dp"/>
+    <LinearLayout
+        android:layout_below="@id/home_progress"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="预期年利率："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/home_yearRate"
+            android:text="0.00%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/home_pay"
+        android:layout_below="@id/home_progress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/arc_btn"
+        android:textColor="#ffffff"
+        android:text="立即加入"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_below="@id/home_pay"
+        android:layout_centerHorizontal="true"
+        android:text="风险保障金由有道银行监管"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-</FrameLayout>
+</RelativeLayout>

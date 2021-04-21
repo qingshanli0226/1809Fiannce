@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Invest.InvestFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#919191"
+        android:layout_height="60dp">
+        <TextView
+            android:text="投资"
+            android:textColor="#03A9F4"
+            android:textSize="30dp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#f1f1f1"
+        android:layout_weight="1">
+        <com.flyco.tablayout.SlidingTabLayout
+            android:backgroundTint=""
+            android:id="@+id/invest_sliding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tl_tab_space_equal="true"
+            app:tl_textUnselectColor="#000000"
+            app:tl_textSelectColor="#ff0000"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/invest_viewpage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

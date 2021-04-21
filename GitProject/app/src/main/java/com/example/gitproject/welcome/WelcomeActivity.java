@@ -3,6 +3,10 @@ package com.example.gitproject.welcome;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -32,6 +36,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     private boolean task_three = false;
     private int count = 3;
     private TextView countDown;
+    private UpdateBean updateBean;
 
 
     @Override
@@ -70,7 +75,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
 
     @Override
     public void onAppUpdate(UpdateBean updateBean) {
-        Toast.makeText(this, "版本号"+updateBean, Toast.LENGTH_SHORT).show();
+        this.updateBean = updateBean;
         task_three = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
 
@@ -107,7 +112,44 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
             } else if(msg.what == ONE_TASK_FIISH){
                 if(task_one && task_two && task_three){
                     //跳转
-                    ARouter.getInstance().build("/app/MainActivity").navigation();
+                    int oldCode = 0;
+                    try {
+                        oldCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+                    } catch (PackageManager.NameNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    if (oldCode < updateBean.getResult().getVersionCode()) {
+                        //提示更新
+                        AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+                        builder.setTitle("下载最新版本");
+                        builder.setMessage(updateBean.getResult().getDesc());
+                        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //下载数据
+                                Toast.makeText(WelcomeActivity.this, "下载数据", Toast.LENGTH_SHORT).show();
+                                ProgressDialog pro = new ProgressDialog(WelcomeActivity.this);
+                                pro.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                                pro.show();
+                            }
+                        });
+                        builder.setPositiveButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //跳转界面
+                                //关闭此页面
+                                ARouter.getInstance().build("/app/MainActivity").navigation();
+                                finish();
+                            }
+                        });
+                        AlertDialog alertDialog = builder.create();
+                        builder.show();
+
+                    } else {
+                        //最新版本
+                        finish();
+
+                    }
                 }
             }
 

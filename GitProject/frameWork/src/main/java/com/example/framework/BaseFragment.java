@@ -36,6 +36,13 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        destroy();
+    }
 
+    //清除
+    private void destroy() {
+        if (mPresenter != null) {
+            mPresenter.detachView();
+        }
     }
 }
