@@ -21,10 +21,11 @@
         android:textSize="15dp"
         android:text="倒计时:3 | 跳过"
         android:layout_alignParentRight="true"
-        android:layout_margin="10dp"
         android:textColor="#ffffff"
         android:gravity="center"
-        android:id="@+id/act_greet_down"></TextView>
+        android:id="@+id/act_greet_down"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"></TextView>
 
 
     <TextView

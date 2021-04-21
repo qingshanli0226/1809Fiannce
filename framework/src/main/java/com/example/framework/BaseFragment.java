@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +14,7 @@ import androidx.fragment.app.Fragment;
 public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
 
     protected P httpPresenter;
-    protected View inflate;
+    private View inflate;
 
     @Nullable
     @Override
@@ -37,6 +38,10 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     protected abstract void initPresenter();
 
     protected abstract void initView();
+
+    public <T extends View> T findViewById(@IdRes int id) {
+        return inflate.findViewById(id);
+    }
 
 
     @Override

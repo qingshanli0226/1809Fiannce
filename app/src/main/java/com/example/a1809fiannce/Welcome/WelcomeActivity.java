@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.example.a1809fiannce.MainActivity;
 import com.example.a1809fiannce.R;
@@ -39,7 +40,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
-            LogUtils.e(msg.what);
             int i = msg.what;
 
             actGreetDown.setText("倒计时:" + i + " | 跳过");
@@ -64,6 +64,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
 
     @Override
     protected void initView() {
+        BarUtils.transparentStatusBar(this);
+
         actGreetDown = (TextView) findViewById(R.id.act_greet_down);
         actGreetVersionName = (TextView) findViewById(R.id.act_greet_versionName);
         actGreetRl = (RelativeLayout) findViewById(R.id.act_greet_rl);
@@ -148,7 +150,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     }
 
     private void countDown() {
-        handler.sendEmptyMessageDelayed(4, 0);
+        handler.sendEmptyMessageDelayed(3, 0);
 
         actGreetDown.setOnClickListener(view -> {
             handler.sendEmptyMessageAtTime(0, 0);

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".invest.allfinancial.AllFragment"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:textColor="#E96B84"
+        android:text="有道金融壕运当头,首投返现最高达188元"
+        android:lines="1"
+        android:layout_gravity="center"
+        android:background="#ECECEC"
+        android:textSize="30dp"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frag_allProduct_rv"></androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>

@@ -4,12 +4,12 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/act_home_ll"
-        android:orientation="vertical"></LinearLayout>
+        android:layout_marginBottom="61dp"
+        android:id="@+id/act_home_vp"></androidx.viewpager.widget.ViewPager>
+
 
     <View
         android:layout_width="match_parent"
@@ -25,7 +25,8 @@
         app:tl_textsize="20dp"
         app:tl_iconWidth="30dp"
         app:tl_iconHeight="30dp"
-        app:tl_textUnselectColor="#A7A7A7"></com.flyco.tablayout.CommonTabLayout>
+        app:tl_textUnselectColor="#A7A7A7"
+        android:background="#FFFFFF"></com.flyco.tablayout.CommonTabLayout>
 
 
 </RelativeLayout>

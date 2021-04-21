@@ -3,22 +3,138 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".home.HoemFragment">
 
    <TextView
        android:layout_width="match_parent"
-       android:layout_height="50dp"
-       android:textSize="38dp"
+       android:layout_height="45dp"
+       android:textSize="30dp"
        android:text="首页"
        android:textColor="#27B8EE"
        android:layout_gravity="center"
        android:gravity="center"
        android:background="#142732"></TextView>
 
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="#1C6A8A"></View>
    <com.youth.banner.Banner
        android:layout_width="match_parent"
-       android:layout_height="150dp"
+       android:layout_height="140dp"
        android:id="@+id/frag_home_banner"></com.youth.banner.Banner>
+
+   <TextView
+       android:id="@+id/frag_home_title"
+       android:layout_width="wrap_content"
+       android:layout_height="33dp"
+       android:layout_gravity="center"
+       android:layout_margin="20dp"
+       android:drawableRight="@mipmap/recommend"
+       android:gravity="center"
+       android:text=""
+       android:textSize="30dp"></TextView>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:layout_marginLeft="30dp"
+       android:layout_marginRight=".0dp">
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:text="本息保障"
+          android:textSize="16dp"
+          android:background="@drawable/home_frag_home"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"></TextView>
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:text="每日计划"
+          android:textSize="16dp"
+          android:background="@drawable/home_frag_home"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"></TextView>
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:text="高额收益"
+          android:textSize="16dp"
+          android:background="@drawable/home_frag_home"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"></TextView>
+
+
+
+   </LinearLayout>
+
+   <com.example.framework.view.ProgressView
+       android:layout_width="130dp"
+       android:layout_height="130dp"
+       android:id="@+id/frag_home_pv"
+       app:wp_paintCircleWidth="25"
+       app:wp_paintTextColor="#3988C9"
+       app:wp_paintTextSize="60"
+       app:wp_progressBackRoundColor="#5A6E9E"
+       app:wp_progressColor="#DC143D"
+       android:layout_gravity="center"
+       android:layout_margin="2dp"></com.example.framework.view.ProgressView>
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="30dp"
+       android:layout_gravity="center"
+       android:orientation="horizontal">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="预期年利率："
+          android:textSize="20dp"></TextView>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="0.00%"
+          android:textSize="20dp"
+          android:id="@+id/home_frag_yearRate"></TextView>
+   </LinearLayout>
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:layout_gravity="center"
+       android:layout_marginLeft="20dp"
+       android:layout_marginRight="20dp"
+       android:layout_marginTop="10dp"
+       android:layout_marginBottom="10dp"
+       android:background="@drawable/home_frag_but"
+       android:gravity="center"
+       android:text="立即加入"
+       android:textColor="#fff"
+       android:textSize="30dp"></TextView>
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:gravity="center"
+       android:text="风险保障金由有道银行监管"
+       android:drawableLeft="@mipmap/guarantee_icon"></TextView>
 
 </LinearLayout>
