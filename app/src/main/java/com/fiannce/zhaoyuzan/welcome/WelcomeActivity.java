@@ -125,7 +125,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             ARouter.getInstance().build("/main/MainActivity").navigation();
-                            Log.d("zyz", "onClick: ");
                             finish();
                         }
                     });

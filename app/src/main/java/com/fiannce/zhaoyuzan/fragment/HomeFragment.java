@@ -3,6 +3,7 @@ package com.fiannce.zhaoyuzan.fragment;
 
 import android.content.Context;
 import android.widget.ImageView;
+import android.widget.Toolbar;
 
 import androidx.fragment.app.Fragment;
 
@@ -10,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.fiannce.framework.BaseFragment;
 import com.fiannce.framework.manager.CacheManager;
+
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.zhaoyuzan.R;
 import com.youth.banner.Banner;
@@ -25,6 +27,7 @@ public class HomeFragment extends BaseFragment {
 
     private Banner banner;
     private List<HomeBean.ResultBean.ImageArrBean> list = new ArrayList<>();
+    private Toolbar toolBar;
 
     @Override
     protected void initPresenter() {
@@ -49,11 +52,15 @@ public class HomeFragment extends BaseFragment {
             }
         });
         banner.start();
+
+
     }
 
     @Override
     protected void initView() {
         banner = mBaseView.findViewById(R.id.banner);
+        toolBar = mBaseView.findViewById(R.id.toolbar);
+
     }
 
     @Override
