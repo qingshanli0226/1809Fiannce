@@ -2,13 +2,6 @@
     package="com.fiannce.user" >
 
     <application>
-        <activity android:name=".UserActivity">
-            <intent-filter>
-                <action android:name="user" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
     </application>
 
