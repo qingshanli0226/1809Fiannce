@@ -19,17 +19,51 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-        <com.flyco.tablayout.CommonTabLayout
-            android:id="@+id/common"
+        <RadioGroup
+            android:id="@+id/main_radiogroup"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            app:tl_textSelectColor="#03A9F4"
-            app:tl_textUnselectColor="#999999"
-            app:tl_iconWidth="30dp"
-            app:tl_iconHeight="30dp"
-            app:tl_textsize="20dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+            <RadioButton
+                android:id="@+id/one_btn"
+                android:gravity="center"
+                android:drawableTop="@drawable/photo_home"
+                android:text="首页"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <RadioButton
+                android:id="@+id/two_btn"
+                android:gravity="center"
+                android:drawableTop="@drawable/photo_money"
+                android:text="投资"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <RadioButton
+                android:id="@+id/three_btn"
+                android:gravity="center"
+                android:drawableTop="@drawable/photo_mine"
+                android:text="我的资产"
+                android:layout_weight="1"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <RadioButton
+                android:id="@+id/four_btn"
+                android:gravity="center"
+                android:drawableTop="@drawable/photo_more"
+                android:text="更多"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+        </RadioGroup>
     </LinearLayout>
-
-
-
 </LinearLayout>

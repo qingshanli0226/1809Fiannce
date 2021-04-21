@@ -26,10 +26,13 @@ import java.util.ArrayList;
 public class MainActivity extends BaseActivity {
 
 
-    private RadioGroup mainRadioGroup;
 
-    private CommonTabLayout common;
     private ArrayList<CustomTabEntity> tabEntitys;
+    private RadioGroup mainRadiogroup;
+    private RadioButton oneBtn;
+    private RadioButton twoBtn;
+    private RadioButton threeBtn;
+    private RadioButton fourBtn;
 
     @Override
     public int getLayoutid() {
@@ -38,7 +41,11 @@ public class MainActivity extends BaseActivity {
 
     public void initView() {
         tabEntitys = new ArrayList<>();
-        common = (CommonTabLayout) findViewById(R.id.common);
+        mainRadiogroup = (RadioGroup) findViewById(R.id.main_radiogroup);
+        oneBtn = (RadioButton) findViewById(R.id.one_btn);
+        twoBtn = (RadioButton) findViewById(R.id.two_btn);
+        threeBtn = (RadioButton) findViewById(R.id.three_btn);
+        fourBtn = (RadioButton) findViewById(R.id.four_btn);
     }
 
     @Override
@@ -56,34 +63,32 @@ public class MainActivity extends BaseActivity {
 
         fragmentManager();
 
-        addData();
-        //判断选择的那个
-        common.setTabData(tabEntitys);
-        common.setOnTabSelectListener(new OnTabSelectListener() {
+        //选择
+        mainRadiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onTabSelect(int position) {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
                 FragmentManager supportFragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
-                switch (position) {
-                    case 0:
+                switch (checkedId) {
+                    case R.id.one_btn:
                         fragmentTransaction.show(homeFragment1);
                         fragmentTransaction.hide(mineFragment2);
                         fragmentTransaction.hide(mineFragment3);
                         fragmentTransaction.hide(mineFragment4);
                         break;
-                    case 1:
+                    case R.id.two_btn:
                         fragmentTransaction.hide(homeFragment1);
                         fragmentTransaction.show(mineFragment2);
                         fragmentTransaction.hide(mineFragment3);
                         fragmentTransaction.hide(mineFragment4);
                         break;
-                    case 2:
+                    case R.id.three_btn:
                         fragmentTransaction.hide(homeFragment1);
                         fragmentTransaction.hide(mineFragment2);
                         fragmentTransaction.show(mineFragment3);
                         fragmentTransaction.hide(mineFragment4);
                         break;
-                    case 3:
+                    case R.id.four_btn:
                         fragmentTransaction.hide(homeFragment1);
                         fragmentTransaction.hide(mineFragment2);
                         fragmentTransaction.hide(mineFragment3);
@@ -92,26 +97,15 @@ public class MainActivity extends BaseActivity {
                 }
                 fragmentTransaction.commit();
             }
-
-            @Override
-            public void onTabReselect(int position) {
-
-            }
         });
 
 
 
 
 
-
     }
 
-    private void addData() {
-        tabEntitys.add(new CustomBean("首页",R.drawable.bottom02,R.drawable.bottom01));
-        tabEntitys.add(new CustomBean("首页",R.drawable.bottom04,R.drawable.bottom03));
-        tabEntitys.add(new CustomBean("首页",R.drawable.bottom06,R.drawable.bottom05));
-        tabEntitys.add(new CustomBean("首页",R.drawable.bottom08,R.drawable.bottom07));
-    }
+
 
     private void fragmentManager() {
         FragmentManager supportFragmentManager = getSupportFragmentManager();

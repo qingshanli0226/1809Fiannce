@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,10 +23,10 @@ import com.example.net.bean.UpdateBean;
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements WelcomeView {
 
 
-    private TextView welData;
     private ProgressBar welProgress;
     private final int ONE_TASK_FIISH = 0;
-    private final int COUNT_TIME = 2;
+    private ImageView welImg;
+    private final int COUNT_TIME = 1;
     private boolean task_one = false;
     private boolean task_two = false;
     private boolean task_three = false;
@@ -39,13 +41,15 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
 
     @Override
     public void initView() {
-        welData = (TextView) findViewById(R.id.wel_data);
         welProgress = (ProgressBar) findViewById(R.id.wel_progress);
         countDown = (TextView) findViewById(R.id.countDown);
+        welImg = (ImageView) findViewById(R.id.wel_img);
     }
 
     @Override
     public void initPresenter() {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);// 设置全屏
         mPresenter = new WelcomePresenter(this);
     }
 
@@ -60,7 +64,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     @Override
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
-        welData.setText(homeBean.toString());
         task_two = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
     }
