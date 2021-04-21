@@ -12,18 +12,28 @@ import androidx.fragment.app.Fragment;
 public abstract class BaseFragment <T extends BasePresenter> extends Fragment {
 
     protected T httpPresenter;
-    private View mView;
+    protected View mView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mView = inflater.inflate(getLayoutId(), container, false);
         initView();
-        initData();
         initPresenter();
-        return mView = inflater.inflate(getLayoutId(),container,false);
+        initData();
+        return mView;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 
+    public void destroy(){
+        if (httpPresenter!=null){
+            httpPresenter.detachView();
+        }
+    }
 
     protected abstract void initData();
 

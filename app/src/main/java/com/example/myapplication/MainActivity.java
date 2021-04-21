@@ -33,10 +33,6 @@ import java.util.List;
 @Route(path = "/app/MainActivity")
 public class MainActivity extends BaseActivity {
 
-    private List<String> list = new ArrayList<>();
-    private Banner banner;
-    private TabLayout tab;
-    private ViewPager vp;
     private android.widget.RadioButton btnHome;
     private android.widget.RadioButton btnMoney;
     private android.widget.RadioButton btnMymoney;
@@ -49,24 +45,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        HomeBean homeBean = CacheManager.getInstance().getHomeBean();
-        HomeBean.ResultBean result = homeBean.getResult();
-        List<HomeBean.ResultBean.ImageArrBean> imageArr = result.getImageArr();
 
-//        for (int i = 0; i < imageArr.size(); i++) {
-//            String imaurl = imageArr.get(i).getIMAURL();
-//            list.add(imaurl);
-//        }
-//
-//        banner.setImages(imageArr);
-//        banner.setImageLoader(new ImageLoader() {
-//            @Override
-//            public void displayImage(Context context, Object path, ImageView imageView) {
-//                HomeBean.ResultBean.ImageArrBean s = (HomeBean.ResultBean.ImageArrBean) path;
-//                String imaurl = s.getIMAURL();
-//                Glide.with(MainActivity.this).load(imaurl).into(imageView);
-//            }
-//        }).start();
 
 
         homeFragment = new HomeFragment();
@@ -89,6 +68,7 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.hide(moneyFragment);
                         fragmentTransaction.hide(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
+
                         break;
                     case R.id.btn_money:
                         fragmentTransaction.hide(homeFragment);
@@ -97,16 +77,16 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.hide(moreFragment);
                         break;
                     case R.id.btn_mymoney:
-                        fragmentTransaction.show(homeFragment);
-                        fragmentTransaction.show(moneyFragment);
-                        fragmentTransaction.hide(mymoneyFragment);
-                        fragmentTransaction.show(moreFragment);
-                        break;
-                    case R.id.btn_more:
-                        fragmentTransaction.show(homeFragment);
-                        fragmentTransaction.show(moneyFragment);
+                        fragmentTransaction.hide(homeFragment);
+                        fragmentTransaction.hide(moneyFragment);
                         fragmentTransaction.show(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
+                        break;
+                    case R.id.btn_more:
+                        fragmentTransaction.hide(homeFragment);
+                        fragmentTransaction.hide(moneyFragment);
+                        fragmentTransaction.hide(mymoneyFragment);
+                        fragmentTransaction.show(moreFragment);
                         break;
                 }
                 fragmentTransaction.commit();
