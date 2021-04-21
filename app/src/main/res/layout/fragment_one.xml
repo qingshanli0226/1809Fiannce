@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".ui.OneFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.flyco.tablayout.SlidingTabLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:tl_textSelectColor="#F41919"
+        app:tl_textUnselectColor="#000"
+        app:tl_indicator_width="135dp"
+        app:tl_indicator_height="70dp"
+        app:tl_indicator_color="#16B7FF"
+        app:tl_tab_space_equal="true"
+        android:id="@+id/sliding"></com.flyco.tablayout.SlidingTabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:id="@+id/vp"></androidx.viewpager.widget.ViewPager>
 
-</FrameLayout>
+
+
+</LinearLayout>
