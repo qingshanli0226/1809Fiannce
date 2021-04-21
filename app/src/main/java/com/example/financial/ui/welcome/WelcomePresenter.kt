@@ -1,17 +1,15 @@
-package com.example.financial.ui.home
+package com.example.financial.ui.welcome
 
-import com.example.financial.base.Product
-import com.example.financial.base.ResultX
-import com.example.financial.base.UpData
+import com.example.financial.base.*
 import com.example.net_library.http.observer.BaseObserver
 import com.example.frame_library.mvp.BasePresenter
 
-class HomePresenter(mModle:HomeModle,mView:HomeCanter.View):BasePresenter<HomeCanter.View,HomeCanter.Modle>(mView,mModle) {
+class WelcomePresenter(mModle:WelcomeModle, mView:WelcomeCanter.View):BasePresenter<WelcomeCanter.View,WelcomeCanter.Modle>(mView,mModle) {
 
     fun getVersion(){
-        mModle!!.getVersion(object : BaseObserver<UpData>() {
-            override fun sure(t: UpData) {
-                mView!!.IsUpdate(t.result.versionCode)
+        mModle!!.getVersion(object : BaseObserver<Request<UpData>>() {
+            override fun sure(t: Request<UpData>) {
+                mView!!.onUpdate(t.result)
             }
 
             override fun fille(meag: String) {
@@ -24,12 +22,10 @@ class HomePresenter(mModle:HomeModle,mView:HomeCanter.View):BasePresenter<HomeCa
                 mModle!!.addObserver(this)
             }
         })
-    }
 
-    fun LoginData(){
-        mModle!!.LodinData(object : BaseObserver<Product<ResultX>>() {
-            override fun sure(t: Product<ResultX>) {
-                mView!!.onLodinData(t)
+        mModle!!.requestData(object : BaseObserver<Request<Index>>() {
+            override fun sure(t: Request<Index>) {
+                mView!!.onData(t.result)
             }
 
             override fun onStart() {
@@ -43,5 +39,4 @@ class HomePresenter(mModle:HomeModle,mView:HomeCanter.View):BasePresenter<HomeCa
             }
         })
     }
-
 }

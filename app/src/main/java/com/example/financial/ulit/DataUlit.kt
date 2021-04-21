@@ -1,8 +1,11 @@
 package com.example.financial.ulit
 
+import com.example.financial.base.Index
+import com.example.financial.base.RequestList
 import com.example.financial.base.Product
-import com.example.financial.base.ResultX
 
 object DataUlit {
-    var product:Product<ResultX>?=null
+    const val AROUTER_JUMP_MAIN="/app/Mainactivity"
+    var product:RequestList<Product>?=null
+    var index:Index?=null
 }

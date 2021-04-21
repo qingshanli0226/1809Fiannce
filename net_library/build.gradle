@@ -15,6 +15,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -58,4 +64,7 @@ dependencies {
     api 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
     //工具类
     api 'com.blankj:utilcodex:1.26.0'
+
+    api ('com.alibaba:arouter-api:1.4.1') //ARouter依赖
+    api 'com.alibaba:arouter-compiler:1.2.2' //ARouter依赖
 }

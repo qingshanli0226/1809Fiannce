@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Financial">
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ui.home.HomeActivity">
+        <activity android:name=".ui.welcome.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

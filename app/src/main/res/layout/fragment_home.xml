@@ -5,5 +5,5 @@
     <com.example.frame_library.view.ProgressView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:id="@+id/frgemtn_product_progressView"/>
+        android:id="@+id/frgemtn_home_progressView"/>
 </LinearLayout>

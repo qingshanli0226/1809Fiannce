@@ -20,7 +20,7 @@
         android:textColor="#fff"
         android:layout_centerHorizontal="true"
         android:textSize="19dp"
-        android:id="@+id/act_home_version_text"
+        android:id="@+id/act_welcome_version_text"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="120dp"/>
     <TextView
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="3"
         android:textSize="20dp"
-        android:id="@+id/act_home_time_text"
+        android:id="@+id/act_welcome_time_text"
         android:textColor="@color/white"
         android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"/>
