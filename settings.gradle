@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':fragmework', ':net', ':pay', ':user', ':framework'
 rootProject.name='1809Fiannce'
