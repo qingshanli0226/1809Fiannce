@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
 import com.example.framework.CaCheLoadMore;
+import com.example.framework.myview.PregressMyView;
 import com.example.myfinancial.R;
 import com.example.net.bean.HomeBean;
 import com.youth.banner.Banner;
@@ -17,6 +18,7 @@ import java.util.List;
 public class HomeFragment extends BaseFragment {
     private HomeBean homeBean;
     private Banner ban;
+    private PregressMyView promyview;
 
     @Override
     public int getbandLayout() {
@@ -28,11 +30,14 @@ public class HomeFragment extends BaseFragment {
         homeBean = CaCheLoadMore.getInstance().getHomeBean();
         Log.d("MainActivity123", homeBean.toString());
         initlbt();
+        promyview.getProgressNum(Integer.parseInt(homeBean.getResult().getProInfo().getProgress()),true);
     }
 
     @Override
     public void initView() {
         ban = (Banner) findViewById(R.id.ban);
+        promyview = (PregressMyView) findViewById(R.id.promyview);
+
     }
 
     @Override

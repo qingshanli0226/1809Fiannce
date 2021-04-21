@@ -14,6 +14,8 @@ public class CaCheLoadMore {
         }
         return caCheHome;
     }
+
+
     private HomeBean homeBean;
     public synchronized HomeBean getHomeBean(){
         return homeBean;
