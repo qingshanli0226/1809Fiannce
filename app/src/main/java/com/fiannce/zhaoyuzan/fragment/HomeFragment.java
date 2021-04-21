@@ -3,6 +3,7 @@ package com.fiannce.zhaoyuzan.fragment;
 
 import android.content.Context;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toolbar;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.fiannce.framework.BaseFragment;
 import com.fiannce.framework.manager.CacheManager;
 
+import com.fiannce.framework.view.ProgressView;
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.zhaoyuzan.R;
 import com.youth.banner.Banner;
@@ -26,8 +28,11 @@ import java.util.List;
 public class HomeFragment extends BaseFragment {
 
     private Banner banner;
+    private TextView textView;
+    private TextView yuqiText;
     private List<HomeBean.ResultBean.ImageArrBean> list = new ArrayList<>();
-    private Toolbar toolBar;
+    private List<HomeBean.ResultBean.ProInfoBean> proInfoBeanList = new ArrayList<>();
+    private ProgressView progressView;
 
     @Override
     protected void initPresenter() {
@@ -53,13 +58,21 @@ public class HomeFragment extends BaseFragment {
         });
         banner.start();
 
+        HomeBean.ResultBean.ProInfoBean proInfo = homeBean.getResult().getProInfo();
+        String name = proInfo.getName();
+        textView.setText(name);
+        String yearRate = proInfo.getYearRate();
+        yuqiText.setText(yearRate);
 
+        progressView.saledProgress(90,true);
     }
 
     @Override
     protected void initView() {
         banner = mBaseView.findViewById(R.id.banner);
-        toolBar = mBaseView.findViewById(R.id.toolbar);
+        progressView = mBaseView.findViewById(R.id.progress);
+        textView = mBaseView.findViewById(R.id.guigu);
+        yuqiText = mBaseView.findViewById(R.id.yuqi);
 
     }
 

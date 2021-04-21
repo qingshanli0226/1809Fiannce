@@ -51,7 +51,7 @@ public class ProgressView extends View {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
         textColor = typedArray.getColor(R.styleable.ProgressView_textColor, Color.BLACK);
-        circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith,5);
+        circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith,20);
 
         typedArray.recycle();
     }

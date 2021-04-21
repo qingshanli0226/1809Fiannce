@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/toolbar"
+            android:background="#142732"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
             >
@@ -24,7 +25,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="首页"
+            android:textSize="30dp"
+            android:textColor="#229AC7"
             android:layout_gravity="center"
+
             ></TextView>
     </FrameLayout>
 
@@ -35,4 +39,56 @@
         android:id="@+id/banner"
         ></com.youth.banner.Banner>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guigu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textSize="25dp"
+        >
+    </TextView>
+
+    <com.fiannce.framework.view.ProgressView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:id="@+id/progress"
+        android:layout_marginTop="20dp"
+        ></com.fiannce.framework.view.ProgressView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="预期年利率："
+            android:textSize="25dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:id="@+id/yuqi"
+            android:textSize="25dp"
+            >
+        </TextView>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt"
+        android:text="立即加入"
+        android:layout_gravity="center"
+        android:background="#FB4257"
+        android:textColor="#fff"
+        android:textSize="25dp"
+        android:layout_marginTop="25dp"
+        ></Button>
 </LinearLayout>

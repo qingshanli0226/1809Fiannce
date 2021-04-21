@@ -12,7 +12,7 @@ import com.fiannce.zhaoyuzan.adapter.CommonAdapter;
 import com.fiannce.zhaoyuzan.fragment.GengDuoFragment;
 import com.fiannce.zhaoyuzan.fragment.HomeFragment;
 import com.fiannce.zhaoyuzan.fragment.MineFragment;
-import com.fiannce.zhaoyuzan.fragment.TouZiFragment;
+import com.fiannce.zhaoyuzan.fragment.InvestFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         commonTabLayout = findViewById(R.id.common);
 
         list.add(new HomeFragment());
-        list.add(new TouZiFragment());
+        list.add(new InvestFragment());
         list.add(new MineFragment());
         list.add(new GengDuoFragment());
         commonAdapter = new CommonAdapter(getSupportFragmentManager(),list);
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         commonTabLayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int i) {
+
                 viewPager.setCurrentItem(i);
             }
 

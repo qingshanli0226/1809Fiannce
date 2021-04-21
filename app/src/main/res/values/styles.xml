@@ -6,6 +6,15 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+
+    </style>
+
+    <style name="MyTablayoutstyle" parent="Base.Widget.Design.TabLayout">
+        <item name="tabBackground">@color/colorBlue</item>
+        <item name="tabIndicatorColor">@color/colorBlue</item>
+        <item name="tabSelectedTextColor">@color/colorRed</item>
+        <item name="android:textColor">@color/colorBlack</item>
     </style>
 
 </resources>
