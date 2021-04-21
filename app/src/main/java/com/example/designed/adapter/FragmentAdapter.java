@@ -1,5 +1,8 @@
 package com.example.designed.adapter;
 
+import android.view.View;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -32,5 +35,10 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         return title.get(position);
+    }
+
+    @Override
+    public void destroyItem(@NonNull View container, int position, @NonNull Object object) {
+
     }
 }

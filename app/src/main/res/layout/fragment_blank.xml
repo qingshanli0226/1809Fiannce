@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.BlankFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+   <com.youth.banner.Banner
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+       android:id="@+id/banner"
+       ></com.youth.banner.Banner>
 
-</FrameLayout>
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="80dp"
+      android:text="硅谷彩虹新手计划"
+       android:textSize="40dp"
+       android:gravity="center"
+      ></TextView>
+
+   <com.fiannce.bawei.framework.view.CustomView
+       android:layout_width="200dp"
+       android:layout_height="200dp"
+       android:layout_gravity="center"
+         android:id="@+id/vi"
+      ></com.fiannce.bawei.framework.view.CustomView>
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="80dp"
+       android:text="预期年利率 : 8.00%"
+       android:textSize="20dp"
+       android:gravity="center"
+       ></TextView>
+
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+      android:background="#CF2323"
+       android:textSize="30dp"
+       android:text="立即加入"
+       android:textColor="#ffffff"
+      ></Button>
+
+</LinearLayout>
