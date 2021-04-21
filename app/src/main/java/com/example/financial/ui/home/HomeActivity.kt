@@ -21,13 +21,30 @@ import java.util.*
 import kotlin.concurrent.timerTask
 
 class HomeActivity:BaseActitvty<HomePresenter>(),HomeCanter.View {
-    private val LODINDATA:Int=-10001
-    private val UPDATA:Int=-10002
-    private val TIME:Int=-10003
+    /***
+     * 常量
+     * 网络请求
+     * 判断是否需要更新
+     * 倒计时
+     */
+    private companion object {
+        val LODINDATA:Int=-10001
+        val UPDATA:Int=-10002
+        val TIME:Int=-10003
+    }
+
+    /***
+     * handler 接收消息 每个任务完成时都会发送一条消息由handler处理，所有任务都完成以后弹出是否更新的弹窗
+     * 是否完成网络请求
+     * 是否获取最新版本并判断
+     * 是否完成倒计时
+     */
     private val handler:Handler=object :Handler(){
+
         private var ISLODINDATA:Boolean=false
         private var ISUPDATA:Boolean=false
         private var ISTIME:Boolean=false
+
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
 
@@ -38,7 +55,12 @@ class HomeActivity:BaseActitvty<HomePresenter>(),HomeCanter.View {
             }
 
             if (ISLODINDATA&&ISTIME&&ISUPDATA){
-                UpData()
+                if(IsUp){
+                    startActivity(Intent(this@HomeActivity,MainActivity::class.java))
+                    finish()
+                }else{
+                    UpData()
+                }
             }
         }
     }
@@ -66,9 +88,7 @@ class HomeActivity:BaseActitvty<HomePresenter>(),HomeCanter.View {
 
     override fun bandLayoutId(): Int = R.layout.home_activity
 
-    override fun initView() {
-
-    }
+    override fun initView() {}
 
     override fun initData() {
         act_home_version_text.setText(getVersionName()+"")
@@ -104,31 +124,37 @@ class HomeActivity:BaseActitvty<HomePresenter>(),HomeCanter.View {
         IsUp=versionCode==getVersionNumer()
     }
 
+    /**
+     * 请求主页数据
+     * @param 请求到数据类通过工具类存储
+     */
     override fun onLodinData(product: Product<ResultX>) {
         handler.sendEmptyMessage(LODINDATA)
         DataUlit.product=product
     }
 
+    /**
+     * 询问弹窗如果不需要更新泽
+     */
     private fun UpData(){
-        if (!IsUp){
             var create = AlertDialog.Builder(this)
                 .setIcon(R.drawable.ic_launcher_background)
                 .setMessage("优化bug,新增功能")
                 .setTitle("下载最新版本")
-                .setNegativeButton("取消", object : DialogInterface.OnClickListener {
+                .setNegativeButton("确定", object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface?, which: Int) {
+
+                    }
+                })
+
+                .setPositiveButton("取消",object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface?, which: Int) {
                         startActivity(Intent(this@HomeActivity,MainActivity::class.java))
                         finish()
                     }
                 })
-                .setPositiveButton("确定",object : DialogInterface.OnClickListener {
-                    override fun onClick(dialog: DialogInterface?, which: Int) {
-
-                    }
-                })
                 .create()
             create.show()
-        }
     }
 
     /***
