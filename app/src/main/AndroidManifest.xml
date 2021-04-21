@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.1809Fiannce">
-        <activity android:name=".MainActivity2"></activity>
+        <activity android:name=".MainActivity2"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            ></activity>
         <activity android:name=".WelComeMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

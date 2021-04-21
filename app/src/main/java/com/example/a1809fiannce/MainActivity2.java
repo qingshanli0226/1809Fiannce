@@ -1,6 +1,7 @@
 package com.example.a1809fiannce;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,6 +9,10 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.a1809fiannce.fragment.HomeFragment;
+import com.example.a1809fiannce.fragment.InvestFragment;
+import com.example.a1809fiannce.fragment.ManyFragment;
+import com.example.a1809fiannce.fragment.MyMoneyFragment;
 import com.example.formwork.model.HomeBean;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
@@ -41,5 +46,20 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
         bar.start();
+        FragmentTransaction beginTransaction = getSupportFragmentManager().beginTransaction();
+        HomeFragment homeFragment = new HomeFragment();
+        InvestFragment investFragment = new InvestFragment();
+        MyMoneyFragment myMoneyFragment = new MyMoneyFragment();
+        ManyFragment manyFragment = new ManyFragment();
+        beginTransaction.add(R.id.main,homeFragment);
+        beginTransaction.add(R.id.main,investFragment);
+        beginTransaction.add(R.id.main,myMoneyFragment);
+        beginTransaction.add(R.id.main,manyFragment);
+        beginTransaction.show(homeFragment);
+        beginTransaction.hide(investFragment);
+        beginTransaction.hide(myMoneyFragment);
+        beginTransaction.hide(manyFragment);
+
+
     }
 }
