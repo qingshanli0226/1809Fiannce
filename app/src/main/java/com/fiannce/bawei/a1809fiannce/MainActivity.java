@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -23,6 +24,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
+        Log.d("lqs", "");
         return R.layout.activity_main;
     }
 
