@@ -1,9 +1,7 @@
 package com.example.myfinancial.welcome;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -14,7 +12,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseActivity;
-import com.example.myfinancial.CaCheHome;
+import com.example.framework.CaCheLoadMore;
 import com.example.myfinancial.R;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.VersionBean;
@@ -36,23 +34,23 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     private int drawtimetv = 3;
 
     @Override
-    protected int getbandLayout() {
+    public int getbandLayout() {
         return R.layout.activity_welcome2;
     }
 
     @Override
-    protected void initPresenter() {
+    public void initPresenter() {
         mPresenter = new WelcomePresenter(this);
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         mPresenter.getVersion();
         mPresenter.getHome();
     }
 
     @Override
-    protected void initView() {
+    public void initView() {
         welcometv = (TextView) findViewById(R.id.welcometv);
         pro = (ProgressBar) findViewById(R.id.pro);
         countdowntv = (TextView) findViewById(R.id.countdowntv);
@@ -67,7 +65,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
         Log.d("WelcomeActivity", homeBean.toString());
         geth = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
-        CaCheHome.getInstance().setHomeBean(homeBean);
+        CaCheLoadMore.getInstance().setHomeBean(homeBean);
     }
 
     @Override

@@ -9,22 +9,22 @@ import com.example.framework.BaseActivity;
 public class LogActivity extends BaseActivity {
 
     @Override
-    protected void initPresenter() {
+    public void initPresenter() {
 
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
 
     }
 
     @Override
-    protected void initView() {
+    public void initView() {
 
     }
 
     @Override
-    protected int getbandLayout() {
+    public int getbandLayout() {
         return R.layout.activity_user;
     }
 }

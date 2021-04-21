@@ -1,0 +1,74 @@
+package com.example.myfinancial.fragment;
+
+import android.content.Context;
+import android.util.Log;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+import com.example.framework.BaseFragment;
+import com.example.framework.CaCheLoadMore;
+import com.example.myfinancial.R;
+import com.example.net.bean.HomeBean;
+import com.youth.banner.Banner;
+import com.youth.banner.loader.ImageLoader;
+
+import java.util.List;
+
+public class HomeFragment extends BaseFragment {
+    private HomeBean homeBean;
+    private Banner ban;
+
+    @Override
+    public int getbandLayout() {
+        return R.layout.fragment_home;
+    }
+
+    @Override
+    public void initData() {
+        homeBean = CaCheLoadMore.getInstance().getHomeBean();
+        Log.d("MainActivity123", homeBean.toString());
+        initlbt();
+    }
+
+    @Override
+    public void initView() {
+        ban = (Banner) findViewById(R.id.ban);
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showError(String error) {
+
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+
+    //轮播图
+    private void initlbt() {
+        List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
+        ban.setImages(imageArr);
+        ban.setImageLoader(new ImageLoader() {
+            @Override
+            public void displayImage(Context context, Object path, ImageView imageView) {
+                HomeBean.ResultBean.ImageArrBean aa = (HomeBean.ResultBean.ImageArrBean) path;
+                String imaurl = aa.getIMAURL();
+                Log.d("MainActivity", imaurl);
+                Glide.with(context).load(imaurl).into(imageView);
+            }
+        }).start();
+    }
+
+}

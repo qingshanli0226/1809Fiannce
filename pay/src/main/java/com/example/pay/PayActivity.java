@@ -16,17 +16,17 @@ import org.greenrobot.eventbus.ThreadMode;
 public class PayActivity extends BaseActivity {
 
     @Override
-    protected void initPresenter() {
+    public void initPresenter() {
 
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
 
     }
 
     @Override
-    protected void initView() {
+    public void initView() {
         EventBus.getDefault().register(this);
     }
 
@@ -37,7 +37,7 @@ public class PayActivity extends BaseActivity {
         }
     }
     @Override
-    protected int getbandLayout() {
+    public int getbandLayout() {
         return R.layout.activity_pay;
     }
 

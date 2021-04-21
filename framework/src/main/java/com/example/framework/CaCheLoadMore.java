@@ -1,16 +1,16 @@
-package com.example.myfinancial;
+package com.example.framework;
 
 import com.example.net.bean.HomeBean;
 
-public class CaCheHome {
-    private static CaCheHome caCheHome;
+public class CaCheLoadMore {
+    private static CaCheLoadMore caCheHome;
 
-    public CaCheHome() {
+    public CaCheLoadMore() {
     }
 
-    public static CaCheHome getInstance() {
+    public static CaCheLoadMore getInstance() {
         if (caCheHome == null) {
-            caCheHome = new CaCheHome();
+            caCheHome = new CaCheLoadMore();
         }
         return caCheHome;
     }
