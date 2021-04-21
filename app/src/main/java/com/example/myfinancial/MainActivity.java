@@ -42,9 +42,10 @@ public class MainActivity extends BaseActivity {
 //        initlbt();
         //获取对象
         list.add(new HomeFragment());
-        list.add(new MoreFragment());
         list.add(new InvestFragment());
         list.add(new MyMoneyFragment());
+        list.add(new MoreFragment());
+
         strings.add("首页");
         strings.add("投资");
         strings.add("我的资产");

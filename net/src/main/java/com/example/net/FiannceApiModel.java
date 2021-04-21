@@ -1,5 +1,6 @@
 package com.example.net;
 
+import com.example.net.bean.AllMoneyBean;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.VersionBean;
 
@@ -12,4 +13,6 @@ public interface FiannceApiModel {
     Observable<VersionBean> getVersionData();
     @GET("atguigu/json/P2PInvest/index.json")
     Observable<HomeBean> getHome();
+    @GET("atguigu/json/P2PInvest/product.json")
+    Observable<AllMoneyBean> getAll();
 }

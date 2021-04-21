@@ -1,6 +1,7 @@
 package com.example.framework.myview;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -24,9 +25,9 @@ public class PregressMyView extends View {
     private int progressAngle = 0;//已经绘制的角度
     private int progressViewWidth;//控件的宽高
     private int progressViewHeight;
-    private final int CIRCLE_MARGIN = 5;
-    private int textColor;
-    private int circleWith=20;
+    private final int CIRCLE_MARGIN = 10;
+    private int textColor=Color.RED;
+    private int circleWith=10;
 
 
     public PregressMyView(Context context) {
@@ -44,6 +45,12 @@ public class PregressMyView extends View {
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
 
+
+        TypedArray typedArray=context.obtainStyledAttributes(attrs,R.styleable.PregressMyView);
+        textColor=typedArray.getColor(R.styleable.PregressMyView_testColor,Color.BLACK);
+        circleWith=typedArray.getInt(R.styleable.PregressMyView_circleWidth,5);
+
+        typedArray.recycle();//清理
     }
 
     @Override
@@ -55,6 +62,16 @@ public class PregressMyView extends View {
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
     }
+
+    public void settextColor(int setcolor){
+        textColor=setcolor;
+        invalidate();
+    }
+    public void setCirCleWidth(int width){
+        circleWith=width;
+        invalidate();
+    }
+
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -84,11 +101,11 @@ public class PregressMyView extends View {
         //文字
         Rect rect=new Rect();
         paint.setColor(textColor);
-        paint.setStrokeWidth(20);
-        paint.setTextSize(30);
+        paint.setStrokeWidth(2);
+        paint.setTextSize(50);
         String content=(progressAngle*100)/360+"%";
         paint.getTextBounds(content,0,content.length(),rect);
-        canvas.drawText(content+"",progressViewWidth/2-rect.width()/2,progressViewHeight/2+rect.height()/2,paint);
+        canvas.drawText(content,progressViewWidth/2-rect.width()/2,progressViewHeight/2+rect.height()/2,paint);
     }
 
 
