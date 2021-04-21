@@ -1,15 +1,84 @@
 package com.fiannce.zhaoyuzan;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.fiannce.net.mode.CommonBean;
+import com.fiannce.zhaoyuzan.adapter.CommonAdapter;
+import com.fiannce.zhaoyuzan.fragment.GengDuoFragment;
+import com.fiannce.zhaoyuzan.fragment.HomeFragment;
+import com.fiannce.zhaoyuzan.fragment.MineFragment;
+import com.fiannce.zhaoyuzan.fragment.TouZiFragment;
+import com.flyco.tablayout.CommonTabLayout;
+import com.flyco.tablayout.listener.CustomTabEntity;
+import com.flyco.tablayout.listener.OnTabSelectListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Route(path = "/main/MainActivity")
 public class MainActivity extends AppCompatActivity {
+
+    private List<Fragment> list = new ArrayList<>();
+    private ViewPager viewPager;
+    private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
+    private CommonTabLayout commonTabLayout;
+    private CommonAdapter commonAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        viewPager = findViewById(R.id.vp);
+        commonTabLayout = findViewById(R.id.common);
+
+        list.add(new HomeFragment());
+        list.add(new TouZiFragment());
+        list.add(new MineFragment());
+        list.add(new GengDuoFragment());
+        commonAdapter = new CommonAdapter(getSupportFragmentManager(),list);
+        viewPager.setAdapter(commonAdapter);
+
+        mTabEntities.add(new CommonBean("首页"));
+        mTabEntities.add(new CommonBean("投资"));
+        mTabEntities.add(new CommonBean("我的资产"));
+        mTabEntities.add(new CommonBean("更多"));
+        commonTabLayout.setTabData(mTabEntities);
+
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                commonTabLayout.setCurrentTab(i);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
+
+        commonTabLayout.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int i) {
+                viewPager.setCurrentItem(i);
+            }
+
+            @Override
+            public void onTabReselect(int i) {
+
+            }
+        });
+
     }
 }
