@@ -1,23 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.home.HomeFragment">
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="70dp"
-       android:text="首页"
-       android:background="#142732"
-       android:gravity="center"
-       android:textColor="#27B8EE"
-       android:textSize="35dp"
-       ></TextView>
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:textSize="50dp"
-       android:text="1"
-       ></TextView>
 
-</FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#142732"
+        android:gravity="center"
+        android:text="首页"
+        android:textColor="#27B8EE"
+        android:textSize="35dp"></TextView>
+
+    <com.youth.banner.Banner
+        android:id="@+id/home_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></com.youth.banner.Banner>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/home_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="硅谷彩虹新手计划"
+            android:textSize="38dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_toRightOf="@id/home_tv1"
+            android:gravity="center"
+            android:text="推荐"
+            android:textColor="#F44336"></TextView>
+    </RelativeLayout>
+
+
+    <com.Fiannce.myapplication.fragment.home.customView
+        android:id="@+id/custom_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"></com.Fiannce.myapplication.fragment.home.customView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="预期年利率：8.00%">
+    </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="立即加入"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:background="#FB4257"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="风险保障金由有道银行监管"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        ></TextView>
+
+</LinearLayout>
