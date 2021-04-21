@@ -19,7 +19,6 @@ public abstract class Basefragment<P extends Basepresenter> extends Fragment {
 
     }
 
-    protected abstract int Findlayout();
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -30,12 +29,13 @@ public abstract class Basefragment<P extends Basepresenter> extends Fragment {
     }
 
 
-    public <V extends View> V FindViewbyId(int resId){
+    public <V extends View> V findViewById(int resId){
         return mView.findViewById(resId);
     }
     protected abstract void initPresenter();
 
     protected abstract void initView();
+    protected abstract int Findlayout();
 
     protected abstract void initData();
 
@@ -46,7 +46,7 @@ public abstract class Basefragment<P extends Basepresenter> extends Fragment {
     }
     public void ondestroy(){
         if (mPresenter!=null){
-            mPresenter.destroy();
+            mPresenter.detachView();
         }
     }
 }

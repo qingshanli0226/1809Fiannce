@@ -14,9 +14,11 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.a1809zg.CustomBean;
 import com.example.a1809zg.MainActivity;
 import com.example.a1809zg.R;
 import com.example.frame.BaseActivity;
+import com.example.frame.CacheMore;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.UpdataBean;
 
@@ -66,7 +68,7 @@ private Ipresenter ipresenter;
     public void onHomeData(HomeBean homeBean) {
         HomeFinsh = true;
         handler.sendEmptyMessage(ONE_TASK);
-
+        CacheMore.getInstance().setHomeBean(homeBean);
     }
 
     @Override

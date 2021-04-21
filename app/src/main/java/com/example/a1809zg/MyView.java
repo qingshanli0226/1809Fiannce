@@ -21,6 +21,6 @@ public class MyView extends View {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
-
+         
     }
 }
