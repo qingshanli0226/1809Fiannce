@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -124,6 +125,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             ARouter.getInstance().build("/main/MainActivity").navigation();
+                            Log.d("zyz", "onClick: ");
                             finish();
                         }
                     });
