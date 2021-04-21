@@ -14,6 +14,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -42,4 +47,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'org.greenrobot:eventbus:3.1.1'// EventBus依赖
+    implementation ('com.alibaba:arouter-api:1.4.1') //ARouter依赖
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2' //ARouter依赖
+    implementation 'com.android.support:design:30.0.0'
+    implementation 'com.youth.banner:banner:1.4.10'//轮播图
+    implementation 'com.github.bumptech.glide:glide:4.9.0'//glide依赖
 }
