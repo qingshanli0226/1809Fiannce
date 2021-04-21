@@ -1,6 +1,7 @@
 package com.example.frame_library.mvp
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +21,7 @@ interface IActivity : IView {
     fun initData();
 }
 
-abstract class BaseActitvty : AppCompatActivity(), IActivity {
+abstract class BaseActitvty <P :IPresneter>: AppCompatActivity(), IActivity {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(bandLayoutId())
@@ -28,9 +29,17 @@ abstract class BaseActitvty : AppCompatActivity(), IActivity {
         initData()
     }
 
+    protected val mPresenter:P by lazy {
+        setPresneter()
+    }
+
+    protected abstract fun setPresneter():P
+
     override fun onDestroy() {
         super.onDestroy()
-
+        if (mPresenter!=null){
+            mPresenter!!.destroy()
+        }
     }
 
     override fun showTaos(meang: String) {
@@ -45,7 +54,15 @@ abstract class BaseActitvty : AppCompatActivity(), IActivity {
         Toast.makeText(this, "加载完毕", Toast.LENGTH_LONG).show()
     }
 
-abstract class BaseFragment:IActivity,Fragment(){
+}
+
+abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(){
+    protected val mPresenter:P by lazy {
+        setPresenter();
+    }
+
+    protected abstract fun setPresenter():P
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -59,5 +76,16 @@ abstract class BaseFragment:IActivity,Fragment(){
         initView()
         initData()
     }
-}
+
+    override fun showLodin() {
+        Toast.makeText(activity, "正在加载", Toast.LENGTH_LONG).show()
+    }
+
+    override fun showTaos(meang: String) {
+        Toast.makeText(activity,meang,Toast.LENGTH_LONG).show()
+    }
+
+    override fun hideLodin() {
+        Toast.makeText(activity, "加载完毕", Toast.LENGTH_LONG).show()
+    }
 }

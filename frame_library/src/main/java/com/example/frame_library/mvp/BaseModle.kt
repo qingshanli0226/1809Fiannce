@@ -18,4 +18,5 @@ abstract class BaseModle:IModle{
     override fun addObserver(d: Disposable) {
         compositeDisposable.add(d)
     }
+
 }

@@ -1,3 +1,6 @@
+include ':pay_library'
+include ':user_library'
+include ':net_library'
 include ':frame_library'
 include ':app'
-rootProject.name = "1809AFincial"
+rootProject.name = "Financial"
