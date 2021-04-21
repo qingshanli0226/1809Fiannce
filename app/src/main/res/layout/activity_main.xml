@@ -4,19 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text"
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Hello World!"
-        android:textColor="#FF0000"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:id="@+id/vp"></androidx.viewpager.widget.ViewPager>
+    <com.flyco.tablayout.SlidingTabLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:tl_textUnselectColor="#ccc"
+        app:tl_textSelectColor="#000"
+        app:tl_tab_space_equal="true"
+        android:id="@+id/sliding"></com.flyco.tablayout.SlidingTabLayout>
 
 </LinearLayout>
