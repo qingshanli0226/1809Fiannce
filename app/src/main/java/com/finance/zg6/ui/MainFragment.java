@@ -35,6 +35,7 @@ public class MainFragment extends BaseFragment {
 
         List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
         LogUtils.json(imageArr);
+
         banner.setImages(imageArr);
         banner.setImageLoader(new ImageLoader() {
             @Override
