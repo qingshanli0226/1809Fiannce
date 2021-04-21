@@ -25,7 +25,7 @@ class ProgressView:View {
      * 初始化函数
      */
     private fun init(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) {
-        
+
     }
 
     private var progress=0f
