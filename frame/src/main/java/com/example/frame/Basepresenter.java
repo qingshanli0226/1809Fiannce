@@ -20,8 +20,7 @@ public class Basepresenter<V> {
             if (disposable.isDisposed()){
                 disposable.dispose();
             }
-
+         
         }
     }
-
 }
