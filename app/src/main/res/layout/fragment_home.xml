@@ -27,4 +27,9 @@
         android:layout_height="200dp"
         android:id="@+id/banner"></com.youth.banner.Banner>
 
+    <com.example.myapplication.view.ProgressView
+        android:layout_width="200dp"
+        android:id="@+id/progress_bar"
+        android:layout_height="200dp"></com.example.myapplication.view.ProgressView>
+
 </LinearLayout>

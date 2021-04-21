@@ -2,26 +2,21 @@ package com.example.myapplication.fragment;
 
 import android.content.Context;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
 import com.example.model.HomeBean;
-import com.example.model.VersionBean;
-import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.welcome.IWelcomeView;
+import com.example.myapplication.view.ProgressView;
 import com.example.myapplication.welcome.WelcomePresenter;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class HomeFragment extends BaseFragment<WelcomePresenter> {
     private Banner banner;
+    private ProgressView progressBar;
 
     @Override
     protected void initData() {
@@ -37,6 +32,8 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> {
             }
         }).start();
 
+        progressBar.startProgressDraw(30,true);
+
     }
 
     @Override
@@ -47,6 +44,7 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> {
     @Override
     protected void initView() {
         banner = (Banner) mView.findViewById(R.id.banner);
+        progressBar = (ProgressView) mView.findViewById(R.id.progress_bar);
     }
 
     @Override
