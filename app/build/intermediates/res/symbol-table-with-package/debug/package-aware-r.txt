@@ -1181,6 +1181,7 @@ drawable exo_notification_stop
 drawable guarantee_icon
 drawable home
 drawable home_attribute_bg
+drawable home_radio
 drawable ic_empty_page
 drawable ic_error_page
 drawable ic_launcher_background
@@ -1196,6 +1197,7 @@ drawable icon_more_reset
 drawable icon_more_secret
 drawable icon_more_share
 drawable icon_more_sms
+drawable investment_radio
 drawable jc_add_volume
 drawable jc_back_normal
 drawable jc_back_pressed
@@ -1287,6 +1289,7 @@ drawable manage_list_count
 drawable manage_list_guarantee
 drawable manage_list_interest
 drawable manage_list_member
+drawable more_radio
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable my_acount_safety
@@ -1322,6 +1325,7 @@ drawable product_part5_icon
 drawable product_part6_icon
 drawable product_part7_icon
 drawable product_part8_icon
+drawable property_radio
 drawable recommend
 drawable retry_bg
 drawable right
@@ -1593,6 +1597,7 @@ id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
 id gone
+id group
 id group_divider
 id groups
 id home
@@ -1622,6 +1627,7 @@ id listMode
 id list_item
 id loading
 id lock_screen
+id main_ll
 id masked
 id media_actions
 id message
@@ -1710,6 +1716,7 @@ id submenuarrow
 id submit_area
 id surface_container
 id surface_view
+id tab
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -1761,6 +1768,7 @@ id view_offset_helper
 id visible
 id volume_image_tip
 id volume_progressbar
+id vp
 id when_playing
 id widget_container
 id withText
@@ -1848,6 +1856,13 @@ layout exo_player_control_view
 layout exo_player_view
 layout exo_simple_player_view
 layout exo_track_selection_dialog
+layout fragment_allmoney
+layout fragment_home
+layout fragment_hot
+layout fragment_investment
+layout fragment_more
+layout fragment_property
+layout fragment_recommed
 layout jc_dialog_brightness
 layout jc_dialog_progress
 layout jc_dialog_volume
@@ -1968,6 +1983,7 @@ string exo_track_surround_7_point_1
 string exo_track_unknown
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string ijkplayer_dummy
 string indicator_color_error

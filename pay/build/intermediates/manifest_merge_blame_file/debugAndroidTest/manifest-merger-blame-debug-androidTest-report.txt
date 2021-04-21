@@ -3,24 +3,24 @@
 3    package="com.fiannce.pay.test" >
 4
 5    <uses-sdk
-5-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:5:5-74
+5-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:5:5-74
 6        android:minSdkVersion="24"
-6-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:5:15-41
+6-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:5:15-41
 7        android:targetSdkVersion="30" />
-7-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:5:42-71
+7-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:11:5-15:70
+9-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:11:5-15:70
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:11:22-76
+10-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:11:22-76
 11        android:functionalTest="false"
-11-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:14:22-52
+11-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:13:22-53
+12-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:13:22-53
 13        android:label="Tests for com.fiannce.pay.test"
-13-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:15:22-68
+13-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:15:22-68
 14        android:targetPackage="com.fiannce.pay.test" />
-14-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:12:22-66
+14-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:12:22-66
 15
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 16-->[fm.jiecao:jiecaovideoplayer:5.5] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8dd3fe446ddd428461b3232abd2748ad\jetified-jiecaovideoplayer-5.5\AndroidManifest.xml:11:5-79
@@ -33,20 +33,20 @@
 18-->[net.butterflytv.utils:rtmp-client:3.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f0f3bb22d0347c455b4fc0ce05bc2991\rtmp-client-3.1.0\AndroidManifest.xml:11:22-64
 19
 20    <application
-20-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:7:5-9:19
+20-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:7:5-9:19
 21        android:allowBackup="true"
 21-->[com.shuyu:GSYVideoPlayer:7.1.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\44973398e0e26641921ff490d87c48f6\GSYVideoPlayer-7.1.4\AndroidManifest.xml:12:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 22-->[androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
 23        android:debuggable="true"
-23-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:7:18-43
+23-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:7:18-43
 24        android:label="@string/app_name"
 24-->[com.shuyu:GSYVideoPlayer:7.1.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\44973398e0e26641921ff490d87c48f6\GSYVideoPlayer-7.1.4\AndroidManifest.xml:13:9-41
 25        android:supportsRtl="true" >
 25-->[com.shuyu:GSYVideoPlayer:7.1.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\44973398e0e26641921ff490d87c48f6\GSYVideoPlayer-7.1.4\AndroidManifest.xml:14:9-35
 26        <uses-library android:name="android.test.runner" />
-26-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:8:9-60
-26-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger745554896135048364.xml:8:23-57
+26-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:8:9-60
+26-->D:\zgsix\1809Fiannce\pay\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1380335188005670557.xml:8:23-57
 27
 28        <activity android:name="com.fiannce.pay.PayActivity" />
 28-->[__tested_artifact__::pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-64

@@ -14,6 +14,8 @@ MERGED from [com.shuyu:GSYVideoPlayer:7.1.4] C:\Users\lenovo\.gradle\caches\tran
 MERGED from [com.shuyu:gsyVideoPlayer-java:7.1.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\dbfb55a9c87f3248c6e499cfbc07a0a0\gsyVideoPlayer-java-7.1.4\AndroidManifest.xml:2:1-19:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d74b5b498b35fd5cb32d0a6997bb1d3d\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\38be5e762284f9e7a9f0b71da15711ff\jetified-arouter-api-1.5.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.youth.banner:banner:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ec510e701a1fa7077203f4e7d537db2b\banner-2.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\af19d2bf9efbba5c87d98162386fe6bd\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4677d8a5382c107f6965fb7455600737\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -24,8 +26,6 @@ MERGED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transfo
 MERGED from [cn.jzvd:jiaozivideoplayer:6.2.12] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3bcf3f6b761a204cd4426b5736be2141\jetified-jiaozivideoplayer-6.2.12\AndroidManifest.xml:2:1-13:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\875a3df80a78edacc2bfcb8ec05b3a79\rxandroid-2.1.0\AndroidManifest.xml:15:1-20:12
 MERGED from [com.jakewharton:butterknife:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1f155579a16e24a6a774f2c25a5ad576\butterknife-10.2.3\AndroidManifest.xml:2:1-7:12
-MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\38be5e762284f9e7a9f0b71da15711ff\jetified-arouter-api-1.5.0\AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\01d333055a983e736e0a5fac950ffa8f\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\65eb695d8f60c47c48deea4b4bc97d22\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -55,8 +55,8 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\lenovo\.gradle
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\b432947d09f38291043b1b7278108b44\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8cf450d11667f9427b289f08c2115f5c\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d31a9dbc3f8404c541e987748c42963b\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\699bc310780b1730bce8fe271ffeca8b\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.android.exoplayer:extension-rtmp:2.11.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a9511ad91d1b1180b1441c749325\extension-rtmp-2.11.3\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.11.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\2c7cf10b58ee90fd234e1fa5f174c1e5\exoplayer-dash-2.11.3\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.11.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\bec1b1ee98ae47af48875492cd982a88\exoplayer-hls-2.11.3\AndroidManifest.xml:17:1-24:12
@@ -200,6 +200,10 @@ MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\lenovo\.gradle\caches\
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d74b5b498b35fd5cb32d0a6997bb1d3d\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\38be5e762284f9e7a9f0b71da15711ff\jetified-arouter-api-1.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\38be5e762284f9e7a9f0b71da15711ff\jetified-arouter-api-1.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.youth.banner:banner:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ec510e701a1fa7077203f4e7d537db2b\banner-2.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.youth.banner:banner:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ec510e701a1fa7077203f4e7d537db2b\banner-2.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\af19d2bf9efbba5c87d98162386fe6bd\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
@@ -220,10 +224,6 @@ MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] C:\Users\lenovo\.gradle\cache
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\875a3df80a78edacc2bfcb8ec05b3a79\rxandroid-2.1.0\AndroidManifest.xml:18:5-43
 MERGED from [com.jakewharton:butterknife:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1f155579a16e24a6a774f2c25a5ad576\butterknife-10.2.3\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton:butterknife:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1f155579a16e24a6a774f2c25a5ad576\butterknife-10.2.3\AndroidManifest.xml:5:5-44
-MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\38be5e762284f9e7a9f0b71da15711ff\jetified-arouter-api-1.5.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\38be5e762284f9e7a9f0b71da15711ff\jetified-arouter-api-1.5.0\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\01d333055a983e736e0a5fac950ffa8f\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
@@ -282,10 +282,10 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8cf450d11667f9427b289f08c2115f5c\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d31a9dbc3f8404c541e987748c42963b\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d31a9dbc3f8404c541e987748c42963b\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\699bc310780b1730bce8fe271ffeca8b\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\699bc310780b1730bce8fe271ffeca8b\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:extension-rtmp:2.11.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a9511ad91d1b1180b1441c749325\extension-rtmp-2.11.3\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:extension-rtmp:2.11.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a9511ad91d1b1180b1441c749325\extension-rtmp-2.11.3\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.11.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\2c7cf10b58ee90fd234e1fa5f174c1e5\exoplayer-dash-2.11.3\AndroidManifest.xml:20:5-22:41
