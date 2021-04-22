@@ -17,7 +17,9 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment:BaseFragment<HomePresenter>(),HomeCanter.View {
     override fun bandLayoutId(): Int = R.layout.fragment_home
 
-    override fun initView() {}
+    override fun initView() {
+
+    }
 
     override fun initData() {
         if (DataUlit.index != null) {
@@ -31,6 +33,12 @@ class HomeFragment:BaseFragment<HomePresenter>(),HomeCanter.View {
 
     override fun onData(index: Index) {
         initBanner(index.imageArr)
+
+        fragment_home_title_text.text=index.proInfo.name
+
+        fragment_home_progress.setProgress(index.proInfo.progress.toInt())
+
+        fragment_home_yearRate.text="预计年利率：${index.proInfo.yearRate}"
     }
 
     private fun initBanner(list: List<ImageArr>){

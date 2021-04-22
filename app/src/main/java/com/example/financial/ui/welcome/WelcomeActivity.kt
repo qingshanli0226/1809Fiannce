@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Message
 import android.view.WindowManager
 import com.alibaba.android.arouter.launcher.ARouter
-import com.example.financial.MainActivity
+import com.example.financial.ui.MainActivity
 import com.example.financial.R
 import com.example.financial.base.Index
 import com.example.financial.base.UpData
@@ -121,7 +121,7 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), WelcomeCanter.View {
             .setPositiveButton("取消", object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface?, which: Int) {
                     //ARouter.getInstance().build(DataUlit.AROUTER_JUMP_MAIN).withInt("",1).navigation()
-                    startActivity(Intent(this@WelcomeActivity,MainActivity::class.java))
+                    startActivity(Intent(this@WelcomeActivity, MainActivity::class.java))
                     finish()
                 }
             })

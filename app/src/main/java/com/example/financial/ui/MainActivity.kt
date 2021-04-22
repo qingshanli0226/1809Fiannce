@@ -1,8 +1,9 @@
-package com.example.financial
+package com.example.financial.ui
 
 import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.example.financial.R
 import com.example.financial.ui.mine.MineFragment
 import com.example.financial.ui.home.HomeFragment
 import com.example.financial.ui.investment.InvestmentFragment
@@ -44,10 +45,10 @@ class MainActivity : BaseActitvty<IPresneter>() ,RadioGroup.OnCheckedChangeListe
 
     override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
        when(checkedId){
-           R.id.act_main_radio_home->{ fragmentManger.setCheckIteam(0) }
-           R.id.act_main_radio_investment->{ fragmentManger.setCheckIteam(1)}
-           R.id.act_main_radio_mine->{fragmentManger.setCheckIteam(2)}
-           R.id.act_main_radio_mroe->{fragmentManger.setCheckIteam(3)}
+           R.id.act_main_radio_home ->{ fragmentManger.setCheckIteam(0) }
+           R.id.act_main_radio_investment ->{ fragmentManger.setCheckIteam(1)}
+           R.id.act_main_radio_mine ->{fragmentManger.setCheckIteam(2)}
+           R.id.act_main_radio_mroe ->{fragmentManger.setCheckIteam(3)}
        }
     }
 }
