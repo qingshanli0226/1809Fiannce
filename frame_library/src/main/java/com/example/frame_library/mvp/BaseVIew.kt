@@ -88,4 +88,11 @@ abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(){
     override fun hideLodin() {
         Toast.makeText(activity, "加载完毕", Toast.LENGTH_LONG).show()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (mPresenter!=null){
+            mPresenter!!.destroy()
+        }
+    }
 }

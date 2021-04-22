@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Financial</string>
+    <string name="app_name">金融</string>
+    <string name="act_home">首页</string>
+    <string name="act_investment">投资</string>
+    <string name="act_mine">我的资产</string>
+    <string name="act_mroe">更多</string>
 </resources>

@@ -9,6 +9,48 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/act_main_LL"/>
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:id="@+id/act_main_container"/>
+    <RadioGroup
+        android:id="@+id/act_main_radiogroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <RadioButton
+            android:checked="true"
+            android:button="@null"
+            android:textAlignment="center"
+            android:id="@+id/act_main_radio_home"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/act_home"
+            android:layout_height="match_parent"/>
+        <RadioButton
+            android:button="@null"
+            android:textAlignment="center"
+            android:id="@+id/act_main_radio_investment"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/act_investment"
+            android:layout_height="match_parent"/>
+        <RadioButton
+            android:button="@null"
+            android:textAlignment="center"
+            android:id="@+id/act_main_radio_mine"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/act_mine"
+            android:layout_height="match_parent"/>
+        <RadioButton
+            android:button="@null"
+            android:textAlignment="center"
+            android:id="@+id/act_main_radio_mroe"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/act_mroe"
+            android:layout_height="match_parent"/>
+
+    </RadioGroup>
 </LinearLayout>

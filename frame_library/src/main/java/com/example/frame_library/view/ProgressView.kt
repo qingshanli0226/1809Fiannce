@@ -1,5 +1,6 @@
 package com.example.frame_library.view
 
+import android.animation.Animator
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
@@ -9,53 +10,75 @@ import android.graphics.Rect
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
+import android.view.animation.Animation
+import android.widget.TextView
+import com.example.frame_library.R
 
-class ProgressView:View {
+class ProgressView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int):View(context, attrs, defStyleAttr) {
+
     private val paint:Paint= Paint()
+    private var textcolor:Int?=null
+    private var Star:Boolean?=null
+    private var progress:Int?=null
 
     constructor(context: Context?) : this(context,null)
     constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs,0)
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context,
-        attrs,
-        defStyleAttr
-    ){init(context,attrs,defStyleAttr)}
 
-    /***
-     * 初始化函数
-     */
-    private fun init(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) {
-
+    init {
+        var obtainStyledAttributes =
+            context!!.obtainStyledAttributes(attrs, R.styleable.ProgressView)
+        textcolor=obtainStyledAttributes.getColor(R.styleable.ProgressView_textColor,Color.BLACK)
+        Star=obtainStyledAttributes.getBoolean(R.styleable.ProgressView_star,true)
+        progress=obtainStyledAttributes.getInt(R.styleable.ProgressView_progress,30)
+        obtainStyledAttributes.recycle()
     }
-
-    private var progress=0f
 
     /**
      * @param progress 圆的进度
-     * @param b 是否展示动画 true 为展示动画 flase 不展示
      */
-    fun setProgress(progress:Float,b:Boolean){
+    fun setProgress(progress:Int){
         this.progress=progress;
-        if (b) {
-            Animation()
-        }else{
-            invalidate()
-        }
+        invalidate()
+    }
+
+    fun setStar(b:Boolean){
+        this.Star=b
+        invalidate()
     }
 
     /***
      * 加载动画
      */
-    protected fun Animation(){
-        var animator = ValueAnimator.ofFloat(0f, progress)
-        animator.addUpdateListener {
-            var t = it.animatedValue as Float
+     fun Animation(){
+        if (Star!!) {
+            var animator = ValueAnimator.ofFloat(0f, progress!!.toFloat())
+            animator.addUpdateListener {
+                Star=false
+                var t = it.animatedValue as Float
 
-            this.progress=t
-            invalidate()
+                this.progress=t.toInt()
+                invalidate()
+            }
+            animator.duration=3*1000
+            animator.start()
         }
-        animator.duration=5*1000
-        animator.start()
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        var wMode = MeasureSpec.getMode(widthMeasureSpec)
+        var hMode = MeasureSpec.getMode(heightMeasureSpec)
+        var wSize=if (wMode==MeasureSpec.AT_MOST){
+            500
+        }else{
+            MeasureSpec.getSize(widthMeasureSpec)
+        }
+        var hSize=if (hMode==MeasureSpec.AT_MOST){
+            500
+        }else{
+            MeasureSpec.getSize(heightMeasureSpec)
+        }
+        setMeasuredDimension(wSize,hSize)
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -76,16 +99,18 @@ class ProgressView:View {
 
         paint.setColor(Color.RED)
 
-        canvas!!.drawArc(viewX-radius,viewY-radius,viewX+radius,viewY+radius,0f,(progress*3.6).toFloat(),false,paint)
+        canvas!!.drawArc(viewX-radius,viewY-radius,viewX+radius,viewY+radius,0f,(progress!!*3.6).toFloat(),false,paint)
 
-        paint.color=Color.BLACK
+        paint.color= textcolor!!
         paint.textSize=100f
         paint.style=Paint.Style.FILL
 
         var rect = Rect()
-        var text = "${progress.toInt()}%"
+        var text = "${progress}%"
         paint.getTextBounds(text,0,text.length,rect)
         canvas.drawText(text,(viewX-rect.width()/2).toFloat(),(viewY+rect.height()/2).toFloat(),paint)
+
+        Animation()
     }
 
 }
