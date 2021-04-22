@@ -1,6 +1,7 @@
 package com.fiannce.bawei.net;
 
 import com.fiannce.bawei.net.model.HomeBean;
+import com.fiannce.bawei.net.model.Libean;
 import com.fiannce.bawei.net.model.VersionBean;
 
 import io.reactivex.Observable;
@@ -13,5 +14,8 @@ public interface FiannceApiService {
 
     @GET("atguigu/json/P2PInvest/update.json")
     Observable<VersionBean> getServerVersion();
+
+    @GET("atguigu/json/P2PInvest/product.json")
+    Observable<Libean> getLiData();
 
 }

@@ -15,27 +15,50 @@ import androidx.annotation.Nullable;
 import com.example.framework.R;
 
 public class CustomView extends View {
+
+    private int mRingSize = 20;
+    private Paint mbuttonpaint = new Paint();
+    private Paint mtoppaint = new Paint();
+    private Paint textpant = new Paint();
+    private String mtext = "90%";
+    private int mcolor = Color.RED;
+    private int mcurrent = 0;
+    private int textColor;
+    private int textSize;
+    private int paintSize;
+    private int paintColor1;
+    private int paintColor2;
+
     public CustomView(Context context) {
         super(context);
-        init(null);
     }
 
     public CustomView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        init(attrs);
+        super(context, attrs,0);
+
     }
 
     public CustomView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(attrs);
+        init(context,attrs,defStyleAttr);
     }
 
     public CustomView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init(attrs);
     }
 
-    private void init(AttributeSet attrs){
+    private void init(Context context,AttributeSet attrs ,int defStyleAttr){
+        this.mbuttonpaint = new Paint();
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomView);
+
+         textColor = typedArray.getColor(R.styleable.CustomView_TextColor, Color.BLACK);
+         textSize = typedArray.getInt(R.styleable.CustomView_TextSize,30);
+         paintSize = typedArray.getInt(R.styleable.CustomView_PaintSize,5);
+         paintColor1 =  typedArray.getInt(R.styleable.CustomView_PaintColor1,Color.BLUE);
+         paintColor2 = typedArray.getInt(R.styleable.CustomView_PaintColor2,Color.RED);
+
+         typedArray.recycle();
+
 //        if (attrs!=null){
 //            TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.CustomView);
 //            mcolor = typedArray.getColor(R.styleable.CustomView_zzy_color,Color.RED);
@@ -45,7 +68,7 @@ public class CustomView extends View {
     }
 
 
-    public void startmcurrent(){
+    public void startmcurrent(int pro,boolean is){
         ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 360);
         valueAnimator.setDuration(3000);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -59,13 +82,7 @@ public class CustomView extends View {
         valueAnimator.start();
     }
 
-    private int mRingSize = 20;
-    private Paint mbuttonpaint = new Paint();
-    private Paint mtoppaint = new Paint();
-    private Paint textpant = new Paint();
-    private String mtext = "90%";
-    private int mcolor = Color.RED;
-    private int mcurrent = 0;
+
 
     @Override
     protected void onDraw(Canvas canvas) {

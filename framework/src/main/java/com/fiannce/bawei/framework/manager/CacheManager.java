@@ -1,6 +1,7 @@
 package com.fiannce.bawei.framework.manager;
 
 import com.fiannce.bawei.net.model.HomeBean;
+import com.fiannce.bawei.net.model.Libean;
 
 public class CacheManager {
 
@@ -26,5 +27,15 @@ public class CacheManager {
 
     public void setHomeBean(HomeBean homeBean) {
         this.homeBean = homeBean;
+    }
+
+    private Libean libean;
+
+    public Libean getLibean() {
+        return libean;
+    }
+
+    public void setLibean(Libean libean) {
+        this.libean = libean;
     }
 }

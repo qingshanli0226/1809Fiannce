@@ -49,7 +49,7 @@ public class BlankFragment extends Fragment {
         list.addAll(homeBean.getResult().getImageArr());
 
         banner.setImages(list);
-        banner.setBannerAnimation(Transformer.CubeIn);
+        banner.setBannerAnimation(Transformer.CubeOut);
         banner.setImageLoader(new ImageLoader() {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
@@ -59,7 +59,7 @@ public class BlankFragment extends Fragment {
         });
         banner.start();
 
-        vi.startmcurrent();
+        vi.startmcurrent(1,false);
 
 
         return inflate;

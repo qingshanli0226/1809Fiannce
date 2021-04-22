@@ -1,14 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.BlankFragment3">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="#102531"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:textColor="#26B8EE"
+            android:text="投资"
+            android:layout_gravity="center"
+            ></TextView>
+    </LinearLayout>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#28BAED"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/quan"
+            android:layout_marginBottom="@dimen/dp_10"
+            ></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123456"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            ></TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:background="#EEEEEE"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  学习提示 :"
+            android:textSize="15dp"
+            android:textColor="#E92222"
+            ></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  充值我们将以集成支付宝sdk支付金额演示充值功能"
+            android:textSize="@dimen/sp_14"
+            ></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+
+            ></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提"
+            android:textSize="@dimen/sp_14"
+            ></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  现,系统将会告知24小时内进行转账,如果未收到,请联系客服..."
+            android:textSize="@dimen/sp_14"
+            ></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="70dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="充值"
+                android:textSize="20dp"
+                android:layout_marginRight="@dimen/dp_72"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#E95472"
+                android:background="@drawable/zheng"
+                ></TextView>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="提现 "
+                android:textSize="20dp"
+                android:background="@drawable/chang"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#89D5EF"
+                ></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        ></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:background="#EEEEEE"
+        ></LinearLayout>
+</LinearLayout>

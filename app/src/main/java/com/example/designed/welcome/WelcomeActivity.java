@@ -19,6 +19,7 @@ import com.example.designed.R;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.framework.manager.CacheManager;
 import com.fiannce.bawei.net.model.HomeBean;
+import com.fiannce.bawei.net.model.Libean;
 import com.fiannce.bawei.net.model.VersionBean;
 
 
@@ -32,6 +33,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private final int DELAT = 1*1000;//1秒
     private boolean homeFinsih = false;
     private boolean versioneFinsih = false;
+    private boolean LIFinsih = false;
     private boolean advFinsih = false;
     private ImageView iv;
     private TextView dao;
@@ -52,9 +54,16 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     }
 
     @Override
+    public void onLiData(Libean libean) {
+        CacheManager.getInstance().setLibean(libean);
+        LIFinsih = true;
+    }
+
+    @Override
     protected void initData() {
         welcomePresenter.getHomeData();
         welcomePresenter.getVersionData();
+        welcomePresenter.getLiData();
     }
 
     @Override
@@ -127,7 +136,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
                 case ONE_FILSH:
 
-                    if (homeFinsih&&versioneFinsih&&advFinsih){
+                    if (homeFinsih&&versioneFinsih&&advFinsih&&LIFinsih){
                         handler.sendEmptyMessage(ALLFILSH);
                     }
 

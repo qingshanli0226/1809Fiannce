@@ -3,6 +3,7 @@ package com.example.designed.welcome;
 import com.fiannce.bawei.framework.BasePresenter;
 import com.fiannce.bawei.net.RetrofitCreator;
 import com.fiannce.bawei.net.model.HomeBean;
+import com.fiannce.bawei.net.model.Libean;
 import com.fiannce.bawei.net.model.VersionBean;
 
 import java.util.concurrent.TimeUnit;
@@ -66,6 +67,50 @@ public class WelcomePresenter  extends BasePresenter<IWelcomeView> {
                 });
 
     }
+
+    public void getLiData(){
+        RetrofitCreator.getfiannceApiService().getLiData()
+                .delay(2,TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        add(disposable);
+                        iView.showLoading();
+                    }
+                })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        iView.hideLoading();
+                    }
+                })
+                .subscribe(new Observer<Libean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Libean libean) {
+                        if (iView!= null){
+                            iView.onLiData(libean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
 
     public void getVersionData(){
 
