@@ -2,11 +2,15 @@ package com.example.framework;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView {
+import com.example.framework.myview.ToolBar;
+
+public abstract   class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView, ToolBar.IToolbarListener {
     protected P mPresenter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -15,6 +19,8 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         initView();
         initPresenter();
         initData();
+
+        ToolBar viewById = this.findViewById(R.id.toolbar);
 
     }
 
@@ -46,4 +52,20 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
             mPresenter.destroy();
         }
      }
+
+
+    @Override
+    public void onLeftClick() {
+        Toast.makeText(this, "左边图片", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRightImgClick() {
+        Toast.makeText(this, "右边图片", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRightTvClick() {
+        Toast.makeText(this, "右边文字", Toast.LENGTH_SHORT).show();
+    }
 }

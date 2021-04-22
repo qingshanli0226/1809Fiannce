@@ -7,4 +7,12 @@
         <attr name="upCirCleColor" format="color"></attr>
         <attr name="DownCirCleColor" format="color"></attr>
     </declare-styleable>
+
+    <declare-styleable name="ToolBar">
+        <attr name="titleText" format="string"></attr>
+        <attr name="rightImage" format="reference"></attr>
+        <attr name="rightIsShow" format="boolean"></attr>
+        <attr name="leftImage" format="reference"></attr>
+        <attr name="leftIsShow" format="boolean"></attr>
+    </declare-styleable>
 </resources>

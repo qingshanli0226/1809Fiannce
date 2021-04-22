@@ -10,7 +10,7 @@
     <FrameLayout
         android:id="@+id/vp"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_0"
+        android:layout_height="@dimen/dp_10"
         android:layout_weight="10"></FrameLayout>
 
     <com.flyco.tablayout.CommonTabLayout

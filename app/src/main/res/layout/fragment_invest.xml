@@ -3,26 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".fragment.InvestFragment">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/toobrcolor"></androidx.appcompat.widget.Toolbar>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/investtool"
-            android:textSize="@dimen/dp_30"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"></TextView>
-    </FrameLayout>
+<com.example.framework.myview.ToolBar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:titleText="投资"></com.example.framework.myview.ToolBar>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
