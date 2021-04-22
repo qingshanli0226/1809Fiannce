@@ -10,27 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="775e38c7-b67d-444e-bd77-d7ecd95375b4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/fragment/investment/InvestmentFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/fragment/investment/InvestmentFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/fragment/investment/money/AllmoneyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/IWelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/IWelcomeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/WelcomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/WelcomeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/WelcomePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/WelcomePresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/home_radio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/main_home_radio.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/investment_radio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/main_investment_radio.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/more_radio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/main_more_radio.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/property_radio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/main_property_radio.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_allmoney.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_allmoney.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_investment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_investment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/BaseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/BaseFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net/src/main/java/com/fiannce/net/FiannceApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/net/src/main/java/com/fiannce/net/FiannceApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/adapter/AllmoneyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/adapter/AllmoneyAdapter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,11 +43,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/rv_allmoney.xml">
-          <provider editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/adapter/AllmoneyAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="137" column="74" selection-start-line="137" selection-start-column="74" selection-end-line="137" selection-end-column="74" />
+            <state relative-caret-position="470">
+              <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,12 +105,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/fragment/investment/money/allmoeny/IAllmoneyView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyPresenter.java" />
         <option value="$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/BaseFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/adapter/AllmoneyAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/IWelcomeView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/WelcomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/WelcomePresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/rv_allmoney.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/adapter/AllmoneyAdapter.java" />
       </list>
     </option>
   </component>
@@ -495,7 +477,7 @@
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="1" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.18603411" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18603411" />
       <window_info id="Structure" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
       <window_info id="Image Layers" order="5" />
@@ -516,7 +498,7 @@
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info active="true" anchor="right" id="Preview" order="5" visible="true" weight="0.4067164" />
+      <window_info anchor="right" id="Preview" order="5" weight="0.3816631" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -701,16 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/adapter/AllmoneyAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/BaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -796,7 +768,17 @@
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
-          <caret line="137" column="74" selection-start-line="137" selection-start-column="74" selection-end-line="137" selection-end-column="74" />
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/adapter/AllmoneyAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
