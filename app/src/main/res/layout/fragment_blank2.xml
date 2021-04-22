@@ -3,8 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.BlankFragment2"
     android:orientation="vertical">
+    <com.example.a1809zg.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:isleft="true"
+        app:isright="false"
+        app:titletext="投资"
+        app:leftimg="@mipmap/mine"
+        android:id="@+id/bar"
+        >
+    </com.example.a1809zg.Toolbar>
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"

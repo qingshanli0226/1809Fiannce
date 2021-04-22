@@ -107,12 +107,12 @@ public class MyView extends View {
         int widthmode = MeasureSpec.getMode(widthMeasureSpec);
         int heightmode = MeasureSpec.getMode(heightMeasureSpec);
         if (widthmode==MeasureSpec.AT_MOST){
-            measuredWidth=70;
+            measuredWidth=200;
         }else {
             measuredWidth=MeasureSpec.getSize(widthMeasureSpec);
         }
         if (heightmode==MeasureSpec.AT_MOST){
-            measuredHeight=70;
+            measuredHeight=200;
         }else {
             measuredHeight=MeasureSpec.getSize(heightMeasureSpec);
         }
@@ -126,7 +126,7 @@ public class MyView extends View {
          measuredHeight = getMeasuredHeight();
         int centerX=measuredWidth/2;
         int centerY=measuredHeight/2;
-        int radius=(measuredWidth<measuredHeight?measuredWidth/2:measuredHeight/2);
+        int radius=(measuredWidth<measuredHeight?measuredWidth/2:measuredHeight/2)-30;
         paint.setColor(Color.GRAY);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(index);

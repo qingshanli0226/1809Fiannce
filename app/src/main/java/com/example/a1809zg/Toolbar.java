@@ -39,12 +39,11 @@ public class Toolbar extends RelativeLayout {
          isright = typedArray.getBoolean(R.styleable.Toolbar_isright, false);
          typedArray.recycle();
 
-        LayoutInflater from = LayoutInflater.from(context);
-        from.inflate(R.layout.item_toolbar,this);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.item_toolbar, this);
 
-         title = findViewById(R.id.title);
-         left = findViewById(R.id.leftimg);
-         right =findViewById(R.id.rigtimg);
+        title = inflate.findViewById(R.id.title);
+         left = inflate.findViewById(R.id.leftimg);
+         right =inflate.findViewById(R.id.rigtimg);
          title.setText(titletext);
          if (isleft&&leftimg!=0){
              left.setImageResource(leftimg);
