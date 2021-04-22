@@ -10,7 +10,7 @@
         android:background="#919191"
         android:layout_height="60dp">
         <TextView
-            android:text="首页"
+            android:text="@string/mian_home"
             android:textColor="#03A9F4"
             android:textSize="30dp"
             android:layout_centerInParent="true"
@@ -23,7 +23,7 @@
         android:layout_height="200dp"/>
     <TextView
         android:id="@+id/home_name"
-        android:text="你好"
+        android:text="title"
         android:layout_below="@id/home_banner"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
@@ -32,32 +32,35 @@
         android:layout_height="wrap_content"/>
     <TextView
         android:textColor="#F44336"
-        android:text="推荐"
+        android:text="@string/home_title"
         android:layout_toRightOf="@id/home_name"
         android:layout_alignTop="@id/home_name"
         android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <LinearLayout
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/my_dp_10"
         android:layout_below="@id/home_name"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
-            android:text="本息保障"
+            android:layout_marginLeft="@dimen/my_dp_10"
+            android:text="@string/home_one_btn"
             android:background="@drawable/cir_btn"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:layout_height="30dp"/>
         <Button
-            android:text="每日计息  "
+            android:layout_marginLeft="@dimen/my_dp_10"
+            android:text="@string/home_two_btn"
             android:gravity="center"
             android:background="@drawable/cir_btn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"/>
         <Button
-            android:text="高额收益"
+            android:layout_marginLeft="@dimen/my_dp_10"
+            android:text="@string/home_three_btn"
             android:gravity="center"
             android:background="@drawable/cir_btn"
             android:layout_width="wrap_content"
@@ -79,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView
-            android:text="预期年利率："
+            android:text="@string/home_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
@@ -98,13 +101,13 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/arc_btn"
         android:textColor="#ffffff"
-        android:text="立即加入"
+        android:text="@string/home_join"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
         android:layout_below="@id/home_pay"
         android:layout_centerHorizontal="true"
-        android:text="风险保障金由有道银行监管"
+        android:text="@string/home_company"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

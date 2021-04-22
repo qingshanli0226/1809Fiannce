@@ -13,7 +13,7 @@
         android:layout_height="60dp">
         <TextView
             android:text="投资"
-            android:textColor="#03A9F4"
+            android:textColor="@color/blue"
             android:textSize="30dp"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
@@ -28,11 +28,11 @@
             android:id="@+id/invest_sliding"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:tl_divider_color="#03A9F4"
+            app:tl_divider_color="@color/blue"
             app:tl_indicator_height="100dp"
             app:tl_tab_space_equal="true"
-            app:tl_textUnselectColor="#000000"
-            app:tl_textSelectColor="#ff0000"
+            app:tl_textUnselectColor="@color/black"
+            app:tl_textSelectColor="@color/red"
             />
     </LinearLayout>
     <LinearLayout
