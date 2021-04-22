@@ -23,7 +23,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
+        app:tabSelectedTextColor="#f00"
         android:id="@+id/money_tab"
+        android:background="@drawable/tab_backgroudn"
         android:layout_height="50dp"></com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

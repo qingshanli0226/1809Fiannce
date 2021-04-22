@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
 import com.example.model.HomeBean;
+import com.example.myapplication.demo.Demo;
 import com.example.myapplication.fragment.HomeFragment;
 import com.example.myapplication.fragment.MoneyFragment;
 import com.example.myapplication.fragment.MoreFragment;
@@ -31,7 +32,7 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-@Route(path = "/app/MainActivity")
+@Route(path = Demo.AROUTE_PATH)
 public class MainActivity extends BaseActivity {
 
     private android.widget.RadioButton btnHome;
@@ -52,6 +53,7 @@ public class MainActivity extends BaseActivity {
         mymoneyFragment = new MymoneyFragment();
         moreFragment = new MoreFragment();
 
+        btnHome.setChecked(true);
         fragmentManger();
 
 
@@ -120,7 +122,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
 //透明状态栏
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN); //隐藏状态栏
 //        banner = (Banner) findViewById(R.id.banner);
 //        tab = (TabLayout) findViewById(R.id.tab);
 //        vp = (ViewPager) findViewById(R.id.vp);

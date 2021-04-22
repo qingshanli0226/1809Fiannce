@@ -9,6 +9,7 @@ import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
 import com.example.model.HomeBean;
 import com.example.myapplication.R;
+import com.example.myapplication.demo.Demo;
 import com.example.myapplication.view.ProgressView;
 import com.example.myapplication.welcome.WelcomePresenter;
 import com.youth.banner.Banner;
@@ -48,7 +49,7 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> {
             }
         }).start();
 
-        progressBar.startProgressDraw(30,true);
+        progressBar.startProgressDraw(Demo.SCHEDULE_PROGRESS,true);
 
     }
 

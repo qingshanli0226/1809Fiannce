@@ -25,7 +25,7 @@ public class ProgressView extends View {
     private final int STEP_Angle = 1;
     private final int RADUS_MARGIN = 15;
     private final int FLAG_ANIMATER = 0;
-
+    int color;
     private int progressAngle = 0;
     private int percentage_angle = 0;
 
@@ -46,7 +46,7 @@ public class ProgressView extends View {
     private void init(Context context, AttributeSet attrs) {
         paint = new Paint();
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
-        typedArray.getColor(R.styleable.ProgressView_textcolor,R.color.blueee);
+        color = typedArray.getColor(R.styleable.ProgressView_textcolor, R.color.blueee);
         typedArray.getText(R.styleable.ProgressView_android_text);
         typedArray.recycle();
     }
@@ -77,7 +77,7 @@ public class ProgressView extends View {
         //上面
         RectF rectF = new RectF(measuredWidth/2-radus,measuredHeight/2-radus,measuredWidth/2+radus,measuredHeight/2+radus);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.RED);
+        paint.setColor(color);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(20);
         canvas.drawArc(rectF,START_Angle,progressAngle,false,paint);

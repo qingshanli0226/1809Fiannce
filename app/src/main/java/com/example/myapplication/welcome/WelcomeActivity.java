@@ -20,6 +20,7 @@ import com.example.model.ProductBean;
 import com.example.model.VersionBean;
 import com.example.myapplication.R;
 import com.example.myapplication.apk.APKVersionCodeUtils;
+import com.example.myapplication.demo.Demo;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
@@ -33,6 +34,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean home_finish = false;
     private boolean version_finish = false;
     private boolean advertistFinsh  = false;
+    private int FINISH_SESSION = 0;
     private int session = 3;
     private VersionBean versionBeans;
 
@@ -106,7 +108,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             switch (msg.what) {
                 case DELAY_INDEX:
                     session--;
-                    if (session>0){
+                    if (session > FINISH_SESSION){
                         contenNum.setText(session+"秒");
                         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
                     }else {
@@ -124,7 +126,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     Toast.makeText(WelcomeActivity.this, "所有任务完成", Toast.LENGTH_SHORT).show();
 
                     int code = versionBeans.getCode();
-                    if (code==200){
+                    if (code == Demo.VERSION_CODE){
                         VersionBean.ResultBean result = versionBeans.getResult();
                         int versionCode = result.getVersionCode();
                         int versionCode1 = APKVersionCodeUtils.getVersionCode(WelcomeActivity.this);
@@ -132,19 +134,19 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
                             builder.setIcon(R.drawable.ic_launcher_background);
-                            builder.setMessage("确定更新版本吗？");
-                            builder.setTitle("更新");
+                            builder.setMessage(Demo.HINT_DIALOG_MESSAGE);
+                            builder.setTitle(Demo.HINT_DIALOG_TITLE);
                             builder.setCancelable(true);
 
-                            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            builder.setPositiveButton(Demo.HINT_DIALOG_CONFIRM, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
 
                                     ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
                                     progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                                    progressDialog.setTitle("更新");
-                                    progressDialog.setMessage("正在下载中,请稍后...");
+                                    progressDialog.setTitle(Demo.CONFIRM_DIALOG_TITLE);
+                                    progressDialog.setMessage(Demo.CONFIRM_DIALOG_MESSAGE);
                                     progressDialog.setIcon(R.drawable.ic_launcher_background);
                                     progressDialog.setProgress(100);
                                     progressDialog.setCancelable(true);
@@ -156,7 +158,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
                                             Toast.makeText(WelcomeActivity.this, "取消更新", Toast.LENGTH_SHORT).show();
 
-                                            ARouter.getInstance().build("/app/MainActivity").navigation();
+                                            ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
                                             finish();
                                         }
                                     });
@@ -164,12 +166,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                                 }
                             });
 
-                            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            builder.setNegativeButton(Demo.HINT_DIALOG_CANCLE, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 
                                     dialog.dismiss();
-                                    ARouter.getInstance().build("/app/MainActivity").navigation();
+                                    ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
                                     finish();
                                 }
                             });
@@ -180,7 +182,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
                         }
                     }else {
-                        ARouter.getInstance().build("/app/MainActivity").navigation();
+                        ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
                         finish();
 
                     }

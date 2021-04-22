@@ -5,6 +5,7 @@ import com.example.framework.BasePresenter;
 import com.example.model.HomeBean;
 import com.example.model.ProductBean;
 import com.example.model.VersionBean;
+import com.example.myapplication.demo.Demo;
 import com.example.net.RetrofitCretor;
 
 import java.util.concurrent.TimeUnit;
@@ -26,7 +27,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
     public void getHomeData(){
         RetrofitCretor.getFiannceApiService()
                 .getHomeData()
-                .delay(2, TimeUnit.SECONDS)
+                .delay(Demo.REQUEST_DELAY_SESSION, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -73,7 +74,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
     public void getProductData(){
         RetrofitCretor.getFiannceApiService()
                 .getProductData()
-                .delay(2, TimeUnit.SECONDS)
+                .delay(Demo.REQUEST_DELAY_SESSION, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -86,7 +87,9 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
                 .doFinally(new Action() {
                     @Override
                     public void run() throws Exception {
-                        IView.hideLoading();
+                        if (IView!=null){
+                            IView.hideLoading();
+                        }
                     }
                 })
                 .subscribe(new Observer<ProductBean>() {

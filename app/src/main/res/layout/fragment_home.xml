@@ -73,6 +73,7 @@
     <com.example.myapplication.view.ProgressView
         android:layout_width="match_parent"
         android:id="@+id/progress_bar"
+        app:textcolor="#DC143D"
         android:layout_marginTop="20dp"
         android:layout_height="100dp"></com.example.myapplication.view.ProgressView>
 
@@ -93,7 +94,7 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:text="立即加入"
-            android:background="@color/reddd"
+            android:background="#FB4257"
             android:layout_width="300dp"
             android:layout_height="wrap_content"></Button>
     </LinearLayout>
