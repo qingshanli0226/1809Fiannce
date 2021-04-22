@@ -8,12 +8,16 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="28dp"
-        android:textColor="#FB4257"
-        android:gravity="center"
-        android:lines="1"
-        android:text="有道金融壕运当头，首投返现最高达"></TextView>
+        android:layout_height="@dimen/px_100"
+        android:textSize="@dimen/px_70"
+        android:textColor="@color/red"
+        android:background="@color/hui"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:text="有道金融壕运当头，首投返现最高达188元"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

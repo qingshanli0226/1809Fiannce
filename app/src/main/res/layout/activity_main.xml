@@ -9,23 +9,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/px_0"
         android:layout_weight="1"
         android:orientation="vertical"
         android:id="@+id/ll"></LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#3883D1"></View>
+        android:layout_height="@dimen/px_2"
+        android:background="@color/Prussianblue"></View>
 
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:tl_textSelectColor="#3883D1"
-        app:tl_iconHeight="30dp"
-        app:tl_iconWidth="30dp"
-        app:tl_textUnselectColor="#000000"
+        android:layout_height="@dimen/px_150"
+        app:tl_textSelectColor="@color/Prussianblue"
+        app:tl_iconHeight="@dimen/px_70"
+        app:tl_iconWidth="@dimen/px_70"
+        app:tl_textUnselectColor="@color/black"
         android:id="@+id/comm"></com.flyco.tablayout.CommonTabLayout>
 
 </LinearLayout>

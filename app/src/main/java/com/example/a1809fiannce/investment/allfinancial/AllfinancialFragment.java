@@ -14,6 +14,7 @@ import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.adapter.AllfinancialAdapter;
 import com.example.framework.BaseFragment;
 import com.example.net.mode.AllfinancialBean;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 import java.util.ArrayList;
 import java.util.List;

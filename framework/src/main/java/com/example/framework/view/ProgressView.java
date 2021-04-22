@@ -90,7 +90,7 @@ public class ProgressView extends View {
         if (is) {
             progressAngle = 0;
         } else {
-            progressAngle = progress;
+            progressAngle = offsetAngle;
         }
 
         this.progress = 0;
@@ -116,6 +116,35 @@ public class ProgressView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+
+        if (widthMode == MeasureSpec.AT_MOST){
+            progressViewWidth=50;
+        }else {
+            int size = MeasureSpec.getSize(widthMeasureSpec);
+
+            if (size>=200){
+                progressViewWidth=200;
+            }else {
+                progressViewWidth=size;
+            }
+        }
+
+        if (heightMode == MeasureSpec.AT_MOST){
+            progressViewHeight=50;
+        }else {
+            int size = MeasureSpec.getSize(heightMeasureSpec);
+
+            if (size>=200){
+                progressViewHeight=200;
+            }else {
+                progressViewHeight=size;
+            }
+        }
+
+        setMeasuredDimension(progressViewWidth,progressViewHeight);
     }
 
     @Override
@@ -130,28 +159,28 @@ public class ProgressView extends View {
         progressViewWidth = getMeasuredWidth();
         progressViewHeight = getMeasuredHeight();
 
-        int centerX =progressViewWidth/2;
-        int centerY =progressViewHeight/2;
+        int centerX = progressViewWidth / 2;
+        int centerY = progressViewHeight / 2;
 
-        int radius = (progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN;
+        int radius = (progressViewWidth < progressViewHeight ? progressViewWidth / 2 : progressViewHeight / 2) - CIRCLE_MARGIN;
 
         paint.setColor(paintColor1);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(paintSize);
         paint.setStyle(Paint.Style.STROKE);
-        canvas.drawCircle(centerX,centerY,radius,paint);
+        canvas.drawCircle(centerX, centerY, radius, paint);
 
-        RectF rectF = new RectF(progressViewWidth/2-radius,progressViewHeight/2-radius,progressViewWidth/2+radius,progressViewHeight/2+radius);
+        RectF rectF = new RectF(progressViewWidth / 2 - radius, progressViewHeight / 2 - radius, progressViewWidth / 2 + radius, progressViewHeight / 2 + radius);
         paint.setColor(paintColor2);
-        canvas.drawArc(rectF,START_ANGLE,progressAngle,false,paint);
+        canvas.drawArc(rectF, START_ANGLE, progressAngle, false, paint);
 
         Rect rect = new Rect();
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(textColor);
         paint.setTextSize(textSize);
         paint.setStrokeWidth(2);
-        String content=(progressAngle*100)/360+"%";
-        paint.getTextBounds(content,0,content.length(),rect);
-        canvas.drawText(content,progressViewWidth/2-rect.width()/2,progressViewHeight/2+rect.height()/2,paint);
+        String content = (progressAngle * 100) / 360 + "%";
+        paint.getTextBounds(content, 0, content.length(), rect);
+        canvas.drawText(content, progressViewWidth / 2 - rect.width() / 2, progressViewHeight / 2 + rect.height() / 2, paint);
     }
 }

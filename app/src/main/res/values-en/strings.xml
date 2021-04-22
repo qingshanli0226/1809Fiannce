@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">1809Fiannce</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="customTab_name1">Home page</string>
+    <string name="customTab_name2">Investment</string>
+    <string name="customTab_name3">My assets</string>
+    <string name="customTab_name4">More</string>
+    <string name="Principal">Principal and interest security</string>
+    <string name="plan">everyday plan</string>
+    <string name="yield">High yield</string>
+    <string name="Immediatelytojoin">Immediately to join</string>
+    <string name="expected">Expected annual interest rate</string>
+    <string name="mes">Risk insurance is supervised by  Bank</string>
+    <string name="all">All financial</string>
+    <string name="recommend">Recommend a financial</string>
+    <string name="hot">Hot money</string>
+    <string name="Amount">Amount of product</string>
+    <string name="lockup">lockup period</string>
+    <string name="myriad"> myriad</string>
+    <string name="interest">The current interest</string>
+
+</resources>

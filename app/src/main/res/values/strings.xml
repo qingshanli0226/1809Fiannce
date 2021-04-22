@@ -2,4 +2,22 @@
     <string name="app_name">1809Fiannce</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="customTab_name1">首页</string>
+    <string name="customTab_name2">投资</string>
+    <string name="customTab_name3">我的资产</string>
+    <string name="customTab_name4">更多</string>
+    <string name="Immediatelytojoin">立即加入</string>
+    <string name="Principal">本息保障</string>
+    <string name="plan">每日计划</string>
+    <string name="yield">高额收益</string>
+    <string name="expected">预期年利率</string>
+    <string name="mes">风险保障金由有道银行监管</string>
+    <string name="all">全部理财</string>
+    <string name="recommend">推荐理财</string>
+    <string name="hot">热门理财</string>
+    <string name="Amount">产品金额</string>
+    <string name="lockup">锁定期</string>
+    <string name="myriad">万</string>
+    <string name="interest">本期保息</string>
+
 </resources>

@@ -19,6 +19,7 @@ import com.example.a1809fiannce.investment.claCommend.ClaCommendFragment;
 import com.example.a1809fiannce.investment.hotmoney.HotmoneyFragment;
 import com.example.framework.BaseFragment;
 import com.google.android.material.tabs.TabLayout;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,9 +49,9 @@ public class InvestmentFragment extends BaseFragment {
         frag.add(new ClaCommendFragment());
         frag.add(new HotmoneyFragment());
 
-        tabstr.add("全部理财");
-        tabstr.add("推荐理财");
-        tabstr.add("热门理财");
+        tabstr.add(getResources().getString(R.string.all));
+        tabstr.add(getResources().getString(R.string.recommend));
+        tabstr.add(getResources().getString(R.string.hot));
 
         MyFragAdapter myFragAdapter = new MyFragAdapter(getFragmentManager(), frag, tabstr);
         investmentVp.setAdapter(myFragAdapter);

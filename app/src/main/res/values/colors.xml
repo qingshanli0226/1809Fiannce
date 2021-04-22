@@ -9,4 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#27B8EE</color>
     <color name="hui">#EBEBEB</color>
+    <color name="gray">#AAAAAA</color>
+    <color name="red">#ff0000</color>
+    <color name="darkblue">#142732</color>
+    <color name="Prussianblue">#3883D1</color>
+    <color name="pink">#FB4257</color>
+    <color name="bluegrey">#5A6E9E</color>
+
 </resources>

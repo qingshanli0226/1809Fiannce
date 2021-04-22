@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.a1809fiannce.R;
 import com.example.framework.BaseFragment;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 public class MoreFragment extends BaseFragment {
 

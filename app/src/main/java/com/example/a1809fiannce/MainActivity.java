@@ -36,10 +36,10 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initData() {
         ArrayList<CustomTabEntity> customTabEntities = new ArrayList<>();
-        customTabEntities.add(new MyCustomTabEntity("首页",R.drawable.bottom01,R.drawable.bottom02));
-        customTabEntities.add(new MyCustomTabEntity("投资",R.drawable.bottom03,R.drawable.bottom04));
-        customTabEntities.add(new MyCustomTabEntity("我的资产",R.drawable.bottom05,R.drawable.bottom06));
-        customTabEntities.add(new MyCustomTabEntity("更多",R.drawable.bottom07,R.drawable.bottom08));
+        customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.customTab_name1),R.drawable.bottom01,R.drawable.bottom02));
+        customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.customTab_name2),R.drawable.bottom03,R.drawable.bottom04));
+        customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.customTab_name3),R.drawable.bottom05,R.drawable.bottom06));
+        customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.customTab_name4),R.drawable.bottom07,R.drawable.bottom08));
 
         HomeFragment homeFragment = new HomeFragment();
         InvestmentFragment investmentFragment = new InvestmentFragment();

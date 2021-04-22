@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
+
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements IFragment {
     protected T httpPresenter;
     protected View mView;
@@ -16,7 +18,9 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return mView=inflater.inflate(getLayoutId(),container,false);
+        mView=inflater.inflate(getLayoutId(),container,false);
+        ScreenAdapterTools.getInstance().loadView(mView);
+        return mView;
     }
 
     @Override

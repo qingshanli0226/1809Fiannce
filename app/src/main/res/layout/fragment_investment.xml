@@ -9,20 +9,20 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/px_100"
         android:text="投资"
-        android:textSize="25dp"
-        android:background="#142732"
+        android:textSize="@dimen/px_80"
+        android:background="@color/darkblue"
         android:gravity="center"
-        android:textColor="#27B7ED"></TextView>
+        android:textColor="@color/blue"></TextView>
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:tabIndicatorHeight="0dp"
-        app:tabSelectedTextColor="#ff0000"
-        app:tabTextColor="#000000"
-        app:tabBackground="@drawable/investment_tab"
+        android:layout_height="@dimen/px_100"
+        app:tabIndicatorHeight="@dimen/px_100"
+        app:tabSelectedTextColor="@color/red"
+        app:tabTextColor="@color/black"
+        app:tabIndicatorColor="@color/blue"
         android:id="@+id/investment_tab"></com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

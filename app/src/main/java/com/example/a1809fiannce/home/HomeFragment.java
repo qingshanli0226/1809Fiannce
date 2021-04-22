@@ -18,6 +18,7 @@ import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
 import com.example.framework.view.ProgressView;
 import com.example.net.mode.HomeBean;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.loader.ImageLoader;
@@ -50,7 +51,7 @@ public class HomeFragment extends BaseFragment {
         bann.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
 
         homeTitle.setText(homeBean.getResult().getProInfo().getName());
-        homeFragYearRate.setText(homeBean.getResult().getProInfo().getYearRate());
+        homeFragYearRate.setText(homeBean.getResult().getProInfo().getYearRate()+"%");
 
         bann.setImageLoader(new ImageLoader() {
             @Override

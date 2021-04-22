@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
+
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
 
     protected T httpPresenter;
@@ -13,6 +15,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        ScreenAdapterTools.getInstance().loadView(getWindow().getDecorView());
+
         initView();
         initPresenter();
         initData();

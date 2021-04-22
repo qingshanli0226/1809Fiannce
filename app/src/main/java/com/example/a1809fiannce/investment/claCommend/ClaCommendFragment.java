@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.a1809fiannce.R;
 import com.example.framework.BaseFragment;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 public class ClaCommendFragment extends BaseFragment {
 
@@ -20,7 +21,6 @@ public class ClaCommendFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
     }
 
     @Override

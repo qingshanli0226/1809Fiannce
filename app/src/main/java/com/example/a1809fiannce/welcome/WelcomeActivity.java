@@ -24,6 +24,7 @@ import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
 import com.example.net.mode.HomeBean;
 import com.example.net.mode.VersionBean;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 import java.util.Timer;
 import java.util.TimerTask;
