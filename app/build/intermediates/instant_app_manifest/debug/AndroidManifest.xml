@@ -38,25 +38,24 @@
         <activity android:name="com.fiannce.pay.PayActivity" />
         <activity android:name="com.fiannce.user.LoginActivity" />
         <activity
-            android:name="com.blankj.utilcode.util.UtilsTransActivity"
+            android:name="com.blankj.utilcode.util.Utils$TransActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:multiprocess="true"
             android:theme="@style/ActivityTranslucent"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
 
         <provider
-            android:name="com.blankj.utilcode.util.UtilsFileProvider"
+            android:name="com.blankj.utilcode.util.Utils$FileProvider4UtilCode"
             android:authorities="com.Fiannce.myapplication.utilcode.provider"
             android:exported="false"
-            android:grantUriPermissions="true" >
+            android:grantUriPermissions="true"
+            android:multiprocess="true" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/util_code_provider_paths" />
         </provider>
 
-        <service
-            android:name="com.blankj.utilcode.util.MessengerUtils$ServerService"
-            android:exported="false" >
+        <service android:name="com.blankj.utilcode.util.MessengerUtils$ServerService" >
             <intent-filter>
                 <action android:name="com.Fiannce.myapplication.messenger" />
             </intent-filter>

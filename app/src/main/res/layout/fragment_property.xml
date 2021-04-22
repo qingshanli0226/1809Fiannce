@@ -6,7 +6,7 @@
     tools:context=".fragment.property.PropertyFragment">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:text="我的资产"
         android:background="#142732"
         android:gravity="center"

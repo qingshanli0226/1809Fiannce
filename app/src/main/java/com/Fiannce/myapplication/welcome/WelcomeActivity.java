@@ -1,5 +1,6 @@
 package com.Fiannce.myapplication.welcome;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.Fiannce.myapplication.R;
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -20,9 +22,7 @@ import com.fiannce.net.mode.VersionBean;
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
 
-    private TextView contentTv;
-    private TextView coundDownTv;
-    private ProgressBar progressBar;
+
     private final int ONE_TASK_FIISH = 0;
     private final int ALL_TASK_FIISH = 1;
     private final int DELAY_INDEX = 2;
@@ -34,11 +34,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initView() {
-        contentTv = (TextView) findViewById(R.id.contentTv);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        coundDownTv = (TextView) findViewById(R.id.countDownTv);
+
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
-        coundDownTv.setText(countDown+"秒");
+
     }
 
     @Override
@@ -60,7 +58,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
-        contentTv.setText(homeBean+"");
         homeFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
     }
@@ -68,18 +65,40 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void onVersionData(VersionBean versionBean) {
         Toast.makeText(this, "获取到版本信息：" + versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
-        versionFinsh = true;
-        handler.sendEmptyMessage(ONE_TASK_FIISH);
+        if (versionBean.getResult().getVersion().equals("1.0")){
+            versionFinsh = true;
+            handler.sendEmptyMessage(ONE_TASK_FIISH);
+        }else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+            builder.setTitle("下载最新版本");
+            builder.setMessage("解决一些bug,优化网络请求");
+            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    versionFinsh = true;
+                    handler.sendEmptyMessage(ONE_TASK_FIISH);
+                }
+            });
+            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    versionFinsh = true;
+                    handler.sendEmptyMessage(ONE_TASK_FIISH);
+                }
+            });
+            builder.show();
+        }
+
     }
 
     @Override
     public void showLoading() {
-        progressBar.setVisibility(View.VISIBLE);
+
     }
 
     @Override
     public void hideLoading() {
-        progressBar.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -95,10 +114,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 case DELAY_INDEX :
                     countDown--;
                     if (countDown > 0){
-                        coundDownTv.setText(countDown+"秒");
                         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
                     }else {
-                        coundDownTv.setText(countDown+"秒");
                         advertistFinsh = true;
                         handler.sendEmptyMessage(ONE_TASK_FIISH);
                     }

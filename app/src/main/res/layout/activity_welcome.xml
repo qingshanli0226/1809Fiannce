@@ -7,26 +7,37 @@
     android:orientation="vertical"
     tools:context=".welcome.WelcomeActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="15sp"
-        android:id="@+id/contentTv"/>
+        android:background="@drawable/start_background"
+        ></ImageView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/app_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        ></ImageView>
 
-    <ProgressBar
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/progressBar"
-        android:layout_centerInParent="true"
-        android:visibility="gone"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="有道金融"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="35dp"
+            android:layout_marginTop="170dp"
+            ></TextView>
 
     <TextView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="3dp"
-        android:layout_marginRight="3dp"
-        android:textColor="@android:color/holo_red_light"
-        android:id="@+id/countDownTv"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="当前版本：1.0"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:layout_marginTop="580dp"
+        ></TextView>
+
 </RelativeLayout>

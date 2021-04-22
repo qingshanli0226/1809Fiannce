@@ -10,9 +10,8 @@ MERGED from [:framework] D:\zgsix\1809Fiannce\framework\build\intermediates\libr
 MERGED from [:net] D:\zgsix\1809Fiannce\net\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\22b7effb0d5baacdae37ddb4170aabf6\rxandroid-2.1.1\AndroidManifest.xml:15:1-20:12
 MERGED from [com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:17:1-31:12
-MERGED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:2:1-36:12
+MERGED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:2:1-35:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\2946ca0ea6c89dab7d7d9fbc18e54292\material-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [fm.jiecao:jiecaovideoplayer:5.5] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8dd3fe446ddd428461b3232abd2748ad\jetified-jiecaovideoplayer-5.5\AndroidManifest.xml:2:1-13:12
 MERGED from [com.shuyu:GSYVideoPlayer:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\9619ca6846c330e00007a87f02d2823b\GSYVideoPlayer-8.1.0\AndroidManifest.xml:2:1-17:12
 MERGED from [com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:2:1-19:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d74b5b498b35fd5cb32d0a6997bb1d3d\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -21,19 +20,18 @@ MERGED from [com.alibaba:arouter-api:1.5.0] C:\Users\lenovo\.gradle\caches\trans
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\47fc3950c814b04977735368112c37af\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [top.littlefogcat.easydanmaku:easydanmaku:0.1.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d2749ee693470351916e74f6e4855c56\easydanmaku-0.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3c7286ef134928a261b59bb8c07d995f\jetified-BaseRecyclerViewAdapterHelper-2.9.22\AndroidManifest.xml:2:1-11:12
-MERGED from [com.youth.banner:banner:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ec510e701a1fa7077203f4e7d537db2b\banner-2.1.0\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\af19d2bf9efbba5c87d98162386fe6bd\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.shuyu:GSYVideoPlayer-exo2:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ad02098a46ac4f481609017d30f16c92\GSYVideoPlayer-exo2-8.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.8] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8dff7fa82696000c19fc401e599b0c7c\ijkplayer-exo-0.8.8\AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.android.exoplayer:exoplayer:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\45024ee6d78e3af58e4296e6f2cd7950\exoplayer-2.12.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-ui:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\851935d5e6a437e9dc11546a1053aae3\jetified-exoplayer-ui-2.12.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4677d8a5382c107f6965fb7455600737\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\5eec643230675f1dc1b9894c1608ccdd\jetified-glide-4.9.0\AndroidManifest.xml:2:1-12:12
+MERGED from [com.youth.banner:banner:1.4.10] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\84175196c9e219b109811d216b0e9374\jetified-banner-1.4.10\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\01d333055a983e736e0a5fac950ffa8f\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\65eb695d8f60c47c48deea4b4bc97d22\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f64c8351ef0c9a7a800019d28185706c\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1cbc0cb2f7f7c4b246d213e9fa7e7b3c\jetified-gifdecoder-4.9.0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f64c8351ef0c9a7a800019d28185706c\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\b432947d09f38291043b1b7278108b44\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d934be3c652b5ff5c18e2d68c8236453\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7e3b4c2f83e256517b094f844ce7d668\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -49,16 +47,13 @@ MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\lenovo\.grad
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\bfb36a8a02a6b71b49ca7ec649145b26\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\699bc310780b1730bce8fe271ffeca8b\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4848834a580ecbbeaa84b2c68ac1663a\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.jakewharton:butterknife:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1f155579a16e24a6a774f2c25a5ad576\butterknife-10.2.3\AndroidManifest.xml:2:1-7:12
-MERGED from [com.jakewharton:butterknife-runtime:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a9aa41d07c8556aae556abd2100719c1\butterknife-runtime-10.2.3\AndroidManifest.xml:2:1-7:12
 MERGED from [com.andkulikov:transitionseverywhere:2.0.0-beta01] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\176179704ac9332965050fac22911fdf\transitionseverywhere-2.0.0-beta01\AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.exoplayer:extension-rtmp:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8789da6474cffb57c217136f664967dc\extension-rtmp-2.12.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.1.0-beta01] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\46a493c791d9bdf8b3ef43773d077a61\transition-1.1.0-beta01\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a45f51b2867c115d86c8bdb1d487c72c\activity-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ed5a9132108c5b2ae9625fd37b95cb34\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media:media:1.0.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3e5ccb8c834d369aa7070f19e8266f3b\media-1.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:17:1-26:12
-MERGED from [com.google.android.exoplayer:extension-rtmp:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8789da6474cffb57c217136f664967dc\extension-rtmp-2.12.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f49837db3782130676352c1d9930eb66\exoplayer-dash-2.12.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4f41059d17b9cb576c09fd428811b7fb\exoplayer-hls-2.12.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8a0c5cce5c176a58d3dfeea192eb4e77\exoplayer-smoothstreaming-2.12.1\AndroidManifest.xml:17:1-24:12
@@ -66,12 +61,12 @@ MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] C:\Users\lenovo
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\df65787e67fe4b4bc0635deed9695797\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a1f5477cd6fd5fad9baa3e263bec7d60\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\60b50828def4ba3859898ffb4c971c21\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\88b0437f808a972fa4d68083750a9143\jetified-exoplayer-extractor-2.12.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\be81684c5b3923317c7b0ed92fa072b2\jetified-exoplayer-common-2.12.1\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\34fb4b53ebbbc0d42cf00f739d5b7918\lifecycle-runtime-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\534dfe358287b68b5ba1038d10b7afc0\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\69ba81d17fd1c26c75281615add0554c\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [cn.jzvd:jiaozivideoplayer:6.2.12] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3bcf3f6b761a204cd4426b5736be2141\jetified-jiaozivideoplayer-6.2.12\AndroidManifest.xml:2:1-13:12
 MERGED from [com.shuyu:gsyVideoPlayer-armv5:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4ddaebeffa7484cd827cffe92e82f23b\gsyVideoPlayer-armv5-8.1.0\AndroidManifest.xml:2:1-17:12
 MERGED from [com.shuyu:gsyVideoPlayer-armv7a:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1ad8ba6aab0b5479e77a89ca3eada632\gsyVideoPlayer-armv7a-8.1.0\AndroidManifest.xml:2:1-17:12
 MERGED from [com.shuyu:gsyVideoPlayer-arm64:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ab66e278f6302b56b79409b7086ecdcb\gsyVideoPlayer-arm64-8.1.0\AndroidManifest.xml:2:1-17:12
@@ -112,8 +107,8 @@ MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
 MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
 MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
-MERGED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:9:5-34:19
-MERGED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:9:5-34:19
+MERGED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:9:5-33:19
+MERGED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:9:5-33:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\2946ca0ea6c89dab7d7d9fbc18e54292\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\2946ca0ea6c89dab7d7d9fbc18e54292\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.shuyu:GSYVideoPlayer:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\9619ca6846c330e00007a87f02d2823b\GSYVideoPlayer-8.1.0\AndroidManifest.xml:11:5-15:19
@@ -196,12 +191,10 @@ MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\lenovo\.gradle\cache
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\22b7effb0d5baacdae37ddb4170aabf6\rxandroid-2.1.1\AndroidManifest.xml:18:5-43
 MERGED from [com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:22:5-24:41
 MERGED from [com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:22:5-24:41
-MERGED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:7:5-44
-MERGED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:7:5-44
+MERGED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:7:5-44
+MERGED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:7:5-44
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\2946ca0ea6c89dab7d7d9fbc18e54292\material-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\2946ca0ea6c89dab7d7d9fbc18e54292\material-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [fm.jiecao:jiecaovideoplayer:5.5] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8dd3fe446ddd428461b3232abd2748ad\jetified-jiecaovideoplayer-5.5\AndroidManifest.xml:7:5-9:41
-MERGED from [fm.jiecao:jiecaovideoplayer:5.5] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8dd3fe446ddd428461b3232abd2748ad\jetified-jiecaovideoplayer-5.5\AndroidManifest.xml:7:5-9:41
 MERGED from [com.shuyu:GSYVideoPlayer:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\9619ca6846c330e00007a87f02d2823b\GSYVideoPlayer-8.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.shuyu:GSYVideoPlayer:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\9619ca6846c330e00007a87f02d2823b\GSYVideoPlayer-8.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:7:5-9:41
@@ -218,10 +211,6 @@ MERGED from [top.littlefogcat.easydanmaku:easydanmaku:0.1.3] C:\Users\lenovo\.gr
 MERGED from [top.littlefogcat.easydanmaku:easydanmaku:0.1.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d2749ee693470351916e74f6e4855c56\easydanmaku-0.1.3\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3c7286ef134928a261b59bb8c07d995f\jetified-BaseRecyclerViewAdapterHelper-2.9.22\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3c7286ef134928a261b59bb8c07d995f\jetified-BaseRecyclerViewAdapterHelper-2.9.22\AndroidManifest.xml:7:5-9:41
-MERGED from [com.youth.banner:banner:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ec510e701a1fa7077203f4e7d537db2b\banner-2.1.0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.youth.banner:banner:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ec510e701a1fa7077203f4e7d537db2b\banner-2.1.0\AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\af19d2bf9efbba5c87d98162386fe6bd\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\af19d2bf9efbba5c87d98162386fe6bd\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.shuyu:GSYVideoPlayer-exo2:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ad02098a46ac4f481609017d30f16c92\GSYVideoPlayer-exo2-8.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.shuyu:GSYVideoPlayer-exo2:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\ad02098a46ac4f481609017d30f16c92\GSYVideoPlayer-exo2-8.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.8.8] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8dff7fa82696000c19fc401e599b0c7c\ijkplayer-exo-0.8.8\AndroidManifest.xml:5:5-7:41
@@ -234,16 +223,18 @@ MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\lenovo\.gradle\c
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4677d8a5382c107f6965fb7455600737\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\5eec643230675f1dc1b9894c1608ccdd\jetified-glide-4.9.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\5eec643230675f1dc1b9894c1608ccdd\jetified-glide-4.9.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.youth.banner:banner:1.4.10] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\84175196c9e219b109811d216b0e9374\jetified-banner-1.4.10\AndroidManifest.xml:7:5-9:41
+MERGED from [com.youth.banner:banner:1.4.10] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\84175196c9e219b109811d216b0e9374\jetified-banner-1.4.10\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\01d333055a983e736e0a5fac950ffa8f\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\01d333055a983e736e0a5fac950ffa8f\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\65eb695d8f60c47c48deea4b4bc97d22\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\65eb695d8f60c47c48deea4b4bc97d22\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f64c8351ef0c9a7a800019d28185706c\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f64c8351ef0c9a7a800019d28185706c\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1cbc0cb2f7f7c4b246d213e9fa7e7b3c\jetified-gifdecoder-4.9.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1cbc0cb2f7f7c4b246d213e9fa7e7b3c\jetified-gifdecoder-4.9.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f64c8351ef0c9a7a800019d28185706c\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f64c8351ef0c9a7a800019d28185706c\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\b432947d09f38291043b1b7278108b44\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\b432947d09f38291043b1b7278108b44\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\d934be3c652b5ff5c18e2d68c8236453\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -274,12 +265,10 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\lenovo\.gradle\c
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\699bc310780b1730bce8fe271ffeca8b\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4848834a580ecbbeaa84b2c68ac1663a\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4848834a580ecbbeaa84b2c68ac1663a\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.jakewharton:butterknife:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1f155579a16e24a6a774f2c25a5ad576\butterknife-10.2.3\AndroidManifest.xml:5:5-44
-MERGED from [com.jakewharton:butterknife:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1f155579a16e24a6a774f2c25a5ad576\butterknife-10.2.3\AndroidManifest.xml:5:5-44
-MERGED from [com.jakewharton:butterknife-runtime:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a9aa41d07c8556aae556abd2100719c1\butterknife-runtime-10.2.3\AndroidManifest.xml:5:5-44
-MERGED from [com.jakewharton:butterknife-runtime:10.2.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a9aa41d07c8556aae556abd2100719c1\butterknife-runtime-10.2.3\AndroidManifest.xml:5:5-44
 MERGED from [com.andkulikov:transitionseverywhere:2.0.0-beta01] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\176179704ac9332965050fac22911fdf\transitionseverywhere-2.0.0-beta01\AndroidManifest.xml:7:5-9:41
 MERGED from [com.andkulikov:transitionseverywhere:2.0.0-beta01] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\176179704ac9332965050fac22911fdf\transitionseverywhere-2.0.0-beta01\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.exoplayer:extension-rtmp:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8789da6474cffb57c217136f664967dc\extension-rtmp-2.12.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:extension-rtmp:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8789da6474cffb57c217136f664967dc\extension-rtmp-2.12.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.transition:transition:1.1.0-beta01] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\46a493c791d9bdf8b3ef43773d077a61\transition-1.1.0-beta01\AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.1.0-beta01] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\46a493c791d9bdf8b3ef43773d077a61\transition-1.1.0-beta01\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a45f51b2867c115d86c8bdb1d487c72c\activity-1.0.0\AndroidManifest.xml:20:5-22:41
@@ -290,10 +279,6 @@ MERGED from [androidx.media:media:1.0.1] C:\Users\lenovo\.gradle\caches\transfor
 MERGED from [androidx.media:media:1.0.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3e5ccb8c834d369aa7070f19e8266f3b\media-1.0.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:extension-rtmp:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8789da6474cffb57c217136f664967dc\extension-rtmp-2.12.1\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:extension-rtmp:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8789da6474cffb57c217136f664967dc\extension-rtmp-2.12.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f49837db3782130676352c1d9930eb66\exoplayer-dash-2.12.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f49837db3782130676352c1d9930eb66\exoplayer-dash-2.12.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4f41059d17b9cb576c09fd428811b7fb\exoplayer-hls-2.12.1\AndroidManifest.xml:20:5-22:41
@@ -308,6 +293,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\lenovo\.
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a1f5477cd6fd5fad9baa3e263bec7d60\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\60b50828def4ba3859898ffb4c971c21\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\60b50828def4ba3859898ffb4c971c21\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f3128affa7000c088d176285d7f5681f\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\88b0437f808a972fa4d68083750a9143\jetified-exoplayer-extractor-2.12.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\88b0437f808a972fa4d68083750a9143\jetified-exoplayer-extractor-2.12.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\be81684c5b3923317c7b0ed92fa072b2\jetified-exoplayer-common-2.12.1\AndroidManifest.xml:20:5-22:41
@@ -318,8 +305,6 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\lenovo\.grad
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\534dfe358287b68b5ba1038d10b7afc0\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\69ba81d17fd1c26c75281615add0554c\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\69ba81d17fd1c26c75281615add0554c\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [cn.jzvd:jiaozivideoplayer:6.2.12] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3bcf3f6b761a204cd4426b5736be2141\jetified-jiaozivideoplayer-6.2.12\AndroidManifest.xml:7:5-9:41
-MERGED from [cn.jzvd:jiaozivideoplayer:6.2.12] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3bcf3f6b761a204cd4426b5736be2141\jetified-jiaozivideoplayer-6.2.12\AndroidManifest.xml:7:5-9:41
 MERGED from [com.shuyu:gsyVideoPlayer-armv5:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4ddaebeffa7484cd827cffe92e82f23b\gsyVideoPlayer-armv5-8.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.shuyu:gsyVideoPlayer-armv5:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\4ddaebeffa7484cd827cffe92e82f23b\gsyVideoPlayer-armv5-8.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.shuyu:gsyVideoPlayer-armv7a:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\1ad8ba6aab0b5479e77a89ca3eada632\gsyVideoPlayer-armv7a-8.1.0\AndroidManifest.xml:7:5-9:41
@@ -368,61 +353,57 @@ uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
 ADDED from [com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:29:5-84
 	android:name
 		ADDED from [com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:29:22-81
-activity#com.blankj.utilcode.util.UtilsTransActivity
-ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:10:9-15:75
+activity#com.blankj.utilcode.util.Utils$TransActivity
+ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:10:9-15:75
 	android:multiprocess
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:13:13-40
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:13:13-40
 	android:windowSoftInputMode
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:15:13-72
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:15:13-72
 	android:configChanges
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:12:13-74
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:12:13-74
 	android:theme
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:14:13-55
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:14:13-55
 	android:name
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:11:13-71
-provider#com.blankj.utilcode.util.UtilsFileProvider
-ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:17:9-25:20
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:11:13-72
+provider#com.blankj.utilcode.util.Utils$FileProvider4UtilCode
+ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:17:9-26:20
 	android:grantUriPermissions
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:21:13-47
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:21:13-47
 	android:authorities
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:19:13-69
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:19:13-69
+	android:multiprocess
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:22:13-40
 	android:exported
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:20:13-37
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:18:13-70
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:18:13-80
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:22:13-24:68
+ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:23:13-25:68
 	android:resource
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:24:17-65
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:25:17-65
 	android:name
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:23:17-67
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:24:17-67
 service#com.blankj.utilcode.util.MessengerUtils$ServerService
-ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:27:9-33:19
-	android:exported
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:29:13-37
+ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:9-32:19
 	android:name
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:28:13-81
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:18-86
 intent-filter#action:name:${applicationId}.messenger
-ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:30:13-32:29
+ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:29:13-31:29
 intent-filter#action:name:com.Fiannce.myapplication.messenger
-ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:30:13-32:29
+ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:29:13-31:29
 action#${applicationId}.messenger
-ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:31:17-69
+ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:17-69
 	android:name
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:31:25-66
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:25-66
 action#com.Fiannce.myapplication.messenger
-ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:31:17-69
+ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:17-69
 	android:name
-		ADDED from [com.blankj:utilcodex:1.28.3] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\0d47a81173c3a33e3d18e1e40cdc7a9b\jetified-utilcodex-1.28.3\AndroidManifest.xml:31:25-66
+		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:25-66
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [fm.jiecao:jiecaovideoplayer:5.5] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8dd3fe446ddd428461b3232abd2748ad\jetified-jiecaovideoplayer-5.5\AndroidManifest.xml:11:5-79
-MERGED from [com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:11:5-79
-MERGED from [com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:11:5-79
+ADDED from [com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:11:5-79
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\5a1197a3fd804cef3086c4b7992bafd1\exoplayer-core-2.12.1\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\5a1197a3fd804cef3086c4b7992bafd1\exoplayer-core-2.12.1\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\be81684c5b3923317c7b0ed92fa072b2\jetified-exoplayer-common-2.12.1\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\be81684c5b3923317c7b0ed92fa072b2\jetified-exoplayer-common-2.12.1\AndroidManifest.xml:24:5-79
-MERGED from [cn.jzvd:jiaozivideoplayer:6.2.12] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3bcf3f6b761a204cd4426b5736be2141\jetified-jiaozivideoplayer-6.2.12\AndroidManifest.xml:11:5-79
-MERGED from [cn.jzvd:jiaozivideoplayer:6.2.12] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3bcf3f6b761a204cd4426b5736be2141\jetified-jiaozivideoplayer-6.2.12\AndroidManifest.xml:11:5-79
 	android:name
-		ADDED from [fm.jiecao:jiecaovideoplayer:5.5] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\8dd3fe446ddd428461b3232abd2748ad\jetified-jiecaovideoplayer-5.5\AndroidManifest.xml:11:22-76
+		ADDED from [com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:11:22-76

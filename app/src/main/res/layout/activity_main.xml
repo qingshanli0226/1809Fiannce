@@ -14,7 +14,11 @@
         android:id="@+id/main_ll"
         android:orientation="horizontal"
         ></LinearLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#03A9F4"
+        ></View>
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="0dp"

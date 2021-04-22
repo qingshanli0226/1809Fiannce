@@ -13,9 +13,12 @@
         android:label="Tests for com.fiannce.user.test"
         android:targetPackage="com.fiannce.user.test" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.REORDER_TASKS" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -26,6 +29,30 @@
         <uses-library android:name="android.test.runner" />
 
         <activity android:name="com.fiannce.user.LoginActivity" />
+        <activity
+            android:name="com.blankj.utilcode.util.Utils$TransActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:multiprocess="true"
+            android:theme="@style/ActivityTranslucent"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+
+        <provider
+            android:name="com.blankj.utilcode.util.Utils$FileProvider4UtilCode"
+            android:authorities="com.fiannce.user.test.utilcode.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:multiprocess="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/util_code_provider_paths" />
+        </provider>
+
+        <service android:name="com.blankj.utilcode.util.MessengerUtils$ServerService" >
+            <intent-filter>
+                <action android:name="com.fiannce.user.test.messenger" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
             android:theme="@style/InstrumentationActivityInvokerBootstrapActivityTheme" >
@@ -47,30 +74,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.blankj.utilcode.util.UtilsTransActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:multiprocess="true"
-            android:theme="@style/ActivityTranslucent"
-            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
-
-        <provider
-            android:name="com.blankj.utilcode.util.UtilsFileProvider"
-            android:authorities="com.fiannce.user.test.utilcode.provider"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/util_code_provider_paths" />
-        </provider>
-
-        <service
-            android:name="com.blankj.utilcode.util.MessengerUtils$ServerService"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.fiannce.user.test.messenger" />
-            </intent-filter>
-        </service>
     </application>
 
 </manifest>
