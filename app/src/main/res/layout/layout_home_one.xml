@@ -11,11 +11,10 @@
         android:layout_height="wrap_content">
 
         <TextView
-
             android:gravity="center"
             android:textSize="30dp"
             android:text="默认"
-            android:id="@+id/home_one_itle"
+            android:id="@+id/home_one_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"></TextView>
 
@@ -70,7 +69,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/jine"
+                    android:id="@+id/home_one_money"
                     android:textColor="@color/reddd"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -78,7 +77,7 @@
                     android:text="0"></TextView>
 
                 <TextView
-                    android:id="@+id/nianlilv"
+                    android:id="@+id/home_one_yearrate"
                     android:textColor="@color/reddd"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -86,7 +85,7 @@
                     android:text="0"></TextView>
 
                 <TextView
-                    android:id="@+id/suodingqi"
+                    android:id="@+id/home_one_suodingdays"
                     android:textColor="@color/reddd"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -102,6 +101,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/home_one_mintoumoney"
                     android:textColor="@color/black"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -116,6 +116,7 @@
                     android:text="本息保障"></TextView>
 
                 <TextView
+                    android:id="@+id/home_one_membernum"
                     android:textColor="@color/black"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -129,13 +130,14 @@
 
         <com.example.myapplication.view.ProgressView
             android:layout_width="80dp"
-            android:id="@+id/home_num"
+            android:text="50"
+            android:id="@+id/home_one_progress"
             android:layout_height="match_parent"></com.example.myapplication.view.ProgressView>
 
     </LinearLayout>
 
     <View
-        android:background="@color/blueee"
+        android:background="#27B8EE"
         android:layout_width="match_parent"
         android:layout_height="10dp"></View>
 

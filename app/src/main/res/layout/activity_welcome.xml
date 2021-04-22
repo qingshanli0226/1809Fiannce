@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/reddd"
     android:gravity="center"
     tools:context=".welcome.WelcomeActivity">
 
@@ -22,15 +23,21 @@
         android:layout_height="match_parent">
 
         <ProgressBar
+            android:background="@color/reddd"
             android:visibility="gone"
             android:id="@+id/bar"
             android:layout_width="match_parent"
             android:layout_height="200dp"></ProgressBar>
 
         <TextView
-            android:id="@+id/homedata"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></TextView>
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            android:textColor="@color/white"
+            android:text="有道金融"></TextView>
+
+
 
     </RelativeLayout>
 

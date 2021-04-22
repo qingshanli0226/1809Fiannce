@@ -1,6 +1,8 @@
 package com.example.myapplication.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -13,6 +15,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.myapplication.R;
 
 public class ProgressView extends View {
 
@@ -38,8 +42,13 @@ public class ProgressView extends View {
         init(context,attrs);
     }
 
+    @SuppressLint("ResourceAsColor")
     private void init(Context context, AttributeSet attrs) {
         paint = new Paint();
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
+        typedArray.getColor(R.styleable.ProgressView_textcolor,R.color.blueee);
+        typedArray.getText(R.styleable.ProgressView_android_text);
+        typedArray.recycle();
     }
 
     @Override

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -118,7 +119,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+//透明状态栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //        banner = (Banner) findViewById(R.id.banner);
 //        tab = (TabLayout) findViewById(R.id.tab);
 //        vp = (ViewPager) findViewById(R.id.vp);

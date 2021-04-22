@@ -1,10 +1,10 @@
 package com.example.myapplication.welcome;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
@@ -18,8 +18,8 @@ import com.example.framework.manager.CacheManager;
 import com.example.model.HomeBean;
 import com.example.model.ProductBean;
 import com.example.model.VersionBean;
-import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.apk.APKVersionCodeUtils;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
@@ -34,7 +34,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean version_finish = false;
     private boolean advertistFinsh  = false;
     private int session = 3;
-
+    private VersionBean versionBeans;
 
     @Override
     protected void initData() {
@@ -53,7 +53,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         contenNum = (TextView) findViewById(R.id.conten_num);
         bar = (ProgressBar) findViewById(R.id.bar);
-        homedata = (TextView) findViewById(R.id.homedata);
+//        homedata = (TextView) findViewById(R.id.homedata);
         contenNum.setText(session+"秒");
     }
 
@@ -65,7 +65,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
-        homedata.setText(""+homeBean.toString());
+//        homedata.setText(""+homeBean.toString());
         home_finish = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
 
@@ -75,12 +75,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void onVersionData(VersionBean versionBean) {
         Toast.makeText(this, "获取到版本信息:"+versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
         version_finish = true;
+        versionBeans = versionBean;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
     }
 
     @Override
     public void onProductDara(ProductBean productBean) {
-
     }
 
 
@@ -122,10 +122,68 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     break;
                 case All_TASK_FINISH:
                     Toast.makeText(WelcomeActivity.this, "所有任务完成", Toast.LENGTH_SHORT).show();
-                    ARouter.getInstance().build("/app/MainActivity").navigation();
-//                    Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
-//                    startActivity(intent);
-                    finish();
+
+                    int code = versionBeans.getCode();
+                    if (code==200){
+                        VersionBean.ResultBean result = versionBeans.getResult();
+                        int versionCode = result.getVersionCode();
+                        int versionCode1 = APKVersionCodeUtils.getVersionCode(WelcomeActivity.this);
+                        if (versionCode1<versionCode){
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+                            builder.setIcon(R.drawable.ic_launcher_background);
+                            builder.setMessage("确定更新版本吗？");
+                            builder.setTitle("更新");
+                            builder.setCancelable(true);
+
+                            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+
+                                    ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
+                                    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                                    progressDialog.setTitle("更新");
+                                    progressDialog.setMessage("正在下载中,请稍后...");
+                                    progressDialog.setIcon(R.drawable.ic_launcher_background);
+                                    progressDialog.setProgress(100);
+                                    progressDialog.setCancelable(true);
+                                    progressDialog.setIndeterminate(true);
+                                    progressDialog.show();
+                                    progressDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                                        @Override
+                                        public void onDismiss(DialogInterface dialog) {
+
+                                            Toast.makeText(WelcomeActivity.this, "取消更新", Toast.LENGTH_SHORT).show();
+
+                                            ARouter.getInstance().build("/app/MainActivity").navigation();
+                                            finish();
+                                        }
+                                    });
+
+                                }
+                            });
+
+                            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                    dialog.dismiss();
+                                    ARouter.getInstance().build("/app/MainActivity").navigation();
+                                    finish();
+                                }
+                            });
+
+                            AlertDialog alertDialog = builder.create();
+                            alertDialog.show();
+
+
+                        }
+                    }else {
+                        ARouter.getInstance().build("/app/MainActivity").navigation();
+                        finish();
+
+                    }
                     break;
             }
 

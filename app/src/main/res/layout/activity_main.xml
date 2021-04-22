@@ -14,6 +14,10 @@
         android:id="@+id/main_linear"
         android:layout_weight="9"></LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#27B8EE"></View>
 
     <RadioGroup
         android:id="@+id/group"
