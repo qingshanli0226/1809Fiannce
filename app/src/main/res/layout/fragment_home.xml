@@ -9,6 +9,10 @@
 <com.example.framework.myview.ToolBar
     android:layout_width="match_parent"
     app:titleText="首页"
+    android:id="@+id/toolbar"
+    app:leftIsShow="true"
+    app:rightIsShow="false"
+    app:leftImage="@drawable/user_logo"
     android:layout_height="wrap_content"></com.example.framework.myview.ToolBar>
 
     <com.youth.banner.Banner

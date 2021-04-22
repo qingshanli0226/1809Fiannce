@@ -60,6 +60,20 @@ public class PregressMyView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int widthmode=MeasureSpec.getMode(widthMeasureSpec);
+        int heightmode=MeasureSpec.getMode(heightMeasureSpec);
+        if (widthmode==MeasureSpec.AT_MOST){
+            progressViewWidth=200;
+        }else {
+            progressViewWidth=MeasureSpec.getSize(widthMeasureSpec);
+        }
+        if (heightmode==MeasureSpec.AT_MOST){
+            progressViewHeight=200;
+        }else {
+            progressViewHeight=MeasureSpec.getSize(heightMeasureSpec);
+        }
+
+        setMeasuredDimension(progressViewWidth,progressViewHeight);
     }
 
     @Override

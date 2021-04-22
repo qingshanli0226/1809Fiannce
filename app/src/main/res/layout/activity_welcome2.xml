@@ -51,13 +51,13 @@
         android:textSize="@dimen/dp_30"></TextView>
 
 
-    <com.example.framework.myview.ToolBar
-        android:layout_width="match_parent"
-        android:id="@+id/toolbar"
-        app:titleText="欢迎页"
-        app:rightIsShow="false"
-        app:leftIsShow="true"
-        app:leftImage="@drawable/user_logo"
-        android:layout_height="wrap_content"></com.example.framework.myview.ToolBar>
+<!--    <com.example.framework.myview.ToolBar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:id="@+id/toolbar"-->
+<!--        app:titleText="欢迎页"-->
+<!--        app:rightIsShow="false"-->
+<!--        app:leftIsShow="true"-->
+<!--        app:leftImage="@drawable/user_logo"-->
+<!--        android:layout_height="wrap_content"></com.example.framework.myview.ToolBar>-->
 
 </RelativeLayout>

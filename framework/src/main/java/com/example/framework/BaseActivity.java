@@ -12,6 +12,7 @@ import com.example.framework.myview.ToolBar;
 
 public abstract   class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView, ToolBar.IToolbarListener {
     protected P mPresenter;
+    private ToolBar toolBar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +21,6 @@ public abstract   class BaseActivity<P extends BasePresenter> extends AppCompatA
         initPresenter();
         initData();
 
-        ToolBar viewById = this.findViewById(R.id.toolbar);
 
     }
 

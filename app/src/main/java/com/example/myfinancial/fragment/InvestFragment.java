@@ -73,4 +73,18 @@ public class InvestFragment extends BaseFragment {
     }
 
 
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

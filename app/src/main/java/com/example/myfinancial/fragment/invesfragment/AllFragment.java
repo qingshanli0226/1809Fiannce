@@ -66,4 +66,19 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements InVesVi
         list.addAll(allMoneyBean.getResult());
         allAdapter.notifyDataSetChanged();
     }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }
