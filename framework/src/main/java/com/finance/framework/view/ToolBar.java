@@ -65,7 +65,8 @@ public class ToolBar extends RelativeLayout {
         leftImg.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (iToolBar!=null){
+                if (iToolbarListener!=null){
+                    iToolbarListener.on
 
                 }
             }
