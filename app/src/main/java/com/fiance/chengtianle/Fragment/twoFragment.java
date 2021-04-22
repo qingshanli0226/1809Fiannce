@@ -1,66 +1,49 @@
 package com.fiance.chengtianle.Fragment;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
+import com.fiance.chengtianle.Adapter.MyVp;
 import com.fiance.chengtianle.R;
+import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link twoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class twoFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public twoFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment twoFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static twoFragment newInstance(String param1, String param2) {
-        twoFragment fragment = new twoFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
+    private TabLayout tab;
+    private ViewPager vp;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View inflate = inflater.inflate(R.layout.fragment_two, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_two, container, false);
+        tab =inflate.findViewById(R.id.tab);
+        vp =inflate.findViewById(R.id.vp);
+
+        ArrayList<Fragment> list = new ArrayList<>();
+        list.add(new aFragment());
+        list.add(new bFragment());
+        list.add(new cFragment());
+
+        ArrayList<String> title = new ArrayList<>();
+        title.add("全部理财");
+        title.add("推荐理财");
+        title.add("热门理财");
+
+        MyVp myVp = new MyVp(getActivity().getSupportFragmentManager(), list, title);
+        vp.setAdapter(myVp);
+        tab.setupWithViewPager(vp);
+        tab.setTabRippleColor(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+
+        return inflate;
     }
 }
