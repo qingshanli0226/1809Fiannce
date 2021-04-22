@@ -17,8 +17,9 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
-        initData();
         initPresenter();
+        initData();
+
     }
 
     @Nullable
@@ -26,6 +27,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return mbaseView=inflater.inflate(getLayoutId(),container,false);
     }
+
 
     protected abstract int getLayoutId();
     protected abstract void initPresenter();

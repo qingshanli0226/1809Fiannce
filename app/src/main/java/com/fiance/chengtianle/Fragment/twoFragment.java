@@ -39,7 +39,7 @@ public class twoFragment extends Fragment {
         title.add("推荐理财");
         title.add("热门理财");
 
-        MyVp myVp = new MyVp(getActivity().getSupportFragmentManager(), list, title);
+        MyVp myVp = new MyVp(getChildFragmentManager(), list, title);
         vp.setAdapter(myVp);
         tab.setupWithViewPager(vp);
         tab.setTabRippleColor(ColorStateList.valueOf(getResources().getColor(R.color.black)));

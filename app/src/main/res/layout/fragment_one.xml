@@ -3,23 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragment.oneFragment">
-    <FrameLayout
+    <com.fiance.framework.MyView.ToolBar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#142732"></Toolbar>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="首页"
-            android:textColor="#27B8EE"
-            android:textSize="40dp"
-            android:gravity="center"></TextView>
-    </FrameLayout>
+        app:rightIsShow="true"
+        app:leftIsShow="false"
+        app:titleText="首页"
+        android:layout_height="60dp">
+    </com.fiance.framework.MyView.ToolBar>
     <com.youth.banner.Banner
         android:layout_width="match_parent"
         android:id="@+id/banner"
