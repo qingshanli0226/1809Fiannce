@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
@@ -33,10 +34,13 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean homeFinsh = false;
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
+    private boolean ONE_finish = false;
+    private boolean TOW_finish = false;
     private int countDown = 3;
     private android.widget.ImageView icon;
     private AlphaAnimation alphaAnimation;
     private TextView correntTv;
+    private AlertDialog.Builder alerDialog;
 
     @Override
     protected int getLayoutId() {
@@ -107,26 +111,26 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     }
 
     private void Dialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("下载最新版本");
-        builder.setMessage("解决一些bug,优化网络请求!");
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+        alerDialog = new AlertDialog.Builder(this);
+        alerDialog.setTitle("下载最新版本");
+        alerDialog.setMessage("解决一些bug,优化网络请求!");
+        alerDialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Log.d("LQS: ", "所有任务完成");
-                Toast.makeText(WelcomeActivity.this, "所有任务完成", Toast.LENGTH_SHORT).show();
                 ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
-                finish();
-                builder.create();
+                ONE_finish=true;
+                if (ONE_finish&&TOW_finish){
+                    finish();
+                }
             }
         });
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+        alerDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
             }
         });
-        builder.show();
+        alerDialog.show();
     }
 
     @Override
@@ -156,12 +160,16 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     break;
 
                 case ONE_TASK_FIISH:
+//                    Dialog();
                     if (homeFinsh&&versionFinsh&&advertistFinsh) {
                         handler.sendEmptyMessage(ALL_TASK_FIISH);
                     }
                     break;
                 case ALL_TASK_FIISH:
-//                    Dialog();
+                    TOW_finish = true;
+                    if (ONE_finish&&TOW_finish){
+                        finish();
+                    }
                     break;
             }
         }
@@ -171,6 +179,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void destroy() {
         super.destroy();
         alphaAnimation.cancel();
-        handler.removeCallbacksAndMessages(null);//把handler发送的消息，这些消息如果没有被处理的话，将会被该函数删除,可以避免内存泄漏
+        alerDialog.create();
+        handler.removeCallbacksAndMessages(null);
     }
 }

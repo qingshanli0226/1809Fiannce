@@ -63,7 +63,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0' //retrofit使用的rxjava调度器
     implementation 'com.squareup.okhttp3:okhttp:3.6.0'   //okhttp
 
-    implementation 'com.youth.banner:banner:2.1.0'
     implementation project(':framework')
     implementation project(':net')
 }
