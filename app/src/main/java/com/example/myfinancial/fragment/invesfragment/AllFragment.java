@@ -2,16 +2,24 @@ package com.example.myfinancial.fragment.invesfragment;
 
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.framework.BaseFragment;
 import com.example.myfinancial.R;
+import com.example.myfinancial.adapter.AllAdapter;
 import com.example.myfinancial.fragment.invesfragment.invesmvp.InVesPresenter;
 import com.example.myfinancial.fragment.invesfragment.invesmvp.InVesView;
 import com.example.net.bean.AllMoneyBean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AllFragment extends BaseFragment<InVesPresenter> implements InVesView {
     private RecyclerView rec;
+
+    private AllAdapter allAdapter;
+    private List<AllMoneyBean.ResultBean> list = new ArrayList<>();
 
     @Override
     public int getbandLayout() {
@@ -26,6 +34,10 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements InVesVi
     @Override
     public void initView() {
         rec = (RecyclerView) findViewById(R.id.rec);
+        allAdapter = new AllAdapter(list);
+        rec.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rec.setAdapter(allAdapter);
+
     }
 
     @Override
@@ -51,6 +63,7 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements InVesVi
 
     @Override
     public void initAllMoney(AllMoneyBean allMoneyBean) {
-        Toast.makeText(getActivity(), allMoneyBean.toString(), Toast.LENGTH_SHORT).show();
+        list.addAll(allMoneyBean.getResult());
+        allAdapter.notifyDataSetChanged();
     }
 }

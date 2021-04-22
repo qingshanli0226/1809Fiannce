@@ -4,5 +4,7 @@
         <attr name="testColor" format="color"></attr>
         <attr name="circleWidth" format="integer"></attr>
         <attr name="background" format="reference"></attr>
+        <attr name="upCirCleColor" format="color"></attr>
+        <attr name="DownCirCleColor" format="color"></attr>
     </declare-styleable>
 </resources>

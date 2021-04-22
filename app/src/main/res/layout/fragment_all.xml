@@ -2,16 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/allbackgroundcolor"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment.invesfragment.AllFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.example.framework.myview.MyText
+        android:background="@color/white"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="有道金融壕运当头，首投返现最高达"
-        android:textColor="#f00"
-        android:textSize="20dp"></TextView>
+        android:text="@string/trotting"
+        android:textColor="@color/red"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textSize="25dp"></com.example.framework.myview.MyText>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec"

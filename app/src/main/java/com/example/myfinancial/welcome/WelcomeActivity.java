@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +19,6 @@ import com.example.net.bean.HomeBean;
 import com.example.net.bean.VersionBean;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements WelComeView {
-    private android.widget.TextView welcometv;
     private android.widget.ProgressBar pro;
     private android.widget.TextView countdowntv;
 
@@ -51,7 +51,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
 
     @Override
     public void initView() {
-        welcometv = (TextView) findViewById(R.id.welcometv);
+        //向上顶  全屏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         pro = (ProgressBar) findViewById(R.id.pro);
         countdowntv = (TextView) findViewById(R.id.countdowntv);
 
@@ -71,7 +72,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     @Override
     public void initVersion(VersionBean versionBean) {
         Log.d("WelcomeActivity", versionBean.toString());
-        welcometv.setText(versionBean.toString());
         getv = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
     }

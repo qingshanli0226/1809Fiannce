@@ -2,6 +2,7 @@ package com.example.myfinancial;
 
 
 import android.graphics.Color;
+import android.view.WindowManager;
 
 import androidx.fragment.app.Fragment;
 

@@ -14,14 +14,14 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#673AB7"></androidx.appcompat.widget.Toolbar>
+            android:background="@color/toobrcolor"></androidx.appcompat.widget.Toolbar>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="首页"
+            android:text="@string/hometool"
             android:textSize="30dp"
             android:textStyle="bold"></TextView>
 
@@ -84,7 +84,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         app:circleWidth="10"
-        app:testColor="#2196F3"></com.example.framework.myview.PregressMyView>
+        app:upCirCleColor="@color/homeuoCirColor"
+        app:DownCirCleColor="@color/homedownCirColor"
+        app:testColor="@color/hometextcolor"></com.example.framework.myview.PregressMyView>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -105,7 +107,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
-        android:background="#f00"
         android:text="立即加入"></Button>
 
     <TextView

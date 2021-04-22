@@ -10,6 +10,7 @@ import android.graphics.RectF;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -26,16 +27,18 @@ public class PregressMyView extends View {
     private int progressViewWidth;//控件的宽高
     private int progressViewHeight;
     private final int CIRCLE_MARGIN = 10;
-    private int textColor=Color.RED;
-    private int circleWith=10;
+    private int textColor;
+    private int circleWith;
+    private int downCirCleColor;
+    private int upCirCleColor;
 
 
     public PregressMyView(Context context) {
-        super(context);
+        this(context,null);
     }
 
     public PregressMyView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs,0);
     }
 
     public PregressMyView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -44,12 +47,13 @@ public class PregressMyView extends View {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
-
+        Log.d("PregressMyView", "我的myView");
 
         TypedArray typedArray=context.obtainStyledAttributes(attrs,R.styleable.PregressMyView);
         textColor=typedArray.getColor(R.styleable.PregressMyView_testColor,Color.BLACK);
-        circleWith=typedArray.getInt(R.styleable.PregressMyView_circleWidth,5);
-
+        circleWith=typedArray.getInt(R.styleable.PregressMyView_circleWidth,10);
+        upCirCleColor=typedArray.getColor(R.styleable.PregressMyView_upCirCleColor,Color.BLUE);
+        downCirCleColor=typedArray.getColor(R.styleable.PregressMyView_DownCirCleColor,Color.RED);
         typedArray.recycle();//清理
     }
 
@@ -71,6 +75,14 @@ public class PregressMyView extends View {
         circleWith=width;
         invalidate();
     }
+    public void setdownCirCleColor(int width){
+        downCirCleColor=width;
+        invalidate();
+    }
+    public void setUpCirCleColor(int width){
+        upCirCleColor=width;
+        invalidate();
+    }
 
 
     @Override
@@ -85,7 +97,7 @@ public class PregressMyView extends View {
         int centerY = progressViewHeight / 2;
         //获取半径
         int radio = (progressViewWidth < progressViewHeight ? progressViewWidth / 2 : progressViewHeight / 2) - CIRCLE_MARGIN;
-        paint.setColor(Color.BLUE);
+        paint.setColor(downCirCleColor);
 //        paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);//笔宽
         paint.setStyle(Paint.Style.STROKE);//中空
@@ -93,7 +105,7 @@ public class PregressMyView extends View {
 
         //画扇形
         RectF rectF = new RectF(progressViewWidth / 2 - radio, progressViewHeight / 2 - radio, progressViewWidth / 2 + radio, progressViewHeight / 2 + radio);
-        paint.setColor(Color.RED);
+        paint.setColor(upCirCleColor);
         //        paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);
         paint.setStyle(Paint.Style.STROKE);
@@ -101,6 +113,7 @@ public class PregressMyView extends View {
         //文字
         Rect rect=new Rect();
         paint.setColor(textColor);
+        paint.setStyle(Paint.Style.FILL);
         paint.setStrokeWidth(2);
         paint.setTextSize(50);
         String content=(progressAngle*100)/360+"%";
