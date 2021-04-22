@@ -1,6 +1,7 @@
 package com.fiannce.net;
 
 import com.fiannce.net.mode.HomeBean;
+import com.fiannce.net.mode.InvestBean;
 import com.fiannce.net.mode.VersionBean;
 
 import io.reactivex.Observable;
@@ -14,5 +15,7 @@ public interface FiannceApiService {
     @GET("atguigu/json/P2PInvest/update.json")
     Observable<VersionBean> getServerVersion();
 
+    @GET("atguigu/json/P2PInvest/product.json")
+    Observable<InvestBean> getProductData();
 
 }
