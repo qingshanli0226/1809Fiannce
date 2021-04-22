@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication.adapter;
+package com.fiannce.myapplication.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

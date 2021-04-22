@@ -10,10 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.Fiannce.myapplication.R;
-import com.Fiannce.myapplication.adapter.Vpadapter;
+
 import com.Fiannce.myapplication.fragment.investment.money.allmoeny.AllmoneyFragment;
 import com.Fiannce.myapplication.fragment.investment.money.HotFragment;
 import com.Fiannce.myapplication.fragment.investment.money.RecommendFragment;
+import com.fiannce.myapplication.adapter.Vpadapter;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

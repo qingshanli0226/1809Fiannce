@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <dimen name="big_text_size">30sp</dimen>
+    <dimen name="text_mid_size">20sp</dimen>
+    <dimen name="toolbar_img_size">30dp</dimen>
+    <dimen name="toolbar_margin_size">5dp</dimen>
     <string name="app_name">framework</string>
+    <style name="bigTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="midTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <declare-styleable name="ProgressView">
+        <attr format="color" name="textColor"/>
+        <attr format="integer" name="circleWith"/>
+        <attr format="reference" name="background"/>
+    </declare-styleable>
+    <declare-styleable name="ToolBar">
+        <attr format="string" name="titleText"/>
+        <attr format="reference" name="rightImage"/>
+        <attr format="boolean" name="rightIsShow"/>
+        <attr format="reference" name="leftImg"/>
+        <attr format="boolean" name="leftIsShow"/>
+    </declare-styleable>
 </resources>

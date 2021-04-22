@@ -440,12 +440,12 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ssdk_oks_classic_yixin.png.flat",
-        "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_yixin.png"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_allmoney_bro.xml.flat",
         "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\drawable\\allmoney_bro.xml"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ssdk_oks_classic_yixin.png.flat",
+        "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_yixin.png"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_video_seek_thumb_normal.xml.flat",
