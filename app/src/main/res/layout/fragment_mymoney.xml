@@ -3,24 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.MymoneyFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:background="#142732"
+    <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:id="@+id/my_money_toobar"
-        android:layout_height="50dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="我的资产"
-            android:gravity="center"
-            android:textColor="#27B8EE"
-            android:textSize="25dp"></TextView>
-
-    </androidx.appcompat.widget.Toolbar>
-
-
+        android:layout_height="@dimen/dp_40"
+        app:titleTextColor="#14B4ED"
+        app:rightIsShow="true"
+        app:rightImage="@mipmap/my_setting_icon"
+        app:titleText="我的资产"></com.example.framework.view.ToolBar>
 
 </LinearLayout>

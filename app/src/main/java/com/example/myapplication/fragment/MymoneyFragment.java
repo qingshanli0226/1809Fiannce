@@ -8,12 +8,10 @@ import com.example.myapplication.R;
 public class MymoneyFragment extends BaseFragment {
 
 
-    private Toolbar myMoneyToobar;
 
     @Override
     protected void initData() {
 
-        myMoneyToobar.inflateMenu(R.menu.menu);
 
     }
 
@@ -24,8 +22,6 @@ public class MymoneyFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
-        myMoneyToobar = (Toolbar) mView.findViewById(R.id.my_money_toobar);
     }
 
     @Override

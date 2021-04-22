@@ -1,4 +1,4 @@
-package com.example.myapplication.view;
+package com.example.framework.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,7 +16,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.myapplication.R;
+import com.example.framework.R;
 
 public class ProgressView extends View {
 

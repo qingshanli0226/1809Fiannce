@@ -9,6 +9,12 @@
     android:gravity="center"
     tools:context=".welcome.WelcomeActivity">
 
+    <com.example.framework.view.ToolBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:visibility="gone"></com.example.framework.view.ToolBar>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

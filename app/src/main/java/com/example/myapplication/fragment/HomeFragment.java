@@ -1,7 +1,6 @@
 package com.example.myapplication.fragment;
 
 import android.content.Context;
-import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -10,7 +9,7 @@ import com.example.framework.manager.CacheManager;
 import com.example.model.HomeBean;
 import com.example.myapplication.R;
 import com.example.myapplication.demo.Demo;
-import com.example.myapplication.view.ProgressView;
+import com.example.framework.view.ProgressView;
 import com.example.myapplication.welcome.WelcomePresenter;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;

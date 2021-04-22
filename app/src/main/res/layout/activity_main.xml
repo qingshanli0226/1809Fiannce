@@ -7,6 +7,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <com.example.framework.view.ToolBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:visibility="gone"></com.example.framework.view.ToolBar>
+
 
     <LinearLayout
         android:layout_width="match_parent"

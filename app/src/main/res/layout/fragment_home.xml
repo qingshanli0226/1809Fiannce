@@ -7,20 +7,11 @@
     android:orientation="vertical"
     tools:context=".fragment.HomeFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:background="#142732"
+    <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="首页"
-            android:gravity="center"
-            android:textColor="#27B8EE"
-            android:textSize="25dp"></TextView>
-
-    </androidx.appcompat.widget.Toolbar>
+        android:layout_height="@dimen/dp_40"
+        app:titleTextColor="#14B4ED"
+        app:titleText="首页"></com.example.framework.view.ToolBar>
 
     <com.youth.banner.Banner
         android:id="@+id/banner"
@@ -70,12 +61,12 @@
 
     </LinearLayout>
 
-    <com.example.myapplication.view.ProgressView
+    <com.example.framework.view.ProgressView
         android:layout_width="match_parent"
         android:id="@+id/progress_bar"
         app:textcolor="#DC143D"
         android:layout_marginTop="20dp"
-        android:layout_height="100dp"></com.example.myapplication.view.ProgressView>
+        android:layout_height="100dp"></com.example.framework.view.ProgressView>
 
     <TextView
         android:textSize="20sp"

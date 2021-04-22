@@ -128,12 +128,12 @@
         </LinearLayout>
 
 
-        <com.example.myapplication.view.ProgressView
+        <com.example.framework.view.ProgressView
             android:layout_width="80dp"
             android:text="50"
             app:textcolor="#14B4ED"
             android:id="@+id/home_one_progress"
-            android:layout_height="match_parent"></com.example.myapplication.view.ProgressView>
+            android:layout_height="match_parent"></com.example.framework.view.ProgressView>
 
     </LinearLayout>
 

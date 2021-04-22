@@ -1,12 +1,10 @@
 package com.example.myapplication.adapter;
 
-import android.view.View;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.example.model.ProductBean;
 import com.example.myapplication.R;
-import com.example.myapplication.view.ProgressView;
+import com.example.framework.view.ProgressView;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
