@@ -2,6 +2,7 @@ package com.Fiannce.myapplication.welcome;
 
 import com.fiannce.framework.BasePresenter;
 import com.fiannce.net.RetrofitCreator;
+import com.fiannce.net.mode.AllMoneyBean;
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.net.mode.VersionBean;
 
@@ -112,5 +113,6 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
                 });
 
     }
+
 
 }

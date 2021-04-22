@@ -1,6 +1,7 @@
 package com.Fiannce.myapplication.welcome;
 
 import com.fiannce.framework.IBaseView;
+import com.fiannce.net.mode.AllMoneyBean;
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.net.mode.VersionBean;
 

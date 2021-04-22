@@ -34,7 +34,8 @@
             android:text="首页"
             android:gravity="center"
             android:button="@null"
-            android:drawableTop="@drawable/home_radio"
+            android:textColor="@drawable/main_text_select"
+            android:drawableTop="@drawable/main_home_radio"
             ></RadioButton>
         <RadioButton
             android:layout_width="0dp"
@@ -43,8 +44,9 @@
             android:id="@+id/investment_radio"
             android:text="投资"
             android:gravity="center"
+            android:textColor="@drawable/main_text_select"
             android:button="@null"
-            android:drawableTop="@drawable/investment_radio"
+            android:drawableTop="@drawable/main_investment_radio"
             ></RadioButton>
         <RadioButton
             android:layout_width="0dp"
@@ -54,7 +56,8 @@
             android:text="我的资产"
             android:gravity="center"
             android:button="@null"
-            android:drawableTop="@drawable/property_radio"
+            android:textColor="@drawable/main_text2_select"
+            android:drawableTop="@drawable/main_property_radio"
             ></RadioButton>
         <RadioButton
             android:layout_width="0dp"
@@ -62,9 +65,10 @@
             android:layout_weight="1"
             android:id="@+id/more_radio"
             android:text="更多"
+            android:textColor="@drawable/main_text_select"
             android:gravity="center"
             android:button="@null"
-            android:drawableTop="@drawable/more_radio"
+            android:drawableTop="@drawable/main_more_radio"
             ></RadioButton>
     </RadioGroup>
 

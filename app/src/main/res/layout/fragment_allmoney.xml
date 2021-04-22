@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.investment.money.AllmoneyFragment">
+    android:orientation="vertical"
+    tools:context=".fragment.investment.money.allmoeny.AllmoneyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="有道金融豪运当头，首投返现最高1888元"
+        android:singleLine="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:ellipsize="marquee"
+        android:textSize="30dp"
+        android:id="@+id/light"
+        android:textColor="#EB0808"
+        android:background="#ECECEC"
+        ></TextView>
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:id="@+id/rv"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

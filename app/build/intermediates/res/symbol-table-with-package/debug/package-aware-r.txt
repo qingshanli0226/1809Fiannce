@@ -1157,6 +1157,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable allmoney_bro
 drawable animation_loading
 drawable app_icon
 drawable app_name
@@ -1276,7 +1277,6 @@ drawable gray_radius
 drawable guarantee_icon
 drawable home
 drawable home_attribute_bg
-drawable home_radio
 drawable ic_empty_page
 drawable ic_error_page
 drawable ic_launcher_background
@@ -1292,7 +1292,6 @@ drawable icon_more_reset
 drawable icon_more_secret
 drawable icon_more_share
 drawable icon_more_sms
-drawable investment_radio
 drawable left
 drawable ljty1080
 drawable lock
@@ -1300,11 +1299,16 @@ drawable lock_node_line2
 drawable lock_normal
 drawable lock_round_click
 drawable lock_title_bg
+drawable main_home_radio
+drawable main_investment_radio
+drawable main_more_radio
+drawable main_property_radio
+drawable main_text2_select
+drawable main_text_select
 drawable manage_list_count
 drawable manage_list_guarantee
 drawable manage_list_interest
 drawable manage_list_member
-drawable more_radio
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable my_acount_safety
@@ -1341,7 +1345,6 @@ drawable product_part5_icon
 drawable product_part6_icon
 drawable product_part7_icon
 drawable product_part8_icon
-drawable property_radio
 drawable recommend
 drawable right
 drawable sample_footer_loading
@@ -1671,6 +1674,7 @@ id largeLabel
 id layout_bottom
 id layout_top
 id left
+id light
 id line1
 id line3
 id listMode
@@ -1722,6 +1726,14 @@ id radio
 id right
 id right_icon
 id right_side
+id rv
+id rv_all_tv
+id rv_imgtv1
+id rv_imgtv2
+id rv_imgtv3
+id rv_tv1
+id rv_tv2
+id rv_tv3
 id save_non_transition_alpha
 id save_overlay_view
 id screen
@@ -1935,6 +1947,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout quick_view_load_more
+layout rv_allmoney
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

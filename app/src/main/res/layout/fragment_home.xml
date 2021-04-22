@@ -28,7 +28,7 @@
             android:id="@+id/home_tv1"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="80dp"
             android:gravity="center"
             android:text="硅谷彩虹新手计划"
             android:textSize="30dp"></TextView>
@@ -42,8 +42,13 @@
             android:layout_marginLeft="20dp"
             android:textColor="#F44336"></TextView>
     </RelativeLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
 
+    >
 
+</LinearLayout>
     <com.Fiannce.myapplication.fragment.home.customView
         android:id="@+id/custom_view"
         android:layout_width="120dp"
@@ -60,10 +65,10 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:text="立即加入"
             android:gravity="center"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:background="#FB4257"
             android:textColor="#ffffff"
             android:layout_marginLeft="20dp"

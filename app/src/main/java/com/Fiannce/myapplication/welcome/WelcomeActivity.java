@@ -16,6 +16,7 @@ import com.Fiannce.myapplication.R;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.fiannce.framework.BaseActivity;
 import com.fiannce.framework.manager.CacheManager;
+import com.fiannce.net.mode.AllMoneyBean;
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.net.mode.VersionBean;
 
