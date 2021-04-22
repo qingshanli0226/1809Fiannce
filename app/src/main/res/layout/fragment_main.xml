@@ -7,6 +7,9 @@
     tools:context=".ui.MainFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <com.finance.framework.view.ToolBar
+        android:layout_width=""
+        android:layout_height=""
     <com.youth.banner.Banner
         android:layout_width="match_parent"
         android:layout_height="200dp"
