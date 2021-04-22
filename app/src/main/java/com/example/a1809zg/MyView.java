@@ -107,8 +107,8 @@ public class MyView extends View {
         int measuredHeight = getMeasuredHeight();
         int centerX=measuredWidth/2;
         int centerY=measuredHeight/2;
-        int radius=(measuredWidth<measuredHeight?centerX/2:centerY/2);
-        paint.setColor(Color.RED);
+        int radius=(measuredWidth<measuredHeight?measuredWidth/2:measuredHeight/2);
+        paint.setColor(Color.GRAY);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(index);
         paint.setStyle(Paint.Style.STROKE);

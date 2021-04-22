@@ -28,6 +28,15 @@ public class ProductBean {
         return code;
     }
 
+    @Override
+    public String toString() {
+        return "ProductBean{" +
+                "code=" + code +
+                ", msg='" + msg + '\'' +
+                ", result=" + result +
+                '}';
+    }
+
     public void setCode(int code) {
         this.code = code;
     }
@@ -64,6 +73,20 @@ public class ProductBean {
 
         public void setId(String id) {
             this.id = id;
+        }
+
+        @Override
+        public String toString() {
+            return "ResultBean{" +
+                    "id='" + id + '\'' +
+                    ", name='" + name + '\'' +
+                    ", money='" + money + '\'' +
+                    ", yearRate='" + yearRate + '\'' +
+                    ", suodingDays='" + suodingDays + '\'' +
+                    ", minTouMoney='" + minTouMoney + '\'' +
+                    ", memberNum='" + memberNum + '\'' +
+                    ", progress='" + progress + '\'' +
+                    '}';
         }
 
         public String getName() {

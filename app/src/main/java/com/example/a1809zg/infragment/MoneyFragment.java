@@ -2,19 +2,28 @@ package com.example.a1809zg.infragment;
 
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a1809zg.R;
 import com.example.frame.Basefragment;
 import com.example.net.bean.ProductBean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MoneyFragment extends Basefragment<Fragpresenter> implements FragView {
     protected Fragpresenter fragpresenter;
     private RecyclerView rv;
+    private Fragadpter fragadpter;
+    private List<ProductBean.ResultBean> list=new ArrayList<>();
 
     @Override
     public void onProdactDada(ProductBean productBean) {
-            Toast.makeText(getContext(), "productBean.getResult():" + productBean.getResult(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "111productBean.getResult():" + productBean.getResult().toString(), Toast.LENGTH_SHORT).show();
+        List<ProductBean.ResultBean> result = productBean.getResult();
+        list.addAll(result);
+        fragadpter.notifyDataSetChanged();
     }
 
     @Override
@@ -24,8 +33,11 @@ public class MoneyFragment extends Basefragment<Fragpresenter> implements FragVi
 
     @Override
     protected void initView() {
-
+        fragadpter=new Fragadpter(list);
         rv = findViewById(R.id.rv);
+        rv.setAdapter(fragadpter);
+        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+
     }
 
     @Override
