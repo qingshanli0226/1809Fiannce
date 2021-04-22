@@ -12,10 +12,10 @@ import com.finance.zg.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link RecommendFinancingFragment#newInstance} factory method to
+ * Use the {@link RecommendFinanceFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RecommendFinancingFragment extends Fragment {
+public class RecommendFinanceFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class RecommendFinancingFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public RecommendFinancingFragment() {
+    public RecommendFinanceFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class RecommendFinancingFragment extends Fragment {
      * @return A new instance of fragment RecommendFinancingFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static RecommendFinancingFragment newInstance(String param1, String param2) {
-        RecommendFinancingFragment fragment = new RecommendFinancingFragment();
+    public static RecommendFinanceFragment newInstance(String param1, String param2) {
+        RecommendFinanceFragment fragment = new RecommendFinanceFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

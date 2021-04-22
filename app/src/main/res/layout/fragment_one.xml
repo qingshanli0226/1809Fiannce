@@ -13,10 +13,10 @@
         android:layout_weight="1"
         app:tl_textSelectColor="#F41919"
         app:tl_textUnselectColor="#000"
-        app:tl_indicator_width="135dp"
         app:tl_indicator_height="70dp"
         app:tl_indicator_color="#16B7FF"
         app:tl_tab_space_equal="true"
+        android:background="#E1DFDF"
         android:id="@+id/sliding"></com.flyco.tablayout.SlidingTabLayout>
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"

@@ -1,13 +1,33 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.finance.zg6.ui.investment.ui.AllFinancingkFragment">
+    tools:context="com.finance.zg6.ui.investment.ui.allfiannce.AllFinanceFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.finance.zg6.ui.view.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E1DFDF"
+        android:text="有道金融壕运当头，首投返现最高达188元"
+        android:textColor="#f00"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textSize="25dp"
+        android:id="@+id/all_txt"
+        ></com.finance.zg6.ui.view.MyTextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/all_img_animation"
+        android:background="@mipmap/wc_ac_01"></ImageView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/all_txt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/all_finance_rv"></androidx.recyclerview.widget.RecyclerView>
 
-</FrameLayout>
+</RelativeLayout>

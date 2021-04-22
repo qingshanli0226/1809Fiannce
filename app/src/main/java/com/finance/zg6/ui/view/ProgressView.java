@@ -1,6 +1,7 @@
 package com.finance.zg6.ui.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -13,6 +14,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.finance.zg.R;
 
 public class ProgressView extends View {
     private Paint paint;
@@ -36,10 +39,14 @@ public class ProgressView extends View {
     public ProgressView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context,attrs);
-    }
 
+    }
+    int color = Color.RED;
     private void init(Context context, AttributeSet attrs) {
         paint = new Paint();
+//        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
+//        typedArray.getColor(R.styleable.ProgressView_all_finance)
+
     }
 
     @Override
@@ -102,7 +109,7 @@ public class ProgressView extends View {
         RectF rectF = new RectF(measuredWidth/2-radius,measuredHeight/2-radius,
                 measuredWidth/2+radius,measuredHeight/2+radius);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.RED);
+        paint.setColor(color);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(20);
         canvas.drawArc(rectF,START_ANGLE,progressAngle,false,paint);

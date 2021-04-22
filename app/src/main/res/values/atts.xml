@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProgressView">
+        <attr name="all_finance_color" format="color"></attr>
+        <attr name="all_finance_size" format="dimension"></attr>
+    </declare-styleable>
+</resources>
