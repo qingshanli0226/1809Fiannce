@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +22,6 @@ import com.fiannce.zhaoyuzan.R;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
-    private ProgressBar progressBar;
     private TextView coundDownTv;
     private int countDown = 3;
     private final int ONE_TASK_FIISH = 0;
@@ -31,7 +31,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean homeFinsh = false;
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
-    private TextView textView;
+
 
     @Override
     protected void initPresenter() {
@@ -46,11 +46,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initView() {
-        progressBar = findViewById(R.id.progressBar);
         coundDownTv = findViewById(R.id.countDownTv);
-        textView = findViewById(R.id.home_text);
+
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
         coundDownTv.setText(countDown + "秒");
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     @Override
@@ -61,7 +62,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
-        textView.setText(homeBean.toString());
         homeFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
     }
@@ -75,12 +75,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void showLoading() {
-        progressBar.setVisibility(View.VISIBLE);
+
     }
 
     @Override
     public void hideLoading() {
-        progressBar.setVisibility(View.GONE);
+
     }
 
     @Override

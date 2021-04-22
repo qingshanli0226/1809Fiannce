@@ -3,7 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.AllFragment">
+
+
+    <com.fiannce.framework.view.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:text="有道金融壕运当头，首投返现最高达188元"
+        android:textColor="#f00"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textSize="25dp"
+        ></com.fiannce.framework.view.MyTextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

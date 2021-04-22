@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         commonAdapter = new CommonAdapter(getSupportFragmentManager(),list);
         viewPager.setAdapter(commonAdapter);
 
-        mTabEntities.add(new CommonBean("首页"));
-        mTabEntities.add(new CommonBean("投资"));
-        mTabEntities.add(new CommonBean("我的资产"));
-        mTabEntities.add(new CommonBean("更多"));
+        mTabEntities.add(new CommonBean("首页",R.drawable.bottom02,R.drawable.bottom01));
+        mTabEntities.add(new CommonBean("投资",R.drawable.bottom04,R.drawable.bottom03));
+        mTabEntities.add(new CommonBean("我的资产",R.drawable.bottom06,R.drawable.bottom05));
+        mTabEntities.add(new CommonBean("更多",R.drawable.bottom08,R.drawable.bottom07));
         commonTabLayout.setTabData(mTabEntities);
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

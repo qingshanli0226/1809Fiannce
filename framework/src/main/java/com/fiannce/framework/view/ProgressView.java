@@ -51,7 +51,7 @@ public class ProgressView extends View {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
         textColor = typedArray.getColor(R.styleable.ProgressView_textColor, Color.BLACK);
-        circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith,20);
+        circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith,30);
 
         typedArray.recycle();
     }
@@ -114,7 +114,8 @@ public class ProgressView extends View {
         int centerX = progressViewWidth/2;
         int centerY = progressViewHeight/2;
 
-        int radius = (progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN;
+        //半径
+        int radius =( (progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN)-15;
         paint.setColor(Color.BLUE);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);
@@ -136,7 +137,6 @@ public class ProgressView extends View {
         paint.setTextSize(30);
         paint.setStrokeWidth(2);
         String content = (progressAngle*100)/360+"%";
-        Log.d("LQS", content+"");
         paint.getTextBounds(content,0,content.length(),rect);
         canvas.drawText(content,progressViewWidth/2-rect.width()/2,progressViewHeight/2+rect.height()/2,paint);
     }

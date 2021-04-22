@@ -35,7 +35,7 @@
 
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="190dp"
         android:id="@+id/banner"
         ></com.youth.banner.Banner>
 
@@ -58,6 +58,41 @@
             android:layout_marginTop="8dp"
             >
         </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="本息保障"
+            android:background="@drawable/tuoyuan"
+            android:gravity="center"
+            ></TextView>
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_width="100dp"
+            android:textSize="15dp"
+            android:layout_height="wrap_content"
+            android:text="每日计息"
+            android:background="@drawable/tuoyuan"
+            android:gravity="center"
+            ></TextView>
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="高额收益"
+            android:background="@drawable/tuoyuan"
+            android:gravity="center"
+            ></TextView>
+
     </LinearLayout>
 
 
@@ -91,6 +126,8 @@
         </TextView>
     </LinearLayout>
 
+
+
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -109,7 +146,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/dp_10"
         >
-        <ImageView  
+        <ImageView
             android:layout_width="15dp"
             android:layout_height="20dp"
             android:src="@drawable/guarantee_icon"
@@ -120,6 +157,5 @@
             android:text="风险保障金由有道银行监管"
             ></TextView>
     </LinearLayout>
-
 
 </LinearLayout>
