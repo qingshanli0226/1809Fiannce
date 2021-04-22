@@ -20,6 +20,7 @@ import com.example.a1809zg.R;
 import com.example.frame.BaseActivity;
 import com.example.frame.CacheMore;
 import com.example.net.bean.HomeBean;
+import com.example.net.bean.ProductBean;
 import com.example.net.bean.UpdataBean;
 
 public class MainActivity2 extends BaseActivity<Ipresenter> implements Iview {
@@ -78,6 +79,7 @@ private Ipresenter ipresenter;
         bean = updataBean;
         handler.sendEmptyMessage(ONE_TASK);
     }
+
 
     @Override
     protected int getLayoutId() {

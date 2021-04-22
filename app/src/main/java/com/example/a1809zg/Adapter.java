@@ -1,6 +1,7 @@
 package com.example.a1809zg;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -9,10 +10,12 @@ import java.util.List;
 
 public class Adapter extends FragmentPagerAdapter {
    private List<Fragment> list;
+   private List<String> data;
 
-    public Adapter(@NonNull FragmentManager fm, List<Fragment> list) {
+    public Adapter(@NonNull FragmentManager fm, List<Fragment> list, List<String> data) {
         super(fm);
         this.list = list;
+        this.data = data;
     }
 
     @NonNull
@@ -24,5 +27,11 @@ public class Adapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return list.size();
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return data.get(position);
     }
 }

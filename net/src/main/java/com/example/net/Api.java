@@ -1,6 +1,7 @@
 package com.example.net;
 
 import com.example.net.bean.HomeBean;
+import com.example.net.bean.ProductBean;
 import com.example.net.bean.UpdataBean;
 
 import io.reactivex.Observable;
@@ -12,6 +13,6 @@ public interface Api {
     Observable<HomeBean> getHomeData();
 @GET("atguigu/json/P2PInvest/update.json")
     Observable<UpdataBean>getUpdataData();
-@GET("atguigu/json/P2PInvest/update.json")
-    Observable<UpdataBean>getUpdata();
+@GET("atguigu/json/P2PInvest/product.json")
+    Observable<ProductBean>getProductData();
 }

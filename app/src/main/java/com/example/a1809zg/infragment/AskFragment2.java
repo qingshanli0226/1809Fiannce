@@ -1,4 +1,4 @@
-package com.example.a1809zg.fragment;
+package com.example.a1809zg.infragment;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.a1809zg.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BlankFragment3#newInstance} factory method to
+ * Use the {@link AskFragment2#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BlankFragment3 extends Fragment {
+public class AskFragment2 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class BlankFragment3 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BlankFragment3() {
+    public AskFragment2() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class BlankFragment3 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HotFragment3.
+     * @return A new instance of fragment AskFragment2.
      */
     // TODO: Rename and change types and number of parameters
-    public static BlankFragment3 newInstance(String param1, String param2) {
-        BlankFragment3 fragment = new BlankFragment3();
+    public static AskFragment2 newInstance(String param1, String param2) {
+        AskFragment2 fragment = new AskFragment2();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class BlankFragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank3, container, false);
+        return inflater.inflate(R.layout.fragment_blank6, container, false);
     }
 }

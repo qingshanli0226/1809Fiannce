@@ -3,6 +3,7 @@ package com.example.a1809zg.welcome;
 import com.example.frame.Basepresenter;
 import com.example.net.Retrofitmanager;
 import com.example.net.bean.HomeBean;
+import com.example.net.bean.ProductBean;
 import com.example.net.bean.UpdataBean;
 
 import java.util.concurrent.TimeUnit;
@@ -110,6 +111,8 @@ public class Ipresenter extends Basepresenter<Iview> {
                 });
     }
 
+    }
 
 
-}
+
+

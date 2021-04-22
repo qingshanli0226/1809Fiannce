@@ -5,11 +5,11 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.a1809zg.MyView;
 import com.example.a1809zg.R;
 import com.example.a1809zg.welcome.Ipresenter;
 import com.example.a1809zg.welcome.Iview;
 import com.example.frame.Basefragment;
-import com.example.frame.Basepresenter;
 import com.example.frame.CacheMore;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.UpdataBean;
@@ -23,6 +23,7 @@ import java.util.List;
 public class BlankFragment extends Basefragment<Ipresenter> implements Iview {
 
     private Banner ban;
+    private MyView view;
 
     @Override
     public void onHomeData(HomeBean homeBean) {
@@ -49,23 +50,26 @@ public class BlankFragment extends Basefragment<Ipresenter> implements Iview {
 
 
         ban = findViewById(R.id.ban);
+        view = findViewById(R.id.view);
     }
 
     @Override
     protected void initData() {
         HomeBean homeBean = CacheMore.getInstance().getHomeBean();
         HomeBean.ResultBean result = homeBean.getResult();
-        if (BuildConfig.DEBUG) Log.d("BlankFragment", "homeBean:" + homeBean);
+        if (BuildConfig.DEBUG) Log.d("MoneyFragment", "homeBean:" + homeBean);
         List<HomeBean.ResultBean.ImageArrBean> imageArr = result.getImageArr();
         ban.setImages(imageArr);
         ban.setImageLoader(new ImageLoader() {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
-                HomeBean.ResultBean.ImageArrBean a= (HomeBean.ResultBean.ImageArrBean) path;
+                HomeBean.ResultBean.ImageArrBean a = (HomeBean.ResultBean.ImageArrBean) path;
                 String imaurl = a.getIMAURL();
                 Glide.with(context).load(imaurl).into(imageView);
             }
         }).start();
+
+        view.saprogress(50,true);
     }
 
     @Override

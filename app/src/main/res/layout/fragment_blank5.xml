@@ -3,16 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragment.BlankFragment">
-<com.youth.banner.Banner
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:id="@+id/ban"></com.youth.banner.Banner>
-    <com.example.a1809zg.MyView
+    tools:context=".infragment.MoneyFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/view"
-        ></com.example.a1809zg.MyView>
+        android:id="@+id/rv"></androidx.recyclerview.widget.RecyclerView>
+
 
 </LinearLayout>
