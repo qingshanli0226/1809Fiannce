@@ -10,9 +10,12 @@ import android.view.ViewGroup;
 
 import com.example.a1809fiannce.R;
 import com.example.framework.BaseFragment;
+import com.example.framework.view.ToolBar;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 public class MyAssetsFragment extends BaseFragment {
+    private ToolBar toolbar;
+
 
     @Override
     protected int getLayoutId() {
@@ -21,7 +24,7 @@ public class MyAssetsFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        toolbar = (ToolBar) findViewById(R.id.toolbar);
     }
 
     @Override

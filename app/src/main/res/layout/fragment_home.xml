@@ -8,14 +8,25 @@
     android:overScrollMode="always"
     tools:context=".home.HomeFragment">
 
-    <TextView
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/px_100"-->
+<!--        android:background="@color/darkblue"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/customTab_name1"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="@dimen/px_80"></TextView>-->
+
+    <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="@dimen/px_100"
+        android:layout_height="@dimen/px_150"
+        app:titleText="@string/customTab_name1"
+        app:leftIsShow="true"
+        android:id="@+id/toolbar"
         android:background="@color/darkblue"
-        android:gravity="center"
-        android:text="@string/customTab_name1"
-        android:textColor="@color/blue"
-        android:textSize="@dimen/px_80"></TextView>
+        app:leftImage="@mipmap/ic_launcher"
+        ></com.example.framework.view.ToolBar>
+
 
     <com.youth.banner.Banner
         android:id="@+id/bann"

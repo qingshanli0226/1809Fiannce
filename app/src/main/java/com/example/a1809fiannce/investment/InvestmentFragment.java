@@ -18,6 +18,7 @@ import com.example.a1809fiannce.investment.allfinancial.AllfinancialFragment;
 import com.example.a1809fiannce.investment.claCommend.ClaCommendFragment;
 import com.example.a1809fiannce.investment.hotmoney.HotmoneyFragment;
 import com.example.framework.BaseFragment;
+import com.example.framework.view.ToolBar;
 import com.google.android.material.tabs.TabLayout;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
@@ -27,6 +28,7 @@ import java.util.List;
 public class InvestmentFragment extends BaseFragment {
     private TabLayout investmentTab;
     private ViewPager investmentVp;
+    private ToolBar toolbar;
 
     @Override
     protected int getLayoutId() {
@@ -35,6 +37,8 @@ public class InvestmentFragment extends BaseFragment {
 
     @Override
     protected void initView() {
+        toolbar = (ToolBar) findViewById(R.id.toolbar);
+
         investmentTab = (TabLayout) findViewById(R.id.investment_tab);
         investmentVp = (ViewPager) findViewById(R.id.investment_vp);
 

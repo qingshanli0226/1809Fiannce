@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.bumptech.glide.Glide;
@@ -17,6 +18,7 @@ import com.example.a1809fiannce.R;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
 import com.example.framework.view.ProgressView;
+import com.example.framework.view.ToolBar;
 import com.example.net.mode.HomeBean;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 import com.youth.banner.Banner;
@@ -24,6 +26,7 @@ import com.youth.banner.BannerConfig;
 import com.youth.banner.loader.ImageLoader;
 
 public class HomeFragment extends BaseFragment {
+    private ToolBar toolbar;
     private Banner bann;
     private ProgressView pro;
     private TextView homeTitle;
@@ -36,6 +39,7 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initView() {
+        toolbar = (ToolBar) findViewById(R.id.toolbar);
         bann = (Banner) findViewById(R.id.bann);
         pro = (ProgressView) findViewById(R.id.pro);
         homeTitle = (TextView) findViewById(R.id.home_title);
@@ -69,5 +73,11 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void initPresenter() {
 
+    }
+
+    @Override
+    public void onLeftClick() {
+        super.onLeftClick();
+        Toast.makeText(getContext(), "点击了左边的图片", Toast.LENGTH_SHORT).show();
     }
 }

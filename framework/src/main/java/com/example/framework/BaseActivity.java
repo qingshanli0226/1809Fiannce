@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
 
     protected T httpPresenter;

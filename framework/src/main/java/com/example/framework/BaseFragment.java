@@ -9,11 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.view.ToolBar;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
-public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements IFragment {
+public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements IFragment, ToolBar.IToolbarListener {
     protected T httpPresenter;
     protected View mView;
+    protected ToolBar toolBar;
 
     @Nullable
     @Override
@@ -27,6 +29,8 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
+        toolBar=mView.findViewById(R.id.toolbar);
+        toolBar.setToolbarListener(this);
         initPresenter();
         initData();
     }
@@ -54,5 +58,20 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     @Override
     public <T extends View> T findViewById(int resId) {
         return mView.findViewById(resId);
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
     }
 }
