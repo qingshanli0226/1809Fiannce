@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.fiannce.bawei.framework.view.ToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:rightIsShow="true"
+        app:rightImage="@mipmap/mh"
+        app:leftImg="@mipmap/mh"
+        app:leftIsShow="false"
+        app:titleText="首页"
+        android:layout_height="60dp">
+    </com.fiannce.bawei.framework.view.ToolBar>
+
     <TextView
         android:id="@+id/progressTv"
         android:layout_width="wrap_content"
@@ -15,11 +26,11 @@
 
     <com.fiannce.bawei.framework.view.ProgressView
         android:id="@+id/progressView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:textColor="@color/colorPrimary"
         app:circleWith="10"
-        app:background="@mipmap/ic_launcher_round"
+        app:background="@mipmap/mh"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>

@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.framework.manager.CacheManager;
 import com.fiannce.bawei.framework.view.ProgressView;
+import com.fiannce.bawei.framework.view.ToolBar;
 import com.fiannce.bawei.net.mode.HomeBean;
 import com.fiannce.bawei.pay.PayActivity;
 import com.fiannce.bawei.user.LoginActivity;
@@ -37,9 +40,7 @@ public class MainActivity extends BaseActivity {
     protected void initData() {
         HomeBean homeBean = CacheManager.getInstance().getHomeBean();
         progressTv.setText("主页面: "+homeBean.toString());
-
         progressView.saledProgress(20,true);
-
     }
 
     @Override
@@ -53,5 +54,10 @@ public class MainActivity extends BaseActivity {
     public void destroy() {
         super.destroy();
         progressView.destry();
+    }
+
+    @Override
+    public void onRightImgClick() {
+        Toast.makeText(this, "点击了主页的按钮", Toast.LENGTH_SHORT).show();
     }
 }

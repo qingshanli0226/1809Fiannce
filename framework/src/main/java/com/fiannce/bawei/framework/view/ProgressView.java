@@ -2,8 +2,11 @@ package com.fiannce.bawei.framework.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -31,13 +34,16 @@ public class ProgressView extends View {
     private final int CIRCLE_MARGIN = 5;
     private int textColor;
     private int circleWith;
+    private int backgroundId;
 
     public ProgressView(Context context) {//new 一个控件时，会调用该构造方法
-        this(context,null);
+        super(context);
+        init(context,null,0);
     }
 
     public ProgressView(Context context, AttributeSet attrs) {//在布局里声明，findViewById会调用该构造方法
-        this(context, attrs, 0);
+        super(context, attrs);
+        init(context,attrs,0);
     }
 
     public ProgressView(Context context, AttributeSet attrs, int defStyleAttr) {//当布局里有style属性时会调用该构造函数
@@ -52,6 +58,7 @@ public class ProgressView extends View {
         TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.ProgressView);
         textColor = typedArray.getColor(R.styleable.ProgressView_textColor,Color.BLACK);
         circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith,5);
+        backgroundId = typedArray.getResourceId(R.styleable.ProgressView_background,0);
 
         typedArray.recycle();
     }
@@ -108,6 +115,31 @@ public class ProgressView extends View {
         invalidate();
     }
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int realWidth,realHeitht;
+
+        //获取自定义View的测量模式，通过测量模式来判断当前用户在布局里给这个自定义View设置的宽和高是确定值（例如100dp或者match_parent)还是使用的wrap_content
+        //如果是确定值，不用改变，否则的话，给该自定义View设置一个默认的宽度和高度
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        if (widthMode == MeasureSpec.AT_MOST) {//在布局里给这个自定义设置的宽度是wrap_content,那么获取到的测量模式就是AT_MOST,如果是确定值是EXACTLY，
+            // UNSPECIFILED,未指定测量模式，在ListView或者RecyclerView里传的是未指定测量模式
+            realWidth = 50;//如果宽度是wrap_content时，把宽度设置成默认的宽度是50；
+        } else {
+            realWidth = MeasureSpec.getSize(widthMeasureSpec);
+        }
+        if (heightMode == MeasureSpec.AT_MOST) {
+            realHeitht = 50;
+        } else {
+            realHeitht = MeasureSpec.getSize(heightMeasureSpec);
+        }
+
+        //通过该方法可以指定这个控件的大小,它的优先级大于布局里的优先级
+        setMeasuredDimension(realWidth,realHeitht);
+    }
+
     //绘制View，重点实现
     @Override
     protected void onDraw(Canvas canvas) {
@@ -115,6 +147,9 @@ public class ProgressView extends View {
 
         //第一步绘制底部圆形
         //先求出圆心
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),backgroundId);
+        Matrix matrix = new Matrix();
+        canvas.drawBitmap(bitmap,matrix,paint);
         progressViewWidth = getMeasuredWidth();//获取控件的宽度，必须在onMeasure之后再获取
         progressViewHeight = getMeasuredHeight();//获取控件的高度，必须在onMeasure之后再获取
         int centerX = progressViewWidth/2;

@@ -1,19 +1,26 @@
 package com.fiannce.bawei.framework;
 
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.fiannce.bawei.framework.view.ToolBar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener{
 
     protected T httpPresenter;
+    protected ToolBar toolBar;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         initView();
+        toolBar = findViewById(R.id.toolbar);
+        toolBar.setToolbarListener(this);
         initPresenter();
         initData();
     }
@@ -36,5 +43,19 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         if (httpPresenter!=null) {
             httpPresenter.detachView();
         }
+    }
+
+    @Override
+    public void onLeftClick() {
+        finish();
+    }
+
+    @Override
+    public void onRightImgClick() {
+    }
+
+    @Override
+    public void onRightTvClick() {
+
     }
 }
