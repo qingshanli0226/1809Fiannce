@@ -1,60 +1,57 @@
 package com.example.fiannce.fragment;
 
 import android.content.Context;
-import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.bumptech.glide.Glide;
-import com.example.fiannce.HomeCallBack;
 import com.example.fiannce.R;
+import com.example.framework.BaseFragment;
+import com.example.framework.manager.CacheManager;
 import com.example.net.mode.HomeBean;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
 
     private Banner banner;
-    private List<String> list = new ArrayList<>();
 
-    public HomeFragment() {
-        // Required empty public constructor
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_home;
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View inflate = inflater.inflate(R.layout.fragment_home, container, false);
+    protected void initPresenter() {
 
-        banner = (Banner) inflate.findViewById(R.id.banner);
+    }
 
-        HomeBean homeBean = HomeCallBack.getHomeCallback().getHomeBean();
+    @Override
+    protected void initData() {
+        HomeBean homeBean = CacheManager.getInstance().getHomeBean();
+
         List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
+        LogUtils.json(imageArr);
 
-        for (HomeBean.ResultBean.ImageArrBean imageArrBean : imageArr){
-            list.add(imageArrBean.getIMAURL());
-        }
-
-        banner.setImages(list);
+        banner.setImages(imageArr);
         banner.setImageLoader(new ImageLoader() {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
-                String url = (String) path;
-                Glide.with(getActivity()).load(url).into(imageView);
+                HomeBean.ResultBean.ImageArrBean img = (HomeBean.ResultBean.ImageArrBean) path;
+                String imaurl = img.getIMAURL();
+                Glide.with(getContext()).load(imaurl).into(imageView);
             }
         });
-
         banner.start();
-
-        return inflate;
     }
+
+    @Override
+    protected void initView() {
+        banner = (Banner) mView.findViewById(R.id.banner);
+    }
+
 }
