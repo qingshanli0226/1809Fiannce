@@ -1,7 +1,10 @@
 package com.example.gitproject.Invest.manageFinances;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,14 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.framework.BaseFragment;
 import com.example.gitproject.R;
 import com.example.net.bean.ProductBean;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 
 public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter> implements ManageFinancesView {
 
 
     private RecyclerView financesRv;
-    private ProgressBar financesProgress;
     private FinancesAdapter financesAdapter;
+    private TextView financesLamp;
 
     @Override
     protected int getLayoutId() {
@@ -26,9 +30,12 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
 
     @Override
     protected void initView() {
+        ScreenAdapterTools.getInstance().loadView(inflate);
 
         financesRv = (RecyclerView) inflate.findViewById(R.id.finances_rv);
-        financesProgress = (ProgressBar) inflate.findViewById(R.id.finances_progress);
+        financesLamp = (TextView) inflate.findViewById(R.id.finances_lamp);
+
+
         financesAdapter = new FinancesAdapter();
     }
 
@@ -43,6 +50,8 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
         mPresenter.getIvnest();
         financesRv.setLayoutManager(new LinearLayoutManager(getActivity()));
         financesRv.setAdapter(financesAdapter);
+
+        financesLamp.setSelected(true);
     }
 
     @Override
@@ -51,21 +60,41 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
         financesAdapter.notifyDataSetChanged();
 
 
-
     }
-
     @Override
     public void showLoading() {
-        financesProgress.setVisibility(View.VISIBLE);
+        load.setVisibility(View.VISIBLE);
+        if (animationDrawable != null) {
+            animationDrawable.start();
+        }
+
     }
 
     @Override
     public void hideLoading() {
-        financesProgress.setVisibility(View.GONE);
+        if (animationDrawable != null) {
+            animationDrawable.stop();
+        }
+        load.setVisibility(View.GONE);
     }
 
     @Override
     public void showError(String error) {
-        Toast.makeText(getActivity(), ""+error, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "" + error, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClickCenter() {
+
+    }
+
+    @Override
+    public void onClickLeft() {
+
+    }
+
+    @Override
+    public void onClickRight() {
+
     }
 }

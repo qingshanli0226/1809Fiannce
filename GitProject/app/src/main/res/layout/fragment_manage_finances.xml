@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Invest.manageFinances.ManageFinancesFragment">
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/finances_rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    <ProgressBar
+    <com.example.framework.view.ToolBar
+        android:id="@+id/toolbar"
         android:visibility="gone"
-        android:id="@+id/finances_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</LinearLayout>
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/finances_lamp"
+            android:textColor="@color/red"
+            android:textSize="30sp"
+            android:text="@string/finances_lamp"
+            android:singleLine="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:ellipsize="marquee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/finances_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/load"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:background="@drawable/animation_flower"
+        android:layout_width="@dimen/dm_px_300"
+        android:layout_height="@dimen/dm_px_300"/>
+
+</RelativeLayout>

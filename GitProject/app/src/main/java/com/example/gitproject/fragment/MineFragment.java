@@ -34,4 +34,19 @@ public class MineFragment extends BaseFragment {
     protected void initData() {
 
     }
+
+    @Override
+    public void onClickCenter() {
+
+    }
+
+    @Override
+    public void onClickLeft() {
+
+    }
+
+    @Override
+    public void onClickRight() {
+
+    }
 }

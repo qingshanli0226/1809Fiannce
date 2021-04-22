@@ -5,6 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".welcome.WelcomeActivity">
+    <com.example.framework.view.ToolBar
+        android:id="@+id/toolbar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <ImageView
         android:id="@+id/wel_img"
         android:src="@drawable/wel_img"
@@ -15,13 +20,8 @@
         android:id="@+id/countDown"
         android:textColor="#ff0000"
         android:layout_alignParentRight="true"
-        android:layout_margin="30dp"
+        android:layout_margin="@dimen/dm_px_30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <ProgressBar
-        android:id="@+id/wel_progress"
-        android:visibility="gone"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
 </RelativeLayout>

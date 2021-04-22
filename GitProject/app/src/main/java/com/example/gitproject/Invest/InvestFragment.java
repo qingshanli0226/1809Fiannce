@@ -7,6 +7,7 @@ import com.example.framework.BaseFragment;
 import com.example.gitproject.Invest.manageFinances.ManageFinancesFragment;
 import com.example.gitproject.R;
 import com.flyco.tablayout.SlidingTabLayout;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,8 @@ public class InvestFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+//拿到布局填充器返回的view后
+        ScreenAdapterTools.getInstance().loadView(inflate);
         investSliding = (SlidingTabLayout) inflate.findViewById(R.id.invest_sliding);
         investViewpage = (ViewPager) inflate.findViewById(R.id.invest_viewpage);
     }
@@ -41,6 +43,21 @@ public class InvestFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+
+    }
+
+    @Override
+    public void onClickCenter() {
+
+    }
+
+    @Override
+    public void onClickLeft() {
+
+    }
+
+    @Override
+    public void onClickRight() {
 
     }
 }

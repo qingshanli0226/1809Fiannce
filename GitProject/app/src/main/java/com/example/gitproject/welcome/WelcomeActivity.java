@@ -23,11 +23,12 @@ import com.example.framework.manager.CacheManager;
 import com.example.gitproject.R;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.UpdateBean;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements WelcomeView {
 
 
-    private ProgressBar welProgress;
+
     private final int ONE_TASK_FIISH = 0;
     private ImageView welImg;
     private final int COUNT_TIME = 1;
@@ -46,7 +47,11 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
 
     @Override
     public void initView() {
-        welProgress = (ProgressBar) findViewById(R.id.wel_progress);
+        //ScreenAdapterTools.getInstance().reset(this);//如果希望android7.0分屏也适配的话,加上这句
+        //在setContentView();后面加上适配语句
+        ScreenAdapterTools.getInstance().loadView(getWindow().getDecorView());
+
+
         countDown = (TextView) findViewById(R.id.countDown);
         welImg = (ImageView) findViewById(R.id.wel_img);
     }
@@ -83,12 +88,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
 
     @Override
     public void showLoading() {
-        welProgress.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-        welProgress.setVisibility(View.GONE);
     }
 
     @Override
@@ -160,5 +163,20 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     public void destroy() {
         super.destroy();
         handler.removeCallbacksAndMessages(null);
+    }
+
+    @Override
+    public void onClickCenter() {
+
+    }
+
+    @Override
+    public void onClickLeft() {
+
+    }
+
+    @Override
+    public void onClickRight() {
+
     }
 }

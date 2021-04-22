@@ -82,10 +82,25 @@ public class ProgressView extends View {
         typedArray.recycle();
     }
 
+    int w;
+    int h;
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int modeWidth = MeasureSpec.getMode(widthMeasureSpec);
+        int modeHeight = MeasureSpec.getMode(heightMeasureSpec);
+        if(modeWidth == MeasureSpec.AT_MOST){
+            w = 200;
+        } else{
+            w = MeasureSpec.getSize(widthMeasureSpec);
+        }
+        if(modeHeight == MeasureSpec.AT_MOST){
+            h = 200;
+        } else{
+            h = MeasureSpec.getSize(heightMeasureSpec);
 
+        }
+        setMeasuredDimension(w,h);
     }
 
     public void startProgress(int percentage,boolean isStart){

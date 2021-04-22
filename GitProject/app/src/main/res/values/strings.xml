@@ -13,4 +13,12 @@
     <string name="home_year">预期年利率:</string>
     <string name="home_join">立即加入</string>
     <string name="home_company">风险保障金由有道银行监管</string>
+
+
+
+
+    <string name="finances_item_money">产品金额</string>
+    <string name="finances_item_lock">锁定期</string>
+    <string name="finances_item_unit">万</string>
+    <string name="finances_lamp">有道金融豪运当头，首投返现最高1888元</string>
 </resources>

@@ -5,29 +5,30 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.HomeFragment">
-    <RelativeLayout
+    <com.example.framework.view.ToolBar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:background="#919191"
-        android:layout_height="60dp">
-        <TextView
-            android:text="@string/mian_home"
-            android:textColor="#03A9F4"
-            android:textSize="30dp"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </RelativeLayout>
+        app:app_text="@string/mian_home"
+        app:app_text_color="@color/blue"
+        app:app_left_isshow="true"
+        app:app_right_isshow="true"
+        app:app_left_src="@drawable/left"
+        app:app_right_src="@drawable/my_setting_icon"
+        app:app_back_color_toob="@color/mine_black"
+        android:layout_height="wrap_content"/>
+
     <com.youth.banner.Banner
         android:id="@+id/home_banner"
+        android:layout_marginTop="@dimen/dm_px_150"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="@dimen/dm_px_300"/>
     <TextView
         android:id="@+id/home_name"
         android:text="title"
         android:layout_below="@id/home_banner"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="30dp"
+        android:layout_marginTop="@dimen/dm_px_20"
+        android:textSize="@dimen/dm_px_100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
@@ -39,27 +40,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <LinearLayout
-        android:layout_marginTop="@dimen/my_dp_10"
+        android:layout_marginTop="@dimen/dm_px_10"
         android:layout_below="@id/home_name"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
-            android:layout_marginLeft="@dimen/my_dp_10"
+            android:layout_marginLeft="@dimen/dm_px_20"
             android:text="@string/home_one_btn"
             android:background="@drawable/cir_btn"
             android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/dm_px_20"
             android:gravity="center"
             android:layout_height="30dp"/>
         <Button
-            android:layout_marginLeft="@dimen/my_dp_10"
+            android:layout_marginLeft="@dimen/dm_px_10"
+            android:layout_marginTop="@dimen/dm_px_20"
             android:text="@string/home_two_btn"
             android:gravity="center"
             android:background="@drawable/cir_btn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"/>
         <Button
-            android:layout_marginLeft="@dimen/my_dp_10"
+            android:layout_marginLeft="@dimen/dm_px_10"
+            android:layout_marginTop="@dimen/dm_px_20"
             android:text="@string/home_three_btn"
             android:gravity="center"
             android:background="@drawable/cir_btn"
@@ -71,12 +75,13 @@
     <com.example.framework.view.ProgressView
         android:layout_below="@id/home_name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="@dimen/dm_px_150"
         android:id="@+id/home_progress"
-        android:layout_width="150dp"
-        app:app_textsize="50dp"
-        android:layout_height="150dp"/>
+        android:layout_width="@dimen/dm_px_300"
+        app:app_textsize="@dimen/dm_px_50"
+        android:layout_height="@dimen/dm_px_300"/>
     <LinearLayout
+        android:layout_marginTop="@dimen/dm_px_30"
         android:layout_below="@id/home_progress"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -98,16 +103,22 @@
         android:id="@+id/home_pay"
         android:layout_below="@id/home_progress"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/dm_px_120"
         android:background="@drawable/arc_btn"
         android:textColor="#ffffff"
         android:text="@string/home_join"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
+        android:layout_marginTop="@dimen/dm_px_50"
         android:layout_below="@id/home_pay"
         android:layout_centerHorizontal="true"
         android:text="@string/home_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/load"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

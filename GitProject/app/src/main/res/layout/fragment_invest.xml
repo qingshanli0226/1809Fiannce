@@ -6,30 +6,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Invest.InvestFragment">
-
-    <RelativeLayout
+    <com.example.framework.view.ToolBar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:background="#919191"
-        android:layout_height="60dp">
-        <TextView
-            android:text="投资"
-            android:textColor="@color/blue"
-            android:textSize="30dp"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </RelativeLayout>
+        app:app_text="@string/mian_invest"
+        app:app_text_color="@color/blue"
+        app:app_back_color_toob="@color/mine_black"
+        android:layout_height="wrap_content"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dm_px_0"
         android:background="#f1f1f1"
         android:layout_weight="1">
         <com.flyco.tablayout.SlidingTabLayout
             android:id="@+id/invest_sliding"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:tl_divider_color="@color/blue"
-            app:tl_indicator_height="100dp"
+            app:tl_indicator_color="@color/blue"
+            app:tl_indicator_height="@dimen/dm_px_150"
             app:tl_tab_space_equal="true"
             app:tl_textUnselectColor="@color/black"
             app:tl_textSelectColor="@color/red"
@@ -37,11 +32,16 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dm_px_0"
         android:layout_weight="9">
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/invest_viewpage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>
+    <ImageView
+        android:id="@+id/load"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

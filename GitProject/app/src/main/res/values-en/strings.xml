@@ -1,0 +1,48 @@
+<resources>
+<!--    <string name="app_name">GitProject</string>-->
+<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+<!--    <string name="mian_home">Home</string>-->
+<!--    <string name="mian_invest">Investment</string>-->
+<!--    <string name="mian_money">My assets</string>-->
+<!--    <string name="mian_more">More</string>-->
+
+<!--    <string name="home_title">Recommend</string>-->
+<!--    <string name="home_one_btn">Protection of principal and interest</string>-->
+<!--    <string name="home_two_btn">Daily interest</string>-->
+<!--    <string name="home_three_btn">High revenue</string>-->
+<!--    <string name="home_year">Expected annual interest rate:</string>-->
+<!--    <string name="home_join">Join now</string>-->
+<!--    <string name="home_company">风险保障金由有道银行监管</string>-->
+
+
+
+
+<!--    <string name="finances_item_money">Product amount</string>-->
+<!--    <string name="finances_item_lock">Lock in period</string>-->
+<!--    <string name="finances_item_unit">ten thousand</string>-->
+<!--    <string name="finances_lamp">有道金融豪运当头，首投返现最高1888元</string>-->
+
+
+    <string name="app_name">GitProject</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mian_home">首页</string>
+    <string name="mian_invest">投资</string>
+    <string name="mian_money">我的资产</string>
+    <string name="mian_more">更多</string>
+
+    <string name="home_title">推荐</string>
+    <string name="home_one_btn">本息保障</string>
+    <string name="home_two_btn">每日计息</string>
+    <string name="home_three_btn">高额收益</string>
+    <string name="home_year">预期年利率:</string>
+    <string name="home_join">立即加入</string>
+    <string name="home_company">风险保障金由有道银行监管</string>
+
+
+
+
+    <string name="finances_item_money">产品金额</string>
+    <string name="finances_item_lock">锁定期</string>
+    <string name="finances_item_unit">万</string>
+    <string name="finances_lamp">有道金融豪运当头，首投返现最高1888元</string>
+</resources>

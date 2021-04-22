@@ -117,4 +117,18 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    @Override
+    public void onClickCenter() {
+
+    }
+
+    @Override
+    public void onClickLeft() {
+
+    }
+
+    @Override
+    public void onClickRight() {
+
+    }
 }

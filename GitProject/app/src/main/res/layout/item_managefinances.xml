@@ -3,43 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="@dimen/dm_px_20"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dm_px_20">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="@dimen/dm_px_100">
 
                 <TextView
                     android:id="@+id/finances_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="@dimen/dm_px_40"
                     android:text="默认值"
                     android:textColor="@color/black"
                     android:textSize="20dp"></TextView>
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="@dimen/dm_px_30"
+                    android:layout_height="@dimen/dm_px_30"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="@dimen/dm_px_40"
                     android:src="@drawable/right"></ImageView>
-
             </RelativeLayout>
 
             <View
-                android:layout_width="380dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="center"
                 android:background="@color/gray"></View>
@@ -57,19 +58,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/dm_px_20"
+                        android:layout_marginTop="@dimen/dm_px_30"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="产品金额"></TextView>
+                            android:text="@string/finances_item_money"></TextView>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp">
+                            android:layout_marginTop="@dimen/dm_px_10">
 
                             <TextView
                                 android:id="@+id/finances_money"
@@ -81,28 +82,28 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="万"></TextView>
+                                android:text="@string/finances_item_unit"></TextView>
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
-
+                            android:layout_marginTop="@dimen/dm_px_20">
 
 
                             <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="@dimen/dm_px_10"
+                                android:layout_width="@dimen/dm_px_30"
+                                android:layout_height="@dimen/dm_px_30"
+                                android:layout_marginLeft="@dimen/dm_px_10"
                                 android:src="@drawable/product_part1_icon"></ImageView>
 
                             <TextView
                                 android:id="@+id/finances_minTouMoney"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginLeft="@dimen/dm_px_10"
                                 android:text="100"></TextView>
 
                         </LinearLayout>
@@ -113,8 +114,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/dm_px_70"
+                        android:layout_marginTop="@dimen/dm_px_30"
                         android:orientation="vertical">
 
                         <TextView
@@ -126,7 +127,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="5dp">
+                            android:layout_marginTop="@dimen/dm_px_10">
 
                             <TextView
                                 android:id="@+id/finances_yeatRate"
@@ -138,52 +139,46 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="万"></TextView>
+                                android:text="@string/finances_item_unit"></TextView>
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
-
-
-
+                            android:layout_marginTop="@dimen/dm_px_10">
                             <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="@dimen/dm_px_10"
+                                android:layout_width="@dimen/dm_px_30"
+                                android:layout_height="@dimen/dm_px_30"
+                                android:layout_marginLeft="@dimen/dm_px_10"
                                 android:src="@drawable/product_part3_icon"></ImageView>
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginLeft="@dimen/dm_px_10"
                                 android:text="@string/home_one_btn"></TextView>
-
                         </LinearLayout>
-
                     </LinearLayout>
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginLeft="70dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/dm_px_100"
+                        android:layout_marginTop="@dimen/dm_px_30"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="锁定期"></TextView>
+                            android:layout_marginLeft="@dimen/dm_px_10"
+                            android:text="@string/finances_item_lock"></TextView>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="5dp">
+                            android:layout_marginLeft="@dimen/dm_px_40"
+                            android:layout_marginTop="@dimen/dm_px_10">
 
                             <TextView
                                 android:id="@+id/finances_suodingDays"
@@ -195,52 +190,43 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="万"></TextView>
+                                android:text="@string/finances_item_unit"></TextView>
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
-
-
-
+                            android:layout_marginTop="@dimen/dm_px_10">
                             <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="@dimen/dm_px_10"
+
+                                android:layout_width="@dimen/dm_px_40"
+                                android:layout_height="@dimen/dm_px_40"
+                                android:layout_marginLeft="@dimen/dm_px_10"
                                 android:src="@drawable/product_part4_icon"></ImageView>
 
                             <TextView
                                 android:id="@+id/finances_memberNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginLeft="@dimen/dm_px_10"
                                 android:text="100"></TextView>
-
                         </LinearLayout>
-
                     </LinearLayout>
-
                 </RelativeLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center">
-
                     <com.example.framework.view.ProgressView
                         android:id="@+id/finances_progress"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="@dimen/dm_px_150"
+                        android:layout_height="@dimen/dm_px_150"
                         app:app_color="#03A9F4"
-                        app:app_textsize="15dp"></com.example.framework.view.ProgressView>
-
+                        app:app_textsize="@dimen/dm_px_30"></com.example.framework.view.ProgressView>
                 </LinearLayout>
-
             </LinearLayout>
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
