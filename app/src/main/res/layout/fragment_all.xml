@@ -1,26 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".invest.allfinancial.AllFragment"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".invest.allfinancial.AllFragment">
 
-
-    <TextView
+    <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
-        android:textColor="#E96B84"
-        android:text="有道金融壕运当头,首投返现最高达188元"
-        android:lines="1"
-        android:layout_gravity="center"
-        android:background="#ECECEC"
-        android:textSize="30dp"></TextView>
+        android:id="@+id/toolBar"
+        android:visibility="gone"></com.example.framework.view.ToolBar>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/frag_allProduct_rv"></androidx.recyclerview.widget.RecyclerView>
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:textColor="@color/pale_red"
+            android:text="@string/hdyuan"
+
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="10"
+
+            android:background="@color/colorB"
+            android:textSize="@dimen/dp_30"></TextView>
 
 
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frag_allProduct_rv"></androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+   <ProgressBar
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:visibility="gone"
+       android:id="@+id/frag_allProduct_ProgressBar"></ProgressBar>
+
+</RelativeLayout>

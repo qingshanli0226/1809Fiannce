@@ -73,6 +73,24 @@ public class ProgressView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int width = 0;
+        int height =0 ;
+        int widthmode = MeasureSpec.getMode(widthMeasureSpec);
+        int heighthmode = MeasureSpec.getMode(heightMeasureSpec);
+        if (widthmode==MeasureSpec.AT_MOST){
+            width = 200;
+        }else {
+            width =widthMeasureSpec;
+        }
+
+        if (heighthmode==MeasureSpec.AT_MOST){
+            height=200;
+        }else {
+            height =widthMeasureSpec;
+        }
+
+        setMeasuredDimension(width,height);
+
     }
 
     @Override

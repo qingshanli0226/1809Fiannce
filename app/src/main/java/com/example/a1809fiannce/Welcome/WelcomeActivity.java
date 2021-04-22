@@ -127,6 +127,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
                 progressDialog.setCanceledOnTouchOutside(false);
                 progressDialog.show();
             });
+            builder.setCancelable(false);
             builder.show();
         }
 

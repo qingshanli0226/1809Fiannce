@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">1809Fiannce</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_original_version">current version：1.0</string>
+    <string name="welocome_count_down">count_down:3 | jump over</string>
+    <string name="frag_home">home</string>
+    <string name="expected_annual_interest_rate">Expected annual interest rate：</string>
+    <string name="risk_insurance_is_supervised_by_BBB_0_Bank">Risk insurance is supervised by BBB 0 Bank</string>
+    <string name="amount_of_product">Amount of product</string>
+    <string name="thousand">thousand</string>
+    <string name="the_current_interest">The current interest</string>
+    <string name="lockup_period">lockup period</string>
+    <string name="hdyuan">Youdao gold financing trenches take the lead, the first investment back cash up to 188 yuan</string>
+    <string name="all_financial">All financial</string>
+    <string name="recommend_financial">Recommend a financial</string>
+    <string name="hot_financial">Hot money</string>
+</resources>

@@ -15,28 +15,28 @@
 
 
     <TextView
-        android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_30"
         android:background="@drawable/greet_text_round"
         android:textSize="15dp"
-        android:text="倒计时:3 | 跳过"
+        android:text="@string/welocome_count_down"
         android:layout_alignParentRight="true"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         android:gravity="center"
         android:id="@+id/act_greet_down"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp"></TextView>
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_10"></TextView>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="当前版本：1.0"
-        android:textColor="#ffffff"
+        android:textSize="@dimen/text_dp_16"
+        android:text="@string/my_original_version"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="@dimen/dp_100"
         android:gravity="center"
         android:id="@+id/act_greet_versionName"></TextView>
 

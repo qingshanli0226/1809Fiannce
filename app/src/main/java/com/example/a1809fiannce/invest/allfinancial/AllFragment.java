@@ -1,5 +1,7 @@
 package com.example.a1809fiannce.invest.allfinancial;
 
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,6 +19,9 @@ import java.util.List;
 public class AllFragment extends BaseFragment<AllPresenter> implements IAllView {
 
     private RecyclerView fragAllProductRv;
+    private ProgressBar fragAllProductProgressBar;
+
+
 
     @Override
     protected int getLayoutId() {
@@ -38,6 +43,7 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
     protected void initView() {
         fragAllProductRv = (RecyclerView) findViewById(R.id.frag_allProduct_rv);
         fragAllProductRv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        fragAllProductProgressBar = (ProgressBar) findViewById(R.id.frag_allProduct_ProgressBar);
     }
 
     @Override
@@ -51,12 +57,14 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
 
     @Override
     public void showLoading() {
-
+        fragAllProductProgressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hileLoading() {
-
+        getActivity().runOnUiThread(() -> {
+            fragAllProductProgressBar.setVisibility(View.GONE);
+        });
     }
 
     @Override

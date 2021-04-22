@@ -11,15 +11,20 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
+import com.example.framework.view.ToolBar;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
+
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener {
 
     protected P httpPresenter;
     private View inflate;
+    protected ToolBar toolBar;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         inflate = inflater.inflate(getLayoutId(), container, false);
+        ScreenAdapterTools.getInstance().loadView(inflate);
         return inflate;
     }
 
@@ -27,6 +32,8 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
+//        toolBar = findViewById(R.id.toolbar);
+//        toolBar.setToolbarListener(this);
         initPresenter();
         initData();
     }
@@ -55,5 +62,20 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
             httpPresenter.detachView();
             httpPresenter =null;
         }
+    }
+
+    @Override
+    public void onLeftImgClick() {
+
+    }
+
+    @Override
+    public void onCenterTitleClick() {
+
+    }
+
+    @Override
+    public void onRoghtImgClick() {
+
     }
 }

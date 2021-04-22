@@ -5,15 +5,22 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity {
+import com.example.framework.view.ToolBar;
+import com.yatoooon.screenadaptation.ScreenAdapterTools;
+
+public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener{
 
     protected P httpPresenter;
-
+    protected ToolBar toolBar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+
+        ScreenAdapterTools.getInstance().loadView(getWindow().getDecorView());
         initView();
+//        toolBar = findViewById(R.id.toolbar);
+//        toolBar.setToolbarListener(this);
         initPresenter();
         initData();
 
@@ -39,5 +46,20 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
             httpPresenter.detachView();
             httpPresenter =null;
         }
+    }
+
+    @Override
+    public void onLeftImgClick() {
+
+    }
+
+    @Override
+    public void onCenterTitleClick() {
+
+    }
+
+    @Override
+    public void onRoghtImgClick() {
+
     }
 }

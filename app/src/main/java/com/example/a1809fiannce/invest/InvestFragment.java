@@ -31,9 +31,10 @@ public class InvestFragment extends BaseFragment {
         fragments.add(new RecommendFragment());
         fragments.add(new HotFragment());
         ArrayList<String> strings = new ArrayList<>();
-        strings.add("全部理财");
-        strings.add("推荐理财");
-        strings.add("热门理财");
+        strings.add(getResources().getString(R.string.all_financial));
+        strings.add(getResources().getString(R.string.recommend_financial));
+        strings.add(getResources().getString(R.string.hot_financial));
+
         InvestAdapter fragmentAdapter = new InvestAdapter(getActivity().getSupportFragmentManager(), fragments, strings);
         fragInvestVp.setAdapter(fragmentAdapter);
         fragInvestTab.setupWithViewPager(fragInvestVp);

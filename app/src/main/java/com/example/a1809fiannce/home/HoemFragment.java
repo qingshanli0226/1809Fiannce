@@ -4,6 +4,8 @@ import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.viewpager.widget.ViewPager;
+
 import com.bumptech.glide.Glide;
 import com.example.a1809fiannce.R;
 import com.example.framework.BaseFragment;
@@ -15,6 +17,7 @@ import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.loader.ImageLoader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,6 +27,9 @@ public class HoemFragment extends BaseFragment {
     private ProgressView fragHomePv;
     private TextView fragHomeTitle;
     private TextView homeFragYearRate;
+    private TextView fragHomeBannerText;
+
+
 
 
     @Override
@@ -35,6 +41,13 @@ public class HoemFragment extends BaseFragment {
     protected void initData() {
 
         HoemBean hoemBean = CacheManager.getInstance().getHoemBean();
+
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("分享砍学费");
+        strings.add("人脉总动员");
+        strings.add("想不到你是这样的app");
+        strings.add("购物节,爱不单行");
+
         List<HoemBean.ResultBean.ImageArrBean> imageArr = hoemBean.getResult().getImageArr();
         fragHomeBanner.setImages(imageArr);
         fragHomeBanner.setImageLoader(new ImageLoader() {
@@ -46,11 +59,22 @@ public class HoemFragment extends BaseFragment {
         });
         fragHomeBanner.setBannerAnimation(Transformer.CubeOut);
         fragHomeBanner.setIndicatorGravity(BannerConfig.RIGHT);
+        fragHomeBanner.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                fragHomeBannerText.setText(strings.get(position)+"");
+            }
+        });
         fragHomeBanner.start();
+
+
+
         HoemBean.ResultBean.ProInfoBean proInfo = hoemBean.getResult().getProInfo();
         fragHomePv.beginProgressAnimation(Integer.parseInt(proInfo.getProgress()), true);
         fragHomeTitle.setText(proInfo.getName()+"");
         homeFragYearRate.setText(proInfo.getYearRate()+"");
+
 
     }
 
@@ -66,5 +90,6 @@ public class HoemFragment extends BaseFragment {
 
         fragHomeTitle = (TextView) findViewById(R.id.frag_home_title);
         homeFragYearRate = (TextView) findViewById(R.id.home_frag_yearRate);
+        fragHomeBannerText = (TextView) findViewById(R.id.frag_home_banner_text);
     }
 }

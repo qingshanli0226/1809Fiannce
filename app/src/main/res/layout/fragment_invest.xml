@@ -6,24 +6,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".invest.InvestFragment"
     android:orientation="vertical">
+    <com.example.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:id="@+id/toolBar"
+        android:visibility="gone"></com.example.framework.view.ToolBar>
+
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:textSize="30dp"
+        android:layout_height="@dimen/dp_45"
+        android:textSize="@dimen/dp_30"
         android:text="投资"
-        android:textColor="#27B8EE"
+        android:textColor="@color/sky_blue"
         android:layout_gravity="center"
         android:gravity="center"
-        android:background="#142732"></TextView>
+        android:background="@color/darktwo_blue"></TextView>
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_50"
         android:id="@+id/frag_invest_tab"
-        app:tabTextColor="#DD000000"
-        app:tabSelectedTextColor="#ff0000"
+        app:tabTextColor="@color/pale_black"
+        app:tabSelectedTextColor="@color/red"
         app:tabBackground="@drawable/inves_tab_background"
-        app:tabIndicatorHeight="0dp"></com.google.android.material.tabs.TabLayout>
+        app:tabIndicatorHeight="@dimen/dp_0"></com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"

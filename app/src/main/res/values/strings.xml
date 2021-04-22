@@ -2,4 +2,18 @@
     <string name="app_name">1809Fiannce</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_original_version">当前版本：1.0</string>
+    <string name="welocome_count_down">倒计时:3 | 跳过</string>
+    <string name="frag_home">首页</string>
+    <string name="expected_annual_interest_rate">预期年利率：</string>
+    <string name="risk_insurance_is_supervised_by_BBB_0_Bank">风险保障金由有道银行监管</string>
+    <string name="amount_of_product">产品金额</string>
+    <string name="thousand">万</string>
+    <string name="the_current_interest">本期保息</string>
+    <string name="lockup_period">锁定期</string>
+    <string name="hdyuan">有道金融壕运当头,首投返现最高达188元</string>
+    <string name="all_financial">全部理财</string>
+    <string name="recommend_financial">推荐理财</string>
+    <string name="hot_financial">热门理财</string>
+
 </resources>

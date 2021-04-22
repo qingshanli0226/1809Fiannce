@@ -18,6 +18,7 @@ import com.example.a1809fiannce.home.HoemFragment;
 import com.example.a1809fiannce.invest.InvestFragment;
 import com.example.a1809fiannce.tab.MyCustomTabEntity;
 import com.example.framework.BaseActivity;
+import com.example.framework.view.NoScrollViewPager;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 public class MainActivity extends BaseActivity{
 
     private CommonTabLayout actHomeCt;
-    private ViewPager actHomeVp;
+    private NoScrollViewPager actHomeVp;
 
     @Override
     protected int getLayoutId() {
@@ -53,14 +54,6 @@ public class MainActivity extends BaseActivity{
 
         FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), fragments);
         actHomeVp.setAdapter(fragmentAdapter);
-
-        actHomeVp.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return true;
-            }
-        });
-
 
         actHomeVp.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
             @Override
@@ -94,7 +87,7 @@ public class MainActivity extends BaseActivity{
     @Override
     protected void initView() {
         actHomeCt = (CommonTabLayout) findViewById(R.id.act_home_ct);
-        actHomeVp = (ViewPager) findViewById(R.id.act_home_vp);
+        actHomeVp = (NoScrollViewPager) findViewById(R.id.act_home_vp);
     }
 
 
