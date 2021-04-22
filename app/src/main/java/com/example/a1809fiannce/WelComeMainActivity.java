@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a1809fiannce.update.UpdatePresenter;
+import com.example.formwork.model.AllBean;
 import com.example.formwork.model.HomeBean;
 import com.example.formwork.model.UpdateBean;
 import com.example.network.BaseActivity;
@@ -98,15 +99,22 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
     }
 
     @Override
+    public void AllData(AllBean allBean) {
+
+    }
+
+    @Override
     public void ShowLoading() {
-        Log.i("load", "ShowLoading: 111");
+
         bar.setVisibility(View.VISIBLE);
+
     }
 
     @Override
     public void HideLoading() {
 
         bar.setVisibility(View.GONE);
+
     }
 
     @Override

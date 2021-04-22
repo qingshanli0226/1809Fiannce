@@ -3,21 +3,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".fragment.HomeFragment">
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:background="#142732"-->
+<!--        android:layout_height="50dp">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="主页"-->
+<!--            android:textSize="30dp"-->
+<!--            android:textColor="#03A9F4"></TextView>-->
+<!--    </androidx.appcompat.widget.Toolbar>-->
+    <com.example.a1809fiannce.view.TobView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:backgroundColor="#142732"
+        app:text="首页"
+        app:textColor="#03A9F4"
+        app:left_show="false"
+        app:right_show="false"
+        android:id="@+id/tob1"
+        ></com.example.a1809fiannce.view.TobView>
 
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:id="@+id/bar"></com.youth.banner.Banner>
-    <RelativeLayout
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
-        <com.example.a1809fiannce.view.CusView
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_height="40dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="名字"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textSize="30dp"
+                android:id="@+id/name"></TextView>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/recommend"
+
+            android:layout_gravity="center"
+            android:layout_weight="0.5"></ImageView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></TextView>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"></TextView>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="本息保障"
+                android:gravity="center"
+                android:background="@mipmap/home_attribute_bg"
+                ></TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:background="@mipmap/home_attribute_bg"
+                android:text="每日计息"></TextView>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="高额收益"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:background="@mipmap/home_attribute_bg"
+                ></TextView>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:id="@+id/cus"></com.example.a1809fiannce.view.CusView>
+            android:layout_weight="1"></TextView>
+        </LinearLayout>
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_height="130dp">
+        <com.example.a1809fiannce.view.CusView
+            android:layout_width="200dp"
+            android:layout_height="130dp"
+            android:layout_centerInParent="true"
+            app:textSize="30"
+            app:Color="#E91E63"
+            android:id="@+id/cus"></com.example.a1809fiannce.view.CusView>
     </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="aaaa"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:id="@+id/expect"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"></TextView>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:id="@+id/buy"
+            android:background="@mipmap/home"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:text="立即购买"></Button>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"></TextView>
+    </LinearLayout>
 </LinearLayout>

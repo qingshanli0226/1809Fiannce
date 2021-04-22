@@ -3,16 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".fragment.InvestFragment">
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:background="#142732">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="投资"-->
+<!--            android:textSize="30dp"-->
+<!--            android:textColor="#03A9F4"></TextView>-->
+
+<!--    </androidx.appcompat.widget.Toolbar>-->
+    <com.example.a1809fiannce.view.TobView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:text="投资"
+        app:textColor="#03A9F4"
+        app:backgroundColor="#142732"
+        app:left_show="false"
+        app:right_show="false"
+        ></com.example.a1809fiannce.view.TobView>
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/com_tab"></com.flyco.tablayout.CommonTabLayout>
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="vertical"
-       android:id="@+id/vp"></LinearLayout>
+        app:tl_textUnselectColor="#000000"
+        app:tl_textSelectColor="#ea2f31"
+        android:id="@+id/tab"></com.flyco.tablayout.CommonTabLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:id="@+id/vp1"></LinearLayout>
 
 </LinearLayout>

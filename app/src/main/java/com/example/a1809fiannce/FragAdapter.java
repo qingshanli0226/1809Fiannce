@@ -1,4 +1,6 @@
-package com.example.a1809fiannce.fragment;
+package com.example.a1809fiannce;
+
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -7,11 +9,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
-public class Fragment extends FragmentPagerAdapter {
+public class FragAdapter extends FragmentPagerAdapter {
     private List<androidx.fragment.app.Fragment> list;
     private List<String> strings;
 
-    public Fragment(@NonNull FragmentManager fm, List<androidx.fragment.app.Fragment> list, List<String> strings) {
+    public FragAdapter(@NonNull FragmentManager fm, List<androidx.fragment.app.Fragment> list, List<String> strings) {
         super(fm);
         this.list = list;
         this.strings = strings;
@@ -33,4 +35,10 @@ public class Fragment extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return strings.get(position);
     }
+
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+
+    }
+
 }

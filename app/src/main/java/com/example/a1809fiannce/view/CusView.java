@@ -1,6 +1,7 @@
 package com.example.a1809fiannce.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.LogUtils;
+import com.example.a1809fiannce.R;
 
 public class CusView extends View {
     private Paint paint = new Paint();
@@ -26,12 +28,13 @@ public class CusView extends View {
     private int progress1;
     private int FILG=0;
     private int RADUS_MARGIN=15;
+    private int color;
     public CusView(Context context) {
-        super(context,null);
+        this(context,null);
     }
 
     public CusView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs,0);
+        this(context, attrs,0);
     }
 
     public CusView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -40,11 +43,33 @@ public class CusView extends View {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CusView);
+        color = typedArray.getColor(R.styleable.CusView_Color, Color.BLACK);
+        Log.i("zx", "init: "+color);
+        int anInt = typedArray.getInt(R.styleable.CusView_textSize, 20);
+
+        typedArray.recycle();
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int progressWith,progressHigh;
+        int withMode=MeasureSpec.getMode(widthMeasureSpec);
+        int highMode=MeasureSpec.getMode(heightMeasureSpec);
+
+        if (withMode==MeasureSpec.AT_MOST){
+            progressWith=70;
+        }else {
+            progressWith=MeasureSpec.getSize(widthMeasureSpec);
+        }
+
+        if (highMode==MeasureSpec.AT_MOST){
+            progressHigh=70;
+        }else {
+            progressHigh=MeasureSpec.getSize(heightMeasureSpec);
+        }
+        setMeasuredDimension(progressWith,progressHigh);
     }
 
     @Override
@@ -98,7 +123,7 @@ public class CusView extends View {
 
         //动画外圈
         RectF rectF = new RectF(getMeasuredWidth()/2-radius,getMeasuredHeight()/2-radius,getMeasuredWidth()/2+radius,getMeasuredHeight()/2+radius);
-        paint.setColor(Color.RED);
+        paint.setColor(color);
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(15);

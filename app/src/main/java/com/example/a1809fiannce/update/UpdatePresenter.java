@@ -1,7 +1,10 @@
 package com.example.a1809fiannce.update;
 
+import android.util.Log;
+
 import com.example.a1809fiannce.CallBack;
 import com.example.formwork.RetrofitManager;
+import com.example.formwork.model.AllBean;
 import com.example.formwork.model.HomeBean;
 import com.example.formwork.model.UpdateBean;
 import com.example.network.BasePresenter;
@@ -28,7 +31,6 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
                         addView(disposable);
-                        iView.ShowLoading();
                     }
                 })
                 .doFinally(new Action() {
@@ -40,7 +42,8 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                 .subscribe(new Observer<HomeBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-
+                        Log.i("zx", "onSubscribe: 开始");
+                        iView.ShowLoading();
                     }
 
                     @Override
@@ -74,7 +77,6 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
                         addView(disposable);
-                        iView.ShowLoading();
                     }
                 })
                 .doFinally(new Action() {
@@ -86,12 +88,13 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                 .subscribe(new Observer<UpdateBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-
+                        iView.ShowLoading();
                     }
 
                     @Override
                     public void onNext(@NonNull UpdateBean updateBean) {
                             if (iView!=null){
+
                                 iView.UpdateData(updateBean);
                             }
                     }
@@ -101,6 +104,46 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                         if (iView!=null){
                             iView.Error(e.getMessage());
                         }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+    public void AllData(){
+        RetrofitManager.getRetrofit()
+                .AllData()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        addView(disposable);
+                    }
+                })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        iView.HideLoading();
+                    }
+                })
+                .subscribe(new Observer<AllBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                        iView.ShowLoading();
+                    }
+
+                    @Override
+                    public void onNext(@NonNull AllBean allBean) {
+                        iView.AllData(allBean);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        iView.Error(e.getMessage());
                     }
 
                     @Override

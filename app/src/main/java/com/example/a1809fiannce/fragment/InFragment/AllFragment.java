@@ -3,64 +3,75 @@ package com.example.a1809fiannce.fragment.InFragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.a1809fiannce.CallBack;
 import com.example.a1809fiannce.R;
+import com.example.a1809fiannce.fragment.InFragment.allfrag.AllAdapter;
+import com.example.a1809fiannce.update.UpdatePresenter;
+import com.example.formwork.model.AllBean;
+import com.example.formwork.model.HomeBean;
+import com.example.formwork.model.UpdateBean;
+import com.example.network.BaseFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AllFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class AllFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class AllFragment extends BaseFragment<UpdatePresenter> implements CallBack {
+    private RecyclerView re;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public AllFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AllFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AllFragment newInstance(String param1, String param2) {
-        AllFragment fragment = new AllFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    @Override
+    protected void initData() {
+        mPresenter=new UpdatePresenter(this);
+        mPresenter.AllData();
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    protected void initView() {
+        re = (RecyclerView) BaseView.findViewById(R.id.re);
+        re.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_all, container, false);
+    protected int FindLayout() {
+        return R.layout.fragment_all;
+    }
+
+    @Override
+    public void HomeData(HomeBean homeBean) {
+
+    }
+
+    @Override
+    public void UpdateData(UpdateBean updateBean) {
+
+    }
+
+    @Override
+    public void AllData(AllBean allBean) {
+        Log.i("zx", "AllData: "+allBean.toString());
+        AllAdapter allAdapter = new AllAdapter(R.layout.item_all, allBean.getResult());
+        re.setAdapter(allAdapter);
+        
+    }
+
+    @Override
+    public void ShowLoading() {
+
+    }
+
+    @Override
+    public void HideLoading() {
+
+    }
+
+    @Override
+    public void Error(String error) {
+        Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
     }
 }

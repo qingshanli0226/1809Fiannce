@@ -1,5 +1,6 @@
 package com.example.formwork;
 
+import com.example.formwork.model.AllBean;
 import com.example.formwork.model.HomeBean;
 import com.example.formwork.model.UpdateBean;
 
@@ -12,5 +13,7 @@ public interface Api {
 
     @GET("atguigu/json/P2PInvest/update.json")
     Observable<UpdateBean> UpdateData();
+    @GET("atguigu/json/P2PInvest/product.json")
+    Observable<AllBean> AllData();
 
 }
