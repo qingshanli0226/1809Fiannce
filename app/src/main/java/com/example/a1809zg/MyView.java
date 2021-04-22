@@ -24,6 +24,8 @@ public class MyView extends View {
     private int progressAngle=0;//绘制的角度
     private int color;
     private int index;
+    private int measuredWidth;
+    private int measuredHeight;
     public MyView(Context context) {
 
         this(context,null);
@@ -99,12 +101,29 @@ public class MyView extends View {
         invalidate();
     }
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int widthmode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightmode = MeasureSpec.getMode(heightMeasureSpec);
+        if (widthmode==MeasureSpec.AT_MOST){
+            measuredWidth=70;
+        }else {
+            measuredWidth=MeasureSpec.getSize(widthMeasureSpec);
+        }
+        if (heightmode==MeasureSpec.AT_MOST){
+            measuredHeight=70;
+        }else {
+            measuredHeight=MeasureSpec.getSize(heightMeasureSpec);
+        }
+        setMeasuredDimension(measuredWidth,measuredHeight);
+    }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
+         measuredWidth = getMeasuredWidth();
+         measuredHeight = getMeasuredHeight();
         int centerX=measuredWidth/2;
         int centerY=measuredHeight/2;
         int radius=(measuredWidth<measuredHeight?measuredWidth/2:measuredHeight/2);
