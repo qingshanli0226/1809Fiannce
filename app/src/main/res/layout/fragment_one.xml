@@ -6,7 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.OneFragment">
-
+    <com.finance.framework.view.ToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        rightImage="true"
+        leftImg="@mipmap/left"
+        leftIsShow="false"
+        titleText="投资"
+        android:layout_height="60dp">
+    </com.finance.framework.view.ToolBar>
     <com.flyco.tablayout.SlidingTabLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

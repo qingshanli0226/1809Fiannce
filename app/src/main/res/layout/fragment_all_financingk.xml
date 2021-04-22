@@ -12,6 +12,7 @@
         android:textColor="#f00"
         android:singleLine="true"
         android:ellipsize="marquee"
+        android:layout_below="@+id/toolbar"
         android:textSize="25dp"
         android:id="@+id/all_txt"
         ></com.finance.zg6.ui.view.MyTextView>

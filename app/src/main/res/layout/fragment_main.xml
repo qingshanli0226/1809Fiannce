@@ -5,11 +5,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.MainFragment">
-
+    <com.finance.framework.view.ToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        rightImage="true"
+        leftImg="@mipmap/left"
+        leftIsShow="false"
+        titleText="首页"
+        android:layout_height="60dp">
+    </com.finance.framework.view.ToolBar>
     <!-- TODO: Update blank fragment layout -->
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:id="@+id/banner"></com.youth.banner.Banner>
     <RelativeLayout
         android:layout_width="match_parent"

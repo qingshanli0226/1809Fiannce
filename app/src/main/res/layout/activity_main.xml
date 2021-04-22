@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <com.finance.framework.view.ToolBar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        app:rightIsShow="true"
-        app:leftImg="@mipmap/left"
-        app:leftIsShow="false"
-        app:titleText="首页"
-        android:layout_height="60dp">
-    </com.finance.framework.view.ToolBar>
+
+<!--    <com.finance.framework.view.ToolBar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        app:rightImage="true"-->
+<!--        app:leftImg="@mipmap/left"-->
+<!--        app:leftIsShow="false"-->
+<!--        app:titleText="首页"-->
+<!--        android:layout_height="60dp">-->
+<!--    </com.finance.framework.view.ToolBar>-->
 
     <LinearLayout
         android:layout_width="match_parent"

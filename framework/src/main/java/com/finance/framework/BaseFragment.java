@@ -10,10 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.finance.framework.view.ToolBar;
+
 
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     protected  T httpPresenter;
     protected View mView;
+    private ToolBar toolBar;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        toolBar = mView.findViewById(R.id.toolbar);
         initView();
         initPresenter();
         initData();
