@@ -26,7 +26,6 @@ import com.example.network.PageView;
 
 public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implements CallBack{
     private TextView miao;
-    private ProgressBar bar;
     private final int ONE_TASK=0;
     private final int ALL_TASK=1;
     private final int DELAY_INDEX=2;
@@ -73,13 +72,12 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
     @Override
     protected void initView() {
         miao = (TextView) findViewById(R.id.miao);
-        bar = (ProgressBar) findViewById(R.id.bar);
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
         miao.setText(count+"秒");
     }
 
     @Override
-    protected int FindLayout() {
+    protected int FindLayout1() {
         return R.layout.activity_wel_come_main;
     }
 
@@ -89,6 +87,7 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
         HomeFinsh=true;
         HomeCallBack.getHomeCallBack().setHomeBean(homeBean);
         handler.sendEmptyMessage(ONE_TASK);
+        pageView.ShowSuccess();
     }
 
     @Override
@@ -106,15 +105,14 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
 
     @Override
     public void ShowLoading() {
+            pageView.ShowLoad();
+//        bar.setVisibility(View.VISIBLE);
 
-        bar.setVisibility(View.VISIBLE);
 
     }
 
     @Override
     public void HideLoading() {
-
-        bar.setVisibility(View.GONE);
 
     }
 

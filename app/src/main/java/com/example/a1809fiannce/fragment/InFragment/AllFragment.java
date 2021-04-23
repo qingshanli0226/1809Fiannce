@@ -38,7 +38,7 @@ public class AllFragment extends BaseFragment<UpdatePresenter> implements CallBa
     }
 
     @Override
-    protected int FindLayout() {
+    protected int FindLayout1() {
         return R.layout.fragment_all;
     }
 

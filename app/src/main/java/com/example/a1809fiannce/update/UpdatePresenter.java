@@ -9,6 +9,8 @@ import com.example.formwork.model.HomeBean;
 import com.example.formwork.model.UpdateBean;
 import com.example.network.BasePresenter;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -25,6 +27,7 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
     public void HomeData(){
         RetrofitManager.getRetrofit()
                 .HomeData()
+                .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -54,6 +57,7 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                     public void onNext(@NonNull HomeBean homeBean) {
                         if (iView!=null){
                             iView.HomeData(homeBean);
+                            Log.i("zx", "HomeData: "+homeBean.toString());
                         }
 
                     }
@@ -77,6 +81,7 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
     public void UpdateData(){
         RetrofitManager.getRetrofit()
                 .UpdateData()
+                .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -127,6 +132,7 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
     public void AllData(){
         RetrofitManager.getRetrofit()
                 .AllData()
+                .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {

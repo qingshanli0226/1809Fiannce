@@ -14,18 +14,22 @@ import org.xmlpull.v1.XmlPullParser;
 public abstract   class BaseFragment<P extends BasePresenter> extends Fragment {
     protected View BaseView;
     protected P mPresenter;
+    private PageView pageView;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return BaseView=inflater.inflate((XmlPullParser) pageView,container,false);
+        BaseView = pageView =new PageView(getContext()) {
+            @Override
+            protected int FindLayout() {
+                return FindLayout1();
+            }
+        };
+
+        return BaseView;
     }
-    private PageView pageView=new PageView(getContext()) {
-        @Override
-        protected int FindLayout() {
-            return FindLayout();
-        }
-    };
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -42,7 +46,7 @@ public abstract   class BaseFragment<P extends BasePresenter> extends Fragment {
 
     protected abstract void initView();
 
-    protected abstract int FindLayout();
+    protected abstract int FindLayout1();
 
 
 

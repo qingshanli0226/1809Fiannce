@@ -8,25 +8,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity {
     protected P mPresenter;
+    protected PageView pageView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        pageView=new PageView(this) {
+            @Override
+            protected int FindLayout() {
+                return FindLayout1();
+            }
+        };
         setContentView(pageView);
         initView();
         initData();
 
     }
-    protected PageView pageView=new PageView(this) {
-        @Override
-        protected int FindLayout() {
-            return FindLayout();
-        }
-    };
+
     protected abstract void initData();
 
     protected abstract void initView();
 
-    protected abstract int FindLayout();
+    protected abstract int FindLayout1();
 
     @Override
     protected void onDestroy() {

@@ -43,6 +43,7 @@ public abstract class PageView extends FrameLayout {
         SuccessView = LayoutInflater.from(context).inflate(FindLayout(), null);
         addView(SuccessView,layoutParams);
 
+        ShowSuccess();
     }
 
     protected abstract int FindLayout();

@@ -46,6 +46,7 @@ public class HomeFragment extends Fragment {
         name = inflate.findViewById(R.id.name);
         tob1 = inflate.findViewById(R.id.tob1);
         HomeBean homeBean = HomeCallBack.getHomeCallBack().getHomeBean();
+        Log.i("aa", "onCreateView: "+homeBean.toString());
         List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
         for (HomeBean.ResultBean.ImageArrBean imageArrBean : imageArr) {
             list.add(imageArrBean.getImaurl());
