@@ -21,5 +21,7 @@
     <string name="interest">The current interest</string>
     <string name="financial">Youdao financial</string>
     <string name="version">current version</string>
+    <string name="download">Download the latest version</string>
+    <string name="requests">Fix some bugs and optimize network requests!</string>
 
 </resources>

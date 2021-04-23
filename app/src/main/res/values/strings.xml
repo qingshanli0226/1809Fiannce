@@ -21,5 +21,7 @@
     <string name="interest">本期保息</string>
     <string name="financial">有道金融</string>
     <string name="version">当前版本：</string>
+    <string name="download">下载最新版本</string>
+    <string name="requests">下载最新版本</string>
 
 </resources>
