@@ -22,13 +22,6 @@
         android:textSize="15sp"
         android:id="@+id/contentTv"/>
 
-    <ProgressBar
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/progressBar"
-        android:layout_centerInParent="true"
-        android:visibility="gone"/>
-
     <TextView
         android:layout_width="30dp"
         android:layout_height="30dp"

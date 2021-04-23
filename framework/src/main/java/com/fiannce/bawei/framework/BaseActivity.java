@@ -3,6 +3,7 @@ package com.fiannce.bawei.framework;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.fiannce.bawei.framework.view.LoadingPage;
 import com.fiannce.bawei.framework.view.ToolBar;
 
 import androidx.annotation.Nullable;
@@ -12,18 +13,27 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 
     protected T httpPresenter;
     protected ToolBar toolBar;
+    protected boolean isUseLoading = true;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+        loadingPage = new LoadingPage(this) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return getLayoutId();
+            }
+        };
+        setContentView(loadingPage);
         initView();
         toolBar = findViewById(R.id.toolbar);
         toolBar.setToolbarListener(this);
         initPresenter();
         initData();
     }
+
+    protected LoadingPage loadingPage;
 
     protected abstract int getLayoutId();
 
