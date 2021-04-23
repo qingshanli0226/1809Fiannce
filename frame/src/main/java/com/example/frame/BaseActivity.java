@@ -7,11 +7,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class BaseActivity<T extends Basepresenter>extends AppCompatActivity{
     protected T mPresenter;
-
+    protected LoadingPage loadingPage;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+        loadingPage=new LoadingPage(this) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return getLayoutId();
+            }
+        };
+        setContentView(loadingPage);
         initView();
         initPresenter();
         initData();

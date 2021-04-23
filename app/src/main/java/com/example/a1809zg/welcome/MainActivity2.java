@@ -78,6 +78,7 @@ private Ipresenter ipresenter;
         UpdateFinsh=true;
         bean = updataBean;
         handler.sendEmptyMessage(ONE_TASK);
+        loadingPage.showSuccessView();
     }
 
 
@@ -107,12 +108,11 @@ private Ipresenter ipresenter;
 
     @Override
     public void showLoaing() {
-        progressBar.setVisibility(View.VISIBLE);
+        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
-        progressBar.setVisibility(View.GONE);
 
     }
 
