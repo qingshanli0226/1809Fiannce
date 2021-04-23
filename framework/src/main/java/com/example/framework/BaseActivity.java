@@ -8,22 +8,30 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framework.myview.LoadingPage;
 import com.example.framework.myview.ToolBar;
 
 public abstract   class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView, ToolBar.IToolbarListener {
     protected P mPresenter;
     private ToolBar toolBar;
+    protected boolean isUserLoading=true;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getbandLayout());
+        loadingPage=new LoadingPage(this) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return getbandLayout();
+            }
+        };
+        setContentView(loadingPage);
         initView();
         initPresenter();
         initData();
-
-
     }
 
+
+    protected LoadingPage loadingPage;
      public void initPresenter(){};
 
     public void initData(){};

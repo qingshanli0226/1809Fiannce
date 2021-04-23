@@ -19,7 +19,6 @@ import com.example.net.bean.HomeBean;
 import com.example.net.bean.VersionBean;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements WelComeView {
-    private android.widget.ProgressBar pro;
     private android.widget.TextView countdowntv;
 
     private final int ONE_TASK_FINISH = 0;
@@ -38,6 +37,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
         return R.layout.activity_welcome2;
     }
 
+
+
     @Override
     public void initPresenter() {
         mPresenter = new WelcomePresenter(this);
@@ -53,7 +54,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     public void initView() {
         //向上顶  全屏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        pro = (ProgressBar) findViewById(R.id.pro);
         countdowntv = (TextView) findViewById(R.id.countdowntv);
 
         handler.sendEmptyMessageDelayed(DELAT_INDEX, DELAY);//发送倒计时  handler
@@ -78,12 +78,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
 
     @Override
     public void showLoading() {
-        pro.setVisibility(View.VISIBLE);
+        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
-        pro.setVisibility(View.INVISIBLE);
+        loadingPage.showSuccessView();
     }
 
     @Override

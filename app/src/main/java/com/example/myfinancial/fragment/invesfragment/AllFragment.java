@@ -42,12 +42,12 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements InVesVi
 
     @Override
     public void showLoading() {
-
+        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
-
+        loadingPage.showSuccessView();
     }
 
     @Override

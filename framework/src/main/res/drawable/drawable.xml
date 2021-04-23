@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/wc_ac_01">1</item>
+    <item android:drawable="@drawable/wc_ac_02">2</item>
+    <item android:drawable="@drawable/wc_ac_03">3</item>
+    <item android:drawable="@drawable/wc_ac_04">4</item>
+    <item android:drawable="@drawable/wc_ac_05">5</item>
+    <item android:drawable="@drawable/wc_ac_06">6</item>
+    <item android:drawable="@drawable/wc_ac_07">7</item>
+    <item android:drawable="@drawable/wc_ac_08">8</item>
+    <item android:drawable="@drawable/wc_ac_09">9</item>
+    <item android:drawable="@drawable/wc_ac_10">10</item>
+    <item android:drawable="@drawable/wc_ac_11">11</item>
+    <item android:drawable="@drawable/wc_ac_12">12</item>
+    <item android:drawable="@drawable/wc_ac_13">13</item>
+    <item android:drawable="@drawable/wc_ac_14">14</item>
+    <item android:drawable="@drawable/wc_ac_15">15</item>
+    <item android:drawable="@drawable/wc_ac_16">16</item>
+
+</selector>
