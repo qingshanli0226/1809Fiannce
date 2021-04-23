@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.frame_library.view.ToBar
 
 interface IView {
     fun showTaos(meang: String)
@@ -47,19 +48,25 @@ abstract class BaseActitvty <P :IPresneter>: AppCompatActivity(), IActivity {
     }
 
     override fun showLodin() {
-        Toast.makeText(this, "正在加载", Toast.LENGTH_LONG).show()
+
     }
 
     override fun hideLodin() {
-        Toast.makeText(this, "加载完毕", Toast.LENGTH_LONG).show()
+
     }
 
 }
 
-abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(){
+abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(),ToBar.OnClickListener{
+
     protected val mPresenter:P by lazy {
         setPresenter();
     }
+    private val mToBar: ToBar by lazy {
+        initToBar().setonClickListener(this)
+    }
+
+    abstract fun initToBar(): ToBar
 
     protected abstract fun setPresenter():P
 
@@ -78,7 +85,7 @@ abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(){
     }
 
     override fun showLodin() {
-        Toast.makeText(activity, "正在加载", Toast.LENGTH_LONG).show()
+
     }
 
     override fun showTaos(meang: String) {
@@ -86,7 +93,7 @@ abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(){
     }
 
     override fun hideLodin() {
-        Toast.makeText(activity, "加载完毕", Toast.LENGTH_LONG).show()
+
     }
 
     override fun onDestroy() {

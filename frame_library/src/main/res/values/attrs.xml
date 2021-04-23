@@ -5,4 +5,9 @@
         <attr name="progress" format="integer"/>
         <attr name="star" format="boolean"/>
     </declare-styleable>
+    <declare-styleable name="ToBar">
+        <attr name="title" format="string"/>
+        <attr name="left_show" format="boolean"/>
+        <attr name="right_show" format="boolean"/>
+    </declare-styleable>
 </resources>

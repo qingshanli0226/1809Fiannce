@@ -20,7 +20,7 @@ class ProgressView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int):V
     private var textcolor:Int?=null
     private var Star:Boolean?=null
     private var progress:Int?=null
-
+    private var animator:ValueAnimator?=null
     constructor(context: Context?) : this(context,null)
     constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs,0)
 
@@ -51,16 +51,16 @@ class ProgressView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int):V
      */
      fun Animation(){
         if (Star!!) {
-            var animator = ValueAnimator.ofFloat(0f, progress!!.toFloat())
-            animator.addUpdateListener {
+            animator = ValueAnimator.ofFloat(0f, progress!!.toFloat())
+            animator!!.addUpdateListener {
                 Star=false
                 var t = it.animatedValue as Float
 
                 this.progress=t.toInt()
                 invalidate()
             }
-            animator.duration=3*1000
-            animator.start()
+            animator!!.duration=3*1000
+            animator!!.start()
         }
     }
 
@@ -113,4 +113,8 @@ class ProgressView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int):V
         Animation()
     }
 
+    fun destroy(){
+        animator!!.cancel();
+        animator=null
+    }
 }
