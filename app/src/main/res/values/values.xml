@@ -20,9 +20,11 @@
     <dimen name="px_100">100px</dimen>
     <dimen name="px_140">140px</dimen>
     <dimen name="px_150">150px</dimen>
+    <dimen name="px_200">200px</dimen>
     <dimen name="px_300">300px</dimen>
     <dimen name="px_380">380px</dimen>
     <dimen name="px_400">400px</dimen>
+    <dimen name="px_500">500px</dimen>
     <dimen name="px_600">600px</dimen>
     <dimen name="px_700">700px</dimen>
     <dimen name="px_750">750px</dimen>

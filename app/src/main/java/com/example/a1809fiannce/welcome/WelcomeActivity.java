@@ -30,12 +30,14 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
-    private TextView text;
+//    private TextView text;
     private ProgressBar pro;
     private RelativeLayout re;
     private TextView time;
     private PackageManager packageManager;
     private int D_code;
+    private TextView versiontext;
+    private AlphaAnimation alphaAnimation;
 
     private boolean TIME=false;
     private boolean HOME=false;
@@ -96,7 +98,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         handler.sendEmptyMessage(1);
 
-        text.setText(homeBean.toString());
+//        text.setText(homeBean.toString());
     }
 
     @Override
@@ -117,9 +119,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initView() {
+        versiontext = (TextView) findViewById(R.id.versiontext);
         time = (TextView) findViewById(R.id.time);
         re = (RelativeLayout) findViewById(R.id.re);
-        text = (TextView) findViewById(R.id.text);
+//        text = (TextView) findViewById(R.id.text);
         pro = (ProgressBar) findViewById(R.id.pro);
     }
 
@@ -132,7 +135,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         D_code = getCode();
 
-        AlphaAnimation alphaAnimation = new AlphaAnimation(0f, 1f);
+        CharSequence text = getResources().getText(R.string.version);
+        versiontext.setText(text.toString()+D_code+".0");
+
+        alphaAnimation = new AlphaAnimation(0f, 1f);
 
         alphaAnimation.setInterpolator(new LinearInterpolator());
         alphaAnimation.setDuration(2000);
@@ -149,12 +155,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void showLoading() {
-        pro.setVisibility(View.VISIBLE);
+//        pro.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-        pro.setVisibility(View.GONE);
+//        pro.setVisibility(View.GONE);
     }
 
     @Override
@@ -211,5 +217,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        alphaAnimation.cancel();
+        handler.removeCallbacksAndMessages(null);
     }
 }

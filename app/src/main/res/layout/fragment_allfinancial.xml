@@ -6,6 +6,11 @@
     android:orientation="vertical"
     tools:context=".investment.allfinancial.AllfinancialFragment">
 
+    <com.example.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_0"
+        android:id="@+id/toolbar"></com.example.framework.view.ToolBar>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/px_100"

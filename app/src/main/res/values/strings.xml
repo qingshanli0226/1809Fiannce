@@ -19,5 +19,7 @@
     <string name="lockup">锁定期</string>
     <string name="myriad">万</string>
     <string name="interest">本期保息</string>
+    <string name="financial">有道金融</string>
+    <string name="version">当前版本：</string>
 
 </resources>

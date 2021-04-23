@@ -7,16 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".welcome.WelcomeActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment"
-        android:id="@+id/text"
-        android:textSize="@dimen/px_50"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/start_background"
+        android:scaleType="fitXY"></ImageView>
 
     <ProgressBar
         android:layout_width="@dimen/px_150"
@@ -31,8 +26,35 @@
         android:text="倒计时：3"
         android:textSize="@dimen/px_50"
         android:layout_alignParentRight="true"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:layout_margin="@dimen/px_50"
         android:id="@+id/time"></TextView>
+
+    <ImageView
+        android:layout_width="@dimen/px_300"
+        android:layout_height="@dimen/px_300"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/px_300"
+        android:src="@mipmap/app_icon"></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/financial"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px_100"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/px_600"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:id="@+id/versiontext"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/px_50"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/px_380"
+        android:text="@string/version"></TextView>
 
 </RelativeLayout>

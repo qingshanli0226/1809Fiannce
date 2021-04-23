@@ -19,5 +19,7 @@
     <string name="lockup">lockup period</string>
     <string name="myriad"> myriad</string>
     <string name="interest">The current interest</string>
+    <string name="financial">Youdao financial</string>
+    <string name="version">current version</string>
 
 </resources>

@@ -80,4 +80,10 @@ public class HomeFragment extends BaseFragment {
         super.onLeftClick();
         Toast.makeText(getContext(), "点击了左边的图片", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        pro.destroy();
+    }
 }

@@ -183,4 +183,8 @@ public class ProgressView extends View {
         paint.getTextBounds(content, 0, content.length(), rect);
         canvas.drawText(content, progressViewWidth / 2 - rect.width() / 2, progressViewHeight / 2 + rect.height() / 2, paint);
     }
+
+    public void destroy(){
+        handler.removeCallbacksAndMessages(null);
+    }
 }
