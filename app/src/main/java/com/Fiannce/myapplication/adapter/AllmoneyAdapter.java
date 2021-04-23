@@ -1,10 +1,11 @@
-package com.Fiannce.myapplication.adapter;
+package com.fiannce.myapplication.adapter;
 
 import androidx.annotation.Nullable;
 
-import com.Fiannce.myapplication.R;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.fiannce.myapplication.R;
 import com.fiannce.net.mode.AllMoneyBean;
 
 import java.util.List;

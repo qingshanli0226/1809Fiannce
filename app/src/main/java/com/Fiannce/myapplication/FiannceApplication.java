@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication;
+package com.fiannce.myapplication;
 
 import android.app.Application;
 

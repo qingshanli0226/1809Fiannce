@@ -1,7 +1,7 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package com.Fiannce.myapplication;
+package com.fiannce.myapplication;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");

@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication.fragment.home;
+package com.fiannce.myapplication.fragment.home;
 
 
 import android.content.Context;
@@ -11,9 +11,10 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.Fiannce.myapplication.R;
+
 import com.bumptech.glide.Glide;
 import com.fiannce.framework.manager.CacheManager;
+import com.fiannce.myapplication.R;
 import com.fiannce.net.mode.HomeBean;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
@@ -27,7 +28,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
 
-    private com.Fiannce.myapplication.fragment.home.customView customView;
+    private customView customView;
     private Banner homeBanner;
     private TextView homeTv1;
 

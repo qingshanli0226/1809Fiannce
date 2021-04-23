@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication;
+package com.fiannce.myapplication;
 
 
 import android.widget.RadioButton;
@@ -7,13 +7,14 @@ import android.widget.RadioGroup;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.Fiannce.myapplication.fragment.home.HomeFragment;
-import com.Fiannce.myapplication.fragment.investment.InvestmentFragment;
+
 import com.Fiannce.myapplication.fragment.more.MoreFragment;
 import com.Fiannce.myapplication.fragment.property.PropertyFragment;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.fiannce.framework.BaseActivity;
 import com.fiannce.framework.manager.CacheManager;
+import com.fiannce.myapplication.fragment.home.HomeFragment;
+import com.fiannce.myapplication.fragment.investment.InvestmentFragment;
 import com.fiannce.net.mode.HomeBean;
 
 @Route(path = "/main/MainActivity")

@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication.fragment.investment.money.allmoeny;
+package com.fiannce.myapplication.fragment.investment.money.allmoeny;
 
 
 import android.os.Bundle;
@@ -12,9 +12,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Fiannce.myapplication.R;
-import com.Fiannce.myapplication.adapter.AllmoneyAdapter;
+
+
 import com.fiannce.framework.BaseFragment;
+import com.fiannce.myapplication.R;
+import com.fiannce.myapplication.adapter.AllmoneyAdapter;
 import com.fiannce.net.mode.AllMoneyBean;
 import com.google.gson.Gson;
 

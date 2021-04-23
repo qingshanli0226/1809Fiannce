@@ -28,7 +28,7 @@
 16
 17    <application
 17-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:5:5-23:19
-18        android:name="com.Fiannce.myapplication.FiannceApplication"
+18        android:name="com.fiannce.myapplication.FiannceApplication"
 18-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:6:9-43
 19        android:allowBackup="true"
 19-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:7:9-35
@@ -46,7 +46,7 @@
 26        android:testOnly="true"
 27        android:theme="@style/AppTheme" >
 27-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:9-40
-28        <activity android:name="com.Fiannce.myapplication.welcome.WelcomeActivity" >
+28        <activity android:name="com.fiannce.myapplication.welcome.WelcomeActivity" >
 28-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:9-19:20
 28-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:19-58
 29            <intent-filter>
@@ -60,7 +60,7 @@
 32-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:27-74
 33            </intent-filter>
 34        </activity>
-35        <activity android:name="com.Fiannce.myapplication.MainActivity" >
+35        <activity android:name="com.fiannce.myapplication.MainActivity" >
 35-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:9-22:20
 35-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:19-47
 36        </activity>

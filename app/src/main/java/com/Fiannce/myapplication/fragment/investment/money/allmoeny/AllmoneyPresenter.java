@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication.fragment.investment.money.allmoeny;
+package com.fiannce.myapplication.fragment.investment.money.allmoeny;
 
 import com.fiannce.framework.BasePresenter;
 import com.fiannce.net.RetrofitCreator;

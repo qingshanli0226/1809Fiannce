@@ -199,10 +199,10 @@
         </LinearLayout>
 
 
-        <com.Fiannce.myapplication.fragment.home.customView
+        <com.fiannce.myapplication.fragment.home.customView
             android:layout_width="80dp"
             android:layout_height="match_parent"
-            android:text="50"></com.Fiannce.myapplication.fragment.home.customView>
+            android:text="50"></com.fiannce.myapplication.fragment.home.customView>
 
     </LinearLayout>
 

@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication.fragment.home;
+package com.fiannce.myapplication.fragment.home;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -10,7 +10,6 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import static com.blankj.utilcode.util.CrashUtils.init;
 
 public class customView extends View {
 

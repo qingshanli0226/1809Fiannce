@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication.fragment.investment;
+package com.fiannce.myapplication.fragment.investment;
 
 
 import android.os.Bundle;
@@ -9,12 +9,11 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.Fiannce.myapplication.R;
-
-import com.Fiannce.myapplication.fragment.investment.money.allmoeny.AllmoneyFragment;
-import com.Fiannce.myapplication.fragment.investment.money.HotFragment;
-import com.Fiannce.myapplication.fragment.investment.money.RecommendFragment;
+import com.fiannce.myapplication.R;
 import com.fiannce.myapplication.adapter.Vpadapter;
+import com.fiannce.myapplication.fragment.investment.money.HotFragment;
+import com.fiannce.myapplication.fragment.investment.money.RecommendFragment;
+import com.fiannce.myapplication.fragment.investment.money.allmoeny.AllmoneyFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
-package com.Fiannce.myapplication.welcome;
+package com.fiannce.myapplication.welcome;
 
 import com.fiannce.framework.BasePresenter;
+import com.fiannce.myapplication.welcome.IWelcomeView;
 import com.fiannce.net.RetrofitCreator;
 import com.fiannce.net.mode.AllMoneyBean;
 import com.fiannce.net.mode.HomeBean;

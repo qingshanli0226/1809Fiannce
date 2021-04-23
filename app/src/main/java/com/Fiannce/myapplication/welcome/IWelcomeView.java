@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication.welcome;
+package com.fiannce.myapplication.welcome;
 
 import com.fiannce.framework.IBaseView;
 import com.fiannce.net.mode.AllMoneyBean;

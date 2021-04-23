@@ -1,22 +1,18 @@
-package com.Fiannce.myapplication.welcome;
+package com.fiannce.myapplication.welcome;
 
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
-import com.Fiannce.myapplication.R;
+
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.fiannce.framework.BaseActivity;
 import com.fiannce.framework.manager.CacheManager;
-import com.fiannce.net.mode.AllMoneyBean;
+import com.fiannce.myapplication.R;
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.net.mode.VersionBean;
 

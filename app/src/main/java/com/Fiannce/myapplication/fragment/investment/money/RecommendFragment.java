@@ -1,4 +1,4 @@
-package com.Fiannce.myapplication.fragment.investment.money;
+package com.fiannce.myapplication.fragment.investment.money;
 
 
 import android.os.Bundle;
@@ -9,7 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.Fiannce.myapplication.R;
+import com.fiannce.myapplication.R;
+
 
 /**
  * A simple {@link Fragment} subclass.

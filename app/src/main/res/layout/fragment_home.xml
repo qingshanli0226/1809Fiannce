@@ -49,11 +49,11 @@
     >
 
 </LinearLayout>
-    <com.Fiannce.myapplication.fragment.home.customView
+    <com.fiannce.myapplication.fragment.home.customView
         android:id="@+id/custom_view"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_gravity="center"></com.Fiannce.myapplication.fragment.home.customView>
+        android:layout_gravity="center"></com.fiannce.myapplication.fragment.home.customView>
 
     <TextView
         android:layout_width="match_parent"
