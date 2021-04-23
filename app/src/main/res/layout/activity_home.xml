@@ -3,12 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.example.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:id="@+id/toolbar"
+        android:visibility="gone"></com.example.framework.view.ToolBar>
 
-    <com.example.framework.view.NoScrollViewPager
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_marginBottom="@dimen/dp_61"
-        android:id="@+id/act_home_vp"></com.example.framework.view.NoScrollViewPager>
+        android:id="@+id/act_home_ll"></LinearLayout>
 
 
     <View

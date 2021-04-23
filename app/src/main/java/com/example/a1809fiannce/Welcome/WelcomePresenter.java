@@ -11,9 +11,9 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class WelcomePresenter extends BasePresenter<WelcomeView> {
+public class WelcomePresenter extends BasePresenter<IWelcomeView> {
 
-    public WelcomePresenter(WelcomeView welcomeView) {
+    public WelcomePresenter(IWelcomeView welcomeView) {
         attachView(welcomeView);
     }
 

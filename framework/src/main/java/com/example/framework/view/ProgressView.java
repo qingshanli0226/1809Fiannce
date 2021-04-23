@@ -160,4 +160,12 @@ public class ProgressView extends View {
         canvas.drawText(text, progressX - rect.width() / 2, progressY+rect.height()/2, paint);
 
     }
+
+    public void destroy(){
+        handler.removeCallbacksAndMessages(null);
+    }
+
+
+
+
 }

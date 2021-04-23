@@ -2,7 +2,6 @@ package com.example.a1809fiannce.Welcome;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
@@ -18,15 +17,13 @@ import androidx.annotation.NonNull;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.BarUtils;
-import com.blankj.utilcode.util.LogUtils;
-import com.example.a1809fiannce.MainActivity;
 import com.example.a1809fiannce.R;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
 import com.example.net.model.HoemBean;
 import com.example.net.model.VersionBean;
 
-public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements WelcomeView{
+public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
 
     private PackageInfo pi = null;
@@ -53,13 +50,14 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
             super.handleMessage(msg);
         }
     };
-
+    private AlphaAnimation alphaAnimation;
+    private VersionBean versionBean;
+    private String AROUT_MAINACTIVITY = "/main/MainActivity";
 
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
-
 
 
     @Override
@@ -73,18 +71,19 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
 
     @Override
     protected void initPresenter() {
-        httpPresenter= new WelcomePresenter(this);
-        httpPresenter.getServerVersion();
-        httpPresenter.getHomeData();
+        httpPresenter = new WelcomePresenter(this);
     }
 
 
     @Override
     protected void initData() {
-        AlphaAnimation alphaAnimation = new AlphaAnimation(0f, 1f);
+        httpPresenter.getServerVersion();
+        httpPresenter.getHomeData();
+        alphaAnimation = new AlphaAnimation(0f, 1f);
         alphaAnimation.setDuration(2000);
         alphaAnimation.setInterpolator(new LinearInterpolator());
         actGreetRl.startAnimation(alphaAnimation);
+
 
         /**
          * 获取对象
@@ -95,7 +94,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-        actGreetVersionName.setText("当前版本：" + getVersionName());
+        actGreetVersionName.setText(getResources().getText(R.string.current_version) + getVersionName());
 
         countDown();
     }
@@ -107,21 +106,17 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
         }
     }
 
-
-
-
     private void addAlertDialogBuilder() {
         if (versionCode > getVersionCode()) {
-
             AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
-            builder.setTitle("下载最新版本");
-            builder.setMessage("解决—些bug,优化网络请求!");
-            builder.setNegativeButton("取消", (dialogInterface, i) -> {
+            builder.setTitle(getResources().getString(R.string.download_the_latest_version));
+            builder.setMessage(versionBean.getResult().getDesc());
+            builder.setNegativeButton(getResources().getText(R.string.no), (dialogInterface, i) -> {
 //                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-                ARouter.getInstance().build("/main/MainActivity").withString("","").navigation();
+                ARouter.getInstance().build(AROUT_MAINACTIVITY).withString("", "").navigation();
                 finish();
             });
-            builder.setPositiveButton("确定", (dialogInterface, i) -> {
+            builder.setPositiveButton(getResources().getText(R.string.yes), (dialogInterface, i) -> {
                 ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                 progressDialog.setCanceledOnTouchOutside(false);
@@ -144,6 +139,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     @Override
     public void onWelcomeData(VersionBean versionBean) {
         if (versionBean.getCode() == 200) {
+            this.versionBean = versionBean;
             versionCode = versionBean.getResult().getVersionCode();
             switchVersions = true;
             start();
@@ -166,20 +162,19 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     }
 
 
-
     @Override
     public void showLoading() {
 
     }
 
     @Override
-    public void hileLoading() {
+    public void hideLoading() {
 
     }
 
     @Override
     public void Error(String error) {
-        Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "" + error, Toast.LENGTH_SHORT).show();
     }
 
 
@@ -187,4 +182,13 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         return true;
     }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        handler.removeCallbacksAndMessages(null);
+        alphaAnimation.cancel();
+    }
+
+
 }

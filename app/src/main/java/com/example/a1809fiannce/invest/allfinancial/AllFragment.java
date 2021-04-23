@@ -22,7 +22,6 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
     private ProgressBar fragAllProductProgressBar;
 
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_all;
@@ -30,20 +29,19 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
 
     @Override
     protected void initData() {
+        httpPresenter.getAllProductData();
 
     }
 
     @Override
     protected void initPresenter() {
         httpPresenter = new AllPresenter(this);
-        httpPresenter.getAllProductData();
     }
 
     @Override
     protected void initView() {
         fragAllProductRv = (RecyclerView) findViewById(R.id.frag_allProduct_rv);
         fragAllProductRv.setLayoutManager(new LinearLayoutManager(getActivity()));
-        fragAllProductProgressBar = (ProgressBar) findViewById(R.id.frag_allProduct_ProgressBar);
     }
 
     @Override
@@ -57,18 +55,16 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
 
     @Override
     public void showLoading() {
-        fragAllProductProgressBar.setVisibility(View.VISIBLE);
+        loadingPage.showTransparencyLoadingView();
     }
 
     @Override
-    public void hileLoading() {
-        getActivity().runOnUiThread(() -> {
-            fragAllProductProgressBar.setVisibility(View.GONE);
-        });
+    public void hideLoading() {
+        loadingPage.showSucessView();
     }
 
     @Override
     public void Error(String error) {
-        Toast.makeText(getActivity(), "错误" + error, Toast.LENGTH_SHORT).show();
+        loadingPage.showErrorView(error.trim());
     }
 }

@@ -8,20 +8,10 @@
     android:orientation="vertical">
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40"
-        android:id="@+id/toolBar"
-        android:visibility="gone"></com.example.framework.view.ToolBar>
-
-
-    <TextView
-        android:layout_width="match_parent"
         android:layout_height="@dimen/dp_45"
-        android:textSize="@dimen/dp_30"
-        android:text="投资"
-        android:textColor="@color/sky_blue"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="@color/darktwo_blue"></TextView>
+        android:id="@+id/toolbar"
+        app:wp_CenterTitle="@string/investment"
+        ></com.example.framework.view.ToolBar>
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"

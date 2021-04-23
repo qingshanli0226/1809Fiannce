@@ -3,6 +3,7 @@ package com.example.a1809fiannce.home;
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.viewpager.widget.ViewPager;
 
@@ -80,7 +81,6 @@ public class HoemFragment extends BaseFragment {
 
     @Override
     protected void initPresenter() {
-
     }
 
     @Override
@@ -91,5 +91,17 @@ public class HoemFragment extends BaseFragment {
         fragHomeTitle = (TextView) findViewById(R.id.frag_home_title);
         homeFragYearRate = (TextView) findViewById(R.id.home_frag_yearRate);
         fragHomeBannerText = (TextView) findViewById(R.id.frag_home_banner_text);
+    }
+
+    @Override
+    public void onLeftImgClick() {
+        Toast.makeText(getActivity(), "退出", Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        fragHomePv.destroy();
     }
 }

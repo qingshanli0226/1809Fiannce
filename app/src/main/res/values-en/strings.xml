@@ -15,4 +15,11 @@
     <string name="all_financial">All financial</string>
     <string name="recommend_financial">Recommend a financial</string>
     <string name="hot_financial">Hot money</string>
+    <string name="investment">investment</string>
+    <string name="download_the_latest_version">Download the latest version</string>
+    <string name="no">NO</string>
+    <string name="yes">YES</string>
+    <string name="current_version">current version</string>
+    <string name="my_assets">my assets</string>
+    <string name="even_more">even more</string>
 </resources>

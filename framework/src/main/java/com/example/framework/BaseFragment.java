@@ -11,29 +11,35 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener {
 
     protected P httpPresenter;
-    private View inflate;
+    private View rootview;
     protected ToolBar toolBar;
-
+    protected LoadingPage loadingPage;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        inflate = inflater.inflate(getLayoutId(), container, false);
-        ScreenAdapterTools.getInstance().loadView(inflate);
-        return inflate;
+
+         rootview = loadingPage = new LoadingPage(getActivity()) {
+            @Override
+            protected int getSucessLayout() {
+                return getLayoutId();
+            }
+        };
+        return rootview;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
-//        toolBar = findViewById(R.id.toolbar);
-//        toolBar.setToolbarListener(this);
+        toolBar = findViewById(R.id.toolbar);
+        toolBar.setToolbarListener(this);
         initPresenter();
         initData();
     }
@@ -47,7 +53,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     protected abstract void initView();
 
     public <T extends View> T findViewById(@IdRes int id) {
-        return inflate.findViewById(id);
+        return rootview.findViewById(id);
     }
 
 

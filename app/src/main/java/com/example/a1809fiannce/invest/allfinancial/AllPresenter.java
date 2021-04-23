@@ -25,6 +25,7 @@ public class AllPresenter extends BasePresenter<IAllView> {
                 .getAllProduct()
                 .subscribeOn(Schedulers.io())
                 .delay(2000, TimeUnit.MILLISECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
@@ -37,10 +38,9 @@ public class AllPresenter extends BasePresenter<IAllView> {
                     @Override
                     public void run() throws Exception {
                         if (iView != null)
-                            iView.hileLoading();
+                        iView.hideLoading();
                     }
                 })
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<AllProductBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
