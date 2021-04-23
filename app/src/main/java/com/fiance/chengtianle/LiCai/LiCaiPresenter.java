@@ -10,6 +10,8 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public class LiCaiPresenter extends BasePresenter<ILiCaiView> {
@@ -23,6 +25,19 @@ public class LiCaiPresenter extends BasePresenter<ILiCaiView> {
                 .getLiCaiData()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        add(disposable);
+                        iView.showLoading();
+                    }
+                })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        iView.hideLoading();
+                    }
+                })
                 .subscribe(new Observer<LcBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {

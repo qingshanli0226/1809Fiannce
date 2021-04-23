@@ -34,6 +34,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
         contentTv.setText(homeBean.toString());
+        loadingPage.showSuccessView();
         homeFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
     }
@@ -41,6 +42,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void onVersionData(VersionBean versionBean) {
         Toast.makeText(this, "获取到版本信息"+versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
+        loadingPage.showSuccessView();
         versionFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
     }
@@ -73,6 +75,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void showLoading() {
       progressBar.setVisibility(View.VISIBLE);
+        loadingPage.showTransparentLoadingView();
     }
 
     @Override
@@ -113,7 +116,13 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void showError(String error) {
-        Toast.makeText(this, "请求出现错误:"+error, Toast.LENGTH_SHORT).show();
+        loadingPage.showTransparentLoadingView();
+
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
         handler.removeCallbacksAndMessages(null);
     }
 }

@@ -1,5 +1,6 @@
 package com.fiance.chengtianle.Fragment;
 
+import android.os.PowerManager;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,6 +28,7 @@ public class aFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiVie
     public void onLiCaiData(LcBean lcBean) {
         Toast.makeText(getContext(), lcBean.toString(), Toast.LENGTH_SHORT).show();
      list.addAll(lcBean.getResult());
+     loadingPage.showSuccessView();
      myAdapter.notifyDataSetChanged();
     }
 
@@ -43,6 +45,8 @@ public class aFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiVie
 
     @Override
     protected void initData() {
+        showLoading();
+
         liCaiPresenter.getLiCaiData1();
     }
 
@@ -57,7 +61,8 @@ public class aFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiVie
 
     @Override
     public void showLoading() {
-
+        Toast.makeText(getActivity(), "1121", Toast.LENGTH_SHORT).show();
+        loadingPage.showLoadingView();
     }
 
     @Override
@@ -67,6 +72,6 @@ public class aFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiVie
 
     @Override
     public void showError(String error) {
-
+        loadingPage.showTransparentLoadingView();
     }
 }

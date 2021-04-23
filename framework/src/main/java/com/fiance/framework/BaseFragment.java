@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.fiance.framework.MyView.LoadingPage;
+
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     protected  T httpPresenter;
     protected View mbaseView;
@@ -25,10 +27,17 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return mbaseView=inflater.inflate(getLayoutId(),container,false);
+
+        mbaseView= loadingPage = new LoadingPage(getContext()) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return getLayoutId();
+            }
+        };
+        return mbaseView;
     }
 
-
+    protected LoadingPage loadingPage;
     protected abstract int getLayoutId();
     protected abstract void initPresenter();
     protected abstract void initData();
