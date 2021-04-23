@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
@@ -16,11 +17,17 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     protected T httpPresenter;
     protected View mView;
     protected ToolBar toolBar;
+    protected LoadingPage loadingPage;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mView=inflater.inflate(getLayoutId(),container,false);
+        mView=loadingPage=new LoadingPage(getContext()) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return getLayoutId();
+            }
+        };
         ScreenAdapterTools.getInstance().loadView(mView);
         return mView;
     }

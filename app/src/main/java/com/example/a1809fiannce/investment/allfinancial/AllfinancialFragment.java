@@ -21,7 +21,7 @@ import java.util.List;
 
 public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> implements IAllfinancial {
     private RecyclerView allfinancialRv;
-    private List<AllfinancialBean.ResultBean> list=new ArrayList<>();
+    private List<AllfinancialBean.ResultBean> list = new ArrayList<>();
 
     @Override
     protected int getLayoutId() {
@@ -40,7 +40,7 @@ public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> im
 
     @Override
     protected void initPresenter() {
-        httpPresenter=new AllfinancialPresenter(this);
+        httpPresenter = new AllfinancialPresenter(this);
     }
 
     @Override
@@ -55,16 +55,16 @@ public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> im
 
     @Override
     public void showLoading() {
-
+        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
-
+        loadingPage.showSuccessView();
     }
 
     @Override
     public void Error(String error) {
-
+        loadingPage.showError(error);
     }
 }

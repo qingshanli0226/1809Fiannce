@@ -156,17 +156,21 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void showLoading() {
 //        pro.setVisibility(View.VISIBLE);
+        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
 //        pro.setVisibility(View.GONE);
+        loadingPage.showSuccessView();
     }
 
     @Override
     public void Error(String error) {
         LogUtils.d(error);
         Toast.makeText(this, "请求错误："+error, Toast.LENGTH_SHORT).show();
+
+        loadingPage.showError(error);
     }
 
     public void getTime() {
