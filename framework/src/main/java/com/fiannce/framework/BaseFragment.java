@@ -9,15 +9,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
+import com.fiannce.framework.view.LoadingPage;
+import com.fiannce.framework.view.ToolBar;
+
+public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener {
 
     protected T httpPresenter;
     protected View mBaseView;
+    protected ToolBar toolBar;
+    protected LoadingPage loadingPage;
+    protected boolean isUseLoading = true;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         initView();
+        toolBar = mBaseView.findViewById(R.id.toolbar);
+        toolBar.setToolbarListener(this);
         initPresenter();
         initData();
     }
@@ -25,7 +34,14 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return mBaseView = inflater.inflate(getLayoutId(),container,false);
+        mBaseView = loadingPage = new LoadingPage(getActivity()) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return getLayoutId();
+            }
+        };
+
+        return mBaseView;
     }
 
 
@@ -50,4 +66,18 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
         }
     }
 
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

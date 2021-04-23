@@ -7,28 +7,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.InvestFragment">
 
-    <FrameLayout
+    <com.fiannce.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        >
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/toolbar"
-            android:background="#142732"
-            >
-        </androidx.appcompat.widget.Toolbar>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="投资"
-            android:textSize="30dp"
-            android:textColor="#229AC7"
-            android:layout_gravity="center"
-            ></TextView>
-    </FrameLayout>
+        app:titleText="投资"
+        android:id="@+id/toolbar"
+        android:layout_height="40dp"></com.fiannce.framework.view.ToolBar>
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"

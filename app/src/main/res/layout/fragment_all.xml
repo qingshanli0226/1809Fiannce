@@ -6,6 +6,11 @@
     android:orientation="vertical"
     tools:context=".fragment.AllFragment">
 
+    <com.fiannce.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        android:visibility="gone"
+        android:layout_height="40dp"></com.fiannce.framework.view.ToolBar>
 
     <com.fiannce.framework.view.MyTextView
         android:layout_width="match_parent"

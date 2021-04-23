@@ -7,29 +7,34 @@
     android:orientation="vertical"
     tools:context=".fragment.HomeFragment">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/toolbar"
-            android:background="#142732"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
-            >
-        </androidx.appcompat.widget.Toolbar>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="首页"
-            android:textSize="30dp"
-            android:textColor="#229AC7"
-            android:layout_gravity="center"
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        >-->
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:background="#142732"-->
+<!--            android:theme="@style/Theme.AppCompat.Light.NoActionBar"-->
+<!--            app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"-->
+<!--            >-->
+<!--        </androidx.appcompat.widget.Toolbar>-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="首页"-->
+<!--            android:textSize="30dp"-->
+<!--            android:textColor="#229AC7"-->
+<!--            android:layout_gravity="center"-->
 
-            ></TextView>
-    </FrameLayout>
+<!--            ></TextView>-->
+<!--    </FrameLayout>-->
+    <com.fiannce.framework.view.ToolBar
+        android:layout_width="match_parent"
+        app:titleText="首页"
+        android:id="@+id/toolbar"
+        android:layout_height="40dp"></com.fiannce.framework.view.ToolBar>
 
 
     <com.youth.banner.Banner

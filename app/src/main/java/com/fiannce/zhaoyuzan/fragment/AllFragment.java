@@ -40,6 +40,7 @@ public class AllFragment extends BaseFragment<InvestPresenter> implements IInves
     @Override
     protected void initData() {
         httpPresenter.getProductData();
+
     }
 
     @Override
@@ -60,13 +61,13 @@ public class AllFragment extends BaseFragment<InvestPresenter> implements IInves
     public void onProductData(InvestBean investBean) {
         List<InvestBean.ResultBean> result = investBean.getResult();
         list.addAll(result);
-
+        loadingPage.showSuccessView();
         investAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void showLoading() {
-
+        loadingPage.showTransparentLoadingView();
     }
 
     @Override
@@ -76,6 +77,6 @@ public class AllFragment extends BaseFragment<InvestPresenter> implements IInves
 
     @Override
     public void showToast(String msg) {
-        Toast.makeText(getContext(), msg.toString(), Toast.LENGTH_SHORT).show();
+        loadingPage.showError(msg);
     }
 }

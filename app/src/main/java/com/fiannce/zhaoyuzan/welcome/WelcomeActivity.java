@@ -83,9 +83,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     }
 
+
     @Override
     public void showToast(String msg) {
-        Toast.makeText(this,"请求出现错误："+ msg,Toast.LENGTH_SHORT);
+        loadingPage.showError(msg);
     }
 
     private Handler handler = new Handler(){

@@ -123,7 +123,7 @@ public class ProgressView extends View {
         canvas.drawCircle(centerX,centerY,radius,paint);
 
 
-
+        //矩形
         RectF rectF = new RectF(progressViewWidth/2-radius,progressViewHeight/2-radius,progressViewWidth/2+radius,progressViewHeight/2+radius);
         paint.setColor(Color.RED);
         paint.setAntiAlias(true);
