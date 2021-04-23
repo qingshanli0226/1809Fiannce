@@ -1,4 +1,4 @@
-package com.example.fiannce.fragment;
+package com.example.fiannce.fragment.fragment_invest;
 
 import android.os.Bundle;
 
@@ -10,7 +10,12 @@ import android.view.ViewGroup;
 
 import com.example.fiannce.R;
 
-public class ManyFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link RecomFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class RecomFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,7 +26,7 @@ public class ManyFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ManyFragment() {
+    public RecomFragment() {
         // Required empty public constructor
     }
 
@@ -31,11 +36,11 @@ public class ManyFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ManyFragment.
+     * @return A new instance of fragment RecomFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ManyFragment newInstance(String param1, String param2) {
-        ManyFragment fragment = new ManyFragment();
+    public static RecomFragment newInstance(String param1, String param2) {
+        RecomFragment fragment = new RecomFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -56,6 +61,6 @@ public class ManyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_many, container, false);
+        return inflater.inflate(R.layout.fragment_recom, container, false);
     }
 }

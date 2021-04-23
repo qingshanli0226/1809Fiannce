@@ -9,58 +9,44 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fiannce.R;
+import com.example.fiannce.adapter.MyTab;
+import com.example.fiannce.fragment.fragment_invest.AllFragment;
+import com.example.fiannce.fragment.fragment_invest.HotFragment;
+import com.example.fiannce.fragment.fragment_invest.RecomFragment;
+import com.flyco.tablayout.CommonTabLayout;
+import com.flyco.tablayout.listener.CustomTabEntity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link InvestFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class InvestFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private CommonTabLayout common;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private ArrayList<CustomTabEntity> customTabEntities = new ArrayList<>();
+    private ArrayList<Fragment> list = new ArrayList<>();
 
     public InvestFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment InvestFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static InvestFragment newInstance(String param1, String param2) {
-        InvestFragment fragment = new InvestFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_invest, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_invest, container, false);
+
+        common = (CommonTabLayout) inflate.findViewById(R.id.common);
+
+        customTabEntities.add(new MyTab("全部理财",0,0));
+        customTabEntities.add(new MyTab("推荐理财",0,0));
+        customTabEntities.add(new MyTab("热门理财",0,0));
+
+        list.add(new AllFragment());
+        list.add(new RecomFragment());
+        list.add(new HotFragment());
+
+        common.setTabData(customTabEntities,getActivity(),R.id.ll,list);
+
+        return inflate;
     }
 }
