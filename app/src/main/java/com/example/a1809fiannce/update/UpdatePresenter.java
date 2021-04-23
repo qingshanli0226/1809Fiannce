@@ -30,20 +30,24 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
-                        addView(disposable);
+                        if (iView!=null){
+                            addView(disposable);
+                            iView.ShowLoading();
+                        }
                     }
                 })
                 .doFinally(new Action() {
                     @Override
                     public void run() throws Exception {
-                        iView.HideLoading();
+                        if (iView!=null){
+                            iView.HideLoading();
+                        }
                     }
                 })
                 .subscribe(new Observer<HomeBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-                        Log.i("zx", "onSubscribe: 开始");
-                        iView.ShowLoading();
+
                     }
 
                     @Override
@@ -66,7 +70,9 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                     public void onComplete() {
 
                     }
-                });
+                }
+
+                );
     }
     public void UpdateData(){
         RetrofitManager.getRetrofit()
@@ -76,25 +82,31 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
-                        addView(disposable);
+                        if (iView!=null){
+                            iView.ShowLoading();
+                            addView(disposable);
+
+                        }
+
                     }
                 })
                 .doFinally(new Action() {
                     @Override
                     public void run() throws Exception {
-                        iView.HideLoading();
+                        if (iView!=null){
+                            iView.HideLoading();
+                        }
                     }
                 })
                 .subscribe(new Observer<UpdateBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-                        iView.ShowLoading();
+
                     }
 
                     @Override
                     public void onNext(@NonNull UpdateBean updateBean) {
                             if (iView!=null){
-
                                 iView.UpdateData(updateBean);
                             }
                     }
@@ -120,20 +132,26 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
-                        addView(disposable);
+                        if (iView!=null){
+                            iView.ShowLoading();
+                            addView(disposable);
+                        }
+
                     }
                 })
                 .doFinally(new Action() {
                     @Override
                     public void run() throws Exception {
-                        iView.HideLoading();
+                        if (iView!=null){
+                            iView.HideLoading();
+                        }
+
                     }
                 })
                 .subscribe(new Observer<AllBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
 
-                        iView.ShowLoading();
                     }
 
                     @Override

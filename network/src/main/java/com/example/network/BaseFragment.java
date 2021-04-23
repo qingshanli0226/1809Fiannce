@@ -9,15 +9,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import org.xmlpull.v1.XmlPullParser;
+
 public abstract   class BaseFragment<P extends BasePresenter> extends Fragment {
     protected View BaseView;
     protected P mPresenter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return BaseView=inflater.inflate(FindLayout(),container,false);
-    }
 
+        return BaseView=inflater.inflate((XmlPullParser) pageView,container,false);
+    }
+    private PageView pageView=new PageView(getContext()) {
+        @Override
+        protected int FindLayout() {
+            return FindLayout();
+        }
+    };
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

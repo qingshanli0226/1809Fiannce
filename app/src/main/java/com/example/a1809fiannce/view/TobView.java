@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.a1809fiannce.R;
 
+
 public class TobView extends RelativeLayout {
     private boolean right_show;
     private boolean left_show;
@@ -41,7 +42,7 @@ public class TobView extends RelativeLayout {
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TobView);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.TobView);
         right_show = typedArray.getBoolean(R.styleable.TobView_right_show, false);
         left_show = typedArray.getBoolean(R.styleable.TobView_left_show, false);
         text = typedArray.getString(R.styleable.TobView_text);

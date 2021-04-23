@@ -134,6 +134,7 @@ public class CusView extends View {
         paint.setColor(Color.BLACK);
         paint.setTextSize(50);
         paint.setStrokeWidth(5);
+
         int i = progressangle*100/360;
         String current = i+"".split(".")[0]+"%";
 

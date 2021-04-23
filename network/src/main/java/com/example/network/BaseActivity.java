@@ -11,11 +11,17 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(FindLayout());
+        setContentView(pageView);
         initView();
         initData();
-    }
 
+    }
+    protected PageView pageView=new PageView(this) {
+        @Override
+        protected int FindLayout() {
+            return FindLayout();
+        }
+    };
     protected abstract void initData();
 
     protected abstract void initView();

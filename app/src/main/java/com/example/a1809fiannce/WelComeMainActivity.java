@@ -22,6 +22,7 @@ import com.example.formwork.model.AllBean;
 import com.example.formwork.model.HomeBean;
 import com.example.formwork.model.UpdateBean;
 import com.example.network.BaseActivity;
+import com.example.network.PageView;
 
 public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implements CallBack{
     private TextView miao;
@@ -119,7 +120,8 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
 
     @Override
     public void Error(String error) {
-        Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
+        pageView.ShowError(error);
+        //Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
     }
     public void all(){
         if (bean!=null){
