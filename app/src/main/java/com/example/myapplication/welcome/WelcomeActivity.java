@@ -70,7 +70,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 //        homedata.setText(""+homeBean.toString());
         home_finish = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
-
+        loadingPage.showSuccessView();
     }
 
     @Override
@@ -79,6 +79,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         version_finish = true;
         versionBeans = versionBean;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
+        loadingPage.showSuccessView();
     }
 
     @Override
@@ -88,18 +89,23 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void showLoading() {
-        bar.setVisibility(View.VISIBLE);
+//        bar.setVisibility(View.VISIBLE);
+        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
-        bar.setVisibility(View.GONE);
+//        bar.setVisibility(View.GONE);
+//        loadingPage.showTransparentLoadingView();
     }
 
     @Override
     public void showError(String error) {
-        Toast.makeText(this, "请求出现错误:"+error, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "请求出现错误:"+error, Toast.LENGTH_SHORT).show();
+        loadingPage.showError(error);
     }
+
+
 
     private Handler handler = new Handler(){
         @Override

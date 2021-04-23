@@ -5,17 +5,26 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener {
 
     protected T httpPresenter;
     protected ToolBar toolBar;
+    private boolean isUseLoading = true;
+    protected LoadingPage loadingPage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+        loadingPage = new LoadingPage(this) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return getLayoutId();
+            }
+        };
+        setContentView(loadingPage);
         initView();
         toolBar = findViewById(R.id.toolbar);
         toolBar.setToolbarListener(this);

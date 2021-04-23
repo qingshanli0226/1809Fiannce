@@ -7,9 +7,12 @@ import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
 import com.example.model.HomeBean;
+import com.example.model.ProductBean;
+import com.example.model.VersionBean;
 import com.example.myapplication.R;
 import com.example.myapplication.demo.Demo;
 import com.example.framework.view.ProgressView;
+import com.example.myapplication.welcome.IWelcomeView;
 import com.example.myapplication.welcome.WelcomePresenter;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -20,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends BaseFragment<WelcomePresenter> {
+public class HomeFragment extends BaseFragment<WelcomePresenter> implements IWelcomeView {
     private Banner banner;
     private ProgressView progressBar;
     private List<String> bannertitles = new ArrayList<>();
@@ -60,9 +63,6 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> {
     @Override
     protected void initView() {
 
-
-
-
         banner = (Banner) mView.findViewById(R.id.banner);
         progressBar = (ProgressView) mView.findViewById(R.id.progress_bar);
     }
@@ -72,4 +72,33 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> {
         return R.layout.fragment_home;
     }
 
+    @Override
+    public void onHomeData(HomeBean homeBean) {
+
+    }
+
+    @Override
+    public void onVersionData(VersionBean versionBean) {
+
+    }
+
+    @Override
+    public void onProductDara(ProductBean productBean) {
+
+    }
+
+    @Override
+    public void showLoading() {
+        loadingPage.showLoadingView();
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showError(String error) {
+        loadingPage.showError(error);
+    }
 }

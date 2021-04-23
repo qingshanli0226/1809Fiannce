@@ -123,7 +123,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
     public void getVersionData(){
         RetrofitCretor.getFiannceApiService()
                 .getServerVersion()
-                .delay(2, TimeUnit.SECONDS)
+                .delay(Demo.REQUEST_DELAY_SESSION, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
