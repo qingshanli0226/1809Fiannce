@@ -1,4 +1,4 @@
-package com.example.gitproject.fragment;
+package com.example.gitproject.home;
 
 import android.content.Context;
 import android.widget.Button;
@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
 import com.example.framework.view.ProgressView;
-import com.example.framework.view.ToolBar;
 import com.example.gitproject.R;
 import com.example.net.bean.HomeBean;
 import com.youth.banner.Banner;
@@ -37,11 +36,11 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void initView() {
 
-        homeBanner = (Banner) inflate.findViewById(R.id.home_banner);
-        homeProgress = (ProgressView) inflate.findViewById(R.id.home_progress);
-        homeName = (TextView) inflate.findViewById(R.id.home_name);
-        homeYearRate = (TextView) inflate.findViewById(R.id.home_yearRate);
-        homePay = (Button) inflate.findViewById(R.id.home_pay);
+        homeBanner = (Banner) findViewById(R.id.home_banner);
+        homeProgress = (ProgressView) findViewById(R.id.home_progress);
+        homeName = (TextView) findViewById(R.id.home_name);
+        homeYearRate = (TextView) findViewById(R.id.home_yearRate);
+        homePay = (Button) findViewById(R.id.home_pay);
     }
 
     @Override
@@ -57,10 +56,12 @@ public class HomeFragment extends BaseFragment {
         homeBanner.setBannerAnimation(Transformer.Tablet);
         homeBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
         ArrayList<String> strings = new ArrayList<>();
+
         strings.add("分享砍学费");
         strings.add("人脉总动员");
         strings.add("想不到你是这样的app");
         strings.add("购物节，爱不单行");
+
         homeBanner.setBannerTitles(strings);
         homeBanner.setImageLoader(new ImageLoader() {
             @Override

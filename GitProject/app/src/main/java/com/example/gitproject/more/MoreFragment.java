@@ -1,4 +1,4 @@
-package com.example.gitproject.fragment;
+package com.example.gitproject.more;
 
 import android.os.Bundle;
 
@@ -12,12 +12,11 @@ import com.example.framework.BaseFragment;
 import com.example.gitproject.R;
 
 
-public class MineFragment extends BaseFragment {
-
+public class MoreFragment extends BaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_mine;
+        return R.layout.fragment_more;
     }
 
     @Override

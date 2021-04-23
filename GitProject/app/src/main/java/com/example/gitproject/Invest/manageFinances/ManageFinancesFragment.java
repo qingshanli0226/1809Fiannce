@@ -1,22 +1,18 @@
 package com.example.gitproject.Invest.manageFinances;
 
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.framework.BaseFragment;
+import com.example.gitproject.Invest.manageFinances.adapter.FinancesAdapter;
 import com.example.gitproject.R;
 import com.example.net.bean.ProductBean;
-import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 
-public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter> implements ManageFinancesView {
+
+public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter> implements IManageFinancesView {
 
 
     private RecyclerView financesRv;
@@ -30,10 +26,10 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
 
     @Override
     protected void initView() {
-        ScreenAdapterTools.getInstance().loadView(inflate);
 
-        financesRv = (RecyclerView) inflate.findViewById(R.id.finances_rv);
-        financesLamp = (TextView) inflate.findViewById(R.id.finances_lamp);
+
+        financesRv = (RecyclerView) findViewById(R.id.finances_rv);
+        financesLamp = (TextView) findViewById(R.id.finances_lamp);
 
 
         financesAdapter = new FinancesAdapter();
@@ -58,29 +54,24 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
     public void onProduct(ProductBean productBean) {
         financesAdapter.getData().addAll(productBean.getResult());
         financesAdapter.notifyDataSetChanged();
+        loadPage.showSuccessLayout();
 
 
     }
     @Override
     public void showLoading() {
-        load.setVisibility(View.VISIBLE);
-        if (animationDrawable != null) {
-            animationDrawable.start();
-        }
+        loadPage.showLoadLayout(false);
 
     }
 
     @Override
     public void hideLoading() {
-        if (animationDrawable != null) {
-            animationDrawable.stop();
-        }
-        load.setVisibility(View.GONE);
+
     }
 
     @Override
     public void showError(String error) {
-        Toast.makeText(getActivity(), "" + error, Toast.LENGTH_SHORT).show();
+        loadPage.showErrorText(error);
     }
 
     @Override

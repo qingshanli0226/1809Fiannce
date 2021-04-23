@@ -8,16 +8,15 @@ import com.example.net.bean.UpdateBean;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class WelcomePresenter extends BasePresenter<WelcomeView> {
+public class WelcomePresenter extends BasePresenter<IWelcomeView> {
 
-    public WelcomePresenter(WelcomeView welcomeView) {
+    public WelcomePresenter(IWelcomeView welcomeView) {
         attchView(welcomeView);
     }
     public void getDataHome(){

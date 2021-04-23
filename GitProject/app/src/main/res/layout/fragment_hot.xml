@@ -3,17 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mine.MineFragment">
+    tools:context=".Invest.hot.HotFragment">
 
 
     <com.example.framework.view.ToolBar
         android:id="@+id/toolbar"
-        app:app_text="@string/mian_money"
-        app:app_back_color_toob="@color/mine_black"
-        app:app_text_color="@color/blue"
-        app:app_right_src="@drawable/my_setting_icon"
-        app:app_right_isshow="true"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
 </FrameLayout>

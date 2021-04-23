@@ -4,16 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.HomeFragment">
+    tools:context=".home.HomeFragment">
     <com.example.framework.view.ToolBar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         app:app_text="@string/mian_home"
         app:app_text_color="@color/blue"
-        app:app_left_isshow="true"
-        app:app_right_isshow="true"
-        app:app_left_src="@drawable/left"
-        app:app_right_src="@drawable/my_setting_icon"
         app:app_back_color_toob="@color/mine_black"
         android:layout_height="wrap_content"/>
 
@@ -31,14 +27,14 @@
         android:textSize="@dimen/dm_px_100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <TextView
-        android:textColor="#F44336"
-        android:text="@string/home_title"
+    <ImageView
         android:layout_toRightOf="@id/home_name"
         android:layout_alignTop="@id/home_name"
         android:layout_marginLeft="20dp"
+        android:src="@drawable/recommend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
     <LinearLayout
         android:layout_marginTop="@dimen/dm_px_10"
         android:layout_below="@id/home_name"
@@ -48,7 +44,7 @@
         <Button
             android:layout_marginLeft="@dimen/dm_px_20"
             android:text="@string/home_one_btn"
-            android:background="@drawable/cir_btn"
+            android:background="@drawable/home_attribute_bg"
             android:layout_width="wrap_content"
             android:layout_marginTop="@dimen/dm_px_20"
             android:gravity="center"
@@ -58,7 +54,7 @@
             android:layout_marginTop="@dimen/dm_px_20"
             android:text="@string/home_two_btn"
             android:gravity="center"
-            android:background="@drawable/cir_btn"
+            android:background="@drawable/home_attribute_bg"
             android:layout_width="wrap_content"
             android:layout_height="30dp"/>
         <Button
@@ -66,7 +62,7 @@
             android:layout_marginTop="@dimen/dm_px_20"
             android:text="@string/home_three_btn"
             android:gravity="center"
-            android:background="@drawable/cir_btn"
+            android:background="@drawable/home_attribute_bg"
             android:layout_width="wrap_content"
             android:layout_height="30dp"/>
     </LinearLayout>
@@ -116,10 +112,6 @@
         android:text="@string/home_company"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <ImageView
-        android:id="@+id/load"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
 
 </RelativeLayout>

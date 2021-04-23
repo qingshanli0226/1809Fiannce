@@ -30,12 +30,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>
-    <ImageView
-        android:id="@+id/load"
-        android:visibility="gone"
-        android:layout_centerInParent="true"
-        android:background="@drawable/animation_flower"
-        android:layout_width="@dimen/dm_px_300"
-        android:layout_height="@dimen/dm_px_300"/>
+
 
 </RelativeLayout>

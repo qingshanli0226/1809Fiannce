@@ -1,19 +1,16 @@
 package com.example.gitproject.welcome;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.View;
+import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,9 +20,9 @@ import com.example.framework.manager.CacheManager;
 import com.example.gitproject.R;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.UpdateBean;
-import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
-public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements WelcomeView {
+
+public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
 
 
@@ -41,15 +38,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
 
 
     @Override
-    public int getLayoutid() {
+    public int getLayoutId() {
         return R.layout.activity_welcome;
     }
 
     @Override
     public void initView() {
-        //ScreenAdapterTools.getInstance().reset(this);//如果希望android7.0分屏也适配的话,加上这句
-        //在setContentView();后面加上适配语句
-        ScreenAdapterTools.getInstance().loadView(getWindow().getDecorView());
 
 
         countDown = (TextView) findViewById(R.id.countDown);
@@ -141,6 +135,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
                             public void onClick(DialogInterface dialog, int which) {
                                 //跳转界面
                                 //关闭此页面
+
                                 ARouter.getInstance().build("/app/MainActivity").navigation();
                                 finish();
                             }
@@ -151,13 +146,18 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
                     } else {
                         //最新版本
                         finish();
-
                     }
                 }
             }
 
         }
     };
+
+    public boolean onKeyDown(int keyCode,KeyEvent event){
+        if(keyCode==KeyEvent.KEYCODE_BACK)
+            return true;
+        return super.onKeyDown(keyCode, event);
+    }//屏蔽返回键
 
     @Override
     public void destroy() {
@@ -179,4 +179,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     public void onClickRight() {
 
     }
+
+
 }

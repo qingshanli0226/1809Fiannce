@@ -7,32 +7,42 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.view.LoadPage;
 import com.example.framework.view.ToolBar;
 
 public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements ToolBar.ToolbarOnClickLisenter {
     protected P mPresenter;
-    protected View inflate;
-    protected ImageView load;
-    protected AnimationDrawable animationDrawable;
+    protected View rootView;
     protected ToolBar toolBar;
+    protected LoadPage loadPage;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        inflate = inflater.inflate(getLayoutId(), container, false);
-        initView();
-        load = inflate.findViewById(R.id.load);
-        animationDrawable = (AnimationDrawable) load.getBackground();
-        toolBar = inflate.findViewById(R.id.toolbar);
+        rootView = loadPage = new LoadPage(getActivity()) {
+            @Override
+            protected int getSuccessLayout() {
+                return getLayoutId();
+            }
+        };
+
+
+        toolBar = findViewById(R.id.toolbar);
         toolBar.setToolbarOnClickLisenter(this);
+        initView();
         initPrensenter();
         initData();
-        return inflate;
+        return rootView;
+    }
+
+    public <T extends View> T findViewById(@IdRes int id) {
+        return rootView.findViewById(id);
     }
 
     @LayoutRes

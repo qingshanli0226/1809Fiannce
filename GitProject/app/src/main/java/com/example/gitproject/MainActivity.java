@@ -7,10 +7,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.blankj.utilcode.util.BarUtils;
 import com.example.framework.BaseActivity;
 import com.example.gitproject.Invest.InvestFragment;
-import com.example.gitproject.fragment.HomeFragment;
-import com.example.gitproject.fragment.MineFragment;
+import com.example.gitproject.home.HomeFragment;
+import com.example.gitproject.mine.MineFragment;
+import com.example.gitproject.more.MoreFragment;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
 import java.util.ArrayList;
@@ -28,11 +30,13 @@ public class MainActivity extends BaseActivity {
     private RadioButton fourBtn;
 
     @Override
-    public int getLayoutid() {
+    public int getLayoutId() {
         return R.layout.activity_main;
     }
 
     public void initView() {
+        //沉浸式
+        BarUtils.transparentStatusBar(this);
         tabEntitys = new ArrayList<>();
         mainRadiogroup = (RadioGroup) findViewById(R.id.main_radiogroup);
         oneBtn = (RadioButton) findViewById(R.id.one_btn);
@@ -48,8 +52,8 @@ public class MainActivity extends BaseActivity {
 
     HomeFragment homeFragment = new HomeFragment();
     InvestFragment investFragment = new InvestFragment();
-    MineFragment mineFragment3 = new MineFragment();
-    MineFragment mineFragment4 = new MineFragment();
+    MineFragment mineFragment = new MineFragment();
+    MoreFragment moreFragment = new MoreFragment();
 
     @Override
     public void initData() {
@@ -68,26 +72,26 @@ public class MainActivity extends BaseActivity {
                     case R.id.one_btn:
                         fragmentTransaction.show(homeFragment);
                         fragmentTransaction.hide(investFragment);
-                        fragmentTransaction.hide(mineFragment3);
-                        fragmentTransaction.hide(mineFragment4);
+                        fragmentTransaction.hide(mineFragment);
+                        fragmentTransaction.hide(moreFragment);
                         break;
                     case R.id.two_btn:
                         fragmentTransaction.hide(homeFragment);
                         fragmentTransaction.show(investFragment);
-                        fragmentTransaction.hide(mineFragment3);
-                        fragmentTransaction.hide(mineFragment4);
+                        fragmentTransaction.hide(mineFragment);
+                        fragmentTransaction.hide(moreFragment);
                         break;
                     case R.id.three_btn:
                         fragmentTransaction.hide(homeFragment);
                         fragmentTransaction.hide(investFragment);
-                        fragmentTransaction.show(mineFragment3);
-                        fragmentTransaction.hide(mineFragment4);
+                        fragmentTransaction.show(mineFragment);
+                        fragmentTransaction.hide(moreFragment);
                         break;
                     case R.id.four_btn:
                         fragmentTransaction.hide(homeFragment);
                         fragmentTransaction.hide(investFragment);
-                        fragmentTransaction.hide(mineFragment3);
-                        fragmentTransaction.show(mineFragment4);
+                        fragmentTransaction.hide(mineFragment);
+                        fragmentTransaction.show(moreFragment);
                         break;
                 }
                 fragmentTransaction.commit();
@@ -108,11 +112,11 @@ public class MainActivity extends BaseActivity {
 
         fragmentTransaction.add(R.id.main_linear, homeFragment);
         fragmentTransaction.add(R.id.main_linear, investFragment);
-        fragmentTransaction.add(R.id.main_linear, mineFragment3);
-        fragmentTransaction.add(R.id.main_linear, mineFragment4);
+        fragmentTransaction.add(R.id.main_linear, mineFragment);
+        fragmentTransaction.add(R.id.main_linear, moreFragment);
         fragmentTransaction.hide(investFragment);
-        fragmentTransaction.hide(mineFragment3);
-        fragmentTransaction.hide(mineFragment4);
+        fragmentTransaction.hide(mineFragment);
+        fragmentTransaction.hide(moreFragment);
         fragmentTransaction.commit();
     }
 

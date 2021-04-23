@@ -8,8 +8,8 @@
         android:id="@+id/left_re"
         android:layout_marginLeft="@dimen/dm_px_20"
         android:layout_centerVertical="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="@dimen/dm_px_80"
+        android:layout_height="@dimen/dm_px_80"/>
     <TextView
         android:id="@+id/center_title"
         android:text="首页"
@@ -23,6 +23,6 @@
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/dm_px_20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="@dimen/dm_px_80"
+        android:layout_height="@dimen/dm_px_80"/>
 </RelativeLayout>

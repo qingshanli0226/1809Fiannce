@@ -3,7 +3,6 @@ package com.example.gitproject.Invest.manageFinances;
 import com.example.framework.BasePresenter;
 import com.example.net.RetrofitManager;
 import com.example.net.bean.ProductBean;
-import com.example.net.bean.UpdateBean;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,13 +10,12 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class ManageFinancesPresenter extends BasePresenter<ManageFinancesView> {
+public class ManageFinancesPresenter extends BasePresenter<IManageFinancesView> {
 
-    public ManageFinancesPresenter(ManageFinancesView manageFinancesView) {
+    public ManageFinancesPresenter(IManageFinancesView manageFinancesView) {
         attchView(manageFinancesView);
     }
 

@@ -10,25 +10,33 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framework.view.LoadPage;
 import com.example.framework.view.ToolBar;
 
 public abstract class BaseActivity<P extends  BasePresenter> extends AppCompatActivity implements ToolBar.ToolbarOnClickLisenter {
     protected P mPresenter;
     protected ToolBar toolBar;
-
+    protected LoadPage loadPage;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutid());
+        loadPage = new LoadPage(this) {
+            @Override
+            protected int getSuccessLayout() {
+                return getLayoutId();
+            }
+        };
+        setContentView(loadPage);
         toolBar = findViewById(R.id.toolbar);
         toolBar.setToolbarOnClickLisenter(this);
+
         initView();
         initPresenter();
         initData();
     }
     
     @LayoutRes
-    public abstract int getLayoutid();
+    public abstract int getLayoutId();
 
     public abstract void initView();
 

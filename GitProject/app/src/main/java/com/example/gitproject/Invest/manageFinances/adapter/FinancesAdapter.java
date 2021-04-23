@@ -1,4 +1,4 @@
-package com.example.gitproject.Invest.manageFinances;
+package com.example.gitproject.Invest.manageFinances.adapter;
 
 import android.view.View;
 
