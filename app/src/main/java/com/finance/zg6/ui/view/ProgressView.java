@@ -21,7 +21,7 @@ public class ProgressView extends View {
     private Paint paint;
     private final int START_ANGLE = 0;
     private final int STEP_ANGLE = 1;
-    private final int RADIUS_MARGIN = 15;
+    private final int RADIUS_MARGIN = 20;
     private final int FLAG_ANIMATER = 0;
 
     private int progressAngle = 0;

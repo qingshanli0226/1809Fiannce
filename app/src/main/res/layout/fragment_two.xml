@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.TwoFragment">
 
     <com.finance.framework.view.ToolBar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        rightImage="true"
-        leftImg="@mipmap/left"
-        leftIsShow="false"
-        titleText="我的资产"
+        app:leftImg="@mipmap/left"
+        app:leftIsShow="false"
+        app:titleText="我的资产"
         android:layout_height="60dp">
     </com.finance.framework.view.ToolBar>
 

@@ -9,10 +9,9 @@
     <com.finance.framework.view.ToolBar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        rightImage="true"
-        leftImg="@mipmap/left"
-        leftIsShow="false"
-        titleText="投资"
+        app:leftImg="@mipmap/left"
+        app:leftIsShow="false"
+        app:titleText="投资"
         android:layout_height="60dp">
     </com.finance.framework.view.ToolBar>
     <com.flyco.tablayout.SlidingTabLayout

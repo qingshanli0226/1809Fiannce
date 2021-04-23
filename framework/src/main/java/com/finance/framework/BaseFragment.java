@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.finance.framework.view.LoadingPage;
 import com.finance.framework.view.ToolBar;
 
 
@@ -17,10 +18,18 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     protected  T httpPresenter;
     protected View mView;
     private ToolBar toolBar;
+    protected LoadingPage loadingPage;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return mView = inflater.inflate(getLayoutId(), container, false);
+
+        mView = loadingPage = new LoadingPage(getContext()) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return getLayoutId();
+            }
+        };
+        return mView;
     }
 
     @Override
@@ -31,6 +40,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
         initPresenter();
         initData();
     }
+
 
     protected abstract int getLayoutId();
     protected abstract void initPresenter();

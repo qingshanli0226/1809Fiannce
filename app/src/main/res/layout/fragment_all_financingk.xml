@@ -17,14 +17,6 @@
         android:id="@+id/all_txt"
         ></com.finance.zg6.ui.view.MyTextView>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/all_img_animation"
-        android:background="@mipmap/wc_ac_01"></ImageView>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/all_txt"
         android:layout_width="match_parent"

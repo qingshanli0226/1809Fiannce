@@ -14,7 +14,7 @@ import com.finance.framework.manager.CacheManager;
 import com.finance.net.bean.HomeBean;
 import com.finance.zg.R;
 import com.finance.zg6.ui.HomeFragment;
-import com.finance.zg6.ui.investment.InvestmentFragment;
+import com.finance.zg6.ui.InvestmentFragment;
 import com.finance.zg6.ui.MoreFragment;
 import com.finance.zg6.ui.MyAssetsFragment;
 import com.finance.zg6.ui.bean.CustomBean;

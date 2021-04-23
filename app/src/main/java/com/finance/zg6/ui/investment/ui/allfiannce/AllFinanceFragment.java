@@ -43,28 +43,29 @@ public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implem
 
         allFinanceRv = (RecyclerView) mView.findViewById(R.id.all_finance_rv);
         allTxt = (TextView) mView.findViewById(R.id.all_txt);
-        allImgAnimation = (ImageView) mView.findViewById(R.id.all_img_animation);
     }
 
     @Override
     public void onProductData(ProductBean productBean) {
         Log.i("all_hqy", "onProductData: ");
         LogUtils.json(productBean);
+        loadingPage.showSuccessView();
 
         allFinanceAdapter = new AllFinanceAdapter(productBean.getResult());
         allFinanceRv.setLayoutManager(new LinearLayoutManager(getContext()));
         allFinanceRv.setAdapter(allFinanceAdapter);
 
+
     }
 
     @Override
     public void showLoading() {
-        allImgAnimation.setVisibility(View.INVISIBLE);
+        loadingPage.showTransparentLoadingView();
     }
 
     @Override
     public void hideLoading() {
-        allImgAnimation.setVisibility(View.GONE);
+
     }
 
     @Override

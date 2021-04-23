@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.ThreeFragment">
 
     <com.finance.framework.view.ToolBar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        rightImage="true"
-        leftImg="@mipmap/left"
-        leftIsShow="false"
-        titleText="更多"
+        app:leftImg="@mipmap/left"
+        app:leftIsShow="false"
+        app:titleText="更多"
         android:layout_height="60dp">
     </com.finance.framework.view.ToolBar>
 
