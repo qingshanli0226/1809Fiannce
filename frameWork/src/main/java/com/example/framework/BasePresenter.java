@@ -8,12 +8,11 @@ import io.reactivex.disposables.Disposable;
 
 public class BasePresenter<V> {
     private List<Disposable> disposableList = new ArrayList<>();
+    protected V IView;
 
     public synchronized void add(Disposable disposable){
         disposableList.add(disposable);
     }
-
-    protected V IView;
 
     public void attachView(V IView) {
         this.IView = IView;

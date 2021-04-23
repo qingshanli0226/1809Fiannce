@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/reddd"
+    android:background="@drawable/start_background"
     android:gravity="center"
     tools:context=".welcome.WelcomeActivity">
 
@@ -26,7 +26,7 @@
     <RelativeLayout
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ProgressBar
             android:background="@color/reddd"
@@ -46,6 +46,7 @@
 
 
     </RelativeLayout>
+
 
 
 
