@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/allbackgroundcolor"
     android:layout_height="match_parent"
+    android:background="@color/allbackgroundcolor"
     android:orientation="vertical"
     tools:context=".fragment.invesfragment.AllFragment">
 
-    <com.example.framework.myview.MyText
-        android:background="@color/white"
+    <com.example.framework.myview.ToolBar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"></com.example.framework.myview.ToolBar>
+
+    <com.example.framework.myview.MyText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:ellipsize="marquee"
+        android:singleLine="true"
         android:text="@string/trotting"
         android:textColor="@color/red"
-        android:singleLine="true"
-        android:ellipsize="marquee"
         android:textSize="25dp"></com.example.framework.myview.MyText>
 
     <androidx.recyclerview.widget.RecyclerView

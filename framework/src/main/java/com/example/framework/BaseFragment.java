@@ -15,6 +15,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 
     protected View baseView;
     protected P mPresenter;
+    protected ToolBar toolBar;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -25,6 +26,8 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
+         toolBar = findViewById(R.id.toolbar);
+         toolBar.setToolbarListener(this);
         initPresenter();
         initData();
     }
