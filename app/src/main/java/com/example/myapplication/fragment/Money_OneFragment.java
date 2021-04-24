@@ -39,7 +39,6 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
         httpPresenter.getProductData();
         light.setSelected(true);
 
-        loadingPage.showSuccessView();
 
     }
 
