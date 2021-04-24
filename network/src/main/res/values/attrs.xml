@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TobView">
+        <attr name="backgroundColor" format="color"></attr>
+        <attr name="left_img" format="reference"></attr>
+        <attr name="right_img" format="reference"></attr>
+        <attr name="left_show" format="boolean"></attr>
+        <attr name="right_show" format="boolean"></attr>
+        <attr name="text" format="string"></attr>
+        <attr name="textColor" format="color"></attr>
+    </declare-styleable>
+</resources>

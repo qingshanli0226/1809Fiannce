@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity {
     protected P mPresenter;
     protected PageView pageView;
+    protected TobView tobView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +20,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
             }
         };
         setContentView(pageView);
+        tobView=pageView.findViewById(R.id.tob);
         initView();
         initData();
 

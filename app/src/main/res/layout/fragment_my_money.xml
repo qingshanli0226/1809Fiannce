@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.MyMoneyFragment">
 
-    <com.example.a1809fiannce.view.TobView
+    <com.example.network.TobView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:text="我的资产"
@@ -14,6 +14,6 @@
         app:textColor="#03A9F4"
         app:right_show="true"
         android:id="@+id/tob2"
-        app:right_img="@mipmap/my_setting_icon"></com.example.a1809fiannce.view.TobView>
+        app:right_img="@mipmap/my_setting_icon"></com.example.network.TobView>
 
 </LinearLayout>

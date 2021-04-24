@@ -14,8 +14,8 @@ import org.xmlpull.v1.XmlPullParser;
 public abstract   class BaseFragment<P extends BasePresenter> extends Fragment {
     protected View BaseView;
     protected P mPresenter;
-    private PageView pageView;
-
+    protected PageView pageView;
+    protected TobView tobView;
 
     @Nullable
     @Override
@@ -27,7 +27,7 @@ public abstract   class BaseFragment<P extends BasePresenter> extends Fragment {
                 return FindLayout1();
             }
         };
-
+        tobView = BaseView.findViewById(R.id.tob);
         return BaseView;
     }
     @Override

@@ -17,8 +17,8 @@ import com.bumptech.glide.Glide;
 import com.example.a1809fiannce.HomeCallBack;
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.view.CusView;
-import com.example.a1809fiannce.view.TobView;
 import com.example.formwork.model.HomeBean;
+import com.example.network.TobView;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
@@ -32,9 +32,7 @@ public class HomeFragment extends Fragment {
     private CusView cus;
     private TextView name;
     private TobView tob1;
-
-
-
+    private TextView expect;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +43,7 @@ public class HomeFragment extends Fragment {
         cus = inflate.findViewById(R.id.cus);
         name = inflate.findViewById(R.id.name);
         tob1 = inflate.findViewById(R.id.tob1);
+        expect = (TextView) inflate.findViewById(R.id.expect);
         HomeBean homeBean = HomeCallBack.getHomeCallBack().getHomeBean();
         Log.i("aa", "onCreateView: "+homeBean.toString());
         List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
@@ -64,8 +63,7 @@ public class HomeFragment extends Fragment {
         bar.start();
         name.setText(homeBean.getResult().getProInfo().getName()+"");
         cus.SealedProgress(50,true);
-
-
+        expect.setText("预期年利润："+homeBean.getResult().getProInfo().getYearRate()+"%");
 
         tob1.ImgCallBackListener(new TobView.ImgCallBack() {
             @Override

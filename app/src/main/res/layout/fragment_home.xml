@@ -6,19 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".fragment.HomeFragment">
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:background="#142732"-->
-<!--        android:layout_height="50dp">-->
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:text="主页"-->
-<!--            android:textSize="30dp"-->
-<!--            android:textColor="#03A9F4"></TextView>-->
-<!--    </androidx.appcompat.widget.Toolbar>-->
-    <com.example.a1809fiannce.view.TobView
+    <com.example.network.TobView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:backgroundColor="#142732"
@@ -27,7 +15,7 @@
         app:left_show="false"
         app:right_show="false"
         android:id="@+id/tob1"
-        ></com.example.a1809fiannce.view.TobView>
+        ></com.example.network.TobView>
 
     <com.youth.banner.Banner
         android:layout_width="match_parent"
@@ -116,13 +104,14 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="@dimen/dp_10"
         android:layout_height="130dp">
+
         <com.example.a1809fiannce.view.CusView
+            android:id="@+id/cus"
             android:layout_width="200dp"
             android:layout_height="130dp"
-            android:layout_centerInParent="true"
-            app:textSize="30"
+            android:layout_centerHorizontal="true"
             app:Color="#E91E63"
-            android:id="@+id/cus"></com.example.a1809fiannce.view.CusView>
+            app:textSize="30"></com.example.a1809fiannce.view.CusView>
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -131,24 +120,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="aaaa"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:gravity="center"
             android:id="@+id/expect"></TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="80dp">
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"></TextView>
         <Button
             android:layout_width="0dp"
+            android:layout_marginTop="20dp"
             android:layout_height="match_parent"
             android:layout_weight="9"
             android:id="@+id/buy"
-            android:background="@mipmap/home"
-            android:textSize="20dp"
+            android:background="#F44336"
+            android:textSize="30dp"
             android:textColor="#ffffff"
             android:text="立即购买"></Button>
         <TextView
@@ -156,4 +146,34 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"></TextView>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="30dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/guarantee_icon"></ImageView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:text="风险保证金由有道银行监管"
+            android:textSize="20dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></TextView>
+    </LinearLayout>
+
 </LinearLayout>

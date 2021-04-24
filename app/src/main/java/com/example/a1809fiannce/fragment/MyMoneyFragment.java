@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.a1809fiannce.R;
-import com.example.a1809fiannce.view.TobView;
+import com.example.network.TobView;
 
 
 public class MyMoneyFragment extends Fragment {

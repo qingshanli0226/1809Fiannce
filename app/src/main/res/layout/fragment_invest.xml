@@ -19,7 +19,7 @@
 <!--            android:textColor="#03A9F4"></TextView>-->
 
 <!--    </androidx.appcompat.widget.Toolbar>-->
-    <com.example.a1809fiannce.view.TobView
+    <com.example.network.TobView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:text="投资"
@@ -27,7 +27,7 @@
         app:backgroundColor="#142732"
         app:left_show="false"
         app:right_show="false"
-        ></com.example.a1809fiannce.view.TobView>
+        ></com.example.network.TobView>
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
