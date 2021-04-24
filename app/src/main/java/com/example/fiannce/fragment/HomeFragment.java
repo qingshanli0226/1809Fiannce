@@ -55,7 +55,7 @@ public class HomeFragment extends BaseFragment {
         });
         banner.start();
 
-        customview.SealedProgress(100,true);
+        customview.SealedProgress(80,true);
     }
 
     @Override

@@ -9,11 +9,11 @@ public class BasePresenter<V> {
 
     private List<Disposable> disposableList = new ArrayList<>();
 
+    protected V iView;
+
     public synchronized void add(Disposable disposable){
         disposableList.add(disposable);
     }
-
-    protected V iView;
 
     public void attachView(V iView) {
         this.iView = iView;

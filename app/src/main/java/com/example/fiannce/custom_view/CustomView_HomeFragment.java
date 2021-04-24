@@ -88,7 +88,7 @@ public class CustomView_HomeFragment extends View {
             if (progressangle <= offprogress){
                 progressangle += START_ADD;
                 invalidate();
-                handler.sendEmptyMessageDelayed(FILG,50);
+                handler.sendEmptyMessageDelayed(FILG,5);
             }
         }
     };
