@@ -1,13 +1,13 @@
 package com.example.frame_library.mvp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.frame_library.view.LodingPage
 import com.example.frame_library.view.ToBar
 
 interface IView {
@@ -23,9 +23,15 @@ interface IActivity : IView {
 }
 
 abstract class BaseActitvty <P :IPresneter>: AppCompatActivity(), IActivity {
+    private var lodingPage:LodingPage?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(bandLayoutId())
+        lodingPage=object :LodingPage(this){
+            override fun getSuccessLayoutId(): Int {
+                return bandLayoutId()
+            }
+        }
+        setContentView(lodingPage!!.getSuccessLayoutId())
         initView()
         initData()
     }
@@ -44,15 +50,16 @@ abstract class BaseActitvty <P :IPresneter>: AppCompatActivity(), IActivity {
     }
 
     override fun showTaos(meang: String) {
-        Toast.makeText(this, meang, Toast.LENGTH_LONG).show()
+        Toast.makeText(this,meang,Toast.LENGTH_LONG).show()
+        lodingPage!!.showError(meang)
     }
 
     override fun showLodin() {
-
+        lodingPage!!.showLodingView()
     }
 
     override fun hideLodin() {
-
+        lodingPage!!.showSuccessLayout()
     }
 
 }
@@ -62,11 +69,18 @@ abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(),ToBar.OnClickList
     protected val mPresenter:P by lazy {
         setPresenter();
     }
-    private val mToBar: ToBar by lazy {
-        initToBar().setonClickListener(this)
-    }
+    private var mToBar: ToBar?=null
+//    by lazy {
+//        initToBar().setonClickListener(this)
+//    }
 
-    abstract fun initToBar(): ToBar
+    private var lodingPage:LodingPage?=null
+
+    //abstract fun initToBar(): ToBar
+    protected fun attaToBar(toBar: ToBar){
+        mToBar=toBar
+        mToBar!!.setonClickListener(this)
+    }
 
     protected abstract fun setPresenter():P
 
@@ -75,7 +89,12 @@ abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(),ToBar.OnClickList
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(bandLayoutId(),container,false)
+        lodingPage=object :LodingPage(context){
+            override fun getSuccessLayoutId(): Int {
+                return bandLayoutId()
+            }
+        }
+        return inflater.inflate(lodingPage!!.getSuccessLayoutId(),container,false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -85,15 +104,16 @@ abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(),ToBar.OnClickList
     }
 
     override fun showLodin() {
-
+        lodingPage!!.showLodingView()
     }
 
     override fun showTaos(meang: String) {
         Toast.makeText(activity,meang,Toast.LENGTH_LONG).show()
+        lodingPage!!.showError(meang)
     }
 
     override fun hideLodin() {
-
+        lodingPage!!.showSuccessLayout()
     }
 
     override fun onDestroy() {

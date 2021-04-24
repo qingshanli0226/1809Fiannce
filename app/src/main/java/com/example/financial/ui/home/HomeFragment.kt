@@ -20,7 +20,7 @@ class HomeFragment:BaseFragment<HomePresenter>(),HomeCanter.View {
     override fun bandLayoutId(): Int = R.layout.fragment_home
 
     override fun initView() {
-
+        attaToBar(fragment_home_ToBar)
     }
 
     override fun initData() {
@@ -59,7 +59,4 @@ class HomeFragment:BaseFragment<HomePresenter>(),HomeCanter.View {
             }).start()
     }
 
-    override fun initToBar(): ToBar {
-        return fragment_home_ToBar
-    }
 }

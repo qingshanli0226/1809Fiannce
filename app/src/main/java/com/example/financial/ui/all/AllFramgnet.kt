@@ -1,20 +1,19 @@
-package com.example.financial.ui.mroe
+package com.example.financial.ui.all
 
 import com.example.financial.R
+import com.example.financial.base.Product
 import com.example.frame_library.mvp.BaseFragment
-import com.example.frame_library.mvp.IPresneter
-import com.example.frame_library.view.ToBar
-import kotlinx.android.synthetic.main.fragment_mroe.*
+import java.security.AllPermission
 
-class MroeFragment:BaseFragment<IPresneter>() {
-    override fun bandLayoutId(): Int = R.layout.fragment_mroe
+class AllFramgnet :BaseFragment<AllPresenter>(),IAllCanter.View {
+    override fun bandLayoutId(): Int = R.layout.fragment_all
 
     override fun initView() {
-        attaToBar(fragment_mroe_ToBar)
+
     }
 
     override fun initData() {
-
+        mPresenter.lodingData()
     }
 
     override fun OnLeftClickListenter() {
@@ -29,7 +28,9 @@ class MroeFragment:BaseFragment<IPresneter>() {
         TODO("Not yet implemented")
     }
 
-    override fun setPresenter(): IPresneter {
-        TODO("Not yet implemented")
+    override fun setPresenter(): AllPresenter = AllPresenter(AllModle(),this)
+
+    override fun onLodinData(list: List<Product>) {
+
     }
 }

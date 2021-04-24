@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_lodin_error_text">加载失败</string>
+</resources>

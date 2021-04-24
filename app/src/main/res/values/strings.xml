@@ -4,4 +4,7 @@
     <string name="act_investment">投资</string>
     <string name="act_mine">我的资产</string>
     <string name="act_mroe">更多</string>
+    <string name="investment_title_all">全部理财</string>
+    <string name="investment_title_recommend">推荐</string>
+    <string name="investment_title_Popular">热门理财</string>
 </resources>
