@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="com.finance.zg6.mianInsideFragment.MyAssetsFragment">
 
     <com.finance.framework.view.ToolBar
@@ -13,6 +14,172 @@
         app:leftIsShow="false"
         app:titleText="@string/mainActivity_fragment_title_my_assets"
         android:layout_height="@dimen/ToolBar_height">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_setting_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin"
+            android:id="@+id/myAssetsSetting">
+
+        </ImageView>
     </com.finance.framework.view.ToolBar>
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/RelativeLayout_height"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:layout_width="@dimen/img_width"
+            android:layout_height="@dimen/img_height"
+            android:background="@drawable/user_img"
+            android:layout_centerInParent="true"
+            android:id="@+id/userImg"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/item_mid_size"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/userImg"
+            android:textColor="@color/white"></TextView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/LinearLayout_height"
+        android:orientation="vertical"
+        android:background="@color/white_grey">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/item_mid_size"
+            android:textColor="@color/colorRed"
+            android:layout_marginLeft="@dimen/button_margin"
+            android:padding="@dimen/item_margin"
+            android:text="@string/my_assets_study"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/item_mid_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/item_margin"
+            android:layout_marginLeft="@dimen/button_margin"
+            android:text="@string/my_assets_Recharge_txt"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/item_mid_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/item_margin"
+            android:layout_marginLeft="@dimen/button_margin"
+            android:text="@string/my_assets_Withdrawal_txt"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="@dimen/zero"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/recharge"
+                android:layout_margin="@dimen/margin"
+                android:text="@string/my_assets_Recharge"
+                android:id="@+id/rechargeBt"
+                android:textColor="@color/colorRed"></Button>
+            <Button
+                android:layout_width="@dimen/zero"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/withdrawal_bt"
+                android:layout_margin="@dimen/margin"
+                android:id="@+id/withdrawalBt"
+                android:text="@string/my_assets_Withdrawal"
+                android:textColor="@color/colorBlue"></Button>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/my_assets_RelativeLayout_height"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:id="@+id/myInvestManage">
+        <ImageView
+            android:layout_width="@dimen/my_assets_img_width"
+            android:layout_height="@dimen/my_assets_img_height"
+            android:src="@drawable/my_invest_manage"
+            android:layout_centerVertical="true"
+            android:id="@+id/my_invest_manage"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_mid_size"
+            android:text="@string/my_invest_manage"
+            android:layout_toRightOf="@+id/my_invest_manage"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin"></TextView>
+
+        <ImageView
+            android:layout_width="@dimen/my_assets_right_img_width"
+            android:layout_height="@dimen/my_assets_right_img_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right"></ImageView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/more_RelativeLayout_height"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:id="@+id/myRewardManage">
+        <ImageView
+            android:layout_width="@dimen/my_assets_img_width"
+            android:layout_height="@dimen/my_assets_img_height"
+            android:src="@drawable/my_reward_manage"
+            android:layout_centerVertical="true"
+            android:id="@+id/my_reward_manage"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/my_reward_manage"
+            android:text="@string/my_invest_manage"
+            android:textSize="@dimen/text_mid_size"></TextView>
+        <ImageView
+            android:layout_width="@dimen/my_assets_right_img_width"
+            android:layout_height="@dimen/my_assets_right_img_height"
+            android:src="@drawable/right"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"></ImageView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/more_RelativeLayout_height"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin"
+        android:id="@+id/myAssetManage">
+        <ImageView
+            android:layout_width="@dimen/my_assets_img_width"
+            android:layout_height="30dp"
+            android:src="@drawable/my_asset_manage"
+            android:layout_centerVertical="true"
+            android:id="@+id/my_asset_manage"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_mid_size"
+            android:text="@string/my_invest_manage"
+            android:layout_toRightOf="@+id/my_asset_manage"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin"></TextView>
+        <ImageView
+            android:layout_width="@dimen/my_assets_right_img_width"
+            android:layout_height="@dimen/my_assets_right_img_height"
+            android:src="@drawable/right"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"></ImageView>
+    </RelativeLayout>
+</LinearLayout>

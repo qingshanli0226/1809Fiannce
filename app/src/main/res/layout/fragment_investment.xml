@@ -23,7 +23,7 @@
         app:tl_indicator_height="@dimen/SlidingTabLayout_tl_indicator_height"
         app:tl_indicator_color="@color/colorBlue"
         app:tl_tab_space_equal="true"
-        android:background="@color/grey"
+        android:background="@color/white_grey"
         android:id="@+id/sliding"></com.flyco.tablayout.SlidingTabLayout>
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"

@@ -40,4 +40,25 @@
     <string name="Percent_sign">%</string>
     <string name="day">天</string>
     <string name="vertical">|</string>
+
+    <string name="my_assets_study">学习提示：</string>
+    <string name="my_assets_Recharge_txt">充值我们将以集成支付宝sdk支付金额演示充值功能</string>
+    <string name="my_assets_Withdrawal_txt">提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提现业务:系统将会告知24小时内进行转账，如果未收到,请联系客服..</string>
+    <string name="my_assets_Recharge">充值</string>
+    <string name="my_assets_Withdrawal">提现</string>
+
+    <string name="my_invest_manage">投资管理</string>
+    <string name="my_reward_manage">投资管理(直观)</string>
+    <string name="my_asset_manage">资产管理</string>
+
+    <string name="more_tel">010-56253825</string>
+    <string name="icon_more_regist">用户注册</string>
+    <string name="icon_more_secret">手势密码</string>
+    <string name="icon_more_reset">重置手势密码</string>
+    <string name="icon_more_contact">联系客服</string>
+    <string name="icon_more_sms">用户反馈</string>
+    <string name="icon_more_share">分享给好友</string>
+    <string name="icon_more_about">关于有道理财</string>
+
+    <string name="text_delete">删除</string>
 </resources>

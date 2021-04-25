@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         app:leftImg="@mipmap/left"
         app:leftIsShow="false"
+
         app:titleText="@string/mainActivity_fragment_title_home"
         android:layout_height="@dimen/ToolBar_height">
     </com.finance.framework.view.ToolBar>

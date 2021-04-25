@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#142732">
+    android:layout_width="match_parent" android:layout_height="@dimen/ToolBar_height"
+    android:background="@color/colorBlack">
 
     <ImageView
         android:id="@+id/leftImg"
@@ -17,6 +17,8 @@
         style="@style/bigTextStyle"
         android:layout_centerInParent="true"/>
 
+
+
     <LinearLayout
         android:id="@+id/rightArea"
         android:layout_marginRight="@dimen/toolbar_margin_size"
@@ -27,12 +29,10 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/rightImg"
-                android:layout_width="@dimen/toolbar_img_size"
-                android:layout_height="@dimen/toolbar_img_size"
-                android:layout_centerVertical="true"/>
+
         </RelativeLayout>
+
+
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -41,12 +41,15 @@
                 android:id="@+id/rightTv"
                 style="@style/midTextStyle"
                 android:layout_centerVertical="true"/>
+            <ImageView
+                android:id="@+id/rightImg"
+                android:layout_width="@dimen/toolbar_img_size"
+                android:layout_height="@dimen/toolbar_img_size"
+                android:layout_centerVertical="true"/>
         </RelativeLayout>
 
-
-
     </LinearLayout>
-    
+
     
     
 

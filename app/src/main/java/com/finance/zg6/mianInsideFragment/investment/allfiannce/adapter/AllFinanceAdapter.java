@@ -35,5 +35,8 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
         view4.setText(""+item.getMinTouMoney());
         view5.setText(""+item.getMemberNum());
         view6.startProgress(Integer.parseInt(item.getProgress()),false);
+
+        helper.addOnClickListener(R.id.txt_delete);
+
     }
 }

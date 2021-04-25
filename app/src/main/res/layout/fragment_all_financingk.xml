@@ -7,7 +7,7 @@
     <com.finance.zg6.view.horseRaceLampView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E1DFDF"
+        android:background="@color/white_grey"
         android:text="@string/horseRaceLampView_text"
         android:textColor="@color/colorRed"
         android:singleLine="true"
