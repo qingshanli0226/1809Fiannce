@@ -2,20 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.finance.zg6.ui.investment.ui.allfiannce.AllFinanceFragment">
+    tools:context="com.finance.zg6.mianInsideFragment.investment.allfiannce.AllFinanceFragment">
 
-    <com.finance.zg6.ui.view.MyTextView
+    <com.finance.zg6.view.horseRaceLampView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#E1DFDF"
-        android:text="有道金融壕运当头，首投返现最高达188元"
-        android:textColor="#f00"
+        android:text="@string/horseRaceLampView_text"
+        android:textColor="@color/colorRed"
         android:singleLine="true"
         android:ellipsize="marquee"
         android:layout_below="@+id/toolbar"
-        android:textSize="25dp"
+        android:textSize="@dimen/big_text_size"
         android:id="@+id/all_txt"
-        ></com.finance.zg6.ui.view.MyTextView>
+        ></com.finance.zg6.view.horseRaceLampView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/all_txt"

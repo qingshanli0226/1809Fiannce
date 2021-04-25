@@ -14,7 +14,7 @@ import com.finance.framework.view.LoadingPage;
 import com.finance.framework.view.ToolBar;
 
 
-public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
+public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener {
     protected  T httpPresenter;
     protected View mView;
     private ToolBar toolBar;
@@ -36,6 +36,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         toolBar = mView.findViewById(R.id.toolbar);
+//        toolBar.setToolbarListener(this);
         initView();
         initPresenter();
         initData();

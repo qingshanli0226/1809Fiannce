@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.finance.zg6.ui.investment.ui.hotfinance.HotFinanceFragment">
+    tools:context="com.finance.zg6.mianInsideFragment.investment.hotfinance.HotFinanceFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

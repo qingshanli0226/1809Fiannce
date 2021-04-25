@@ -19,15 +19,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero"
         android:layout_weight="9"
         android:orientation="vertical"
         android:id="@+id/li"></LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#0D94FF"></View>
+        android:layout_height="@dimen/view_height"
+        android:background="@color/colorBlue"></View>
 
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
@@ -35,9 +35,9 @@
         android:layout_weight="1"
         app:tl_tab_space_equal="true"
         app:tl_textSelectColor="#ff0000"
-        app:tl_iconHeight="30dp"
-        app:tl_iconWidth="30dp"
-        app:tl_textUnselectColor="#000000"
+        app:tl_iconHeight="@dimen/main_CommonTabLayout_tl_iconHeight"
+        app:tl_iconWidth="@dimen/main_CommonTabLayout_tl_iconWidth"
+        app:tl_textUnselectColor="@color/black"
         android:id="@+id/common"></com.flyco.tablayout.CommonTabLayout>
 
 </LinearLayout>

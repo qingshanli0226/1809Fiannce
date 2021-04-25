@@ -1,4 +1,4 @@
-package com.finance.zg6.ui;
+package com.finance.zg6.mianInsideFragment;
 
 import android.content.Context;
 import android.widget.ImageView;
@@ -10,7 +10,7 @@ import com.finance.framework.BaseFragment;
 import com.finance.framework.manager.CacheManager;
 import com.finance.net.bean.HomeBean;
 import com.finance.zg.R;
-import com.finance.zg6.ui.view.ProgressView;
+import com.finance.zg6.view.ProgressView;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
@@ -65,5 +65,20 @@ public class HomeFragment extends BaseFragment {
         progressView = (ProgressView) mView.findViewById(R.id.progress_view);
         annualInterestRate = (TextView) mView.findViewById(R.id.annual_interest_rate);
         homeText = (TextView) mView.findViewById(R.id.home_text);
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
     }
 }

@@ -1,12 +1,4 @@
-package com.finance.zg6.ui.investment.ui.hotfinance;
-
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+package com.finance.zg6.mianInsideFragment.investment.hotfinance;
 
 import com.finance.framework.BaseFragment;
 import com.finance.zg.R;
@@ -32,6 +24,21 @@ public class HotFinanceFragment extends BaseFragment {
 
     @Override
     protected void initView() {
+
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
 
     }
 }

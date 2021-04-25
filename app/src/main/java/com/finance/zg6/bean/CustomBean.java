@@ -1,4 +1,4 @@
-package com.finance.zg6.ui.bean;
+package com.finance.zg6.bean;
 
 import com.flyco.tablayout.listener.CustomTabEntity;
 

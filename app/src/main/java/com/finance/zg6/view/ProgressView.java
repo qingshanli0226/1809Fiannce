@@ -1,7 +1,6 @@
-package com.finance.zg6.ui.view;
+package com.finance.zg6.view;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -14,8 +13,6 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import com.finance.zg.R;
 
 public class ProgressView extends View {
     private Paint paint;

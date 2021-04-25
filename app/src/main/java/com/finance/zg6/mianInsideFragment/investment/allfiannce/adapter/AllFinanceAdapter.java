@@ -1,6 +1,5 @@
-package com.finance.zg6.ui.investment.ui.allfiannce.adapter;
+package com.finance.zg6.mianInsideFragment.investment.allfiannce.adapter;
 
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -9,14 +8,14 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.finance.net.bean.ProductBean;
 import com.finance.zg.R;
-import com.finance.zg6.ui.view.ProgressView;
+import com.finance.zg6.view.ProgressView;
 
 import java.util.List;
 
 public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, BaseViewHolder> {
 
     public AllFinanceAdapter(@Nullable List<ProductBean.ResultBean> data) {
-        super(R.layout.itme_all_finance_layout, data);
+        super(R.layout.item_all_finance_layout, data);
     }
 
     @Override

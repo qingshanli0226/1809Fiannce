@@ -1,4 +1,4 @@
-package com.finance.zg6.ui;
+package com.finance.zg6.mianInsideFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,10 +11,10 @@ import com.finance.zg.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MyAssetsFragment#newInstance} factory method to
+ * Use the {@link MoreFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MyAssetsFragment extends Fragment {
+public class MoreFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +25,7 @@ public class MyAssetsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MyAssetsFragment() {
+    public MoreFragment() {
         // Required empty public constructor
     }
 
@@ -35,11 +35,11 @@ public class MyAssetsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ThreeFragment.
+     * @return A new instance of fragment TwoFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MyAssetsFragment newInstance(String param1, String param2) {
-        MyAssetsFragment fragment = new MyAssetsFragment();
+    public static MoreFragment newInstance(String param1, String param2) {
+        MoreFragment fragment = new MoreFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,6 +60,6 @@ public class MyAssetsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_more, container, false);
+        return inflater.inflate(R.layout.fragment_my_assets, container, false);
     }
 }

@@ -5,4 +5,30 @@
     <dimen name="toolbar_margin_size">5dp</dimen>
     <dimen name="big_text_size">30sp</dimen>
     <dimen name="text_mid_size">20sp</dimen>
+    <dimen name="item_mid_size">15dp</dimen>
+
+    <dimen name="main_view_layout_height">1</dimen>
+    <dimen name="main_CommonTabLayout_tl_iconHeight">30dp</dimen>
+    <dimen name="main_CommonTabLayout_tl_iconWidth">30dp</dimen>
+
+    <dimen name="SlidingTabLayout_tl_indicator_height">70dp</dimen>
+
+    <dimen name="zero">0dp</dimen>
+    <dimen name="view_height">1dp</dimen>
+
+    <dimen name="progressBar_height">50dp</dimen>
+    <dimen name="progressBar_width">50dp</dimen>
+
+    <dimen name="progress_view_height">100dp</dimen>
+
+    <dimen name="homeFragment_imgView_height">15dp</dimen>
+
+    <dimen name="button_height">30dp</dimen>
+    <dimen name="ToolBar_height">60dp</dimen>
+    <dimen name="banner_height">150dp</dimen>
+
+    <dimen name="margin">20dp</dimen>
+    <dimen name="button_margin">10dp</dimen>
+    <dimen name="item_margin">5dp</dimen>
+    <dimen name="item_view_margin">10dp</dimen>
 </resources>

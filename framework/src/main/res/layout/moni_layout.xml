@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <com.finance.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/ToolBar_height"
         android:id="@+id/toolbar">
     </com.finance.framework.view.ToolBar>
 

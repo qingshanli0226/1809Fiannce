@@ -1,7 +1,5 @@
-package com.finance.zg6.ui.investment.ui.allfiannce;
+package com.finance.zg6.mianInsideFragment.investment.allfiannce;
 
-import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +10,7 @@ import com.blankj.utilcode.util.LogUtils;
 import com.finance.framework.BaseFragment;
 import com.finance.net.bean.ProductBean;
 import com.finance.zg.R;
-import com.finance.zg6.ui.investment.ui.allfiannce.adapter.AllFinanceAdapter;
+import com.finance.zg6.mianInsideFragment.investment.allfiannce.adapter.AllFinanceAdapter;
 
 
 public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implements IAllFinanceView {
@@ -69,6 +67,21 @@ public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implem
 
     @Override
     public void showError(String msg) {
+
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
 
     }
 }

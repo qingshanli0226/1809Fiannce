@@ -5,36 +5,35 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context="com.finance.zg6.ui.HomeFragment">
+    tools:context="com.finance.zg6.mianInsideFragment.HomeFragment">
     <com.finance.framework.view.ToolBar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         app:leftImg="@mipmap/left"
         app:leftIsShow="false"
-        app:titleText="首页"
-        android:layout_height="60dp">
+        app:titleText="@string/mainActivity_fragment_title_home"
+        android:layout_height="@dimen/ToolBar_height">
     </com.finance.framework.view.ToolBar>
     <!-- TODO: Update blank fragment layout -->
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="@dimen/banner_height"
         android:id="@+id/banner"></com.youth.banner.Banner>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
+            android:textSize="@dimen/big_text_size"
             android:gravity="center"
             android:layout_centerInParent="true"
-            android:id="@+id/home_title"
-            android:text="xx"></TextView>
+            android:id="@+id/home_title"></TextView>
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="15dp"
+            android:layout_height="@dimen/homeFragment_imgView_height"
             android:src="@drawable/recommend"
             android:layout_toRightOf="@+id/home_title"
             android:layout_centerVertical="true"></ImageView>
@@ -46,57 +45,58 @@
         android:gravity="center">
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="@dimen/button_height"
             android:background="@drawable/home_bt1"
-            android:text="本息保障"></Button>
+            android:text="@string/homeFragment_button_Protection_of_principal_and_interest"></Button>
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="@dimen/button_height"
             android:background="@drawable/home_bt1"
-            android:text="每日计息"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"></Button>
+            android:text="@string/homeFragment_button_Daily_interest"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"></Button>
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="@dimen/button_height"
             android:background="@drawable/home_bt1"
-            android:text="高额收益"></Button>
+            android:text="@string/homeFragment_button_High_revenue"></Button>
     </LinearLayout>
-    <com.finance.zg6.ui.view.ProgressView
+
+    <com.finance.zg6.view.ProgressView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        android:id="@+id/progress_view"></com.finance.zg6.ui.view.ProgressView>
+        android:layout_height="@dimen/progress_view_height"
+        android:layout_margin="@dimen/button_margin"
+        android:id="@+id/progress_view"></com.finance.zg6.view.ProgressView>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="预期年利率：8%"
         android:id="@+id/annual_interest_rate"
-        android:textSize="20dp"></TextView>
+        android:textSize="@dimen/text_mid_size"></TextView>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/button_margin"
         android:background="@drawable/home_bt_add"
-        android:textSize="30dp"
+        android:textSize="@dimen/big_text_size"
         android:textColor="#fff"
-        android:text="立即加入"></Button>
+        android:text="@string/homeFragment_button_Join_now"></Button>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="@dimen/button_margin">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_centerInParent="true"
             android:id="@+id/home_text"
-            android:text="风险保障金由有道银行监管"></TextView>
+            android:text="@string/You_Dao"></TextView>
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="15dp"
+            android:layout_height="@dimen/homeFragment_imgView_height"
             android:layout_toLeftOf="@+id/home_text"
             android:layout_centerVertical="true"
             android:src="@drawable/guarantee_icon"></ImageView>

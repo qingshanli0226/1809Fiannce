@@ -5,29 +5,29 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context="com.finance.zg6.ui.InvestmentFragment">
+    tools:context="com.finance.zg6.mianInsideFragment.InvestmentFragment">
     <com.finance.framework.view.ToolBar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         app:leftImg="@mipmap/left"
         app:leftIsShow="false"
-        app:titleText="投资"
-        android:layout_height="60dp">
+        app:titleText="@string/mainActivity_fragment_title_investment"
+        android:layout_height="@dimen/ToolBar_height">
     </com.finance.framework.view.ToolBar>
     <com.flyco.tablayout.SlidingTabLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero"
         android:layout_weight="1"
-        app:tl_textSelectColor="#F41919"
-        app:tl_textUnselectColor="#000"
-        app:tl_indicator_height="70dp"
-        app:tl_indicator_color="#16B7FF"
+        app:tl_textSelectColor="@color/colorRed"
+        app:tl_textUnselectColor="@color/black"
+        app:tl_indicator_height="@dimen/SlidingTabLayout_tl_indicator_height"
+        app:tl_indicator_color="@color/colorBlue"
         app:tl_tab_space_equal="true"
-        android:background="#E1DFDF"
+        android:background="@color/grey"
         android:id="@+id/sliding"></com.flyco.tablayout.SlidingTabLayout>
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero"
         android:layout_weight="9"
         android:id="@+id/vp"></androidx.viewpager.widget.ViewPager>
 

@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.finance.zg6.ui.MoreFragment">
+    tools:context="com.finance.zg6.mianInsideFragment.MoreFragment">
 
     <com.finance.framework.view.ToolBar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         app:leftImg="@mipmap/left"
         app:leftIsShow="false"
-        app:titleText="更多"
-        android:layout_height="60dp">
+        app:titleText="@string/mainActivity_fragment_title_more"
+        android:layout_height="@dimen/ToolBar_height">
     </com.finance.framework.view.ToolBar>
 
 </FrameLayout>
