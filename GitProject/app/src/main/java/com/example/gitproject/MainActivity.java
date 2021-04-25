@@ -97,19 +97,11 @@ public class MainActivity extends BaseActivity {
                 fragmentTransaction.commit();
             }
         });
-
-
-
-
-
     }
-
-
 
     private void fragmentManager() {
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
-
         fragmentTransaction.add(R.id.main_linear, homeFragment);
         fragmentTransaction.add(R.id.main_linear, investFragment);
         fragmentTransaction.add(R.id.main_linear, mineFragment);

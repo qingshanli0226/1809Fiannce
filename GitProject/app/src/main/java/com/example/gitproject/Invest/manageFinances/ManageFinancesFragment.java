@@ -1,7 +1,11 @@
 package com.example.gitproject.Invest.manageFinances;
 
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,8 +50,51 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
         mPresenter.getIvnest();
         financesRv.setLayoutManager(new LinearLayoutManager(getActivity()));
         financesRv.setAdapter(financesAdapter);
-
+        //走马灯
         financesLamp.setSelected(true);
+
+
+
+
+        financesRv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                v.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        v.scrollTo(100,0);
+
+                        return false;
+                    }
+                });
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        Toast.makeText(getActivity(), "aaa", Toast.LENGTH_SHORT).show();
+//                        getActivity().getParent().
+                        v.scrollTo(1000,0);
+                        financesRv.requestDisallowInterceptTouchEvent(false);
+
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        if(event.getRawX()>500) {
+                            Toast.makeText(getActivity(), "bbb", Toast.LENGTH_SHORT).show();
+                            financesRv.requestDisallowInterceptTouchEvent(true);
+                            v.scrollTo(1000,0);
+
+                        } else{
+                            Toast.makeText(getActivity(), "bbb", Toast.LENGTH_SHORT).show();
+                            financesRv.requestDisallowInterceptTouchEvent(true);
+                        }
+
+                        Toast.makeText(getActivity(), "ccc", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+                }
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -55,7 +102,6 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
         financesAdapter.getData().addAll(productBean.getResult());
         financesAdapter.notifyDataSetChanged();
         loadPage.showSuccessLayout();
-
 
     }
     @Override

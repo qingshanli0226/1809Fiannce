@@ -26,5 +26,10 @@
         <attr name="app_item_right_src" format="reference"/>
         <attr name="app_item_left_isshow" format="boolean"/>
         <attr name="app_item_right_isshow" format="boolean"/>
+
+        <attr name="app_item_right_text" format="string"/>
+        <attr name="app_item_right_text_size" format="dimension"/>
+        <attr name="app_item_right_text_color" format="color"/>
+        <attr name="app_item_right_text_isshow" format="boolean"/>
     </declare-styleable>
 </resources>

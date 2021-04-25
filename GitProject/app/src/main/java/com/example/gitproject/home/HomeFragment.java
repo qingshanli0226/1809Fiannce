@@ -84,12 +84,6 @@ public class HomeFragment extends BaseFragment {
 
     }
 
-    @Override
-    public void destroy() {
-        super.destroy();
-        homeProgress.destroy();
-
-    }
 
     @Override
     public void onClickCenter() {
@@ -107,4 +101,10 @@ public class HomeFragment extends BaseFragment {
         Toast.makeText(getActivity(), "onClickRight", Toast.LENGTH_SHORT).show();
 
     }
+    @Override
+    public void destroy() {
+        super.destroy();
+        homeProgress.destroy();
+    }
+
 }

@@ -62,35 +62,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         handler.sendEmptyMessageDelayed(COUNT_TIME,1000);
 
     }
-
-    @Override
-    public void onHomeData(HomeBean homeBean) {
-        CacheManager.getInstance().setHomeBean(homeBean);
-        task_two = true;
-        handler.sendEmptyMessage(ONE_TASK_FIISH);
-    }
-
-    @Override
-    public void onAppUpdate(UpdateBean updateBean) {
-        this.updateBean = updateBean;
-        task_three = true;
-        handler.sendEmptyMessage(ONE_TASK_FIISH);
-
-    }
-
-    @Override
-    public void showLoading() {
-    }
-
-    @Override
-    public void hideLoading() {
-    }
-
-    @Override
-    public void showError(String error) {
-        loadPage.showErrorText(error);
-    }
-
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -159,18 +130,32 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         }
     }
 
-    public boolean onKeyDown(int keyCode,KeyEvent event){
-        if(keyCode==KeyEvent.KEYCODE_BACK)
-            return true;
-        return super.onKeyDown(keyCode, event);
-    }//屏蔽返回键
+    @Override
+    public void onHomeData(HomeBean homeBean) {
+        CacheManager.getInstance().setHomeBean(homeBean);
+        task_two = true;
+        handler.sendEmptyMessage(ONE_TASK_FIISH);
+    }
 
     @Override
-    public void destroy() {
-        super.destroy();
-        if (handler != null) {
-            handler.removeCallbacksAndMessages(null);
-        }
+    public void onAppUpdate(UpdateBean updateBean) {
+        this.updateBean = updateBean;
+        task_three = true;
+        handler.sendEmptyMessage(ONE_TASK_FIISH);
+
+    }
+
+    @Override
+    public void showLoading() {
+    }
+
+    @Override
+    public void hideLoading() {
+    }
+
+    @Override
+    public void showError(String error) {
+        loadPage.showErrorText(error);
     }
 
     @Override
@@ -187,6 +172,18 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void onClickRight() {
 
     }
+    public boolean onKeyDown(int keyCode,KeyEvent event){
+        if(keyCode==KeyEvent.KEYCODE_BACK)
+            return true;
+        return super.onKeyDown(keyCode, event);
+    }//屏蔽返回键
 
+    @Override
+    public void destroy() {
+        super.destroy();
+        if (handler != null) {
+            handler.removeCallbacksAndMessages(null);
+        }
+    }
 
 }

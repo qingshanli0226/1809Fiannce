@@ -14,10 +14,13 @@
     <dimen name="dm_px_90">90px</dimen>
     <dimen name="dm_px_100">100px</dimen>
     <dimen name="dm_px_120">120px</dimen>
+    <dimen name="dm_px_140">140px</dimen>
     <dimen name="dm_px_150">150px</dimen>
+    <dimen name="dm_px_160">160px</dimen>
     <dimen name="dm_px_200">200px</dimen>
     <dimen name="dm_px_300">300px</dimen>
     <dimen name="dm_px_400">400px</dimen>
+    <dimen name="dm_px_500">500px</dimen>
     <dimen name="dm_px_600">600px</dimen>
     <dimen name="dm_px_700">700px</dimen>
     <dimen name="dm_px_800">800px</dimen>
