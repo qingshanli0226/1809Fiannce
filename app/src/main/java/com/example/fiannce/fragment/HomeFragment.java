@@ -1,15 +1,16 @@
 package com.example.fiannce.fragment;
 
 import android.content.Context;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.bumptech.glide.Glide;
 import com.example.fiannce.R;
 import com.example.fiannce.custom_view.CustomView_HomeFragment;
+import com.example.net.TobView;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
 import com.example.net.mode.HomeBean;
@@ -21,11 +22,11 @@ import java.util.List;
 public class HomeFragment extends BaseFragment {
 
     private Banner banner;
-    private TextView text;
     private TextView name;
     private CustomView_HomeFragment customview;
     private TextView expect;
     private Button buy;
+    private TobView tobView;
 
     @Override
     protected int getLayoutId() {
@@ -56,12 +57,24 @@ public class HomeFragment extends BaseFragment {
         banner.start();
 
         customview.SealedProgress(80,true);
+
+        tobView.ImgCallBackListener(new TobView.ImgCallBack() {
+            @Override
+            public void OnLeftImg() {
+                Toast.makeText(getContext(), "图片", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void OnRightImg() {
+                Toast.makeText(getContext(), "图片", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     protected void initView() {
         banner = (Banner) mView.findViewById(R.id.banner);
-        text = (TextView) mView.findViewById(R.id.text);
+        tobView = (TobView) mView.findViewById(R.id.tob);
         name = (TextView) mView.findViewById(R.id.name);
         customview = (CustomView_HomeFragment) mView.findViewById(R.id.customview);
         expect = (TextView) mView.findViewById(R.id.expect);

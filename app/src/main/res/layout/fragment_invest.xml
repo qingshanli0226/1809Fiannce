@@ -7,7 +7,15 @@
     android:orientation="vertical"
     tools:context=".fragment.InvestFragment">
 
-
+    <com.example.net.TobView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:text="投资"
+        app:textColor="#03A9F4"
+        app:backgroundColor="#142732"
+        app:left_show="false"
+        app:right_show="false"
+        ></com.example.net.TobView>
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/common"

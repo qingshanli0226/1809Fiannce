@@ -22,8 +22,6 @@ public class AllFragment extends BaseFragment<UpdatePresenter_AllFragment> imple
 
     private RecyclerView rv;
 
-
-
     @Override
     protected void initData() {
         httpPresenter = new UpdatePresenter_AllFragment(this);
@@ -35,8 +33,6 @@ public class AllFragment extends BaseFragment<UpdatePresenter_AllFragment> imple
         rv = (RecyclerView) mView.findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
     }
-
-
 
     public AllFragment() {
         // Required empty public constructor

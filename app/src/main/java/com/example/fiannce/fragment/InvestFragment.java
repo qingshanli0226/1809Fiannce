@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fiannce.R;
-import com.example.fiannce.adapter.MyTab;
+import com.example.fiannce.adapter.MyTab_Welcome;
 import com.example.fiannce.fragment.fragment_invest.AllFragment;
 import com.example.fiannce.fragment.fragment_invest.HotFragment;
 import com.example.fiannce.fragment.fragment_invest.RecomFragment;
@@ -37,9 +37,9 @@ public class InvestFragment extends Fragment {
 
         common = (CommonTabLayout) inflate.findViewById(R.id.common);
 
-        customTabEntities.add(new MyTab("全部理财",0,0));
-        customTabEntities.add(new MyTab("推荐理财",0,0));
-        customTabEntities.add(new MyTab("热门理财",0,0));
+        customTabEntities.add(new MyTab_Welcome("全部理财",0,0));
+        customTabEntities.add(new MyTab_Welcome("推荐理财",0,0));
+        customTabEntities.add(new MyTab_Welcome("热门理财",0,0));
 
         list.add(new AllFragment());
         list.add(new RecomFragment());

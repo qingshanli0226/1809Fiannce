@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.MyMoneyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.example.net.TobView
+        android:id="@+id/tob"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="50dp"
+        app:text="更多"
+        android:background="#8E8B8B"
+        app:textColor="#fff"></com.example.net.TobView>
 
-</FrameLayout>
+</LinearLayout>

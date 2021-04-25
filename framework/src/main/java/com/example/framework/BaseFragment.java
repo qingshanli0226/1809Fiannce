@@ -10,14 +10,29 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.net.PageView;
+import com.example.net.TobView;
+
 public abstract class BaseFragment<T extends BasePresenter>extends Fragment {
 
     protected T httpPresenter;
     protected View mView;
+    protected View BaseView;
+    protected PageView pageView;
+    protected TobView tobView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        BaseView = pageView = new PageView(getContext()) {
+            @Override
+            protected int FindLayout() {
+                return getLayoutId();
+            }
+        };
+        tobView = BaseView.findViewById(R.id.tob);
+
         return mView = inflater.inflate(getLayoutId(),container,false);
     }
 

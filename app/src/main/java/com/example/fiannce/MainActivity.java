@@ -1,29 +1,21 @@
 package com.example.fiannce;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Bundle;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.fiannce.adapter.MyTab;
+import com.example.fiannce.adapter.MyTab_Welcome;
 import com.example.fiannce.fragment.HomeFragment;
 import com.example.fiannce.fragment.InvestFragment;
 import com.example.fiannce.fragment.ManyFragment;
 import com.example.fiannce.fragment.MyMoneyFragment;
 import com.example.framework.BaseActivity;
-import com.example.framework.manager.CacheManager;
-import com.example.net.mode.HomeBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Route(path = "/main/MainActivity")
 public class MainActivity extends BaseActivity {
@@ -64,10 +56,10 @@ public class MainActivity extends BaseActivity {
                 .commit();
         showFragment(homeFragment);
 
-        customTabEntities.add(new MyTab("首页",R.mipmap.bottom02,R.mipmap.bottom01));
-        customTabEntities.add(new MyTab("投资",R.mipmap.bottom04,R.mipmap.bottom03));
-        customTabEntities.add(new MyTab("我的账户",R.mipmap.bottom06,R.mipmap.bottom05));
-        customTabEntities.add(new MyTab("更多",R.mipmap.bottom08,R.mipmap.bottom07));
+        customTabEntities.add(new MyTab_Welcome("首页",R.mipmap.bottom02,R.mipmap.bottom01));
+        customTabEntities.add(new MyTab_Welcome("投资",R.mipmap.bottom04,R.mipmap.bottom03));
+        customTabEntities.add(new MyTab_Welcome("我的账户",R.mipmap.bottom06,R.mipmap.bottom05));
+        customTabEntities.add(new MyTab_Welcome("更多",R.mipmap.bottom08,R.mipmap.bottom07));
 
         common.setTabData(customTabEntities);
 
