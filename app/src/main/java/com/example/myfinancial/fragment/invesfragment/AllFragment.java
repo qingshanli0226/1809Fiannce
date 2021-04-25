@@ -81,4 +81,15 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements InVesVi
     public void onRightTvClick() {
 
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (loadingPage!=null){
+            loadingPage.clearAnimation();
+        }
+        if (mPresenter!=null){
+            mPresenter.destroy();
+        }
+    }
 }

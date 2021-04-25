@@ -134,5 +134,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
         if (handler != null) {
             handler.removeCallbacksAndMessages(null);
         }
+        if (mPresenter!=null){
+            mPresenter.destroy();
+        }
     }
 }
