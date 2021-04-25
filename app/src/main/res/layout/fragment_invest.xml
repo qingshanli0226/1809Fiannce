@@ -21,16 +21,17 @@
 <!--    </androidx.appcompat.widget.Toolbar>-->
     <com.example.network.TobView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_50"
         app:text="投资"
         app:textColor="#03A9F4"
         app:backgroundColor="#142732"
         app:left_show="false"
         app:right_show="false"
+        android:id="@+id/tob"
         ></com.example.network.TobView>
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_50"
         app:tl_textUnselectColor="#000000"
         app:tl_textSelectColor="#ea2f31"
         android:id="@+id/tab"></com.flyco.tablayout.CommonTabLayout>

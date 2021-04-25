@@ -8,18 +8,18 @@
     tools:context=".fragment.HomeFragment">
     <com.example.network.TobView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_50"
         app:backgroundColor="#142732"
         app:text="首页"
         app:textColor="#03A9F4"
         app:left_show="false"
         app:right_show="false"
-        android:id="@+id/tob1"
+        android:id="@+id/tob"
         ></com.example.network.TobView>
 
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="@dimen/dp_150"
         android:id="@+id/bar"></com.youth.banner.Banner>
 
 

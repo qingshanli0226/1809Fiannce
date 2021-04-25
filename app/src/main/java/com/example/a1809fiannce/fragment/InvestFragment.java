@@ -31,8 +31,6 @@ import java.util.List;
 
 
 public class InvestFragment extends Fragment  {
-    private CommonTabLayout comTab;
-
     private ArrayList<CustomTabEntity> mTabEntitys = new ArrayList<>();
     private ArrayList<Fragment> fragmentList=new ArrayList<>();
 

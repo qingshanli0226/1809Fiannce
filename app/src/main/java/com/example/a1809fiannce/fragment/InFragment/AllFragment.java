@@ -1,5 +1,6 @@
 package com.example.a1809fiannce.fragment.InFragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -35,6 +36,7 @@ public class AllFragment extends BaseFragment<UpdatePresenter> implements CallBa
     protected void initView() {
         re = (RecyclerView) BaseView.findViewById(R.id.re);
         re.setLayoutManager(new LinearLayoutManager(getContext()));
+
     }
 
     @Override

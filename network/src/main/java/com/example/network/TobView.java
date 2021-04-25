@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,7 +23,7 @@ public class TobView extends RelativeLayout {
     private ImageView leftImg;
     private TextView tobTit;
     private ImageView rightImg;
-    private LinearLayout tob;
+    private RelativeLayout tob;
     private int background;
     private ImgCallBack imgCallBack;
     public TobView(Context context) {
@@ -55,8 +56,7 @@ public class TobView extends RelativeLayout {
         leftImg = inflate.findViewById(R.id.left_img);
         tobTit = inflate.findViewById(R.id.tob_tit);
         rightImg = inflate.findViewById(R.id.right_img);
-        tob = inflate.findViewById(R.id.tob);
-
+        tob=inflate.findViewById(R.id.tob);
         if (right_show){
             rightImg.setImageResource(right_img);
         }
@@ -65,7 +65,6 @@ public class TobView extends RelativeLayout {
         }
 
         tobTit.setText(text);
-
         tobTit.setTextColor(textColor);
 
         tob.setBackgroundColor(background);
@@ -79,9 +78,23 @@ public class TobView extends RelativeLayout {
                 }
             }
         });
+        leftImg.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imgCallBack.OnLeftImg();
+            }
+        });
 
 
     }
+
+
+    public void setTobTit(String tit){
+        tobTit.setText(tit+"");
+        invalidate();
+    }
+
+
     public void ImgCallBackListener(ImgCallBack imgCallBack){
         this.imgCallBack = imgCallBack;
 

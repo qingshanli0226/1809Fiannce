@@ -8,12 +8,12 @@
 
     <com.example.network.TobView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_50"
         app:text="我的资产"
         app:backgroundColor="#142732"
         app:textColor="#03A9F4"
         app:right_show="true"
-        android:id="@+id/tob2"
+        android:id="@+id/tob"
         app:right_img="@mipmap/my_setting_icon"></com.example.network.TobView>
 
 </LinearLayout>

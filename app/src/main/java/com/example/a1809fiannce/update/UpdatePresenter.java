@@ -132,7 +132,7 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
     public void AllData(){
         RetrofitManager.getRetrofit()
                 .AllData()
-                .delay(5, TimeUnit.SECONDS)
+                .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {

@@ -18,6 +18,7 @@ import com.example.a1809fiannce.HomeCallBack;
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.view.CusView;
 import com.example.formwork.model.HomeBean;
+import com.example.network.BaseFragment;
 import com.example.network.TobView;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
@@ -26,24 +27,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
     private Banner bar;
     private List<String> list=new ArrayList<>();
     private CusView cus;
     private TextView name;
-    private TobView tob1;
     private TextView expect;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View inflate = inflater.inflate(R.layout.fragment_home, container, false);
-        bar = inflate.findViewById(R.id.bar);
-        cus = inflate.findViewById(R.id.cus);
-        name = inflate.findViewById(R.id.name);
-        tob1 = inflate.findViewById(R.id.tob1);
-        expect = (TextView) inflate.findViewById(R.id.expect);
+    protected void initData() {
         HomeBean homeBean = HomeCallBack.getHomeCallBack().getHomeBean();
         Log.i("aa", "onCreateView: "+homeBean.toString());
         List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
@@ -65,7 +57,7 @@ public class HomeFragment extends Fragment {
         cus.SealedProgress(50,true);
         expect.setText("预期年利润："+homeBean.getResult().getProInfo().getYearRate()+"%");
 
-        tob1.ImgCallBackListener(new TobView.ImgCallBack() {
+        tobView.ImgCallBackListener(new TobView.ImgCallBack() {
             @Override
             public void OnLeftImg() {
                 Toast.makeText(getContext(), "这是图片", Toast.LENGTH_SHORT).show();
@@ -77,9 +69,20 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getContext(), "这是图片", Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    @Override
+    protected void initView() {
+        bar = BaseView.findViewById(R.id.bar);
+        cus = BaseView.findViewById(R.id.cus);
+        name = BaseView.findViewById(R.id.name);
 
-        return inflate;
+        expect = (TextView) BaseView.findViewById(R.id.expect);
+    }
+
+    @Override
+    protected int FindLayout1() {
+        return R.layout.fragment_home;
     }
 
 }

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -169,5 +170,10 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
         super.onDestroy();
         handler.removeCallbacksAndMessages(true);
         mPresenter.delView();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return false;
     }
 }

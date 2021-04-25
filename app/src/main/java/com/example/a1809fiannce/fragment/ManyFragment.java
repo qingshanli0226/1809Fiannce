@@ -13,10 +13,6 @@ import com.example.a1809fiannce.R;
 
 public class ManyFragment extends Fragment {
 
-
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
