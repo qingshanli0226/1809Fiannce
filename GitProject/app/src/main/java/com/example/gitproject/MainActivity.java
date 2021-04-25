@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
 
     public void initView() {
         //沉浸式
-        BarUtils.transparentStatusBar(this);
+//        BarUtils.transparentStatusBar(this);
         tabEntitys = new ArrayList<>();
         mainRadiogroup = (RadioGroup) findViewById(R.id.main_radiogroup);
         oneBtn = (RadioButton) findViewById(R.id.one_btn);

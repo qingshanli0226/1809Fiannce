@@ -1,31 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/gray"
+    android:orientation="vertical"
     tools:context=".mine.MineFragment">
 
 
     <com.example.framework.view.ToolBar
         android:id="@+id/toolbar"
         app:app_text="@string/mian_money"
-        app:app_back_color_toob="@color/mine_black"
+        app:app_back_color_toob="@color/light_black"
         app:app_text_color="@color/blue"
         app:app_right_src="@drawable/my_setting_icon"
         app:app_right_isshow="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:background="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_px_300">
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/my_user_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+               android:layout_gravity="center"
+                android:text="登录"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_px_400"></RelativeLayout>
     <com.example.framework.view.ItemBar
-        app:app_item_text="aaaa"
-        app:app_item_back_color="@color/white"
+        app:app_item_text="@string/mine_invest"
         app:app_item_left_src="@drawable/my_invest_manage"
-        app:app_item_left_isshow="true"
         app:app_item_right_src="@drawable/right"
-        app:app_item_right_isshow="true"
-        android:layout_marginTop="100dp"
+        style="@style/showItemBar"
+        app:app_item_text_size="@dimen/dm_px_30"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-</FrameLayout>
+    <com.example.framework.view.ItemBar
+        app:app_item_text="@string/mine_reward"
+        app:app_item_left_src="@drawable/my_reward_manage"
+        app:app_item_right_src="@drawable/right"
+        style="@style/showItemBar"
+        app:app_item_text_size="@dimen/dm_px_30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.example.framework.view.ItemBar
+        app:app_item_text="@string/mine_asset"
+        app:app_item_left_src="@drawable/my_asset_manage"
+        app:app_item_right_src="@drawable/right"
+        app:app_item_text_size="@dimen/dm_px_30"
+        style="@style/showItemBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

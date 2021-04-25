@@ -9,7 +9,7 @@
     <com.example.framework.view.ToolBar
         android:id="@+id/toolbar"
         app:app_text="@string/mian_more"
-        app:app_back_color_toob="@color/mine_black"
+        app:app_back_color_toob="@color/light_black"
         app:app_text_color="@color/blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

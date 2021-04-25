@@ -135,6 +135,12 @@ public class ProgressView extends View {
         }
     };
 
+    public void destroy(){
+        if (handler != null) {
+            handler.removeCallbacksAndMessages(null);
+        }
+    }
+
 
     @Override
     protected void onDraw(Canvas canvas) {

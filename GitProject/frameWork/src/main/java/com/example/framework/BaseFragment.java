@@ -62,7 +62,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     }
 
     //清除
-    private void destroy() {
+    public void destroy() {
         if (mPresenter != null) {
             mPresenter.detachView();
         }

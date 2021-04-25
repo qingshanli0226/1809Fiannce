@@ -24,4 +24,9 @@
         android:layout_marginRight="@dimen/dm_px_20"
         android:layout_width="@dimen/dm_px_80"
         android:layout_height="@dimen/dm_px_80"/>
+    <View
+        android:layout_below="@id/center_item_title"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 </RelativeLayout>

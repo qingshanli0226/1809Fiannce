@@ -14,9 +14,9 @@ import com.example.framework.R;
 
 public class ToolBar extends RelativeLayout {
     private String text;
-    private int text_color = Color.RED, back_color = Color.GRAY;
-    private int left_src, right_src;
-    private boolean left_isshow, right_ishow;
+    private int textColor = Color.RED, backColor = Color.GRAY;
+    private int leftSrc, rightSrc;
+    private boolean leftIsshow, rightIshow;
 
     private ToolbarOnClickLisenter toolbarOnClickLisenter;
 
@@ -38,52 +38,52 @@ public class ToolBar extends RelativeLayout {
     }
 
 
-    private ImageView left_re;
-    private ImageView right_set;
-    private TextView center_title;
-    private RelativeLayout toolbar_back;
+    private ImageView leftRe;
+    private ImageView rightSet;
+    private TextView centerTitle;
+    private RelativeLayout toolbarBack;
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         View inflate = LayoutInflater.from(context).inflate(R.layout.toolbar_layout, this);
-        left_re = inflate.findViewById(R.id.left_re);
-        right_set = inflate.findViewById(R.id.right_set);
-        center_title = inflate.findViewById(R.id.center_title);
-        toolbar_back = inflate.findViewById(R.id.toolbar_back);
+        leftRe = inflate.findViewById(R.id.left_re);
+        rightSet = inflate.findViewById(R.id.right_set);
+        centerTitle = inflate.findViewById(R.id.center_title);
+        toolbarBack = inflate.findViewById(R.id.toolbar_back);
 
         if (attrs != null) {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ToolBar);
             text = (String) typedArray.getText(R.styleable.ToolBar_app_text);
-            text_color = typedArray.getColor(R.styleable.ToolBar_app_text_color, text_color);
-            back_color = typedArray.getColor(R.styleable.ToolBar_app_back_color_toob, back_color);
-            left_src = typedArray.getResourceId(R.styleable.ToolBar_app_left_src, 0);
-            right_src = typedArray.getResourceId(R.styleable.ToolBar_app_right_src, 0);
-            left_isshow = typedArray.getBoolean(R.styleable.ToolBar_app_left_isshow, left_isshow);
-            right_ishow = typedArray.getBoolean(R.styleable.ToolBar_app_right_isshow, right_ishow);
+            textColor = typedArray.getColor(R.styleable.ToolBar_app_text_color, textColor);
+            backColor = typedArray.getColor(R.styleable.ToolBar_app_back_color_toob, backColor);
+            leftSrc = typedArray.getResourceId(R.styleable.ToolBar_app_left_src, 0);
+            rightSrc = typedArray.getResourceId(R.styleable.ToolBar_app_right_src, 0);
+            leftIsshow = typedArray.getBoolean(R.styleable.ToolBar_app_left_isshow, leftIsshow);
+            rightIshow = typedArray.getBoolean(R.styleable.ToolBar_app_right_isshow, rightIshow);
             typedArray.recycle();
         }
 
-        center_title.setText(text);
-        center_title.setTextColor(text_color);
-        toolbar_back.setBackgroundColor(back_color);
+        centerTitle.setText(text);
+        centerTitle.setTextColor(textColor);
+        toolbarBack.setBackgroundColor(backColor);
 
-        if (left_src != 0 && left_isshow) {
-            left_re.setImageResource(left_src);
+        if (leftSrc != 0 && leftIsshow) {
+            leftRe.setImageResource(leftSrc);
         }
-        if (right_src != 0 && right_ishow) {
-            right_set.setImageResource(right_src);
+        if (rightSrc != 0 && rightIshow) {
+            rightSet.setImageResource(rightSrc);
         }
 
-        left_re.setOnClickListener(v -> {
+        leftRe.setOnClickListener(v -> {
             if (toolbarOnClickLisenter != null) {
                 toolbarOnClickLisenter.onClickLeft();
             }
         });
-        right_set.setOnClickListener(v -> {
+        rightSet.setOnClickListener(v -> {
             if (toolbarOnClickLisenter != null) {
                 toolbarOnClickLisenter.onClickRight();
             }
         });
-        center_title.setOnClickListener(v -> {
+        centerTitle.setOnClickListener(v -> {
             if (toolbarOnClickLisenter != null) {
                 toolbarOnClickLisenter.onClickCenter();
             }
@@ -91,57 +91,51 @@ public class ToolBar extends RelativeLayout {
     }
 
     public void setText(String text) {
-        if (center_title != null) {
-            center_title.setText(text);
+        if (centerTitle != null) {
+            centerTitle.setText(text);
         }
     }
 
     public void setTextColor(int color) {
-        if (center_title != null) {
-            center_title.setTextColor(text_color);
+        if (centerTitle != null) {
+            centerTitle.setTextColor(textColor);
         }
     }
 
     public void setBackgroundColor(int color){
-        if (toolbar_back != null) {
-            toolbar_back.setBackgroundColor(back_color);
+        if (toolbarBack != null) {
+            toolbarBack.setBackgroundColor(backColor);
         }
     }
-    //        if (left_src != 0 && left_isshow) {
-    //            left_re.setImageResource(left_src);
-    //        }
-    //        if (right_src != 0 && right_ishow) {
-    //            right_set.setImageResource(right_src);
-    //        }
 
     public void setLeftSrc(int src){
-        if (left_re != null) {
-            left_re.setImageResource(src);
+        if (leftRe != null) {
+            leftRe.setImageResource(src);
         }
 
     }
     public void setRightSrc(int src){
-        if (right_set != null) {
-            right_set.setImageResource(src);
+        if (rightSet != null) {
+            rightSet.setImageResource(src);
 
         }
     }
     public void setleftIsshow(boolean isShow){
-        if (left_re != null) {
+        if (leftRe != null) {
             if (isShow) {
-                left_re.setVisibility(View.VISIBLE);
+                leftRe.setVisibility(View.VISIBLE);
             } else {
-                left_re.setVisibility(View.GONE);
+                leftRe.setVisibility(View.GONE);
 
             }
         }
     }
     public void setRightIsshow(boolean isShow){
-        if (right_set != null) {
+        if (rightSet != null) {
             if (isShow) {
-                right_set.setVisibility(View.VISIBLE);
+                rightSet.setVisibility(View.VISIBLE);
             } else {
-                right_set.setVisibility(View.GONE);
+                rightSet.setVisibility(View.GONE);
 
             }
         }

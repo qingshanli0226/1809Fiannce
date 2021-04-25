@@ -29,63 +29,70 @@ public class ItemBar extends LinearLayout {
         init(context,attrs,defStyleAttr);
     }
     private String text;
-    private int text_color = Color.RED, back_color = Color.GRAY;
-    private int left_src, right_src;
-    private boolean left_isshow, right_ishow;
+    private int textColor = Color.RED, backColor = Color.GRAY;
+    private int leftSrc, rightSrc;
+    private boolean leftIsshow, rightIshow;
     private ItemOnClickLisenter itemOnClickLisenter;
-
+    private int textSize;
     public void setItemOnClickLisenter(ItemOnClickLisenter itemOnClickLisenter) {
         this.itemOnClickLisenter = itemOnClickLisenter;
     }
+    private ImageView leftItemPic;
+    private ImageView rightItemPic;
+    private TextView centerItemTitle;
+    private RelativeLayout reItem;
+
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View inflate = inflater.inflate(R.layout.set_item_layout, this);
-        ImageView left_item_pic = inflate.findViewById(R.id.left_item_pic);
-        ImageView right_item_pic = inflate.findViewById(R.id.right_item_pic);
-        TextView center_item_title = inflate.findViewById(R.id.center_item_title);
-        RelativeLayout re_item = inflate.findViewById(R.id.re_item);
+        leftItemPic = inflate.findViewById(R.id.left_item_pic);
+        rightItemPic = inflate.findViewById(R.id.right_item_pic);
+        centerItemTitle = inflate.findViewById(R.id.center_item_title);
+        reItem = inflate.findViewById(R.id.re_item);
 
         if (attrs != null) {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ItemBar);
             text = (String) typedArray.getText(R.styleable.ItemBar_app_item_text);
-            text_color = typedArray.getColor(R.styleable.ItemBar_app_item_text_color, text_color);
-            back_color = typedArray.getColor(R.styleable.ItemBar_app_item_back_color, back_color);
-            left_src = typedArray.getResourceId(R.styleable.ItemBar_app_item_left_src, 0);
-            right_src = typedArray.getResourceId(R.styleable.ItemBar_app_item_right_src, 0);
-            left_isshow = typedArray.getBoolean(R.styleable.ItemBar_app_item_left_isshow, left_isshow);
-            right_ishow = typedArray.getBoolean(R.styleable.ItemBar_app_item_right_isshow, right_ishow);
+            textSize = (int) typedArray.getDimension(R.styleable.ItemBar_app_item_text_size, textSize);
+            textColor = typedArray.getColor(R.styleable.ItemBar_app_item_text_color, textColor);
+            backColor = typedArray.getColor(R.styleable.ItemBar_app_item_back_color, backColor);
+            leftSrc = typedArray.getResourceId(R.styleable.ItemBar_app_item_left_src, 0);
+            rightSrc = typedArray.getResourceId(R.styleable.ItemBar_app_item_right_src, 0);
+            leftIsshow = typedArray.getBoolean(R.styleable.ItemBar_app_item_left_isshow, leftIsshow);
+            rightIshow = typedArray.getBoolean(R.styleable.ItemBar_app_item_right_isshow, rightIshow);
             typedArray.recycle();
         }
 
-        center_item_title.setText(text);
-        center_item_title.setTextColor(text_color);
-        re_item.setBackgroundColor(back_color);
+        centerItemTitle.setText(text);
+        centerItemTitle.setTextColor(textColor);
+        centerItemTitle.setTextSize(textSize);
+        reItem.setBackgroundColor(backColor);
 
-        if (left_src != 0 && left_isshow) {
-            left_item_pic.setImageResource(left_src);
+        if (leftSrc != 0 && leftIsshow) {
+            leftItemPic.setImageResource(leftSrc);
         }
-        if (right_src != 0 && right_ishow) {
-            right_item_pic.setImageResource(right_src);
+        if (rightSrc != 0 && rightIshow) {
+            rightItemPic.setImageResource(rightSrc);
         }
 
-        left_item_pic.setOnClickListener(v -> {
+        leftItemPic.setOnClickListener(v -> {
             if (itemOnClickLisenter != null) {
                 itemOnClickLisenter.leftOnClick();
             }
         });
-        right_item_pic.setOnClickListener(v -> {
+        rightItemPic.setOnClickListener(v -> {
             if (itemOnClickLisenter != null) {
                 itemOnClickLisenter.rightOnClick();
             }
         });
-        center_item_title.setOnClickListener(v -> {
+        centerItemTitle.setOnClickListener(v -> {
             if (itemOnClickLisenter != null) {
                 itemOnClickLisenter.titleOnClick();
             }
         });
 
-        re_item.setOnClickListener(new OnClickListener() {
+        reItem.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (itemOnClickLisenter != null) {
@@ -93,6 +100,63 @@ public class ItemBar extends LinearLayout {
                 }
             }
         });
+    }
+
+
+
+    public void setItemText(String text) {
+        if (centerItemTitle != null) {
+            centerItemTitle.setText(text);
+        }
+    }
+
+    public void setItemTextColor(int color) {
+        if (centerItemTitle != null) {
+            centerItemTitle.setTextColor(color);
+        }
+    }
+    public void setItemTextSize(int size) {
+        if (centerItemTitle != null) {
+            centerItemTitle.setTextSize(size);
+        }
+    }
+    public void setItemBackgroundColor(int color){
+        if (reItem != null) {
+            reItem.setBackgroundColor(color);
+        }
+    }
+
+    public void setLeftSrc(int src){
+        if (leftItemPic != null) {
+            leftItemPic.setImageResource(src);
+        }
+
+    }
+    public void setRightSrc(int src){
+        if (rightItemPic != null) {
+            rightItemPic.setImageResource(src);
+
+        }
+    }
+    public void setleftIsshow(boolean isShow){
+        if (leftItemPic != null) {
+            if (isShow) {
+                leftItemPic.setVisibility(View.VISIBLE);
+            } else {
+                leftItemPic.setVisibility(View.GONE);
+
+            }
+        }
+    }
+    public void setRightIsshow(boolean isShow){
+        if (rightItemPic != null) {
+            if (isShow) {
+                rightItemPic.setVisibility(View.VISIBLE);
+            } else {
+                rightItemPic.setVisibility(View.GONE);
+
+            }
+        }
     }
 
     public static interface ItemOnClickLisenter{

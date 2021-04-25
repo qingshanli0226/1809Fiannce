@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dm_px_0">0px</dimen>
+    <dimen name="dm_px_1">1px</dimen>
     <dimen name="dm_px_10">10px</dimen>
     <dimen name="dm_px_15">15px</dimen>
     <dimen name="dm_px_20">20px</dimen>

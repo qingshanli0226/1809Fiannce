@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dm_px_0">0px</dimen>
+    <dimen name="dm_px_1">1px</dimen>
     <dimen name="dm_px_10">10px</dimen>
     <dimen name="dm_px_15">15px</dimen>
     <dimen name="dm_px_20">20px</dimen>
@@ -16,6 +17,9 @@
     <dimen name="dm_px_150">150px</dimen>
     <dimen name="dm_px_200">200px</dimen>
     <dimen name="dm_px_300">300px</dimen>
+    <dimen name="dm_px_400">400px</dimen>
     <dimen name="dm_px_600">600px</dimen>
     <dimen name="dm_px_700">700px</dimen>
+    <dimen name="dm_px_800">800px</dimen>
+    <dimen name="dm_px_900">900px</dimen>
 </resources>

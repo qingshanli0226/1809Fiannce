@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         app:app_text="@string/mian_invest"
         app:app_text_color="@color/blue"
-
-        app:app_back_color_toob="@color/mine_black"
+        app:app_back_color_toob="@color/light_black"
         android:layout_height="wrap_content"/>
 
     <LinearLayout

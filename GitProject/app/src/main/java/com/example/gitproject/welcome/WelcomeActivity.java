@@ -44,8 +44,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void initView() {
-
-
         countDown = (TextView) findViewById(R.id.countDown);
         welImg = (ImageView) findViewById(R.id.wel_img);
     }
@@ -170,7 +168,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void destroy() {
         super.destroy();
-        handler.removeCallbacksAndMessages(null);
+        if (handler != null) {
+            handler.removeCallbacksAndMessages(null);
+        }
     }
 
     @Override

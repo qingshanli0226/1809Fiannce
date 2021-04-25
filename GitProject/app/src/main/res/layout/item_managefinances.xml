@@ -27,7 +27,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dm_px_40"
                     android:textColor="@color/black"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="@dimen/dm_px_60"></TextView>
 
                 <ImageView
                     android:layout_width="@dimen/dm_px_30"
@@ -40,7 +40,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/dm_px_1"
                 android:layout_gravity="center"
                 android:background="@color/gray"></View>
 
@@ -50,7 +50,7 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:layout_width="300dp"
+                    android:layout_width="@dimen/dm_px_800"
                     android:layout_height="wrap_content">
 
                     <LinearLayout
@@ -75,7 +75,6 @@
                                 android:id="@+id/finances_money"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="10"
                                 android:textColor="@color/red"></TextView>
 
                             <TextView
@@ -102,8 +101,7 @@
                                 android:id="@+id/finances_minTouMoney"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/dm_px_10"
-                                android:text="100"></TextView>
+                                android:layout_marginLeft="@dimen/dm_px_10"></TextView>
 
                         </LinearLayout>
 
@@ -132,7 +130,6 @@
                                 android:id="@+id/finances_yeatRate"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="10"
                                 android:textColor="@color/red"></TextView>
 
                             <TextView
@@ -183,7 +180,6 @@
                                 android:id="@+id/finances_suodingDays"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="10"
                                 android:textColor="@color/red"></TextView>
 
                             <TextView
@@ -209,8 +205,7 @@
                                 android:id="@+id/finances_memberNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/dm_px_10"
-                                android:text="100"></TextView>
+                                android:layout_marginLeft="@dimen/dm_px_10"></TextView>
                         </LinearLayout>
                     </LinearLayout>
                 </RelativeLayout>
