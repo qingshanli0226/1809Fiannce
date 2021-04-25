@@ -3,6 +3,7 @@ package com.fiannce.bawei.net;
 
 
 import com.fiannce.bawei.net.mode.HomeBean;
+import com.fiannce.bawei.net.mode.ProductBean;
 import com.fiannce.bawei.net.mode.VersionBean;
 
 import java.util.HashMap;
@@ -24,5 +25,6 @@ public interface FiannceApiService {
     Observable<HomeBean> getHomeData();
     @GET("atguigu/json/P2PInvest/update.json")
     Observable<VersionBean> getServerVersion();
-
+    @GET("atguigu/json/P2PInvest/product.json")
+    Observable<ProductBean> getProductData();
 }

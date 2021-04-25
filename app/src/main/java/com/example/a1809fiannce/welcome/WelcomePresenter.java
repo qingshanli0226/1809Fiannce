@@ -1,8 +1,13 @@
 package com.example.a1809fiannce.welcome;
 
+import androidx.annotation.NonNull;
+
+import com.blankj.utilcode.util.LogUtils;
+import com.example.a1809fiannce.mainActivity.fragment.more.demo.Demo;
 import com.fiannce.bawei.framework.BasePresenter;
 import com.fiannce.bawei.net.RetrofitCreator;
 import com.fiannce.bawei.net.mode.HomeBean;
+import com.fiannce.bawei.net.mode.ProductBean;
 import com.fiannce.bawei.net.mode.VersionBean;
 
 import java.util.concurrent.TimeUnit;
@@ -24,7 +29,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
     public void getHomeData() {
         RetrofitCreator.getFiannceApiService()
                 .getHomeData()
-                .delay(2,TimeUnit.SECONDS)
+                .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -48,7 +53,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
 
                     @Override
                     public void onNext(HomeBean homeBean) {
-                        if (iView!=null) {
+                        if (iView != null) {
                             iView.onHomeData(homeBean);
                         }
 
@@ -56,7 +61,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
 
                     @Override
                     public void onError(Throwable e) {
-                        if (iView!=null){
+                        if (iView != null) {
                             iView.showError(e.getMessage());
                         }
 
@@ -70,11 +75,10 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
     }
 
 
-
     public void getVersionData() {
         RetrofitCreator.getFiannceApiService()
                 .getServerVersion()
-                .delay(2,TimeUnit.SECONDS)
+                .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -97,7 +101,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
 
                     @Override
                     public void onNext(VersionBean versionBean) {
-                        if (iView!=null) {
+                        if (iView != null) {
                             iView.onVersionData(versionBean);
                         }
 
@@ -105,7 +109,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
 
                     @Override
                     public void onError(Throwable e) {
-                        if (iView!=null){
+                        if (iView != null) {
                             iView.showError(e.getMessage());
                         }
 
@@ -118,10 +122,52 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
                 });
     }
 
+    public void getProductData() {
+        RetrofitCreator.getFiannceApiService()
+                .getProductData()
+                .delay(Demo.REQUEST_DELAY_SESSION, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        add(disposable);
+                        iView.showLoading();
+                    }
+                })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        if (iView != null) {
+                            iView.hideLoading();
+                        }
+                    }
+                })
+                .subscribe(new Observer<ProductBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
 
+                    }
 
+                    @Override
+                    public void onNext(@NonNull ProductBean productBean) {
+                        if (iView != null) {
+                            iView.onProductDara(productBean);
+                            LogUtils.json(productBean);
+                        }
+                    }
 
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (iView != null) {
+                            iView.showError(e.getMessage());
+                        }
+                    }
 
+                    @Override
+                    public void onComplete() {
 
-
+                    }
+                });
+    }
 }

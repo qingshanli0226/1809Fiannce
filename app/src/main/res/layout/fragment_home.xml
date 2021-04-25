@@ -3,23 +3,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".mainActivity.fragment.HomeFragment">
+    tools:context=".mainActivity.fragment.HomeFragment"
+    android:gravity="center_horizontal">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#142732"
-        android:textColor="#239CCA"
-        android:gravity="center"
-        android:text="首页"
-        android:textSize="30dp"
-        />
+        android:layout_height="@dimen/dp_40"
+        app:titleTextColor="#14B4ED"
+        app:titleText="首页"></com.example.framework.view.ToolBar>
+
     <com.youth.banner.Banner
+        android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/home_banner"
-        />
+        android:layout_height="150dp"></com.youth.banner.Banner>
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:text="硅谷彩虹新手计划"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"></TextView>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:background="@drawable/text_xingzhuang"
+            android:text="本息保障"
+            android:textSize="15sp"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+            android:gravity="center"
+            android:background="@drawable/text_xingzhuang"
+            android:textSize="15sp"
+            android:text="每日计息"
+            android:layout_marginLeft="20dp"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+            android:gravity="center"
+            android:background="@drawable/text_xingzhuang"
+            android:textSize="15sp"
+            android:text="高额收益"
+            android:layout_marginLeft="20dp"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"></TextView>
+
+
+    </LinearLayout>
+
+    <com.example.framework.view.ProgressView
+        android:layout_width="match_parent"
+        android:id="@+id/progress_bar"
+        app:textcolor="#DC143D"
+        android:layout_marginTop="20dp"
+        android:layout_height="100dp"></com.example.framework.view.ProgressView>
+
+    <TextView
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="预期年利率：8.00%"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40">
+    </TextView>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="立即加入"
+            android:background="#FB4257"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="风险保障金由有道银行监管"></TextView>
 
 </LinearLayout>

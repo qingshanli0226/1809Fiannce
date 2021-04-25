@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".mainActivity.fragment.MoreFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="@dimen/dp_40"
+        app:titleTextColor="#14B4ED"
+        app:titleText="投资"></com.example.framework.view.ToolBar>
 
-</FrameLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        app:tabSelectedTextColor="#f00"
+        app:tabIndicatorColor="#14B4ED"
+        android:id="@+id/money_tab"
+        app:tabIndicatorHeight="50dp"
+        android:layout_height="50dp"></com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:id="@+id/money_vp"
+        android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+</LinearLayout>

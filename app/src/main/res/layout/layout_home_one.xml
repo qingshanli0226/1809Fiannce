@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:textSize="30sp"
+            android:text="默认"
+            android:id="@+id/home_one_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"></View>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="产品金额"></TextView>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="预期年利率"></TextView>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="锁定期"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/home_one_money"
+                    android:textColor="@color/reddd"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"></TextView>
+
+                <TextView
+                    android:id="@+id/home_one_yearrate"
+                    android:textColor="@color/reddd"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"></TextView>
+
+                <TextView
+                    android:id="@+id/home_one_suodingdays"
+                    android:textColor="@color/reddd"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/home_one_mintoumoney"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="100"></TextView>
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="本息保障"></TextView>
+
+                <TextView
+                    android:id="@+id/home_one_membernum"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="100"></TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <com.example.framework.view.ProgressView
+            android:layout_width="80dp"
+            android:text="50"
+            app:textcolor="#14B4ED"
+            android:id="@+id/home_one_progress"
+            android:layout_height="match_parent"></com.example.framework.view.ProgressView>
+
+    </LinearLayout>
+
+    <View
+        android:background="#27B8EE"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></View>
+
+
+
+</LinearLayout>
