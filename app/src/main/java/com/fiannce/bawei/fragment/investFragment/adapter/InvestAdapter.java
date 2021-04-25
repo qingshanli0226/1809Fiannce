@@ -26,6 +26,8 @@ public class InvestAdapter extends BaseQuickAdapter<InvestBean.ResultBean, BaseV
         baseViewHolder.setText(R.id.allonenum,resultBean.getMinTouMoney());
         baseViewHolder.setText(R.id.allthreenum,resultBean.getMemberNum());
 
+
+        baseViewHolder.addOnClickListener(R.id.txt_delete);
         ProgressView progressView = baseViewHolder.getView(R.id.allmyview);
         progressView.saledProgress(Integer.valueOf(resultBean.getProgress()),false);
     }

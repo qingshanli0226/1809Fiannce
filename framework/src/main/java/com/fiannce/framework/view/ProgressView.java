@@ -31,6 +31,8 @@ public class ProgressView extends View {
     private int CIRCLE_MARGIN = 5;
     private int textColor;
     private int circleWith;
+    private int neiColor;
+    private int waiColor;
 
     public ProgressView(Context context) {
         this(context,null);
@@ -52,6 +54,8 @@ public class ProgressView extends View {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
         textColor = typedArray.getColor(R.styleable.ProgressView_textColor, Color.BLACK);
         circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith,30);
+        neiColor = typedArray.getColor(R.styleable.ProgressView_neiColor,Color.parseColor("#5A6E9E"));
+        waiColor = typedArray.getColor(R.styleable.ProgressView_waiColor,Color.parseColor("#DC143D"));
 
         typedArray.recycle();
     }
@@ -116,7 +120,7 @@ public class ProgressView extends View {
 
         //半径
         int radius =( (progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN)-15;
-        paint.setColor(Color.BLUE);
+        paint.setColor(neiColor);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);
         paint.setStyle(Paint.Style.STROKE);
@@ -125,7 +129,7 @@ public class ProgressView extends View {
 
         //矩形
         RectF rectF = new RectF(progressViewWidth/2-radius,progressViewHeight/2-radius,progressViewWidth/2+radius,progressViewHeight/2+radius);
-        paint.setColor(Color.RED);
+        paint.setColor(waiColor);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);
         paint.setStyle(Paint.Style.STROKE);

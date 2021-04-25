@@ -2,198 +2,225 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/two"
-        android:background="@color/colorgray"></View>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/fifty"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/alltitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/text_mid_size"
-            ></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text=">"></TextView>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/two"
-        android:background="@color/colorgray"></View>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/ten"
-            android:layout_marginRight="@dimen/fourty"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ten"
-                android:text="@string/product_money"></TextView>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ten">
-
-                <TextView
-                    android:id="@+id/allonemoney"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorRedqian"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/wan"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ten">
-
-                <ImageView
-                    android:layout_width="@dimen/text_mid_size"
-                    android:layout_height="@dimen/text_mid_size"
-                    android:src="@drawable/manage_list_count"></ImageView>
-
-                <TextView
-                    android:id="@+id/allonenum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    ></TextView>
-            </LinearLayout>
-        </LinearLayout>
-        <!--      第二  -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/ten"
-            android:layout_marginRight="@dimen/fourty"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ten"
-                android:text="@string/expected_annual_interest_rate"></TextView>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ten">
-
-                <TextView
-                    android:id="@+id/alltwopercentage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textColor="@color/colorRedqian"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/percentage"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ten">
-
-                <ImageView
-                    android:layout_width="@dimen/text_mid_size"
-                    android:layout_height="@dimen/text_mid_size"
-                    android:src="@drawable/manage_list_guarantee"></ImageView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/principal_and_interest_security"></TextView>
-            </LinearLayout>
-        </LinearLayout>
-        <!--    第三    -->
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/ten"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ten"
-                android:text="@string/lockup_period"></TextView>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ten">
-
-                <TextView
-                    android:id="@+id/allthreeday"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorRedqian"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/day"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ten">
-
-                <ImageView
-                    android:layout_width="@dimen/text_mid_size"
-                    android:layout_height="@dimen/text_mid_size"
-                    android:src="@drawable/manage_list_member"></ImageView>
-
-                <TextView
-                    android:id="@+id/allthreenum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    ></TextView>
-            </LinearLayout>
-        </LinearLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/two"
+            android:background="@color/colorgray"></View>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <com.fiannce.framework.view.ProgressView
-                android:layout_width="@dimen/sixty"
-                android:layout_centerInParent="true"
-                android:id="@+id/allmyview"
-                android:layout_height="@dimen/sixty"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/ten"></com.fiannce.framework.view.ProgressView>
+            android:layout_height="@dimen/fifty"
+            android:gravity="center">
 
+            <TextView
+                android:id="@+id/alltitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_mid_size"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=">"></TextView>
         </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/two"
+            android:background="@color/colorgray"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginRight="@dimen/fourty"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten"
+                    android:text="@string/product_money"></TextView>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten">
+
+                    <TextView
+                        android:id="@+id/allonemoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorRedqian"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wan"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten">
+
+                    <ImageView
+                        android:layout_width="@dimen/text_mid_size"
+                        android:layout_height="@dimen/text_mid_size"
+                        android:src="@drawable/manage_list_count"></ImageView>
+
+                    <TextView
+                        android:id="@+id/allonenum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        ></TextView>
+                </LinearLayout>
+            </LinearLayout>
+            <!--      第二  -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginRight="@dimen/fourty"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten"
+                    android:text="@string/expected_annual_interest_rate"></TextView>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten">
+
+                    <TextView
+                        android:id="@+id/alltwopercentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorRedqian"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/percentage"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten">
+
+                    <ImageView
+                        android:layout_width="@dimen/text_mid_size"
+                        android:layout_height="@dimen/text_mid_size"
+                        android:src="@drawable/manage_list_guarantee"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/principal_and_interest_security"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+            <!--    第三    -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten"
+                    android:text="@string/lockup_period"></TextView>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten">
+
+                    <TextView
+                        android:id="@+id/allthreeday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorRedqian"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/day"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten">
+
+                    <ImageView
+                        android:layout_width="@dimen/text_mid_size"
+                        android:layout_height="@dimen/text_mid_size"
+                        android:src="@drawable/manage_list_member"></ImageView>
+
+                    <TextView
+                        android:id="@+id/allthreenum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        ></TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.fiannce.framework.view.ProgressView
+                    android:layout_width="@dimen/sixty"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/allmyview"
+                    app:waiColor="#14B4ED"
+                    app:neiColor="#AAAAAA"
+                    android:layout_height="@dimen/sixty"
+                    android:layout_marginLeft="@dimen/ten"></com.fiannce.framework.view.ProgressView>
+
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/txt_delete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRedqian"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_mid_size" />
+    </LinearLayout>
+
 </LinearLayout>

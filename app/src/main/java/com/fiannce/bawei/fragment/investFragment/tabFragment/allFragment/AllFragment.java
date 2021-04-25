@@ -1,11 +1,15 @@
 package com.fiannce.bawei.fragment.investFragment.tabFragment.allFragment;
 
 
+import android.view.View;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.fiannce.framework.BaseFragment;
+import com.fiannce.framework.view.SlideRecyclerView;
 import com.fiannce.net.mode.InvestBean;
 import com.fiannce.zhaoyuzan.R;
 import com.fiannce.bawei.fragment.investFragment.adapter.InvestAdapter;
@@ -19,7 +23,7 @@ import java.util.List;
 public class AllFragment extends BaseFragment<InvestPresenter> implements IInvestView {
 
     private List<InvestBean.ResultBean> list = new ArrayList<>();
-    private RecyclerView recyclerView;
+    private SlideRecyclerView recyclerView;
     private InvestAdapter investAdapter;
 
     @Override
@@ -33,6 +37,7 @@ public class AllFragment extends BaseFragment<InvestPresenter> implements IInves
 
     }
 
+
     @Override
     protected void initView() {
         recyclerView = mBaseView.findViewById(R.id.allRv);
@@ -40,6 +45,20 @@ public class AllFragment extends BaseFragment<InvestPresenter> implements IInves
         investAdapter = new InvestAdapter(R.layout.all_item,list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(investAdapter);
+
+        investAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                switch (view.getId()) {
+                    case R.id.txt_delete:
+                        recyclerView.closeMenu();
+                        list.remove(position);
+                        investAdapter.notifyDataSetChanged();
+                        break;
+                }
+            }
+        });
+
     }
 
     @Override
