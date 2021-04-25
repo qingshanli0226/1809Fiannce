@@ -28,6 +28,7 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements IVesVie
         mPresenter.getAllMoney();//获取数据
     }
 
+
     @Override
     public void initView() {
         allrec = (RecyclerView) findViewById(R.id.rec);
@@ -63,6 +64,7 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements IVesVie
         allAdapter.notifyDataSetChanged();
     }
 
+
     @Override
     public void onLeftClick() {
 
@@ -77,6 +79,9 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements IVesVie
     public void onRightTvClick() {
 
     }
+
+
+
 
     @Override
     public void onDestroy() {

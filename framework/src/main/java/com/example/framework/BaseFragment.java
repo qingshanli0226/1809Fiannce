@@ -62,5 +62,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
             mPresenter.destroy();
         }
     }
+
+
 }
 
