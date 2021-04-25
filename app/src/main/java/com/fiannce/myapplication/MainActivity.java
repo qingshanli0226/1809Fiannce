@@ -61,7 +61,7 @@ public class MainActivity extends BaseActivity {
         fragmentTransaction.hide(propertyFragment);
         fragmentTransaction.hide(moreFragment);
         fragmentTransaction.commit();
-
+        homeRadio.setChecked(true);
 
 
         HomeBean homeBean = CacheManager.getInstance().getHomeBean();

@@ -13,6 +13,7 @@
         android:layout_height="@dimen/Toolbar_layout_height"
         app:textcolor="@color/colorToolbar"
         app:titleText="@string/main_home"
+        android:background="@color/colorBlack"
         ></com.fiannce.framework.view.ToolBar>
 
     <com.youth.banner.Banner
@@ -45,14 +46,6 @@
             android:textColor="@color/colorHome"></TextView>
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/home_linearLayout_layout_height"
-
-        >
-
-    </LinearLayout>
-
     <com.fiannce.myapplication.fragment.home.customView
         android:id="@+id/custom_view"
         android:layout_width="@dimen/home_CutomView_layout_width"
@@ -73,7 +66,7 @@
         android:layout_marginTop="@dimen/home_TextView_four_layout_marginTop"
         android:layout_marginRight="@dimen/home_TextView_four_layout_marginRight"
         android:textSize="@dimen/home_TextView_four_textSize"
-        android:background="@color/coloRed"
+        android:background="@color/colorcome"
         android:gravity="center"
         android:text="@string/home_text_four"
         android:textColor="@color/colorWhite"

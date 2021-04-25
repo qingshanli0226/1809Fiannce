@@ -16,6 +16,7 @@
 
     <!-- TODO: Home Fragment-->
     <color name="colorHome">#F44336</color>
+    <color name="colorcome">#FB4257</color>
 
     <!-- TODO: Investment Fragment-->
     <color name="colorInvestmentTabLayout">#ECECEC</color>

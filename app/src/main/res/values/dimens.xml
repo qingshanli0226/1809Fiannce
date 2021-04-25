@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- TODO: Toolbar -->
-    <dimen name="Toolbar_layout_height">70dp</dimen>
+    <dimen name="Toolbar_layout_height">50dp</dimen>
     <!-- TODO: Welcom Activity-->
     <dimen name="welcome_img_layout_marginTop">100dp</dimen>
     <dimen name="welcome_title_textSize">35dp</dimen>

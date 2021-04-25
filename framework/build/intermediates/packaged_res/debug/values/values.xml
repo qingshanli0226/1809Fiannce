@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorBlack">#111111</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <dimen name="big_text_size">30sp</dimen>
@@ -34,5 +35,6 @@
         <attr format="reference" name="leftImg"/>
         <attr format="boolean" name="leftIsShow"/>
         <attr format="color" name="textcolor"/>
+        <attr format="color" name="textbackground"/>
     </declare-styleable>
 </resources>
