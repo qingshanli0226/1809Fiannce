@@ -12,5 +12,6 @@
         <attr name="rightIsShow" format="boolean"></attr>
         <attr name="leftImg" format="reference"></attr>
         <attr name="leftIsShow" format="boolean"></attr>
+        <attr name="textcolor" format="color"></attr>
     </declare-styleable>
 </resources>

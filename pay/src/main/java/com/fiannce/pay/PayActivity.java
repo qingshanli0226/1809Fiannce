@@ -28,4 +28,19 @@ public class PayActivity  extends BaseActivity {
     protected int getLayoutid() {
         return R.layout.activity_pay;
     }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

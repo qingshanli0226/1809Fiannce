@@ -4,4 +4,5 @@
     <dimen name="toolbar_margin_size">5dp</dimen>
     <dimen name="big_text_size">30sp</dimen>
     <dimen name="text_mid_size">20sp</dimen>
+
 </resources>

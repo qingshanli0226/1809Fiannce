@@ -1,12 +1,7 @@
 package com.fiannce.myapplication.fragment.investment.money.allmoeny;
 
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,7 +13,6 @@ import com.fiannce.framework.BaseFragment;
 import com.fiannce.myapplication.R;
 import com.fiannce.myapplication.adapter.AllmoneyAdapter;
 import com.fiannce.net.mode.AllMoneyBean;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +50,7 @@ public class AllmoneyFragment extends BaseFragment<AllmoneyPresenter> implements
     protected void initView() {
         rv = (RecyclerView) mView.findViewById(R.id.rv);
         light = (TextView) mView.findViewById(R.id.light);
-        allmoneyAdapter = new AllmoneyAdapter(R.layout.rv_allmoney, result);
+        allmoneyAdapter = new AllmoneyAdapter(R.layout.recyclerview_allmoney, result);
         rv.setAdapter(allmoneyAdapter);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
@@ -87,5 +81,20 @@ public class AllmoneyFragment extends BaseFragment<AllmoneyPresenter> implements
     @Override
     public void showError(String error) {
         loadingPage.showError(error);
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
     }
 }

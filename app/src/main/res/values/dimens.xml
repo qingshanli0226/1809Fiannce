@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TODO: Toolbar -->
+    <dimen name="Toolbar_layout_height">70dp</dimen>
+    <!-- TODO: Welcom Activity-->
+    <dimen name="welcome_img_layout_marginTop">100dp</dimen>
+    <dimen name="welcome_title_textSize">35dp</dimen>
+    <dimen name="welcome_title_layout_marginTop">170dp</dimen>
+    <dimen name="welcome_textSize">15dp</dimen>
+    <dimen name="welcome_textview_layout_marginTop">580dp</dimen>
+    <!-- TODO: Main Activity-->
+    <dimen name="main_linearLayout_layout_height">0dp</dimen>
+    <dimen name="main_view_layout_height">1dp</dimen>
+    <!-- TODO: Home Fragment-->
+    <dimen name="home_banner_layout_height">180dp</dimen>
+    <dimen name="home_relativeLayout_layout_height">80dp</dimen>
+    <dimen name="home_TextView_one_layout_height">80dp</dimen>
+    <dimen name="home_TextView_one_layout_marginLeft">80dp</dimen>
+    <dimen name="home_TextView_one_textSize">30dp</dimen>
+    <dimen name="home_TextView_two_layout_height">80dp</dimen>
+    <dimen name="home_TextView_two_layout_marginLeft">20dp</dimen>
+    <dimen name="home_linearLayout_layout_height">40dp</dimen>
+    <dimen name="home_CutomView_layout_width">120dp</dimen>
+    <dimen name="home_CutomView_layout_height">120dp</dimen>
+    <dimen name="home_TextView_three_textSize">25dp</dimen>
+    <dimen name="home_TextView_four_layout_height">50dp</dimen>
+    <dimen name="home_TextView_four_layout_marginLeft">20dp</dimen>
+    <dimen name="home_TextView_four_layout_marginTop">10dp</dimen>
+    <dimen name="home_TextView_four_layout_marginRight">20dp</dimen>
+    <dimen name="home_TextView_four_textSize">40dp</dimen>
+    <dimen name="home_TextView_five_layout_marginTop">10dp</dimen>
+
+    <!-- TODO: Investment Fragment-->
+    <dimen name="investment_TabLayout_layout_height">0dp</dimen>
+    <dimen name="investment_ViewPager_layout_height">0dp</dimen>
+
+    <!-- TODO: Allmoney fragment-->
+    <dimen name="allmoney_textSize">30dp</dimen>
+    <!-- TODO: Recyclerview child allmoney-->
+    <dimen name="recyclerview_TextView_one_layout_height">0dp</dimen>
+    <dimen name="recyclerview_TextView_one_layout_width">0dp</dimen>
+    <dimen name="recyclerview_TextView_one_paddingLeft">20dp</dimen>
+    <dimen name="recyclerview_TextView_one_textSize">20dp</dimen>
+    <dimen name="recyclerview_TextView_two_layout_width">0dp</dimen>
+    <dimen name="recyclerview_TextView_three_layout_width">10dp</dimen>
+    <dimen name="recyclerview_TextView_three_textSize">17dp</dimen>
+
+    <dimen name="recyclerview_linearLayout_one_layout_width">300dp</dimen>
+    <dimen name="recyclerview_linearLayout_one_layout_marginTop">10dp</dimen>
+    <dimen name="recyclerview_linearLayout_one_paddingLeft">10dp</dimen>
+    <dimen name="recyclerview_linearLayout_two_layout_width">0dp</dimen>
+    <dimen name="recyclerview_customView_layout_width">80dp</dimen>
+    <dimen name="recyclerview_View_layout_height">10dp</dimen>
+
+
+
+
+</resources>

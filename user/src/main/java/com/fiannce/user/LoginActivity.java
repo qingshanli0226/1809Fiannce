@@ -28,4 +28,19 @@ public class LoginActivity extends BaseActivity {
     protected int getLayoutid() {
         return R.layout.activity_login;
     }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

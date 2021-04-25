@@ -3,4 +3,36 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Welcom Activity-->
+    <string name="welcome_text_title">有道金融</string>
+    <string name="welcome_text">当前版本：1.0</string>
+    <!-- TODO: Main Activity-->
+    <string name="main_home">首页</string>
+    <string name="main_investment">投资</string>
+    <string name="main_propert">我的资产</string>
+    <string name="main_more">更多</string>
+    <!-- TODO: Home Fragment-->
+    <string name="home_text_one">硅谷彩虹新手计划</string>
+    <string name="home_text_two">推荐</string>
+    <string name="home_text_three">预期年利率：8.00%</string>
+    <string name="home_text_four">立即加入</string>
+    <string name="home_text_five">风险保障金由有道银行监管</string>
+
+
+    <!-- TODO: Allmoney fragment-->
+    <string name="allmoney_text">有道金融豪运当头，首投返现最高1888元</string>
+
+    <!-- TODO: Recyclerview child allmoney-->
+    <string name="recyclerview_allmoney_null">null</string>
+    <string name="recyclerview_text_head_one">产品金额</string>
+    <string name="recyclerview_text_head_two">预期年利率</string>
+    <string name="recyclerview_text_head_three">锁定期</string>
+    <string name="recyclerview_text_one">万</string>
+    <string name="recyclerview_text_two">%</string>
+    <string name="recyclerview_text_three">天</string>
+
+
+
+
 </resources>

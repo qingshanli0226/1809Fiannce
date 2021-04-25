@@ -3,28 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".fragment.investment.InvestmentFragment">
-    <TextView
+
+    <com.fiannce.framework.view.ToolBar
+        android:id="@+id/toobar_fake"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="投资"
-        android:background="#142732"
-        android:gravity="center"
-        android:textColor="#27B8EE"
-        android:textSize="35dp"
-        ></TextView>
+        android:layout_height="@dimen/Toolbar_layout_height"
+        app:textcolor="@color/colorToolbar"
+        app:titleText="@string/main_investment"
+        ></com.fiannce.framework.view.ToolBar>
+
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
         android:id="@+id/tab"
-        android:background="#ECECEC"
-        ></com.google.android.material.tabs.TabLayout>
-    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_height="@dimen/investment_TabLayout_layout_height"
+        android:layout_weight="1"
+        android:background="@color/colorInvestmentTabLayout"></com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp"
-        ></androidx.viewpager.widget.ViewPager>
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/investment_ViewPager_layout_height"
+        android:layout_weight="10"></androidx.viewpager.widget.ViewPager>
 </LinearLayout>

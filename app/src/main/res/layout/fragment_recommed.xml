@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".fragment.investment.money.RecommendFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.fiannce.framework.view.ToolBar
+        android:id="@+id/toobar_fake"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="@dimen/Toolbar_layout_height"
+        android:visibility="gone"></com.fiannce.framework.view.ToolBar>
 
 </FrameLayout>

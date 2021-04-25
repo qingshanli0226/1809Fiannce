@@ -10,14 +10,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.fiannce.framework.view.LoadingPage;
+import com.fiannce.framework.view.ToolBar;
 
 import static com.blankj.utilcode.util.FlashlightUtils.destroy;
 
-public abstract class BaseFragment<T extends BasePresenter>  extends Fragment {
+public abstract class BaseFragment<T extends BasePresenter>  extends Fragment implements ToolBar.IToolbarListener{
 
     protected T httpPresenter;
     protected View mView;
-     protected LoadingPage loadingPage;
+    protected LoadingPage loadingPage;
+    protected ToolBar toolBar;
+
 
     @Nullable
     @Override
@@ -29,6 +32,8 @@ public abstract class BaseFragment<T extends BasePresenter>  extends Fragment {
             }
         };
         initView();
+        toolBar = mView.findViewById(R.id.toobar_fake);
+        toolBar.setToolbarListener(this);
         initPresenter();
         initData();
         return mView;

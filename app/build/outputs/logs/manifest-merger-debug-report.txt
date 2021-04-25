@@ -159,6 +159,8 @@ MERGED from [com.shuyu:gsyvideoplayer-androidvideocache:8.1.0] C:\Users\lenovo\.
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:6:9-43
 activity#com.fiannce.myapplication.welcome.WelcomeActivity
 ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:9-19:20
+	android:screenOrientation
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:59-95
 	android:name
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:19-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER

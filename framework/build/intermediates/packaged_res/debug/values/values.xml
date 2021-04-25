@@ -33,5 +33,6 @@
         <attr format="boolean" name="rightIsShow"/>
         <attr format="reference" name="leftImg"/>
         <attr format="boolean" name="leftIsShow"/>
+        <attr format="color" name="textcolor"/>
     </declare-styleable>
 </resources>

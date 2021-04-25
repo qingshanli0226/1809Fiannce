@@ -123,4 +123,19 @@ public class MainActivity extends BaseActivity {
     protected void initPresenter() {
 
     }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

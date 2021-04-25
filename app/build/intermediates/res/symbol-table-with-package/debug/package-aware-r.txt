@@ -607,6 +607,7 @@ attr textEndPadding
 attr textInputStyle
 attr textLocale
 attr textStartPadding
+attr textcolor
 attr theme
 attr thickness
 attr thumbTextPadding
@@ -709,9 +710,15 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color coloRed
 color colorAccent
+color colorAllmoney
+color colorHome
+color colorMainView
 color colorPrimary
 color colorPrimaryDark
+color colorToolbar
+color colorWhite
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
 color design_default_color_primary_dark
@@ -809,6 +816,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+dimen Toolbar_layout_height
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -887,6 +895,7 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen allmoney_textSize
 dimen big_text_size
 dimen brightness_icon
 dimen cardview_compat_inset_shadow
@@ -995,9 +1004,21 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
+dimen home_CutomView_layout_height
+dimen home_CutomView_layout_width
+dimen home_TextView_one_layout_height
+dimen home_TextView_one_layout_marginLeft
+dimen home_TextView_one_textSize
+dimen home_TextView_two_layout_height
+dimen home_TextView_two_layout_marginLeft
+dimen home_banner_layout_height
+dimen home_linearLayout_layout_height
+dimen home_relativeLayout_layout_height
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen main_linearLayout_layout_height
+dimen main_view_layout_height
 dimen mtrl_bottomappbar_fabOffsetEndMode
 dimen mtrl_bottomappbar_fab_cradle_margin
 dimen mtrl_bottomappbar_fab_cradle_rounded_corner_radius
@@ -1082,6 +1103,11 @@ dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
 dimen video_progress_dialog_margin_top
 dimen video_volume_dialog_margin_left
+dimen welcome_img_layout_marginTop
+dimen welcome_textSize
+dimen welcome_textview_layout_marginTop
+dimen welcome_title_layout_marginTop
+dimen welcome_title_textSize
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -1669,7 +1695,8 @@ id home
 id homeAsUp
 id home_banner
 id home_radio
-id home_tv1
+id home_tv
+id home_tv_right
 id icon
 id icon_group
 id ifRoom
@@ -1825,6 +1852,7 @@ id titleDividerNoCustom
 id titleTv
 id titleView
 id title_template
+id toobar_fake
 id top
 id topPanel
 id total
@@ -1965,7 +1993,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout quick_view_load_more
-layout rv_allmoney
+layout recyclerview_allmoney
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1981,6 +2009,7 @@ layout video_volume_dialog
 layout view_error
 layout view_loading
 layout view_toolbar
+layout view_toolbar_fake
 mipmap app_icon
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -2013,6 +2042,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string allmoney_text
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2073,11 +2103,16 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
+string home_text
 string ijkplayer_dummy
 string jump_ad
 string load_end
 string load_failed
 string loading
+string main_home
+string main_investment
+string main_more
+string main_propert
 string mtrl_chip_close_icon_content_description
 string no_net
 string no_url
@@ -2091,6 +2126,7 @@ string status_bar_notification_info_overflow
 string tips_not_wifi
 string tips_not_wifi_cancel
 string tips_not_wifi_confirm
+string welcome_text
 style ActivityTranslucent
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
@@ -2715,7 +2751,7 @@ styleable TabLayout tabBackground tabContentStart tabGravity tabIconTint tabIcon
 styleable TextAppearance android_textSize android_typeface android_textStyle android_textColor android_textColorHint android_textColorLink android_shadowColor android_shadowDx android_shadowDy android_shadowRadius android_fontFamily android_textFontWeight fontFamily fontVariationSettings textAllCaps textLocale
 styleable TextInputLayout android_textColorHint android_hint boxBackgroundColor boxBackgroundMode boxCollapsedPaddingTop boxCornerRadiusBottomEnd boxCornerRadiusBottomStart boxCornerRadiusTopEnd boxCornerRadiusTopStart boxStrokeColor boxStrokeWidth counterEnabled counterMaxLength counterOverflowTextAppearance counterTextAppearance errorEnabled errorTextAppearance helperText helperTextEnabled helperTextTextAppearance hintAnimationEnabled hintEnabled hintTextAppearance passwordToggleContentDescription passwordToggleDrawable passwordToggleEnabled passwordToggleTint passwordToggleTintMode
 styleable ThemeEnforcement android_textAppearance enforceMaterialTheme enforceTextAppearance
-styleable ToolBar leftImg leftIsShow rightImage rightIsShow titleText
+styleable ToolBar leftImg leftIsShow rightImage rightIsShow textcolor titleText
 styleable Toolbar android_gravity android_minHeight buttonGravity collapseContentDescription collapseIcon contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation logo logoDescription maxButtonHeight menu navigationContentDescription navigationIcon popupTheme subtitle subtitleTextAppearance subtitleTextColor title titleMargin titleMarginBottom titleMarginEnd titleMarginStart titleMarginTop titleMargins titleTextAppearance titleTextColor
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode

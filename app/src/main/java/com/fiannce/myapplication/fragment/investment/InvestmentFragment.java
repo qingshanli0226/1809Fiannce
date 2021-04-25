@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.fiannce.framework.BaseFragment;
 import com.fiannce.myapplication.R;
 import com.fiannce.myapplication.adapter.Vpadapter;
 import com.fiannce.myapplication.fragment.investment.money.HotFragment;
@@ -22,24 +23,26 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InvestmentFragment extends Fragment {
+public class InvestmentFragment extends BaseFragment {
 
 
     private TabLayout tab;
     private ViewPager vp;
 
-    public InvestmentFragment() {
-        // Required empty public constructor
+    @Override
+    protected void initData() {
+
     }
 
+    @Override
+    protected void initPresenter() {
+
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View inflate = inflater.inflate(R.layout.fragment_investment, container, false);
-        tab = (TabLayout) inflate.findViewById(R.id.tab);
-        vp = (ViewPager) inflate.findViewById(R.id.vp);
+    protected void initView() {
+        tab = (TabLayout) mView.findViewById(R.id.tab);
+        vp = (ViewPager) mView.findViewById(R.id.vp);
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new AllmoneyFragment());
         fragments.add(new RecommendFragment());
@@ -48,12 +51,29 @@ public class InvestmentFragment extends Fragment {
         strings.add("全部理财");
         strings.add("推荐理财");
         strings.add("热门理财");
-
-
         Vpadapter vpadapter = new Vpadapter(getActivity().getSupportFragmentManager(), fragments, strings);
         vp.setAdapter(vpadapter);
         tab.setupWithViewPager(vp);
-        return inflate;
+
     }
 
+    @Override
+    protected int getLayout() {
+        return R.layout.fragment_investment;
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

@@ -172,6 +172,10 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_view_toolbar_fake.xml.flat",
+        "source": "D:\\zgsix\\1809Fiannce\\framework\\build\\intermediates\\packaged_res\\debug\\layout\\view_toolbar_fake.xml"
+    },
+    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_light.xml.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\color\\switch_thumb_material_light.xml"
     },
@@ -248,12 +252,12 @@
         "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\drawable-xhdpi\\my_setting_icon.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_video_volume_icon.png.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\149843f22d46580deb62dc097c7abe72\\gsyVideoPlayer-java-8.1.0\\res\\drawable-xxhdpi-v4\\video_volume_icon.png"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_exo_ic_skip_previous.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-mdpi-v4\\exo_ic_skip_previous.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_video_volume_icon.png.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\149843f22d46580deb62dc097c7abe72\\gsyVideoPlayer-java-8.1.0\\res\\drawable-xxhdpi-v4\\video_volume_icon.png"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_material.xml.flat",
@@ -1276,12 +1280,12 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_banner.xml.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\84175196c9e219b109811d216b0e9374\\jetified-banner-1.4.10\\res\\layout\\banner.xml"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_checkbox_to_checked_box_outer_merged_animation.xml.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\anim\\btn_checkbox_to_checked_box_outer_merged_animation.xml"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_banner.xml.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\84175196c9e219b109811d216b0e9374\\jetified-banner-1.4.10\\res\\layout\\banner.xml"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -1306,6 +1310,10 @@
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_exo_icon_rewind.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-xxhdpi-v4\\exo_icon_rewind.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_recyclerview_allmoney.xml.flat",
+        "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\layout\\recyclerview_allmoney.xml"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_exo_edit_mode_logo.png.flat",
@@ -1384,12 +1392,12 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4_exo_icon_play.png.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-ldpi-v4\\exo_icon_play.png"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_view_loading.xml.flat",
         "source": "D:\\zgsix\\1809Fiannce\\framework\\build\\intermediates\\packaged_res\\debug\\layout\\view_loading.xml"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4_exo_icon_play.png.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-ldpi-v4\\exo_icon_play.png"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_exo_icon_stop.png.flat",
@@ -2348,12 +2356,12 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -2426,10 +2434,6 @@
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_popup_exit.xml.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_rv_allmoney.xml.flat",
-        "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\layout\\rv_allmoney.xml"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_longpressed_holo.9.png.flat",
@@ -2716,12 +2720,12 @@
         "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_email.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_video_forward_icon.png.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\149843f22d46580deb62dc097c7abe72\\gsyVideoPlayer-java-8.1.0\\res\\drawable-xxhdpi-v4\\video_forward_icon.png"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_wc_ac_07.png.flat",
         "source": "D:\\zgsix\\1809Fiannce\\framework\\build\\intermediates\\packaged_res\\debug\\drawable\\wc_ac_07.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_video_forward_icon.png.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\149843f22d46580deb62dc097c7abe72\\gsyVideoPlayer-java-8.1.0\\res\\drawable-xxhdpi-v4\\video_forward_icon.png"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_exo_icon_play.xml.flat",
@@ -3632,12 +3636,12 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_exo_ic_pause_circle_filled.png.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-xxhdpi-v4\\exo_ic_pause_circle_filled.png"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_wc_ac_01.png.flat",
         "source": "D:\\zgsix\\1809Fiannce\\framework\\build\\intermediates\\packaged_res\\debug\\drawable\\wc_ac_01.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_exo_ic_pause_circle_filled.png.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-xxhdpi-v4\\exo_ic_pause_circle_filled.png"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_no_banner.png.flat",

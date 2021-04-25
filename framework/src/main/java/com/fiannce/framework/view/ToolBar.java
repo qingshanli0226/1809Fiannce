@@ -2,6 +2,7 @@ package com.fiannce.framework.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,8 @@ public class ToolBar extends RelativeLayout {
     private ImageView leftImg;
     private ImageView rightImg;
     private TextView rightTv;
+    private int titlecolor;
+    private int titlesize;
     private boolean rightAreaIsShow, leftIsShow;
     private String titleText;
     private int rightImgId, leftImgId;
@@ -47,8 +50,9 @@ public class ToolBar extends RelativeLayout {
         rightImgId = typedArray.getResourceId(R.styleable.ToolBar_rightImage, 0);
         rightAreaIsShow = typedArray.getBoolean(R.styleable.ToolBar_rightIsShow, false);
         leftIsShow = typedArray.getBoolean(R.styleable.ToolBar_leftIsShow, false);
-        typedArray.recycle();
+        titlecolor = typedArray.getColor(R.styleable.ToolBar_textcolor, Color.BLACK);
 
+        typedArray.recycle();
 
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.view_toolbar, this);
@@ -58,6 +62,7 @@ public class ToolBar extends RelativeLayout {
         leftImg = findViewById(R.id.leftImg);
         rightImg = findViewById(R.id.rightImg);
         rightTv = findViewById(R.id.rightTv);
+        titleTv.setTextColor(titlecolor);
 
         titleTv.setText(titleText);
         if (rightAreaIsShow && rightImgId != 0) {

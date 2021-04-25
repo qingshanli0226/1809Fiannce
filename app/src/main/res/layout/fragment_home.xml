@@ -1,87 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment.home.HomeFragment">
 
-    <TextView
+    <com.fiannce.framework.view.ToolBar
+        android:id="@+id/toobar_fake"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#142732"
-        android:gravity="center"
-        android:text="首页"
-        android:textColor="#27B8EE"
-        android:textSize="35dp"></TextView>
+        android:layout_height="@dimen/Toolbar_layout_height"
+        app:textcolor="@color/colorToolbar"
+        app:titleText="@string/main_home"
+        ></com.fiannce.framework.view.ToolBar>
 
     <com.youth.banner.Banner
         android:id="@+id/home_banner"
         android:layout_width="match_parent"
-        android:layout_height="180dp"></com.youth.banner.Banner>
+        android:layout_height="@dimen/home_banner_layout_height"></com.youth.banner.Banner>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="@dimen/home_relativeLayout_layout_height">
 
         <TextView
-            android:id="@+id/home_tv1"
+            android:id="@+id/home_tv"
             android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_marginLeft="80dp"
+            android:layout_height="@dimen/home_TextView_one_layout_height"
+            android:layout_marginLeft="@dimen/home_TextView_one_layout_marginLeft"
+            android:textSize="@dimen/home_TextView_one_textSize"
             android:gravity="center"
-            android:text="硅谷彩虹新手计划"
-            android:textSize="30dp"></TextView>
+            android:text="@string/home_text_one"
+            ></TextView>
 
         <TextView
+            android:id="@+id/home_tv_right"
             android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_toRightOf="@id/home_tv1"
+            android:layout_height="@dimen/home_TextView_two_layout_height"
+            android:layout_marginLeft="@dimen/home_TextView_two_layout_marginLeft"
+            android:layout_toRightOf="@id/home_tv"
             android:gravity="center"
-            android:text="推荐"
-            android:layout_marginLeft="20dp"
-            android:textColor="#F44336"></TextView>
+            android:text="@string/home_text_two"
+            android:textColor="@color/colorHome"></TextView>
     </RelativeLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
 
-    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_linearLayout_layout_height"
 
-</LinearLayout>
+        >
+
+    </LinearLayout>
+
     <com.fiannce.myapplication.fragment.home.customView
         android:id="@+id/custom_view"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/home_CutomView_layout_width"
+        android:layout_height="@dimen/home_CutomView_layout_height"
         android:layout_gravity="center"></com.fiannce.myapplication.fragment.home.customView>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="25dp"
-        android:text="预期年利率：8.00%">
-    </TextView>
+        android:text="@string/home_text_three"
+        android:textSize="@dimen/home_TextView_three_textSize"></TextView>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="立即加入"
-            android:gravity="center"
-            android:textSize="40dp"
-            android:background="#FB4257"
-            android:textColor="#ffffff"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_TextView_four_layout_height"
+        android:layout_marginLeft="@dimen/home_TextView_four_layout_marginLeft"
+        android:layout_marginTop="@dimen/home_TextView_four_layout_marginTop"
+        android:layout_marginRight="@dimen/home_TextView_four_layout_marginRight"
+        android:textSize="@dimen/home_TextView_four_textSize"
+        android:background="@color/coloRed"
+        android:gravity="center"
+        android:text="@string/home_text_four"
+        android:textColor="@color/colorWhite"
+       ></TextView>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="风险保障金由有道银行监管"
+        android:layout_marginTop="@dimen/home_TextView_five_layout_marginTop"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        ></TextView>
+        android:text="@string/home_text_five"></TextView>
 
 </LinearLayout>

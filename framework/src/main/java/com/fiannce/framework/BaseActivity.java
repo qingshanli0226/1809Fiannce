@@ -6,11 +6,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fiannce.framework.view.LoadingPage;
+import com.fiannce.framework.view.ToolBar;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener {
 
     protected T httppresenter;
     protected LoadingPage loadingPage;
+    protected ToolBar toolBar;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,6 +27,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 
         setContentView(loadingPage);
         initView();
+        toolBar = findViewById(R.id.toobar_fake);
+        toolBar.setToolbarListener(this);
         initPresenter();
         initData();
     }
@@ -48,4 +53,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         }
     }
 
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
 }

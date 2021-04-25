@@ -5,28 +5,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment.investment.money.allmoeny.AllmoneyFragment">
-
-    <TextView
+    <com.fiannce.framework.view.ToolBar
+        android:id="@+id/toobar_fake"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/Toolbar_layout_height"
+        android:visibility="gone"></com.fiannce.framework.view.ToolBar>
+    <TextView
+        android:id="@+id/light"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_linearLayout_layout_height"
         android:layout_weight="1"
-        android:text="有道金融豪运当头，首投返现最高1888元"
-        android:singleLine="true"
+        android:background="@color/colorAllmoney"
+        android:ellipsize="marquee"
+        android:focusable="true"
         android:focusableInTouchMode="true"
         android:marqueeRepeatLimit="marquee_forever"
-        android:focusable="true"
-        android:ellipsize="marquee"
-        android:textSize="30dp"
-        android:id="@+id/light"
-        android:textColor="#EB0808"
-        android:background="#ECECEC"
-        ></TextView>
+        android:singleLine="true"
+        android:text="@string/allmoney_text"
+        android:textColor="@color/coloRed"
+        android:textSize="@dimen/allmoney_textSize"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="12"
         android:id="@+id/rv"
-        ></androidx.recyclerview.widget.RecyclerView>
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_linearLayout_layout_height"
+        android:layout_weight="12"></androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

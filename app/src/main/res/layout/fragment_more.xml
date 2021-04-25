@@ -3,15 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.more.MoreFragment">
-    <TextView
+    <com.fiannce.framework.view.ToolBar
+        android:id="@+id/toobar_fake"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="更多"
-        android:background="#142732"
-        android:gravity="center"
-        android:textColor="#27B8EE"
-        android:textSize="35dp"
-        ></TextView>
-
+        android:layout_height="@dimen/Toolbar_layout_height"
+        app:textcolor="@color/colorToolbar"
+        app:titleText="@string/main_more"
+        ></com.fiannce.framework.view.ToolBar>
 </FrameLayout>
