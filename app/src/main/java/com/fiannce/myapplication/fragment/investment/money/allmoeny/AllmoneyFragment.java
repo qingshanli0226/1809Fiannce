@@ -1,6 +1,7 @@
 package com.fiannce.myapplication.fragment.investment.money.allmoeny;
 
 
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -8,8 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.fiannce.framework.BaseFragment;
+import com.fiannce.framework.view.SlideRecyclerView;
 import com.fiannce.myapplication.R;
 import com.fiannce.myapplication.adapter.AllmoneyAdapter;
 import com.fiannce.net.mode.AllMoneyBean;
@@ -23,7 +25,7 @@ import java.util.List;
 public class AllmoneyFragment extends BaseFragment<AllmoneyPresenter> implements IAllmoneyView {
 
 
-    private RecyclerView rv;
+    private SlideRecyclerView rv;
     private TextView light;
     List<AllMoneyBean.ResultBean> result = new ArrayList<>();
     AllmoneyAdapter allmoneyAdapter;
@@ -48,7 +50,7 @@ public class AllmoneyFragment extends BaseFragment<AllmoneyPresenter> implements
 
     @Override
     protected void initView() {
-        rv = (RecyclerView) mView.findViewById(R.id.rv);
+        rv = (SlideRecyclerView) mView.findViewById(R.id.rv);
         light = (TextView) mView.findViewById(R.id.light);
         allmoneyAdapter = new AllmoneyAdapter(R.layout.recyclerview_allmoney, result);
         rv.setAdapter(allmoneyAdapter);
@@ -58,8 +60,21 @@ public class AllmoneyFragment extends BaseFragment<AllmoneyPresenter> implements
     @Override
     protected void initData() {
         light.setSelected(true);
-
         httpPresenter.getAllmoney();
+
+        allmoneyAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                switch (view.getId()){
+                    case R.id.rv_text_delete:
+                        rv.closeMenu();
+                        result.remove(position);
+                        allmoneyAdapter.notifyDataSetChanged();
+                        break;
+                }
+            }
+        });
+
 
     }
 

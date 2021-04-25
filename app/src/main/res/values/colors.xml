@@ -20,6 +20,8 @@
 
     <!-- TODO: Investment Fragment-->
     <color name="colorInvestmentTabLayout">#ECECEC</color>
+    <color name="colorInvestmentTabLayouttabIndicatorColor">#27B8EE</color>
+    <color name="colorInvestmentTabLayouttabSelectedTextColor">#EA2F31</color>
 
     <!-- TODO: Allmoney fragment-->
     <color name="colorAllmoney">#ECECEC</color>

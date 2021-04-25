@@ -717,6 +717,8 @@ color colorAllmoney
 color colorBlack
 color colorHome
 color colorInvestmentTabLayout
+color colorInvestmentTabLayouttabIndicatorColor
+color colorInvestmentTabLayouttabSelectedTextColor
 color colorMainView
 color colorPrimary
 color colorPrimaryDark
@@ -1028,6 +1030,7 @@ dimen home_banner_layout_height
 dimen home_linearLayout_layout_height
 dimen home_relativeLayout_layout_height
 dimen investment_TabLayout_layout_height
+dimen investment_TabLayout_tabIndicatorHeight
 dimen investment_ViewPager_layout_height
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
@@ -1097,6 +1100,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen recyclerview_TextView_four_textSize
 dimen recyclerview_TextView_one_layout_height
 dimen recyclerview_TextView_one_layout_width
 dimen recyclerview_TextView_one_paddingLeft
@@ -1804,6 +1808,7 @@ id rv_all_tv
 id rv_imgtv1
 id rv_imgtv2
 id rv_imgtv3
+id rv_text_delete
 id rv_tv1
 id rv_tv2
 id rv_tv3
@@ -2155,6 +2160,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string recyclerview_allmoney_null
+string recyclerview_text_delete
 string recyclerview_text_head_one
 string recyclerview_text_head_three
 string recyclerview_text_head_two

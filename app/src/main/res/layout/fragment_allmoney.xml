@@ -25,10 +25,10 @@
         android:textColor="@color/coloRed"
         android:textSize="@dimen/allmoney_textSize"></TextView>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.fiannce.framework.view.SlideRecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="@dimen/main_linearLayout_layout_height"
-        android:layout_weight="12"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_weight="12"></com.fiannce.framework.view.SlideRecyclerView>
 
 </LinearLayout>

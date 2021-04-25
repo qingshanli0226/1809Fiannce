@@ -20,6 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/investment_TabLayout_layout_height"
         android:layout_weight="1"
+        app:tabIndicatorHeight="@dimen/investment_TabLayout_tabIndicatorHeight"
+        app:tabIndicatorColor="@color/colorInvestmentTabLayouttabIndicatorColor"
+        app:tabSelectedTextColor="@color/colorInvestmentTabLayouttabSelectedTextColor"
         android:background="@color/colorInvestmentTabLayout"></com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

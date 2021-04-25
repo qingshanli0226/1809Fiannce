@@ -15,15 +15,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/adapter/AllmoneyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/adapter/AllmoneyAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_allmoney.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_allmoney.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_investment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_investment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recyclerview_allmoney.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recyclerview_allmoney.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/view/ToolBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/view/ToolBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/main/res/layout/view_toolbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/res/layout/view_toolbar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/main/res/layout/view_toolbar_fake.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/res/layout/view_toolbar_fake.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/res/values/attrs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,32 +61,47 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_allmoney.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+            <state relative-caret-position="483">
+              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/view/SlideRecyclerView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
               <folding>
-                <element signature="e#537#567#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1294#1295#0" expanded="true" />
+                <element signature="e#1328#1329#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recyclerview_allmoney.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+            <state>
+              <caret column="18" selection-start-column="18" selection-end-column="18" />
+              <folding>
+                <element signature="e#266#10731#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/welcome/WelcomeActivity.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="127" column="26" lean-forward="true" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
+            <state relative-caret-position="289">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,9 +114,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="layoutResourceFile_vertical" />
         <option value="valueResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -111,13 +126,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/framework/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/FiannceApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/welcome/IWelcomeView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/welcome/WelcomePresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/IAllmoneyView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/adapter/AllmoneyAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/rv_allmoney.xml" />
         <option value="$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/view/ProgressView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/welcome/WelcomeActivity.java" />
@@ -128,7 +141,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/adapter/AllmoneyAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Fiannce/myapplication/fragment/property/PropertyFragment.java" />
         <option value="$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/view/LoadingPage.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/welcome/WelcomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/more/MoreFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/InvestmentFragment.java" />
@@ -141,35 +153,38 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/home/HomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/home/customView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/HotFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/RecommendFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_allmoney.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_hot.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_recommed.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_investment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_more.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_property.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/recyclerview_allmoney.xml" />
         <option value="$PROJECT_DIR$/framework/src/main/res/values/attrs.xml" />
         <option value="$PROJECT_DIR$/framework/src/main/res/layout/view_toolbar_fake.xml" />
         <option value="$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/view/ToolBar.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/MainActivity.java" />
         <option value="$PROJECT_DIR$/framework/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/framework/src/main/res/layout/view_toolbar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_investment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_allmoney.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/recyclerview_allmoney.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/adapter/AllmoneyAdapter.java" />
+        <option value="$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/view/SlideRecyclerView.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="409" />
-    <option name="y" value="54" />
-    <option name="width" value="1399" />
-    <option name="height" value="947" />
+    <option name="x" value="570" />
+    <option name="y" value="4" />
+    <option name="width" value="1339" />
+    <option name="height" value="1037" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -241,6 +256,72 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="fiannce" type="462c0819:PsiDirectoryNode" />
               <item name="myapplication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="My Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="1809Fiannce" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fiannce" type="462c0819:PsiDirectoryNode" />
+              <item name="myapplication" type="462c0819:PsiDirectoryNode" />
+              <item name="adapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="My Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="1809Fiannce" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fiannce" type="462c0819:PsiDirectoryNode" />
+              <item name="myapplication" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="My Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="1809Fiannce" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fiannce" type="462c0819:PsiDirectoryNode" />
+              <item name="myapplication" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+              <item name="investment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="My Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="1809Fiannce" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fiannce" type="462c0819:PsiDirectoryNode" />
+              <item name="myapplication" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+              <item name="investment" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="My Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="1809Fiannce" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fiannce" type="462c0819:PsiDirectoryNode" />
+              <item name="myapplication" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+              <item name="investment" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="allmoeny" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="My Application" type="b2602c69:ProjectViewProjectNode" />
@@ -496,7 +577,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21162046" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.18176973" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -523,35 +604,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/IAllmoneyView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/welcome/IWelcomeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/welcome/WelcomePresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#761#762#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-30/data/res/values/attrs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -574,14 +626,6 @@
           <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="12" column="66" lean-forward="true" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="72" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/view/LoadingPage.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -618,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/BaseFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/net/src/main/java/com/fiannce/net/FiannceApiService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -656,29 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2037#2038#0" expanded="true" />
-            <element signature="e#2081#2082#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/HotFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
@@ -699,17 +713,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#631#632#0" expanded="true" />
             <element signature="e#662#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_allmoney.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-          <folding>
-            <element signature="e#505#535#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -735,16 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/InvestmentFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/more/MoreFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -754,17 +747,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="12" column="56" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_more.xml">
       <provider editor-type-id="android-designer2" />
@@ -810,86 +792,6 @@
             <element signature="e#1249#1277#0" expanded="true" />
             <element signature="e#1605#1627#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_investment.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#646#671#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recyclerview_allmoney.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="203" lean-forward="true" selection-start-line="203" selection-end-line="203" />
-          <folding>
-            <element signature="e#234#844#0" />
-            <element signature="e#518#566#0" expanded="true" />
-            <element signature="e#637#683#0" expanded="true" />
-            <element signature="e#713#756#0" expanded="true" />
-            <element signature="e#814#850#0" expanded="true" />
-            <element signature="e#1173#2141#0" />
-            <element signature="e#1395#1446#0" expanded="true" />
-            <element signature="e#1541#1596#0" expanded="true" />
-            <element signature="e#1633#1683#0" expanded="true" />
-            <element signature="e#1817#1864#0" expanded="true" />
-            <element signature="e#2001#2037#0" expanded="true" />
-            <element signature="e#2088#2135#0" expanded="true" />
-            <element signature="e#2302#2338#0" expanded="true" />
-            <element signature="e#2360#2407#0" expanded="true" />
-            <element signature="e#2603#2641#0" expanded="true" />
-            <element signature="e#2421#2472#0" expanded="true" />
-            <element signature="e#2675#2730#0" expanded="true" />
-            <element signature="e#2979#3030#0" expanded="true" />
-            <element signature="e#3266#3316#0" expanded="true" />
-            <element signature="e#3443#3492#0" expanded="true" />
-            <element signature="e#3366#3402#0" expanded="true" />
-            <element signature="e#3721#3766#0" expanded="true" />
-            <element signature="e#3591#3638#0" expanded="true" />
-            <element signature="e#4081#4112#0" expanded="true" />
-            <element signature="e#3953#4004#0" expanded="true" />
-            <element signature="e#4510#4559#0" expanded="true" />
-            <element signature="e#4200#4236#0" expanded="true" />
-            <element signature="e#4818#4863#0" expanded="true" />
-            <element signature="e#4425#4472#0" expanded="true" />
-            <element signature="e#5148#5179#0" expanded="true" />
-            <element signature="e#4880#4931#0" expanded="true" />
-            <element signature="e#5480#5529#0" expanded="true" />
-            <element signature="e#5081#5117#0" expanded="true" />
-            <element signature="e#5857#5902#0" expanded="true" />
-            <element signature="e#5301#5348#0" expanded="true" />
-            <element signature="e#6186#6219#0" expanded="true" />
-            <element signature="e#4947#7538#0" />
-            <element signature="e#5266#5317#0" expanded="true" />
-            <element signature="e#5569#5624#0" expanded="true" />
-            <element signature="e#5710#5760#0" expanded="true" />
-            <element signature="e#6239#6290#0" expanded="true" />
-            <element signature="e#6755#6802#0" expanded="true" />
-            <element signature="e#6909#6945#0" expanded="true" />
-            <element signature="e#7062#7113#0" expanded="true" />
-            <element signature="e#7582#7633#0" expanded="true" />
-            <element signature="e#7782#7818#0" expanded="true" />
-            <element signature="e#7935#7986#0" expanded="true" />
-            <element signature="e#8452#8503#0" expanded="true" />
-            <element signature="e#8606#8642#0" expanded="true" />
-            <element signature="e#7574#7798#0" />
-            <element signature="e#7850#7895#0" expanded="true" />
-            <element signature="e#8096#8136#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="32" column="41" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -993,17 +895,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/welcome/WelcomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        <state relative-caret-position="269">
+          <caret line="131" column="29" lean-forward="true" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1018,12 +916,153 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/welcome/WelcomeActivity.java">
+    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/BaseFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="127" column="26" lean-forward="true" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
+        <state relative-caret-position="390">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/InvestmentFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_investment.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+          <folding>
+            <element signature="e#549#579#0" expanded="true" />
+            <element signature="e#646#671#0" expanded="true" />
+            <element signature="e#872#915#0" expanded="true" />
+            <element signature="e#981#1029#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#694#695#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
+          <folding>
+            <element signature="e#368#386#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding>
+            <element signature="e#523#553#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_allmoney.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/IAllmoneyView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/adapter/AllmoneyAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fiannce/myapplication/fragment/investment/money/allmoeny/AllmoneyFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recyclerview_allmoney.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#266#10731#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/src/main/java/com/fiannce/framework/view/SlideRecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
           </folding>
         </state>
       </provider>

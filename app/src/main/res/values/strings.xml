@@ -31,6 +31,7 @@
     <string name="recyclerview_text_one">万</string>
     <string name="recyclerview_text_two">%</string>
     <string name="recyclerview_text_three">天</string>
+    <string name="recyclerview_text_delete">删除</string>
 
 
 

@@ -33,6 +33,7 @@
     <!-- TODO: Investment Fragment-->
     <dimen name="investment_TabLayout_layout_height">0dp</dimen>
     <dimen name="investment_ViewPager_layout_height">0dp</dimen>
+    <dimen name="investment_TabLayout_tabIndicatorHeight">50dp</dimen>
 
     <!-- TODO: Allmoney fragment-->
     <dimen name="allmoney_textSize">30dp</dimen>
@@ -44,6 +45,7 @@
     <dimen name="recyclerview_TextView_two_layout_width">0dp</dimen>
     <dimen name="recyclerview_TextView_three_layout_width">10dp</dimen>
     <dimen name="recyclerview_TextView_three_textSize">17dp</dimen>
+    <dimen name="recyclerview_TextView_four_textSize">30dp</dimen>
 
     <dimen name="recyclerview_linearLayout_one_layout_width">300dp</dimen>
     <dimen name="recyclerview_linearLayout_one_layout_marginTop">10dp</dimen>

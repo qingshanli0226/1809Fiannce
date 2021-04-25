@@ -25,5 +25,6 @@ public class AllmoneyAdapter extends BaseQuickAdapter<AllMoneyBean.ResultBean, B
         helper.setText(R.id.rv_imgtv1,item.getMinTouMoney());
         helper.setText(R.id.rv_imgtv2,item.getMemberNum());
         helper.setText(R.id.rv_imgtv3,item.getProgress());
+        helper.addOnClickListener(R.id.rv_text_delete);
     }
 }
