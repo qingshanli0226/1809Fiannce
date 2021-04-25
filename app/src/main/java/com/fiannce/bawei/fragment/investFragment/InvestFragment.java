@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.fragment;
+package com.fiannce.bawei.fragment.investFragment;
 
 
 import android.os.Bundle;
@@ -10,7 +10,10 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.fiannce.zhaoyuzan.R;
-import com.fiannce.zhaoyuzan.adapter.FragAdapter;
+import com.fiannce.bawei.fragment.adapter.FragAdapter;
+import com.fiannce.bawei.fragment.investFragment.tabFragment.allFragment.AllFragment;
+import com.fiannce.bawei.fragment.investFragment.tabFragment.HotFragment;
+import com.fiannce.bawei.fragment.investFragment.tabFragment.RecomendFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -41,9 +44,9 @@ public class InvestFragment extends Fragment {
         tabLayout = inflate.findViewById(R.id.investTab);
         viewPager = inflate.findViewById(R.id.investVp);
 
-        list.add("全部理财");
-        list.add("推荐理财");
-        list.add("热门理财");
+        list.add(getString(R.string.all_name));
+        list.add(getString(R.string.recommed_name));
+        list.add(getString(R.string.hot_name));
 
         fragments.add(new AllFragment());
         fragments.add(new RecomendFragment());

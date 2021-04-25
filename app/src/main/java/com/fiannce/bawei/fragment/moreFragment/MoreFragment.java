@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.fragment;
+package com.fiannce.bawei.fragment.moreFragment;
 
 
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import com.fiannce.zhaoyuzan.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MineFragment extends Fragment {
+public class MoreFragment extends Fragment {
 
 
-    public MineFragment() {
+    public MoreFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class MineFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mine, container, false);
+        return inflater.inflate(R.layout.fragment_more, container, false);
     }
 
 }

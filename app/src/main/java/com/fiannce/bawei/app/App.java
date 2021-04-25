@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.app;
+package com.fiannce.bawei.app;
 
 import android.app.Application;
 

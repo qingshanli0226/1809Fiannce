@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.invest;
+package com.fiannce.bawei.fragment.investFragment.tabFragment.allFragment;
 
 import com.fiannce.framework.BasePresenter;
 import com.fiannce.net.RetrofitCreator;

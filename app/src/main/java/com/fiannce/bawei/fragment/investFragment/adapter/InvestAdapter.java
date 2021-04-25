@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.adapter;
+package com.fiannce.bawei.fragment.investFragment.adapter;
 
 import android.view.View;
 

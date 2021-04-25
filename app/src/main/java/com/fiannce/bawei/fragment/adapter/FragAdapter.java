@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.adapter;
+package com.fiannce.bawei.fragment.adapter;
 
 import android.view.ViewGroup;
 

@@ -3,8 +3,12 @@
     <color name="colorPrimary">#208BB4</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorBlue">#142732</color>
+    <color name="colorBlueshen">#142732</color>
     <color name="colorRed">#CF4955</color>
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorSky">#2196F3</color>
+    <color name="colorgray">#D3CECE</color>
+    <color name="colorRedqian">#f00</color>
+    <color name="colorRedshen">#FB4257</color>
 </resources>

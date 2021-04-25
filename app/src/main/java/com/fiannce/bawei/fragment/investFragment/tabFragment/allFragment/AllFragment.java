@@ -1,24 +1,14 @@
-package com.fiannce.zhaoyuzan.fragment;
+package com.fiannce.bawei.fragment.investFragment.tabFragment.allFragment;
 
-
-import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
-
 import com.fiannce.framework.BaseFragment;
-import com.fiannce.framework.view.ProgressView;
 import com.fiannce.net.mode.InvestBean;
 import com.fiannce.zhaoyuzan.R;
-import com.fiannce.zhaoyuzan.adapter.InvestAdapter;
-import com.fiannce.zhaoyuzan.invest.IInvestView;
-import com.fiannce.zhaoyuzan.invest.InvestPresenter;
+import com.fiannce.bawei.fragment.investFragment.adapter.InvestAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

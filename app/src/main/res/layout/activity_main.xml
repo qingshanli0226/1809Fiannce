@@ -5,22 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="com.fiannce.bawei.MainActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero"
         android:id="@+id/vp"
         android:layout_weight="9"
         ></androidx.viewpager.widget.ViewPager>
 
     <com.flyco.tablayout.CommonTabLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero"
         android:id="@+id/common"
         android:layout_weight="1"
-        app:tl_textUnselectColor="#000000"
-        app:tl_textSelectColor="#2196F3"
+        app:tl_textUnselectColor="@color/colorBlack"
+        app:tl_textSelectColor="@color/colorSky"
         ></com.flyco.tablayout.CommonTabLayout>
 
 </LinearLayout>

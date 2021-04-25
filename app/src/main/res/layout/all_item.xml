@@ -6,20 +6,20 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#D3CECE"></View>
+        android:layout_height="@dimen/two"
+        android:background="@color/colorgray"></View>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/fifty"
         android:gravity="center">
 
         <TextView
             android:id="@+id/alltitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="新手福利计划"></TextView>
+            android:layout_marginLeft="@dimen/text_mid_size"
+            ></TextView>
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,8 +30,8 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#eee"></View>
+        android:layout_height="@dimen/two"
+        android:background="@color/colorgray"></View>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,99 +40,97 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginLeft="@dimen/ten"
+            android:layout_marginRight="@dimen/fourty"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="产品金额"></TextView>
+                android:layout_marginTop="@dimen/ten"
+                android:text="@string/product_money"></TextView>
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/ten">
 
                 <TextView
                     android:id="@+id/allonemoney"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200"
-                    android:textColor="#f00"></TextView>
+                    android:textColor="@color/colorRedqian"></TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="万"></TextView>
+                    android:text="@string/wan"></TextView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/ten">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="@dimen/text_mid_size"
+                    android:layout_height="@dimen/text_mid_size"
                     android:src="@drawable/manage_list_count"></ImageView>
 
                 <TextView
                     android:id="@+id/allonenum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000"></TextView>
+                    ></TextView>
             </LinearLayout>
         </LinearLayout>
         <!--      第二  -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginLeft="@dimen/ten"
+            android:layout_marginRight="@dimen/fourty"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="预期年利率"></TextView>
+                android:layout_marginTop="@dimen/ten"
+                android:text="@string/expected_annual_interest_rate"></TextView>
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/ten">
 
                 <TextView
                     android:id="@+id/alltwopercentage"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="8.00"
-                    android:textColor="#f00"></TextView>
+                    android:textColor="@color/colorRedqian"></TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="%"></TextView>
+                    android:text="@string/percentage"></TextView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/ten">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="@dimen/text_mid_size"
+                    android:layout_height="@dimen/text_mid_size"
                     android:src="@drawable/manage_list_guarantee"></ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="本息保障"></TextView>
+                    android:text="@string/principal_and_interest_security"></TextView>
             </LinearLayout>
         </LinearLayout>
         <!--    第三    -->
@@ -140,49 +138,48 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/ten"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="锁定期"></TextView>
+                android:layout_marginTop="@dimen/ten"
+                android:text="@string/lockup_period"></TextView>
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/ten">
 
                 <TextView
                     android:id="@+id/allthreeday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30"
-                    android:textColor="#f00"></TextView>
+                    android:textColor="@color/colorRedqian"></TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="天"></TextView>
+                    android:text="@string/day"></TextView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/ten">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="@dimen/text_mid_size"
+                    android:layout_height="@dimen/text_mid_size"
                     android:src="@drawable/manage_list_member"></ImageView>
 
                 <TextView
                     android:id="@+id/allthreenum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100"></TextView>
+                    ></TextView>
             </LinearLayout>
         </LinearLayout>
 
@@ -190,12 +187,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <com.fiannce.framework.view.ProgressView
-                android:layout_width="60dp"
+                android:layout_width="@dimen/sixty"
                 android:layout_centerInParent="true"
                 android:id="@+id/allmyview"
-                android:layout_height="60dp"
+                android:layout_height="@dimen/sixty"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"></com.fiannce.framework.view.ProgressView>
+                android:layout_marginLeft="@dimen/ten"></com.fiannce.framework.view.ProgressView>
 
         </RelativeLayout>
     </LinearLayout>

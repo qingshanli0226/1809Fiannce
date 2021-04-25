@@ -4,7 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".welcome.WelcomeActivity">
+    tools:context="com.fiannce.bawei.welcome.WelcomeActivity">
+
+    <com.fiannce.framework.view.ToolBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:visibility="gone"
+        ></com.fiannce.framework.view.ToolBar>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -18,29 +25,29 @@
             ></ImageView>
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/seventy"
+            android:layout_height="@dimen/seventy"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="@dimen/tewle_handroid"
             android:src="@drawable/app_icon"
             ></ImageView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="有道金融"
+            android:text="@string/Youdao_financial"
             android:textSize="@dimen/dp_40"
-            android:textColor="#fff"
+            android:textColor="@color/colorWhite"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="@dimen/tewlety_one_handroid"
             ></TextView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="当前版本:1.0"
-            android:textSize="15dp"
-            android:textColor="#fff"
+            android:text="@string/dangqian_banben"
+            android:textSize="@dimen/fifteen"
+            android:textColor="@color/colorWhite"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="580dp"
+            android:layout_marginTop="@dimen/five_hundred_and_eighty"
             ></TextView>
 
     </FrameLayout>
@@ -49,12 +56,12 @@
 
 
     <TextView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/thirty"
+        android:layout_height="@dimen/thirty"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="3dp"
-        android:layout_marginRight="3dp"
+        android:layout_marginTop="@dimen/three"
+        android:layout_marginRight="@dimen/three"
         android:textColor="@android:color/holo_red_light"
         android:id="@+id/countDownTv"/>
 

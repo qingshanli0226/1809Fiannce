@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.welcome;
+package com.fiannce.bawei.welcome;
 
 import com.fiannce.framework.BasePresenter;
 import com.fiannce.net.RetrofitCreator;

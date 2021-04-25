@@ -1,13 +1,11 @@
-package com.fiannce.zhaoyuzan.welcome;
+package com.fiannce.bawei.welcome;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
-import android.view.View;
+import android.view.KeyEvent;
 import android.view.WindowManager;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,6 +62,11 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         CacheManager.getInstance().setHomeBean(homeBean);
         homeFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return false;
     }
 
     @Override

@@ -1,10 +1,9 @@
-package com.fiannce.zhaoyuzan.fragment;
+package com.fiannce.bawei.fragment.homeFragment;
 
 
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.fragment.app.Fragment;
 
@@ -81,4 +80,9 @@ public class HomeFragment extends BaseFragment {
         return R.layout.fragment_home;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        progressView.destry();
+    }
 }

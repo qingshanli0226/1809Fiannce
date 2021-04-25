@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".fragment.HomeFragment">
+    tools:context="com.fiannce.bawei.fragment.homeFragment.HomeFragment">
 
 <!--    <FrameLayout-->
 <!--        android:layout_width="match_parent"-->
@@ -32,14 +32,14 @@
 <!--    </FrameLayout>-->
     <com.fiannce.framework.view.ToolBar
         android:layout_width="match_parent"
-        app:titleText="首页"
+        app:titleText="@string/activity_home"
         android:id="@+id/toolbar"
-        android:layout_height="40dp"></com.fiannce.framework.view.ToolBar>
+        android:layout_height="@dimen/fourty"></com.fiannce.framework.view.ToolBar>
 
 
     <com.youth.banner.Banner
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="@dimen/one_handured_ninety"
         android:id="@+id/banner"
         ></com.youth.banner.Banner>
 
@@ -52,14 +52,14 @@
             android:id="@+id/guigu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="25dp"></TextView>
+            android:layout_marginTop="@dimen/text_mid_size"
+            android:textSize="@dimen/twenty_five"></TextView>
         <ImageView
             android:layout_width="@dimen/dp_40"
             android:layout_height="@dimen/dp_40"
             android:src="@drawable/recommend"
             android:layout_gravity="center"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/eight"
             >
         </ImageView>
     </LinearLayout>
@@ -71,28 +71,28 @@
         android:layout_marginTop="@dimen/dp_10"
         >
         <TextView
-            android:textSize="15dp"
-            android:layout_width="100dp"
+            android:textSize="@dimen/fifteen"
+            android:layout_width="@dimen/one_hurdured"
             android:layout_height="wrap_content"
-            android:text="本息保障"
+            android:text="@string/principal_and_interest_security"
             android:background="@drawable/tuoyuan"
             android:gravity="center"
             ></TextView>
         <TextView
             android:layout_marginLeft="@dimen/dp_10"
-            android:layout_width="100dp"
-            android:textSize="15dp"
+            android:layout_width="@dimen/one_hurdured"
+            android:textSize="@dimen/fifteen"
             android:layout_height="wrap_content"
-            android:text="每日计息"
+            android:text="@string/the_daily_rate"
             android:background="@drawable/tuoyuan"
             android:gravity="center"
             ></TextView>
         <TextView
-            android:textSize="15dp"
+            android:textSize="@dimen/fifteen"
             android:layout_marginLeft="@dimen/dp_10"
-            android:layout_width="100dp"
+            android:layout_width="@dimen/one_hurdured"
             android:layout_height="wrap_content"
-            android:text="高额收益"
+            android:text="@string/high_yield"
             android:background="@drawable/tuoyuan"
             android:gravity="center"
             ></TextView>
@@ -101,11 +101,11 @@
 
 
     <com.fiannce.framework.view.ProgressView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/one_hurdured"
+        android:layout_height="@dimen/one_hurdured"
         android:layout_gravity="center"
         android:id="@+id/progress"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/text_mid_size"
         ></com.fiannce.framework.view.ProgressView>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -116,16 +116,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="预期年利率："
-            android:textSize="25dp"></TextView>
+            android:layout_marginTop="@dimen/fifteen"
+            android:text="@string/expected_annual_interest_rate_1"
+            android:textSize="@dimen/twenty_five"></TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/fifteen"
             android:id="@+id/yuqi"
-            android:textSize="25dp"
+            android:textSize="@dimen/twenty_five"
             >
         </TextView>
     </LinearLayout>
@@ -133,15 +133,15 @@
 
 
     <Button
-        android:layout_width="250dp"
+        android:layout_width="@dimen/two_hundred_fifty"
         android:layout_height="wrap_content"
         android:id="@+id/bt"
-        android:text="立即加入"
+        android:text="@string/join"
         android:layout_gravity="center"
-        android:background="#FB4257"
-        android:textColor="#fff"
-        android:textSize="25dp"
-        android:layout_marginTop="25dp"
+        android:background="@color/colorRedshen"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/twenty_five"
+        android:layout_marginTop="@dimen/twenty_five"
         ></Button>
 
     <LinearLayout
@@ -151,14 +151,14 @@
         android:layout_marginTop="@dimen/dp_10"
         >
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/fifteen"
+            android:layout_height="@dimen/text_mid_size"
             android:src="@drawable/guarantee_icon"
             ></ImageView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="风险保障金由有道银行监管"
+            android:text="@string/bank"
             ></TextView>
     </LinearLayout>
 

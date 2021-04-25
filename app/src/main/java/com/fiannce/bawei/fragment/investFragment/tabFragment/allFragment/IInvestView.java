@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.invest;
+package com.fiannce.bawei.fragment.investFragment.tabFragment.allFragment;
 
 import com.fiannce.framework.IBaseView;
 import com.fiannce.net.mode.InvestBean;

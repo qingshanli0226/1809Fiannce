@@ -1,18 +1,21 @@
-package com.fiannce.zhaoyuzan;
+package com.fiannce.bawei;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.fiannce.bawei.fragment.homeFragment.HomeFragment;
+import com.fiannce.bawei.fragment.investFragment.InvestFragment;
+import com.fiannce.bawei.fragment.mineFragment.MineFragment;
+import com.fiannce.bawei.fragment.moreFragment.MoreFragment;
 import com.fiannce.net.mode.CommonBean;
-import com.fiannce.zhaoyuzan.adapter.CommonAdapter;
-import com.fiannce.zhaoyuzan.fragment.MoreFragment;
-import com.fiannce.zhaoyuzan.fragment.HomeFragment;
-import com.fiannce.zhaoyuzan.fragment.MineFragment;
-import com.fiannce.zhaoyuzan.fragment.InvestFragment;
+import com.fiannce.zhaoyuzan.R;
+import com.fiannce.bawei.mainActivity.adapter.CommonAdapter;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private CommonTabLayout commonTabLayout;
     private CommonAdapter commonAdapter;
+    private long mExitTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
         commonAdapter = new CommonAdapter(getSupportFragmentManager(),list);
         viewPager.setAdapter(commonAdapter);
 
-        mTabEntities.add(new CommonBean("首页",R.drawable.bottom02,R.drawable.bottom01));
-        mTabEntities.add(new CommonBean("投资",R.drawable.bottom04,R.drawable.bottom03));
-        mTabEntities.add(new CommonBean("我的资产",R.drawable.bottom06,R.drawable.bottom05));
-        mTabEntities.add(new CommonBean("更多",R.drawable.bottom08,R.drawable.bottom07));
+        mTabEntities.add(new CommonBean(getString(R.string.activity_home),R.drawable.bottom02,R.drawable.bottom01));
+        mTabEntities.add(new CommonBean(getString(R.string.activity_invest),R.drawable.bottom04,R.drawable.bottom03));
+        mTabEntities.add(new CommonBean(getString(R.string.activity_mine),R.drawable.bottom06,R.drawable.bottom05));
+        mTabEntities.add(new CommonBean(getString(R.string.activity_more),R.drawable.bottom08,R.drawable.bottom07));
         commonTabLayout.setTabData(mTabEntities);
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -80,6 +84,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+                Object mHelperUtils;
+                Toast.makeText(this, "再按一次退出APP", Toast.LENGTH_SHORT).show();
+                //System.currentTimeMillis()系统当前时间
+                mExitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

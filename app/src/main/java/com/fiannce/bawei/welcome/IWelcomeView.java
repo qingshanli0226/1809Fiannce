@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.welcome;
+package com.fiannce.bawei.welcome;
 
 import com.fiannce.framework.IBaseView;
 import com.fiannce.net.mode.HomeBean;

@@ -1,4 +1,4 @@
-package com.fiannce.zhaoyuzan.adapter;
+package com.fiannce.bawei.mainActivity.adapter;
 
 import android.view.ViewGroup;
 
