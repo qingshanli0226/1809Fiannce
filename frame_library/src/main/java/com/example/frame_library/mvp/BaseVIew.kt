@@ -23,7 +23,7 @@ interface IActivity : IView {
 }
 
 abstract class BaseActitvty <P :IPresneter>: AppCompatActivity(), IActivity {
-    private var lodingPage:LodingPage?=null
+    protected var lodingPage:LodingPage?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lodingPage=object :LodingPage(this){
@@ -31,7 +31,7 @@ abstract class BaseActitvty <P :IPresneter>: AppCompatActivity(), IActivity {
                 return bandLayoutId()
             }
         }
-        setContentView(lodingPage!!.getSuccessLayoutId())
+        setContentView(lodingPage)
         initView()
         initData()
     }
@@ -74,7 +74,7 @@ abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(),ToBar.OnClickList
 //        initToBar().setonClickListener(this)
 //    }
 
-    private var lodingPage:LodingPage?=null
+    protected var lodingPage:LodingPage?=null
 
     //abstract fun initToBar(): ToBar
     protected fun attaToBar(toBar: ToBar){
@@ -89,12 +89,12 @@ abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(),ToBar.OnClickList
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        lodingPage=object :LodingPage(context){
+        lodingPage = object : LodingPage(context) {
             override fun getSuccessLayoutId(): Int {
                 return bandLayoutId()
             }
         }
-        return inflater.inflate(lodingPage!!.getSuccessLayoutId(),container,false)
+        return lodingPage
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

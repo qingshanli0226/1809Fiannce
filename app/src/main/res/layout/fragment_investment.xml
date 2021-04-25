@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.frame_library.view.ToBar android:id="@+id/fragment_investment_ToBar"
-    app:left_show="false"
-    app:right_show="false"
-    app:title="@string/act_investment"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.frame_library.view.ToBar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_investment_ToBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:left_show="false"
+    app:right_show="false"
+    app:title="@string/act_investment">
+
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/fragment_investment_Tab"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        app:tabSelectedTextColor="@color/red"
         app:tabIndicatorColor="@color/bar_textcolor"
-        android:id="@+id/fragment_investment_Tab"/>
+        app:tabSelectedTextColor="@color/red" />
+
     <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
         android:id="@+id/fragment_investment_ViewPage"
-        android:layout_weight="10"/>
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_weight="10" />
 </com.example.frame_library.view.ToBar>

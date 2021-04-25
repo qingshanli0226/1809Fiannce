@@ -20,6 +20,12 @@ class WelcomePresenter(mModle:WelcomeModle, mView:WelcomeCanter.View):BasePresen
             override fun onStart() {
                 super.onStart()
                 mModle!!.addObserver(this)
+                mView!!.showLodin()
+            }
+
+            override fun onComplete() {
+                super.onComplete()
+                mView!!.hideLodin()
             }
         })
 

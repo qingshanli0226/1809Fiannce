@@ -15,7 +15,7 @@ abstract class BaseObserver<T>:DisposableObserver<T>(),ICallObserver<T>{
     }
 
     override fun onError(e: Throwable) {
-        fille(e.message!!)
+        fille(e.localizedMessage)
     }
 
     override fun onComplete() {
