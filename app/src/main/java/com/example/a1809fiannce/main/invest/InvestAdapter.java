@@ -1,4 +1,4 @@
-package com.example.a1809fiannce.adapter;
+package com.example.a1809fiannce.main.invest;
 
 import android.view.ViewGroup;
 

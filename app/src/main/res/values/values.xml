@@ -9,13 +9,16 @@
     <dimen name="dp_11">11dp</dimen>
     <dimen name="dp_14">14dp</dimen>
     <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_17">17dp</dimen>
     <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_25">25dp</dimen>
     <dimen name="dp_30">30dp</dimen>
     <dimen name="dp_33">33dp</dimen>
     <dimen name="dp_35">35dp</dimen>
     <dimen name="dp_40">40dp</dimen>
     <dimen name="dp_45">45dp</dimen>
     <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_52">52dp</dimen>
     <dimen name="dp_60">60dp</dimen>
     <dimen name="dp_61">61dp</dimen>
     <dimen name="dp_70">70dp</dimen>
@@ -35,8 +38,5 @@
     <item name="BaseQuickAdapter_dragging_support" type="id"/>
     <item name="BaseQuickAdapter_swiping_support" type="id"/>
     <item name="BaseQuickAdapter_viewholder_support" type="id"/>
-    <string name="brvah_load_complete">点击加载更多</string>
-    <string name="brvah_load_end">没有更多数据</string>
-    <string name="brvah_load_failed">加载失败，请点我重试</string>
-    <string name="brvah_loading">正在加载中...</string>
+
 </resources>

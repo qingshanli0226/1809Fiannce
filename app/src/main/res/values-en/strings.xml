@@ -28,5 +28,14 @@
     <string name="study_tips">study tips</string>
     <string name="we_will_demonstrate_sdk">We will demonstrate the recharge function by integrating the payment amount of Alipay SDK</string>
     <string name="withdrawal_business">Withdrawal business: in P2P financial platform, withdrawals are not received in real time, but audit withdrawals, the system will inform you to transfer within 24 hours, if not received, please contact customer service And so on and so on</string>
-
+    <string name="investmentManagement">investment management</string>
+    <string name="investmentManagementVisual">Investment management(Visual)</string>
+    <string name="assetsManagement">assets management</string>
+    <string name="gesturePassword">gesture password</string>
+    <string name="resetTheGesturePassword">Reset the gesture password</string>
+    <string name="contactCustomer">contact customer</string>
+    <string name="userFeedback">user feedback</string>
+    <string name="friendsShare">Friends share</string>
+    <string name="aboutYoudao">About youdao</string>
+    <string name="contactCustomerPhone">010-56253825</string>
 </resources>

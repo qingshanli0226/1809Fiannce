@@ -9,6 +9,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.main.home.HoemFragment;
 import com.example.a1809fiannce.main.invest.InvestFragment;
+import com.example.a1809fiannce.main.more.MoreFragment;
 import com.example.a1809fiannce.main.property.PropertyFragment;
 import com.example.a1809fiannce.tab.MyCustomTabEntity;
 import com.example.framework.BaseActivity;
@@ -41,18 +42,18 @@ public class MainActivity extends BaseActivity {
         HoemFragment hoemFragment = new HoemFragment();
         InvestFragment investFragment = new InvestFragment();
         PropertyFragment propertyFragment = new PropertyFragment();
-        HoemFragment hoemFragment2 = new HoemFragment();
+        MoreFragment moreFragment = new MoreFragment();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
         fragmentTransaction.add(R.id.act_home_ll, hoemFragment);
         fragmentTransaction.add(R.id.act_home_ll, investFragment);
         fragmentTransaction.add(R.id.act_home_ll, propertyFragment);
-        fragmentTransaction.add(R.id.act_home_ll, hoemFragment2);
+        fragmentTransaction.add(R.id.act_home_ll, moreFragment);
 
         fragmentTransaction.hide(investFragment);
         fragmentTransaction.hide(propertyFragment);
-        fragmentTransaction.hide(hoemFragment2);
+        fragmentTransaction.hide(moreFragment);
         fragmentTransaction.show(hoemFragment);
 
         fragmentTransaction.commit();
@@ -68,7 +69,7 @@ public class MainActivity extends BaseActivity {
                     fragmentTransaction1.show(hoemFragment);
                     fragmentTransaction1.hide(investFragment);
                     fragmentTransaction1.hide(propertyFragment);
-                    fragmentTransaction1.hide(hoemFragment2);
+                    fragmentTransaction1.hide(moreFragment);
 
                     fragmentTransaction1.commit();
                 } else if (position == 1) {
@@ -77,7 +78,7 @@ public class MainActivity extends BaseActivity {
                     fragmentTransaction1.hide(hoemFragment);
                     fragmentTransaction1.show(investFragment);
                     fragmentTransaction1.hide(propertyFragment);
-                    fragmentTransaction1.hide(hoemFragment2);
+                    fragmentTransaction1.hide(moreFragment);
 
                     fragmentTransaction1.commit();
                 } else if (position == 2) {
@@ -86,7 +87,7 @@ public class MainActivity extends BaseActivity {
                     fragmentTransaction1.hide(hoemFragment);
                     fragmentTransaction1.hide(investFragment);
                     fragmentTransaction1.show(propertyFragment);
-                    fragmentTransaction1.hide(hoemFragment2);
+                    fragmentTransaction1.hide(moreFragment);
 
                     fragmentTransaction1.commit();
                 } else if (position == 3) {
@@ -95,7 +96,7 @@ public class MainActivity extends BaseActivity {
                     fragmentTransaction1.hide(hoemFragment);
                     fragmentTransaction1.hide(investFragment);
                     fragmentTransaction1.hide(propertyFragment);
-                    fragmentTransaction1.show(hoemFragment2);
+                    fragmentTransaction1.show(moreFragment);
                     fragmentTransaction1.commit();
                 }
             }

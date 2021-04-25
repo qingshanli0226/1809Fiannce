@@ -37,6 +37,7 @@ public class ProgressView extends View {
     private int progressColor = Color.RED;//进度颜色
 
 
+
     public ProgressView(Context context) {
         this(context, null);
     }
@@ -166,6 +167,33 @@ public class ProgressView extends View {
     }
 
 
+    public void setProgressViewWidth(int progressViewWidth) {
+        this.progressViewWidth = progressViewWidth;
+    }
+
+    public void setProgressViewHeight(int progressViewHeight) {
+        this.progressViewHeight = progressViewHeight;
+    }
+
+    public void setPaintCircleWidth(int paintCircleWidth) {
+        this.paintCircleWidth = paintCircleWidth;
+    }
+
+    public void setPaintTextSize(int paintTextSize) {
+        this.paintTextSize = paintTextSize;
+    }
+
+    public void setPaintTextColor(int paintTextColor) {
+        this.paintTextColor = paintTextColor;
+    }
+
+    public void setProgressBackRoundColor(int progressBackRoundColor) {
+        this.progressBackRoundColor = progressBackRoundColor;
+    }
+
+    public void setProgressColor(int progressColor) {
+        this.progressColor = progressColor;
+    }
 
 
 }

@@ -78,6 +78,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void initData() {
         httpPresenter.getServerVersion();
         httpPresenter.getHomeData();
+
         alphaAnimation = new AlphaAnimation(0f, 1f);
         alphaAnimation.setDuration(2000);
         alphaAnimation.setInterpolator(new LinearInterpolator());

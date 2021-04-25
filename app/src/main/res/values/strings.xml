@@ -28,5 +28,14 @@
     <string name="study_tips">学习提示:</string>
     <string name="we_will_demonstrate_sdk">充值我们将以集成支付宝sdk支付金额演示充值功能</string>
     <string name="withdrawal_business">提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提现,系统将会告知24小时内进行转账,如果未收到,请联系客服等等等等等等等</string>
-
+    <string name="investmentManagement">投资管理</string>
+    <string name="investmentManagementVisual">投资管理(直观)</string>
+    <string name="assetsManagement">资产管理</string>
+    <string name="gesturePassword">手势密码</string>
+    <string name="resetTheGesturePassword">重置手势密码</string>
+    <string name="contactCustomer">联系客服</string>
+    <string name="userFeedback">用户反馈</string>
+    <string name="friendsShare">分享好友</string>
+    <string name="aboutYoudao">关于有道理财</string>
+    <string name="contactCustomerPhone">010-56253825</string>
 </resources>

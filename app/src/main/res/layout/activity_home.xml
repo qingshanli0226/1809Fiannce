@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_45"
@@ -12,9 +13,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:layout_marginBottom="@dimen/dp_61"
         android:id="@+id/act_home_ll"></LinearLayout>
 
 
@@ -24,16 +25,17 @@
         android:background="@color/colorA"
         android:layout_above="@id/act_home_ct"></View>
     <com.flyco.tablayout.CommonTabLayout
+        android:paddingTop="@dimen/dp_2"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_60"
+        android:layout_height="@dimen/dp_52"
         android:layout_alignParentBottom="true"
         android:id="@+id/act_home_ct"
         app:tl_textSelectColor="@color/pale_blue"
-        app:tl_textsize="@dimen/dp_20"
+        app:tl_textsize="@dimen/dp_15"
         app:tl_iconWidth="@dimen/dp_30"
         app:tl_iconHeight="@dimen/dp_30"
         app:tl_textUnselectColor="@color/french_grey"
         android:background="@color/white"></com.flyco.tablayout.CommonTabLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

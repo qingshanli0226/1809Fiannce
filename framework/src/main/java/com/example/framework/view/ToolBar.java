@@ -25,6 +25,7 @@ public class ToolBar extends RelativeLayout {
     private int rightImgId;
 
 
+
     public ToolBar(Context context) {
         super(context);
         init(context, null, 0);
@@ -111,5 +112,26 @@ public class ToolBar extends RelativeLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         return super.onInterceptTouchEvent(ev);
+    }
+
+
+    public void setIstoolbarLeftImg(boolean istoolbarLeftImg) {
+        this.istoolbarLeftImg = istoolbarLeftImg;
+    }
+
+    public void setIstoolbarRightImg(boolean istoolbarRightImg) {
+        this.istoolbarRightImg = istoolbarRightImg;
+    }
+
+    public void setCenterTitle(String centerTitle) {
+        CenterTitle = centerTitle;
+    }
+
+    public void setLeftImgId(int leftImgId) {
+        this.leftImgId = leftImgId;
+    }
+
+    public void setRightImgId(int rightImgId) {
+        this.rightImgId = rightImgId;
     }
 }

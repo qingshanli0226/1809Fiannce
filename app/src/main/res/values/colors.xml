@@ -20,6 +20,9 @@
     <color name="red">#ff0000</color>
     <color name="gray">#999999</color>
     <color name="gray_french">#3C000000</color>
+    <color name="ashen">#F6F6F6</color>
+    <color name="darkAshen">#E4E4E4</color>
+
 
 
 </resources>
