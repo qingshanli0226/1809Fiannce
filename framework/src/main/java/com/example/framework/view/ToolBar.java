@@ -43,13 +43,13 @@ public class ToolBar extends RelativeLayout {
     }
 
     public void init(Context context, AttributeSet attrs, int defStyleAttr) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ToolBarView);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ToolBar);
 
-        titleText = typedArray.getString(R.styleable.ToolBarView_titleText);
-        leftImgId = typedArray.getResourceId(R.styleable.ToolBarView_leftImage, 0);
-        rightImgId = typedArray.getResourceId(R.styleable.ToolBarView_rightImage, 0);
-        rightAreaIsShow = typedArray.getBoolean(R.styleable.ToolBarView_rightIsShow, false);
-        leftIsShow = typedArray.getBoolean(R.styleable.ToolBarView_leftIsShow, false);
+        titleText = typedArray.getString(R.styleable.ToolBar_titleText);
+        leftImgId = typedArray.getResourceId(R.styleable.ToolBar_leftImage, 0);
+        rightImgId = typedArray.getResourceId(R.styleable.ToolBar_rightImage, 0);
+        rightAreaIsShow = typedArray.getBoolean(R.styleable.ToolBar_rightIsShow, false);
+        leftIsShow = typedArray.getBoolean(R.styleable.ToolBar_leftIsShow, false);
 
         typedArray.recycle();
 
@@ -63,7 +63,7 @@ public class ToolBar extends RelativeLayout {
         rightTv = findViewById(R.id.rightTv);
 
         titleTV.setText(titleText);
-        if (rightAreaIsShow && leftImgId != 0) {
+        if (rightAreaIsShow && rightImgId != 0) {
             rightImg.setImageResource(rightImgId);
         }
         if (leftIsShow && leftImgId!=0){
@@ -91,6 +91,46 @@ public class ToolBar extends RelativeLayout {
 
     public void setToolbarListener(IToolbarListener iToolbarListener) {
         this.iToolbarListener = iToolbarListener;
+    }
+
+    public void setTitleTV(TextView titleTV) {
+        this.titleTV = titleTV;
+    }
+
+    public void setRightArea(LinearLayout rightArea) {
+        this.rightArea = rightArea;
+    }
+
+    public void setLeftImg(ImageView leftImg) {
+        this.leftImg = leftImg;
+    }
+
+    public void setRightImg(ImageView rightImg) {
+        this.rightImg = rightImg;
+    }
+
+    public void setRightTv(TextView rightTv) {
+        this.rightTv = rightTv;
+    }
+
+    public void setRightAreaIsShow(boolean rightAreaIsShow) {
+        this.rightAreaIsShow = rightAreaIsShow;
+    }
+
+    public void setLeftIsShow(boolean leftIsShow) {
+        this.leftIsShow = leftIsShow;
+    }
+
+    public void setTitleText(String titleText) {
+        this.titleText = titleText;
+    }
+
+    public void setRightImgId(int rightImgId) {
+        this.rightImgId = rightImgId;
+    }
+
+    public void setLeftImgId(int leftImgId) {
+        this.leftImgId = leftImgId;
     }
 
     public static interface IToolbarListener {

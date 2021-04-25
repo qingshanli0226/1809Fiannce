@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Message;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.LinearInterpolator;
@@ -155,13 +156,13 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void showLoading() {
 //        pro.setVisibility(View.VISIBLE);
-        loadingPage.showLoadingView();
+//        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
 //        pro.setVisibility(View.GONE);
-        loadingPage.showSuccessView();
+//        loadingPage.showSuccessView();
     }
 
     @Override
@@ -169,7 +170,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         LogUtils.d(error);
         Toast.makeText(this, getResources().getString(R.string.RequestError)+error, Toast.LENGTH_SHORT).show();
 
-        loadingPage.showError(error);
+//        loadingPage.showError(error);
     }
 
     public void getTime() {
@@ -227,5 +228,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         super.destroy();
         alphaAnimation.cancel();
         handler.removeCallbacksAndMessages(null);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return false;
     }
 }

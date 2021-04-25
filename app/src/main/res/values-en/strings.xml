@@ -29,5 +29,14 @@
     <string name="RequestError">Request error:</string>
     <string name="CountDown">count down:</string>
     <string name="Exit">Press again to exit the app</string>
+    <string name="StudyTips">Study tips：</string>
+    <string name="tipsOne">We will demonstrate the recharge function by integrating the payment amount of Alipay SDK</string>
+    <string name="tipsTwo">Withdrawal business: in P2P financial platform, withdrawals are not real-time to the account, but audit withdrawals, the system will inform you to transfer within 24 hours, if not received, please contact customer service...  </string>
+    <string name="topUp">top up</string>
+    <string name="withdraw">withdraw deposit</string>
+    <string name="investment">investment management</string>
+    <string name="perceptual">investment management(perceptual intuition)</string>
+    <string name="assets">assets management</string>
+    <string name="day">Day</string>
 
 </resources>

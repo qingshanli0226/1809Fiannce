@@ -6,15 +6,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.framework.view.LoadingPage;
+import com.example.framework.view.ToolBar;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener {
 
     protected T httpPresenter;
     protected LoadingPage loadingPage;
+    protected ToolBar toolBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         };
         setContentView(loadingPage);
         initView();
+        toolBar=findViewById(R.id.toolbar);
+        toolBar.setToolbarListener(this);
         initPresenter();
         initData();
     }
@@ -52,5 +56,20 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         if (httpPresenter!=null){
             httpPresenter.detachView();
         }
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
     }
 }

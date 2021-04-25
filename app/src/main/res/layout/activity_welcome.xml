@@ -7,6 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".welcome.WelcomeActivity">
 
+    <com.example.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:id="@+id/toolbar"></com.example.framework.view.ToolBar>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,8 +36,8 @@
         android:id="@+id/time"></TextView>
 
     <ImageView
-        android:layout_width="@dimen/dp_150"
-        android:layout_height="@dimen/dp_150"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_70"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dp_100"
         android:src="@mipmap/app_icon"></ImageView>
@@ -42,9 +47,9 @@
         android:layout_height="wrap_content"
         android:text="@string/financial"
         android:textColor="@color/white"
-        android:textSize="@dimen/dp_50"
+        android:textSize="@dimen/dp_40"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp_250"></TextView>
+        android:layout_marginTop="@dimen/dp_200"></TextView>
 
     <TextView
         android:layout_width="wrap_content"

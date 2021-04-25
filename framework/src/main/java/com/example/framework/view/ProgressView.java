@@ -85,6 +85,8 @@ public class ProgressView extends View {
         invalidate();
     }
 
+
+
     public void saledProgress(int progress, boolean is) {
         offsetAngle = (progress * 360) / 100;
         if (is) {

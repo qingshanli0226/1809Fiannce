@@ -11,7 +11,7 @@
 
     </declare-styleable>
 
-    <declare-styleable name="ToolBarView">
+    <declare-styleable name="ToolBar">
 
         <attr name="titleText" format="string"></attr>
         <attr name="rightImage" format="reference"></attr>
