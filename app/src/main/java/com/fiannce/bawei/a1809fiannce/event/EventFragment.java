@@ -50,6 +50,6 @@ public class EventFragment extends Fragment implements View.OnTouchListener {
                 }
         }
 
-        return true;
+        return false;
     }
 }
