@@ -85,7 +85,7 @@ class ProgressView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int):V
         super.onDraw(canvas)
 
         paint.setColor(Color.GRAY)
-        paint.strokeWidth=50f
+        paint.strokeWidth=30f
         paint.style=Paint.Style.STROKE
         paint.isAntiAlias=true
 
@@ -102,7 +102,7 @@ class ProgressView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int):V
         canvas!!.drawArc(viewX-radius,viewY-radius,viewX+radius,viewY+radius,0f,(progress!!*3.6).toFloat(),false,paint)
 
         paint.color= textcolor!!
-        paint.textSize=100f
+        paint.textSize=50f
         paint.style=Paint.Style.FILL
 
         var rect = Rect()

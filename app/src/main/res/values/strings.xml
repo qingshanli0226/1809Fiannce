@@ -7,4 +7,10 @@
     <string name="investment_title_all">全部理财</string>
     <string name="investment_title_recommend">推荐</string>
     <string name="investment_title_Popular">热门理财</string>
+    <string name="home_but_text">立即加入</string>
+    <string name="home_textview_text">风险保障由有道银行监管</string>
+    <string name="home_samlltitle_text">预期年利率：</string>
+    <string name="home_text_tage_left">本息保障</string>
+    <string name="home_text_tage_mid">每日计划</string>
+    <string name="home_text_tage_right">高额收益</string>
 </resources>

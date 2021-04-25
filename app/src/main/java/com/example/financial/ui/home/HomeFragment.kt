@@ -22,6 +22,7 @@ class HomeFragment:BaseFragment<HomePresenter>(),HomeCanter.View {
     override fun initView() {
         attaToBar(fragment_home_ToBar)
         attaPresenter(HomePresenter(HomeModle(),this))
+
     }
 
     override fun initData() {
@@ -33,21 +34,25 @@ class HomeFragment:BaseFragment<HomePresenter>(),HomeCanter.View {
     }
 
     override fun OnLeftClickListenter() {
-        TODO("Not yet implemented")
+
     }
 
     override fun OnTitleClickListenter() {
-        Toast.makeText(activity,"点击标题",Toast.LENGTH_LONG).show()
+
     }
 
     override fun OnRightClickListenter() {
-        TODO("Not yet implemented")
+
     }
 
     //override fun setPresenter(): HomePresenter =HomePresenter(HomeModle(),this)
 
     override fun onData(index: Index) {
         initBanner(index.imageArr)
+
+        fragment_home_title_text.text=index.proInfo.name
+        fragment_home_progress.setProgress(index.proInfo.progress.toInt())
+        fragment_home_samlltitle_text.text=getString(R.string.home_samlltitle_text)+index.proInfo.yearRate
     }
 
     private fun initBanner(list: List<ImageArr>){

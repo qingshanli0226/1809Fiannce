@@ -15,15 +15,13 @@ class ToBar(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
         findViewById(R.id.view_tobar_title_text)
     }
 
-    private val left_img: ImageView by lazy {
+    private val leftImg: ImageView by lazy {
         findViewById(R.id.view_tobar_left_img)
     }
-    private val right_img: ImageView by lazy {
+    private val rightImg: ImageView by lazy {
         findViewById(R.id.view_tobar_right_img)
     }
-    private var text: String = "标题"
-    private var left_show: Boolean = true
-    private var right_show: Boolean = true
+
     private var onClickListener:OnClickListener?=null
     constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context?) : this(context, null)
@@ -33,39 +31,39 @@ class ToBar(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
 
         var obtainStyledAttributes = context!!.obtainStyledAttributes(attrs, R.styleable.ToBar)
 
-        text= obtainStyledAttributes.getString(R.styleable.ToBar_title)!!
+        var title = obtainStyledAttributes.getString(R.styleable.ToBar_title)!!
 
-        left_show=obtainStyledAttributes.getBoolean(R.styleable.ToBar_left_show,true)!!
-        right_show=obtainStyledAttributes.getBoolean(R.styleable.ToBar_right_show,true)!!
+        var lefshow = obtainStyledAttributes.getBoolean(R.styleable.ToBar_left_show, true)!!
+        var rightshow = obtainStyledAttributes.getBoolean(R.styleable.ToBar_right_show, true)!!
 
-        title.text = text
-        if (left_show) {
-            left_img.visibility = VISIBLE
-        } else {
-            left_img.visibility = GONE
-        }
-        if (right_show) {
-            right_img.visibility = VISIBLE
-        } else {
-            right_img.visibility = GONE
-        }
+        setTitle(title)
+        setLeftShow(lefshow)
+        setRightShow(rightshow)
 
-        left_img.setOnClickListener(this)
-        right_img.setOnClickListener(this)
-        title.setOnClickListener(this)
+        leftImg.setOnClickListener(this)
+        rightImg.setOnClickListener(this)
+        this.title.setOnClickListener(this)
 
     }
 
     fun setTitle(title: String) {
-        this.text = text
+        this.title.text = title
     }
 
     fun setLeftShow(b:Boolean){
-        left_show=b
+        if (b) {
+            leftImg.visibility = VISIBLE
+        } else {
+            leftImg.visibility = GONE
+        }
     }
 
     fun setRightShow(b:Boolean){
-        left_show=b
+        if (b) {
+            rightImg.visibility = VISIBLE
+        } else {
+            rightImg.visibility = GONE
+        }
     }
 
     fun setonClickListener(listener: OnClickListener):ToBar{

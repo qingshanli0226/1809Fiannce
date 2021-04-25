@@ -1,21 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.example.frame_library.view.ToBar xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    app:left_show="false"
-    app:right_show="false"
-    app:title="@string/act_home"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_home_ToBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical"
+    app:left_show="false"
+    app:right_show="false"
+    app:title="@string/act_home">
+
     <com.youth.banner.Banner
+        android:id="@+id/fragment_home_banner"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/fragment_home_banner"/>
-    <TextView
+        android:layout_weight="1" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/red"
-        android:layout_weight="1"/>
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/fragment_home_title_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/home_title_text_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/home_text_tage_left"
+                android:textSize="@dimen/home_tag_text_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/home_text_tage_mid"
+                android:textSize="@dimen/home_tag_text_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/home_text_tage_right"
+                android:textSize="@dimen/home_tag_text_size" />
+
+        </LinearLayout>
+
+        <com.example.frame_library.view.ProgressView
+            android:id="@+id/fragment_home_progress"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3" />
+
+        <TextView
+            android:id="@+id/fragment_home_samlltitle_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/home_samlltitle_text"
+            android:textSize="@dimen/home_samlltitle_text_size" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="@dimen/home_but_size"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/home_but_text" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text="@string/home_textview_text"
+            android:textAlignment="center" />
+    </LinearLayout>
 </com.example.frame_library.view.ToBar>
