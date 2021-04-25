@@ -6,9 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +17,7 @@ import com.example.myfinancial.R;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.VersionBean;
 
-public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements WelComeView {
+public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelComeView {
     private android.widget.TextView countdowntv;
 
     private final int ONE_TASK_FINISH = 0;

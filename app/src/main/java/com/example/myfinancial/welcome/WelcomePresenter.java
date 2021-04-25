@@ -7,6 +7,8 @@ import com.example.net.FiannceHttpMannager;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.VersionBean;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -15,12 +17,13 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class WelcomePresenter extends BasePresenter<WelComeView> {
-    public WelcomePresenter(WelComeView welComeView) {
+public class WelcomePresenter extends BasePresenter<IWelComeView> {
+    public WelcomePresenter(IWelComeView welComeView) {
         attView(welComeView);
     }
     public void getVersion(){
         FiannceHttpMannager.getApiModel().getVersionData()
+                .delay(2000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -96,7 +99,7 @@ public class WelcomePresenter extends BasePresenter<WelComeView> {
                     @Override
                     public void onError(@NonNull Throwable e) {
                         if (mView!=null){
-                            mView.showError("获取数据发生错误");
+                            mView.showError(e.getMessage());
                             Log.d("WelcomePresenter", e.getMessage());
                         }
                     }

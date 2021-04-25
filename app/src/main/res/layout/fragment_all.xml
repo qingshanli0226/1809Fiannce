@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/allbackgroundcolor"
     android:orientation="vertical"
-    tools:context=".fragment.invesfragment.AllFragment">
+    tools:context=".fragment.inves.fragment.AllFragment">
 
     <com.example.framework.myview.ToolBar
         android:id="@+id/toolbar"

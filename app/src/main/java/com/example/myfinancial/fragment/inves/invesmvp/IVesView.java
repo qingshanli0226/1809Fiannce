@@ -1,8 +1,8 @@
-package com.example.myfinancial.fragment.invesfragment.invesmvp;
+package com.example.myfinancial.fragment.inves.invesmvp;
 
 import com.example.framework.BaseView;
 import com.example.net.bean.AllMoneyBean;
 
-public interface InVesView extends BaseView {
+public interface IVesView extends BaseView {
     void initAllMoney(AllMoneyBean allMoneyBean);
 }

@@ -34,6 +34,7 @@ public class HomeFragment extends BaseFragment {
         Log.d("MainActivity123", homeBean.toString());
         initlbt();
         promyview.getProgressNum(Integer.parseInt(homeBean.getResult().getProInfo().getProgress()), true);
+        showLoading();
     }
 
     @Override
@@ -48,12 +49,13 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void showLoading() {
-
+        loadingPage.showLoadingView();
+       hideLoading();
     }
 
     @Override
     public void hideLoading() {
-
+        loadingPage.showSuccessView();
     }
 
     @Override

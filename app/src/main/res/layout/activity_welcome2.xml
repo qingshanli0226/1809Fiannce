@@ -47,7 +47,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="@dimen/dp_10"
         android:layout_marginRight="@dimen/dp_10"
-        android:text="3秒"
+        android:text="@string/countdown"
         android:textSize="@dimen/dp_30"></TextView>
 
 

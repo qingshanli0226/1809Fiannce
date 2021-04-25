@@ -1,4 +1,4 @@
-package com.example.myfinancial.fragment;
+package com.example.myfinancial.fragment.inves.invesmvp;
 
 import androidx.fragment.app.Fragment;
 
@@ -7,9 +7,9 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.framework.BaseFragment;
 import com.example.framework.adapter.VpAdapter;
 import com.example.myfinancial.R;
-import com.example.myfinancial.fragment.invesfragment.AllFragment;
-import com.example.myfinancial.fragment.invesfragment.HotFragment;
-import com.example.myfinancial.fragment.invesfragment.ReCommendFragment;
+import com.example.myfinancial.fragment.inves.fragment.AllFragment;
+import com.example.myfinancial.fragment.inves.fragment.HotFragment;
+import com.example.myfinancial.fragment.inves.fragment.ReCommendFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -35,9 +35,9 @@ public class InvestFragment extends BaseFragment {
         list.add(new ReCommendFragment());
         list.add(new HotFragment());
 
-        strings.add("全部理财");
-        strings.add("推荐理财");
-        strings.add("热门理财");
+        strings.add(getString(R.string.allmoneyManagement));
+        strings.add(getString(R.string.recommendmoneyManagement));
+        strings.add(getString(R.string.h0tmoneyManagement));
 
         vpAdapter=new VpAdapter(getChildFragmentManager(),list,strings);
 

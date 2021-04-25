@@ -1,25 +1,22 @@
-package com.example.myfinancial.fragment.invesfragment;
-
-import android.widget.Toast;
+package com.example.myfinancial.fragment.inves.fragment;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.framework.BaseFragment;
 import com.example.myfinancial.R;
-import com.example.myfinancial.adapter.AllAdapter;
-import com.example.myfinancial.fragment.invesfragment.invesmvp.InVesPresenter;
-import com.example.myfinancial.fragment.invesfragment.invesmvp.InVesView;
+import com.example.myfinancial.fragment.inves.invesmvp.InVesPresenter;
+import com.example.myfinancial.fragment.inves.invesmvp.IVesView;
 import com.example.net.bean.AllMoneyBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllFragment extends BaseFragment<InVesPresenter> implements InVesView {
-    private RecyclerView rec;
+public class AllFragment extends BaseFragment<InVesPresenter> implements IVesView {
+    private RecyclerView allrec;
 
     private AllAdapter allAdapter;
-    private List<AllMoneyBean.ResultBean> list = new ArrayList<>();
+    private List<AllMoneyBean.ResultBean> alllist = new ArrayList<>();
 
     @Override
     public int getbandLayout() {
@@ -33,11 +30,10 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements InVesVi
 
     @Override
     public void initView() {
-        rec = (RecyclerView) findViewById(R.id.rec);
-        allAdapter = new AllAdapter(list);
-        rec.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rec.setAdapter(allAdapter);
-
+        allrec = (RecyclerView) findViewById(R.id.rec);
+        allAdapter = new AllAdapter(alllist);
+        allrec.setLayoutManager(new LinearLayoutManager(getActivity()));
+        allrec.setAdapter(allAdapter);
     }
 
     @Override
@@ -63,7 +59,7 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements InVesVi
 
     @Override
     public void initAllMoney(AllMoneyBean allMoneyBean) {
-        list.addAll(allMoneyBean.getResult());
+        alllist.addAll(allMoneyBean.getResult());
         allAdapter.notifyDataSetChanged();
     }
 

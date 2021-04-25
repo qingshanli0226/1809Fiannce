@@ -59,6 +59,9 @@ public abstract   class BaseActivity<P extends BasePresenter> extends AppCompatA
         if (mPresenter!=null){
             mPresenter.destroy();
         }
+        if (loadingPage!=null){
+            loadingPage.clearAnimation();
+        }
      }
 
 

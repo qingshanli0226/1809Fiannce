@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".fragment.InvestFragment">
+    tools:context=".fragment.inves.invesmvp.InvestFragment">
 <com.example.framework.myview.ToolBar
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:titleText="投资"></com.example.framework.myview.ToolBar>
+    app:titleText="@string/investtool"></com.example.framework.myview.ToolBar>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"

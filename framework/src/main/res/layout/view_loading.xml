@@ -7,6 +7,6 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:id="@+id/loading_progressbar"
-        android:indeterminateDrawable="@drawable/drawable"
+        android:indeterminateDrawable="@drawable/animation_loading"
         android:layout_centerInParent="true"></ProgressBar>
 </RelativeLayout>

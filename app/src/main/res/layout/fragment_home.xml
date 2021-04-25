@@ -8,7 +8,7 @@
     tools:context=".fragment.HomeFragment">
 <com.example.framework.myview.ToolBar
     android:layout_width="match_parent"
-    app:titleText="首页"
+    app:titleText="@string/hometool"
     android:id="@+id/toolbar"
     app:leftIsShow="true"
     app:rightIsShow="false"

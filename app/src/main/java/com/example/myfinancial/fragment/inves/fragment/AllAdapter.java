@@ -1,8 +1,7 @@
-package com.example.myfinancial.adapter;
+package com.example.myfinancial.fragment.inves.fragment;
 
 
 import android.graphics.Color;
-import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;

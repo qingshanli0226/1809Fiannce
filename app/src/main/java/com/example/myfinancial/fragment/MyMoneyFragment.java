@@ -11,21 +11,21 @@ import android.view.ViewGroup;
 import com.example.framework.BaseFragment;
 import com.example.myfinancial.R;
 
-public class MyMoneyFragment extends BaseFragment{
+public class MyMoneyFragment extends BaseFragment {
 
     @Override
     public void showLoading() {
-
+        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
 
+        loadingPage.showSuccessView();
     }
 
     @Override
     public void showError(String error) {
-
     }
 
     @Override
@@ -40,7 +40,7 @@ public class MyMoneyFragment extends BaseFragment{
 
     @Override
     public void initView() {
-
+        showLoading();
     }
 
     @Override
