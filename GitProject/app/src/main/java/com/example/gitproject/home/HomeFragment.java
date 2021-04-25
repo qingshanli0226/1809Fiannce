@@ -35,7 +35,6 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
         homeBanner = (Banner) findViewById(R.id.home_banner);
         homeProgress = (ProgressView) findViewById(R.id.home_progress);
         homeName = (TextView) findViewById(R.id.home_name);
@@ -52,16 +51,19 @@ public class HomeFragment extends BaseFragment {
     protected void initData() {
         HomeBean homeBean = CacheManager.getInstance().getHomeBean();
         HomeBean.ResultBean result = homeBean.getResult();
+        ArrayList<String> strings = new ArrayList<>();
+        String home_banner_one = getString(R.string.home_banner_one);
+        String home_banner_two = getString(R.string.home_banner_two);
+        String home_banner_three = getString(R.string.home_banner_three);
+        String home_banner_four = getString(R.string.home_banner_four);
+        strings.add(home_banner_one);
+        strings.add(home_banner_two);
+        strings.add(home_banner_three);
+        strings.add(home_banner_four);
+        //轮播图
         homeBanner.setImages(result.getImageArr());
         homeBanner.setBannerAnimation(Transformer.Tablet);
         homeBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
-        ArrayList<String> strings = new ArrayList<>();
-
-        strings.add("分享砍学费");
-        strings.add("人脉总动员");
-        strings.add("想不到你是这样的app");
-        strings.add("购物节，爱不单行");
-
         homeBanner.setBannerTitles(strings);
         homeBanner.setImageLoader(new ImageLoader() {
             @Override
@@ -71,6 +73,7 @@ public class HomeFragment extends BaseFragment {
             }
         }).start();
 
+        //布局设置
         HomeBean.ResultBean.ProInfoBean proInfo = CacheManager.getInstance().getHomeBean().getResult().getProInfo();
         homeProgress.startProgress(Integer.parseInt(proInfo.getProgress()), true);
 

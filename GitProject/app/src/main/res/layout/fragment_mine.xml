@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray"
     tools:context=".mine.MineFragment">
 
 
@@ -15,5 +16,16 @@
         app:app_right_src="@drawable/my_setting_icon"
         app:app_right_isshow="true"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.example.framework.view.ItemBar
+        app:app_item_text="aaaa"
+        app:app_item_back_color="@color/white"
+        app:app_item_left_src="@drawable/my_invest_manage"
+        app:app_item_left_isshow="true"
+        app:app_item_right_src="@drawable/right"
+        app:app_item_right_isshow="true"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </FrameLayout>

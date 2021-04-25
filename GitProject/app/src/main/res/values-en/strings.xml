@@ -1,4 +1,5 @@
 <resources>
+<!--    英文版 少几个string-->
 <!--    <string name="app_name">GitProject</string>-->
 <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
 <!--    <string name="mian_home">Home</string>-->
@@ -25,12 +26,21 @@
 
     <string name="app_name">GitProject</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
     <string name="mian_home">首页</string>
     <string name="mian_invest">投资</string>
     <string name="mian_money">我的资产</string>
     <string name="mian_more">更多</string>
+    <string name="wel_alert_title">下载最新版本</string>
+    <string name="wel_alert_yes">确定</string>
+    <string name="wel_alert_no">取消</string>
 
 
+    <string name="home_banner_one">分享砍学费</string>
+    <string name="home_banner_two">人脉总动员</string>
+    <string name="home_banner_three">想不到你是这样的app</string>
+    <string name="home_banner_four">购物节，爱不单行</string>
     <string name="home_one_btn">本息保障</string>
     <string name="home_two_btn">每日计息</string>
     <string name="home_three_btn">高额收益</string>
@@ -46,5 +56,9 @@
     <string name="finances_item_unit">万</string>
     <string name="finances_lamp">有道金融豪运当头，首投返现最高1888元</string>
 
+
+    <string name="invest_one">全部理财</string>
+    <string name="invest_two">推荐理财</string>
+    <string name="invest_three">热门理财</string>
 
 </resources>

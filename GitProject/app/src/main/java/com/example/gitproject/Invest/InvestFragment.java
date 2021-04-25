@@ -38,7 +38,7 @@ public class InvestFragment extends BaseFragment {
         fragments.add(new ManageFinancesFragment());
         fragments.add(new RecommendFragment());
         fragments.add(new HotFragment());
-        investSliding.setViewPager(investViewpage,new String[]{"全部理财","推荐理财","热门理财"},getActivity(),fragments);
+        investSliding.setViewPager(investViewpage,new String[]{getString(R.string.invest_one),getString(R.string.invest_two),getString(R.string.invest_three)},getActivity(),fragments);
 
     }
 

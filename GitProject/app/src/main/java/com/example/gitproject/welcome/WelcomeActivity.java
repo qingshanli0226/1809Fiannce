@@ -90,7 +90,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void showError(String error) {
-        Toast.makeText(this, "错误:"+error, Toast.LENGTH_SHORT).show();
+        loadPage.showErrorText(error);
     }
 
     private Handler handler = new Handler(){
@@ -109,49 +109,57 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             } else if(msg.what == ONE_TASK_FIISH){
                 if(task_one && task_two && task_three){
                     //跳转
-                    int oldCode = 0;
-                    try {
-                        oldCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
-                    } catch (PackageManager.NameNotFoundException e) {
-                        e.printStackTrace();
-                    }
-                    if (oldCode < updateBean.getResult().getVersionCode()) {
-                        //提示更新
-                        AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
-                        builder.setTitle("下载最新版本");
-                        builder.setMessage(updateBean.getResult().getDesc());
-                        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                //下载数据
-                                Toast.makeText(WelcomeActivity.this, "下载数据", Toast.LENGTH_SHORT).show();
-                                ProgressDialog pro = new ProgressDialog(WelcomeActivity.this);
-                                pro.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                                pro.show();
-                            }
-                        });
-                        builder.setPositiveButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                //跳转界面
-                                //关闭此页面
-
-                                ARouter.getInstance().build("/app/MainActivity").navigation();
-                                finish();
-                            }
-                        });
-                        AlertDialog alertDialog = builder.create();
-                        builder.show();
-
-                    } else {
-                        //最新版本
-                        finish();
-                    }
+                    showAlert();
                 }
             }
 
         }
     };
+
+    private void showAlert() {
+        int oldCode = 0;
+        try {
+            oldCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        //判断版本
+        if (oldCode < updateBean.getResult().getVersionCode()) {
+            //提示更新
+            AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+            String wel_alert_title = getString(R.string.wel_alert_title);
+            String wel_alert_no = getString(R.string.wel_alert_no);
+            String wel_alert_yes = getString(R.string.wel_alert_yes);
+            builder.setTitle(wel_alert_title);
+            builder.setMessage(updateBean.getResult().getDesc());
+            builder.setNegativeButton(wel_alert_yes, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //下载新app
+                    ProgressDialog pro = new ProgressDialog(WelcomeActivity.this);
+                    pro.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                    pro.show();
+                }
+            });
+            builder.setPositiveButton(wel_alert_no, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //跳转界面
+                    //关闭此页面
+                    ARouter.getInstance().build("/app/MainActivity").navigation();
+                    finish();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            builder.show();
+
+        } else {
+            //最新版本
+            finish();
+            ARouter.getInstance().build("/app/MainActivity").navigation();
+
+        }
+    }
 
     public boolean onKeyDown(int keyCode,KeyEvent event){
         if(keyCode==KeyEvent.KEYCODE_BACK)
