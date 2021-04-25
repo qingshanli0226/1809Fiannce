@@ -21,6 +21,7 @@ import com.example.a1809fiannce.R;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.framework.manager.CacheManager;
 import com.fiannce.bawei.net.mode.HomeBean;
+import com.fiannce.bawei.net.mode.ProductBean;
 import com.fiannce.bawei.net.mode.VersionBean;
 
 import androidx.annotation.NonNull;
@@ -106,6 +107,11 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     }
 
     @Override
+    public void onProductDara(ProductBean productBean) {
+
+    }
+
+    @Override
     public void showLoading() {
         Dialog();
     }
@@ -117,10 +123,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         alerDialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
                 ONE_finish=true;
                 if (ONE_finish&&TOW_finish){
-                    finish();
+                    ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
+                    alerDialog.notify();
                 }
             }
         });
@@ -160,7 +166,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     break;
 
                 case ONE_TASK_FIISH:
-//                    Dialog();
                     if (homeFinsh&&versionFinsh&&advertistFinsh) {
                         handler.sendEmptyMessage(ALL_TASK_FIISH);
                     }
@@ -168,7 +173,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 case ALL_TASK_FIISH:
                     TOW_finish = true;
                     if (ONE_finish&&TOW_finish){
-                        finish();
+                        ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
                     }
                     break;
             }
@@ -179,7 +184,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void destroy() {
         super.destroy();
         alphaAnimation.cancel();
-        alerDialog.create();
         handler.removeCallbacksAndMessages(null);
     }
 }

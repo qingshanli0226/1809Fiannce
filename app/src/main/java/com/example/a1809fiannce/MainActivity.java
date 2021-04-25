@@ -5,26 +5,22 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.a1809fiannce.mainActivity.fragment.HomeFragment;
-import com.example.a1809fiannce.mainActivity.fragment.InvestmentFragment;
-import com.example.a1809fiannce.mainActivity.fragment.MoreFragment;
-import com.example.a1809fiannce.mainActivity.fragment.MyassetsFragment;
+import com.example.a1809fiannce.main.fragment.HomeFragment;
+import com.example.a1809fiannce.main.fragment.investment.InvestmentFragment;
+import com.example.a1809fiannce.main.fragment.more.MoreFragment;
+import com.example.a1809fiannce.main.fragment.MyassetsFragment;
 import com.fiannce.bawei.framework.BaseActivity;
-import com.fiannce.bawei.framework.manager.CacheManager;
-import com.fiannce.bawei.net.mode.HomeBean;
-
 
 
 @Route(path="/main/MainActivity")
 public class MainActivity extends BaseActivity {
+
     private android.widget.LinearLayout HomeLinearLayout;
     private android.widget.RadioButton homeFragment;
     private android.widget.RadioButton investmentFragment;

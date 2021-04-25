@@ -16,11 +16,10 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.fiannce.bawei.framework.R;
-
 
 public class ProgressView extends View {
     private Paint paint;
@@ -35,28 +34,30 @@ public class ProgressView extends View {
     private int progressAngle = 0;
     private final int CIRCLE_MARGIN = 5;
 
-    public ProgressView(Context context) {//new 一个控件时，会调用该构造方法
+    public ProgressView(Context context) {
         super(context);
         init(context,null,0);
     }
 
-    public ProgressView(Context context, AttributeSet attrs) {//在布局里声明，findViewById会调用该构造方法
+    public ProgressView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context,attrs,0);
     }
 
-    public ProgressView(Context context, AttributeSet attrs, int defStyleAttr) {//当布局里有style属性时会调用该构造函数
+    public ProgressView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context,attrs,defStyleAttr);
+
     }
+
 
     //初始化方法
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         paint = new Paint();
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.ProgressView);
-        textColor = typedArray.getColor(R.styleable.ProgressView_textColor,Color.BLACK);
-        circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith,5);
+        textColor = typedArray.getColor(R.styleable.ProgressView_textColor, Color.BLACK);
+        circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith,30);
         backgroundId = typedArray.getResourceId(R.styleable.ProgressView_background,0);
 
         typedArray.recycle();
@@ -140,15 +141,15 @@ public class ProgressView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         //话园
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),backgroundId);
-        Matrix matrix = new Matrix();
-        canvas.drawBitmap(bitmap,matrix,paint);
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),backgroundId);
+//        Matrix matrix = new Matrix();
+//        canvas.drawBitmap(bitmap,matrix,paint);
         progressViewWidth = getMeasuredWidth();
         progressViewHeight = getMeasuredHeight();
         int centerX = progressViewWidth/2;
         int centerY = progressViewHeight/2;
         //获取半径
-        int radius = (progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN;
+        int radius = ((progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN)-15;
         paint.setColor(Color.BLUE);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);

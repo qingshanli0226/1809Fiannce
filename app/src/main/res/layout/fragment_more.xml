@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".mainActivity.fragment.MoreFragment">
-    <com.example.framework.view.ToolBar
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40"
-        app:titleTextColor="#14B4ED"
-        app:titleText="投资"></com.example.framework.view.ToolBar>
+    tools:context=".main.fragment.more.MoreFragment"
+    android:orientation="horizontal">
+<!--    <com.example.framework.view.ToolBar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/dp_40"-->
+<!--        app:titleTextColor="#14B4ED"-->
+<!--        app:titleText="投资"></com.example.framework.view.ToolBar>-->
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"

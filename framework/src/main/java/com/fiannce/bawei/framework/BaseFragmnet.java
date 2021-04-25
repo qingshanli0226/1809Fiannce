@@ -5,35 +5,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.fiannce.bawei.framework.view.LoadingPage;
 
 
 public abstract class BaseFragmnet<T extends BasePresenter> extends Fragment {
     protected T httpPresenter;
     protected View mView;
 
-    protected LoadingPage loadingPage;
-    public <T extends View> T findViewById(@IdRes int id) {
-        return mView.findViewById(id);
-    }
-    @Nullable
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mView = loadingPage = new LoadingPage(getContext()) {
-            @Override
-            protected int getSuccessLayoutId() {
-                return getLayoutId();
-            }
-        };
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         initView();
         initPresenter();
         initData();
-        return mView;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return mView = inflater.inflate(getLayoutId(),container,false);
     }
     protected abstract int getLayoutId();
 

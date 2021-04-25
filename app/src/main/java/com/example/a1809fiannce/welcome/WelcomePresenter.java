@@ -3,7 +3,7 @@ package com.example.a1809fiannce.welcome;
 import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.LogUtils;
-import com.example.a1809fiannce.mainActivity.fragment.more.demo.Demo;
+import com.example.a1809fiannce.main.fragment.more.demo.Demo;
 import com.fiannce.bawei.framework.BasePresenter;
 import com.fiannce.bawei.net.RetrofitCreator;
 import com.fiannce.bawei.net.mode.HomeBean;
@@ -13,7 +13,6 @@ import com.fiannce.bawei.net.mode.VersionBean;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
@@ -85,7 +84,7 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
                         add(disposable);
-                        iView.showLoading();
+//                        iView.showLoading();
                     }
                 })
                 .doFinally(new Action() {
