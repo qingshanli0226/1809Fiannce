@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a1809zg.R;
 import com.example.frame.Basefragment;
+import com.example.frame.LoadingPage;
 import com.example.net.bean.ProductBean;
 
 import java.util.ArrayList;
@@ -18,12 +19,15 @@ public class MoneyFragment extends Basefragment<Fragpresenter> implements FragVi
     private Fragadpter fragadpter;
     private List<ProductBean.ResultBean> list=new ArrayList<>();
 
+
     @Override
     public void onProdactDada(ProductBean productBean) {
             Toast.makeText(getContext(), "111productBean.getResult():" + productBean.getResult().toString(), Toast.LENGTH_SHORT).show();
         List<ProductBean.ResultBean> result = productBean.getResult();
         list.addAll(result);
         fragadpter.notifyDataSetChanged();
+
+
     }
 
     @Override
@@ -53,12 +57,12 @@ public class MoneyFragment extends Basefragment<Fragpresenter> implements FragVi
 
     @Override
     public void showLoaing() {
-
+        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
-
+        loadingPage.showSuccessView();
     }
 
     @Override

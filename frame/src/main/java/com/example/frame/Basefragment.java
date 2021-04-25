@@ -11,21 +11,30 @@ import androidx.fragment.app.Fragment;
 
 public abstract class Basefragment<P extends Basepresenter> extends Fragment {
     protected P mPresenter;
+    protected LoadingPage loadingPage;
     private View mView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return mView=inflater.inflate(Findlayout(),container,false);
 
+       mView= loadingPage=new LoadingPage(getActivity()) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return Findlayout();
+            }
+        };
+     return mView;
     }
+
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
-        initPresenter();
         initData();
+        initPresenter();
+
     }
 
 
