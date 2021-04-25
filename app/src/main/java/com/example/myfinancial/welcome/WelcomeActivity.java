@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
@@ -36,7 +37,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     public int getbandLayout() {
         return R.layout.activity_welcome2;
     }
-
 
 
     @Override
@@ -115,13 +115,18 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
                 case ALL_TASK_FINISH:
                     Toast.makeText(WelcomeActivity.this, "全部运行完成", Toast.LENGTH_SHORT).show();
                     Log.d("WelcomeActivity", "全部运行完成");
-
                     ARouter.getInstance().build("/main/MainActivity").navigation();
-
+                    finish();
                     break;
             }
         }
     };
+
+    //加载页面期间不可返回
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return false;
+    }
 
     @Override
     protected void onDestroy() {
