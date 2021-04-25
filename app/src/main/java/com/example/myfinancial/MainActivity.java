@@ -2,6 +2,8 @@ package com.example.myfinancial;
 
 
 import android.graphics.Color;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.WindowManager;
 
 import androidx.fragment.app.Fragment;
@@ -73,5 +75,35 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.d("ZKH","activity 收到down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d("ZKH","activity move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d("ZKH","activity up");
+                break;
+        }
+        return super.dispatchTouchEvent(ev);
+    }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.d("ZKH onTouchEvent","activity 收到down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d("ZKH onTouchEvent","activity move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d("ZKH onTouchEvent","activity up");
+                break;
+        }
+        return super.onTouchEvent(event);
+    }
 }
