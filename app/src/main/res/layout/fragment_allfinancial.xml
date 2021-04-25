@@ -8,13 +8,13 @@
 
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="@dimen/px_0"
+        android:layout_height="@dimen/dp_0"
         android:id="@+id/toolbar"></com.example.framework.view.ToolBar>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/px_100"
-        android:textSize="@dimen/px_70"
+        android:layout_height="@dimen/dp_50"
+        android:textSize="@dimen/dp_35"
         android:textColor="@color/red"
         android:background="@color/hui"
         android:singleLine="true"

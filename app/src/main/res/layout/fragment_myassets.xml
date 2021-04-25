@@ -8,6 +8,6 @@
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
         android:id="@+id/toolbar"
-        android:layout_height="@dimen/px_100"></com.example.framework.view.ToolBar>
+        android:layout_height="@dimen/dp_50"></com.example.framework.view.ToolBar>
 
 </FrameLayout>

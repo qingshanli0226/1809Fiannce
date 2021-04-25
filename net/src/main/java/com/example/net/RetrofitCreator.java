@@ -21,9 +21,9 @@ public class RetrofitCreator {
 
     private static FiannceApiService createkSApiService() {
         OkHttpClient client = new OkHttpClient.Builder()
-                .readTimeout(2, TimeUnit.MINUTES)
-                .writeTimeout(2, TimeUnit.MINUTES)
-                .callTimeout(2, TimeUnit.MINUTES)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .callTimeout(15, TimeUnit.SECONDS)
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build();
 

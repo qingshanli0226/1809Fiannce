@@ -10,21 +10,23 @@
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
         android:id="@+id/toolbar"
-        android:layout_height="0dp"></com.example.framework.view.ToolBar>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/px_100"
-        android:text="投资"
-        android:textSize="@dimen/px_80"
+        app:titleText="@string/customTab_name2"
         android:background="@color/darkblue"
-        android:gravity="center"
-        android:textColor="@color/blue"></TextView>
+        android:layout_height="@dimen/dp_50"></com.example.framework.view.ToolBar>
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/dp_100"-->
+<!--        android:text="投资"-->
+<!--        android:textSize="@dimen/dp_80"-->
+<!--        android:background="@color/darkblue"-->
+<!--        android:gravity="center"-->
+<!--        android:textColor="@color/blue"></TextView>-->
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/px_100"
-        app:tabIndicatorHeight="@dimen/px_100"
+        android:layout_height="@dimen/dp_50"
+        app:tabIndicatorHeight="@dimen/dp_50"
         app:tabSelectedTextColor="@color/red"
         app:tabTextColor="@color/black"
         app:tabIndicatorColor="@color/blue"

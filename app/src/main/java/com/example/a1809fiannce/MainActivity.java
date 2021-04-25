@@ -120,7 +120,7 @@ public class MainActivity extends BaseActivity {
 
         if (keyCode==KeyEvent.KEYCODE_BACK){
             if (System.currentTimeMillis() - i >2000){
-                Toast.makeText(this, "再按一次结束", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.Exit), Toast.LENGTH_SHORT).show();
                 i =System.currentTimeMillis();
                 return true;
             }else {

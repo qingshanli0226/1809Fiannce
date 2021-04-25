@@ -54,10 +54,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     if (D_code < version.getResult().getVersionCode()) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
 
-                        builder.setTitle("下载最新版本");
-                        builder.setMessage("解决一些bug，优化网络请求！");
+                        builder.setTitle(getResources().getString(R.string.download));
+                        builder.setMessage(getResources().getString(R.string.requests));
 
-                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        builder.setNegativeButton(getResources().getString(R.string.NO), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
@@ -66,7 +66,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                             }
                         });
 
-                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        builder.setPositiveButton(getResources().getString(R.string.YES), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
@@ -109,7 +109,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         handler.sendEmptyMessage(1);
 
-        Toast.makeText(this, "版本信息："+versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.VersionInformation)+versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -135,8 +135,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         D_code = getCode();
 
-        CharSequence text = getResources().getText(R.string.version);
-        versiontext.setText(text.toString()+D_code+".0");
+        versiontext.setText(getResources().getString(R.string.version)+D_code+".0");
 
         alphaAnimation = new AlphaAnimation(0f, 1f);
 
@@ -168,7 +167,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void Error(String error) {
         LogUtils.d(error);
-        Toast.makeText(this, "请求错误："+error, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.RequestError)+error, Toast.LENGTH_SHORT).show();
 
         loadingPage.showError(error);
     }
@@ -184,7 +183,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        time.setText("倒计时：" + count);
+                        time.setText(getResources().getString(R.string.CountDown) + count);
 
                         count--;
 

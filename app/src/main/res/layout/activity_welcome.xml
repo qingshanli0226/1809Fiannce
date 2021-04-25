@@ -14,8 +14,8 @@
         android:scaleType="fitXY"></ImageView>
 
     <ProgressBar
-        android:layout_width="@dimen/px_150"
-        android:layout_height="@dimen/px_150"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
         android:layout_centerInParent="true"
         android:visibility="gone"
         android:id="@+id/pro"></ProgressBar>
@@ -23,18 +23,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="倒计时：3"
-        android:textSize="@dimen/px_50"
+        android:text="@string/CountDown"
+        android:textSize="@dimen/dp_20"
         android:layout_alignParentRight="true"
         android:textColor="@color/black"
-        android:layout_margin="@dimen/px_50"
+        android:layout_margin="@dimen/dp_10"
         android:id="@+id/time"></TextView>
 
     <ImageView
-        android:layout_width="@dimen/px_300"
-        android:layout_height="@dimen/px_300"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_150"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/px_300"
+        android:layout_marginTop="@dimen/dp_100"
         android:src="@mipmap/app_icon"></ImageView>
 
     <TextView
@@ -42,9 +42,9 @@
         android:layout_height="wrap_content"
         android:text="@string/financial"
         android:textColor="@color/white"
-        android:textSize="@dimen/px_100"
+        android:textSize="@dimen/dp_50"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/px_600"></TextView>
+        android:layout_marginTop="@dimen/dp_250"></TextView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,9 +52,9 @@
         android:textColor="@color/white"
         android:id="@+id/versiontext"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/px_50"
+        android:textSize="@dimen/dp_20"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/px_380"
+        android:layout_marginBottom="@dimen/dp_140"
         android:text="@string/version"></TextView>
 
 </RelativeLayout>

@@ -23,5 +23,11 @@
     <string name="version">current version</string>
     <string name="download">Download the latest version</string>
     <string name="requests">Fix some bugs and optimize network requests!</string>
+    <string name="NO">NO</string>
+    <string name="YES">YES</string>
+    <string name="VersionInformation">version information:</string>
+    <string name="RequestError">Request error:</string>
+    <string name="CountDown">count down:</string>
+    <string name="Exit">Press again to exit the app</string>
 
 </resources>

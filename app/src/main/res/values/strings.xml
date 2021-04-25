@@ -10,7 +10,7 @@
     <string name="Principal">本息保障</string>
     <string name="plan">每日计划</string>
     <string name="yield">高额收益</string>
-    <string name="expected">预期年利率</string>
+    <string name="expected">预期年利率:</string>
     <string name="mes">风险保障金由有道银行监管</string>
     <string name="all">全部理财</string>
     <string name="recommend">推荐理财</string>
@@ -22,6 +22,12 @@
     <string name="financial">有道金融</string>
     <string name="version">当前版本：</string>
     <string name="download">下载最新版本</string>
-    <string name="requests">下载最新版本</string>
+    <string name="requests">解决一些bug，优化网络请求！</string>
+    <string name="NO">取消</string>
+    <string name="YES">确定</string>
+    <string name="VersionInformation">版本信息：</string>
+    <string name="RequestError">请求错误:</string>
+    <string name="CountDown">倒计时:</string>
+    <string name="Exit">再按一次退出app</string>
 
 </resources>
