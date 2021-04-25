@@ -14,12 +14,12 @@
         app:titleText="投资"></com.example.framework.view.ToolBar>
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
-        app:tabSelectedTextColor="@color/reddd"
-        app:tabIndicatorColor="@color/small_blue"
         android:id="@+id/money_tab"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:tabIndicatorColor="@color/small_blue"
         app:tabIndicatorHeight="@dimen/welcome_text_size"
-        android:layout_height="@dimen/welcome_text_size"></com.google.android.material.tabs.TabLayout>
+        app:tabSelectedTextColor="@color/reddd"></com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"

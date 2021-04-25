@@ -8,10 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.framework.BaseFragment;
+import com.example.framework.view.SlideRecyclerView;
 import com.example.model.HomeBean;
 import com.example.model.ProductBean;
 import com.example.model.VersionBean;
@@ -21,6 +25,7 @@ import com.example.myapplication.demo.Demo;
 import com.example.myapplication.welcome.IWelcomeView;
 import com.example.myapplication.welcome.WelcomePresenter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,9 +34,10 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
 
     private ImageView img;
     private MyMoneyAdapter adapter;
-    private RecyclerView moneyOneRv;
+    private SlideRecyclerView moneyOneRv;
     private TextView light;
     private AnimationDrawable animationDrawable;
+    private List<ProductBean.ResultBean> list = new ArrayList<>();
 
     @Override
     protected void initData() {
@@ -49,7 +55,7 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
     @Override
     protected void initView() {
         img = (ImageView) mView.findViewById(R.id.img);
-        moneyOneRv = (RecyclerView) mView.findViewById(R.id.money_one_rv);
+        moneyOneRv = (SlideRecyclerView) mView.findViewById(R.id.money_one_rv);
         moneyOneRv.setLayoutManager(new LinearLayoutManager(getContext()));
         light = (TextView) mView.findViewById(R.id.light);
     }
@@ -72,9 +78,27 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
     @Override
     public void onProductDara(ProductBean productBean) {
         List<ProductBean.ResultBean> result = productBean.getResult();
+        list.addAll(result);
+
         adapter = new MyMoneyAdapter(result);
-        moneyOneRv.setAdapter(adapter);
         loadingPage.showSuccessView();
+
+        adapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+                switch (view.getId()) {
+                    case R.id.txt_delete:
+//                        Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
+                        moneyOneRv.closeMenu();
+                        result.remove(position);
+                        break;
+                }
+                adapter.notifyDataSetChanged();
+            }
+        });
+        moneyOneRv.setAdapter(adapter);
+
+
     }
 
     @Override

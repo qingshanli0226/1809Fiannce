@@ -27,5 +27,6 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
         ProgressView view = baseViewHolder.getView(R.id.home_one_progress);
         view.startProgressDraw(Integer.parseInt(resultBean.getProgress()),false);
 //        baseViewHolder.setText(R.id.home_one_progress,resultBean.getProgress());
+        addChildClickViewIds(R.id.txt_delete);
     }
 }
