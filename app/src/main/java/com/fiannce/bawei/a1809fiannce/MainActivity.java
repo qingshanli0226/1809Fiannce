@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.framework.manager.CacheManager;
 import com.fiannce.bawei.framework.view.ProgressView;
@@ -59,7 +60,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onRightImgClick() {
-        Toast.makeText(this, "点击了主页的按钮", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "点击了主页的按钮", Toast.LENGTH_SHORT).show();
+        ARouter.getInstance().build("/event/EventActivity").withInt("",0).navigation();
     }
 
     //事件分发的函数，会将事件一层层传递到View上
