@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <ProgressBar
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
         android:id="@+id/progressBar"
         android:layout_centerInParent="true"
         android:visibility="gone"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/dao"
         android:layout_alignParentRight="true"
-        android:text="倒计时: 3 秒"
+        android:text="@string/dao"
         ></TextView>
 
 </RelativeLayout>

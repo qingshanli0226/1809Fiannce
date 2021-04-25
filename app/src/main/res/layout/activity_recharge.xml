@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Recharge">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/colorShen"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:id="@+id/back"
+            android:src="@drawable/left"
+            >
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="@dimen/dp_0"
+            android:layout_weight="9"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp_30"
+            android:textColor="#26B8EE"
+            android:gravity="center"
+            android:text="@string/ch"
+            android:layout_gravity="center"
+            ></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:background="#E2DBDB"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zi"
+                android:textSize="@dimen/dp_20"
+                ></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_280"
+                android:layout_height="@dimen/dp_50"
+                android:hint="@string/qing"
+                ></EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/jin"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text=" 0"
+                android:textSize="@dimen/dp_18"
+                android:textColor="@color/colorRed"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/yuan"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:layout_width="@dimen/dp_370"
+                android:layout_height="wrap_content"
+                android:id="@+id/recharge"
+                android:text="@string/ch"
+                android:textSize="@dimen/dp_30"
+                android:background="@drawable/filleted"
+                android:textColor="@color/colorWhite"
+                ></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="7"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

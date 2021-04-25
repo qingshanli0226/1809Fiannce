@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.designed.adapter.FragmentAdapter;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     List<String> title = new ArrayList<>();
     private ViewPager vp;
     private TabLayout tab;
-
+private long time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+
+            if (System.currentTimeMillis()-2000>time){
+                Toast.makeText(this, "再点击就退出了", Toast.LENGTH_SHORT).show();
+                time = System.currentTimeMillis();
+
+                return true;
+            }else {
+                finish();
+            }
+
+        }
+
+        return super.onKeyDown(keyCode, event);
+
+    }
 
     private void initView() {
         vp = (ViewPager) findViewById(R.id.vp);

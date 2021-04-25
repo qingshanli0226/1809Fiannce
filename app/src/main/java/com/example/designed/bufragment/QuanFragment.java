@@ -4,7 +4,9 @@ package com.example.designed.bufragment;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -74,12 +76,32 @@ public class QuanFragment extends BaseFragment implements IBaseView, IWelcomeVie
         dm.init(getContext(),fragment);
 
         Danmaku danmaku = new Danmaku();
-        danmaku.text="有道金融壕运当头,首投返现最高达188元";
+        danmaku.text=getResources().getString(R.string.you);
         danmaku.size=100;
         danmaku.color = COLOR_RED;
         dm.send(danmaku);
 
 
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
+            @Override
+            public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
+                return makeMovementFlags(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, ItemTouchHelper.UP | ItemTouchHelper.DOWN);
+            }
+
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int adapterPosition = viewHolder.getAdapterPosition();
+
+
+            }
+        });
+
+        itemTouchHelper.attachToRecyclerView(rv);
 
 
     }

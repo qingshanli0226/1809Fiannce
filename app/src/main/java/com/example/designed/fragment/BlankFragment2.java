@@ -49,8 +49,8 @@ public class BlankFragment2 extends BaseFragment implements IBaseView {
     @Override
     protected void initData() {
         title = new ArrayList<>();
-        title.add("全部理财");
-        title.add("推荐理财");
+        title.add(getResources().getString(R.string.Allfinancial));
+        title.add(getResources().getString(R.string.Recommendafinancial));
         title.add("热门理财");
 
         list=new ArrayList<>();

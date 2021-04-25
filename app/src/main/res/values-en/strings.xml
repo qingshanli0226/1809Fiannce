@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Designed</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="jin">Amount currently available in your account: </string>
+    <string name="shou"> home page</string>
+    <string name="gui">Silicon Valley Rainbow Rookie Program </string>
+    <string name="ben">Principal and interest security </string>
+    <string name="mei">The daily rate </string>
+    <string name="gao">High yield </string>
+    <string name="yu">Expected annual interest rate : 8.00% </string>
+    <string name="li">Immediately to join </string>
+    <string name="feng">Risk insurance is supervised by BBB 0 Bank </string>
+    <string name="tou">investment </string>
+    <string name="dao"> Countdown: 3 seconds</string>
+    <string name="xue"> Learning Tips : </string>
+    <string name="chong"> We will demonstrate the recharge function by integrating the payment amount of Alipay SDK </string>
+    <string name="ti">  Withdrawal business: in P2P financial platforms, withdrawals are not received in real time, but are reviewed and withdrawn</string>
+    <string name="xian">  现,系统将会告知24小时内进行转账,如果未收到,请联系客服...</string>
+    <string name="ch">top up</string>
+    <string name="yuan"> element  </string>
+    <string name="zi">recharge amount  |     </string>
+    <string name="xi">The current interest</string>
+    <string name="qing">Please enter the amount of recharge</string>
+    <string name="shuo">lockup period</string>
+    <string name="lv">Expected annual interest rate</string>
+    <string name="duo">more</string>
+    <string name="mo">default </string>
+    <string name="e">Amount of product</string>
+    <string name="t">withdraw deposit</string>
+    <string name="guan">investment management</string>
+    <string name="zhi">investment management(perceptual intuition)</string>
+    <string name="chang">asset management</string>
+    <string name="one">thousand</string>
+    <string name="you">Youdao gold financing trenches take the lead, the first investment back cash up to 188 yuan</string>
+    <string name="Allfinancial">All financial</string>
+    <string name="Recommendafinancial">Recommend a financial</string>
+</resources>
