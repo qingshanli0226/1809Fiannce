@@ -29,17 +29,25 @@
         app:right_show="false"
         android:id="@+id/tob"
         ></com.example.network.TobView>
-    <com.flyco.tablayout.CommonTabLayout
+<!--    <com.flyco.tablayout.CommonTabLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/dp_50"-->
+<!--        app:tl_textUnselectColor="#000000"-->
+<!--        app:tl_textSelectColor="#ea2f31"-->
+<!--        android:id="@+id/tab"></com.flyco.tablayout.CommonTabLayout>-->
+    <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
-        app:tl_textUnselectColor="#000000"
-        app:tl_textSelectColor="#ea2f31"
-        android:id="@+id/tab"></com.flyco.tablayout.CommonTabLayout>
+        android:id="@+id/tab"
+        ></com.google.android.material.tabs.TabLayout>
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="vertical"
-      android:id="@+id/vp1"></LinearLayout>
-
+<!--  <LinearLayout-->
+<!--      android:layout_width="match_parent"-->
+<!--      android:layout_height="match_parent"-->
+<!--      android:orientation="vertical"-->
+<!--      android:id="@+id/vp1"></LinearLayout>-->
+        <com.example.a1809fiannce.view.PageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/vp"></com.example.a1809fiannce.view.PageView>
 </LinearLayout>

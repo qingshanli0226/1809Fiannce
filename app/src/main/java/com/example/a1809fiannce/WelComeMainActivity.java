@@ -168,7 +168,7 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        handler.removeCallbacksAndMessages(true);
+        handler.removeCallbacksAndMessages(null);
         mPresenter.delView();
     }
 

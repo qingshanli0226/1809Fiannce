@@ -1,19 +1,18 @@
-package com.example.a1809fiannce;
-
-import android.view.ViewGroup;
+package com.example.a1809fiannce.fragment.InFragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
 public class FragAdapter extends FragmentPagerAdapter {
-    private List<androidx.fragment.app.Fragment> list;
+    private List<Fragment> list;
     private List<String> strings;
 
-    public FragAdapter(@NonNull FragmentManager fm, List<androidx.fragment.app.Fragment> list, List<String> strings) {
+    public FragAdapter(@NonNull FragmentManager fm, List<Fragment> list, List<String> strings) {
         super(fm);
         this.list = list;
         this.strings = strings;
@@ -21,7 +20,7 @@ public class FragAdapter extends FragmentPagerAdapter {
 
     @NonNull
     @Override
-    public androidx.fragment.app.Fragment getItem(int position) {
+    public Fragment getItem(int position) {
         return list.get(position);
     }
 
@@ -35,10 +34,4 @@ public class FragAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return strings.get(position);
     }
-
-    @Override
-    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-
-    }
-
 }

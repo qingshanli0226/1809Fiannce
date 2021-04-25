@@ -10,7 +10,6 @@
 <!--        android:layout_height="wrap_content"-->
 <!--        android:visibility="gone"-->
 <!--        android:id="@+id/tob"></com.example.network.TobView>-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
