@@ -9,7 +9,8 @@
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
-        app:titleTextColor="#14B4ED"
+        android:id="@+id/toolbar"
+        app:titleTextColor="@color/small_blue"
         app:titleText="更多"></com.example.framework.view.ToolBar>
 
 </LinearLayout>

@@ -38,8 +38,6 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
 
         httpPresenter.getProductData();
         light.setSelected(true);
-
-
     }
 
 
@@ -93,5 +91,20 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
     public void showError(String error) {
 //        Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
         loadingPage.showError(error);
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
     }
 }

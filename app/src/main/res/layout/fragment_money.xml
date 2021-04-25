@@ -9,16 +9,17 @@
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
-        app:titleTextColor="#14B4ED"
+        android:id="@+id/toolbar"
+        app:titleTextColor="@color/small_blue"
         app:titleText="投资"></com.example.framework.view.ToolBar>
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
-        app:tabSelectedTextColor="#f00"
-        app:tabIndicatorColor="#14B4ED"
+        app:tabSelectedTextColor="@color/reddd"
+        app:tabIndicatorColor="@color/small_blue"
         android:id="@+id/money_tab"
-        app:tabIndicatorHeight="50dp"
-        android:layout_height="50dp"></com.google.android.material.tabs.TabLayout>
+        app:tabIndicatorHeight="@dimen/welcome_text_size"
+        android:layout_height="@dimen/welcome_text_size"></com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
+import com.example.framework.view.ToolBar;
 import com.example.model.HomeBean;
 import com.example.model.ProductBean;
 import com.example.model.VersionBean;
@@ -27,6 +28,7 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> implements IWel
     private Banner banner;
     private ProgressView progressBar;
     private List<String> bannertitles = new ArrayList<>();
+    private ToolBar toolBar;
 
     @Override
     protected void initData() {
@@ -62,7 +64,7 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> implements IWel
 
     @Override
     protected void initView() {
-
+        toolBar = mView.findViewById(R.id.toolbar);
         banner = (Banner) mView.findViewById(R.id.banner);
         progressBar = (ProgressView) mView.findViewById(R.id.progress_bar);
     }
@@ -100,5 +102,20 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> implements IWel
     @Override
     public void showError(String error) {
         loadingPage.showError(error);
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
     }
 }

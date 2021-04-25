@@ -12,7 +12,7 @@
 
         <TextView
             android:gravity="center"
-            android:textSize="30sp"
+            android:textSize="@dimen/big_text_size"
             android:text="默认"
             android:id="@+id/home_one_name"
             android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/size_view_height"
             android:background="@color/black"></View>
 
     </LinearLayout>
@@ -37,34 +37,34 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="300dp"
+                android:layout_marginTop="@dimen/size_ten"
+                android:layout_width="@dimen/size_three_harend"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/weight"
                     android:layout_height="wrap_content"
                     android:text="产品金额"></TextView>
 
                 <TextView
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/weight"
                     android:layout_height="wrap_content"
                     android:text="预期年利率"></TextView>
 
                 <TextView
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/weight"
                     android:layout_height="wrap_content"
                     android:text="锁定期"></TextView>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="300dp"
+                android:layout_marginTop="@dimen/size_ten"
+                android:layout_width="@dimen/size_three_harend"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -72,7 +72,7 @@
                     android:id="@+id/home_one_money"
                     android:textColor="@color/reddd"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/weight"
                     android:layout_height="wrap_content"
                     android:text="0"></TextView>
 
@@ -80,7 +80,7 @@
                     android:id="@+id/home_one_yearrate"
                     android:textColor="@color/reddd"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/weight"
                     android:layout_height="wrap_content"
                     android:text="0"></TextView>
 
@@ -88,15 +88,15 @@
                     android:id="@+id/home_one_suodingdays"
                     android:textColor="@color/reddd"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/weight"
                     android:layout_height="wrap_content"
                     android:text="0"></TextView>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="300dp"
+                android:layout_marginTop="@dimen/size_ten"
+                android:layout_width="@dimen/size_three_harend"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -104,14 +104,14 @@
                     android:id="@+id/home_one_mintoumoney"
                     android:textColor="@color/black"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/weight"
                     android:layout_height="wrap_content"
                     android:text="100"></TextView>
 
                 <TextView
                     android:textColor="@color/black"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/weight"
                     android:layout_height="wrap_content"
                     android:text="本息保障"></TextView>
 
@@ -119,7 +119,7 @@
                     android:id="@+id/home_one_membernum"
                     android:textColor="@color/black"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/weight"
                     android:layout_height="wrap_content"
                     android:text="100"></TextView>
 
@@ -129,18 +129,18 @@
 
 
         <com.example.framework.view.ProgressView
-            android:layout_width="80dp"
+            android:layout_width="@dimen/size_eighting"
             android:text="50"
-            app:textcolor="#14B4ED"
+            app:textcolor="@color/small_blue"
             android:id="@+id/home_one_progress"
             android:layout_height="match_parent"></com.example.framework.view.ProgressView>
 
     </LinearLayout>
 
     <View
-        android:background="#27B8EE"
+        android:background="@color/small_blue"
         android:layout_width="match_parent"
-        android:layout_height="10dp"></View>
+        android:layout_height="@dimen/size_ten"></View>
 
 
 

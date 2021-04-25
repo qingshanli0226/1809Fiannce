@@ -10,4 +10,7 @@
     <color name="reddd">#ff0000</color>
     <color name="blueee">#0000ff</color>
     <color name="graty">#CDCDCD</color>
+
+    <color name="small_blue">#27B8EE</color>
+    <color name="big_red">#FB4257</color>
 </resources>

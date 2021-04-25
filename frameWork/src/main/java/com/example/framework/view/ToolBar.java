@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -71,7 +72,12 @@ public class ToolBar extends RelativeLayout {
         if (leftIsShow && leftImgId!=0) {
             leftImg.setImageResource(leftImgId);
         }
-
+        rightImg.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iToolbarListener.onRightImgClick();
+            }
+        });
     }
 
     //注册一个回调接口

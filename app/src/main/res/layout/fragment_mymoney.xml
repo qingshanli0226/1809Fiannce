@@ -3,15 +3,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.MymoneyFragment">
 
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
-        app:titleTextColor="#14B4ED"
+        app:titleTextColor="@color/small_blue"
         app:rightIsShow="true"
+        android:id="@+id/toolbar"
         app:rightImage="@mipmap/my_setting_icon"
         app:titleText="我的资产"></com.example.framework.view.ToolBar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_dp_150dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/small_blue">
+
+        <ImageView
+            android:layout_width="@dimen/dm_dp_80dp"
+            android:layout_height="@dimen/dm_dp_80dp"
+            android:src="@drawable/my_user_default"></ImageView>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:textSize="@dimen/big_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_dp_200dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学习提示:"
+            android:textSize="@dimen/dm_dp_30dp"
+            android:textColor="@color/reddd"></TextView>
+
+        <TextView
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值我们将以集成支付宝sdk支付金额演示充值功能"
+            android:textSize="@dimen/dm_dp_18dp"
+            android:textColor="@color/black"></TextView>
+
+
+        <TextView
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现业务"
+            android:textSize="@dimen/dm_dp_18dp"
+            android:textColor="@color/reddd"></TextView>
+
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -51,8 +51,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void initPresenter() {
         httpPresenter = new WelcomePresenter(this);
 
-
-
     }
 
     @Override
@@ -75,7 +73,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 //        homedata.setText(""+homeBean.toString());
         home_finish = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
-        loadingPage.showSuccessView();
     }
 
     @Override
@@ -84,7 +81,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         version_finish = true;
         versionBeans = versionBean;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
-        loadingPage.showSuccessView();
     }
 
     @Override
@@ -95,7 +91,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void showLoading() {
 //        bar.setVisibility(View.VISIBLE);
-        loadingPage.showLoadingView();
+//        loadingPage.showLoadingView();
     }
 
     @Override

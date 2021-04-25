@@ -54,4 +54,19 @@ public class MoneyFragment extends BaseFragment {
     protected int getLayoutId() {
         return R.layout.fragment_money;
     }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

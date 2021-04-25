@@ -6,6 +6,12 @@
     android:orientation="vertical"
     tools:context=".fragment.Money_OneFragment">
 
+    <com.example.framework.view.ToolBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:visibility="gone"></com.example.framework.view.ToolBar>
+
     <ImageView
         android:id="@+id/img"
         android:visibility="gone"
@@ -15,7 +21,7 @@
     <TextView
         android:textColor="@color/reddd"
         android:id="@+id/light"
-        android:textSize="30sp"
+        android:textSize="@dimen/big_text_size"
         android:text="有道金融豪运当头，首投返现最高1888元"
         android:singleLine="true"
         android:focusableInTouchMode="true"

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -137,5 +138,24 @@ public class MainActivity extends BaseActivity {
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
+    }
+
+    private long keybackTime = 0;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            if (System.currentTimeMillis() - keybackTime > 2000){
+                keybackTime = System.currentTimeMillis();
+                Toast.makeText(this, "再按一次返回键退出程序", Toast.LENGTH_SHORT).show();
+            }else {
+                finish();
+            }
+        }else if (event.getKeyCode() == KeyEvent.KEYCODE_HOME){
+            return false;
+        }
+
+        return true;
     }
 }

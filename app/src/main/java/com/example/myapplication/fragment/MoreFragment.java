@@ -34,4 +34,19 @@ public class MoreFragment extends BaseFragment {
     protected int getLayoutId() {
         return R.layout.fragment_more;
     }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }
