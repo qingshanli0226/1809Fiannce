@@ -76,4 +76,12 @@ public class AllFragment extends BaseFragment<UpdatePresenter> implements CallBa
         pageView.ShowError(error);
         //Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mPresenter!=null){
+            mPresenter.delView();
+        }
+    }
 }

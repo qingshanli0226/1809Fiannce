@@ -163,4 +163,11 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
         double num = Double.parseDouble(versionName);
         return num;
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacksAndMessages(true);
+        mPresenter.delView();
+    }
 }
