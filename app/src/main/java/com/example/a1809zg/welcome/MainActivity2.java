@@ -163,4 +163,11 @@ private Ipresenter ipresenter;
         double num = Double.parseDouble(versionName);
         return num;
     }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        handler.removeCallbacksAndMessages(true);
+        mPresenter.detachView();
+    }
 }
