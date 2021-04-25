@@ -16,6 +16,10 @@ import com.example.designed.adapter.FragmentAdapter;
 import com.example.designed.bufragment.QuanFragment;
 import com.example.designed.bufragment.ReFragment;
 import com.example.designed.bufragment.TuiFragment;
+import com.fiannce.bawei.framework.BaseFragment;
+import com.fiannce.bawei.framework.IBaseView;
+import com.fiannce.bawei.framework.Ifragment;
+import com.fiannce.bawei.framework.view.LoadingPage;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -24,11 +28,12 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment2 extends Fragment {
+public class BlankFragment2 extends BaseFragment implements IBaseView {
     private TabLayout tab1;
     private ViewPager vp1;
     List<Fragment> list;
     List<String> title ;
+
     private FragmentManager supportFragmentManager;
 
 
@@ -36,16 +41,13 @@ public class BlankFragment2 extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    protected void initPresenter() {
+
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View inflate = inflater.inflate(R.layout.fragment_blank_fragment2, container, false);
-        tab1 = (TabLayout) inflate.findViewById(R.id.tab);
-        vp1 = (ViewPager) inflate.findViewById(R.id.vp);
-
-
+    protected void initData() {
         title = new ArrayList<>();
         title.add("全部理财");
         title.add("推荐理财");
@@ -60,9 +62,32 @@ public class BlankFragment2 extends Fragment {
         vp1.setAdapter(fragmentAdapter);
         tab1.setupWithViewPager(vp1);
 
+    }
 
-        return inflate;
+    @Override
+    protected void initView() {
+        tab1 = (TabLayout) findViewById(R.id.tab);
+        vp1 = (ViewPager) findViewById(R.id.vp);
+    }
+
+    @Override
+    protected int getLoutId() {
+        return R.layout.fragment_blank_fragment2;
     }
 
 
+    @Override
+    public void showLoading() {
+        loadingPage.showLoadingView();
+    }
+
+    @Override
+    public void hideLoading() {
+        loadingPage.showSuccessView();
+    }
+
+    @Override
+    public void showError(String error) {
+        loadingPage.showError(error);
+    }
 }

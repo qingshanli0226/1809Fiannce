@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
         vp.setAdapter(fragmentAdapter);
         tab.setupWithViewPager(vp);
 
+        tab.getTabAt(0).setIcon(R.drawable.bottom01);
+        tab.getTabAt(1).setIcon(R.drawable.bottom03);
+        tab.getTabAt(2).setIcon(R.drawable.bottom05);
+        tab.getTabAt(3).setIcon(R.drawable.bottom07);
 
 
     }

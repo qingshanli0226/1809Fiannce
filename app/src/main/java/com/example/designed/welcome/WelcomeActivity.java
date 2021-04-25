@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean LIFinsih = false;
     private boolean advFinsih = false;
     private ImageView iv;
+    private ProgressBar progressBar;
     private TextView dao;
     private int countDown = 3;
     @Override
@@ -43,7 +45,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         CacheManager.getInstance().setHomeBean(homeBean);
         homeFinsih =true;
         handler.sendEmptyMessage(ONE_FILSH);
-
+        loadingPage.showSuccessView();
     }
 
     @Override
@@ -51,6 +53,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         Toast.makeText(this, "获取到版本信息:" + versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
         versioneFinsih = true;
         handler.sendEmptyMessage(ONE_FILSH);
+        loadingPage.showSuccessView();
     }
 
     @Override
@@ -82,7 +85,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     protected void initView() {
 
-
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         iv = (ImageView) findViewById(R.id.iv);
         dao = (TextView) findViewById(R.id.dao);
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAT);
@@ -100,17 +103,20 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void showLoading() {
-
+        progressBar.setVisibility(View.VISIBLE);
+        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
-
+        progressBar.setVisibility(View.GONE);
+        loadingPage.showSuccessView();
     }
 
     @Override
     public void showError(String error) {
             Toast.makeText(this, "请求出现错误" + error, Toast.LENGTH_SHORT).show();
+            loadingPage.showError(error);
     }
 
     private Handler handler = new Handler() {

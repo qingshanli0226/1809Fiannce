@@ -17,6 +17,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class WelcomePresenter  extends BasePresenter<IWelcomeView> {
 
+
     public WelcomePresenter(IWelcomeView iWelcomeView){
         setiView(iWelcomeView);
     }
