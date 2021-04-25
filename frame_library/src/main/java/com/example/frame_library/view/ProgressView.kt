@@ -21,6 +21,9 @@ class ProgressView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int):V
     private var Star:Boolean?=null
     private var progress:Int?=null
     private var animator:ValueAnimator?=null
+    private var color:Int=Color.RED
+    var textsize:Float=80f
+    var size:Float=50f
     constructor(context: Context?) : this(context,null)
     constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs,0)
 
@@ -30,6 +33,9 @@ class ProgressView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int):V
         textcolor=obtainStyledAttributes.getColor(R.styleable.ProgressView_textColor,Color.BLACK)
         Star=obtainStyledAttributes.getBoolean(R.styleable.ProgressView_star,true)
         progress=obtainStyledAttributes.getInt(R.styleable.ProgressView_progress,30)
+        color=obtainStyledAttributes.getColor(R.styleable.ProgressView_color,Color.RED)
+        textsize=obtainStyledAttributes.getInt(R.styleable.ProgressView_textSize,80).toFloat()
+        size=obtainStyledAttributes.getInt(R.styleable.ProgressView_size,50).toFloat()
         obtainStyledAttributes.recycle()
     }
 
@@ -85,24 +91,25 @@ class ProgressView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int):V
         super.onDraw(canvas)
 
         paint.setColor(Color.GRAY)
-        paint.strokeWidth=30f
+        paint.strokeWidth=size
         paint.style=Paint.Style.STROKE
         paint.isAntiAlias=true
 
         var mWidth = measuredWidth
         var mHeight = measuredHeight
+
         var viewY = mHeight / 2
         var viewX = mWidth / 2
         var radius=if (mWidth>mHeight){mHeight/2}else{mWidth/2}-paint.strokeWidth/2
 
         canvas!!.drawCircle(viewX.toFloat(),viewY.toFloat(),radius,paint)
 
-        paint.setColor(Color.RED)
+        paint.setColor(color)
 
         canvas!!.drawArc(viewX-radius,viewY-radius,viewX+radius,viewY+radius,0f,(progress!!*3.6).toFloat(),false,paint)
 
         paint.color= textcolor!!
-        paint.textSize=50f
+        paint.textSize=textsize
         paint.style=Paint.Style.FILL
 
         var rect = Rect()

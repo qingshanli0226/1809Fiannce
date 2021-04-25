@@ -13,4 +13,8 @@
     <string name="home_text_tage_left">本息保障</string>
     <string name="home_text_tage_mid">每日计划</string>
     <string name="home_text_tage_right">高额收益</string>
+    <string name="iteam_text_Amount">产品金额</string>
+    <string name="iteam_text_interest">预期年利率</string>
+    <string name="iteam_text_Guarantee">本息保障</string>
+    <string name="iteam_text_Day">锁定期</string>
 </resources>
