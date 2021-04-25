@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="com.finance.zg6.MainActivity">
 
 <!--    <com.finance.framework.view.ToolBar-->
 <!--        android:id="@+id/toolbar"-->

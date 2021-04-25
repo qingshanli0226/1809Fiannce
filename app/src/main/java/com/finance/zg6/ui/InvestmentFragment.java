@@ -21,7 +21,7 @@ public class InvestmentFragment extends BaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_one;
+        return R.layout.fragment_investment;
     }
 
     @Override
