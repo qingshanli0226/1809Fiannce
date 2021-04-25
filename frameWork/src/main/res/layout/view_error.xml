@@ -8,4 +8,5 @@
         style="@style/bigTextStyle"
         android:textColor="@android:color/holo_red_dark"
         android:layout_centerInParent="true"/>
+
 </RelativeLayout>

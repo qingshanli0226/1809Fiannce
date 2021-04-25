@@ -5,6 +5,8 @@ import androidx.appcompat.app.AlertDialog;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
@@ -48,6 +50,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     protected void initPresenter() {
         httpPresenter = new WelcomePresenter(this);
+
+
+
     }
 
     @Override
