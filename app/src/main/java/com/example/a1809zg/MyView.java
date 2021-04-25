@@ -140,6 +140,9 @@ public class MyView extends View {
         paint.setStrokeWidth(index);
         paint.setStyle(Paint.Style.STROKE);
         canvas.drawArc(rectF,START_ANGLE,progressAngle,false,paint);
+
+
+
         Rect rect = new Rect();
         paint.setColor(Color.BLACK);
         paint.setTextSize(30);
