@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".invest.allfinancial.AllFragment">
+    tools:context=".main.invest.allfinancial.AllFragment">
 
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"

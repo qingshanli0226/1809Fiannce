@@ -1,13 +1,13 @@
-package com.example.a1809fiannce.invest;
+package com.example.a1809fiannce.main.invest;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.adapter.InvestAdapter;
-import com.example.a1809fiannce.invest.allfinancial.AllFragment;
-import com.example.a1809fiannce.invest.hotfinancial.HotFragment;
-import com.example.a1809fiannce.invest.recommend.RecommendFragment;
+import com.example.a1809fiannce.main.invest.allfinancial.AllFragment;
+import com.example.a1809fiannce.main.invest.hotfinancial.HotFragment;
+import com.example.a1809fiannce.main.invest.recommend.RecommendFragment;
 import com.example.framework.BaseFragment;
 import com.google.android.material.tabs.TabLayout;
 

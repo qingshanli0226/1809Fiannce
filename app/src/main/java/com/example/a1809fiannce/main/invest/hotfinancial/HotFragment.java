@@ -1,4 +1,4 @@
-package com.example.a1809fiannce.invest.hotfinancial;
+package com.example.a1809fiannce.main.invest.hotfinancial;
 
 import android.os.Bundle;
 

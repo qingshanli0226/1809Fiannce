@@ -1,4 +1,4 @@
-package com.example.a1809fiannce.invest.recommend;
+package com.example.a1809fiannce.main.invest.recommend;
 
 import android.os.Bundle;
 

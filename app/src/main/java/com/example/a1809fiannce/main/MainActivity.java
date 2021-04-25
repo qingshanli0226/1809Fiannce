@@ -1,24 +1,17 @@
-package com.example.a1809fiannce;
+package com.example.a1809fiannce.main;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.a1809fiannce.adapter.FragmentAdapter;
-import com.example.a1809fiannce.home.HoemFragment;
-import com.example.a1809fiannce.invest.InvestFragment;
+import com.example.a1809fiannce.R;
+import com.example.a1809fiannce.main.home.HoemFragment;
+import com.example.a1809fiannce.main.invest.InvestFragment;
+import com.example.a1809fiannce.main.property.PropertyFragment;
 import com.example.a1809fiannce.tab.MyCustomTabEntity;
 import com.example.framework.BaseActivity;
-import com.example.framework.view.NoScrollViewPager;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -47,18 +40,18 @@ public class MainActivity extends BaseActivity {
 
         HoemFragment hoemFragment = new HoemFragment();
         InvestFragment investFragment = new InvestFragment();
-        HoemFragment hoemFragment1 = new HoemFragment();
+        PropertyFragment propertyFragment = new PropertyFragment();
         HoemFragment hoemFragment2 = new HoemFragment();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
         fragmentTransaction.add(R.id.act_home_ll, hoemFragment);
         fragmentTransaction.add(R.id.act_home_ll, investFragment);
-        fragmentTransaction.add(R.id.act_home_ll, hoemFragment1);
+        fragmentTransaction.add(R.id.act_home_ll, propertyFragment);
         fragmentTransaction.add(R.id.act_home_ll, hoemFragment2);
 
         fragmentTransaction.hide(investFragment);
-        fragmentTransaction.hide(hoemFragment1);
+        fragmentTransaction.hide(propertyFragment);
         fragmentTransaction.hide(hoemFragment2);
         fragmentTransaction.show(hoemFragment);
 
@@ -74,7 +67,7 @@ public class MainActivity extends BaseActivity {
                     FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction1.show(hoemFragment);
                     fragmentTransaction1.hide(investFragment);
-                    fragmentTransaction1.hide(hoemFragment1);
+                    fragmentTransaction1.hide(propertyFragment);
                     fragmentTransaction1.hide(hoemFragment2);
 
                     fragmentTransaction1.commit();
@@ -83,7 +76,7 @@ public class MainActivity extends BaseActivity {
 
                     fragmentTransaction1.hide(hoemFragment);
                     fragmentTransaction1.show(investFragment);
-                    fragmentTransaction1.hide(hoemFragment1);
+                    fragmentTransaction1.hide(propertyFragment);
                     fragmentTransaction1.hide(hoemFragment2);
 
                     fragmentTransaction1.commit();
@@ -92,7 +85,7 @@ public class MainActivity extends BaseActivity {
 
                     fragmentTransaction1.hide(hoemFragment);
                     fragmentTransaction1.hide(investFragment);
-                    fragmentTransaction1.show(hoemFragment1);
+                    fragmentTransaction1.show(propertyFragment);
                     fragmentTransaction1.hide(hoemFragment2);
 
                     fragmentTransaction1.commit();
@@ -101,7 +94,7 @@ public class MainActivity extends BaseActivity {
 
                     fragmentTransaction1.hide(hoemFragment);
                     fragmentTransaction1.hide(investFragment);
-                    fragmentTransaction1.hide(hoemFragment1);
+                    fragmentTransaction1.hide(propertyFragment);
                     fragmentTransaction1.show(hoemFragment2);
                     fragmentTransaction1.commit();
                 }

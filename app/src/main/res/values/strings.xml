@@ -22,5 +22,11 @@
     <string name="current_version">当前版本</string>
     <string name="my_assets">我的资产</string>
     <string name="even_more">更多</string>
+    <string name="daily_plan">每日计划</string>
+    <string name="high_yield">高额收益</string>
+    <string name="please_login_first">请先登录</string>
+    <string name="study_tips">学习提示:</string>
+    <string name="we_will_demonstrate_sdk">充值我们将以集成支付宝sdk支付金额演示充值功能</string>
+    <string name="withdrawal_business">提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提现,系统将会告知24小时内进行转账,如果未收到,请联系客服等等等等等等等</string>
 
 </resources>

@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.1809Fiannce">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Welcome.WelcomeActivity">
+        <activity android:name=".main.MainActivity"></activity>
+        <activity android:name=".main.Welcome.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

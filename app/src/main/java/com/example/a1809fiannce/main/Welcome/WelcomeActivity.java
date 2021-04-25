@@ -1,4 +1,4 @@
-package com.example.a1809fiannce.Welcome;
+package com.example.a1809fiannce.main.Welcome;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -11,7 +11,6 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.LinearInterpolator;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -174,7 +173,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void Error(String error) {
-        Toast.makeText(this, "" + error, Toast.LENGTH_SHORT).show();
+        loadingPage.showErrorView(error);
     }
 
 

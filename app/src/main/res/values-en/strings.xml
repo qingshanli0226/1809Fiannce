@@ -22,4 +22,11 @@
     <string name="current_version">current version</string>
     <string name="my_assets">my assets</string>
     <string name="even_more">even more</string>
+    <string name="daily_plan">daily plan</string>
+    <string name="high_yield">high yield</string>
+    <string name="please_login_first">please login first</string>
+    <string name="study_tips">study tips</string>
+    <string name="we_will_demonstrate_sdk">We will demonstrate the recharge function by integrating the payment amount of Alipay SDK</string>
+    <string name="withdrawal_business">Withdrawal business: in P2P financial platform, withdrawals are not received in real time, but audit withdrawals, the system will inform you to transfer within 24 hours, if not received, please contact customer service And so on and so on</string>
+
 </resources>

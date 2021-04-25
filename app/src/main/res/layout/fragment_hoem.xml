@@ -67,7 +67,7 @@
             android:layout_weight="1"
             android:background="@drawable/home_frag_home"
             android:gravity="center"
-            android:text="本息保障"
+            android:text="@string/the_current_interest"
             android:textSize="@dimen/text_dp_16"></TextView>
 
         <TextView
@@ -79,7 +79,7 @@
             android:layout_weight="1"
             android:background="@drawable/home_frag_home"
             android:gravity="center"
-            android:text="每日计划"
+            android:text="@string/daily_plan"
             android:textSize="@dimen/text_dp_16"></TextView>
 
         <TextView
@@ -91,7 +91,7 @@
             android:layout_weight="1"
             android:background="@drawable/home_frag_home"
             android:gravity="center"
-            android:text="高额收益"
+            android:text="@string/high_yield"
             android:textSize="16dp"></TextView>
 
 

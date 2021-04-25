@@ -1,8 +1,6 @@
-package com.example.a1809fiannce.invest.allfinancial;
+package com.example.a1809fiannce.main.invest.allfinancial;
 
-import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;

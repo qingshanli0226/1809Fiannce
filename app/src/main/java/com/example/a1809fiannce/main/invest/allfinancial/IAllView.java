@@ -1,4 +1,4 @@
-package com.example.a1809fiannce.invest.allfinancial;
+package com.example.a1809fiannce.main.invest.allfinancial;
 
 import com.example.framework.IBaseView;
 import com.example.net.model.AllProductBean;

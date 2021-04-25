@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".invest.hotfinancial.HotFragment">
+    tools:context=".main.invest.hotfinancial.HotFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

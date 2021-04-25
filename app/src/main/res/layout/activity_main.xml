@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Welcome.WelcomeActivity"
+    tools:context=".main.Welcome.WelcomeActivity"
     android:id="@+id/act_greet_rl">
 
     <com.example.framework.view.ToolBar
