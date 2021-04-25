@@ -3,7 +3,9 @@ package com.fiannce.bawei.framework.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -88,6 +90,15 @@ public class ToolBar extends RelativeLayout {
             }
         });
 
+        //触摸监听函数，通过它可以获取用户的触摸事件，在这里可以消费事件，如果消费了，onToucheEvent就不会被调用了,无法获取事件了
+        rightImg.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Log.d("LQS", "OnTouchListener onTouch");
+                return false;
+            }
+        });
+
 
     }
     //注册一个回调接口
@@ -99,5 +110,37 @@ public class ToolBar extends RelativeLayout {
         void onLeftClick();
         void onRightImgClick();
         void onRightTvClick();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.d("LQS onTouchEvent", "ToolBar 收到Down事件:" + ev.getRawX()+ev.getRawY());
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d("LQS onTouchEvent", "ToolBar 收到Move事件");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d("LQS onTouchEvent", "ToolBar 收到Up事件");
+                break;
+        }
+        return super.onTouchEvent(ev);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.d("ToolBar LQS", "收到Down事件:" + ev.getRawX()+ev.getRawY());
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d("ToolBar LQS", "收到Move事件");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d("ToolBar LQS", "收到Up事件");
+                break;
+        }
+        return super.dispatchTouchEvent(ev);
     }
 }

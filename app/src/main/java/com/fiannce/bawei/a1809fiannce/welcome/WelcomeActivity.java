@@ -60,8 +60,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
         contentTv.setText(homeBean.toString());
-        //homeFinsh = true;
-        //handler.sendEmptyMessage(ONE_TASK_FIISH);
+        homeFinsh = true;
+        handler.sendEmptyMessage(ONE_TASK_FIISH);
         loadingPage.showSuccessView();
 
     }
@@ -70,7 +70,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void onVersionData(VersionBean versionBean) {
         Toast.makeText(this, "获取到版本信息："+ versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
         versionFinsh = true;
-        //handler.sendEmptyMessage(ONE_TASK_FIISH);
+        handler.sendEmptyMessage(ONE_TASK_FIISH);
         loadingPage.showSuccessView();
     }
 
