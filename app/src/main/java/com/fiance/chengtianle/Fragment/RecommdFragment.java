@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import com.fiance.chengtianle.R;
 
 
-public class bFragment extends Fragment {
+public class RecommdFragment extends Fragment {
 
 
 

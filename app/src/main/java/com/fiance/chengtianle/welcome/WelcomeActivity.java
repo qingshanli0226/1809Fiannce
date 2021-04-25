@@ -24,7 +24,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private final int ONE_TASK_FIISH = 0;
     private final int ALL_TASK_FIISH = 1;
     private final int DELAY_INDEX = 2;
-    private final int DELAY = 1*1000;//1秒
+    private final int DELAY = 1*1000;
     private boolean homeFinsh = false;
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
@@ -105,7 +105,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     }
                     break;
                 case ALL_TASK_FIISH:
-                    //跳转到主页面
                     Toast.makeText(WelcomeActivity.this, "所有任务完成", Toast.LENGTH_SHORT).show();
                     ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
                     finish();

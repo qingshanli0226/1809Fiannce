@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Fragment.oneFragment">
+    tools:context=".Fragment.MainFragment">
     <com.fiance.framework.MyView.ToolBar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
     <com.youth.banner.Banner
         android:layout_width="match_parent"
         android:id="@+id/banner"
-        android:layout_height="200dp"></com.youth.banner.Banner>
+        android:layout_height="150dp"></com.youth.banner.Banner>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,14 +28,17 @@
             android:id="@+id/guigu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="硅谷彩虹新手计划"
             android:layout_marginTop="20dp"
             android:textSize="25dp"></TextView>
+
+
         <ImageView
             android:layout_width="@dimen/dp_40"
             android:layout_height="@dimen/dp_40"
             android:src="@drawable/recommend"
+            android:layout_marginTop="@dimen/dp_10"
             android:layout_gravity="center"
-            android:layout_marginTop="8dp"
             >
         </ImageView>
     </LinearLayout>
@@ -44,14 +47,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dp_10"
+
         >
         <TextView
             android:textSize="15dp"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="本息保障"
-            android:background="@drawable/tuoyuan"
+            android:background="@drawable/home_attribute_bg"
             android:gravity="center"
             ></TextView>
         <TextView
@@ -60,7 +63,7 @@
             android:textSize="15dp"
             android:layout_height="wrap_content"
             android:text="每日计息"
-            android:background="@drawable/tuoyuan"
+            android:background="@drawable/home_attribute_bg"
             android:gravity="center"
             ></TextView>
         <TextView
@@ -69,7 +72,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="高额收益"
-            android:background="@drawable/tuoyuan"
+            android:background="@drawable/home_attribute_bg"
             android:gravity="center"
             ></TextView>
 
@@ -79,7 +82,22 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginLeft="120dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/myview"></com.fiance.framework.MyView.MyView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:text="预期年利率: 8.00%"></TextView>
+    <Button
+        android:layout_width="350dp"
+        android:layout_marginLeft="35dp"
+        android:layout_height="60dp"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        android:text="立即加入"></Button>
+
 
 
 </LinearLayout>

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class oneFragment extends BaseFragment {
+public class MainFragment extends BaseFragment {
 
 
     private Banner banner;
@@ -25,7 +25,7 @@ public class oneFragment extends BaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_one;
+        return R.layout.fragment_main;
     }
 
     @Override

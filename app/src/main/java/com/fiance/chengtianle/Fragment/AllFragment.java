@@ -16,7 +16,7 @@ import com.fiance.net.mode.LcBean;
 import java.util.ArrayList;
 
 
-public class aFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiView {
+public class AllFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiView {
 
 
     private ArrayList<LcBean.ResultBean> list = new ArrayList<>();

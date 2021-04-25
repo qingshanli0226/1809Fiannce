@@ -16,7 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 
 
-public class twoFragment extends Fragment {
+public class InvestorFragment extends Fragment {
 
 
     private TabLayout tab;
@@ -24,15 +24,15 @@ public class twoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.fragment_two, container, false);
-        // Inflate the layout for this fragment
+        View inflate = inflater.inflate(R.layout.fragment_investor, container, false);
+
         tab =inflate.findViewById(R.id.tab);
         vp =inflate.findViewById(R.id.vp);
 
         ArrayList<Fragment> list = new ArrayList<>();
-        list.add(new aFragment());
-        list.add(new bFragment());
-        list.add(new cFragment());
+        list.add(new AllFragment());
+        list.add(new RecommdFragment());
+        list.add(new HotFragment());
 
         ArrayList<String> title = new ArrayList<>();
         title.add("全部理财");

@@ -21,12 +21,12 @@ import com.fiance.framework.R;
 
 public class MyView extends View {
     private Paint paint;
-    private final int START_ANGLE = 0;//以3点钟方向开始绘制扇形
-    private final int STEP_ANGLE = 1;//每次按照1度的大小进行增加
-    private int offsetAngle;//绘制扇形的角度.该大小根据理财产品销售的百分比进度计算出来的
-    private int progressAngle = 0;//已经绘制的角度
+    private final int START_ANGLE = 0;
+    private final int STEP_ANGLE = 1;
+    private int offsetAngle;
+    private int progressAngle = 0;
     private int progressViewWidth;
-    private int progressViewHeight;//控件的宽度和高度
+    private int progressViewHeight;
     private int progess;
     private final int CIRCLE_MARGIN = 5;
     private int textColor;
@@ -43,7 +43,6 @@ public class MyView extends View {
         super(context, attrs, defStyleAttr);
         init(context,attrs,defStyleAttr);
     }
-   //初始化
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
 
         paint = new Paint();

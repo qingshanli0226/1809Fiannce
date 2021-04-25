@@ -42,7 +42,6 @@ public class ToolBar extends RelativeLayout {
 
     public void init(Context context, AttributeSet attrs, int defStyleAttr) {
 
-        //获取属性值
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ToolBar);
         titleText = typedArray.getString(R.styleable.ToolBar_titleText);
         leftImgId = typedArray.getResourceId(R.styleable.ToolBar_leftImg,0);
@@ -51,7 +50,6 @@ public class ToolBar extends RelativeLayout {
         leftIsShow = typedArray.getBoolean(R.styleable.ToolBar_leftIsShow,false);
         typedArray.recycle();
 
-        //设置布局获取控件
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.view_toolbar,this);
 
@@ -61,7 +59,6 @@ public class ToolBar extends RelativeLayout {
         rightImg = findViewById(R.id.rightImg);
         rightTv = findViewById(R.id.rightTv);
 
-        //通过属性值来控制控件的的渲染
         titleTv.setText(titleText);
         if (rightAreaIsShow && rightImgId!=0) {
             rightImg.setImageResource(rightImgId);
@@ -89,7 +86,7 @@ public class ToolBar extends RelativeLayout {
 
 
     }
-    //注册一个回调接口
+
     public void setToolbarListener(IToolbarListener iToolbarListener) {
         this.iToolbarListener = iToolbarListener;
     }
