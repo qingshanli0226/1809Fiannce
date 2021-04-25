@@ -1592,6 +1592,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id errorTv
 id exitUntilCollapsed
 id exo_ad_overlay
 id exo_artwork
@@ -1685,6 +1686,7 @@ id largeLabel
 id layout_bottom
 id layout_top
 id left
+id leftImg
 id light
 id line1
 id line3
@@ -1694,6 +1696,7 @@ id load_more_load_end_view
 id load_more_load_fail_view
 id load_more_loading_view
 id loading
+id loadingBar
 id loading_progress
 id loading_text
 id lock_screen
@@ -1735,6 +1738,9 @@ id progress_horizontal
 id property_radio
 id radio
 id right
+id rightArea
+id rightImg
+id rightTv
 id right_icon
 id right_side
 id rv
@@ -1816,6 +1822,7 @@ id thumb
 id time
 id title
 id titleDividerNoCustom
+id titleTv
 id titleView
 id title_template
 id top
@@ -1971,6 +1978,9 @@ layout video_layout_sample_ad
 layout video_layout_standard
 layout video_progress_dialog
 layout video_volume_dialog
+layout view_error
+layout view_loading
+layout view_toolbar
 mipmap app_icon
 mipmap ic_launcher
 mipmap ic_launcher_round

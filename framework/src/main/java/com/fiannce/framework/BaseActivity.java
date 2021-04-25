@@ -5,14 +5,24 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fiannce.framework.view.LoadingPage;
+
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
 
     protected T httppresenter;
+    protected LoadingPage loadingPage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutid());
+        loadingPage = new LoadingPage(this) {
+            @Override
+            protected int getSuccessLayoutId() {
+                return getLayoutid();
+            }
+        };
+
+        setContentView(loadingPage);
         initView();
         initPresenter();
         initData();
@@ -32,10 +42,10 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         destory();
     }
 
-    public  void destory(){
-        if (httppresenter != null){
+    public void destory() {
+        if (httppresenter != null) {
             httppresenter.detachView();
         }
-    };
+    }
 
 }

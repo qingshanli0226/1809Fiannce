@@ -38,43 +38,43 @@ public class ProgressView extends View {
 
     public ProgressView(Context context) {
         super(context);
-        init(context,null,0);
+        init(context, null, 0);
     }
 
     public ProgressView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context,attrs,0);
+        init(context, attrs, 0);
     }
 
     public ProgressView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs,defStyleAttr);
+        init(context, attrs, defStyleAttr);
     }
 
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         paint = new Paint();
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.ProgressView);
-        textColor = typedArray.getColor(R.styleable.ProgressView_textColor,Color.BLACK);
-        circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith,5);
-        backgroundId = typedArray.getResourceId(R.styleable.ProgressView_background,0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
+        textColor = typedArray.getColor(R.styleable.ProgressView_textColor, Color.BLACK);
+        circleWith = typedArray.getInt(R.styleable.ProgressView_circleWith, 5);
+        backgroundId = typedArray.getResourceId(R.styleable.ProgressView_background, 0);
 
         typedArray.recycle();
     }
 
 
-    public void saledProgress(int progress,boolean isAnimal) {
-        offsetAngle = (progress * 360)/100;
+    public void saledProgress(int progress, boolean isAnimal) {
+        offsetAngle = (progress * 360) / 100;
         if (isAnimal) {
             progressAngle = 0;
         } else {
             progressAngle = offsetAngle;
         }
 
-        if (progressAngle<=offsetAngle) {
+        if (progressAngle <= offsetAngle) {
             invalidate();
-            handler.sendEmptyMessageDelayed(1,10);
+            handler.sendEmptyMessageDelayed(1, 10);
         }
 
     }
@@ -84,9 +84,9 @@ public class ProgressView extends View {
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
             progressAngle = progressAngle + STEP_ANGLE;
-            if (progressAngle<=offsetAngle) {
+            if (progressAngle <= offsetAngle) {
                 invalidate();
-                handler.sendEmptyMessageDelayed(1,10);
+                handler.sendEmptyMessageDelayed(1, 10);
             }
         }
     };
@@ -94,8 +94,10 @@ public class ProgressView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        event.getY();event.getRawY();
-        event.getX();event.getRawX();
+        event.getY();
+        event.getRawY();
+        event.getX();
+        event.getRawX();
         return super.onTouchEvent(event);
     }
 
@@ -117,7 +119,7 @@ public class ProgressView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        int realWidth,realHeitht;
+        int realWidth, realHeitht;
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         if (widthMode == MeasureSpec.AT_MOST) {
@@ -132,7 +134,7 @@ public class ProgressView extends View {
             realHeitht = MeasureSpec.getSize(heightMeasureSpec);
         }
 
-        setMeasuredDimension(realWidth,realHeitht);
+        setMeasuredDimension(realWidth, realHeitht);
     }
 
 
@@ -140,39 +142,38 @@ public class ProgressView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),backgroundId);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), backgroundId);
         Matrix matrix = new Matrix();
-        canvas.drawBitmap(bitmap,matrix,paint);
+        canvas.drawBitmap(bitmap, matrix, paint);
         progressViewWidth = getMeasuredWidth();
         progressViewHeight = getMeasuredHeight();
-        int centerX = progressViewWidth/2;
-        int centerY = progressViewHeight/2;
+        int centerX = progressViewWidth / 2;
+        int centerY = progressViewHeight / 2;
 
-        int radius = (progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN;
+        int radius = (progressViewWidth < progressViewHeight ? progressViewWidth / 2 : progressViewHeight / 2) - CIRCLE_MARGIN;
         paint.setColor(Color.BLUE);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);
         paint.setStyle(Paint.Style.STROKE);
-        canvas.drawCircle(centerX,centerY,radius,paint);
+        canvas.drawCircle(centerX, centerY, radius, paint);
 
 
-
-        RectF rectF = new RectF(progressViewWidth/2-radius,progressViewHeight/2-radius,progressViewWidth/2+radius,progressViewHeight/2+radius);
+        RectF rectF = new RectF(progressViewWidth / 2 - radius, progressViewHeight / 2 - radius, progressViewWidth / 2 + radius, progressViewHeight / 2 + radius);
         paint.setColor(Color.RED);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);
         paint.setStyle(Paint.Style.STROKE);
-        canvas.drawArc(rectF,START_ANGLE,progressAngle,false,paint);
+        canvas.drawArc(rectF, START_ANGLE, progressAngle, false, paint);
 
 
         Rect rect = new Rect();
         paint.setColor(textColor);
         paint.setTextSize(30);
         paint.setStrokeWidth(2);
-        String content = (progressAngle*100)/360+"%";
+        String content = (progressAngle * 100) / 360 + "%";
 
-        paint.getTextBounds(content,0,content.length(),rect);
-        canvas.drawText(content,progressViewWidth/2-rect.width()/2,progressViewHeight/2+rect.height()/2,paint);
+        paint.getTextBounds(content, 0, content.length(), rect);
+        canvas.drawText(content, progressViewWidth / 2 - rect.width() / 2, progressViewHeight / 2 + rect.height() / 2, paint);
     }
 
     public void destry() {
