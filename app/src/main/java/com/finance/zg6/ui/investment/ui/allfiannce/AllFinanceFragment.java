@@ -47,7 +47,6 @@ public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implem
 
     @Override
     public void onProductData(ProductBean productBean) {
-        Log.i("all_hqy", "onProductData: ");
         LogUtils.json(productBean);
         loadingPage.showSuccessView();
 

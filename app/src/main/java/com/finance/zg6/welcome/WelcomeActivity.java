@@ -51,7 +51,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
 
-        countDownTv.setText("倒计时"+countDownTime+"秒");
+        countDownTv.setText(getString(R.string.down_time)+countDownTime+getString(R.string.time));
         handler.sendEmptyMessageDelayed(ONE_TASK_FINISH,1000);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
@@ -72,7 +72,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onVersionData(VersionBean versionBean) {
-        Toast.makeText(this, "最新版本号:" + versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.welcomeActivity_latest_version_number_toast) + versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
         versionFinish = true;
         handler.sendEmptyMessage(All_TASK_FINISH);
     }
@@ -99,30 +99,30 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             if (msg.what==ONE_TASK_FINISH){
                 countDownTime--;
                 if (countDownTime<=0){
-                    countDownTv.setText("倒计时"+countDownTime+"秒");
+                    countDownTv.setText(getString(R.string.down_time)+countDownTime+getString(R.string.time));
                     allFinish = true;
                     handler.sendEmptyMessageDelayed(All_TASK_FINISH,1000);
                 }else {
-                    countDownTv.setText("倒计时"+countDownTime+"秒");
+                    countDownTv.setText(getString(R.string.down_time)+countDownTime+getString(R.string.time));
                     handler.sendEmptyMessageDelayed(ONE_TASK_FINISH,1000);
                 }
             }
             else if (msg.what == All_TASK_FINISH){
                 if (homeFinish&&versionFinish&&allFinish){
                     AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
-                    builder.setTitle("有版本需要更新是否更新");
-                    builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    builder.setTitle(getString(R.string.welcomeActivity_alert_title));
+                    builder.setMessage(getString(R.string.welcomeActivity_alert_message));
+                    builder.setNegativeButton(getString(R.string.welcomeActivity_alert_button_no), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Log.i("hqy", "所有任务都完成！ ");
-                            Toast.makeText(WelcomeActivity.this, "所有任务都完成！", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(WelcomeActivity.this, getString(R.string.welcomeActivity_alert_success_toast), Toast.LENGTH_SHORT).show();
 //                    ARouter.getInstance().build("/main/MainActivity").withInt("",1).navigation();
                             Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
                         }
                     });
-                    builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton(getString(R.string.welcomeActivity_alert_button_yes), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
 

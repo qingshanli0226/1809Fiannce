@@ -6,7 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.finance.framework.BaseFragment;
 import com.finance.zg.R;
 import com.finance.zg6.ui.investment.ui.allfiannce.AllFinanceFragment;
-import com.finance.zg6.ui.investment.ui.HotFinanceFragment;
+import com.finance.zg6.ui.investment.ui.hotfinance.HotFinanceFragment;
 import com.finance.zg6.ui.investment.ui.RecommendFinanceFragment;
 import com.flyco.tablayout.SlidingTabLayout;
 
@@ -35,7 +35,11 @@ public class InvestmentFragment extends BaseFragment {
         list.add(new AllFinanceFragment());
         list.add(new RecommendFinanceFragment());
         list.add(new HotFinanceFragment());
-        sliding.setViewPager(vp, new String[]{"全部理财", "推荐理财", "热门理财"}, getActivity(), list);
+        sliding.setViewPager(vp, new String[]{
+                getString(R.string.investmentFragment_fragment_title_all),
+                getString(R.string.investmentFragment_fragment_title_recommend),
+                getString(R.string.investmentFragment_fragment_title_hot)}, getActivity(), list);
+
         
     }
 

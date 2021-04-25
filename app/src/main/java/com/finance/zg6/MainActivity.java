@@ -46,10 +46,10 @@ public class MainActivity extends BaseActivity {
         LogUtils.json(homeBean);
 
         ArrayList<CustomTabEntity> customTabEntities = new ArrayList<>();
-        customTabEntities.add(new CustomBean("首页",R.mipmap.bottom01,R.mipmap.bottom02));
-        customTabEntities.add(new CustomBean("投资",R.mipmap.bottom03,R.mipmap.bottom04));
-        customTabEntities.add(new CustomBean("我的资产",R.mipmap.bottom05,R.mipmap.bottom06));
-        customTabEntities.add(new CustomBean("更多",R.mipmap.bottom07,R.mipmap.bottom08));
+        customTabEntities.add(new CustomBean(getString(R.string.mainActivity_fragment_title_home),R.mipmap.bottom02,R.mipmap.bottom01));
+        customTabEntities.add(new CustomBean(getString(R.string.mainActivity_fragment_title_investment),R.mipmap.bottom04,R.mipmap.bottom03));
+        customTabEntities.add(new CustomBean(getString(R.string.mainActivity_fragment_title_my_assets),R.mipmap.bottom06,R.mipmap.bottom05));
+        customTabEntities.add(new CustomBean(getString(R.string.mainActivity_fragment_title_more),R.mipmap.bottom08,R.mipmap.bottom07));
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         HomeFragment homeFragment = new HomeFragment();
@@ -128,7 +128,7 @@ public class MainActivity extends BaseActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK){
             if (System.currentTimeMillis() - i >2000){
-                Toast.makeText(this, "再点一次退出", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.mianActivity_exit_the_program_toast), Toast.LENGTH_SHORT).show();
                 i =System.currentTimeMillis();
                 return true;
             }else {

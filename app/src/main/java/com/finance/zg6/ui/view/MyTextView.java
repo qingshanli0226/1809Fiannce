@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-
+//跑马灯
 public class MyTextView extends TextView {
 
     public MyTextView(Context context) {

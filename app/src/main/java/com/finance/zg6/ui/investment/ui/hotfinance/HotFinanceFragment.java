@@ -1,4 +1,4 @@
-package com.finance.zg6.ui.investment.ui;
+package com.finance.zg6.ui.investment.ui.hotfinance;
 
 import android.os.Bundle;
 

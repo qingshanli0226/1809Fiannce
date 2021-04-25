@@ -54,7 +54,7 @@ public class HomeFragment extends BaseFragment {
         banner.start();
 
         homeTitle.setText("" + homeBean.getResult().getProInfo().getName());
-        annualInterestRate.setText("预期年利率："+homeBean.getResult().getProInfo().getYearRate()+"%");
+        annualInterestRate.setText(getString(R.string.homeFragment_YearRate)+homeBean.getResult().getProInfo().getYearRate()+getString(R.string.homeFragment_YearRate_Percent_sign));
         progressView.startProgress(Integer.valueOf(homeBean.getResult().getProInfo().getProgress()),true);
     }
 
