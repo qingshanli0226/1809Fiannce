@@ -14,18 +14,18 @@ class WelcomePresenter(mModle:WelcomeModle, mView:WelcomeCanter.View):BasePresen
 
             override fun fille(meag: String) {
                 super.fille(meag)
-                mView!!.showTaos(meag)
+                //mView!!.showTaos(meag)
             }
 
             override fun onStart() {
                 super.onStart()
                 mModle!!.addObserver(this)
-                mView!!.showLodin()
+                //mView!!.showLodin()
             }
 
             override fun onComplete() {
                 super.onComplete()
-                mView!!.hideLodin()
+                //mView!!.hideLodin()
             }
         })
 

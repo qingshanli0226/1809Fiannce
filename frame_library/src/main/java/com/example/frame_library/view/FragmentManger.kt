@@ -12,7 +12,7 @@ class FragmentManger(resd:Int,var fragmentManger:FragmentManager,var list: Array
 
         }
         beginTransaction.commit()
-
+        setCheckIteam(0)
     }
 
     fun setCheckIteam(posion:Int){

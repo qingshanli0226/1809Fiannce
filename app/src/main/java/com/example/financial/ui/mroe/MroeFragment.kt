@@ -29,7 +29,7 @@ class MroeFragment:BaseFragment<IPresneter>() {
         TODO("Not yet implemented")
     }
 
-    override fun setPresenter(): IPresneter {
-        TODO("Not yet implemented")
-    }
+//    override fun setPresenter(): IPresneter {
+//        TODO("Not yet implemented")
+//    }
 }

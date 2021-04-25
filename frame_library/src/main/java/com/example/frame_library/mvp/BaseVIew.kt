@@ -66,9 +66,10 @@ abstract class BaseActitvty <P :IPresneter>: AppCompatActivity(), IActivity {
 
 abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(),ToBar.OnClickListener{
 
-    protected val mPresenter:P by lazy {
-        setPresenter();
-    }
+    protected var mPresenter:P?=null
+//    by lazy {
+//        setPresenter();
+//    }
     private var mToBar: ToBar?=null
 //    by lazy {
 //        initToBar().setonClickListener(this)
@@ -82,7 +83,11 @@ abstract class BaseFragment<P:IPresneter>:IActivity,Fragment(),ToBar.OnClickList
         mToBar!!.setonClickListener(this)
     }
 
-    protected abstract fun setPresenter():P
+    protected fun attaPresenter(mPresenter: P){
+        this.mPresenter=mPresenter
+    }
+
+    //protected abstract fun setPresenter():P
 
     override fun onCreateView(
         inflater: LayoutInflater,

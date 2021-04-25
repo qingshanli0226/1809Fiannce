@@ -9,11 +9,11 @@ class AllFramgnet :BaseFragment<AllPresenter>(),IAllCanter.View {
     override fun bandLayoutId(): Int = R.layout.fragment_all
 
     override fun initView() {
-
+        attaPresenter(AllPresenter(AllModle(),this))
     }
 
     override fun initData() {
-        mPresenter.lodingData()
+        mPresenter!!.lodingData()
     }
 
     override fun OnLeftClickListenter() {
@@ -28,7 +28,7 @@ class AllFramgnet :BaseFragment<AllPresenter>(),IAllCanter.View {
         TODO("Not yet implemented")
     }
 
-    override fun setPresenter(): AllPresenter = AllPresenter(AllModle(),this)
+    //override fun setPresenter(): AllPresenter = AllPresenter(AllModle(),this)
 
     override fun onLodinData(list: List<Product>) {
 

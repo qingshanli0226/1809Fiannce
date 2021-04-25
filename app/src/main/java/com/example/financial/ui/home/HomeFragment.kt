@@ -21,13 +21,14 @@ class HomeFragment:BaseFragment<HomePresenter>(),HomeCanter.View {
 
     override fun initView() {
         attaToBar(fragment_home_ToBar)
+        attaPresenter(HomePresenter(HomeModle(),this))
     }
 
     override fun initData() {
         if (DataUlit.index != null) {
             onData(DataUlit.index!!)
         }else{
-            mPresenter.getData()
+            mPresenter!!.getData()
         }
     }
 
@@ -43,7 +44,7 @@ class HomeFragment:BaseFragment<HomePresenter>(),HomeCanter.View {
         TODO("Not yet implemented")
     }
 
-    override fun setPresenter(): HomePresenter =HomePresenter(HomeModle(),this)
+    //override fun setPresenter(): HomePresenter =HomePresenter(HomeModle(),this)
 
     override fun onData(index: Index) {
         initBanner(index.imageArr)
