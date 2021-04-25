@@ -46,7 +46,7 @@ public class InvestFragment extends Fragment {
         list.add("热门理财");
 
         fragments.add(new AllFragment());
-        fragments.add(new RecomFragment());
+        fragments.add(new RecomendFragment());
         fragments.add(new HotFragment());
 
         fragAdapter = new FragAdapter(getActivity().getSupportFragmentManager(),fragments,list);

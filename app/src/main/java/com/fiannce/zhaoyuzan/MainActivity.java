@@ -9,7 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.fiannce.net.mode.CommonBean;
 import com.fiannce.zhaoyuzan.adapter.CommonAdapter;
-import com.fiannce.zhaoyuzan.fragment.GengDuoFragment;
+import com.fiannce.zhaoyuzan.fragment.MoreFragment;
 import com.fiannce.zhaoyuzan.fragment.HomeFragment;
 import com.fiannce.zhaoyuzan.fragment.MineFragment;
 import com.fiannce.zhaoyuzan.fragment.InvestFragment;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new HomeFragment());
         list.add(new InvestFragment());
         list.add(new MineFragment());
-        list.add(new GengDuoFragment());
+        list.add(new MoreFragment());
         commonAdapter = new CommonAdapter(getSupportFragmentManager(),list);
         viewPager.setAdapter(commonAdapter);
 
