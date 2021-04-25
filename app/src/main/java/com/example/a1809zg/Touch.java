@@ -2,6 +2,7 @@ package com.example.a1809zg;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -27,9 +28,25 @@ public class Touch extends RelativeLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()){
-            case 
+            case MotionEvent.ACTION_DOWN:
+               Log.d("Touch", "按下");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d("Touch", "移动");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d("Touch", "抬起");
+                break;
         }
         return super.dispatchTouchEvent(ev);
 
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()){
+         
+        }
+        return super.onTouchEvent(event);
     }
 }
