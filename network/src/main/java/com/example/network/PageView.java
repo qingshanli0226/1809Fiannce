@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,7 +14,7 @@ import androidx.annotation.Nullable;
 
 
 
-public abstract class PageView extends FrameLayout {
+public abstract class PageView extends RelativeLayout {
     private View errorLayout;
     private View LoadLayout;
     private View SuccessView;

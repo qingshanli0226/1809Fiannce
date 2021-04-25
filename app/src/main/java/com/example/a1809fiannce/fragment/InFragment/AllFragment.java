@@ -54,6 +54,7 @@ public class AllFragment extends BaseFragment<UpdatePresenter> implements CallBa
 
     @Override
     public void AllData(AllBean allBean) {
+        pageView.ShowSuccess();
         Log.i("zx", "AllData: "+allBean.toString());
         AllAdapter allAdapter = new AllAdapter(R.layout.item_all, allBean.getResult());
         re.setAdapter(allAdapter);
@@ -62,7 +63,7 @@ public class AllFragment extends BaseFragment<UpdatePresenter> implements CallBa
 
     @Override
     public void ShowLoading() {
-
+        pageView.ShowLoad();
     }
 
     @Override
@@ -72,6 +73,7 @@ public class AllFragment extends BaseFragment<UpdatePresenter> implements CallBa
 
     @Override
     public void Error(String error) {
-        Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
+        pageView.ShowError(error);
+        //Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
     }
 }
