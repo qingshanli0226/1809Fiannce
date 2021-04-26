@@ -1,4 +1,4 @@
-package com.fiannce.bawei.framework.event;
+package com.example.designed.event;
 
 import android.content.Context;
 import android.util.AttributeSet;

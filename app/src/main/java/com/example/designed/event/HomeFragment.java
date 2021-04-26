@@ -1,4 +1,4 @@
-package com.fiannce.bawei.framework.event;
+package com.example.designed.event;
 
 
 import android.os.Bundle;
@@ -9,15 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.framework.R;
+import com.example.designed.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MineFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
 
-    public MineFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -26,7 +26,11 @@ public class MineFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mine, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+
+        return inflate;
     }
 
 }

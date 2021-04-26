@@ -21,6 +21,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".event.EventActivity"
+            android:screenOrientation="portrait">
+<!--
+            <intent-filter>
+
+                <action android:name="event"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+-->
+        </activity>
+
         <activity
             android:name=".welcome.WelcomeActivity"
             android:launchMode="singleTask">

@@ -3,17 +3,57 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="@dimen/toolbar_margin_size"
-        android:layout_height="@dimen/toolbar_margin_size"
+        android:id="@+id/leftImg"
+        android:layout_width="@dimen/toolbar_img_size"
+        android:layout_height="@dimen/toolbar_img_size"
+        android:layout_marginLeft="@dimen/toolbar_margin_size"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        >
-    </ImageView>
+        android:layout_alignParentLeft="true"></ImageView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/text_mid_size"
+        android:textColor="#3883D1"
         android:id="@+id/titleTv"
-        ></TextView>
+        android:layout_centerInParent="true"
+        android:gravity="center"></TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/rightArea"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/toolbar_margin_size"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/toolbar_img_size"
+                android:layout_height="@dimen/toolbar_img_size"
+                android:id="@+id/rightImg"
+                android:layout_centerVertical="true"></ImageView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/text_mid_size"
+                android:textColor="#B33A3A"
+                android:id="@+id/rightTv"></TextView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

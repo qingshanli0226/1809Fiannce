@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -82,26 +83,26 @@ public class QuanFragment extends BaseFragment implements IBaseView, IWelcomeVie
         dm.send(danmaku);
 
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
-            @Override
-            public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
-                return makeMovementFlags(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, ItemTouchHelper.UP | ItemTouchHelper.DOWN);
-            }
-
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                int adapterPosition = viewHolder.getAdapterPosition();
-
-
-            }
-        });
-
-        itemTouchHelper.attachToRecyclerView(rv);
+//        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
+//            @Override
+//            public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
+//                return makeMovementFlags(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, ItemTouchHelper.UP | ItemTouchHelper.DOWN);
+//            }
+//
+//            @Override
+//            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+//                return false;
+//            }
+//
+//            @Override
+//            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+//                int adapterPosition = viewHolder.getAdapterPosition();
+//
+//
+//            }
+//        });
+//
+//        itemTouchHelper.attachToRecyclerView(rv);
 
 
     }
@@ -144,4 +145,30 @@ public class QuanFragment extends BaseFragment implements IBaseView, IWelcomeVie
 
         rv.setAdapter(liAdapter);
     }
+
+
+
+//    @Override
+//    public boolean onTouch(View view, MotionEvent motionEvent) {
+//
+//        switch (motionEvent.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                lastX = (int) motionEvent.getX();
+//               // lastY = (int) motionEvent.getY();
+//
+//                return  true;
+//
+//            case  MotionEvent.ACTION_MOVE:
+//
+//                if (lastX >500 &&motionEvent.getRawX()<lastX){
+//                    if (){
+//
+//                    }
+//                }
+//
+//                break;
+//        }
+//
+//        return true;
+//    }
 }

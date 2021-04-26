@@ -1,5 +1,6 @@
 package com.example.designed;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,7 +60,9 @@ private long time;
         tab.getTabAt(2).setIcon(R.drawable.bottom05);
         tab.getTabAt(3).setIcon(R.drawable.bottom07);
 
-
+//        Intent intent = new Intent();
+//        intent.setAction("event");
+//        startActivity(intent);
     }
 
     @Override

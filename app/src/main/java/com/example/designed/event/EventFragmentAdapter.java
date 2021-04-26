@@ -1,4 +1,4 @@
-package com.fiannce.bawei.framework.event;
+package com.example.designed.event;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,11 +14,11 @@ public class EventFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return null;
+        return fragments[position];
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return fragments.length;
     }
 }

@@ -1,14 +1,14 @@
-package com.fiannce.bawei.framework.event;
+package com.example.designed.event;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-
-import com.example.framework.R;
+import com.example.designed.R;
 import com.fiannce.bawei.framework.BaseActivity;
+
 
 public class EventActivity extends BaseActivity {
 
+    private ViewPager viewPager;
 
     @Override
     protected void initData() {
@@ -27,6 +27,10 @@ public class EventActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+
+        viewPager.setAdapter(new EventFragmentAdapter(getSupportFragmentManager()));
 
     }
 }
