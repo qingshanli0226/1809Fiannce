@@ -2,8 +2,10 @@ package com.example.a1809fiannce.main.invest.allfinancial;
 
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.HorizontalScrollView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,7 +22,7 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
     private RecyclerView fragAllProductRv;
     private AllProductAdapter allProductAdapter;
 
-    int lastX,lastY;
+
     private int item = 0;
 
     @Override
@@ -31,8 +33,6 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
     @Override
     protected void initData() {
         httpPresenter.getAllProductData();
-
-
 
     }
 
@@ -53,36 +53,6 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
         List<AllProductBean.ResultBean> result = allProductBean.getResult();
         allProductAdapter = new AllProductAdapter(result);
         fragAllProductRv.setAdapter(allProductAdapter);
-
-        allProductAdapter.setOnItemClickListener((adapter, view, position) -> {
-            fragAllProductRv.setOnTouchListener((view1, ev) -> {
-                if (ev.getAction() == MotionEvent.ACTION_DOWN){
-                    lastX = (int) ev.getRawX();
-                    lastY = (int) ev.getRawY();
-                    fragAllProductRv.getParent().requestDisallowInterceptTouchEvent(true);
-                }else if (ev.getAction() == MotionEvent.ACTION_MOVE){
-                    if ((lastX<50||lastY>500)&&(Math.abs(ev.getRawX() - lastY)<Math.abs(ev.getRawY()))){
-                        fragAllProductRv.getParent().requestDisallowInterceptTouchEvent(false);
-                        float abs = Math.abs(ev.getRawX());
-                        float z = abs - lastX;
-                        view.setTranslationX(z);
-                    }else {
-                        fragAllProductRv.getParent().requestDisallowInterceptTouchEvent(true);
-                    }
-
-                }else if (ev.getAction() == MotionEvent.ACTION_UP){
-
-                }
-
-                return false;
-
-            });
-
-
-
-        });
-
-
     }
 
     @Override

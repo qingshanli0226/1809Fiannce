@@ -5,7 +5,7 @@ import com.example.net.model.HoemBean;
 public class CacheManager {
 
 
-    public HoemBean hoemBean;
+    public HoemBean hoemBean ;
 
     public HoemBean getHoemBean() {
         return hoemBean;

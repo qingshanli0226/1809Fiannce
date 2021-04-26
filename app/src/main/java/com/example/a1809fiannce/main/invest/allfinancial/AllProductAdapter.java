@@ -1,8 +1,10 @@
 package com.example.a1809fiannce.main.invest.allfinancial;
 
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.example.a1809fiannce.R;
@@ -22,6 +24,7 @@ public class AllProductAdapter extends BaseQuickAdapter<AllProductBean.ResultBea
         super(R.layout.item_allproduct_rv, data);
     }
 
+
     @Override
     protected void convert(@NotNull BaseViewHolder holder, AllProductBean.ResultBean resultBean) {
         holder.setText(R.id.all_investment_title, resultBean.getName());
@@ -33,6 +36,66 @@ public class AllProductAdapter extends BaseQuickAdapter<AllProductBean.ResultBea
 
         ProgressView progressView = holder.getView(R.id.all_investment_progress);
         progressView.beginProgressAnimation(Integer.parseInt(resultBean.getProgress()), false);
+
+        TextView delet = holder.getView(R.id.all_investment_delet);
+
+
+
+        holder.itemView.setOnTouchListener((view, ev) -> {
+            if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+                if (holder.itemView!=itemView&&itemView!=null){
+                    itemView.scrollTo(0, 0);
+                }
+                lastX = (int) ev.getRawX();
+                holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                return true;
+            } else if (ev.getAction() == MotionEvent.ACTION_MOVE) {
+                if ((lastX < 900) && (lastX > ev.getRawX())) {
+                    holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                    int z = (int) (lastX - ev.getRawX());
+                    DELET_WIDTH = delet.getWidth();
+                    if (z > DELET_WIDTH) {
+                        z = DELET_WIDTH;
+                    }
+                    holder.itemView.scrollTo(z, 0);
+
+                    return true;
+                } else if ((lastX < 900) && (lastX < ev.getRawX()) && isstartback) {
+                    holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                    int z = (int) (lastX - ev.getRawX());
+                    DELET_WIDTH = delet.getWidth();
+                    if (z < -DELET_WIDTH) {
+                        z = -DELET_WIDTH;
+                    }
+                    holder.itemView.scrollTo(DELET_WIDTH + z, 0);
+
+                    return true;
+                } else {
+                    holder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
+                }
+
+
+            } else if (ev.getAction() == MotionEvent.ACTION_UP) {
+                if ((lastX - ev.getRawX()) > DELET_WIDTH / 2) {
+                    holder.itemView.scrollTo(DELET_WIDTH, 0);
+                    itemView  = holder.itemView;
+                    isstartback = true;
+                } else if ((ev.getRawX() - lastX) < DELET_WIDTH / 2 && isstartback) {
+                    holder.itemView.scrollTo(DELET_WIDTH, 0);
+                } else {
+                    holder.itemView.scrollTo(0, 0);
+                    itemView  =null;
+                    isstartback = false;
+                }
+            }
+
+            return false;
+        });
     }
+
+    int lastX;
+    private int DELET_WIDTH;
+    private boolean isstartback = false;
+    View itemView;
 
 }
