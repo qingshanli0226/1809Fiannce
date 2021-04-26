@@ -7,8 +7,29 @@
         android:layout_height="60dp"
         android:id="@+id/toolbar">
     </com.fiannce.bawei.framework.view.ToolBar>
+    <LinearLayout
+        android:id="@+id/itemView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/toolbar"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="谢谢"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorAccent"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="hello"/>
+
+
+    </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
+        android:layout_below="@+id/itemView"
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
