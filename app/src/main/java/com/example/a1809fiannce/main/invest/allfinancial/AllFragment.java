@@ -3,6 +3,7 @@ package com.example.a1809fiannce.main.invest.allfinancial;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.HorizontalScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -53,6 +54,14 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
         List<AllProductBean.ResultBean> result = allProductBean.getResult();
         allProductAdapter = new AllProductAdapter(result);
         fragAllProductRv.setAdapter(allProductAdapter);
+
+        allProductAdapter.setOnItemChildClickListener((adapter, view, position) -> {
+            result.remove(position);
+            TextView delet = view.findViewById(R.id.all_investment_delet);
+            view.scrollTo(-delet.getWidth(),0);
+            allProductAdapter.notifyItemRemoved(position);
+        });
+
     }
 
     @Override
