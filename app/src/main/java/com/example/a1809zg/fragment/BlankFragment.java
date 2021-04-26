@@ -5,7 +5,7 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.example.a1809zg.MyView;
+import com.example.a1809zg.myview.MyView;
 import com.example.a1809zg.R;
 import com.example.a1809zg.welcome.Ipresenter;
 import com.example.a1809zg.welcome.Iview;

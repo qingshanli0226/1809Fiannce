@@ -1,4 +1,4 @@
-package com.example.a1809zg;
+package com.example.a1809zg.myview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.a1809zg.R;
 
 public class Toolbar extends RelativeLayout {
     private String titletext;
@@ -31,7 +33,7 @@ public class Toolbar extends RelativeLayout {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.Toolbar);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Toolbar);
          titletext = typedArray.getString(R.styleable.Toolbar_titletext);
          leftimg = typedArray.getResourceId(R.styleable.Toolbar_leftimg, 0);
          rightimg = typedArray.getResourceId(R.styleable.Toolbar_rightimg, 0);

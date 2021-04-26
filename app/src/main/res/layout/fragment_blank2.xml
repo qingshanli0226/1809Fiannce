@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.BlankFragment2"
     android:orientation="vertical">
-    <com.example.a1809zg.Toolbar
+    <com.example.a1809zg.myview.Toolbar
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:isleft="true"
@@ -15,7 +15,7 @@
         app:leftimg="@mipmap/mine"
         android:id="@+id/bar"
         >
-    </com.example.a1809zg.Toolbar>
+    </com.example.a1809zg.myview.Toolbar>
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"

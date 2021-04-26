@@ -1,11 +1,8 @@
 package com.example.a1809zg.infragment;
 
-import android.text.Layout;
-import android.view.View;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
-import com.example.a1809zg.MyView;
+import com.example.a1809zg.myview.MyView;
 import com.example.a1809zg.R;
 import com.example.net.bean.ProductBean;
 

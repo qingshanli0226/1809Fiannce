@@ -10,6 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rv"></androidx.recyclerview.widget.RecyclerView>
-
+<!--<com.example.a1809zg.myview.MyRecyclerView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:id="@+id/rv"></com.example.a1809zg.myview.MyRecyclerView>-->
 
 </LinearLayout>

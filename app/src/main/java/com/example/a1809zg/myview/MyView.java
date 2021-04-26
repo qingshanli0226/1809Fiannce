@@ -1,4 +1,4 @@
-package com.example.a1809zg;
+package com.example.a1809zg.myview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,6 +15,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.a1809zg.R;
 
 public class MyView extends View {
     private Paint paint;

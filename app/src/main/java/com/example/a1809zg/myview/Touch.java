@@ -1,4 +1,4 @@
-package com.example.a1809zg;
+package com.example.a1809zg.myview;
 
 import android.content.Context;
 import android.util.AttributeSet;
