@@ -45,7 +45,6 @@ public class MainFragment extends BaseFragment {
                 HomeBean.ResultBean.ImageArrBean bean = (HomeBean.ResultBean.ImageArrBean) path;
                 String imaurl = bean.getIMAURL();
                 Glide.with(context).load(imaurl).into(imageView);
-
             }
         }).start();
 
