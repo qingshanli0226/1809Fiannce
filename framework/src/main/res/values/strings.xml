@@ -1,5 +1,5 @@
 <resources>
-    <string name="allmoneyManagement">全部理财</string>
-    <string name="recommendmoneyManagement">推荐理财</string>
-    <string name="h0tmoneyManagement">热门理财</string>
+    <string name="allMoneyManagement">全部理财</string>
+    <string name="recommendMoneyManagement">推荐理财</string>
+    <string name="hotMoneyManagement">热门理财</string>
 </resources>

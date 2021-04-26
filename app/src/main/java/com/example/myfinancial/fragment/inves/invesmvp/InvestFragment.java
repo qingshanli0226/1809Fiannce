@@ -35,9 +35,9 @@ public class InvestFragment extends BaseFragment {
         list.add(new ReCommendFragment());
         list.add(new HotFragment());
 
-        strings.add(getString(R.string.allmoneyManagement));
-        strings.add(getString(R.string.recommendmoneyManagement));
-        strings.add(getString(R.string.h0tmoneyManagement));
+        strings.add(getString(R.string.allMoneyManagement));
+        strings.add(getString(R.string.recommendMoneyManagement));
+        strings.add(getString(R.string.hotMoneyManagement));
 
         vpAdapter=new VpAdapter(getChildFragmentManager(),list,strings);
 

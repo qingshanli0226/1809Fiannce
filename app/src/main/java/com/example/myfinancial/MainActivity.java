@@ -47,10 +47,10 @@ public class MainActivity extends BaseActivity {
         list.add(new MyMoneyFragment());
         list.add(new MoreFragment());
 
-        strings.add(getString(R.string.hometool));
-        strings.add(getString(R.string.investtool));
-        strings.add(getString(R.string.mymoneytool));
-        strings.add(getString(R.string.moretool));
+        strings.add(getString(R.string.homeTool));
+        strings.add(getString(R.string.invesTtool));
+        strings.add(getString(R.string.myMoneyTool));
+        strings.add(getString(R.string.moreTool));
 
         cusComms.add(new CusComm(strings.get(0), R.drawable.select_home, R.drawable.unselect_home));
         cusComms.add(new CusComm(strings.get(1), R.drawable.select_wallet, R.drawable.unselect_wallet));

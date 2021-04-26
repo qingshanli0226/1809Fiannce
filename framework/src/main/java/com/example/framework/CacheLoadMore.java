@@ -2,15 +2,15 @@ package com.example.framework;
 
 import com.example.net.bean.HomeBean;
 
-public class CaCheLoadMore {
-    private static CaCheLoadMore caCheHome;
+public class CacheLoadMore {
+    private static CacheLoadMore caCheHome;
 
-    public CaCheLoadMore() {
+    public CacheLoadMore() {
     }
 
-    public static CaCheLoadMore getInstance() {
+    public static CacheLoadMore getInstance() {
         if (caCheHome == null) {
-            caCheHome = new CaCheLoadMore();
+            caCheHome = new CacheLoadMore();
         }
         return caCheHome;
     }

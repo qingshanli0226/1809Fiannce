@@ -8,8 +8,8 @@
     tools:context=".fragment.HomeFragment">
 <com.example.framework.myview.ToolBar
     android:layout_width="match_parent"
-    app:titleText="@string/hometool"
-    android:id="@+id/toolbar"
+    app:titleText="@string/homeTool"
+    android:id="@+id/toolBar"
     app:leftIsShow="true"
     app:rightIsShow="false"
     app:leftImage="@drawable/user_logo"
@@ -66,15 +66,15 @@
     </LinearLayout>
 
     <com.example.framework.myview.PregressMyView
-        android:id="@+id/promyview"
+        android:id="@+id/proMyView"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/dp_30"
         app:circleWidth="10"
-        app:upCirCleColor="@color/homeuoCirColor"
-        app:DownCirCleColor="@color/homedownCirColor"
-        app:testColor="@color/hometextcolor"></com.example.framework.myview.PregressMyView>
+        app:upCirclecolor="@color/homeUpCirColor"
+        app:downCirclecolor="@color/homeDownCirColor"
+        app:textColor="@color/homeTextColor"></com.example.framework.myview.PregressMyView>
 
     <LinearLayout
         android:layout_width="wrap_content"

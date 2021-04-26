@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/allbackgroundcolor"
+    android:background="@color/allBackgroundColor"
     android:orientation="vertical"
     tools:context=".fragment.inves.fragment.AllFragment">
 
     <com.example.framework.myview.ToolBar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"></com.example.framework.myview.ToolBar>
 
-    <com.example.framework.myview.MyText
+    <com.example.framework.myview.MarqueeText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -22,7 +22,7 @@
         android:singleLine="true"
         android:text="@string/trotting"
         android:textColor="@color/red"
-        android:textSize="25dp"></com.example.framework.myview.MyText>
+        android:textSize="25dp"></com.example.framework.myview.MarqueeText>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec"

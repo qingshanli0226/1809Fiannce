@@ -3,12 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">这是一个fragment</string>
     <string name="appversion">当前版本1.0</string>
-    <string name="countdown">3秒</string>
+    <string name="countDown">3秒</string>
     <string name="trotting">有道金融壕运当头，首投返现最高达188元</string>
-    <string name="hometool">首页</string>
-    <string name="investtool">投资</string>
-    <string name="mymoneytool">我的资产</string>
-    <string name="moretool">更多</string>
+    <string name="homeTool">首页</string>
+    <string name="invesTtool">投资</string>
+    <string name="myMoneyTool">我的资产</string>
+    <string name="moreTool">更多</string>
     <string name="delete">删除</string>
 
 

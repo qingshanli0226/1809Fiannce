@@ -8,15 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
-    <color name="uoCirColor">#03A9F4</color>
-    <color name="homeuoCirColor">#FF0000</color>
+    <color name="upCirColor">#03A9F4</color>
+    <color name="homeUpCirColor">#FF0000</color>
     <color name="downCirColor">#999</color>
-    <color name="homedownCirColor">#8F02405C</color>
-    <color name="hometextcolor">#2196F3</color>
+    <color name="homeDownCirColor">#8F02405C</color>
+    <color name="homeTextColor">#2196F3</color>
     <color name="colorPrimary">#15916A</color>
     <color name="colorAccent">#D10000</color>
 
     <color name="gray">#eee</color>
-    <color name="allbackgroundcolor">#03A9F4</color>
-    <color name="toobrcolor">#673AB7</color>
+    <color name="allBackgroundColor">#03A9F4</color>
+    <color name="toobrColor">#673AB7</color>
 </resources>

@@ -50,10 +50,10 @@ public class PregressMyView extends View {
         Log.d("PregressMyView", "我的myView");
 
         TypedArray typedArray=context.obtainStyledAttributes(attrs,R.styleable.PregressMyView);
-        textColor=typedArray.getColor(R.styleable.PregressMyView_testColor,Color.BLACK);
+        textColor=typedArray.getColor(R.styleable.PregressMyView_textColor,Color.BLACK);
         circleWith=typedArray.getInt(R.styleable.PregressMyView_circleWidth,10);
-        upCirCleColor=typedArray.getColor(R.styleable.PregressMyView_upCirCleColor,Color.BLUE);
-        downCirCleColor=typedArray.getColor(R.styleable.PregressMyView_DownCirCleColor,Color.RED);
+        upCirCleColor=typedArray.getColor(R.styleable.PregressMyView_upCirclecolor,Color.BLUE);
+        downCirCleColor=typedArray.getColor(R.styleable.PregressMyView_downCirclecolor,Color.RED);
         typedArray.recycle();//清理
     }
 

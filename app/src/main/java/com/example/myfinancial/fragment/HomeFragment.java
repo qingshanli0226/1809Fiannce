@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
-import com.example.framework.CaCheLoadMore;
+import com.example.framework.CacheLoadMore;
 import com.example.framework.myview.PregressMyView;
 import com.example.framework.myview.ToolBar;
 import com.example.myfinancial.R;
@@ -30,7 +30,7 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void initData() {
-        homeBean = CaCheLoadMore.getInstance().getHomeBean();
+        homeBean = CacheLoadMore.getInstance().getHomeBean();
         Log.d("MainActivity123", homeBean.toString());
         initlbt();
         promyview.getProgressNum(Integer.parseInt(homeBean.getResult().getProInfo().getProgress()), true);
@@ -40,9 +40,9 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void initView() {
         ban = (Banner) findViewById(R.id.ban);
-        promyview = (PregressMyView) findViewById(R.id.promyview);
+        promyview = (PregressMyView) findViewById(R.id.proMyView);
 
-        toolbar = (ToolBar) findViewById(R.id.toolbar);
+        toolbar = (ToolBar) findViewById(R.id.toolBar);
 
         toolbar.setToolbarListener(this);
     }

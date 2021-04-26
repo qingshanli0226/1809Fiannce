@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseActivity;
-import com.example.framework.CaCheLoadMore;
+import com.example.framework.CacheLoadMore;
 import com.example.myfinancial.R;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.VersionBean;
@@ -52,7 +52,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void initView() {
         //向上顶  全屏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        countdowntv = (TextView) findViewById(R.id.countdowntv);
+        countdowntv = (TextView) findViewById(R.id.countDownTv);
 
         handler.sendEmptyMessageDelayed(DELAT_INDEX, DELAY);//发送倒计时  handler
         countdowntv.setText(drawtimetv + "");//修改
@@ -64,7 +64,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         Log.d("WelcomeActivity", homeBean.toString());
         geth = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
-        CaCheLoadMore.getInstance().setHomeBean(homeBean);
+        CacheLoadMore.getInstance().setHomeBean(homeBean);
     }
 
     @Override

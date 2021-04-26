@@ -67,6 +67,15 @@ public class AllMoneyBean {
         private String minTouMoney;
         private String memberNum;
         private String progress;
+        private boolean isDel=false;
+
+        public boolean isDel() {
+            return isDel;
+        }
+
+        public void setDel(boolean del) {
+            isDel = del;
+        }
 
         @Override
         public String toString() {

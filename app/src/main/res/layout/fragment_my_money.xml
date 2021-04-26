@@ -8,10 +8,10 @@
     tools:context=".fragment.MyMoneyFragment">
 
     <com.example.framework.myview.ToolBar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleText="@string/mymoneytool"></com.example.framework.myview.ToolBar>
+        app:titleText="@string/myMoneyTool"></com.example.framework.myview.ToolBar>
 
 
 </LinearLayout>

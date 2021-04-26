@@ -2,7 +2,6 @@ package com.example.framework;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -11,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.framework.myview.LoadingPage;
 import com.example.framework.myview.ToolBar;
 
-public abstract   class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView, ToolBar.IToolbarListener {
+public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView, ToolBar.IToolbarListener {
     protected P mPresenter;
     private ToolBar toolBar;
     protected boolean isUserLoading=true;
@@ -32,11 +31,10 @@ public abstract   class BaseActivity<P extends BasePresenter> extends AppCompatA
 
 
     protected LoadingPage loadingPage;
-     public void initPresenter(){};
-
-    public void initData(){};
-
-    public void initView() {};
+    protected void initPresenter(){};
+    protected void initData(){};
+    protected abstract int getbandLayout();
+    protected void initView() {};
 
     @Override
     public void showLoading() { }

@@ -6,17 +6,17 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-public class MyText extends androidx.appcompat.widget.AppCompatTextView {
+public class MarqueeText extends androidx.appcompat.widget.AppCompatTextView {
 
-    public MyText(Context context) {
+    public MarqueeText(Context context) {
         super(context);
     }
 
-    public MyText(Context context, AttributeSet attrs) {
+    public MarqueeText(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyText(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MarqueeText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

@@ -12,11 +12,9 @@ import androidx.fragment.app.Fragment;
 import com.example.framework.myview.LoadingPage;
 import com.example.framework.myview.ToolBar;
 
-import org.xmlpull.v1.XmlPullParser;
-
 public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements BaseView, ToolBar.IToolbarListener {
 
-    protected View baseView;
+    protected View rootView;
     protected P mPresenter;
     protected ToolBar toolBar;
     protected boolean isUserLoading = true;
@@ -25,20 +23,20 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        baseView= loadingPage = new LoadingPage(getActivity()) {
+        rootView = loadingPage = new LoadingPage(getActivity()) {
             @Override
             protected int getSuccessLayoutId() {
                 return getbandLayout();
             }
         };
-        return baseView;
+        return rootView;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
-        toolBar = findViewById(R.id.toolbar);
+        toolBar = findViewById(R.id.toolBar);
         toolBar.setToolbarListener(this);
         initPresenter();
         initData();
@@ -46,9 +44,14 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 
     protected LoadingPage loadingPage;
 
+    protected void initData(){};
+    protected abstract int getbandLayout();
+    protected void initView() {};
+    protected void initPresenter(){};
+
 
     public <T extends View> T findViewById(int setId) {
-        return baseView.findViewById(setId);
+        return rootView.findViewById(setId);
     }
 
     @Override

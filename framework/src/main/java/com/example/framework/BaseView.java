@@ -7,11 +7,4 @@ public interface BaseView {
 
     void showError(String error);
 
-    void initPresenter();
-
-    void initData();
-
-    void initView();
-
-    int getbandLayout();
 }

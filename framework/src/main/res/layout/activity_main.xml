@@ -6,7 +6,7 @@
     <com.example.framework.myview.ToolBar
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/toolbar">
+        android:id="@+id/toolBar">
     </com.example.framework.myview.ToolBar>
 
 </LinearLayout>
