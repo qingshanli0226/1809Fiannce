@@ -40,7 +40,7 @@ public class AllfinancialAdapter extends BaseQuickAdapter<AllfinancialBean.Resul
 
         TextView delText = holder.getView(R.id.delText);
 
-        delText.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 lastView.scrollTo(0, 0);
@@ -48,6 +48,8 @@ public class AllfinancialAdapter extends BaseQuickAdapter<AllfinancialBean.Resul
                 lastPosition = -1;
             }
         });
+
+        addChildClickViewIds(R.id.delText);
 
         holder.itemView.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -59,7 +61,7 @@ public class AllfinancialAdapter extends BaseQuickAdapter<AllfinancialBean.Resul
                         return true;
 
                     case MotionEvent.ACTION_MOVE:
-                        if (lastX > 500 && motionEvent.getRawX() < lastX) {
+                        if (lastX > 800 && motionEvent.getRawX() < lastX ) {
                             holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
                             if (lastPosition != holder.getAdapterPosition() && lastView != null) {
                                 lastView.scrollTo(0, 0);
@@ -72,7 +74,7 @@ public class AllfinancialAdapter extends BaseQuickAdapter<AllfinancialBean.Resul
                             int z = (int) (lastX - motionEvent.getRawX());
                             holder.itemView.scrollTo(z, 0);
                             return true;
-                        } else if (lastX > 500 && motionEvent.getRawX() > lastX) {
+                        } else if (lastX > 800 && motionEvent.getRawX() > lastX) {
                             holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
 
                             lastView = null;
@@ -88,6 +90,8 @@ public class AllfinancialAdapter extends BaseQuickAdapter<AllfinancialBean.Resul
                     case MotionEvent.ACTION_UP:
                         if (lastX - motionEvent.getRawX() > delWidth / 2) {
 
+                            lastView = holder.itemView;
+                            lastPosition = holder.getAdapterPosition();
                             holder.itemView.scrollTo(delWidth, 0);
 
                         }else if (lastX - motionEvent.getRawX() < delWidth / 2){

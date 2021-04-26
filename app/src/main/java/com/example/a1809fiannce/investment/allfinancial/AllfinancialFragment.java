@@ -17,6 +17,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.adapter.AllfinancialAdapter;
 import com.example.framework.BaseFragment;
@@ -72,33 +74,7 @@ public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> im
 //
 //        itemTouchHelper.attachToRecyclerView(allfinancialRv);
 
-        allfinancialRv.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                return false;
-            }
 
-            @Override
-            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                switch (e.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        rawX = (int) e.getRawX();
-                        rawY = (int) e.getRawY();
-                        break;
-
-                    case MotionEvent.ACTION_MOVE:
-                        if (e.getRawX()<rawX){
-
-                        }
-                        break;
-                }
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-            }
-        });
     }
 
     @Override
@@ -116,6 +92,19 @@ public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> im
         allfinancialRv.setLayoutManager(new LinearLayoutManager(getContext()));
 
 //        allfinancialRv.setOnTouchListener(this);
+
+        allfinancialAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+                switch (view.getId()){
+                    case R.id.delText:
+                        list.remove(position);
+
+                        allfinancialAdapter.notifyItemRemoved(position);
+                        break;
+                }
+            }
+        });
     }
 
     @Override
