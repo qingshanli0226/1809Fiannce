@@ -162,6 +162,19 @@
                 android:layout_height="match_parent"
                 android:id="@+id/aaa"></com.example.a1809zg.myview.MyView>
         </LinearLayout>
+        <Button
+            android:layout_width="100dp"
+            android:background="#ff00"
+            android:layout_height="80dp"
+            android:text="删除"
+            ></Button>
+         <Button
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+             android:background="#ff00"
+            android:text="置顶"
+            ></Button>
+
 
 
     </LinearLayout>

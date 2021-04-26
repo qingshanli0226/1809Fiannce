@@ -1,5 +1,8 @@
 package com.example.a1809zg.infragment;
 
+import android.view.MotionEvent;
+import android.view.View;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.example.a1809zg.myview.MyView;
@@ -12,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class Fragadpter extends BaseQuickAdapter<ProductBean.ResultBean, BaseViewHolder> {
+    private int lastX;
     public Fragadpter( @Nullable List<ProductBean.ResultBean> data) {
         super(R.layout.item_money_view, data);
     }
@@ -27,5 +31,30 @@ public class Fragadpter extends BaseQuickAdapter<ProductBean.ResultBean, BaseVie
         MyView view = baseViewHolder.findView(R.id.aaa);
         int i = Integer.parseInt(resultBean.getProgress());
         view.saprogress(i,false);
+
+        baseViewHolder.itemView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        lastX= (int) event.getRawX();
+                        baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+
+                        return true;
+                    case MotionEvent.ACTION_MOVE:
+                        if (lastX>500&&event.getRawX()<lastX){
+                            baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                            baseViewHolder.itemView.scrollTo(-(int) (event.getRawX()-lastX),0);
+                            return true;
+                        }else {
+                            baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return false;
+            }
+        });
     }
 }
