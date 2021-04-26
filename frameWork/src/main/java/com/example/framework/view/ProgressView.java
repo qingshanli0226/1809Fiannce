@@ -31,7 +31,7 @@ public class ProgressView extends View {
     private int progressAngle = 0;
     private int percentage_angle = 0;
 
-    public ProgressView(Context context) {
+    public ProgressView(Context context)     {
         this(context,null);
     }
 

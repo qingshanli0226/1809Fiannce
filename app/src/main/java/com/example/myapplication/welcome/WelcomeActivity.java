@@ -50,12 +50,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     protected void initPresenter() {
         httpPresenter = new WelcomePresenter(this);
-
     }
 
     @Override
     protected void initView() {
-
         contenNum = (TextView) findViewById(R.id.conten_num);
         bar = (ProgressBar) findViewById(R.id.bar);
 //        homedata = (TextView) findViewById(R.id.homedata);
@@ -85,8 +83,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onProductDara(ProductBean productBean) {
-    }
 
+    }
 
     @Override
     public void showLoading() {

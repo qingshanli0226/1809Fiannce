@@ -38,6 +38,7 @@ public class MoneyFragment extends BaseFragment {
 
     }
 
+
     @Override
     protected void initPresenter() {
 

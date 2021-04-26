@@ -34,7 +34,7 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
 
     private ImageView img;
     private MyMoneyAdapter adapter;
-    private SlideRecyclerView moneyOneRv;
+    private RecyclerView moneyOneRv;
     private TextView light;
     private AnimationDrawable animationDrawable;
     private List<ProductBean.ResultBean> list = new ArrayList<>();
@@ -55,7 +55,7 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
     @Override
     protected void initView() {
         img = (ImageView) mView.findViewById(R.id.img);
-        moneyOneRv = (SlideRecyclerView) mView.findViewById(R.id.money_one_rv);
+        moneyOneRv = (RecyclerView) mView.findViewById(R.id.money_one_rv);
         moneyOneRv.setLayoutManager(new LinearLayoutManager(getContext()));
         light = (TextView) mView.findViewById(R.id.light);
     }
@@ -83,19 +83,19 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
         adapter = new MyMoneyAdapter(result);
         loadingPage.showSuccessView();
 
-        adapter.setOnItemChildClickListener(new OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
-                switch (view.getId()) {
-                    case R.id.txt_delete:
-//                        Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
-                        moneyOneRv.closeMenu();
-                        result.remove(position);
-                        break;
-                }
-                adapter.notifyDataSetChanged();
-            }
-        });
+//        adapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+//            @Override
+//            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+//                switch (view.getId()) {
+//                    case R.id.txt_delete:
+////                        Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
+//                        result.remove(position);
+//                        break;
+//                }
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
+
         moneyOneRv.setAdapter(adapter);
 
 
