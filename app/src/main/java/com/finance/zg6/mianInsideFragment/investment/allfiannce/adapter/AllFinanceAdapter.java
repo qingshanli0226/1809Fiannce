@@ -5,6 +5,7 @@ import android.os.Message;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -49,16 +50,17 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
         view5.setText(""+item.getMemberNum());
         view6.startProgress(Integer.parseInt(item.getProgress()),false);
 
+        helper.addOnClickListener(R.id.txt_delete);
+
         helper.itemView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()){
 
+                switch (motionEvent.getAction()){
                     case MotionEvent.ACTION_DOWN:
                         rawX = motionEvent.getRawX();
                         helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
                         return true;
-
                     case MotionEvent.ACTION_MOVE:
                         if (rawX>500&&motionEvent.getRawX()<rawX){
                             helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
@@ -66,11 +68,12 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
                             helper.itemView.scrollTo(scrollDiffx,0);
                             break;
                         }else {
+                            helper.itemView.scrollTo(0,0);
                             helper.itemView.getParent().requestDisallowInterceptTouchEvent(false);
                             break;
                         }
                     case MotionEvent.ACTION_UP:
-                        if (scrollDiffx>500 ){
+                        if (scrollDiffx>300){
                             helper.itemView.scrollTo(200,0);
                         }else {
                             helper.itemView.scrollTo(0,0);
@@ -80,7 +83,6 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
                 return true;
             }
         });
-
 
     }
 

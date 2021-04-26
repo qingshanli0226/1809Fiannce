@@ -1,6 +1,7 @@
 package com.finance.zg6.mianInsideFragment.investment.allfiannce;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +14,6 @@ import com.finance.framework.BaseFragment;
 import com.finance.net.bean.ProductBean;
 import com.finance.zg.R;
 import com.finance.zg6.mianInsideFragment.investment.allfiannce.adapter.AllFinanceAdapter;
-import com.finance.zg6.view.SlideRecyclerView;
 
 
 public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implements IAllFinanceView {
@@ -23,7 +23,6 @@ public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implem
     private AllFinanceAdapter allFinanceAdapter;
     private TextView allTxt;
     private ImageView allImgAnimation;
-    private SlideRecyclerView slideRecyclerView;
 
     @Override
     protected int getLayoutId() {
@@ -38,7 +37,6 @@ public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implem
     @Override
     protected void initData() {
         httpPresenter.getProductData();
-        slideRecyclerView = new SlideRecyclerView(getContext());
     }
 
     @Override
@@ -57,6 +55,15 @@ public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implem
         allFinanceRv.setLayoutManager(new LinearLayoutManager(getContext()));
         allFinanceRv.setAdapter(allFinanceAdapter);
 
+        allFinanceAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                if (view.getId() == R.id.txt_delete){
+                    allFinanceAdapter.getData().remove(position);
+                    allFinanceAdapter.notifyDataSetChanged();
+                }
+            }
+        });
     }
 
     @Override
