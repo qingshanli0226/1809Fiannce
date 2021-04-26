@@ -113,7 +113,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void showLoading() {
-        Dialog();
+//        Dialog();
     }
 
     private void Dialog() {
@@ -126,7 +126,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 ONE_finish=true;
                 if (ONE_finish&&TOW_finish){
                     ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
-                    alerDialog.notify();
+                    finish();
                 }
             }
         });
@@ -164,16 +164,17 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         handler.sendEmptyMessage(ONE_TASK_FIISH);
                     }
                     break;
-
                 case ONE_TASK_FIISH:
                     if (homeFinsh&&versionFinsh&&advertistFinsh) {
                         handler.sendEmptyMessage(ALL_TASK_FIISH);
+                        Dialog();
                     }
                     break;
                 case ALL_TASK_FIISH:
                     TOW_finish = true;
                     if (ONE_finish&&TOW_finish){
                         ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
+                        finish();
                     }
                     break;
             }

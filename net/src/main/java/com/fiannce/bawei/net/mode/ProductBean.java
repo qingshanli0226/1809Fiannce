@@ -58,6 +58,15 @@ public class ProductBean {
         private String minTouMoney;
         private String memberNum;
         private String progress;
+        private boolean mBoolean;
+
+        public boolean ismBoolean() {
+            return mBoolean;
+        }
+
+        public void setmBoolean(boolean mBoolean) {
+            this.mBoolean = mBoolean;
+        }
 
         public String getId() {
             return id;

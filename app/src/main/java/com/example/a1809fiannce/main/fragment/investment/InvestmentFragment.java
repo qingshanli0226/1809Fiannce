@@ -2,7 +2,6 @@ package com.example.a1809fiannce.main.fragment.investment;
 
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.main.fragment.investment.fragment.AllfinancialFragment;
@@ -10,6 +9,7 @@ import com.example.a1809fiannce.main.fragment.investment.fragment.HotmoneyFragme
 import com.example.a1809fiannce.main.fragment.investment.fragment.RecommendafinancialFragment;
 import com.example.a1809fiannce.main.fragment.more.adapter.MyFragmentAdapter;
 import com.fiannce.bawei.framework.BaseFragmnet;
+import com.fiannce.bawei.framework.view.mViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class InvestmentFragment extends BaseFragmnet {
     private List<String> stringList = new ArrayList<>();
     private MyFragmentAdapter adapter;
     private TabLayout InvestmentTabLayout;
-    private ViewPager InvestmentViewPager;
+    private mViewPager InvestmentViewPager;
 
     @Override
     protected int getLayoutId() {
@@ -53,6 +53,6 @@ public class InvestmentFragment extends BaseFragmnet {
     @Override
     protected void initView() {
         InvestmentTabLayout = (TabLayout) mView.findViewById(R.id.Investment_TabLayout);
-        InvestmentViewPager = (ViewPager) mView.findViewById(R.id.Investment_view_pager);
+        InvestmentViewPager = (mViewPager) mView.findViewById(R.id.Investment_view_pager);
     }
 }

@@ -9,12 +9,14 @@
     android:gravity="center_horizontal"
     android:background="#fff"
    >
-
-<!--    <com.example.framework.view.ToolBar-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="@dimen/dp_40"-->
-<!--        app:titleTextColor="#14B4ED"-->
-<!--        app:titleText="首页"></com.example.framework.view.ToolBar>-->
+    <com.fiannce.bawei.framework.view.ToolBar
+        app:titleText="首页"
+        app:mbackground="#142732"
+        app:ToolBar_titleTextColor="#239ECD"
+        android:layout_width="wrap_content"
+        android:background="#fff"
+        android:layout_height="40dp"
+     />
 
     <com.youth.banner.Banner
         android:id="@+id/banner"

@@ -9,6 +9,7 @@ import com.example.a1809fiannce.R;
 import com.fiannce.bawei.framework.BaseFragmnet;
 import com.fiannce.bawei.framework.manager.CacheManager;
 import com.fiannce.bawei.framework.view.ProgressView;
+import com.fiannce.bawei.framework.view.ToolBar;
 import com.fiannce.bawei.net.mode.HomeBean;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;

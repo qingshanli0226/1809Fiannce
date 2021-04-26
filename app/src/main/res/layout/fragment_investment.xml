@@ -7,7 +7,14 @@
     android:orientation="vertical"
     tools:context=".main.fragment.investment.InvestmentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <com.fiannce.bawei.framework.view.ToolBar
+        app:titleText="投资"
+        app:mbackground="#142732"
+        app:ToolBar_titleTextColor="#239ECD"
+        android:layout_width="wrap_content"
+        android:background="#fff"
+        android:layout_height="40dp" />
+
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         app:tabSelectedTextColor="#f00"
@@ -17,7 +24,7 @@
         android:id="@+id/Investment_TabLayout"
 
         />
-    <androidx.viewpager.widget.ViewPager
+    <com.fiannce.bawei.framework.view.mViewPager
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"
