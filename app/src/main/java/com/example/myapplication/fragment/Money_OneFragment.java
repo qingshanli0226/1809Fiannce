@@ -83,18 +83,18 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
         adapter = new MyMoneyAdapter(result);
         loadingPage.showSuccessView();
 
-//        adapter.setOnItemChildClickListener(new OnItemChildClickListener() {
-//            @Override
-//            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
-//                switch (view.getId()) {
-//                    case R.id.txt_delete:
-////                        Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
-//                        result.remove(position);
-//                        break;
-//                }
-//                adapter.notifyDataSetChanged();
-//            }
-//        });
+        adapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+                switch (view.getId()) {
+                    case R.id.txt_delete:
+                        Toast.makeText(getContext(), "123", Toast.LENGTH_SHORT).show();
+                        result.remove(position);
+                        adapter.notifyItemRemoved(position);
+                        break;
+                }
+            }
+        });
 
         moneyOneRv.setAdapter(adapter);
 

@@ -23,7 +23,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/big_text_size"
         android:gravity="center"
-        android:text="硅谷彩虹新手计划"
+        android:text="@string/home_title_fragment"
         android:layout_marginTop="@dimen/big_text_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></TextView>
@@ -37,7 +37,7 @@
         <TextView
             android:gravity="center"
             android:background="@drawable/text_xingzhuang"
-            android:text="本息保障"
+            android:text="@string/home_buttonone_fragment"
             android:textSize="@dimen/size_fiften"
             android:layout_width="@dimen/size_ninting"
             android:layout_height="wrap_content"></TextView>

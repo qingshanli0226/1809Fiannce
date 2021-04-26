@@ -24,6 +24,7 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
     private int lastposition;
     private int scrollDiffx;
     private int viewWindh = 0;
+    private TextView view1;
 
     public MyMoneyAdapter( @Nullable List<ProductBean.ResultBean> data) {
         super(R.layout.layout_home_one, data);
@@ -40,11 +41,10 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
         ProgressView view = baseViewHolder.getView(R.id.home_one_progress);
         view.startProgressDraw(Integer.parseInt(resultBean.getProgress()),false);
 //        baseViewHolder.setText(R.id.home_one_progress,resultBean.getProgress());
-        addChildClickViewIds(R.id.txt_delete);
         int position = baseViewHolder.getPosition();
 
-        TextView view1 = baseViewHolder.getView(R.id.txt_delete);
-        view1.setOnClickListener(new View.OnClickListener() {
+         view1 = baseViewHolder.getView(R.id.txt_delete);
+        baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getContext(), "123", Toast.LENGTH_SHORT).show();
@@ -53,6 +53,9 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
                 baseViewHolder.itemView.scrollTo(0,0);
             }
         });
+
+        addChildClickViewIds(R.id.txt_delete);
+
 
 
 
@@ -99,8 +102,8 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
                 return false;
             }
         });
-
-
-
     }
+
+
+
 }
