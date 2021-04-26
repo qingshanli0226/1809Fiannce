@@ -219,7 +219,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:id="@+id/del"
+            android:id="@+id/delbtn"
             android:text="删除"
             android:layout_height="match_parent"></Button>
     </LinearLayout>
