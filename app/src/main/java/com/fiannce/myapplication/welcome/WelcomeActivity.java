@@ -88,12 +88,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             builder.show();
         }
 
-        loadingPage.showSuccessView();
+//        loadingPage.showSuccessView();
     }
 
     @Override
     public void showLoading() {
-        loadingPage.showTransparentLoadingView();
+//        loadingPage.showTransparentLoadingView();
     }
 
     @Override
