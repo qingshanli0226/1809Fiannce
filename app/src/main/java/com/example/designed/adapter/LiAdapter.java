@@ -36,10 +36,13 @@ public class LiAdapter extends BaseQuickAdapter<Libean.ResultBean, BaseViewHolde
 
         TextView textView = helper.getView(R.id.textView);
 
+
+        helper.addOnClickListener(R.id.textView);
+
         CustomView customView = helper.getView(R.id.custom);
         customView.startmcurrent(Integer.parseInt(item.getProgress()),false);
 
-        textView.setOnClickListener(new View.OnClickListener() {
+        helper.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 lastView.scrollTo(0,0);
@@ -67,7 +70,7 @@ public class LiAdapter extends BaseQuickAdapter<Libean.ResultBean, BaseViewHolde
                             helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
 
                             if (lastView != null && lastPosition != helper.getAdapterPosition() ){
-                                helper.itemView.scrollTo(0,0);
+                               lastView.scrollTo(0,0);
                             }
 
                             lastPosition = helper.getAdapterPosition();

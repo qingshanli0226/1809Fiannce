@@ -19,6 +19,7 @@ import android.widget.FrameLayout;
 
 
 import com.blankj.utilcode.util.LogUtils;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.designed.R;
 import com.example.designed.adapter.LiAdapter;
 import com.example.designed.welcome.IWelcomeView;
@@ -83,6 +84,9 @@ public class QuanFragment extends BaseFragment implements IBaseView, IWelcomeVie
         dm.send(danmaku);
 
 
+
+
+
 //        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
 //            @Override
 //            public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
@@ -140,10 +144,22 @@ public class QuanFragment extends BaseFragment implements IBaseView, IWelcomeVie
     @Override
     public void onLiData(Libean libean) {
         list.addAll(libean.getResult());
+
         LogUtils.json(libean);
         liAdapter= new LiAdapter(R.layout.layout, list);
 
         rv.setAdapter(liAdapter);
+
+        liAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                if (view.getId() == R.id.textView){
+                    list.remove(position);
+                    liAdapter.notifyItemRemoved(position);
+                }
+            }
+        });
+
     }
 
 

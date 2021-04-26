@@ -33,7 +33,7 @@ public abstract class BaseActivity<T extends  BasePresenter> extends AppCompatAc
         setContentView(loadingPage);
         initView();
 
-        toolbar = findViewById(R.id.toolbar);
+       // toolbar = findViewById(R.id.toolbar);
 
         initPresenter();
         initData();
