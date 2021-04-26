@@ -1,37 +1,21 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
-import android.media.Image;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.bumptech.glide.Glide;
 import com.example.framework.BaseActivity;
-import com.example.framework.manager.CacheManager;
-import com.example.model.HomeBean;
 import com.example.myapplication.demo.Demo;
-import com.example.myapplication.fragment.HomeFragment;
-import com.example.myapplication.fragment.MoneyFragment;
-import com.example.myapplication.fragment.MoreFragment;
-import com.example.myapplication.fragment.MymoneyFragment;
-import com.google.android.material.tabs.TabLayout;
-import com.youth.banner.Banner;
-import com.youth.banner.loader.ImageLoader;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.myapplication.fragment.home.HomeFragment;
+import com.example.myapplication.fragment.invest.InvestFragment;
+import com.example.myapplication.fragment.more.MoreFragment;
+import com.example.myapplication.fragment.mymoney.MymoneyFragment;
 
 @Route(path = Demo.AROUTE_PATH)
 public class MainActivity extends BaseActivity {
@@ -42,7 +26,7 @@ public class MainActivity extends BaseActivity {
     private RadioButton btnMore;
     private RadioGroup group;
     private HomeFragment homeFragment;
-    private MoneyFragment moneyFragment;
+    private InvestFragment investFragment;
     private MymoneyFragment mymoneyFragment;
     private MoreFragment moreFragment;
 
@@ -50,7 +34,7 @@ public class MainActivity extends BaseActivity {
     protected void initData() {
 
         homeFragment = new HomeFragment();
-        moneyFragment = new MoneyFragment();
+        investFragment = new InvestFragment();
         mymoneyFragment = new MymoneyFragment();
         moreFragment = new MoreFragment();
 
@@ -67,26 +51,26 @@ public class MainActivity extends BaseActivity {
                     case R.id.btn_home:
 //                        Toast.makeText(MainActivity.this, "123", Toast.LENGTH_SHORT).show();
                         fragmentTransaction.show(homeFragment);
-                        fragmentTransaction.hide(moneyFragment);
+                        fragmentTransaction.hide(investFragment);
                         fragmentTransaction.hide(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
 
                         break;
                     case R.id.btn_money:
                         fragmentTransaction.hide(homeFragment);
-                        fragmentTransaction.show(moneyFragment);
+                        fragmentTransaction.show(investFragment);
                         fragmentTransaction.hide(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
                         break;
                     case R.id.btn_mymoney:
                         fragmentTransaction.hide(homeFragment);
-                        fragmentTransaction.hide(moneyFragment);
+                        fragmentTransaction.hide(investFragment);
                         fragmentTransaction.show(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
                         break;
                     case R.id.btn_more:
                         fragmentTransaction.hide(homeFragment);
-                        fragmentTransaction.hide(moneyFragment);
+                        fragmentTransaction.hide(investFragment);
                         fragmentTransaction.hide(mymoneyFragment);
                         fragmentTransaction.show(moreFragment);
                         break;
@@ -107,12 +91,12 @@ public class MainActivity extends BaseActivity {
         FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
 
         fragmentTransaction.add(R.id.main_linear,homeFragment);
-        fragmentTransaction.add(R.id.main_linear,moneyFragment);
+        fragmentTransaction.add(R.id.main_linear, investFragment);
         fragmentTransaction.add(R.id.main_linear,mymoneyFragment);
         fragmentTransaction.add(R.id.main_linear,moreFragment);
 
         fragmentTransaction.show(homeFragment);
-        fragmentTransaction.hide(moneyFragment);
+        fragmentTransaction.hide(investFragment);
         fragmentTransaction.hide(mymoneyFragment);
         fragmentTransaction.hide(moreFragment);
         fragmentTransaction.commit();

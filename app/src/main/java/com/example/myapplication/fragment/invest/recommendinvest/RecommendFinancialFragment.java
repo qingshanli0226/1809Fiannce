@@ -1,19 +1,11 @@
-package com.example.myapplication.fragment;
-
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+package com.example.myapplication.fragment.invest.recommendinvest;
 
 import com.example.framework.BaseFragment;
 import com.example.myapplication.R;
 import com.example.myapplication.welcome.WelcomePresenter;
 
 
-public class Money_ThreeFragment extends BaseFragment<WelcomePresenter> {
+public class RecommendFinancialFragment extends BaseFragment<WelcomePresenter> {
 
 
     @Override
@@ -33,7 +25,7 @@ public class Money_ThreeFragment extends BaseFragment<WelcomePresenter> {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_money__three;
+        return R.layout.fragment_recommendfinancial;
     }
 
     @Override

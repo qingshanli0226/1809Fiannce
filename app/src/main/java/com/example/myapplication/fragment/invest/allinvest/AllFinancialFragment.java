@@ -1,9 +1,7 @@
-package com.example.myapplication.fragment;
+package com.example.myapplication.fragment.invest.allinvest;
 
 import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,13 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.framework.BaseFragment;
-import com.example.framework.view.SlideRecyclerView;
 import com.example.model.HomeBean;
 import com.example.model.ProductBean;
 import com.example.model.VersionBean;
 import com.example.myapplication.R;
 import com.example.myapplication.adapter.MyMoneyAdapter;
-import com.example.myapplication.demo.Demo;
 import com.example.myapplication.welcome.IWelcomeView;
 import com.example.myapplication.welcome.WelcomePresenter;
 
@@ -29,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements IWelcomeView {
+public class AllFinancialFragment extends BaseFragment<WelcomePresenter> implements IWelcomeView {
 
 
     private ImageView img;
@@ -62,7 +58,7 @@ public class Money_OneFragment extends BaseFragment<WelcomePresenter> implements
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_money__one;
+        return R.layout.fragment_allfinancial;
     }
 
     @Override

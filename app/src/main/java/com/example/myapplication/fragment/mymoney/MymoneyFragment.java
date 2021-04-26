@@ -1,11 +1,8 @@
-package com.example.myapplication.fragment;
+package com.example.myapplication.fragment.mymoney;
 
 import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
-
 import com.example.framework.BaseFragment;
-import com.example.framework.view.ToolBar;
 import com.example.myapplication.R;
 
 public class MymoneyFragment extends BaseFragment {
