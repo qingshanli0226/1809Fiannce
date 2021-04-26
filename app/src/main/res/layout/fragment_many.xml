@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.ManyFragment">
+    tools:context=".many.ManyFragment">
 
-    <com.example.network.TobView
+    <com.example.framwork.view.TobView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         app:backgroundColor="#142732"
-        app:text="更多"
+        app:text="@string/many"
         android:id="@+id/tob"
-        app:textColor="#03A9F4"></com.example.network.TobView>
+        app:textColor="#03A9F4"></com.example.framwork.view.TobView>
 
 </LinearLayout>

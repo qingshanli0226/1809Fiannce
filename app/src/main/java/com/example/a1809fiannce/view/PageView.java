@@ -2,6 +2,7 @@ package com.example.a1809fiannce.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import androidx.annotation.NonNull;
@@ -20,24 +21,19 @@ public class PageView extends ViewPager {
 
     int ScX,ScY;
 
-    @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()){
-            case MotionEvent.ACTION_DOWN:
-
-                ScX= (int) ev.getRawX();
-                ScY= (int) ev.getRawY();
-                getParent().requestDisallowInterceptTouchEvent(false);
-
-                break;
-            case MotionEvent.ACTION_MOVE:
-                if ((ScX<80||ScX>500)&&Math.abs(ev.getRawY()-ScY)<Math.abs(ev.getX()-ScX)){
-                    return true;
-                }else {
-                    return false;
-                }
-
-        }
-        return super.onTouchEvent(ev);
-    }
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        switch (ev.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                ScX= (int) ev.getRawX();
+//                ScY= (int) ev.getRawY();
+//
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                if (ScX<50||ScX>500){
+//                    return true;
+//                }
+//        }
+//        return super.onInterceptTouchEvent(ev);
+//    }
 }

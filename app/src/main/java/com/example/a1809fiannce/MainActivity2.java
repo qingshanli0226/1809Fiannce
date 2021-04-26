@@ -2,29 +2,19 @@ package com.example.a1809fiannce;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.example.a1809fiannce.fragment.HomeFragment;
-import com.example.a1809fiannce.fragment.InvestFragment;
-import com.example.a1809fiannce.fragment.ManyFragment;
-import com.example.a1809fiannce.fragment.MyMoneyFragment;
-import com.example.formwork.model.HomeBean;
+import com.example.a1809fiannce.money.MyMoneyFragment;
+import com.example.a1809fiannce.home.HomeFragment;
+import com.example.a1809fiannce.lnvest.InvestFragment;
+import com.example.a1809fiannce.many.ManyFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
-import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.youth.banner.Banner;
-import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity2 extends AppCompatActivity {
     private CommonTabLayout tab;

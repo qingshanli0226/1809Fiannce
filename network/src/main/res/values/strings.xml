@@ -1,1 +1,14 @@
-<resources></resources>
+<resources>
+            <string name="welComeName">有道金融</string>
+            <string name="homeBuy">立即购买</string>
+            <string name="invest">投资</string>
+            <string name="many">更多</string>
+            <string name="myMoney">我的资产</string>
+            <string name="product">产品金额</string>
+            <string name="ten">10万</string>
+            <string name="year">预期年利润</string>
+            <string name="cash">本息保障</string>
+            <string name="lockup">锁定期</string>
+            <string name="date">30天</string>
+            <string name="del">删除</string>
+</resources>

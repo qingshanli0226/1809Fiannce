@@ -1,3 +1,5 @@
+include ':framwork'
+include ':farmwork'
 include ':formwork'
 include ':network'
 include ':pay'

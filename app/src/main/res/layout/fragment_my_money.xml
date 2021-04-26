@@ -4,16 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.MyMoneyFragment">
+    tools:context=".money.MyMoneyFragment">
 
-    <com.example.network.TobView
+    <com.example.framwork.view.TobView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
-        app:text="我的资产"
+        app:text="@string/myMoney"
         app:backgroundColor="#142732"
         app:textColor="#03A9F4"
         app:right_show="true"
         android:id="@+id/tob"
-        app:right_img="@mipmap/my_setting_icon"></com.example.network.TobView>
+        app:right_img="@mipmap/my_setting_icon"></com.example.framwork.view.TobView>
 
 </LinearLayout>

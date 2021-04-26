@@ -4,12 +4,12 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 
 public class TabCus implements CustomTabEntity {
     private String tit;
-    private int ICon;
+    private int Icon;
     private int UnIcon;
 
-    public TabCus(String tit, int ICon, int unIcon) {
+    public TabCus(String tit, int icon, int unIcon) {
         this.tit = tit;
-        this.ICon = ICon;
+        Icon = icon;
         UnIcon = unIcon;
     }
 
@@ -20,7 +20,7 @@ public class TabCus implements CustomTabEntity {
 
     @Override
     public int getTabSelectedIcon() {
-        return ICon;
+        return Icon;
     }
 
     @Override

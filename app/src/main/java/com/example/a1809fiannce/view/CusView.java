@@ -22,7 +22,7 @@ import com.example.a1809fiannce.R;
 public class CusView extends View {
     private Paint paint = new Paint();
     private int START_ANGLE=0;
-    private int START_ADD=1;
+    private int START_ADD=5;
     private int offprogress=0;
     private int progressangle;
     private int progress1;
@@ -142,5 +142,10 @@ public class CusView extends View {
         canvas.drawText(current,getMeasuredWidth()/2-rect.width()/2,getMeasuredHeight()/2+rect.height()/2,paint);
 
 
+    }
+    public void Destroy(){
+        if (handler!=null){
+            handler.removeCallbacksAndMessages(null);
+        }
     }
 }

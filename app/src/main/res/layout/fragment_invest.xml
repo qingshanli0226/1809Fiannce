@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".fragment.InvestFragment">
+    tools:context=".lnvest.InvestFragment">
 <!--    <androidx.appcompat.widget.Toolbar-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="50dp"-->
@@ -19,16 +19,16 @@
 <!--            android:textColor="#03A9F4"></TextView>-->
 
 <!--    </androidx.appcompat.widget.Toolbar>-->
-    <com.example.network.TobView
+    <com.example.framwork.view.TobView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
-        app:text="投资"
+        app:text="@string/invest"
         app:textColor="#03A9F4"
         app:backgroundColor="#142732"
         app:left_show="false"
         app:right_show="false"
         android:id="@+id/tob"
-        ></com.example.network.TobView>
+        ></com.example.framwork.view.TobView>
 <!--    <com.flyco.tablayout.CommonTabLayout-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="@dimen/dp_50"-->

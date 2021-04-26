@@ -2,12 +2,13 @@ package com.example.a1809fiannce.update;
 
 import android.util.Log;
 
-import com.example.a1809fiannce.CallBack;
-import com.example.formwork.RetrofitManager;
-import com.example.formwork.model.AllBean;
-import com.example.formwork.model.HomeBean;
-import com.example.formwork.model.UpdateBean;
-import com.example.network.BasePresenter;
+import com.example.a1809fiannce.welcome.CallBack;
+import com.example.framwork.base.BasePresenter;
+import com.example.network.retrofit.RetrofitManager;
+import com.example.network.model.AllBean;
+import com.example.network.model.HomeBean;
+import com.example.network.model.UpdateBean;
+
 
 import java.util.concurrent.TimeUnit;
 
