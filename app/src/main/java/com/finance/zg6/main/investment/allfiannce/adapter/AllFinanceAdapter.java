@@ -1,14 +1,10 @@
-package com.finance.zg6.mianInsideFragment.investment.allfiannce.adapter;
+package com.finance.zg6.main.investment.allfiannce.adapter;
 
-import android.os.Handler;
-import android.os.Message;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -18,16 +14,14 @@ import com.finance.zg.R;
 import com.finance.zg6.view.ProgressView;
 
 import java.util.List;
-import java.util.logging.LogRecord;
 
 public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, BaseViewHolder> {
 
     private float rawX;
     private int scrollDiffx;
-
-    private int position = 0;
-    private int lastPosition = -1;
-
+    private int LastPosition=-1;
+    private int VIEW_WIDTH = 200;
+    private boolean isOpen = true;
     public AllFinanceAdapter(@Nullable List<ProductBean.ResultBean> data) {
         super(R.layout.item_all_finance_layout, data);
     }
@@ -51,6 +45,12 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
         view6.startProgress(Integer.parseInt(item.getProgress()),false);
 
         helper.addOnClickListener(R.id.txt_delete);
+        helper.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               helper.itemView.scrollTo(0,0);
+            }
+        });
 
         helper.itemView.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -58,37 +58,63 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
 
                 switch (motionEvent.getAction()){
                     case MotionEvent.ACTION_DOWN:
+                        if (AllFinanceView!=null&&AllFinanceView!=helper.itemView){
+                            AllFinanceView.scrollTo(0,0);
+                        }
+
                         rawX = motionEvent.getRawX();
-                        helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                        helper.itemView.getParent().requestDisallowInterceptTouchEvent(false);
                         return true;
                     case MotionEvent.ACTION_MOVE:
                         if (rawX>500&&motionEvent.getRawX()<rawX){
                             helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
                             scrollDiffx = (int) -(motionEvent.getRawX()-rawX);
-                            helper.itemView.scrollTo(scrollDiffx,0);
+                            if (isOpen==false){
+                                helper.itemView.scrollTo(scrollDiffx+VIEW_WIDTH,0);
+                            }else {
+                                helper.itemView.scrollTo(scrollDiffx,0);
+                            }
+
+                            Log.i(TAG, "onTouch1: "+scrollDiffx);
+
                             break;
-                        }else {
-                            helper.itemView.scrollTo(0,0);
-                            helper.itemView.getParent().requestDisallowInterceptTouchEvent(false);
+                        }else if (rawX>500&&motionEvent.getRawX()>rawX){
+                            helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                            scrollDiffx = (int) -(motionEvent.getRawX()-rawX);
+                            helper.itemView.scrollTo(scrollDiffx+VIEW_WIDTH,0);
+                            Log.i(TAG, "onTouch: "+scrollDiffx);
+
                             break;
                         }
                     case MotionEvent.ACTION_UP:
-                        if (scrollDiffx>300){
+
+                        helper.itemView.getParent().requestDisallowInterceptTouchEvent(false);
+                        if (scrollDiffx>VIEW_WIDTH){
+                            AllFinanceView= helper.itemView;
+
+                            isOpen=false;
+                            helper.itemView.scrollTo(VIEW_WIDTH,0);
+                        }else if (scrollDiffx>0&&scrollDiffx<VIEW_WIDTH){
+                            if (isOpen){
+                                helper.itemView.scrollTo(0,0);
+                            }else {
+                                helper.itemView.scrollTo(VIEW_WIDTH,0);
+                            }
+                        }else if (scrollDiffx>-VIEW_WIDTH&&scrollDiffx<0){
                             helper.itemView.scrollTo(200,0);
-                        }else {
+                        }else if (scrollDiffx<-VIEW_WIDTH){
+                            AllFinanceView = null;
                             helper.itemView.scrollTo(0,0);
+                            isOpen = true;
                         }
                         break;
                 }
-                return true;
+                return false;
             }
         });
 
     }
 
-    @Override
-    public void onBindViewHolder(BaseViewHolder holder, int positions) {
-        super.onBindViewHolder(holder, positions);
+    private View AllFinanceView;
 
-    }
 }

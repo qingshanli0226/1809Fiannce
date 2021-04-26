@@ -1,4 +1,4 @@
-package com.finance.zg6.mianInsideFragment;
+package com.finance.zg6.main.home;
 
 import android.content.Context;
 import android.widget.ImageView;

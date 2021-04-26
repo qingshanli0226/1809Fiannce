@@ -1,4 +1,4 @@
-package com.finance.zg6.mianInsideFragment.investment.hotfinance;
+package com.finance.zg6.main.investment.hotfinance;
 
 import com.finance.framework.BaseFragment;
 import com.finance.zg.R;

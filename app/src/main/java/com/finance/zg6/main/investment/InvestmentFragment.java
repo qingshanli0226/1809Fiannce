@@ -1,13 +1,13 @@
-package com.finance.zg6.mianInsideFragment;
+package com.finance.zg6.main.investment;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.finance.framework.BaseFragment;
 import com.finance.zg.R;
-import com.finance.zg6.mianInsideFragment.investment.recommend.RecommendFinanceFragment;
-import com.finance.zg6.mianInsideFragment.investment.allfiannce.AllFinanceFragment;
-import com.finance.zg6.mianInsideFragment.investment.hotfinance.HotFinanceFragment;
+import com.finance.zg6.main.investment.recommend.RecommendFinanceFragment;
+import com.finance.zg6.main.investment.allfiannce.AllFinanceFragment;
+import com.finance.zg6.main.investment.hotfinance.HotFinanceFragment;
 import com.flyco.tablayout.SlidingTabLayout;
 
 import java.util.ArrayList;

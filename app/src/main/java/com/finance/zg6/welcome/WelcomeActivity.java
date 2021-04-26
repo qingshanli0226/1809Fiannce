@@ -1,12 +1,10 @@
 package com.finance.zg6.welcome;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
@@ -21,7 +19,7 @@ import com.finance.framework.manager.CacheManager;
 import com.finance.net.bean.HomeBean;
 import com.finance.net.bean.VersionBean;
 import com.finance.zg.R;
-import com.finance.zg6.MainActivity;
+import com.finance.zg6.main.MainActivity;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 

@@ -1,4 +1,4 @@
-package com.finance.zg6;
+package com.finance.zg6.main;
 
 
 import android.view.KeyEvent;
@@ -13,10 +13,10 @@ import com.finance.framework.BaseActivity;
 import com.finance.framework.manager.CacheManager;
 import com.finance.net.bean.HomeBean;
 import com.finance.zg.R;
-import com.finance.zg6.mianInsideFragment.HomeFragment;
-import com.finance.zg6.mianInsideFragment.InvestmentFragment;
-import com.finance.zg6.mianInsideFragment.MoreFragment;
-import com.finance.zg6.mianInsideFragment.MyAssetsFragment;
+import com.finance.zg6.main.home.HomeFragment;
+import com.finance.zg6.main.investment.InvestmentFragment;
+import com.finance.zg6.main.more.MoreFragment;
+import com.finance.zg6.main.myassets.MyAssetsFragment;
 import com.finance.zg6.bean.CustomBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;

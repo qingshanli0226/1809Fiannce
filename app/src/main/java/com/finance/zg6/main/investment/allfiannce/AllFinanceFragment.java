@@ -1,7 +1,6 @@
-package com.finance.zg6.mianInsideFragment.investment.allfiannce;
+package com.finance.zg6.main.investment.allfiannce;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +12,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.finance.framework.BaseFragment;
 import com.finance.net.bean.ProductBean;
 import com.finance.zg.R;
-import com.finance.zg6.mianInsideFragment.investment.allfiannce.adapter.AllFinanceAdapter;
+import com.finance.zg6.main.investment.allfiannce.adapter.AllFinanceAdapter;
 
 
 public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implements IAllFinanceView {
@@ -60,7 +59,7 @@ public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implem
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 if (view.getId() == R.id.txt_delete){
                     allFinanceAdapter.getData().remove(position);
-                    allFinanceAdapter.notifyDataSetChanged();
+                    allFinanceAdapter.notifyItemRemoved(position);
                 }
             }
         });

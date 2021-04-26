@@ -1,4 +1,4 @@
-package com.finance.zg6.mianInsideFragment.investment.allfiannce;
+package com.finance.zg6.main.investment.allfiannce;
 
 import com.finance.framework.BasePresenter;
 import com.finance.net.bean.ProductBean;

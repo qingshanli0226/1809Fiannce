@@ -1,4 +1,4 @@
-package com.finance.zg6;
+package com.finance.zg6.config;
 
 import android.app.Application;
 

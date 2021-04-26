@@ -1,16 +1,18 @@
-package com.finance.zg6.mianInsideFragment;
+package com.finance.zg6.main.more;
 
+import android.content.Intent;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.finance.framework.BaseFragment;
+import com.finance.user.UserActivity;
 import com.finance.zg.R;
 
 
 public class MoreFragment extends BaseFragment {
 
 
-    private RelativeLayout iconMoreRegist;
+    private RelativeLayout iconMoreRegister;
     private RelativeLayout iconMoreSecret;
     private ImageView toggleOff;
     private RelativeLayout iconMoreReset;
@@ -31,13 +33,17 @@ public class MoreFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+        iconMoreRegister.setOnClickListener(v->{
+            Intent intent = new Intent(getContext(), UserActivity.class);
+            startActivity(intent);
+        });
 
     }
 
     @Override
     protected void initView() {
 
-        iconMoreRegist = (RelativeLayout) mView.findViewById(R.id.iconMoreRegist);
+        iconMoreRegister = (RelativeLayout) mView.findViewById(R.id.iconMoreRegister);
         iconMoreSecret = (RelativeLayout) mView.findViewById(R.id.iconMoreSecret);
         toggleOff = (ImageView) mView.findViewById(R.id.toggleOff);
         iconMoreReset = (RelativeLayout) mView.findViewById(R.id.iconMoreReset);

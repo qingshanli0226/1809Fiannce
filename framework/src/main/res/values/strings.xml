@@ -52,7 +52,7 @@
     <string name="my_asset_manage">资产管理</string>
 
     <string name="more_tel">010-56253825</string>
-    <string name="icon_more_regist">用户注册</string>
+    <string name="icon_more_register">用户注册</string>
     <string name="icon_more_secret">手势密码</string>
     <string name="icon_more_reset">重置手势密码</string>
     <string name="icon_more_contact">联系客服</string>

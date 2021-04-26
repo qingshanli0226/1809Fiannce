@@ -1,4 +1,4 @@
-package com.finance.zg6.mianInsideFragment.investment.recommend;
+package com.finance.zg6.main.investment.recommend;
 
 import android.os.Bundle;
 

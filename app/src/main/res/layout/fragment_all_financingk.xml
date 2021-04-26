@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.finance.zg6.mianInsideFragment.investment.allfiannce.AllFinanceFragment">
+    tools:context="com.finance.zg6.main.investment.allfiannce.AllFinanceFragment">
 
     <com.finance.zg6.view.horseRaceLampView
         android:layout_width="match_parent"

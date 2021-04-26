@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context="com.finance.zg6.mianInsideFragment.MoreFragment">
+    tools:context="com.finance.zg6.main.more.MoreFragment">
     <com.finance.framework.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/ToolBar_height"
@@ -18,20 +18,20 @@
         android:layout_height="@dimen/more_RelativeLayout_height"
         android:layout_marginLeft="@dimen/margin"
         android:layout_marginRight="@dimen/margin"
-        android:id="@+id/iconMoreRegist">
+        android:id="@+id/iconMoreRegister">
         <ImageView
             android:layout_width="@dimen/more_img_width"
             android:layout_height="@dimen/more_img_height"
             android:src="@drawable/icon_more_regist"
             android:layout_centerVertical="true"
-            android:id="@+id/icon_more_regist"></ImageView>
+            android:id="@+id/icon_more_register"></ImageView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/more_text_size"
-            android:text="@string/icon_more_regist"
+            android:text="@string/icon_more_register"
             android:textColor="@color/gray_blue"
-            android:layout_toRightOf="@+id/icon_more_regist"
+            android:layout_toRightOf="@+id/icon_more_register"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/margin"></TextView>
     </RelativeLayout>
@@ -174,7 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/more_text_size"
-            android:text="@string/icon_more_regist"
+            android:text="@string/icon_more_share"
             android:textColor="@color/gray_blue"
             android:layout_toRightOf="@+id/icon_more_share"
             android:layout_centerVertical="true"

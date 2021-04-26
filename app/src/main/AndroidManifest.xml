@@ -2,18 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.finance.zg">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.finance.zg6.FinanceApplication"
-        android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true"
+        android:name="com.finance.zg6.config.FinanceApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Zg">
+        android:theme="@style/Theme.Zg"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.finance.zg6.main.more.userRegister.UserRegisterActivity"></activity>
         <activity android:name="com.finance.zg6.welcome.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.finance.zg6.MainActivity">
-
-        </activity>
+        <activity android:name="com.finance.zg6.main.MainActivity"></activity>
     </application>
 
 </manifest>
