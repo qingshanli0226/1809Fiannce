@@ -1,7 +1,13 @@
 package com.finance.zg6.mianInsideFragment.investment.allfiannce.adapter;
 
+import android.os.Handler;
+import android.os.Message;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -11,8 +17,15 @@ import com.finance.zg.R;
 import com.finance.zg6.view.ProgressView;
 
 import java.util.List;
+import java.util.logging.LogRecord;
 
 public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, BaseViewHolder> {
+
+    private float rawX;
+    private int scrollDiffx;
+
+    private int position = 0;
+    private int lastPosition = -1;
 
     public AllFinanceAdapter(@Nullable List<ProductBean.ResultBean> data) {
         super(R.layout.item_all_finance_layout, data);
@@ -36,7 +49,44 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
         view5.setText(""+item.getMemberNum());
         view6.startProgress(Integer.parseInt(item.getProgress()),false);
 
-        helper.addOnClickListener(R.id.txt_delete);
+        helper.itemView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()){
+
+                    case MotionEvent.ACTION_DOWN:
+                        rawX = motionEvent.getRawX();
+                        helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                        return true;
+
+                    case MotionEvent.ACTION_MOVE:
+                        if (rawX>500&&motionEvent.getRawX()<rawX){
+                            helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                            scrollDiffx = (int) -(motionEvent.getRawX()-rawX);
+                            helper.itemView.scrollTo(scrollDiffx,0);
+                            break;
+                        }else {
+                            helper.itemView.getParent().requestDisallowInterceptTouchEvent(false);
+                            break;
+                        }
+                    case MotionEvent.ACTION_UP:
+                        if (scrollDiffx>500 ){
+                            helper.itemView.scrollTo(200,0);
+                        }else {
+                            helper.itemView.scrollTo(0,0);
+                        }
+                        break;
+                }
+                return true;
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onBindViewHolder(BaseViewHolder holder, int positions) {
+        super.onBindViewHolder(holder, positions);
 
     }
 }

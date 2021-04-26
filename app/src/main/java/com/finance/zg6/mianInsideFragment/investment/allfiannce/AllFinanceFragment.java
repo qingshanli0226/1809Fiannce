@@ -57,18 +57,6 @@ public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implem
         allFinanceRv.setLayoutManager(new LinearLayoutManager(getContext()));
         allFinanceRv.setAdapter(allFinanceAdapter);
 
-        allFinanceAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                if (view.getId()==R.id.txt_delete){
-                    allFinanceAdapter.remove(position);
-                    allFinanceAdapter.notifyDataSetChanged();
-                    slideRecyclerView.closeMenu();
-                }
-            }
-        });
-
-
     }
 
     @Override

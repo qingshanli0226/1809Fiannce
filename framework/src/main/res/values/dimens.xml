@@ -53,4 +53,5 @@
     <dimen name="more_RelativeLayout_height">70dp</dimen>
 
     <dimen name="layout_width">150dp</dimen>
+    <dimen name="all_finance_del_bt">50dp</dimen>
 </resources>
