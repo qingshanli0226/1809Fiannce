@@ -22,4 +22,11 @@
     <string name="expected_annual_interest_rate_1">预期年利率：</string>
     <string name="join">立即加入</string>
     <string name="bank">风险保障金由有道银行监管</string>
+    <string name="banben_info">获取到版本信息：</string>
+    <string name="miao">秒</string>
+    <string name="new_banben">下载最新版本</string>
+    <string name="bug">解决一些bug,优化网络请求</string>
+    <string name="sure">确定</string>
+    <string name="cancle">取消</string>
+    <string name="main_mainActivity">/main/MainActivity</string>
 </resources>

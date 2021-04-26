@@ -47,7 +47,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         coundDownTv = findViewById(R.id.countDownTv);
 
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
-        coundDownTv.setText(countDown + "秒");
+        coundDownTv.setText(countDown + getString(R.string.miao));
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
@@ -71,7 +71,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onVersionData(VersionBean versionBean) {
-        Toast.makeText(this, "获取到版本信息：" + versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.banben_info) + versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
         versionFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
     }
@@ -100,10 +100,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 case DELAY_INDEX:
                     countDown--;
                     if (countDown > 0){
-                        coundDownTv.setText(countDown + "秒");
+                        coundDownTv.setText(countDown + getString(R.string.miao));
                         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
                     }else {
-                        coundDownTv.setText(countDown + "秒");
+                        coundDownTv.setText(countDown + getString(R.string.miao));
                         advertistFinsh = true;
                         handler.sendEmptyMessage(ONE_TASK_FIISH);
                     }
@@ -116,19 +116,19 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 case ALL_TASK_FIISH:
                     AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
 
-                    builder.setTitle("更新");
-                    builder.setMessage("是否更新?");
-                    builder.setPositiveButton ("确定", new DialogInterface.OnClickListener () {
+                    builder.setTitle(getString(R.string.new_banben));
+                    builder.setMessage(getString(R.string.bug));
+                    builder.setPositiveButton (getString(R.string.sure), new DialogInterface.OnClickListener () {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
 
                         }
                     });
 
-                    builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    builder.setNegativeButton(getString(R.string.cancle), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            ARouter.getInstance().build("/main/MainActivity").navigation();
+                            ARouter.getInstance().build(getString(R.string.main_mainActivity)).navigation();
                             finish();
                         }
                     });
