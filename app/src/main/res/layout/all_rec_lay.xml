@@ -217,9 +217,11 @@
         android:layout_width="80dp"
         android:layout_height="match_parent">
 
-        <com.example.framework.myview.SlidingDelete
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"></com.example.framework.myview.SlidingDelete>
+            android:id="@+id/del"
+            android:text="删除"
+            android:layout_height="match_parent"></Button>
     </LinearLayout>
+
 </LinearLayout>
