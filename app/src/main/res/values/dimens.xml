@@ -15,5 +15,6 @@
     <dimen name="five">5dp</dimen>
     <dimen name="one_threetyfive">135dp</dimen>
     <dimen name="three_fivety">350dp</dimen>
+    <dimen name="engity">80dp</dimen>
 
 </resources>

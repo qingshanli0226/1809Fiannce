@@ -10,7 +10,7 @@
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="@dimen/vp_name"
         android:id="@+id/vp"></androidx.viewpager.widget.ViewPager>
 
     <com.google.android.material.tabs.TabLayout

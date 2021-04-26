@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment.threeFragment">
+    tools:context=".Fragment.MineFragment">
     <com.fiance.framework.MyView.ToolBar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         app:rightIsShow="true"
         app:leftIsShow="false"
         app:titleText="我的资产"
-        android:layout_height="60dp">
+        android:layout_height="@dimen/sixty">
     </com.fiance.framework.MyView.ToolBar>
 
 

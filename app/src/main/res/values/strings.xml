@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">chengtianle</string>
+    <string name="activity_home">首页</string>
+    <string name="activity_invest">投资</string>
+    <string name="activity_mine">我的资产</string>
+    <string name="activity_more">更多</string>
+    <string name="all_name">全部理财</string>
+    <string name="recommed_name">推荐理财</string>
+    <string name="hot_name">热门理财</string>
+    <string name="Youdao_financial">有道金融</string>
+    <string name="dangqian_banben">当前版本:1.0</string>
+    <string name="product_money">产品金额</string>
+    <string name="wan">万</string>
+    <string name="expected_annual_interest_rate">预期年利率</string>
+    <string name="percentage">%</string>
+    <string name="principal_and_interest_security">本息保障</string>
+    <string name="lockup_period">锁定期</string>
+    <string name="day">天</string>
+    <string name="marquee">有道金融壕运当头，首投返现最高达188元</string>
+    <string name="the_daily_rate">每日计息</string>
+    <string name="high_yield">高额收益</string>
+    <string name="expected_annual_interest_rate_1">预期年利率：</string>
+    <string name="join">立即加入</string>
+    <string name="bank">风险保障金由有道银行监管</string>
+    <string name="banben_info">获取到版本信息：</string>
+    <string name="miao">秒</string>
+    <string name="new_banben">下载最新版本</string>
+    <string name="bug">解决一些bug,优化网络请求</string>
+    <string name="sure">确定</string>
+    <string name="cancle">取消</string>
 </resources>

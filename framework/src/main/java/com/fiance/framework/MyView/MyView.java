@@ -100,7 +100,7 @@ public class MyView extends View {
          int centerX=progressViewWidth/2;
          int centerY=progressViewHeight/2;
 
-         int radius=(progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN;
+         int radius=((progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN)-5;
          paint.setColor(Color.BLACK);
          paint.setAntiAlias(true);
          paint.setStrokeWidth(circleWith);
@@ -108,7 +108,7 @@ public class MyView extends View {
          canvas.drawCircle(centerX,centerY,radius,paint);
 
         RectF rectF = new RectF(progressViewWidth/2-radius,progressViewHeight/2-radius,progressViewWidth/2+radius,progressViewHeight/2+radius);
-        paint.setColor(Color.RED);
+        paint.setColor(Color.BLUE);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);
         paint.setStyle(Paint.Style.STROKE);
@@ -120,6 +120,7 @@ public class MyView extends View {
         paint.setTextSize(50);
         paint.setColor(Color.BLUE);
         paint.setStrokeWidth(2);
+        paint.setStyle(Paint.Style.FILL);
         String content=(progressAngle*100)/360+"%";
         paint.getTextBounds(content,0,content.length(),rect);
         canvas.drawText(content,progressViewWidth/2-rect.width()/2,progressViewHeight/2+rect.height()/2,paint);

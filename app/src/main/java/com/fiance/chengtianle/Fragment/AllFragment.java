@@ -1,11 +1,15 @@
 package com.fiance.chengtianle.Fragment;
 
 import android.os.PowerManager;
+import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.fiance.chengtianle.Adapter.MyAdapter;
 import com.fiance.chengtianle.LiCai.ILiCaiView;
 import com.fiance.chengtianle.LiCai.LiCaiPresenter;
@@ -46,7 +50,6 @@ public class AllFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiV
     @Override
     protected void initData() {
         showLoading();
-
         liCaiPresenter.getLiCaiData1();
     }
 
@@ -56,6 +59,18 @@ public class AllFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiV
          myAdapter = new MyAdapter(R.layout.lc_layout, list);
         rv.setAdapter(myAdapter);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        myAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+                switch (view.getId()){
+                    case R.id.btn:
+                        list.remove(position);
+                        myAdapter.notifyItemRemoved(position);
+                        break;
+                }
+
+            }
+        });
 
     }
 

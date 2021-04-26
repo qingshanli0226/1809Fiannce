@@ -33,7 +33,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
-        contentTv.setText(homeBean.toString());
+//        contentTv.setText(homeBean.toString());
         loadingPage.showSuccessView();
         homeFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
@@ -65,7 +65,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initView() {
-        contentTv = findViewById(R.id.contentTv);
+        contentTv = findViewById(R.id.countDownTv);
         progressBar = findViewById(R.id.progressBar);
         coundDownTv = findViewById(R.id.countDownTv);
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
@@ -75,7 +75,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void showLoading() {
       progressBar.setVisibility(View.VISIBLE);
-        loadingPage.showTransparentLoadingView();
+//        loadingPage.showTransparentLoadingView();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void showError(String error) {
-        loadingPage.showTransparentLoadingView();
+//        loadingPage.showTransparentLoadingView();
 
     }
 

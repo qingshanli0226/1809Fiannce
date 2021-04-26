@@ -12,7 +12,7 @@
         app:rightIsShow="true"
         app:leftIsShow="false"
         app:titleText="投资"
-        android:layout_height="60dp">
+        android:layout_height="@dimen/sixty">
     </com.fiance.framework.MyView.ToolBar>
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
