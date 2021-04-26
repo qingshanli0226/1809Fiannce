@@ -1,4 +1,4 @@
-package com.example.a1809zg;
+package com.example.a1809zg.fragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,11 +8,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
-public class Adapter extends FragmentPagerAdapter {
+public class FragPageAdapter extends FragmentPagerAdapter {
    private List<Fragment> list;
    private List<String> data;
 
-    public Adapter(@NonNull FragmentManager fm, List<Fragment> list, List<String> data) {
+    public FragPageAdapter(@NonNull FragmentManager fm, List<Fragment> list, List<String> data) {
         super(fm);
         this.list = list;
         this.data = data;

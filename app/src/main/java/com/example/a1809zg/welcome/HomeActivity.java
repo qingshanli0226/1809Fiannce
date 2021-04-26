@@ -2,29 +2,24 @@ package com.example.a1809zg.welcome;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.View;
 import android.widget.Toast;
 
-import com.example.a1809zg.CustomBean;
 import com.example.a1809zg.MainActivity;
 import com.example.a1809zg.R;
 import com.example.frame.BaseActivity;
 import com.example.frame.CacheMore;
 import com.example.net.bean.HomeBean;
-import com.example.net.bean.ProductBean;
 import com.example.net.bean.UpdataBean;
 
-public class MainActivity2 extends BaseActivity<Ipresenter> implements Iview {
-private Ipresenter ipresenter;
+public class HomeActivity extends BaseActivity<HomePresenter> implements IHomeView {
+private HomePresenter homePresenter;
     private android.widget.TextView miao;
     private android.widget.ProgressBar progressBar;
     private final int ONE_TASK=0;
@@ -36,6 +31,7 @@ private Ipresenter ipresenter;
     private boolean AddFinsh=false;
     private int count=3;
     private UpdataBean bean;
+
     private Handler handler=new Handler(){
         @Override
         public void dispatchMessage(@NonNull Message msg) {
@@ -59,7 +55,7 @@ private Ipresenter ipresenter;
                     break;
                 case ALL_TASK:
 
-                    Toast.makeText(MainActivity2.this, "1231231", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "1231231", Toast.LENGTH_SHORT).show();
                     all();
                     break;
             }
@@ -70,6 +66,7 @@ private Ipresenter ipresenter;
         HomeFinsh = true;
         handler.sendEmptyMessage(ONE_TASK);
         CacheMore.getInstance().setHomeBean(homeBean);
+
     }
 
     @Override
@@ -89,13 +86,13 @@ private Ipresenter ipresenter;
 
     @Override
     protected void initPresenter() {
-         ipresenter = new Ipresenter(this);
+         homePresenter = new HomePresenter(this);
     }
 
     @Override
     protected void initData() {
-         ipresenter.getHomeData();
-         ipresenter.getVersionData();
+         homePresenter.getHomeData();
+         homePresenter.getVersionData();
          handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
     }
 
@@ -129,19 +126,19 @@ private Ipresenter ipresenter;
                 double ver = Double.parseDouble(version);
                 Double a = a();
                 if (ver>a){
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity2.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
                     builder.setTitle("版本更新");
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            startActivity(new Intent(MainActivity2.this,MainActivity.class));
+                            startActivity(new Intent(HomeActivity.this,MainActivity.class));
                             dialog.dismiss();
                         }
                     });
                     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            startActivity(new Intent(MainActivity2.this, MainActivity.class));
+                            startActivity(new Intent(HomeActivity.this, MainActivity.class));
                             dialog.dismiss();
                         }
                     });

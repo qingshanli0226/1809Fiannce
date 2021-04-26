@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".welcome.MainActivity2"
+    tools:context=".welcome.HomeActivity"
     android:orientation="vertical"
     >
 
@@ -11,13 +11,13 @@
         android:text="3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="@dimen/dp_30"
         android:gravity="right"
         android:id="@+id/contentTv"/>
 
     <ProgressBar
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
         android:id="@+id/progressBar"
         android:layout_centerInParent="true"
         android:visibility="gone"/>

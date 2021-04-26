@@ -1,8 +1,7 @@
 package com.example.a1809zg.welcome;
 
-import com.example.frame.Basepresenter;
-import com.example.net.Api;
-import com.example.net.RetrofitMana;
+import com.example.frame.BasePresenter;
+import com.example.net.RetrofitManager;
 import com.example.net.bean.HomeBean;
 
 import java.util.concurrent.TimeUnit;
@@ -15,12 +14,12 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class Welpresenter extends Basepresenter<Iview> {
-    public Welpresenter(Iview iview) {
-        attachView(iview);
+public class Welpresenter extends BasePresenter<IHomeView> {
+    public Welpresenter(IHomeView IHomeView) {
+        attachView(IHomeView);
     }
     public void onMain(){
-        RetrofitMana.getApi()
+        RetrofitManager.getApi()
                 .getHomeData()
                 .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())

@@ -12,10 +12,10 @@ import com.example.a1809zg.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BlankFragment3#newInstance} factory method to
+ * Use the {@link MineFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BlankFragment3 extends Fragment {
+public class MineFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class BlankFragment3 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BlankFragment3() {
+    public MineFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class BlankFragment3 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HotFragment3.
+     * @return A new instance of fragment HotFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BlankFragment3 newInstance(String param1, String param2) {
-        BlankFragment3 fragment = new BlankFragment3();
+    public static MineFragment newInstance(String param1, String param2) {
+        MineFragment fragment = new MineFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

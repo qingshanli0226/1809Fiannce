@@ -1,7 +1,7 @@
-package com.example.a1809zg.infragment;
+package com.example.a1809zg.inverstment;
 
-import com.example.frame.Basepresenter;
-import com.example.net.Retrofitmanager;
+import com.example.frame.BasePresenter;
+import com.example.net.RetrofitManager;
 import com.example.net.bean.ProductBean;
 
 import java.util.concurrent.TimeUnit;
@@ -14,13 +14,13 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class Fragpresenter extends Basepresenter<FragView> {
-    public Fragpresenter(FragView fragView) {
-        attachView(fragView);
+public class AllPresenter extends BasePresenter<IFragView> {
+    public AllPresenter(IFragView IFragView) {
+        attachView(IFragView);
 
     }
     public void ProDuctData() {
-        Retrofitmanager.getApi()
+        RetrofitManager.getApi()
                 .getProductData()
                 .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())

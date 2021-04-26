@@ -7,9 +7,9 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.a1809zg.myview.MyView;
 import com.example.a1809zg.R;
-import com.example.a1809zg.welcome.Ipresenter;
-import com.example.a1809zg.welcome.Iview;
-import com.example.frame.Basefragment;
+import com.example.a1809zg.welcome.HomePresenter;
+import com.example.a1809zg.welcome.IHomeView;
+import com.example.frame.BaseFragment;
 import com.example.frame.CacheMore;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.UpdataBean;
@@ -20,7 +20,7 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.List;
 
 
-public class BlankFragment extends Basefragment<Ipresenter> implements Iview {
+public class HomeFragment extends BaseFragment<HomePresenter> implements IHomeView {
 
     private Banner ban;
     private MyView view;
@@ -57,7 +57,7 @@ public class BlankFragment extends Basefragment<Ipresenter> implements Iview {
     protected void initData() {
         HomeBean homeBean = CacheMore.getInstance().getHomeBean();
         HomeBean.ResultBean result = homeBean.getResult();
-        if (BuildConfig.DEBUG) Log.d("MoneyFragment", "homeBean:" + homeBean);
+        if (BuildConfig.DEBUG) Log.d("AllFragment", "homeBean:" + homeBean);
         List<HomeBean.ResultBean.ImageArrBean> imageArr = result.getImageArr();
         ban.setImages(imageArr);
         ban.setImageLoader(new ImageLoader() {

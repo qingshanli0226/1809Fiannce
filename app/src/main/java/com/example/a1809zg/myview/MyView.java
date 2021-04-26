@@ -20,57 +20,59 @@ import com.example.a1809zg.R;
 
 public class MyView extends View {
     private Paint paint;
-    private final int START_ANGLE=0;//这是从3点钟方向开始画扇形
-    private final int STEP_ANGLE=1;//这是每次一度的加扇形大小
+    private final int START_ANGLE = 0;//这是从3点钟方向开始画扇形
+    private final int STEP_ANGLE = 1;//这是每次一度的加扇形大小
     private int offsetAngle;//绘制扇形的角度.该大小根据理财产品销售的百分比进度计算出来的
-    private int progressAngle=0;//绘制的角度
+    private int progressAngle = 0;//绘制的角度
     private int color;
     private int index;
     private int measuredWidth;
     private int measuredHeight;
+
     public MyView(Context context) {
 
-        this(context,null);
+        this(context, null);
     }
 
     public MyView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public MyView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs,defStyleAttr);
+        init(context, attrs, defStyleAttr);
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
-         paint = new Paint();
+        paint = new Paint();
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
-         color = typedArray.getColor(R.styleable.ProgressView_textColor, Color.BLACK);
-         index = typedArray.getInt(R.styleable.ProgressView_circleWith,5);
-         typedArray.recycle();
+        color = typedArray.getColor(R.styleable.ProgressView_textColor, Color.BLACK);
+        index = typedArray.getInt(R.styleable.ProgressView_circleWith, 5);
+        typedArray.recycle();
 
     }
-    public void saprogress(int progress,boolean isAnimal){
-        offsetAngle=(progress*360)/100;
-        if (isAnimal){
-            progressAngle=0;
-        }else {
-            progressAngle=offsetAngle;
+
+    public void saprogress(int progress, boolean isAnimal) {
+        offsetAngle = (progress * 360) / 100;
+        if (isAnimal) {
+            progressAngle = 0;
+        } else {
+            progressAngle = offsetAngle;
         }
-        if (progressAngle<=offsetAngle){
+        if (progressAngle <= offsetAngle) {
             invalidate();
-            handler.sendEmptyMessageDelayed(1,10);
+            handler.sendEmptyMessageDelayed(1, 10);
         }
     }
 
-    private Handler handler=new Handler(){
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
-            progressAngle=progressAngle+STEP_ANGLE;
-            if (progressAngle<=offsetAngle){
+            progressAngle = progressAngle + STEP_ANGLE;
+            if (progressAngle <= offsetAngle) {
                 invalidate();//重新绘制
-                handler.sendEmptyMessageDelayed(1,10);
+                handler.sendEmptyMessageDelayed(1, 10);
             }
 
         }
@@ -78,13 +80,14 @@ public class MyView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        event.getY();event.getRawY();
-        event.getX();event.getX();
+        event.getY();
+        event.getRawY();
+        event.getX();
+        event.getX();
         return super.onTouchEvent(event);
 
 
     }
-
 
 
     @Override
@@ -93,6 +96,7 @@ public class MyView extends View {
 
 
     }
+
     public void setColor(int color) {
         this.color = color;
         invalidate();
@@ -108,32 +112,32 @@ public class MyView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int widthmode = MeasureSpec.getMode(widthMeasureSpec);
         int heightmode = MeasureSpec.getMode(heightMeasureSpec);
-        if (widthmode==MeasureSpec.AT_MOST){
-            measuredWidth=200;
-        }else {
-            measuredWidth=MeasureSpec.getSize(widthMeasureSpec);
+        if (widthmode == MeasureSpec.AT_MOST) {
+            measuredWidth = 200;
+        } else {
+            measuredWidth = MeasureSpec.getSize(widthMeasureSpec);
         }
-        if (heightmode==MeasureSpec.AT_MOST){
-            measuredHeight=200;
-        }else {
-            measuredHeight=MeasureSpec.getSize(heightMeasureSpec);
+        if (heightmode == MeasureSpec.AT_MOST) {
+            measuredHeight = 200;
+        } else {
+            measuredHeight = MeasureSpec.getSize(heightMeasureSpec);
         }
-        setMeasuredDimension(measuredWidth,measuredHeight);
+        setMeasuredDimension(measuredWidth, measuredHeight);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-         measuredWidth = getMeasuredWidth();
-         measuredHeight = getMeasuredHeight();
-        int centerX=measuredWidth/2;
-        int centerY=measuredHeight/2;
-        int radius=(measuredWidth<measuredHeight?measuredWidth/2:measuredHeight/2)-30;
+        measuredWidth = getMeasuredWidth();
+        measuredHeight = getMeasuredHeight();
+        int centerX = measuredWidth / 2;
+        int centerY = measuredHeight / 2;
+        int radius = (measuredWidth < measuredHeight ? measuredWidth / 2 : measuredHeight / 2) - 30;
         paint.setColor(Color.GRAY);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(index);
         paint.setStyle(Paint.Style.STROKE);
-        canvas.drawCircle(centerX,centerY,radius,paint);
+        canvas.drawCircle(centerX, centerY, radius, paint);
 
 
         RectF rectF = new RectF(measuredWidth / 2 - radius, measuredHeight / 2 - radius, measuredWidth / 2 + radius, measuredHeight / 2 + radius);
@@ -141,19 +145,19 @@ public class MyView extends View {
         paint.setAntiAlias(true);
         paint.setStrokeWidth(index);
         paint.setStyle(Paint.Style.STROKE);
-        canvas.drawArc(rectF,START_ANGLE,progressAngle,false,paint);
-
+        canvas.drawArc(rectF, START_ANGLE, progressAngle, false, paint);
 
 
         Rect rect = new Rect();
         paint.setColor(Color.BLACK);
         paint.setTextSize(30);
         paint.setStrokeWidth(2);
-        String content=(progressAngle*100)/360+"%";
-        paint.getTextBounds(content,0,content.length(),rect);
-        canvas.drawText(content,measuredWidth/2-rect.width()/2,(measuredHeight/2)+rect.height()/2,paint);
+        String content = (progressAngle * 100) / 360 + "%";
+        paint.getTextBounds(content, 0, content.length(), rect);
+        canvas.drawText(content, measuredWidth / 2 - rect.width() / 2, (measuredHeight / 2) + rect.height() / 2, paint);
     }
-    public void destry(){
+
+    public void destry() {
         handler.removeCallbacksAndMessages(null);
     }
 

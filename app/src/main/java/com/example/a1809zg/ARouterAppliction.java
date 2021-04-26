@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
-public class App extends Application {
+public class ARouterAppliction extends Application {
     @Override
     public void onCreate() {
         super.onCreate();

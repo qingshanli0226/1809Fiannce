@@ -1,21 +1,25 @@
-package com.example.a1809zg.infragment;
+package com.example.a1809zg.inverstment;
 
+import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.a1809zg.R;
-import com.example.frame.Basefragment;
+import com.example.frame.BaseFragment;
 import com.example.net.bean.ProductBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MoneyFragment extends Basefragment<Fragpresenter> implements FragView {
-    protected Fragpresenter fragpresenter;
+public class AllFragment extends BaseFragment<AllPresenter> implements IFragView {
+    protected AllPresenter allPresenter;
 
-    private Fragadpter fragadpter;
+    private AllAdapter allAdapter;
     private List<ProductBean.ResultBean> list = new ArrayList<>();
     private RecyclerView rv;
 
@@ -25,7 +29,7 @@ public class MoneyFragment extends Basefragment<Fragpresenter> implements FragVi
         Toast.makeText(getContext(), "111productBean.getResult():" + productBean.getResult().toString(), Toast.LENGTH_SHORT).show();
         List<ProductBean.ResultBean> result = productBean.getResult();
         list.addAll(result);
-        fragadpter.notifyDataSetChanged();
+        allAdapter.notifyDataSetChanged();
 
 
     }
@@ -37,12 +41,19 @@ public class MoneyFragment extends Basefragment<Fragpresenter> implements FragVi
 
     @Override
     protected void initView() {
-        fragadpter = new Fragadpter(list);
+        allAdapter = new AllAdapter(list);
         rv = findViewById(R.id.rv);
 
-       rv.setAdapter(fragadpter);
+       rv.setAdapter(allAdapter);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+//        allAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+//            @Override
+//            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+//                list.remove(position);
+//                allAdapter.notifyItemRemoved(position);
+//            }
+//        });
 
     }
 
@@ -53,8 +64,8 @@ public class MoneyFragment extends Basefragment<Fragpresenter> implements FragVi
 
     @Override
     protected void initData() {
-        fragpresenter = new Fragpresenter(this);
-        fragpresenter.ProDuctData();
+        allPresenter = new AllPresenter(this);
+        allPresenter.ProDuctData();
     }
 
     @Override

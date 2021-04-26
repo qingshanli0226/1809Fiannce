@@ -9,9 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public abstract class Basefragment<P extends Basepresenter> extends Fragment {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     protected P mPresenter;
     protected LoadingPage loadingPage;
+    protected MyToolbar myToolbar;
     private View mView;
     @Nullable
     @Override

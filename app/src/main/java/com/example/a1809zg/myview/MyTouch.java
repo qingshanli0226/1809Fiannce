@@ -4,19 +4,18 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.RelativeLayout;
 
-public class Touch extends RelativeLayout {
-    public Touch(Context context) {
+public class MyTouch extends RelativeLayout {
+    public MyTouch(Context context) {
         this(context,null);
     }
 
-    public Touch(Context context, AttributeSet attrs) {
+    public MyTouch(Context context, AttributeSet attrs) {
         this(context, attrs,0);
     }
 
-    public Touch(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MyTouch(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context,attrs,defStyleAttr);
     }
@@ -29,13 +28,13 @@ public class Touch extends RelativeLayout {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()){
             case MotionEvent.ACTION_DOWN:
-               Log.d("Touch", "按下");
+               Log.d("MyTouch", "按下");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.d("Touch", "移动");
+                Log.d("MyTouch", "移动");
                 break;
             case MotionEvent.ACTION_UP:
-                Log.d("Touch", "抬起");
+                Log.d("MyTouch", "抬起");
                 break;
         }
         return super.dispatchTouchEvent(ev);

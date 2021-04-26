@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text"
-            android:textSize="23dp"></TextView>
+            android:textSize="@dimen/dp_20"></TextView>
 
 
         <LinearLayout
@@ -41,21 +41,21 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="产品金额"></TextView>
+                            android:text="@string/text3"></TextView>
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="预期年利率"></TextView>
+                            android:text="@string/text2"></TextView>
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="锁定期"></TextView>
+                            android:text="@string/text1"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -69,7 +69,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="10万"
+                            android:text="@string/min"
                             android:textColor="#ff00"></TextView>
 
                         <TextView
@@ -78,7 +78,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="8.00"
+                            android:text="@string/num"
                             android:textColor="#ff00"></TextView>
 
                         <TextView
@@ -87,7 +87,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="30天"
+                            android:text="@string/day"
                             android:textColor="#ff00"></TextView>
                     </LinearLayout>
 
@@ -113,7 +113,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
 
-                                android:text="100"
+                                android:text="@string/text"
                                 ></TextView>
                         </LinearLayout>
 
@@ -175,7 +175,7 @@
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="@dimen/dp_10"
             android:background="#46AED6"></View>
 
 
@@ -183,20 +183,16 @@
 
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
             android:id="@+id/abb"
             android:text="删除"
             ></Button>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="置顶"
-            ></Button>
+
     </LinearLayout>
 </LinearLayout>

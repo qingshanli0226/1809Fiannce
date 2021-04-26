@@ -7,10 +7,11 @@ import android.widget.FrameLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.example.a1809zg.fragment.BlankFragment;
-import com.example.a1809zg.fragment.BlankFragment2;
-import com.example.a1809zg.fragment.BlankFragment3;
-import com.example.a1809zg.fragment.BlankFragment4;
+import com.example.a1809zg.fragment.CustomBean;
+import com.example.a1809zg.fragment.HomeFragment;
+import com.example.a1809zg.fragment.InvestFragment;
+import com.example.a1809zg.fragment.MineFragment;
+import com.example.a1809zg.fragment.MoreFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
@@ -43,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
         list.add(new CustomBean("我的资产", R.mipmap.mine, R.mipmap.mine_sele));
         list.add(new CustomBean("更多", R.mipmap.more, R.mipmap.more_sele));
 
-        data.add(new BlankFragment());
-        data.add(new BlankFragment2());
-        data.add(new BlankFragment3());
-        data.add(new BlankFragment4());
+        data.add(new HomeFragment());
+        data.add(new InvestFragment());
+        data.add(new MineFragment());
+        data.add(new MoreFragment());
 
         com.setTabData(list, this, R.id.line, data);
         com.setTextSelectColor(Color.RED);

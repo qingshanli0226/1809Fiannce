@@ -5,8 +5,9 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity<T extends Basepresenter>extends AppCompatActivity{
+public abstract class BaseActivity<T extends BasePresenter>extends AppCompatActivity{
     protected T mPresenter;
+    protected MyToolbar myToolbar;
     protected LoadingPage loadingPage;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
