@@ -1,5 +1,9 @@
 package com.example.a1809fiannce.investment.allfinancial;
 
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,10 +26,13 @@ import com.yatoooon.screenadaptation.ScreenAdapterTools;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> implements IAllfinancial, View.OnTouchListener {
+public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> implements IAllfinancial {
     private RecyclerView allfinancialRv;
     private List<AllfinancialBean.ResultBean> list = new ArrayList<>();
     private AllfinancialAdapter allfinancialAdapter;
+
+    private int rawX;
+    private int rawY;
 
     @Override
     protected int getLayoutId() {
@@ -41,32 +48,57 @@ public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> im
     protected void initData() {
         httpPresenter.getAllfinancial();
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
-            @Override
-            public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
-                return makeMovementFlags(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT );
-            }
+//        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
+//            @Override
+//            public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
+//                return makeMovementFlags(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT);
+//            }
+//
+//            @Override
+//            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+//                return false;
+//            }
+//
+//            @Override
+//            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+//
+//                int adapterPosition = viewHolder.getAdapterPosition();
+//
+//                list.remove(adapterPosition);
+//
+//                allfinancialAdapter.notifyItemRemoved(adapterPosition);
+//            }
+//        });
+//
+//        itemTouchHelper.attachToRecyclerView(allfinancialRv);
 
+        allfinancialRv.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
             @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
                 return false;
             }
 
             @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                switch (e.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        rawX = (int) e.getRawX();
+                        rawY = (int) e.getRawY();
+                        break;
 
-                int adapterPosition = viewHolder.getAdapterPosition();
+                    case MotionEvent.ACTION_MOVE:
+                        if (e.getRawX()<rawX){
 
-                list.remove(adapterPosition);
+                        }
+                        break;
+                }
+            }
 
-                allfinancialAdapter.notifyItemRemoved(adapterPosition);
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
             }
         });
-
-        itemTouchHelper.attachToRecyclerView(allfinancialRv);
-
-
-
     }
 
     @Override
@@ -83,7 +115,7 @@ public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> im
         allfinancialRv.setAdapter(allfinancialAdapter);
         allfinancialRv.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        allfinancialRv.setOnTouchListener(this);
+//        allfinancialRv.setOnTouchListener(this);
     }
 
     @Override
@@ -103,24 +135,24 @@ public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> im
 
     int lastX, lastY;
 
-    @Override
-    public boolean onTouch(View view, MotionEvent motionEvent) {
-        switch (motionEvent.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                lastX = (int) motionEvent.getRawX();
-                lastY = (int) motionEvent.getRawY();
-
-                allfinancialRv.getParent().requestDisallowInterceptTouchEvent(true);
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                if ((lastX < 50 || lastX > 900) && (Math.abs(motionEvent.getRawY() - lastY) + 20 < Math.abs(motionEvent.getRawX() - lastX))) {
-                    allfinancialRv.getParent().requestDisallowInterceptTouchEvent(true);
-                } else {
-                    allfinancialRv.getParent().requestDisallowInterceptTouchEvent(false);
-                }
-                break;
-        }
-        return false;
-    }
+//    @Override
+//    public boolean onTouch(View view, MotionEvent motionEvent) {
+//        switch (motionEvent.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                lastX = (int) motionEvent.getRawX();
+//                lastY = (int) motionEvent.getRawY();
+//
+//                allfinancialRv.getParent().requestDisallowInterceptTouchEvent(true);
+//                break;
+//
+//            case MotionEvent.ACTION_MOVE:
+//                if ((lastX < 50 || lastX > 900) && (Math.abs(motionEvent.getRawY() - lastY) + 20 < Math.abs(motionEvent.getRawX() - lastX))) {
+//                    allfinancialRv.getParent().requestDisallowInterceptTouchEvent(true);
+//                } else {
+//                    allfinancialRv.getParent().requestDisallowInterceptTouchEvent(false);
+//                }
+//                break;
+//        }
+//        return false;
+//    }
 }
