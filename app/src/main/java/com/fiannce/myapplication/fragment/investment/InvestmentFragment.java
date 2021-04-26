@@ -1,19 +1,14 @@
 package com.fiannce.myapplication.fragment.investment;
 
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.fiannce.framework.BaseFragment;
 import com.fiannce.myapplication.R;
 import com.fiannce.myapplication.adapter.Vpadapter;
-import com.fiannce.myapplication.fragment.investment.money.HotFragment;
-import com.fiannce.myapplication.fragment.investment.money.RecommendFragment;
+import com.fiannce.myapplication.fragment.investment.money.hot.HotFragment;
+import com.fiannce.myapplication.fragment.investment.money.recommend.RecommendFragment;
 import com.fiannce.myapplication.fragment.investment.money.allmoeny.AllmoneyFragment;
 import com.google.android.material.tabs.TabLayout;
 

@@ -67,13 +67,11 @@ public class AllmoneyFragment extends BaseFragment<AllmoneyPresenter> implements
                 switch (view.getId()){
                     case R.id.rv_text_delete:
                         result.remove(position);
-                        allmoneyAdapter.notifyDataSetChanged();
+                        allmoneyAdapter.notifyItemRemoved(position);
                         break;
                 }
             }
         });
-
-
     }
 
     @Override

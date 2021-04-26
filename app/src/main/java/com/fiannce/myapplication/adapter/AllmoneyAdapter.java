@@ -19,7 +19,7 @@ public class AllmoneyAdapter extends BaseQuickAdapter<AllMoneyBean.ResultBean, B
     View lastItemView;
     int lastPosition;
     int scrollDiffx;
-
+    int measuredWidth;
     public AllmoneyAdapter(int layoutResId, @Nullable List<AllMoneyBean.ResultBean> data) {
         super(layoutResId, data);
     }
@@ -51,7 +51,9 @@ public class AllmoneyAdapter extends BaseQuickAdapter<AllMoneyBean.ResultBean, B
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
                         rawX   = (int) event.getRawX();
-                       helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                        helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                        View view = helper.getView(R.id.rv_text_delete);
+                         measuredWidth = view.getMeasuredWidth();
                         return  true;
                     case MotionEvent.ACTION_MOVE:
                         if (rawX > 700 &&event.getRawX()<rawX){
@@ -72,10 +74,10 @@ public class AllmoneyAdapter extends BaseQuickAdapter<AllMoneyBean.ResultBean, B
                         }
                         break;
                     case MotionEvent.ACTION_UP:
-                        if (scrollDiffx <= 80){
+                        if (scrollDiffx < measuredWidth/2){
                             helper.itemView.scrollTo(0,0);
-                        }else if (scrollDiffx>=100){
-                            helper.itemView.scrollTo(scrollDiffx,0);
+                        }else if (scrollDiffx > measuredWidth/2){
+                            helper.itemView.scrollTo(measuredWidth,0);
                         }
 
                         return true;

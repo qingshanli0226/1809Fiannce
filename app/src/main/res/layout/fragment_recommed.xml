@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.investment.money.RecommendFragment">
+    tools:context=".fragment.investment.money.recommend.RecommendFragment">
 
     <com.fiannce.framework.view.ToolBar
         android:id="@+id/toobar_fake"
