@@ -2,6 +2,7 @@ package com.example.a1809zg.infragment;
 
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
@@ -16,6 +17,9 @@ import java.util.List;
 
 public class Fragadpter extends BaseQuickAdapter<ProductBean.ResultBean, BaseViewHolder> {
     private int lastX;
+    private int lastposition;
+    private View lastitemView;
+    private int position;
     public Fragadpter( @Nullable List<ProductBean.ResultBean> data) {
         super(R.layout.item_money_view, data);
     }
@@ -28,6 +32,19 @@ public class Fragadpter extends BaseQuickAdapter<ProductBean.ResultBean, BaseVie
        baseViewHolder.setText(R.id.day,resultBean.getSuodingDays()+"天");
        baseViewHolder.setText(R.id.food,resultBean.getMinTouMoney());
        baseViewHolder.setText(R.id.people,resultBean.getMemberNum());
+
+        View view1 = baseViewHolder.findView(R.id.abb);
+        view1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lastitemView.scrollTo(0,0);
+                lastitemView=null;
+                lastposition=-1;
+            }
+        });
+
+
+
         MyView view = baseViewHolder.findView(R.id.aaa);
         int i = Integer.parseInt(resultBean.getProgress());
         view.saprogress(i,false);
@@ -44,14 +61,18 @@ public class Fragadpter extends BaseQuickAdapter<ProductBean.ResultBean, BaseVie
                     case MotionEvent.ACTION_MOVE:
                         if (lastX>500&&event.getRawX()<lastX){
                             baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
-                            baseViewHolder.itemView.scrollTo(-(int) (event.getRawX()-lastX),0);
+                            if (lastitemView!=null&&baseViewHolder.getPosition()!=lastposition){
+                                lastitemView.scrollTo(0,0);
+                            }
+                            lastposition=position;
+                            lastitemView=baseViewHolder.itemView;
+                            int remenX= -(int) ((event.getRawX()-lastX));
+                            baseViewHolder.itemView.scrollTo(remenX,0);
+
                             return true;
                         }else {
                             baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
                         }
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        break;
                 }
                 return false;
             }
