@@ -56,23 +56,22 @@
     <dimen name="recyclerview_customView_layout_width">80dp</dimen>
     <dimen name="recyclerview_View_layout_height">10dp</dimen>
 
+    <!-- TODO: Property Fragment-->
+    <dimen name="property_linearLayout_one_layout_height">100dp</dimen>
+    <dimen name="property_linearLayout_two_layout_height">180dp</dimen>
+    <dimen name="property_linearLayout_three_layout_height">70dp</dimen>
+    <dimen name="property_linearLayout_four_layout_height">200dp</dimen>
+    <dimen name="property_linearLayout_five_layout_height">0dp</dimen>
+    <dimen name="property_ImageView_one_layout_width">60dp</dimen>
+    <dimen name="property_ImageView_one_layout_height">75dp</dimen>
+    <dimen name="property_ImageView_two_layout_margin">15dp</dimen>
+    <dimen name="property_ImageView_three_layout_marginLeft">20dp</dimen>
+    <dimen name="property_ImageView_four_layout_marginLeft">280dp</dimen>
+    <dimen name="property_ImageView_five_layout_marginLeft">225dp</dimen>
+    <dimen name="property_TextView_one_textSize">15dp</dimen>
+    <dimen name="property_TextView_two_layout_marginLeft">10dp</dimen>
+    <dimen name="property_TextView_two_layout_marginTop">5dp</dimen>
+
     <!-- TODO: More Fragment-->
-    <dimen name="more_linearLayout_one_layout_height">100dp</dimen>
-    <dimen name="more_linearLayout_two_layout_height">180dp</dimen>
-    <dimen name="more_linearLayout_three_layout_height">70dp</dimen>
-    <dimen name="more_linearLayout_four_layout_height">200dp</dimen>
-    <dimen name="more_linearLayout_five_layout_height">0dp</dimen>
-    <dimen name="more_ImageView_one_layout_width">60dp</dimen>
-    <dimen name="more_ImageView_one_layout_height">75dp</dimen>
-    <dimen name="more_ImageView_two_layout_margin">15dp</dimen>
-    <dimen name="more_ImageView_three_layout_marginLeft">20dp</dimen>
-    <dimen name="more_ImageView_four_layout_marginLeft">280dp</dimen>
-    <dimen name="more_ImageView_five_layout_marginLeft">225dp</dimen>
-
-
-    <dimen name="more_TextView_one_textSize">15dp</dimen>
-    <dimen name="more_TextView_two_layout_marginLeft">10dp</dimen>
-    <dimen name="more_TextView_two_layout_marginTop">5dp</dimen>
-
 
 </resources>

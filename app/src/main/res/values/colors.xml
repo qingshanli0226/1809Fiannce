@@ -32,10 +32,10 @@
     <!-- TODO: Recyclerview child allmoney-->
     <color name="colorRecyclerviewView">#27B8EE</color>
     <color name="colorRecyclerviewTextViewThree">#F50303</color>
-    <!-- TODO: More fragment-->
-    <color name="colorMoreLinearLayoutOne">#45C2F0</color>
-    <color name="colorMoreLinearLayoutTwo">#F0F0F0</color>
-    <color name="colorMoreTextViewone">#F70505</color>
+    <!-- TODO: Property fragment-->
+    <color name="colorPropertyLinearLayoutOne">#45C2F0</color>
+    <color name="colorPropertyLinearLayoutTwo">#F0F0F0</color>
+    <color name="colorPropertyTextViewone">#F70505</color>
 
 
 </resources>

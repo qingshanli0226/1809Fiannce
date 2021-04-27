@@ -33,14 +33,14 @@
     <string name="recyclerview_text_three">天</string>
     <string name="recyclerview_text_delete">删除</string>
 
-    <!-- TODO: More fragment-->
-    <string name="more_text_one">Hi,welcome!</string>
-    <string name="more_text_two">学习提示:</string>
-    <string name="more_text_three">充值我的将以成支付宝sdk支付金额演示充值功能</string>
-    <string name="more_text_four"> 提现业务：在p2p金融平台中，提现都不是实时到账的，而是审核制度提现，系统将会告知24小时内进行转账，如果未收到，请联系客服</string>
-    <string name="more_text_five">投资管理</string>
-    <string name="more_text_six">投资管理（直观）</string>
-    <string name="more_text_seven">资产管理</string>
+    <!-- TODO: Property fragment-->
+    <string name="property_text_one">Hi,welcome!</string>
+    <string name="property_text_two">学习提示:</string>
+    <string name="property_text_three">充值我的将以成支付宝sdk支付金额演示充值功能</string>
+    <string name="property_text_four"> 提现业务：在p2p金融平台中，提现都不是实时到账的，而是审核制度提现，系统将会告知24小时内进行转账，如果未收到，请联系客服</string>
+    <string name="property_text_five">投资管理</string>
+    <string name="property_text_six">投资管理（直观）</string>
+    <string name="property_text_seven">资产管理</string>
 
 
 </resources>
