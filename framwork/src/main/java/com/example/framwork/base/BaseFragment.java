@@ -16,7 +16,7 @@ import com.example.framwork.view.PageView;
 import com.example.framwork.view.TobView;
 
 
-public abstract   class BaseFragment<P extends BasePresenter> extends Fragment {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     protected View BaseView;
     protected P mPresenter;
     protected PageView pageView;

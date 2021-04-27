@@ -1,4 +1,4 @@
-package com.example.a1809fiannce;
+package com.example.a1809fiannce.mian;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
+import com.example.a1809fiannce.R;
+import com.example.a1809fiannce.mian.TabCus;
 import com.example.a1809fiannce.money.MyMoneyFragment;
 import com.example.a1809fiannce.home.HomeFragment;
 import com.example.a1809fiannce.lnvest.InvestFragment;

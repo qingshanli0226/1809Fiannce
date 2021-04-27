@@ -5,5 +5,13 @@
             <attr name="textSize" format="integer"></attr>
         </declare-styleable>
 
+        <declare-styleable name="LinView">
+            <attr name="left_icon" format="reference"></attr>
+            <attr name="right_icon" format="reference"></attr>
+            <attr name="left_title" format="string"></attr>
+            <attr name="right_title" format="string"></attr>
+            <attr name="lin_right_show" format="boolean"></attr>
+            <attr name="lin_right_Text_show" format="boolean"></attr>
+        </declare-styleable>
 
 </resources>

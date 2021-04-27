@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".money.MyMoneyFragment">
 
@@ -15,5 +16,118 @@
         app:right_show="true"
         android:id="@+id/tob"
         app:right_img="@mipmap/my_setting_icon"></com.example.framwork.view.TobView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#27baed">
+
+        <ImageView
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/many_img"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center"></ImageView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user"
+            android:textColor="#ffffff"
+            android:text="aaa"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center"
+            android:textSize="@dimen/dp_25"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1.5"
+        android:background="#f0f0f0"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/many1"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textColor="#E91E63"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:text="@string/many2"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textColor="#515151"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/many3"
+            android:textColor="#515151"
+            android:layout_marginLeft="@dimen/dp_10"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_70"
+            android:layout_marginTop="@dimen/dp_20">
+            <ImageView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:id="@+id/recharge"
+                android:src="@mipmap/my_recharge_bg"></ImageView>
+            <ImageView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:id="@+id/withdraw"
+                android:src="@mipmap/my_withdraw_bg"></ImageView>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_weight="1.5">
+        <com.example.a1809fiannce.view.LinView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:left_icon="@mipmap/my_invest_manage"
+            app:left_title="投资管理"
+            app:lin_right_show="true"
+            app:right_icon="@mipmap/right"
+            app:lin_right_Text_show="false"
+            android:layout_weight="1"></com.example.a1809fiannce.view.LinView>
+        <com.example.a1809fiannce.view.LinView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:left_icon="@mipmap/my_reward_manage"
+            app:left_title="投资管理(直观)"
+            app:lin_right_show="true"
+            app:right_icon="@mipmap/right"
+            app:lin_right_Text_show="false"
+            android:layout_weight="1"></com.example.a1809fiannce.view.LinView>
+        <com.example.a1809fiannce.view.LinView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:left_icon="@mipmap/my_asset_manage"
+            app:left_title="资产管理"
+            app:lin_right_show="true"
+            app:right_icon="@mipmap/right"
+            app:lin_right_Text_show="false"
+            android:layout_weight="1"></com.example.a1809fiannce.view.LinView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#f0f0f0"
+        android:layout_weight="1"></LinearLayout>
 
 </LinearLayout>

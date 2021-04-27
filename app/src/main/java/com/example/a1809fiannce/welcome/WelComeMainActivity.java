@@ -14,16 +14,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a1809fiannce.home.HomeCallBack;
-import com.example.a1809fiannce.MainActivity2;
+import com.example.a1809fiannce.mian.MainActivity2;
 import com.example.a1809fiannce.R;
-import com.example.a1809fiannce.update.UpdatePresenter;
 import com.example.framwork.base.BaseActivity;
-import com.example.network.model.AllBean;
 import com.example.network.model.HomeBean;
 import com.example.network.model.UpdateBean;
 
 
-public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implements CallBack {
+public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implements WelcomeCallBack {
     private TextView miao;
     private final int ONE_TASK=0;
     private final int ALL_TASK=1;
@@ -63,7 +61,7 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
     };
     @Override
     protected void initData() {
-            mPresenter=new UpdatePresenter(this);
+            mPresenter=new WelcomePresenter(this);
             mPresenter.HomeData();
             mPresenter.UpdateData();
     }
@@ -96,10 +94,6 @@ public class WelComeMainActivity extends BaseActivity<UpdatePresenter> implement
 
     }
 
-    @Override
-    public void AllData(AllBean allBean) {
-
-    }
 
     @Override
     public void ShowLoading() {

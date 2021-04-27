@@ -1,14 +1,11 @@
-package com.example.a1809fiannce.update;
+package com.example.a1809fiannce.welcome;
 
 import android.util.Log;
 
-import com.example.a1809fiannce.welcome.CallBack;
 import com.example.framwork.base.BasePresenter;
-import com.example.network.retrofit.RetrofitManager;
-import com.example.network.model.AllBean;
 import com.example.network.model.HomeBean;
 import com.example.network.model.UpdateBean;
-
+import com.example.network.retrofit.RetrofitManager;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,11 +17,10 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class UpdatePresenter extends BasePresenter<CallBack> {
-    public UpdatePresenter(CallBack callBack) {
-        addThouView(callBack);
+public class WelcomePresenter extends BasePresenter<WelcomeCallBack> {
+    public WelcomePresenter(WelcomeCallBack welcomeCallBack) {
+        addThouView(welcomeCallBack);
     }
-
     public void HomeData(){
         RetrofitManager.getRetrofit()
                 .HomeData()
@@ -49,33 +45,33 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                     }
                 })
                 .subscribe(new Observer<HomeBean>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
+                               @Override
+                               public void onSubscribe(@NonNull Disposable d) {
 
-                    }
+                               }
 
-                    @Override
-                    public void onNext(@NonNull HomeBean homeBean) {
-                        if (iView!=null){
-                            iView.HomeData(homeBean);
-                            Log.i("zx", "HomeData: "+homeBean.toString());
-                        }
+                               @Override
+                               public void onNext(@NonNull HomeBean homeBean) {
+                                   if (iView!=null){
+                                       iView.HomeData(homeBean);
+                                       Log.i("zx", "HomeData: "+homeBean.toString());
+                                   }
 
-                    }
+                               }
 
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        if (iView!=null){
-                            iView.Error(e.getMessage());
-                        }
+                               @Override
+                               public void onError(@NonNull Throwable e) {
+                                   if (iView!=null){
+                                       iView.Error(e.getMessage());
+                                   }
 
-                    }
+                               }
 
-                    @Override
-                    public void onComplete() {
+                               @Override
+                               public void onComplete() {
 
-                    }
-                }
+                               }
+                           }
 
                 );
     }
@@ -112,9 +108,9 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
 
                     @Override
                     public void onNext(@NonNull UpdateBean updateBean) {
-                            if (iView!=null){
-                                iView.UpdateData(updateBean);
-                            }
+                        if (iView!=null){
+                            iView.UpdateData(updateBean);
+                        }
                     }
 
                     @Override
@@ -130,52 +126,4 @@ public class UpdatePresenter extends BasePresenter<CallBack> {
                     }
                 });
     }
-    public void AllData(){
-        RetrofitManager.getRetrofit()
-                .AllData()
-                .delay(2, TimeUnit.SECONDS)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnSubscribe(new Consumer<Disposable>() {
-                    @Override
-                    public void accept(Disposable disposable) throws Exception {
-                        if (iView!=null){
-                            iView.ShowLoading();
-                            addView(disposable);
-                        }
-
-                    }
-                })
-                .doFinally(new Action() {
-                    @Override
-                    public void run() throws Exception {
-                        if (iView!=null){
-                            iView.HideLoading();
-                        }
-
-                    }
-                })
-                .subscribe(new Observer<AllBean>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(@NonNull AllBean allBean) {
-                        iView.AllData(allBean);
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        iView.Error(e.getMessage());
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
-
 }

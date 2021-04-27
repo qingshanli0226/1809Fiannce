@@ -3,22 +3,17 @@ package com.example.a1809fiannce.all;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.a1809fiannce.welcome.CallBack;
 import com.example.a1809fiannce.R;
-import com.example.a1809fiannce.update.UpdatePresenter;
 import com.example.framwork.base.BaseFragment;
 import com.example.network.model.AllBean;
-import com.example.network.model.HomeBean;
-import com.example.network.model.UpdateBean;
 
 
-
-public class AllFragment extends BaseFragment<UpdatePresenter> implements CallBack {
+public class AllFragment extends BaseFragment<AllPresenter> implements AllCallBack {
     private RecyclerView re;
 
     @Override
     protected void initData() {
-        mPresenter=new UpdatePresenter(this);
+        mPresenter=new AllPresenter(this);
         mPresenter.AllData();
     }
 
@@ -34,15 +29,6 @@ public class AllFragment extends BaseFragment<UpdatePresenter> implements CallBa
         return R.layout.fragment_all;
     }
 
-    @Override
-    public void HomeData(HomeBean homeBean) {
-
-    }
-
-    @Override
-    public void UpdateData(UpdateBean updateBean) {
-
-    }
 
     @Override
     public void AllData(AllBean allBean) {

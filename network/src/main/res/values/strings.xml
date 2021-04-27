@@ -11,4 +11,8 @@
             <string name="lockup">锁定期</string>
             <string name="date">30天</string>
             <string name="del">删除</string>
+            <string name="many1">学习提示：</string>
+            <string name="many2">充值我们将以集成支付宝sdk支付金额演示充值功能</string>
+            <string name="many3">提现业务在:p2p金融平台中,提现都不是实时到账的,而是审核提现,系统将会告知24小时内进行转账,如果未收到,请联系客户...</string>
+
 </resources>

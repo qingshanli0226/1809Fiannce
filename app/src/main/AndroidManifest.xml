@@ -12,14 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.1809Fiannce">
-        <activity android:name=".exeprice.MainActivity">
+        <activity android:name=".many.activity.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".mian.MainActivity2" android:launchMode="singleTask"/>
         <activity android:name=".welcome.WelComeMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,12 +29,12 @@
         </activity>
 
         <provider
-            android:authorities="com.example.a1809fiannce"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.a1809fiannce"
             android:grantUriPermissions="true">
             <meta-data
-                  android:name="android.support.FILE_PROVIDER_PATHS"
-                  android:resource="@xml/path"></meta-data>
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/path" />
         </provider>
     </application>
 

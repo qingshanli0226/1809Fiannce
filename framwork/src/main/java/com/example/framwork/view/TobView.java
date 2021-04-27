@@ -75,13 +75,17 @@ public class TobView extends RelativeLayout {
                 if (imgCallBack!=null){
 
                     imgCallBack.OnRightImgListener();
+
                 }
             }
         });
+
         leftImg.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 imgCallBack.OnLeftImgListener();
+
             }
         });
 

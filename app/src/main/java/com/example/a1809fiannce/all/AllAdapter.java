@@ -30,7 +30,7 @@ public class AllAdapter extends BaseQuickAdapter<AllBean.ResultBean, BaseViewHol
         helper.setText(R.id.tit,item.getName()+"");
         helper.setText(R.id.money,item.getMoney()+"万");
         helper.setText(R.id.Year,item.getYearRate()+"%");
-        helper.setText(R.id.date,item.getSuodingDays()+"");
+        helper.setText(R.id.date,item.getSuodingDays()+"天");
         helper.setText(R.id.TouMoney,item.getMinTouMoney()+"");
         helper.setText(R.id.num,item.getMemberNum()+"");
         Button remBtn = helper.getView(R.id.remBtn);
