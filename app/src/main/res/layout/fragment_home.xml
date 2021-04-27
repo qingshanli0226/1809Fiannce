@@ -11,10 +11,9 @@
         android:id="@+id/toobar_fake"
         android:layout_width="match_parent"
         android:layout_height="@dimen/Toolbar_layout_height"
-        app:textcolor="@color/colorToolbar"
-        app:titleText="@string/main_home"
         android:background="@color/colorBlack"
-        ></com.fiannce.framework.view.ToolBar>
+        app:textcolor="@color/colorToolbar"
+        app:titleText="@string/main_home"></com.fiannce.framework.view.ToolBar>
 
     <com.youth.banner.Banner
         android:id="@+id/home_banner"
@@ -30,20 +29,17 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/home_TextView_one_layout_height"
             android:layout_marginLeft="@dimen/home_TextView_one_layout_marginLeft"
-            android:textSize="@dimen/home_TextView_one_textSize"
             android:gravity="center"
             android:text="@string/home_text_one"
-            ></TextView>
+            android:textSize="@dimen/home_TextView_one_textSize"></TextView>
 
-        <TextView
+        <ImageView
             android:id="@+id/home_tv_right"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/home_TextView_two_layout_height"
             android:layout_marginLeft="@dimen/home_TextView_two_layout_marginLeft"
             android:layout_toRightOf="@id/home_tv"
-            android:gravity="center"
-            android:text="@string/home_text_two"
-            android:textColor="@color/colorHome"></TextView>
+            android:src="@drawable/recommend"></ImageView>
     </RelativeLayout>
 
     <com.fiannce.myapplication.fragment.home.customView
@@ -65,12 +61,11 @@
         android:layout_marginLeft="@dimen/home_TextView_four_layout_marginLeft"
         android:layout_marginTop="@dimen/home_TextView_four_layout_marginTop"
         android:layout_marginRight="@dimen/home_TextView_four_layout_marginRight"
-        android:textSize="@dimen/home_TextView_four_textSize"
         android:background="@color/colorcome"
         android:gravity="center"
         android:text="@string/home_text_four"
         android:textColor="@color/colorWhite"
-       ></TextView>
+        android:textSize="@dimen/home_TextView_four_textSize"></TextView>
 
     <TextView
         android:layout_width="match_parent"

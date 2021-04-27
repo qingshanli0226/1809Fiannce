@@ -18,11 +18,11 @@ import io.reactivex.schedulers.Schedulers;
 
 public class WelcomePresenter extends BasePresenter<IWelcomeView> {
 
-    public WelcomePresenter(IWelcomeView iWelcomeView){
+    public WelcomePresenter(IWelcomeView iWelcomeView) {
         attachView(iWelcomeView);
     }
 
-    public void getHomeData(){
+    public void getHomeData() {
         RetrofitCreator.getFiannceApiService()
                 .getHomeData()
                 .delay(2, TimeUnit.SECONDS)
@@ -49,14 +49,14 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
 
                     @Override
                     public void onNext(HomeBean homeBean) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.onHomeData(homeBean);
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.showError(e.getMessage());
                         }
                     }
@@ -68,10 +68,10 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
                 });
     }
 
-    public void getVersionData(){
+    public void getVersionData() {
         RetrofitCreator.getFiannceApiService()
                 .getServerVersion()
-                .delay(2,TimeUnit.SECONDS)
+                .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -95,16 +95,16 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
 
                     @Override
                     public void onNext(VersionBean versionBean) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.onVersionData(versionBean);
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                            if (iView != null){
-                                iView.showError(e.getMessage());
-                            }
+                        if (iView != null) {
+                            iView.showError(e.getMessage());
+                        }
                     }
 
                     @Override

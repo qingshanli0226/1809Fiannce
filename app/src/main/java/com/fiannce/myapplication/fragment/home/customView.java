@@ -21,16 +21,16 @@ public class customView extends View {
     private int current = 0;
 
     public customView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public customView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public customView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs);
+        init(context, attrs);
     }
 
     private void init(Context context, AttributeSet attrs) {
@@ -47,7 +47,7 @@ public class customView extends View {
         super.onLayout(changed, left, top, right, bottom);
     }
 
-    public void startCurrent(){
+    public void startCurrent() {
         ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 360);
         valueAnimator.setDuration(3000);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -65,24 +65,24 @@ public class customView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         int width = getWidth();
-        int half = width/2;
-        int radius = half - WidthSize/2;
+        int half = width / 2;
+        int radius = half - WidthSize / 2;
 
 
         buttonpaint.setStyle(Paint.Style.STROKE);
         buttonpaint.setColor(Color.parseColor("#5A6E9E"));
         buttonpaint.setStrokeWidth(WidthSize);
-        canvas.drawCircle(half,half,radius,buttonpaint);
+        canvas.drawCircle(half, half, radius, buttonpaint);
 
         toppaint.setStyle(Paint.Style.STROKE);
         toppaint.setColor(Color.parseColor("#DC143D"));
         toppaint.setStrokeWidth(WidthSize);
-        canvas.drawArc(half-radius,half-radius,half+radius,half+radius,0,current,false,toppaint);
+        canvas.drawArc(half - radius, half - radius, half + radius, half + radius, 0, current, false, toppaint);
 
-        int i = current * 100 /360;
-        mtext = i+"%";
+        int i = current * 100 / 360;
+        mtext = i + "%";
         textpant.setTextSize(50);
         int text = (int) textpant.measureText(mtext);
-        canvas.drawText(mtext,half-text/2,half,textpant);
+        canvas.drawText(mtext, half - text / 2, half, textpant);
     }
 }

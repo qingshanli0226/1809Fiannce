@@ -16,11 +16,11 @@ import io.reactivex.schedulers.Schedulers;
 
 public class AllmoneyPresenter extends BasePresenter<IAllmoneyView> {
 
-    public AllmoneyPresenter(IAllmoneyView iAllmoneyView ){
+    public AllmoneyPresenter(IAllmoneyView iAllmoneyView) {
         attachView(iAllmoneyView);
     }
 
-    public void getAllmoney(){
+    public void getAllmoney() {
         RetrofitCreator.getFiannceApiService()
                 .getAllmoney()
                 .delay(2, TimeUnit.SECONDS)
@@ -47,14 +47,14 @@ public class AllmoneyPresenter extends BasePresenter<IAllmoneyView> {
 
                     @Override
                     public void onNext(AllMoneyBean allMoneyBean) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.onAllmoney(allMoneyBean);
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.showError(e.getMessage());
                         }
                     }

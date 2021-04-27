@@ -714,12 +714,16 @@ color cardview_shadow_start_color
 color coloRed
 color colorAccent
 color colorAllmoney
+color colorAllmoneyBro
 color colorBlack
 color colorHome
 color colorInvestmentTabLayout
 color colorInvestmentTabLayouttabIndicatorColor
 color colorInvestmentTabLayouttabSelectedTextColor
 color colorMainView
+color colorMainViewTextViewFlase
+color colorMainViewTextViewTrue
+color colorMainViewTextViewTrue2
 color colorPrimary
 color colorPrimaryDark
 color colorRecyclerviewTextViewThree
@@ -903,6 +907,7 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen allmoney_bro_width
 dimen allmoney_textSize
 dimen big_text_size
 dimen brightness_icon
@@ -1416,6 +1421,7 @@ drawable product_part5_icon
 drawable product_part6_icon
 drawable product_part7_icon
 drawable product_part8_icon
+drawable property_bro_deposit
 drawable recommend
 drawable right
 drawable sample_footer_loading
@@ -1768,6 +1774,8 @@ id matrix
 id media_actions
 id message
 id middle
+id mind_img
+id mind_user
 id mini
 id more_radio
 id mtrl_child_content_container
@@ -1906,6 +1914,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_register
 id video_decoder_gl_surface_view
 id view_offset_helper
 id visible

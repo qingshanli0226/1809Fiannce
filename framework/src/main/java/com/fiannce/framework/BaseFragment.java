@@ -14,7 +14,7 @@ import com.fiannce.framework.view.ToolBar;
 
 import static com.blankj.utilcode.util.FlashlightUtils.destroy;
 
-public abstract class BaseFragment<T extends BasePresenter>  extends Fragment implements ToolBar.IToolbarListener{
+public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener {
 
     protected T httpPresenter;
     protected View mView;
@@ -53,10 +53,10 @@ public abstract class BaseFragment<T extends BasePresenter>  extends Fragment im
         destroy();
     }
 
-   public void destroy(){
-        if (httpPresenter != null){
+    public void destroy() {
+        if (httpPresenter != null) {
             httpPresenter.detachView();
         }
-   }
+    }
 
 }

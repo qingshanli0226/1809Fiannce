@@ -13,13 +13,13 @@ public class RetrofitCreator {
     private static FiannceApiService fiannceApiService;
 
     public static FiannceApiService getFiannceApiService() {
-        if (fiannceApiService == null){
+        if (fiannceApiService == null) {
             fiannceApiService = createKSApiService();
         }
         return fiannceApiService;
     }
 
-    private static FiannceApiService createKSApiService(){
+    private static FiannceApiService createKSApiService() {
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)

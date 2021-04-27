@@ -10,11 +10,13 @@ import retrofit2.http.GET;
 public interface FiannceApiService {
 
     @GET("atguigu/json/P2PInvest/index.json")
-    Observable<HomeBean>  getHomeData();
+    Observable<HomeBean> getHomeData();
+
     @GET("atguigu/json/P2PInvest/update.json")
-    Observable<VersionBean>  getServerVersion();
+    Observable<VersionBean> getServerVersion();
+
     @GET("atguigu/json/P2PInvest/product.json")
-    Observable<AllMoneyBean>  getAllmoney();
+    Observable<AllMoneyBean> getAllmoney();
 
 
 }

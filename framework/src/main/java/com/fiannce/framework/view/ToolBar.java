@@ -20,7 +20,7 @@ public class ToolBar extends RelativeLayout {
     private ImageView rightImg;
     private TextView rightTv;
     private int titlecolor;
-    private int  titlebackground;
+    private int titlebackground;
     private RelativeLayout relativeLayout;
     private int titlesize;
     private boolean rightAreaIsShow, leftIsShow;
@@ -53,7 +53,7 @@ public class ToolBar extends RelativeLayout {
         rightAreaIsShow = typedArray.getBoolean(R.styleable.ToolBar_rightIsShow, false);
         leftIsShow = typedArray.getBoolean(R.styleable.ToolBar_leftIsShow, false);
         titlecolor = typedArray.getColor(R.styleable.ToolBar_textcolor, Color.BLACK);
-        titlebackground = typedArray.getColor(R.styleable.ToolBar_textbackground,Color.BLACK);
+        titlebackground = typedArray.getColor(R.styleable.ToolBar_textbackground, Color.BLACK);
         typedArray.recycle();
 
         LayoutInflater inflater = LayoutInflater.from(context);

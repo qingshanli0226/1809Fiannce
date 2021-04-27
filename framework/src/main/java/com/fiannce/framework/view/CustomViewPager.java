@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 public class CustomViewPager extends ViewPager {
     int x = 0;
     boolean aBoolean = false;
+
     public CustomViewPager(@NonNull Context context) {
         super(context);
     }
@@ -21,22 +22,22 @@ public class CustomViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()){
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 x = (int) getX();
-                if (x>=getMeasuredWidth()-700){
+                if (x >= getMeasuredWidth() - 700) {
                     aBoolean = true;
-                 return false;
-                }else {
+                    return false;
+                } else {
                     aBoolean = false;
                     return true;
                 }
-                case MotionEvent.ACTION_MOVE:
-                    if (aBoolean){
-                        return false;
-                    }else {
-                        return true;
-                    }
+            case MotionEvent.ACTION_MOVE:
+                if (aBoolean) {
+                    return false;
+                } else {
+                    return true;
+                }
         }
         return false;
     }

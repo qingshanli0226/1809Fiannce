@@ -9,8 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,13 +21,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/recyclerview_TextView_one_layout_height"
                 android:layout_weight="1"
-                android:paddingLeft="@dimen/recyclerview_TextView_one_paddingLeft"
-                android:textSize="@dimen/recyclerview_TextView_one_textSize"
-                android:textColor="@color/colorBlack"
                 android:background="@drawable/allmoney_bro"
                 android:gravity="center_vertical"
+                android:paddingLeft="@dimen/recyclerview_TextView_one_paddingLeft"
                 android:text="@string/recyclerview_allmoney_null"
-                ></TextView>
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/recyclerview_TextView_one_textSize"></TextView>
         </LinearLayout>
 
 
@@ -45,9 +44,8 @@
                     android:layout_width="@dimen/recyclerview_linearLayout_one_layout_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/recyclerview_linearLayout_one_layout_marginTop"
-                    android:paddingLeft="@dimen/recyclerview_linearLayout_one_paddingLeft"
                     android:orientation="horizontal"
-                    >
+                    android:paddingLeft="@dimen/recyclerview_linearLayout_one_paddingLeft">
 
                     <TextView
                         android:layout_width="@dimen/recyclerview_TextView_two_layout_width"
@@ -206,8 +204,7 @@
 
             <com.fiannce.myapplication.fragment.home.customView
                 android:layout_width="@dimen/recyclerview_customView_layout_width"
-                android:layout_height="match_parent"
-                ></com.fiannce.myapplication.fragment.home.customView>
+                android:layout_height="match_parent"></com.fiannce.myapplication.fragment.home.customView>
 
         </LinearLayout>
 

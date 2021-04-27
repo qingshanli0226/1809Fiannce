@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <com.fiannce.framework.view.ToolBar
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
         android:id="@+id/toobar_fake"
-        ></com.fiannce.framework.view.ToolBar>
+        android:layout_width="match_parent"
+        android:layout_height="70dp"></com.fiannce.framework.view.ToolBar>
 
 </LinearLayout>

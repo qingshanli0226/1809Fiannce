@@ -13,6 +13,9 @@
     <color name="colorBlack">#111111</color>
     <!-- TODO: Main Activity-->
     <color name="colorMainView">#03A9F4</color>
+    <color name="colorMainViewTextViewFlase">#8B8B8B</color>
+    <color name="colorMainViewTextViewTrue">#3883D1</color>
+    <color name="colorMainViewTextViewTrue2">#E24242</color>
 
     <!-- TODO: Home Fragment-->
     <color name="colorHome">#F44336</color>
@@ -25,8 +28,14 @@
 
     <!-- TODO: Allmoney fragment-->
     <color name="colorAllmoney">#ECECEC</color>
+    <color name="colorAllmoneyBro">#E1E1E1</color>
     <!-- TODO: Recyclerview child allmoney-->
     <color name="colorRecyclerviewView">#27B8EE</color>
     <color name="colorRecyclerviewTextViewThree">#F50303</color>
+    <!-- TODO: More fragment-->
+    <color name="colorMoreLinearLayoutOne">#45C2F0</color>
+    <color name="colorMoreLinearLayoutTwo">#F0F0F0</color>
+    <color name="colorMoreTextViewone">#F70505</color>
+
 
 </resources>

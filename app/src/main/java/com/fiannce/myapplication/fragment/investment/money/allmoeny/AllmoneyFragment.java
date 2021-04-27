@@ -29,6 +29,7 @@ public class AllmoneyFragment extends BaseFragment<AllmoneyPresenter> implements
     List<AllMoneyBean.ResultBean> result = new ArrayList<>();
     AllmoneyAdapter allmoneyAdapter;
     AllmoneyPresenter allmoneyPresenter;
+
     public AllmoneyFragment() {
         // Required empty public constructor
     }
@@ -36,7 +37,7 @@ public class AllmoneyFragment extends BaseFragment<AllmoneyPresenter> implements
 
     @Override
     protected void initPresenter() {
-         httpPresenter = new AllmoneyPresenter(this);
+        httpPresenter = new AllmoneyPresenter(this);
 
     }
 
@@ -64,7 +65,7 @@ public class AllmoneyFragment extends BaseFragment<AllmoneyPresenter> implements
         allmoneyAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (view.getId()){
+                switch (view.getId()) {
                     case R.id.rv_text_delete:
                         result.remove(position);
                         allmoneyAdapter.notifyItemRemoved(position);

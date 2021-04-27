@@ -7,12 +7,12 @@ public class CacheManager {
     private static CacheManager instance;
     private HomeBean homeBean;
 
-    private CacheManager(){
+    private CacheManager() {
 
     }
 
-    public static synchronized CacheManager getInstance(){
-        if (instance == null){
+    public static synchronized CacheManager getInstance() {
+        if (instance == null) {
             instance = new CacheManager();
         }
         return instance;
