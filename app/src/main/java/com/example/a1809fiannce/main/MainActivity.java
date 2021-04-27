@@ -2,6 +2,7 @@ package com.example.a1809fiannce.main;
 
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
@@ -25,6 +26,11 @@ public class MainActivity extends BaseActivity {
 
     private CommonTabLayout actHomeCt;
 
+    private HoemFragment hoemFragment;
+    private InvestFragment investFragment;
+    private PropertyFragment propertyFragment;
+    private MoreFragment moreFragment;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_home;
@@ -39,10 +45,10 @@ public class MainActivity extends BaseActivity {
         customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.even_more), R.mipmap.bottom07, R.mipmap.bottom08));
 
 
-        HoemFragment hoemFragment = new HoemFragment();
-        InvestFragment investFragment = new InvestFragment();
-        PropertyFragment propertyFragment = new PropertyFragment();
-        MoreFragment moreFragment = new MoreFragment();
+        hoemFragment = new HoemFragment();
+        investFragment = new InvestFragment();
+        propertyFragment = new PropertyFragment();
+        moreFragment = new MoreFragment();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
@@ -108,6 +114,20 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction1.show(hoemFragment);
+        fragmentTransaction1.hide(investFragment);
+        fragmentTransaction1.hide(propertyFragment);
+        fragmentTransaction1.hide(moreFragment);
+
+        fragmentTransaction1.commit();
 
     }
 

@@ -1,18 +1,16 @@
 package com.example.a1809fiannce.main.more;
 
-import android.os.Bundle;
+import android.widget.RelativeLayout;
 
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.a1809fiannce.R;
 import com.example.framework.BaseFragment;
 
 
 public class MoreFragment extends BaseFragment{
+
+    private RelativeLayout fragMoreUserRigister;
+
 
     @Override
     protected int getLayoutId() {
@@ -22,6 +20,10 @@ public class MoreFragment extends BaseFragment{
     @Override
     protected void initData() {
 
+        fragMoreUserRigister.setOnClickListener(view -> {
+            ARouter.getInstance().build("/user/LoginActivity").withString("","").navigation();
+//            startActivity(new Intent(getActivity(), LoginActivity.class));
+        });
     }
 
     @Override
@@ -31,6 +33,7 @@ public class MoreFragment extends BaseFragment{
 
     @Override
     protected void initView() {
+        fragMoreUserRigister = (RelativeLayout) findViewById(R.id.frag_more_user_rigister);
 
     }
 }

@@ -56,7 +56,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
     @Override
     public void onLeftImgClick() {
-
+        finish();
     }
 
     @Override

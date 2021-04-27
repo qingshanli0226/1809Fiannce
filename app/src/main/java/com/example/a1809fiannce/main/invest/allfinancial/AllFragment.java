@@ -57,8 +57,6 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
 
         allProductAdapter.setOnItemChildClickListener((adapter, view, position) -> {
             result.remove(position);
-            TextView delet = view.findViewById(R.id.all_investment_delet);
-            view.scrollTo(-delet.getWidth(),0);
             allProductAdapter.notifyItemRemoved(position);
         });
 

@@ -41,18 +41,25 @@ public class AllProductAdapter extends BaseQuickAdapter<AllProductBean.ResultBea
 
         addChildClickViewIds(R.id.all_investment_delet);
 
+
+
         holder.itemView.setOnTouchListener((view, ev) -> {
             if (ev.getAction() == MotionEvent.ACTION_DOWN) {
-                if (holder.getAdapterPosition() !=postion&&postion!=-1){
-                    if (holder.itemView!=itemView&&itemView!=null){
+                if (holder.getAdapterPosition() != postion && postion != -1) {
+                    if (holder.itemView != itemView && itemView != null) {
                         itemView.scrollTo(0, 0);
+                        itemView = null;
+                        isstartback = false;
+                        postion = -1;
                     }
                 }
                 lastX = (int) ev.getRawX();
                 holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
                 return true;
             } else if (ev.getAction() == MotionEvent.ACTION_MOVE) {
-                if ((lastX < 900) && (lastX > ev.getRawX())) {
+                if ((lastX < 900) && (lastX > ev.getRawX()&& !isstartback)) {
+
+
                     holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
                     int z = (int) (lastX - ev.getRawX());
                     DELET_WIDTH = delet.getWidth();
@@ -60,7 +67,7 @@ public class AllProductAdapter extends BaseQuickAdapter<AllProductBean.ResultBea
                         z = DELET_WIDTH;
                     }
                     holder.itemView.scrollTo(z, 0);
-
+                    itemView = holder.itemView;
                     return true;
                 } else if ((lastX < 900) && (lastX < ev.getRawX()) && isstartback) {
                     holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
@@ -70,8 +77,11 @@ public class AllProductAdapter extends BaseQuickAdapter<AllProductBean.ResultBea
                         z = -DELET_WIDTH;
                     }
                     holder.itemView.scrollTo(DELET_WIDTH + z, 0);
-
+                    itemView = holder.itemView;
                     return true;
+                } else if ((lastX < 900) && (lastX > ev.getRawX())&& isstartback) {
+                    holder.itemView.scrollTo(DELET_WIDTH, 0);
+                    itemView = holder.itemView;
                 } else {
                     holder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
                 }
@@ -80,14 +90,15 @@ public class AllProductAdapter extends BaseQuickAdapter<AllProductBean.ResultBea
             } else if (ev.getAction() == MotionEvent.ACTION_UP) {
                 if ((lastX - ev.getRawX()) > DELET_WIDTH / 2) {
                     holder.itemView.scrollTo(DELET_WIDTH, 0);
-                    itemView  = holder.itemView;
+                    itemView = holder.itemView;
                     isstartback = true;
-                    postion  = holder.getAdapterPosition();
+                    postion = holder.getAdapterPosition();
                 } else if ((ev.getRawX() - lastX) < DELET_WIDTH / 2 && isstartback) {
                     holder.itemView.scrollTo(DELET_WIDTH, 0);
+                    itemView = holder.itemView;
                 } else {
                     holder.itemView.scrollTo(0, 0);
-                    itemView  =null;
+                    itemView = null;
                     isstartback = false;
                     postion = -1;
                 }
@@ -101,6 +112,6 @@ public class AllProductAdapter extends BaseQuickAdapter<AllProductBean.ResultBea
     private int DELET_WIDTH;
     private boolean isstartback = false;
     View itemView;
-    private int postion= -1;
+    private int postion = -1;
 
 }

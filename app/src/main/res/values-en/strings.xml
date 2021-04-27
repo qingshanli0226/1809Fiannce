@@ -38,4 +38,6 @@
     <string name="friendsShare">Friends share</string>
     <string name="aboutYoudao">About youdao</string>
     <string name="contactCustomerPhone">010-56253825</string>
+    <string name="userRegister">user register</string>
+
 </resources>

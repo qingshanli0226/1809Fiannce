@@ -3,12 +3,7 @@
     package="com.example.user">
 
     <application>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="lg" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".register.RegisterActivity"></activity>
     </application>
 
 </manifest>
