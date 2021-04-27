@@ -35,7 +35,6 @@ public class AllFragment extends BaseFragment<InvestPresenter> implements IInves
     @Override
     protected void initData() {
         httpPresenter.getProductData();
-
     }
 
 
