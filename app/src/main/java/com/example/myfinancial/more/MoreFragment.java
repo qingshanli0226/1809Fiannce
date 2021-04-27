@@ -1,17 +1,15 @@
 package com.example.myfinancial.more;
 
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseFragment;
+import com.example.framework.myview.MoreItemPage;
 import com.example.myfinancial.R;
 
-public class MoreFragment extends BaseFragment{
+public class MoreFragment extends BaseFragment {
+
+    private MoreItemPage userRegister;
 
     @Override
     public void showLoading() {
@@ -35,12 +33,18 @@ public class MoreFragment extends BaseFragment{
 
     @Override
     public void initData() {
-
+        //用户注册点击
+        userRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance().build("/mare/register").navigation();
+            }
+        });
     }
 
     @Override
     public void initView() {
-
+        userRegister = (MoreItemPage) findViewById(R.id.userRegister);
     }
 
     @Override

@@ -16,10 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InvestFragment extends BaseFragment {
-
     private ViewPager vp;
     private TabLayout tab;
-
     private List<Fragment> list=new ArrayList<>();
     private List<String> strings=new ArrayList<>();
     private VpAdapter vpAdapter;
@@ -34,16 +32,13 @@ public class InvestFragment extends BaseFragment {
         list.add(new AllFragment());
         list.add(new ReCommendFragment());
         list.add(new HotFragment());
-
         strings.add(getString(R.string.allMoneyManagement));
         strings.add(getString(R.string.recommendMoneyManagement));
         strings.add(getString(R.string.hotMoneyManagement));
 
         vpAdapter=new VpAdapter(getChildFragmentManager(),list,strings);
-
         vp.setAdapter(vpAdapter);
         tab.setupWithViewPager(vp);
-
     }
 
     @Override
@@ -71,7 +66,6 @@ public class InvestFragment extends BaseFragment {
     public void initPresenter() {
 
     }
-
 
     @Override
     public void onLeftClick() {

@@ -44,9 +44,9 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 
     protected LoadingPage loadingPage;
 
-    protected void initData(){};
     protected abstract int getbandLayout();
     protected void initView() {};
+    protected void initData(){};
     protected void initPresenter(){};
 
 

@@ -70,7 +70,13 @@ public class AllAdapter extends BaseQuickAdapter<AllMoneyBean.ResultBean, BaseVi
 
                         lastX = (int) event.getRawX();
                         viewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                        if (lastItemView != null && lastPosition != viewHolder.getAdapterPosition()) {
+                            lastItemView.scrollTo(0, 0);//回去
+                            resultBean.setDel(false);
+                        }
 
+                        lastPosition = viewHolder.getAdapterPosition();
+                        lastItemView = viewHolder.itemView;
                         return true;
                     case MotionEvent.ACTION_MOVE:
                         if (lastX > 500 && event.getRawX() < lastX) {

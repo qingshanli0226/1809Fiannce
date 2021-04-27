@@ -1,16 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".more.MoreFragment">
-<com.example.framework.myview.ToolBar
-    android:id="@+id/toolBar"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:titleText="@string/moreTool"></com.example.framework.myview.ToolBar>
+
+    <com.example.framework.myview.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="@string/moreTool"></com.example.framework.myview.ToolBar>
+
+    <com.example.framework.myview.MoreItemPage
+        android:id="@+id/userRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:moreLeftImage="@drawable/icon_more_regist"
+        app:moreLeftText="用户注册"></com.example.framework.myview.MoreItemPage>
+
+    <com.example.framework.myview.MoreItemPage
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:moreLeftImage="@drawable/icon_more_secret"
+        app:moreLeftText="手势密码"
+        app:moreRightImage="@drawable/toggle_off"></com.example.framework.myview.MoreItemPage>
+
+    <com.example.framework.myview.MoreItemPage
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:moreLeftImage="@drawable/icon_more_reset"
+        app:moreLeftText="重置手势密码"></com.example.framework.myview.MoreItemPage>
+
+    <com.example.framework.myview.MoreItemPage
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:moreLeftImage="@drawable/icon_more_contact"
+        app:moreLeftText="联系客服"
+        app:moreRightText="010_56253835"></com.example.framework.myview.MoreItemPage>
+
+    <com.example.framework.myview.MoreItemPage
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:moreLeftImage="@drawable/icon_more_sms"
+        app:moreLeftText="用户反馈"></com.example.framework.myview.MoreItemPage>
+
+    <com.example.framework.myview.MoreItemPage
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:moreLeftImage="@drawable/icon_more_share"
+        app:moreLeftText="分享给好友"></com.example.framework.myview.MoreItemPage>
+
+    <com.example.framework.myview.MoreItemPage
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:moreLeftImage="@drawable/icon_more_about"
+        app:moreLeftText="关于有道理财"></com.example.framework.myview.MoreItemPage>
 
 
 </LinearLayout>

@@ -19,23 +19,19 @@ import com.example.net.bean.VersionBean;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelComeView {
     private android.widget.TextView countdowntv;
-
     private final int ONE_TASK_FINISH = 0;
     private final int ALL_TASK_FINISH = 1;
     private final int DELAT_INDEX = 2;//标识符
     private final int DELAY = 1 * 1000;//1秒
-
     private boolean geth = false;
     private boolean getv = false;
     private boolean drawtime = false;
-
     private int drawtimetv = 3;
 
     @Override
     public int getbandLayout() {
         return R.layout.activity_welcome2;
     }
-
 
     @Override
     public void initPresenter() {
@@ -53,7 +49,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         //向上顶  全屏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         countdowntv = (TextView) findViewById(R.id.countDownTv);
-
         handler.sendEmptyMessageDelayed(DELAT_INDEX, DELAY);//发送倒计时  handler
         countdowntv.setText(drawtimetv + "");//修改
     }

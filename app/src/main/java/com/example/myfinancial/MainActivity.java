@@ -22,10 +22,8 @@ import java.util.ArrayList;
 
 @Route(path = "/main/MainActivity")
 public class MainActivity extends BaseActivity {
-
     private HomeBean homeBean;
     private com.flyco.tablayout.CommonTabLayout tab;
-
     private ArrayList<Fragment> list = new ArrayList<>();
     private ArrayList<String> strings = new ArrayList<>();
     private ArrayList<CustomTabEntity> cusComms = new ArrayList<>();
@@ -37,16 +35,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData() {
-//         homeBean = CaCheHome.getInstance().getHomeBean();
-//        Log.d("MainActivity123", homeBean.toString());
-        //轮播图
-//        initlbt();
         //获取对象
         list.add(new HomeFragment());
         list.add(new InvestFragment());
         list.add(new MyMoneyFragment());
         list.add(new MoreFragment());
-
         strings.add(getString(R.string.homeTool));
         strings.add(getString(R.string.invesTtool));
         strings.add(getString(R.string.myMoneyTool));
@@ -59,14 +52,11 @@ public class MainActivity extends BaseActivity {
         tab.setTextSelectColor(Color.BLUE);
         tab.setTextUnselectColor(Color.BLACK);
         tab.setTabData(cusComms, this, R.id.vp, list);
-
     }
-
 
     @Override
     public void initView() {
         tab = (CommonTabLayout) findViewById(R.id.tab);
-
     }
 
     @Override
@@ -76,15 +66,15 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()){
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.d("ZKH","activity 收到down");
+                Log.d("ZKH", "activity 收到down");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.d("ZKH","activity move");
+                Log.d("ZKH", "activity move");
                 break;
             case MotionEvent.ACTION_UP:
-                Log.d("ZKH","activity up");
+                Log.d("ZKH", "activity up");
                 break;
         }
         return super.dispatchTouchEvent(ev);
@@ -92,15 +82,15 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.d("ZKH onTouchEvent","activity 收到down");
+                Log.d("ZKH onTouchEvent", "activity 收到down");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.d("ZKH onTouchEvent","activity move");
+                Log.d("ZKH onTouchEvent", "activity move");
                 break;
             case MotionEvent.ACTION_UP:
-                Log.d("ZKH onTouchEvent","activity up");
+                Log.d("ZKH onTouchEvent", "activity up");
                 break;
         }
         return super.onTouchEvent(event);

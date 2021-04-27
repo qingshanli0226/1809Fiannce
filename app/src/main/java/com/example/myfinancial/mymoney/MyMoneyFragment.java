@@ -1,36 +1,25 @@
 package com.example.myfinancial.mymoney;
 
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.framework.BaseFragment;
 import com.example.myfinancial.R;
 
 public class MyMoneyFragment extends BaseFragment {
 
+    private ImageView headPortrait;
+    private TextView loginName;
+
     @Override
-    public void showLoading() {
-        loadingPage.showLoadingView();
+    public int getbandLayout() {
+        return R.layout.fragment_my_money;
     }
 
     @Override
-    public void hideLoading() {
-
-        loadingPage.showSuccessView();
-    }
-
-    @Override
-    public void showError(String error) {
-    }
-
-    @Override
-    public void initPresenter() {
-
+    public void initView() {
+        headPortrait = (ImageView) findViewById(R.id.headPortrait);
+        loginName = (TextView) findViewById(R.id.loginName);
     }
 
     @Override
@@ -39,14 +28,25 @@ public class MyMoneyFragment extends BaseFragment {
     }
 
     @Override
-    public void initView() {
-        showLoading();
+    public void showLoading() {
+        loadingPage.showLoadingView();
     }
 
     @Override
-    public int getbandLayout() {
-        return R.layout.fragment_my_money;
+    public void hideLoading() {
+        loadingPage.showSuccessView();
     }
+
+    @Override
+    public void showError(String error) {
+
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
 
     @Override
     public void onLeftClick() {

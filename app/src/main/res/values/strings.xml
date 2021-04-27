@@ -10,8 +10,13 @@
     <string name="myMoneyTool">我的资产</string>
     <string name="moreTool">更多</string>
     <string name="delete">删除</string>
-
-
+    <string name="studyHint">学习提示:</string>
+    <string name="investmentAdmain">投资管理</string>
+    <string name="investmentAdmainPerceptual">投资管理(直观)</string>
+    <string name="moneyPerceptual">资产管理</string>
+    <string name="rechargePerformance">充值我们将以集成支付宝sdk支付金额延时充值表演</string>
+    <string name="myMoneyWithdrawDeposit">体现业务：在p2p金融平台中，体现都不是实时到账的，而是审核提现，系统将会告知
+24小时内进行转账，如果未收到请客服...</string>
 
 
 </resources>

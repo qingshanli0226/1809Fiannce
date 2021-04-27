@@ -15,4 +15,13 @@
         <attr name="leftImage" format="reference"></attr>
         <attr name="leftIsShow" format="boolean"></attr>
     </declare-styleable>
+
+    <declare-styleable name="MoreItem">
+        <attr name="moreRightText" format="string"></attr>
+        <attr name="moreRightImage" format="reference"></attr>
+        <attr name="moreRightIsShow" format="boolean"></attr>
+        <attr name="moreLeftText" format="string"></attr>
+        <attr name="moreLeftImage" format="reference"></attr>
+        <attr name="moreLeftIsShow" format="boolean"></attr>
+    </declare-styleable>
 </resources>

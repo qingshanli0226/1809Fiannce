@@ -14,8 +14,6 @@ import java.util.List;
 
 public class AllFragment extends BaseFragment<InVesPresenter> implements IVesView {
     private RecyclerView allrec;
-
-
     private AllAdapter allAdapter;
     private List<AllMoneyBean.ResultBean> alllist = new ArrayList<>();
 
@@ -27,19 +25,7 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements IVesVie
     @Override
     public void initData() {
         mPresenter.getAllMoney();//获取数据
-
-//        allAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {//点击删除  删除数据并刷新
-//            @Override
-//            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
-//                if (view.getId()==R.id.delbtn){
-//                    Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
-//                    alllist.remove(position);
-//                    allAdapter.notifyItemRemoved(position);
-//                }
-//            }
-//        });
     }
-
 
     @Override
     public void initView() {
@@ -69,13 +55,11 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements IVesVie
         mPresenter = new InVesPresenter(this);
     }
 
-
     @Override
     public void initAllMoney(AllMoneyBean allMoneyBean) {
         alllist.addAll(allMoneyBean.getResult());
         allAdapter.notifyDataSetChanged();
     }
-
 
     @Override
     public void onLeftClick() {
@@ -91,9 +75,6 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements IVesVie
     public void onRightTvClick() {
 
     }
-
-
-
 
     @Override
     public void onDestroy() {

@@ -65,7 +65,6 @@ public class HomeFragment extends BaseFragment {
 
     }
 
-
     //轮播图
     private void initlbt() {
         List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
@@ -93,5 +92,22 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onRightTvClick() {
         Toast.makeText(getActivity(), "333", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mPresenter!=null){
+            mPresenter.destroy();
+        }
+        if (ban!=null){
+            ban.clearAnimation();
+        }
+        if (loadingPage!=null){
+            loadingPage.clearAnimation();
+        }
+        if (proMyView!=null){
+            proMyView.destroy();
+        }
     }
 }

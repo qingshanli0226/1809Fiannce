@@ -31,10 +31,10 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
 
     protected LoadingPage loadingPage;
-    protected void initPresenter(){};
-    protected void initData(){};
     protected abstract int getbandLayout();
-    protected void initView() {};
+    protected abstract  void initView() ;
+    protected abstract  void initData();
+    protected  abstract void initPresenter();
 
     @Override
     public void showLoading() { }

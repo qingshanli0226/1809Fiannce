@@ -138,6 +138,7 @@ public class PregressMyView extends View {
 
     public void destroy(){
         handler.removeCallbacksAndMessages(null);
+        this.clearAnimation();
     }
     public void getProgressNum(int progress, boolean isAnimation) {
         offsetAngle = (progress * 360) / 100;//计算角度

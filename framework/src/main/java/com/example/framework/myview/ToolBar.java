@@ -81,6 +81,10 @@ public class ToolBar extends RelativeLayout {
 
     }
 
+    public void updateRightImage(int image){
+        rightIma.setImageResource(image);
+    }
+
     public void setToolbarListener(IToolbarListener iToolbarListener){
         this.iToolbarListener=iToolbarListener;
     }
