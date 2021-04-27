@@ -1,8 +1,6 @@
 package com.fiance.chengtianle.Fragment;
 
-import android.os.PowerManager;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,20 +28,19 @@ public class AllFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiV
 
     @Override
     public void onLiCaiData(LcBean lcBean) {
-        Toast.makeText(getContext(), lcBean.toString(), Toast.LENGTH_SHORT).show();
-     list.addAll(lcBean.getResult());
-     loadingPage.showSuccessView();
-     myAdapter.notifyDataSetChanged();
+        list.addAll(lcBean.getResult());
+        myAdapter.notifyDataSetChanged();
+        loadingPage.showSuccessView();
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_a;
+        return R.layout.fragment_all;
     }
 
     @Override
     protected void initPresenter() {
-         liCaiPresenter = new LiCaiPresenter(this);
+        liCaiPresenter = new LiCaiPresenter(this);
 
     }
 
@@ -56,13 +53,13 @@ public class AllFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiV
     @Override
     protected void initView() {
         rv = mbaseView.findViewById(R.id.rv);
-         myAdapter = new MyAdapter(R.layout.lc_layout, list);
+        myAdapter = new MyAdapter(R.layout.lc_layout, list);
         rv.setAdapter(myAdapter);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         myAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {
             @Override
             public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
-                switch (view.getId()){
+                switch (view.getId()) {
                     case R.id.btn:
                         list.remove(position);
                         myAdapter.notifyItemRemoved(position);
@@ -76,7 +73,6 @@ public class AllFragment extends BaseFragment<LiCaiPresenter> implements ILiCaiV
 
     @Override
     public void showLoading() {
-        Toast.makeText(getActivity(), "1121", Toast.LENGTH_SHORT).show();
         loadingPage.showLoadingView();
     }
 

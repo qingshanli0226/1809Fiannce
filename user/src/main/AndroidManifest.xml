@@ -3,7 +3,8 @@
     package="com.fiance.user">
 
     <application>
-        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".register.RegisterActivity"></activity>
+        <activity android:name=".UserActivity" />
     </application>
 
 </manifest>

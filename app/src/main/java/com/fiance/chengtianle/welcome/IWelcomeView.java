@@ -6,6 +6,7 @@ import com.fiance.net.mode.VersionBean;
 
 public interface IWelcomeView extends IBaseView {
     void onHomeData(HomeBean homeBean);
+
     void onVersionData(VersionBean versionBean);
 
 

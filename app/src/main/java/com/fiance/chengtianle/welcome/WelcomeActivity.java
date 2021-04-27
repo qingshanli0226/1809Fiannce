@@ -24,7 +24,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private final int ONE_TASK_FIISH = 0;
     private final int ALL_TASK_FIISH = 1;
     private final int DELAY_INDEX = 2;
-    private final int DELAY = 1*1000;
+    private final int DELAY = 1 * 1000;
     private boolean homeFinsh = false;
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
@@ -33,7 +33,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
-//        contentTv.setText(homeBean.toString());
+//      contentTv.setText(homeBean.toString());
         loadingPage.showSuccessView();
         homeFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
@@ -41,7 +41,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onVersionData(VersionBean versionBean) {
-        Toast.makeText(this, "获取到版本信息"+versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "获取到版本信息" + versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
         loadingPage.showSuccessView();
         versionFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
@@ -54,13 +54,13 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initPresenter() {
-         httpPresenter = new WelcomePresenter(this);
+        httpPresenter = new WelcomePresenter(this);
     }
 
     @Override
     protected void initData() {
-       httpPresenter.getHomeData();
-       httpPresenter.getVersionData();
+        httpPresenter.getHomeData();
+        httpPresenter.getVersionData();
     }
 
     @Override
@@ -68,20 +68,21 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         contentTv = findViewById(R.id.countDownTv);
         progressBar = findViewById(R.id.progressBar);
         coundDownTv = findViewById(R.id.countDownTv);
-        handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
-        coundDownTv.setText(countDown+"秒");
+        handler.sendEmptyMessageDelayed(DELAY_INDEX, DELAY);
+        coundDownTv.setText(countDown + "秒");
     }
 
     @Override
     public void showLoading() {
-      progressBar.setVisibility(View.VISIBLE);
-//        loadingPage.showTransparentLoadingView();
+        progressBar.setVisibility(View.VISIBLE);
+//      loadingPage.showTransparentLoadingView();
     }
 
     @Override
     public void hideLoading() {
-       progressBar.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);
     }
+
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -89,18 +90,18 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             switch (msg.what) {
                 case DELAY_INDEX:
                     countDown--;
-                    if (countDown>0) {
-                        coundDownTv.setText(countDown+"秒");
-                        handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
+                    if (countDown > 0) {
+                        coundDownTv.setText(countDown + "秒");
+                        handler.sendEmptyMessageDelayed(DELAY_INDEX, DELAY);
                     } else {
-                        coundDownTv.setText(countDown+"秒");
+                        coundDownTv.setText(countDown + "秒");
                         advertistFinsh = true;
                         handler.sendEmptyMessage(ONE_TASK_FIISH);
                     }
                     break;
 
                 case ONE_TASK_FIISH:
-                    if (homeFinsh&&versionFinsh&&advertistFinsh) {
+                    if (homeFinsh && versionFinsh && advertistFinsh) {
                         handler.sendEmptyMessage(ALL_TASK_FIISH);
                     }
                     break;

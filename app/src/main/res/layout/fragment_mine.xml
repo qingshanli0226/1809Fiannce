@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.MineFragment">
     <com.fiance.framework.MyView.ToolBar
@@ -14,5 +15,163 @@
         android:layout_height="@dimen/sixty">
     </com.fiance.framework.MyView.ToolBar>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_fivety"
+        android:orientation="vertical"
+        android:background="#27BAED">
 
+        <ImageView
+            android:layout_width="@dimen/engity"
+            android:layout_height="@dimen/engity"
+            android:src="@drawable/my_user_default"
+            android:layout_marginTop="@dimen/ten"
+            android:id="@+id/img_tx"
+            android:layout_marginLeft="@dimen/dp_165"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="Hi,welcome!"
+            android:id="@+id/username"
+            android:layout_marginLeft="@dimen/dp_165"
+            android:layout_marginTop="@dimen/ten"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_170"
+        android:background="#F3F3F3"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/ten"
+            android:layout_height="wrap_content"
+            android:text="学习提示:"
+            android:textColor="#ff0000"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="充值我们将以集成支付宝sdk支付金额演示充值功能"
+            android:layout_marginTop="@dimen/two"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="现,系统将会告知24小时内进行转账,如果未收到,请联系客服..."
+            ></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/ten"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:id="@+id/pay"
+                android:src="@drawable/my_recharge_bg"></ImageView>
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:id="@+id/cash"
+                android:layout_marginLeft="@dimen/fivety"
+                android:src="@drawable/my_withdraw_bg"></ImageView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/engity"
+            android:src="@drawable/product_edit_bg"
+            android:scaleType="fitXY"></ImageView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_invest_manage"
+            android:layout_marginTop="@dimen/fivethsp"
+            android:layout_marginLeft="@dimen/twenty"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="投资管理"
+            android:layout_marginLeft="@dimen/engity"
+            android:layout_marginTop="@dimen/three_o"
+            android:textSize="@dimen/twenty"></TextView>
+        <ImageView
+            android:layout_width="@dimen/twenty"
+            android:layout_height="@dimen/twenty"
+            android:src="@drawable/right"
+            android:layout_marginTop="@dimen/three_o"
+            android:layout_marginLeft="@dimen/three_fivety"></ImageView>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/engity"
+            android:src="@drawable/product_edit_bg"
+            android:scaleType="fitXY"></ImageView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_reward_manage"
+            android:layout_marginTop="@dimen/fivethsp"
+            android:layout_marginLeft="@dimen/twenty"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="投资管理(直观)"
+            android:layout_marginLeft="@dimen/engity"
+            android:layout_marginTop="@dimen/three_o"
+            android:textSize="@dimen/twenty"></TextView>
+        <ImageView
+            android:layout_width="@dimen/twenty"
+            android:layout_height="@dimen/twenty"
+            android:src="@drawable/right"
+            android:layout_marginTop="@dimen/three_o"
+            android:layout_marginLeft="@dimen/three_fivety">
+        </ImageView>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/engity"
+            android:src="@drawable/product_edit_bg"
+            android:scaleType="fitXY"></ImageView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_asset_manage"
+            android:layout_marginTop="@dimen/fivethsp"
+            android:layout_marginLeft="@dimen/twenty"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="资产管理"
+            android:layout_marginLeft="@dimen/engity"
+            android:layout_marginTop="@dimen/three_o"
+            android:textSize="@dimen/twenty"></TextView>
+        <ImageView
+            android:layout_width="@dimen/twenty"
+            android:layout_height="@dimen/twenty"
+            android:src="@drawable/right"
+            android:layout_marginTop="@dimen/three_o"
+            android:layout_marginLeft="@dimen/three_fivety"></ImageView>
+    </FrameLayout>
 </LinearLayout>

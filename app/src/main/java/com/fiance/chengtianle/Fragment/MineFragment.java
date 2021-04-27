@@ -12,13 +12,11 @@ import com.fiance.chengtianle.R;
 
 
 public class MineFragment extends Fragment {
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View inflate = inflater.inflate(R.layout.fragment_mine, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mine, container, false);
+        return inflate;
     }
 }
