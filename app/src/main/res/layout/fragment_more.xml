@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFEFEF"
+    android:background="@color/colorMoreLinearLayoutBackground"
     android:orientation="vertical"
     tools:context=".fragment.more.MoreFragment">
 
@@ -18,14 +18,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:background="#EFEFEF"
+        android:layout_height="@dimen/more_linearLayout_one_layout_height"
+        android:background="@color/colorMoreLinearLayoutBackground"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/user_register"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/more_linearLayout_two_layout_height"
             android:layout_weight="1"
             android:background="@drawable/property_bro_deposit"
             android:gravity="center_vertical">
@@ -47,7 +47,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/more_linearLayout_two_layout_height"
             android:layout_weight="1"
             android:background="@drawable/property_bro_deposit"
             android:gravity="center_vertical">
@@ -76,7 +76,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/more_linearLayout_two_layout_height"
             android:layout_weight="1"
             android:background="@drawable/property_bro_deposit"
             android:gravity="center_vertical">
@@ -98,7 +98,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/more_linearLayout_two_layout_height"
             android:layout_weight="1"
             android:background="@drawable/property_bro_deposit"
             android:gravity="center_vertical">
@@ -120,7 +120,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/more_linearLayout_two_layout_height"
             android:layout_weight="1"
             android:background="@drawable/property_bro_deposit"
             android:gravity="center_vertical">
@@ -142,7 +142,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/more_linearLayout_two_layout_height"
             android:layout_weight="1"
             android:background="@drawable/property_bro_deposit"
             android:gravity="center_vertical">
@@ -164,7 +164,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/more_linearLayout_two_layout_height"
             android:layout_weight="1"
             android:background="@drawable/property_bro_deposit"
             android:gravity="center_vertical">

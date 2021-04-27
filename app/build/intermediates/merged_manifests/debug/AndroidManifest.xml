@@ -37,7 +37,8 @@
         <activity android:name="com.fiannce.myapplication.MainActivity" >
         </activity>
         <activity android:name="com.fiannce.pay.PayActivity" />
-        <activity android:name="com.fiannce.user.LoginActivity" />
+        <activity android:name="com.fiannce.user.register.RegisterActivity" />
+        <activity android:name="com.fiannce.user.login.LoginActivity" />
         <activity
             android:name="com.blankj.utilcode.util.Utils$TransActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

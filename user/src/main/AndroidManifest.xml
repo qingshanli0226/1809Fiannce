@@ -3,7 +3,8 @@
     package="com.fiannce.user">
 
     <application>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".register.RegisterActivity"></activity>
+        <activity android:name=".login.LoginActivity" />
     </application>
 
 </manifest>

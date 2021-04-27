@@ -11,10 +11,13 @@
 9-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml
 10
 11    <application>
-11-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:5:5-7:19
-12        <activity android:name="com.fiannce.user.LoginActivity" />
-12-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:9-60
-12-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:19-48
-13    </application>
-14
-15</manifest>
+11-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:5:5-8:19
+12        <activity android:name="com.fiannce.user.register.RegisterActivity" />
+12-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:9-72
+12-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:19-60
+13        <activity android:name="com.fiannce.user.login.LoginActivity" />
+13-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:7:9-57
+13-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:7:19-54
+14    </application>
+15
+16</manifest>

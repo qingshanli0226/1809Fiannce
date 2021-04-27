@@ -36,6 +36,7 @@
     <color name="colorPropertyLinearLayoutOne">#45C2F0</color>
     <color name="colorPropertyLinearLayoutTwo">#F0F0F0</color>
     <color name="colorPropertyTextViewone">#F70505</color>
-
+    <!-- TODO: More Fragment-->
+    <color name="colorMoreLinearLayoutBackground">#EFEFEF</color>
 
 </resources>

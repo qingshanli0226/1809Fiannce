@@ -9,7 +9,8 @@
         android:targetSdkVersion="30" />
 
     <application>
-        <activity android:name="com.fiannce.user.LoginActivity" />
+        <activity android:name="com.fiannce.user.register.RegisterActivity" />
+        <activity android:name="com.fiannce.user.login.LoginActivity" />
     </application>
 
 </manifest>

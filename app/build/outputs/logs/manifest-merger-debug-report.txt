@@ -5,7 +5,7 @@ INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
 INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
 INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-25:12
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
-MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-16:12
 MERGED from [:framework] D:\zgsix\1809Fiannce\framework\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:net] D:\zgsix\1809Fiannce\net\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\22b7effb0d5baacdae37ddb4170aabf6\rxandroid-2.1.1\AndroidManifest.xml:15:1-20:12
@@ -105,8 +105,8 @@ application
 ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:5:5-23:19
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
-MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
-MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
+MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-14:19
+MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-14:19
 MERGED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:9:5-33:19
 MERGED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:9:5-33:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\2946ca0ea6c89dab7d7d9fbc18e54292\material-1.0.0\AndroidManifest.xml:22:5-20
@@ -339,10 +339,14 @@ activity#com.fiannce.pay.PayActivity
 ADDED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-64
 	android:name
 		ADDED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-61
-activity#com.fiannce.user.LoginActivity
-ADDED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-67
+activity#com.fiannce.user.register.RegisterActivity
+ADDED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-79
 	android:name
-		ADDED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-64
+		ADDED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-76
+activity#com.fiannce.user.login.LoginActivity
+ADDED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-73
+	android:name
+		ADDED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-70
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:27:5-80
 	android:name

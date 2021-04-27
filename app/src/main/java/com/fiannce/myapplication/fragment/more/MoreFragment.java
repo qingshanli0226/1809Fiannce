@@ -1,15 +1,14 @@
 package com.fiannce.myapplication.fragment.more;
 
 
-import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.fiannce.framework.BaseFragment;
+import com.fiannce.framework.view.ToolBar;
 import com.fiannce.myapplication.R;
 
 
@@ -19,13 +18,22 @@ import com.fiannce.myapplication.R;
 public class MoreFragment extends BaseFragment {
 
 
+    private ToolBar toobarFake;
+    private LinearLayout userRegister;
+
     public MoreFragment() {
         // Required empty public constructor
     }
 
     @Override
     protected void initData() {
-
+        userRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
+                ARouter.getInstance().build("/user/RegisterActivity").withInt("",2).navigation();
+            }
+        });
     }
 
     @Override
@@ -36,6 +44,8 @@ public class MoreFragment extends BaseFragment {
     @Override
     protected void initView() {
 
+        toobarFake = (ToolBar) mView.findViewById(R.id.toobar_fake);
+        userRegister = (LinearLayout) mView.findViewById(R.id.user_register);
     }
 
     @Override
