@@ -6,7 +6,7 @@ import com.example.frame_library.mvp.IPresneter
 import com.example.frame_library.view.ToBar
 import kotlinx.android.synthetic.main.fragment_mroe.*
 
-class MroeFragment:BaseFragment<IPresneter>() {
+class MroeFragment : BaseFragment<IPresneter>() {
     override fun bandLayoutId(): Int = R.layout.fragment_mroe
 
     override fun initView() {
@@ -18,15 +18,15 @@ class MroeFragment:BaseFragment<IPresneter>() {
     }
 
     override fun OnLeftClickListenter() {
-        TODO("Not yet implemented")
+
     }
 
     override fun OnTitleClickListenter() {
-        TODO("Not yet implemented")
+
     }
 
     override fun OnRightClickListenter() {
-        TODO("Not yet implemented")
+
     }
 
 //    override fun setPresenter(): IPresneter {

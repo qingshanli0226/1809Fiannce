@@ -5,6 +5,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Handler
 import android.os.Message
+import android.view.KeyEvent
 import android.view.WindowManager
 import com.alibaba.android.arouter.launcher.ARouter
 import com.example.financial.ui.MainActivity
@@ -17,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_welcome.*
 import java.util.*
 import kotlin.concurrent.timerTask
 
-class WelcomeActivity : BaseActitvty<WelcomePresenter>(), WelcomeCanter.View {
+class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
     /**
      * 是否需要更新
      */
@@ -78,7 +79,9 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), WelcomeCanter.View {
         return R.layout.activity_welcome
     }
 
-    override fun initView() {}
+    override fun initView() {
+        attaPresenter(WelcomePresenter(WelcomeModle(), this))
+    }
 
     override fun initData() {
         act_welcome_version_text.setText(getVersionName() + "")
@@ -132,7 +135,7 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), WelcomeCanter.View {
     /***
      * @return初始化Presneter
      */
-    override fun setPresneter(): WelcomePresenter = WelcomePresenter(WelcomeModle(), this)
+    //override fun setPresneter(): WelcomePresenter = WelcomePresenter(WelcomeModle(), this)
 
     override fun onDestroy() {
         super.onDestroy()
@@ -164,7 +167,7 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), WelcomeCanter.View {
         var time = 3
         var timer1 = Timer()
         timer1.schedule(timerTask {
-            if (time== 0) {
+            if (time == 0) {
                 handler.sendEmptyMessage(TIME)
                 cancel()
             } else {
@@ -176,5 +179,12 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), WelcomeCanter.View {
 
         }, 1000, 1000)
         return timer1
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            return false
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }

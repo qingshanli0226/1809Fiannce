@@ -7,11 +7,11 @@ import retrofit2.http.GET
 
 interface Api {
     @GET(InterUrl.UPDATE)
-    fun getVersion():Observable<Request<UpData>>
+    fun getVersion(): Observable<Request<UpData>>
 
     @GET(InterUrl.PRODUCT)
-    fun product():Observable<RequestList<Product>>
+    fun product(): Observable<RequestList<Product>>
 
     @GET(InterUrl.INDEX)
-    fun index():Observable<Request<Index>>
+    fun index(): Observable<Request<Index>>
 }

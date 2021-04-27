@@ -6,6 +6,5 @@ import com.example.financial.base.Product
 
 object DataUlit {
     const val AROUTER_JUMP_MAIN="/app/Mainactivity"
-    var product:RequestList<Product>?=null
     var index:Index?=null
 }

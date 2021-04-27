@@ -4,9 +4,10 @@ import com.example.financial.base.*
 import com.example.net_library.http.observer.BaseObserver
 import com.example.frame_library.mvp.BasePresenter
 
-class WelcomePresenter(mModle:WelcomeModle, mView:WelcomeCanter.View):BasePresenter<WelcomeCanter.View,WelcomeCanter.Modle>(mView,mModle) {
+class WelcomePresenter(mModle: WelcomeModle, mView: IWelcomeCanter.View) :
+    BasePresenter<IWelcomeCanter.View, IWelcomeCanter.Modle>(mView, mModle) {
 
-    fun getVersion(){
+    fun getVersion() {
         mModle!!.getVersion(object : BaseObserver<Request<UpData>>() {
             override fun sure(t: Request<UpData>) {
                 mView!!.onUpdate(t.result)

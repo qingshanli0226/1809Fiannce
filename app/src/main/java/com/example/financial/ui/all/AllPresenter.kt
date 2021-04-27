@@ -5,8 +5,10 @@ import com.example.financial.base.RequestList
 import com.example.frame_library.mvp.BasePresenter
 import com.example.net_library.http.observer.BaseObserver
 
-class AllPresenter(mModle: AllModle, mView:IAllCanter.View):BasePresenter<IAllCanter.View,IAllCanter.Modle>(mView, mModle) {
-    fun lodingData(){
+class AllPresenter(mModle: AllModle, mView: IAllCanter.View) :
+    BasePresenter<IAllCanter.View, IAllCanter.Modle>(mView, mModle) {
+
+    fun lodingData() {
         mModle!!.LodingData(object : BaseObserver<RequestList<Product>>() {
             override fun sure(t: RequestList<Product>) {
                 mView!!.onLodinData(t.result)
@@ -29,4 +31,5 @@ class AllPresenter(mModle: AllModle, mView:IAllCanter.View):BasePresenter<IAllCa
             }
         })
     }
+
 }

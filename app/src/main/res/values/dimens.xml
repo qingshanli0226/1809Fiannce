@@ -8,4 +8,6 @@
     <dimen name="iteam_product_margin">15dp</dimen>
     <dimen name="iteam_product_progress_size">15</dimen>
     <dimen name="iteam_product_progress_textsize">50</dimen>
+    <dimen name="iteam_product_woin_width">382dp</dimen>
+    <dimen name="iteam_product_dele_but_size">150dp</dimen>
 </resources>

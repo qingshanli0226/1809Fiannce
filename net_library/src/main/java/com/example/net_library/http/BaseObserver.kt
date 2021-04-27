@@ -4,11 +4,11 @@ import com.blankj.utilcode.util.LogUtils
 import io.reactivex.observers.DisposableObserver
 
 interface ICallObserver<T> {
-    fun sure(t:T);
-    fun fille(meag:String);
+    fun sure(t: T);
+    fun fille(meag: String);
 }
 
-abstract class BaseObserver<T>:DisposableObserver<T>(),ICallObserver<T>{
+abstract class BaseObserver<T> : DisposableObserver<T>(), ICallObserver<T> {
 
     override fun onNext(t: T) {
         sure(t)
@@ -23,7 +23,7 @@ abstract class BaseObserver<T>:DisposableObserver<T>(),ICallObserver<T>{
     }
 
     override fun fille(meag: String) {
-       LogUtils.e(meag)
+        LogUtils.e(meag)
     }
 
 }

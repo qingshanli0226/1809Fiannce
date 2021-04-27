@@ -9,7 +9,8 @@ import com.example.net_library.http.observer.BaseObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class HomeModle:BaseModle(),HomeCanter.Modle {
+class HomeModle : BaseModle(), IHomeCanter.Modle {
+
     override fun requestData(callObserver: BaseObserver<Request<Index>>) {
         RetrofitManger.retrofit
             .create(Api::class.java)

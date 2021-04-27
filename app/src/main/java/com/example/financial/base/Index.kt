@@ -10,5 +10,5 @@ package com.example.financial.base
  */
 data class Index(
     val imageArr: List<ImageArr>,
-    val proInfo: ProInfo
+    val proInfo: ProInfo,
 )

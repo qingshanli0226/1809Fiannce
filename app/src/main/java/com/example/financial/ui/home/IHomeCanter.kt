@@ -6,11 +6,14 @@ import com.example.frame_library.mvp.IModle
 import com.example.frame_library.mvp.IView
 import com.example.net_library.http.observer.BaseObserver
 
-interface HomeCanter {
-    interface Modle :IModle{
+interface IHomeCanter {
+
+    interface Modle : IModle {
         fun requestData(callObserver: BaseObserver<Request<Index>>);
     }
-    interface View :IView{
+
+    interface View : IView {
         fun onData(index: Index);
     }
+
 }

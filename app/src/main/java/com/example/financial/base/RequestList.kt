@@ -10,5 +10,5 @@ package com.example.financial.base
 data class RequestList<T>(
     val code: Int,
     val msg: String,
-    val result: List<T>
+    val result: List<T>,
 )

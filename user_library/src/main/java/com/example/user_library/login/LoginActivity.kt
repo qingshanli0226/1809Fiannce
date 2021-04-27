@@ -10,8 +10,8 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-class LoginActivity :BaseActitvty<IPresneter>() {
-    override fun bandLayoutId(): Int= R.layout.activity_login
+class LoginActivity : BaseActitvty<IPresneter>() {
+    override fun bandLayoutId(): Int = R.layout.activity_login
 
     override fun initView() {
         EventBus.getDefault().register(this)
@@ -23,9 +23,9 @@ class LoginActivity :BaseActitvty<IPresneter>() {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun OnMeanger(meanger: Meanger){
-        if (meanger.Flag.equals(Uilt.ACTVON_LOGIN)){
-            Toast.makeText(this,meanger.Meang,Toast.LENGTH_LONG).show()
+    fun OnMeanger(meanger: Meanger) {
+        if (meanger.Flag.equals(Uilt.ACTVON_LOGIN)) {
+            Toast.makeText(this, meanger.Meang, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -34,8 +34,8 @@ class LoginActivity :BaseActitvty<IPresneter>() {
         EventBus.getDefault().unregister(this)
     }
 
-    override fun setPresneter(): IPresneter {
-        TODO("Not yet implemented")
-    }
+//    override fun setPresneter(): IPresneter {
+//        TODO("Not yet implemented")
+//    }
 
 }

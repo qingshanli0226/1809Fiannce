@@ -9,7 +9,8 @@ import com.example.net_library.http.observer.BaseObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class AllModle:BaseModle(),IAllCanter.Modle {
+class AllModle : BaseModle(), IAllCanter.Modle {
+
     override fun LodingData(callObserver: BaseObserver<RequestList<Product>>) {
         RetrofitManger.retrofit
             .create(Api::class.java)
@@ -18,4 +19,5 @@ class AllModle:BaseModle(),IAllCanter.Modle {
             .subscribeOn(Schedulers.io())
             .subscribe(callObserver)
     }
+
 }

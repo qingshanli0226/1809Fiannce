@@ -20,5 +20,5 @@ data class ProInfo(
     val name: String,
     val progress: String,
     val suodingDays: String,
-    val yearRate: String
+    val yearRate: String,
 )

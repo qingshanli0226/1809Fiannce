@@ -16,5 +16,5 @@ data class UpData(
     val desc: String,
     val force: Boolean,
     val version: String,
-    val versionCode: Int
+    val versionCode: Int,
 )

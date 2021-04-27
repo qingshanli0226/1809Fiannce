@@ -20,9 +20,9 @@ data class Product(
     val name: String,
     val progress: String,
     val suodingDays: String,
-    val yearRate: String
+    val yearRate: String,
 
-) {
+    ) {
     override fun toString(): String {
         return "Product(id='$id', memberNum='$memberNum', minTouMoney='$minTouMoney', money='$money', name='$name', progress='$progress', suodingDays='$suodingDays', yearRate='$yearRate')"
     }

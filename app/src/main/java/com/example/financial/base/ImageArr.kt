@@ -8,5 +8,5 @@ package com.example.financial.base
 data class ImageArr(
     val ID: String,
     val IMAPAURL: String,
-    val IMAURL: String
+    val IMAURL: String,
 )

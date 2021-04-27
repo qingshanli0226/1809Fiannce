@@ -8,7 +8,7 @@ import com.example.frame_library.mvp.BaseModle
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class WelcomeModle:BaseModle(),WelcomeCanter.Modle {
+class WelcomeModle : BaseModle(), IWelcomeCanter.Modle {
     override fun getVersion(callObserver: BaseObserver<Request<UpData>>) {
         RetrofitManger.retrofit
             .create(Api::class.java)

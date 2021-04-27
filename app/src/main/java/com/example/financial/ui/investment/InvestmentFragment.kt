@@ -10,8 +10,8 @@ import com.example.frame_library.view.ToBar
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_investment.*
 
-class InvestmentFragment:BaseFragment<IPresneter>() {
-    override fun bandLayoutId(): Int= R.layout.fragment_investment
+class InvestmentFragment : BaseFragment<IPresneter>() {
+    override fun bandLayoutId(): Int = R.layout.fragment_investment
 
     override fun initView() {
         attaToBar(fragment_investment_ToBar)
@@ -19,7 +19,7 @@ class InvestmentFragment:BaseFragment<IPresneter>() {
         arrayList.add(AllFramgnet())
         arrayList.add(Fragment())
         arrayList.add(Fragment())
-        fragment_investment_ViewPage.adapter=FragmentAbper(childFragmentManager,arrayList)
+        fragment_investment_ViewPage.adapter = FragmentAbper(childFragmentManager, arrayList)
 
         fragment_investment_Tab.setupWithViewPager(fragment_investment_ViewPage)
         fragment_investment_Tab.setSelectedTabIndicatorGravity(TabLayout.INDICATOR_GRAVITY_STRETCH)

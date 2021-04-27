@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.example.frame_library.R
 
 class ToBar(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
-    LinearLayout(context, attrs, defStyleAttr) ,View.OnClickListener{
+    LinearLayout(context, attrs, defStyleAttr), View.OnClickListener {
     private val title: TextView by lazy {
         findViewById(R.id.view_tobar_title_text)
     }
@@ -22,7 +22,8 @@ class ToBar(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
         findViewById(R.id.view_tobar_right_img)
     }
 
-    private var onClickListener:OnClickListener?=null
+    private var onClickListener: OnClickListener? = null
+
     constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context?) : this(context, null)
 
@@ -33,8 +34,8 @@ class ToBar(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
 
         var title = obtainStyledAttributes.getString(R.styleable.ToBar_title)!!
 
-        var lefshow = obtainStyledAttributes.getBoolean(R.styleable.ToBar_left_show, true)!!
-        var rightshow = obtainStyledAttributes.getBoolean(R.styleable.ToBar_right_show, true)!!
+        var lefshow = obtainStyledAttributes.getBoolean(R.styleable.ToBar_left_show, true)
+        var rightshow = obtainStyledAttributes.getBoolean(R.styleable.ToBar_right_show, true)
 
         setTitle(title)
         setLeftShow(lefshow)
@@ -50,7 +51,7 @@ class ToBar(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
         this.title.text = title
     }
 
-    fun setLeftShow(b:Boolean){
+    fun setLeftShow(b: Boolean) {
         if (b) {
             leftImg.visibility = VISIBLE
         } else {
@@ -58,7 +59,7 @@ class ToBar(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
         }
     }
 
-    fun setRightShow(b:Boolean){
+    fun setRightShow(b: Boolean) {
         if (b) {
             rightImg.visibility = VISIBLE
         } else {
@@ -66,22 +67,28 @@ class ToBar(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
         }
     }
 
-    fun setonClickListener(listener: OnClickListener):ToBar{
+    fun setonClickListener(listener: OnClickListener): ToBar {
         this.onClickListener = listener
         return this
     }
 
-    interface OnClickListener{
-       fun OnLeftClickListenter()
-       fun OnTitleClickListenter()
-       fun OnRightClickListenter()
+    interface OnClickListener {
+        fun OnLeftClickListenter()
+        fun OnTitleClickListenter()
+        fun OnRightClickListenter()
     }
 
     override fun onClick(v: View?) {
-        when(v!!.id){
-            R.id.view_tobar_left_img->{ onClickListener!!.OnLeftClickListenter() }
-            R.id.view_tobar_title_text->{ onClickListener!!.OnTitleClickListenter() }
-            R.id.view_tobar_right_img->{ onClickListener!!.OnRightClickListenter() }
+        when (v!!.id) {
+            R.id.view_tobar_left_img -> {
+                onClickListener!!.OnLeftClickListenter()
+            }
+            R.id.view_tobar_title_text -> {
+                onClickListener!!.OnTitleClickListenter()
+            }
+            R.id.view_tobar_right_img -> {
+                onClickListener!!.OnRightClickListenter()
+            }
         }
     }
 }
