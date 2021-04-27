@@ -1,17 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.fiannce.bawei.fragment.mineFragment.MineFragment">
+    android:orientation="vertical">
 
     <com.fiannce.framework.view.ToolBar
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="@dimen/dp_40"
         android:id="@+id/toolbar"
-        app:titleText="我的资产"
-        app:rightImage="@drawable/icon_more_on"
-        ></com.fiannce.framework.view.ToolBar>
+        app:titleText="@string/my"
+        app:rightImage="@drawable/my_setting_icon"
+        app:rightIsShow="true"
+        >
+    </com.fiannce.framework.view.ToolBar>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-</FrameLayout>
+            <RelativeLayout
+                android:id="@+id/rl_me"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_120"
+                android:background="@color/colorSky"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/rl_me_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_64"
+                        android:layout_height="@dimen/dp_64"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/my_user_bg_icon" />
+
+                    <ImageView
+                        android:id="@+id/iv_me_icon"
+                        android:layout_width="@dimen/dp_62"
+                        android:layout_height="@dimen/dp_62"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/my_user_default" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_me_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_me_icon"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="center"
+                    android:text="@string/hi"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sp_14" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/study"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="@string/sdk" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="@string/p2p" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/recharge"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_9"
+                    android:layout_weight="1"
+                    android:src="@drawable/my_recharge_bg" />
+
+                <ImageView
+                    android:id="@+id/withdraw"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_9"
+                    android:layout_weight="1"
+                    android:src="@drawable/my_withdraw_bg" />
+            </LinearLayout>
+
+            <!--充分使用textview属性代替LinearLayout布局-->
+            <TextView
+                android:id="@+id/ll_touzi"
+                style="@style/LoginStyle"
+                android:drawableLeft="@drawable/my_invest_manage"
+                android:text="@string/manager" />
+
+            <TextView
+                android:id="@+id/ll_touzi_zhiguan"
+                style="@style/LoginStyle"
+                android:drawableLeft="@drawable/my_reward_manage"
+                android:text="@string/invest_manager" />
+
+            <TextView
+                android:id="@+id/ll_zichan"
+                style="@style/LoginStyle"
+                android:drawableLeft="@drawable/my_asset_manage"
+                android:text="@string/money_manager" />
+
+
+
+
+        </LinearLayout>
+
+
+</LinearLayout>

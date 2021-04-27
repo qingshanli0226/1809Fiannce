@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fiannce.user" >
+    package="com.fiannce.user">
 
     <application>
-
+        <activity android:name=".exitLogin.ExitLoginActivity"></activity>
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".register.RegisterActivity" />
     </application>
 
 </manifest>
-

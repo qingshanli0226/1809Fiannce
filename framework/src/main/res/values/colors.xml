@@ -11,4 +11,10 @@
     <color name="colorgray">#D3CECE</color>
     <color name="colorRedqian">#f00</color>
     <color name="colorRedshen">#FB4257</color>
+    <color name="colorText">#5A6E9E</color>
+    <color name="colorThree">#333333</color>
+    <color name="colorFive">#5c5c5c</color>
+    <color name="colorBlueTwo">#28BAED</color>
+    <color name="colorF">#ffffff</color>
+    <color name="colorUpdate">#00baff</color>
 </resources>
