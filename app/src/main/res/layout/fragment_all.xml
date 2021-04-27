@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:id="@+id/toolbar"
         android:visibility="gone"
-        android:layout_height="@dimen/fourty"></com.fiannce.framework.view.ToolBar>
+        android:layout_height="@dimen/dp_40"></com.fiannce.framework.view.ToolBar>
 
     <com.fiannce.framework.view.MyTextView
         android:layout_width="match_parent"
@@ -20,14 +20,14 @@
         android:textColor="@color/colorRedqian"
         android:singleLine="true"
         android:ellipsize="marquee"
-        android:textSize="@dimen/twenty_five"
+        android:textSize="@dimen/dp_25"
         ></com.fiannce.framework.view.MyTextView>
 
-    <com.fiannce.framework.view.SlideRecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/allRv"
         >
-    </com.fiannce.framework.view.SlideRecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

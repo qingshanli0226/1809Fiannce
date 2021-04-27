@@ -1,4 +1,4 @@
-package com.fiannce.bawei.fragment.investFragment.tabFragment;
+package com.fiannce.bawei.fragment.investFragment.tabFragment.hotFragment;
 
 
 import android.os.Bundle;

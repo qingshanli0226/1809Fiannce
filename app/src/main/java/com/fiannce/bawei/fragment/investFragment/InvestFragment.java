@@ -10,10 +10,10 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.fiannce.zhaoyuzan.R;
-import com.fiannce.bawei.fragment.adapter.FragAdapter;
+import com.fiannce.bawei.fragment.investFragment.tabFragment.adapter.FragAdapter;
 import com.fiannce.bawei.fragment.investFragment.tabFragment.allFragment.AllFragment;
-import com.fiannce.bawei.fragment.investFragment.tabFragment.HotFragment;
-import com.fiannce.bawei.fragment.investFragment.tabFragment.RecomendFragment;
+import com.fiannce.bawei.fragment.investFragment.tabFragment.hotFragment.HotFragment;
+import com.fiannce.bawei.fragment.investFragment.tabFragment.RecommondAdapter.RecomendFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

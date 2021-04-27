@@ -11,18 +11,18 @@
         android:layout_width="match_parent"
         app:titleText="@string/activity_invest"
         android:id="@+id/toolbar"
-        android:layout_height="@dimen/fourty"></com.fiannce.framework.view.ToolBar>
+        android:layout_height="@dimen/dp_40"></com.fiannce.framework.view.ToolBar>
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/zero"
+        android:layout_height="@dimen/dp_0"
         android:id="@+id/investTab"
         android:layout_weight="1"
         ></com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="@dimen/zero"
+        android:layout_height="@dimen/dp_0"
         android:id="@+id/investVp"
         android:layout_weight="8"
         ></androidx.viewpager.widget.ViewPager>

@@ -1,4 +1,4 @@
-package com.fiannce.bawei.fragment.adapter;
+package com.fiannce.bawei.fragment.investFragment.tabFragment.adapter;
 
 import android.view.ViewGroup;
 

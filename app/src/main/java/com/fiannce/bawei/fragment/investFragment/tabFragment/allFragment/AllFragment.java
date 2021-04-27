@@ -1,7 +1,9 @@
 package com.fiannce.bawei.fragment.investFragment.tabFragment.allFragment;
 
 
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,7 +14,6 @@ import com.fiannce.framework.BaseFragment;
 import com.fiannce.framework.view.SlideRecyclerView;
 import com.fiannce.net.mode.InvestBean;
 import com.fiannce.zhaoyuzan.R;
-import com.fiannce.bawei.fragment.investFragment.adapter.InvestAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ import java.util.List;
 public class AllFragment extends BaseFragment<InvestPresenter> implements IInvestView {
 
     private List<InvestBean.ResultBean> list = new ArrayList<>();
-    private SlideRecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private InvestAdapter investAdapter;
 
     @Override
@@ -49,15 +50,14 @@ public class AllFragment extends BaseFragment<InvestPresenter> implements IInves
         investAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (view.getId()) {
-                    case R.id.txt_delete:
-                        recyclerView.closeMenu();
-                        list.remove(position);
-                        investAdapter.notifyDataSetChanged();
-                        break;
+                if (view.getId() == R.id.txt_delete) {
+                    list.remove(position);
+                    investAdapter.notifyItemRemoved(position);
                 }
             }
         });
+
+
 
     }
 

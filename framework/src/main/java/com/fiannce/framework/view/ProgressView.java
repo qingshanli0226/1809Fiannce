@@ -115,11 +115,11 @@ public class ProgressView extends View {
 
         progressViewWidth = getMeasuredWidth();
         progressViewHeight = getMeasuredHeight();
-        int centerX = progressViewWidth/2;
-        int centerY = progressViewHeight/2;
+        int centerX = progressViewWidth / 2;
+        int centerY = progressViewHeight / 2;
 
         //半径
-        int radius =( (progressViewWidth<progressViewHeight?progressViewWidth/2:progressViewHeight/2)-CIRCLE_MARGIN)-15;
+        int radius =( (progressViewWidth < progressViewHeight ? progressViewWidth / 2 : progressViewHeight / 2) - CIRCLE_MARGIN) - 15;
         paint.setColor(neiColor);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);
@@ -128,7 +128,7 @@ public class ProgressView extends View {
 
 
         //矩形
-        RectF rectF = new RectF(progressViewWidth/2-radius,progressViewHeight/2-radius,progressViewWidth/2+radius,progressViewHeight/2+radius);
+        RectF rectF = new RectF(progressViewWidth / 2 - radius,progressViewHeight / 2 - radius,progressViewWidth / 2 + radius,progressViewHeight / 2 + radius);
         paint.setColor(waiColor);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(circleWith);
@@ -140,9 +140,9 @@ public class ProgressView extends View {
         paint.setColor(textColor);
         paint.setTextSize(30);
         paint.setStrokeWidth(2);
-        String content = (progressAngle*100)/360+"%";
+        String content = (progressAngle * 100) / 360 + "%";
         paint.getTextBounds(content,0,content.length(),rect);
-        canvas.drawText(content,progressViewWidth/2-rect.width()/2,progressViewHeight/2+rect.height()/2,paint);
+        canvas.drawText(content,progressViewWidth / 2-rect.width() / 2,progressViewHeight / 2+rect.height() / 2,paint);
     }
 
     public void destry() {

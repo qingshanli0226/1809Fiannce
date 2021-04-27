@@ -5,7 +5,7 @@
 
         <com.fiannce.framework.view.ToolBar
             android:layout_width="match_parent"
-            android:layout_height="@dimen/sixty"
+            android:layout_height="@dimen/dp_60"
             android:id="@+id/toolbar">
         </com.fiannce.framework.view.ToolBar>
     </LinearLayout>
