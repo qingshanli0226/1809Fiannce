@@ -31,7 +31,7 @@ public class ItemBar extends LinearLayout {
     private String text,rightText;
     private int textColor = Color.RED, backColor = Color.GRAY,textRightColor = Color.RED;
     private int leftSrc, rightSrc;
-    private boolean leftIsshow=false, rightIshow=false,rightTextIsShow=false;
+    private boolean leftIsshow=false, rightIsShow=false,rightTextIsShow=false;
     private ItemOnClickLisenter itemOnClickLisenter;
     private int textSize,rightTextSize;
     public void setItemOnClickLisenter(ItemOnClickLisenter itemOnClickLisenter) {
@@ -69,7 +69,7 @@ public class ItemBar extends LinearLayout {
             leftSrc = typedArray.getResourceId(R.styleable.ItemBar_app_item_left_src, 0);
             rightSrc = typedArray.getResourceId(R.styleable.ItemBar_app_item_right_src, 0);
             leftIsshow = typedArray.getBoolean(R.styleable.ItemBar_app_item_left_isshow, leftIsshow);
-            rightIshow = typedArray.getBoolean(R.styleable.ItemBar_app_item_right_isshow, rightIshow);
+            rightIsShow = typedArray.getBoolean(R.styleable.ItemBar_app_item_right_isshow, rightIsShow);
             typedArray.recycle();
         }
 
@@ -90,7 +90,7 @@ public class ItemBar extends LinearLayout {
         if (leftSrc != 0 && leftIsshow) {
             leftItemPic.setImageResource(leftSrc);
         }
-        if (rightSrc != 0 && rightIshow) {
+        if (rightSrc != 0 && rightIsShow) {
             rightItemPic.setImageResource(rightSrc);
         }
 

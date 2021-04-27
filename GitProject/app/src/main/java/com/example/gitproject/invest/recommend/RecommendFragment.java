@@ -1,23 +1,17 @@
-package com.example.gitproject.Invest.hot;
+package com.example.gitproject.invest.recommend;
 
-import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.framework.BaseFragment;
 import com.example.gitproject.R;
 
 
-public class HotFragment extends BaseFragment {
+public class RecommendFragment extends BaseFragment {
 
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_hot;
+        return R.layout.fragment_recommend;
     }
 
     @Override

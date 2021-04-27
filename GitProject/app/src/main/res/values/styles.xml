@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="showItemBar">
+    <style name="showLeftRightShow">
         <item name="app_item_left_isshow">true</item>
         <item name="app_item_right_isshow">true</item>
         <item name="app_item_text_color">@color/gray</item>
         <item name="app_item_back_color">#ffffff</item>
+        <item name="app_item_text_size">@dimen/dm_px_30</item>
     </style>
 </resources>

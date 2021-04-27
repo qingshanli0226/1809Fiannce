@@ -20,9 +20,9 @@ public class AppNetConfig {
 
     public static final String INDEX = "atguigu/json/P2PInvest/index.json";//访问“homeFragment”
 
-    public static final String USERREGISTER = "register";//访问“homeFragment”
+    public static final String USERREGISTER = "register";//注册
 
-    public static final String FEEDBACK = "FeedBack";//注册
+    public static final String FEEDBACK = "FeedBack";
 
     public static final String UPDATE = "atguigu/json/P2PInvest/update.json";//更新应用
 

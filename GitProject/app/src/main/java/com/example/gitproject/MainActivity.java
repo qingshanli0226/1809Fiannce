@@ -7,17 +7,17 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.blankj.utilcode.util.BarUtils;
 import com.example.framework.BaseActivity;
-import com.example.gitproject.Invest.InvestFragment;
+import com.example.gitproject.invest.InvestFragment;
 import com.example.gitproject.home.HomeFragment;
 import com.example.gitproject.mine.MineFragment;
 import com.example.gitproject.more.MoreFragment;
+import com.example.gitproject.utils.PathConstant;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
 import java.util.ArrayList;
 
-@Route(path = "/app/MainActivity")
+@Route(path = PathConstant.APP_MAIN_PATH)
 public class MainActivity extends BaseActivity {
 
 

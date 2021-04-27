@@ -81,26 +81,41 @@
     </RelativeLayout>
     <com.example.framework.view.ItemBar
         app:app_item_text="@string/mine_invest"
+        app:app_item_text_size="@dimen/mine_item_textsize"
         app:app_item_left_src="@drawable/my_invest_manage"
         app:app_item_right_src="@drawable/right"
-        style="@style/showItemBar"
-        app:app_item_text_size="@dimen/dm_px_30"
+        style="@style/showLeftRightShow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="@dimen/mine_item_height"/>
+    <View
+        android:layout_below="@id/center_item_title"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wel_view_height_dp_1dp"/>
     <com.example.framework.view.ItemBar
         app:app_item_text="@string/mine_reward"
         app:app_item_left_src="@drawable/my_reward_manage"
         app:app_item_right_src="@drawable/right"
-        style="@style/showItemBar"
-        app:app_item_text_size="@dimen/dm_px_30"
+        style="@style/showLeftRightShow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        app:app_item_text_size="@dimen/mine_item_textsize"
+        android:layout_height="@dimen/mine_item_height"/>
+    <View
+        android:layout_below="@id/center_item_title"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wel_view_height_dp_1dp"/>
     <com.example.framework.view.ItemBar
         app:app_item_text="@string/mine_asset"
         app:app_item_left_src="@drawable/my_asset_manage"
         app:app_item_right_src="@drawable/right"
-        app:app_item_text_size="@dimen/dm_px_30"
-        style="@style/showItemBar"
+        app:app_item_text_size="@dimen/mine_item_textsize"
+        style="@style/showLeftRightShow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="@dimen/mine_item_height"/>
+    <View
+        android:layout_below="@id/center_item_title"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wel_view_height_dp_1dp"/>
 </LinearLayout>

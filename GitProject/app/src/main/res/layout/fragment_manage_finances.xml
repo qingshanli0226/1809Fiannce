@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Invest.manageFinances.ManageFinancesFragment">
+    tools:context=".invest.manageFinances.ManageFinancesFragment">
     <com.example.framework.view.ToolBar
         android:id="@+id/toolbar"
         android:visibility="gone"

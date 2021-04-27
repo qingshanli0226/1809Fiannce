@@ -1,12 +1,12 @@
-package com.example.gitproject.Invest;
+package com.example.gitproject.invest;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.framework.BaseFragment;
-import com.example.gitproject.Invest.hot.HotFragment;
-import com.example.gitproject.Invest.manageFinances.ManageFinancesFragment;
-import com.example.gitproject.Invest.recommend.RecommendFragment;
+import com.example.gitproject.invest.hot.HotFragment;
+import com.example.gitproject.invest.manageFinances.ManageFinancesFragment;
+import com.example.gitproject.invest.recommend.RecommendFragment;
 import com.example.gitproject.R;
 import com.flyco.tablayout.SlidingTabLayout;
 

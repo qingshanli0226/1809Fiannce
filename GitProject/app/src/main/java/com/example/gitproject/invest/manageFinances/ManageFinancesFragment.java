@@ -1,16 +1,16 @@
-package com.example.gitproject.Invest.manageFinances;
+package com.example.gitproject.invest.manageFinances;
 
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.framework.BaseFragment;
-import com.example.gitproject.Invest.manageFinances.adapter.FinancesAdapter;
+import com.example.gitproject.invest.manageFinances.adapter.FinancesAdapter;
 import com.example.gitproject.R;
 import com.example.net.bean.ProductBean;
 
@@ -44,7 +44,7 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
         mPresenter = new ManageFinancesPresenter(this);
 
     }
-
+    private int lastx;
     @Override
     protected void initData() {
         mPresenter.getIvnest();
@@ -53,47 +53,19 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
         //走马灯
         financesLamp.setSelected(true);
 
+//        financesAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+//            @Override
+//            public void onItemChildClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+//                switch (view.getId()) {
+//                    case R.id.item_del:
+//                        financesAdapter.getData().remove(position);
+//                        financesAdapter.notifyDataSetChanged();
+//                        financesAdapter.hideDel();
+//                        break;
+//                }
+//            }
+//        });
 
-
-
-        financesRv.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                v.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        v.scrollTo(100,0);
-
-                        return false;
-                    }
-                });
-                switch (event.getAction()){
-                    case MotionEvent.ACTION_DOWN:
-                        Toast.makeText(getActivity(), "aaa", Toast.LENGTH_SHORT).show();
-//                        getActivity().getParent().
-                        v.scrollTo(1000,0);
-                        financesRv.requestDisallowInterceptTouchEvent(false);
-
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        if(event.getRawX()>500) {
-                            Toast.makeText(getActivity(), "bbb", Toast.LENGTH_SHORT).show();
-                            financesRv.requestDisallowInterceptTouchEvent(true);
-                            v.scrollTo(1000,0);
-
-                        } else{
-                            Toast.makeText(getActivity(), "bbb", Toast.LENGTH_SHORT).show();
-                            financesRv.requestDisallowInterceptTouchEvent(true);
-                        }
-
-                        Toast.makeText(getActivity(), "ccc", Toast.LENGTH_SHORT).show();
-
-
-                        break;
-                }
-                return false;
-            }
-        });
 
     }
 

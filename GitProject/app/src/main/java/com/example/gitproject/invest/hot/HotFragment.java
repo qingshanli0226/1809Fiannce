@@ -1,17 +1,15 @@
-package com.example.gitproject.Invest.recommend;
-
-
+package com.example.gitproject.invest.hot;
 
 import com.example.framework.BaseFragment;
 import com.example.gitproject.R;
 
 
-public class RecommendFragment extends BaseFragment {
+public class HotFragment extends BaseFragment {
 
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_recommend;
+        return R.layout.fragment_hot;
     }
 
     @Override

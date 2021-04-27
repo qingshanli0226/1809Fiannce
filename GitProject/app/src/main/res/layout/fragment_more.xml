@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_gray"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".more.MoreFragment">
 
@@ -13,17 +15,111 @@
         app:app_text_color="@color/blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
     <com.example.framework.view.ItemBar
-        app:app_item_text="@string/mine_asset"
-        app:app_item_left_isshow="true"
-        app:app_item_left_src="@drawable/my_asset_manage"
-        app:app_item_text_size="@dimen/dm_px_30"
-        app:app_item_back_color="@color/white"
-        app:app_item_right_text_size="@dimen/dm_px_30"
-        app:app_item_right_text="111"
-        app:app_item_right_text_isshow="true"
+        android:id="@+id/item_register"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="@dimen/mine_item_height"
+        app:app_item_back_color="@color/light_gray"
+        app:app_item_left_isshow="true"
+        app:app_item_left_src="@drawable/icon_more_regist"
+        app:app_item_text="@string/more_register"
+        app:app_item_text_color="@color/light_blue"
+        app:app_item_text_size="@dimen/dm_px_30" />
+    <View
+        android:layout_below="@id/center_item_title"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wel_view_height_dp_1dp"/>
+    <com.example.framework.view.ItemBar
+        app:app_item_text="@string/more_secret"
+        app:app_item_text_color="@color/light_blue"
+        style="@style/showLeftRightShow"
+        app:app_item_back_color="@color/light_gray"
+        app:app_item_left_src="@drawable/icon_more_secret"
+        app:app_item_right_src="@drawable/toggle_off"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mine_item_height"/>
+    <View
+        android:layout_below="@id/center_item_title"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wel_view_height_dp_1dp"/>
+    <com.example.framework.view.ItemBar
+        app:app_item_text="@string/more_reset"
+        app:app_item_text_color="@color/light_blue"
+        app:app_item_left_isshow="true"
+        app:app_item_left_src="@drawable/icon_more_contact"
+        app:app_item_text_size="@dimen/dm_px_30"
+        app:app_item_right_text_color="@color/deep_red"
+        app:app_item_back_color="@color/light_gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mine_item_height"/>
+    <View
+        android:layout_below="@id/center_item_title"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wel_view_height_dp_1dp"/>
+
+    <com.example.framework.view.ItemBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mine_item_height"
+        app:app_item_back_color="@color/light_gray"
+        app:app_item_left_isshow="true"
+        app:app_item_left_src="@drawable/icon_more_reset"
+        app:app_item_right_text="@string/more_contact_photo"
+        app:app_item_right_text_isshow="true"
+        app:app_item_right_text_size="@dimen/dm_px_20"
+        app:app_item_text="@string/more_contact"
+        app:app_item_text_color="@color/light_blue"
+        app:app_item_text_size="@dimen/dm_px_30" />
+
+    <com.example.framework.view.ItemBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mine_item_height"
+        app:app_item_back_color="@color/light_gray"
+        app:app_item_left_isshow="true"
+        app:app_item_left_src="@drawable/icon_more_about"
+        app:app_item_text="@string/more_about"
+        app:app_item_text_color="@color/light_blue"
+        app:app_item_text_size="@dimen/dm_px_30" />
+
+    <View
+        android:layout_below="@id/center_item_title"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wel_view_height_dp_1dp"/>
+    <com.example.framework.view.ItemBar
+        app:app_item_text="@string/more_sms"
+        app:app_item_text_color="@color/light_blue"
+        app:app_item_left_isshow="true"
+        app:app_item_left_src="@drawable/icon_more_sms"
+        app:app_item_text_size="@dimen/dm_px_30"
+        app:app_item_back_color="@color/light_gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mine_item_height"/>
+    <View
+        android:layout_below="@id/center_item_title"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wel_view_height_dp_1dp"/>
+    <com.example.framework.view.ItemBar
+        app:app_item_text="@string/more_share"
+        app:app_item_text_color="@color/light_blue"
+        app:app_item_left_isshow="true"
+        app:app_item_left_src="@drawable/icon_more_share"
+        app:app_item_text_size="@dimen/dm_px_30"
+        app:app_item_back_color="@color/light_gray"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mine_item_height"></com.example.framework.view.ItemBar>
+    <TextView
+        android:text="add"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
-</FrameLayout>
+
+
+
+</LinearLayout>

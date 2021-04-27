@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.framework.view.LoadPage;
 import com.example.framework.view.ToolBar;
 
-public abstract class BaseActivity<P extends  BasePresenter> extends AppCompatActivity implements ToolBar.ToolbarOnClickLisenter {
+public abstract class BaseActivity<P extends  BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarOnClickLisenter {
     protected P mPresenter;
     protected ToolBar toolBar;
     protected LoadPage loadPage;

@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.example.framework.view.LoadPage;
 import com.example.framework.view.ToolBar;
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements ToolBar.ToolbarOnClickLisenter {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements ToolBar.IToolbarOnClickLisenter {
     protected P mPresenter;
     protected View rootView;
     protected ToolBar toolBar;

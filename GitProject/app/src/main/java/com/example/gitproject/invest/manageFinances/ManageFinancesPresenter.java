@@ -1,4 +1,4 @@
-package com.example.gitproject.Invest.manageFinances;
+package com.example.gitproject.invest.manageFinances;
 
 import com.example.framework.BasePresenter;
 import com.example.net.RetrofitManager;

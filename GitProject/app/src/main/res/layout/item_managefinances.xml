@@ -3,22 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/dm_px_20"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:padding="@dimen/dm_px_20">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="@dimen/dm_px_20">
-        <LinearLayout
 
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -96,10 +93,10 @@
 
 
                             <ImageView
-                                android:layout_marginTop="@dimen/dm_px_10"
                                 android:layout_width="@dimen/dm_px_30"
                                 android:layout_height="@dimen/dm_px_30"
                                 android:layout_marginLeft="@dimen/dm_px_10"
+                                android:layout_marginTop="@dimen/dm_px_10"
                                 android:src="@drawable/product_part1_icon"></ImageView>
 
                             <TextView
@@ -148,12 +145,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dm_px_10">
+
                             <ImageView
-                                android:layout_marginTop="@dimen/dm_px_10"
                                 android:layout_width="@dimen/dm_px_30"
                                 android:layout_height="@dimen/dm_px_30"
                                 android:layout_marginLeft="@dimen/dm_px_10"
+                                android:layout_marginTop="@dimen/dm_px_10"
                                 android:src="@drawable/product_part3_icon"></ImageView>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -161,6 +160,7 @@
                                 android:text="@string/home_one_btn"></TextView>
                         </LinearLayout>
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -198,12 +198,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dm_px_10">
-                            <ImageView
-                                android:layout_marginTop="@dimen/dm_px_10"
 
+                            <ImageView
                                 android:layout_width="@dimen/dm_px_40"
+
                                 android:layout_height="@dimen/dm_px_40"
                                 android:layout_marginLeft="@dimen/dm_px_10"
+                                android:layout_marginTop="@dimen/dm_px_10"
                                 android:src="@drawable/product_part4_icon"></ImageView>
 
                             <TextView
@@ -214,10 +215,12 @@
                         </LinearLayout>
                     </LinearLayout>
                 </RelativeLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center">
+
                     <com.example.framework.view.ProgressView
                         android:id="@+id/finances_progress"
                         android:layout_width="@dimen/dm_px_150"
@@ -228,13 +231,16 @@
             </LinearLayout>
 
         </LinearLayout>
-            <TextView
-                android:id="@+id/item_del"
-                android:text="@string/finances_del"
-                android:gravity="center"
-                android:background="@color/red"
-                android:layout_width="@dimen/dm_px_100"
-                android:layout_height="@dimen/dm_px_300"></TextView>
-        </LinearLayout>
+
+
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/item_del"
+        android:textColor="@color/white"
+        android:layout_width="@dimen/dm_px_300"
+        android:layout_height="@dimen/dm_px_300"
+        android:background="@color/red"
+        android:gravity="center"
+        android:text="@string/finances_del"></TextView>
 </LinearLayout>

@@ -16,12 +16,12 @@ public class ToolBar extends RelativeLayout {
     private String text;
     private int textColor = Color.RED, backColor = Color.GRAY;
     private int leftSrc, rightSrc;
-    private boolean leftIsshow, rightIshow;
+    private boolean leftIsshow, rightIsShow;
 
-    private ToolbarOnClickLisenter toolbarOnClickLisenter;
+    private IToolbarOnClickLisenter toolbarOnClickLisenter;
 
-    public void setToolbarOnClickLisenter(ToolbarOnClickLisenter toolbarOnClickLisenter) {
-        this.toolbarOnClickLisenter = toolbarOnClickLisenter;
+    public void setToolbarOnClickLisenter(IToolbarOnClickLisenter iToolbarOnClickLisenter) {
+        this.toolbarOnClickLisenter = iToolbarOnClickLisenter;
     }
 
     public ToolBar(Context context) {
@@ -58,7 +58,7 @@ public class ToolBar extends RelativeLayout {
             leftSrc = typedArray.getResourceId(R.styleable.ToolBar_app_left_src, 0);
             rightSrc = typedArray.getResourceId(R.styleable.ToolBar_app_right_src, 0);
             leftIsshow = typedArray.getBoolean(R.styleable.ToolBar_app_left_isshow, leftIsshow);
-            rightIshow = typedArray.getBoolean(R.styleable.ToolBar_app_right_isshow, rightIshow);
+            rightIsShow = typedArray.getBoolean(R.styleable.ToolBar_app_right_isshow, rightIsShow);
             typedArray.recycle();
         }
 
@@ -69,7 +69,7 @@ public class ToolBar extends RelativeLayout {
         if (leftSrc != 0 && leftIsshow) {
             leftRe.setImageResource(leftSrc);
         }
-        if (rightSrc != 0 && rightIshow) {
+        if (rightSrc != 0 && rightIsShow) {
             rightSet.setImageResource(rightSrc);
         }
 
@@ -140,7 +140,7 @@ public class ToolBar extends RelativeLayout {
             }
         }
     }
-        public static interface ToolbarOnClickLisenter {
+        public static interface IToolbarOnClickLisenter {
             void onClickCenter();
 
             void onClickLeft();

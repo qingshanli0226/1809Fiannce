@@ -12,12 +12,12 @@ import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
 import com.example.gitproject.R;
+import com.example.gitproject.utils.PathConstant;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.UpdateBean;
 
@@ -115,7 +115,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 public void onClick(DialogInterface dialog, int which) {
                     //跳转界面
                     //关闭此页面
-                    ARouter.getInstance().build("/app/MainActivity").navigation();
+                    ARouter.getInstance().build(PathConstant.APP_MAIN_PATH).navigation();
                     finish();
                 }
             });
@@ -125,7 +125,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         } else {
             //最新版本
             finish();
-            ARouter.getInstance().build("/app/MainActivity").navigation();
+            ARouter.getInstance().build(PathConstant.APP_MAIN_PATH).navigation();
 
         }
     }

@@ -9,20 +9,21 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitManager {
-    private static HttpApiService httpApiService;
+    private static IHttpApiService httpApiService;
 
-    public static HttpApiService getHttpApiService(){
+    public static IHttpApiService getHttpApiService(){
         if(httpApiService == null){
             httpApiService = serviceCreator();
         }
         return httpApiService;
     }
 
-    private static HttpApiService serviceCreator() {
+    private static IHttpApiService serviceCreator() {
         OkHttpClient build = new OkHttpClient.Builder()
                 .readTimeout(2, TimeUnit.MINUTES)
                 .writeTimeout(2, TimeUnit.MINUTES)
                 .connectTimeout(2, TimeUnit.MINUTES)
+                .addInterceptor(new TokenInterceptor())
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build();
 
@@ -32,6 +33,6 @@ public class RetrofitManager {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(build)
                 .build();
-        return retrofit.create(HttpApiService.class);
+        return retrofit.create(IHttpApiService.class);
     }
 }

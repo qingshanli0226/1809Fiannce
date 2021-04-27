@@ -1,1 +1,17 @@
-<resources></resources>
+<resources>
+    <string name="register_photo">手机号:</string>
+    <string name="register_photo_edit">请输入手机号</string>
+
+    <string name="register_user">用户名:</string>
+    <string name="register_user_edit">请输入用户名</string>
+
+    <string name="register_pwd">密码:</string>
+    <string name="register_pwd_edit">请输入密码</string>
+
+    <string name="register_yes_pwd">确定密码:</string>
+    <string name="register_yes_pwd_edit">再次输入密码</string>
+
+
+    <string name="register_btn_name">注册</string>
+
+</resources>

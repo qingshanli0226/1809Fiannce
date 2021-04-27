@@ -12,8 +12,14 @@ android {
         versionCode 1
         versionName "1.0"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
     }
 
     buildTypes {
@@ -29,6 +35,10 @@ android {
 }
 
 dependencies {
+
+    implementation ('com.alibaba:arouter-api:1.4.1')
+    implementation project(path: ':common') //ARouter依赖
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2' //ARouter依赖
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'

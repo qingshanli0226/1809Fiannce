@@ -1,9 +1,11 @@
-package com.example.user;
+package com.example.user.login;
 
 import android.os.Bundle;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.user.R;
 
 import org.greenrobot.eventbus.EventBus;
 

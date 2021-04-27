@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_marginTop="@dimen/dm_px_20"
             android:gravity="center"
-            android:layout_height="30dp"/>
+            android:layout_height="@dimen/dm_px_60"/>
         <Button
             android:layout_marginLeft="@dimen/dm_px_10"
             android:layout_marginTop="@dimen/dm_px_20"
@@ -56,7 +56,7 @@
             android:gravity="center"
             android:background="@drawable/home_attribute_bg"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"/>
+            android:layout_height="@dimen/dm_px_60"/>
         <Button
             android:layout_marginLeft="@dimen/dm_px_10"
             android:layout_marginTop="@dimen/dm_px_20"
@@ -64,7 +64,7 @@
             android:gravity="center"
             android:background="@drawable/home_attribute_bg"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"/>
+            android:layout_height="@dimen/dm_px_60"/>
     </LinearLayout>
 
 
