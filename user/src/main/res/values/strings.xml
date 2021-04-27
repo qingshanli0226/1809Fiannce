@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="register">注册</string>
+    <string name="userRegister">用户注册：</string>
+    <string name="userName">用户名：</string>
+    <string name="password">密码：</string>
+    <string name="confirmPassword">确认密码：</string>
+    <string name="cell_phoneNumber">手机号：</string>
+    <string name="pleaseNumber">请输入手机号</string>
+    <string name="pleaseUserName">请输入用户名</string>
+    <string name="pleasePassword">请输入密码</string>
+    <string name="pleaseConfirmPassword">请再次输入密码</string>
+
+</resources>

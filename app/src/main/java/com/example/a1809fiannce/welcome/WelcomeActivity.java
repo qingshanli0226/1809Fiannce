@@ -110,7 +110,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         handler.sendEmptyMessage(1);
 
-        Toast.makeText(this, getResources().getString(R.string.VersionInformation)+versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, getResources().getString(R.string.VersionInformation)+versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

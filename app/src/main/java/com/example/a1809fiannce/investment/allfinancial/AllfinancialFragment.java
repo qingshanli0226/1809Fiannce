@@ -100,6 +100,7 @@ public class AllfinancialFragment extends BaseFragment<AllfinancialPresenter> im
                     case R.id.delText:
                         list.remove(position);
 
+                        allfinancialAdapter.scroolToView();
                         allfinancialAdapter.notifyItemRemoved(position);
                         break;
                 }

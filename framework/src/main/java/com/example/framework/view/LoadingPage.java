@@ -76,7 +76,7 @@ public abstract class LoadingPage extends FrameLayout {
 
     public void showTransparentLoadingView(){
         errorView.setVisibility(GONE);
-        successView.setVisibility(GONE);
+        successView.setVisibility(VISIBLE);
         loadingView.setBackgroundColor(Color.TRANSPARENT);
         loadingView.setVisibility(VISIBLE);
     }

@@ -1,5 +1,6 @@
 package com.example.a1809fiannce.adapter;
 
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -21,10 +22,12 @@ public class AllfinancialAdapter extends BaseQuickAdapter<AllfinancialBean.Resul
         super(R.layout.item_investment_all_moneymanagement, data);
     }
 
-    private int lastX;
+    private int lastx,lastY;
     private View lastView;
-    private int lastPosition;
+    private int position;
+    private int mX;
     private int delWidth;
+    private boolean is;
 
     @Override
     protected void convert(@NotNull BaseViewHolder holder, AllfinancialBean.ResultBean resultBean) {
@@ -43,66 +46,154 @@ public class AllfinancialAdapter extends BaseQuickAdapter<AllfinancialBean.Resul
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lastView.scrollTo(0, 0);
-                lastView = null;
-                lastPosition = -1;
+                scroolToView();
             }
         });
 
         addChildClickViewIds(R.id.delText);
 
+//        holder.itemView.setTag(false);
+
+//        holder.itemView.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                switch (motionEvent.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+//
+//                        lastX = (int) motionEvent.getRawX();
+//                        lastY = (int) motionEvent.getRawY();
+//                        holder.itemView.setTag(false);
+//                        return true;
+//
+//                    case MotionEvent.ACTION_MOVE:
+//                        boolean tag = (boolean) holder.itemView.getTag();
+//                        if (lastX > 800 && motionEvent.getRawX() < lastX &&!tag) {
+//                            holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+//                            if (lastPosition != holder.getAdapterPosition() && lastView != null) {
+//                                lastView.scrollTo(0, 0);
+//                                lastView=null;
+//                                lastPosition=-1;
+////                                is=false;
+//                            }
+//
+//                            lastView = holder.itemView;
+//                            lastPosition = holder.getAdapterPosition();
+//                            delWidth = delText.getWidth();
+////                            is=true;
+//
+//                            int z = (int) (lastX - motionEvent.getRawX());
+//                            holder.itemView.scrollTo(z, 0);
+//                            return true;
+//                        }
+//                         if (lastX > 700 && motionEvent.getRawX() > lastX &&tag) {
+//                            holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+//
+////                            lastView = null;
+////                            lastPosition = -1;
+//                            int z = (int) (motionEvent.getRawX() - lastX);
+//                            holder.itemView.scrollTo(z+delWidth, 0);
+////                            holder.itemView.scrollTo(z,0);
+//                             return true;
+//                        } else {
+//                            holder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
+//                        }
+//                        break;
+//
+//                    case MotionEvent.ACTION_UP:
+//
+//                        if (lastX - motionEvent.getRawX() > delWidth / 2) {
+//
+//                            lastView = holder.itemView;
+//                            lastPosition = holder.getAdapterPosition();
+//                            holder.itemView.scrollTo(delWidth, 0);
+//
+//                            holder.itemView.setTag(true);
+//
+////                            is=true;
+//                        }else if ( motionEvent.getRawX()-lastX < delWidth / 2 ){
+//
+//                            LogUtils.e(motionEvent.getRawX()-lastX - lastX);
+//                            holder.itemView.scrollTo(0, 0);
+//
+////                            lastView=holder.itemView;
+//
+//                            lastView=null;
+//                            lastPosition=-1;
+////                            is=false;
+//                        }
+//                        else {
+//                            holder.itemView.scrollTo(0, 0);
+//
+//                            holder.itemView.setTag(false);
+//                        }
+//                        break;
+//                }
+//                return false;
+//            }
+//        });
+
+        holder.itemView.setTag(false);
         holder.itemView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        lastX = (int) motionEvent.getRawX();
+                        lastx = (int) event.getRawX();
                         holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+
+                        if(lastView != null && position != holder.getPosition()){
+                            lastView.setTag(false);
+                            lastView.scrollTo(0,0);
+                        }
+                        lastView = holder.itemView;
+
                         return true;
-
                     case MotionEvent.ACTION_MOVE:
-                        if (lastX > 800 && motionEvent.getRawX() < lastX ) {
+                        boolean tag = (boolean) holder.itemView.getTag();
+                        if(event.getRawX() > 800 && event.getRawX() > lastx && tag){//回滑
                             holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
-                            if (lastPosition != holder.getAdapterPosition() && lastView != null) {
-                                lastView.scrollTo(0, 0);
-                            }
-
-                            lastView = holder.itemView;
-                            lastPosition = holder.getAdapterPosition();
-                            delWidth = delText.getWidth();
-
-                            int z = (int) (lastX - motionEvent.getRawX());
-                            holder.itemView.scrollTo(z, 0);
-                            return true;
-                        } else if (lastX > 800 && motionEvent.getRawX() > lastX) {
+                            mX = (int) (event.getRawX() - lastx);
+                            holder.itemView.scrollTo(delText.getMeasuredWidth()-mX,0);
+                        } else if(event.getRawX() < 900 && lastx > event.getRawX() && !tag){//出莱
                             holder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
-
-                            lastView = null;
-                            lastPosition = -1;
-
-                            int z = (int) (motionEvent.getRawX() - lastX);
-                            holder.itemView.scrollTo(-z+delWidth, 0);
+                            mX = (int) ( lastx- event.getRawX());
+                            Log.i("TAG", "onTouch:bbb "+mX);
+                            holder.itemView.scrollTo(mX,0);
+                            position = holder.getPosition();
                         } else {
                             holder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
                         }
-                        break;
+
+                        return true;
 
                     case MotionEvent.ACTION_UP:
-                        if (lastX - motionEvent.getRawX() > delWidth / 2) {
+                        boolean flag = (boolean) holder.itemView.getTag();
+                        Log.i("TAG", "onTouch: "+mX);
+                        Log.i("TAG", "onTouch: "+delText.getMeasuredWidth());
+                        if(mX > delText.getMeasuredWidth()/2 && !flag){
+                            holder.itemView.scrollTo(delText.getMeasuredWidth(),0);
+                            holder.itemView.setTag(true);
+                        }else if(mX > delText.getMeasuredWidth()/2 && flag){
+                            holder.itemView.scrollTo(0,0);
+                            holder.itemView.setTag(false);
 
-                            lastView = holder.itemView;
-                            lastPosition = holder.getAdapterPosition();
-                            holder.itemView.scrollTo(delWidth, 0);
-
-                        }else if (lastX - motionEvent.getRawX() < delWidth / 2){
-
-                            holder.itemView.scrollTo(0, 0);
-
+                        } else if(mX <delText.getMeasuredWidth()/2 && flag){
+                            holder.itemView.scrollTo(delText.getMeasuredWidth(),0);
+                        } else{
+                            holder.itemView.scrollTo(0,0);
+                            holder.itemView.setTag(false);
                         }
                         break;
                 }
                 return false;
             }
         });
+    }
+
+    public void scroolToView(){
+        lastView.scrollTo(0, 0);
+        position = -1;
+        is=false;
     }
 }

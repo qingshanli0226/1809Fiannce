@@ -38,5 +38,12 @@
     <string name="perceptual">investment management(perceptual intuition)</string>
     <string name="assets">assets management</string>
     <string name="day">Day</string>
+    <string name="userRegister">user registration </string>
+    <string name="gesturePassword">gesture password</string>
+    <string name="ResetTheGesturePassword">Reset the gesture password</string>
+    <string name="contactNumber">contact number</string>
+    <string name="userFeedback">user feedback</string>
+    <string name="share">share</string>
+    <string name="inRegardTo">in regard to</string>
 
 </resources>
