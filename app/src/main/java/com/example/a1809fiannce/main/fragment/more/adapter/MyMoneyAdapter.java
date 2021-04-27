@@ -24,6 +24,7 @@ import java.util.List;
 public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, BaseViewHolder> {
 
     private int lastX;
+    private int lastY;
     private View lastItemView;
     private int lastposition;
     private int scrollDiffx;
@@ -66,9 +67,12 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
                         lastX = (int) event.getRawX();
+                        lastY = (int) event.getRawY();
                         viewWindh = dismiss.getMeasuredWidth();
+                        holder.itemView.scrollTo(0,0);
                         return true;
                     case MotionEvent.ACTION_MOVE:
+
                         if (lastX > 500 && event.getRawX() < lastX){
                             if (lastItemView!=null && lastposition!=position){
                                 lastItemView.scrollTo(0,0);
@@ -76,20 +80,24 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
                             lastposition = position;
                             lastItemView = holder.itemView;
                             scrollDiffx = - (int) (event.getRawX() - lastX);
-                            Log.i("zrf", "onTouch: "+scrollDiffx);
                             holder.itemView.scrollTo(scrollDiffx,0);
                             return true;
                         }
+//                        if (lastY>=event.getY()||lastY<event.getY()){
+//
+//
+//
+//                            return false;
+//                        }
                     case MotionEvent.ACTION_UP:
 
                         if (scrollDiffx < viewWindh/2){
                             lastItemView = null;
                             scrollDiffx = 0;
-                            holder.itemView.scrollTo(0,0);
+                            holder.itemView.scrollTo(scrollDiffx,0);
                         }else {
                             holder.itemView.scrollTo(viewWindh,0);
                         }
-
                         return true;
                 }
 

@@ -30,9 +30,16 @@ public class mViewPager extends ViewPager {
                     mboolean = true;
                     return false;
                 }else {
-                    mboolean=false;
+                    mboolean = false;
                     return true;
                 }
+//                if (x<=getMeasuredHeight()-500){
+//                    mboolean = true;
+//                    return false;
+//                }
+//                    mboolean=false;
+//                    return true;
+
             case MotionEvent.ACTION_MOVE:
                 if (mboolean){
                     return false;
