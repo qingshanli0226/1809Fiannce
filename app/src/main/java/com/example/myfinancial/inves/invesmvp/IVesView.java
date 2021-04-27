@@ -1,4 +1,4 @@
-package com.example.myfinancial.fragment.inves.invesmvp;
+package com.example.myfinancial.inves.invesmvp;
 
 import com.example.framework.BaseView;
 import com.example.net.bean.AllMoneyBean;

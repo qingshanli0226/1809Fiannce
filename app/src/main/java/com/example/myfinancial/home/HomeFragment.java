@@ -1,4 +1,4 @@
-package com.example.myfinancial.fragment;
+package com.example.myfinancial.home;
 
 import android.content.Context;
 import android.util.Log;
@@ -20,8 +20,8 @@ import java.util.List;
 public class HomeFragment extends BaseFragment {
     private HomeBean homeBean;
     private Banner ban;
-    private PregressMyView promyview;
-    private ToolBar toolbar;
+    private PregressMyView proMyView;
+    private ToolBar toolBar;
 
     @Override
     public int getbandLayout() {
@@ -31,26 +31,23 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void initData() {
         homeBean = CacheLoadMore.getInstance().getHomeBean();
-        Log.d("MainActivity123", homeBean.toString());
         initlbt();
-        promyview.getProgressNum(Integer.parseInt(homeBean.getResult().getProInfo().getProgress()), true);
+        proMyView.getProgressNum(Integer.parseInt(homeBean.getResult().getProInfo().getProgress()), true);
         showLoading();
     }
 
     @Override
     public void initView() {
         ban = (Banner) findViewById(R.id.ban);
-        promyview = (PregressMyView) findViewById(R.id.proMyView);
-
-        toolbar = (ToolBar) findViewById(R.id.toolBar);
-
-        toolbar.setToolbarListener(this);
+        proMyView = (PregressMyView) findViewById(R.id.proMyView);
+        toolBar = (ToolBar) findViewById(R.id.toolBar);
+        toolBar.setToolbarListener(this);
     }
 
     @Override
     public void showLoading() {
         loadingPage.showLoadingView();
-       hideLoading();
+        hideLoading();
     }
 
     @Override
@@ -78,7 +75,6 @@ public class HomeFragment extends BaseFragment {
             public void displayImage(Context context, Object path, ImageView imageView) {
                 HomeBean.ResultBean.ImageArrBean aa = (HomeBean.ResultBean.ImageArrBean) path;
                 String imaurl = aa.getIMAURL();
-                Log.d("MainActivity", imaurl);
                 Glide.with(context).load(imaurl).into(imageView);
             }
         }).start();

@@ -3,7 +3,7 @@
     package="com.example.myfinancial">
 <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:name=".api.FiannceApplication"
+        android:name=".app.FiannceApplication"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         android:allowBackup="true"

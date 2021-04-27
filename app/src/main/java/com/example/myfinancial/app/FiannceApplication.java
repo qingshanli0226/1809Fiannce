@@ -1,4 +1,4 @@
-package com.example.myfinancial.api;
+package com.example.myfinancial.app;
 
 import android.app.Application;
 

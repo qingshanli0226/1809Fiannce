@@ -1,4 +1,4 @@
-package com.example.myfinancial.fragment;
+package com.example.myfinancial.more;
 
 import android.os.Bundle;
 
@@ -11,21 +11,21 @@ import android.view.ViewGroup;
 import com.example.framework.BaseFragment;
 import com.example.myfinancial.R;
 
-public class MyMoneyFragment extends BaseFragment {
+public class MoreFragment extends BaseFragment{
 
     @Override
     public void showLoading() {
-        loadingPage.showLoadingView();
+
     }
 
     @Override
     public void hideLoading() {
 
-        loadingPage.showSuccessView();
     }
 
     @Override
     public void showError(String error) {
+
     }
 
     @Override
@@ -40,12 +40,12 @@ public class MyMoneyFragment extends BaseFragment {
 
     @Override
     public void initView() {
-        showLoading();
+
     }
 
     @Override
     public int getbandLayout() {
-        return R.layout.fragment_my_money;
+        return R.layout.fragment_more;
     }
 
     @Override

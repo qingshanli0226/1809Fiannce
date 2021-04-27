@@ -1,4 +1,4 @@
-package com.example.myfinancial.fragment.inves.fragment;
+package com.example.myfinancial.inves.all;
 
 
 import android.graphics.Color;
@@ -20,10 +20,9 @@ import java.util.List;
 
 public class AllAdapter extends BaseQuickAdapter<AllMoneyBean.ResultBean, BaseViewHolder> {
     private int lastX;
-    private int lastposition;
-    private int position;
-    private int scrodiffx;//滑动距离
-    private View lastitemView;
+    private int lastPosition;
+    private int scrodiffX;//滑动距离
+    private View lastItemView;
     private boolean isUpOrDown = true;//判断左滑还是右滑
 
 
@@ -50,68 +49,91 @@ public class AllAdapter extends BaseQuickAdapter<AllMoneyBean.ResultBean, BaseVi
             viewHolder.itemView.scrollTo(0, 0);
         }
 
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        Button view = viewHolder.getView(R.id.delbtn);
+
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lastposition = -1;
-                lastitemView = null;
+                lastPosition = -1;
+                lastItemView = null;
                 viewHolder.itemView.scrollTo(0, 0);
+                remove(viewHolder.getPosition());
             }
         });
+
         viewHolder.itemView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
+
                         lastX = (int) event.getRawX();
                         viewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+
                         return true;
                     case MotionEvent.ACTION_MOVE:
                         if (lastX > 500 && event.getRawX() < lastX) {
-                            isUpOrDown = true;
-                            viewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
-                            if (lastitemView != null && lastposition != viewHolder.getAdapterPosition()) {
-                                lastitemView.scrollTo(0, 0);//回去
-                            }
-                            lastposition = viewHolder.getAdapterPosition();
-                            lastitemView = viewHolder.itemView;
-                            scrodiffx = (int) (lastX - event.getRawX());
-                            if (scrodiffx > 200) {
-                                scrodiffx = 200;
-                            }
-                            viewHolder.itemView.scrollTo(scrodiffx, 0);
+                                isUpOrDown = true;//判断是左滑
+                                viewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
+                                if (lastItemView != null && lastPosition != viewHolder.getAdapterPosition()) {
+                                    lastItemView.scrollTo(0, 0);//回去
+                                    resultBean.setDel(false);
+                                }
+
+                                lastPosition = viewHolder.getAdapterPosition();
+                                lastItemView = viewHolder.itemView;
+                                scrodiffX = (int) (lastX - event.getRawX());
+
+                                if (scrodiffX > 200) {//200为删除按钮宽度
+                                    scrodiffX = 200;
+                                }
+
+                                viewHolder.itemView.scrollTo(scrodiffX, 0);
+
                             return true;
-                        } else if (lastX > 500 && event.getRawX() > lastX) {//滑回去
-                            Log.d("AllAdapter", "lala");
-                            isUpOrDown = false;
-                            Log.d("AllAdapter", "22");
+                        } else if (resultBean.isDel()&&event.getRawX() > lastX) {//滑回去
+                            isUpOrDown = false;//判断是右滑
                             viewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
-                            scrodiffx = (int) (lastX - event.getRawX());
-                            if (scrodiffx < 0) {
-                                Log.d("AllAdapter", "scrodiffx:" + scrodiffx);
-                                viewHolder.itemView.scrollTo(scrodiffx, 0);
+                            if (lastItemView != null && lastPosition != viewHolder.getAdapterPosition()) {
+                                lastItemView.scrollTo(0, 0);//回去
+                                resultBean.setDel(false);
                             }
+                            lastPosition = viewHolder.getAdapterPosition();
+                            lastItemView = viewHolder.itemView;
+                            scrodiffX = (int) (event.getRawX() - lastX);
+
+                            if (resultBean.isDel()) {
+                                lastItemView.scrollTo(view.getMeasuredWidth() - scrodiffX, 0);
+                            }
+
+                            if (scrodiffX > 200) {
+                                scrodiffX = 200;
+                            }
+
                         } else {
                             viewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
                         }
+                        return true;
                     case MotionEvent.ACTION_UP:
-
                         if (isUpOrDown) {
-
-                            if (Math.abs(scrodiffx) < 100) {
-                                Log.d("AllAdapter", "1");
+                            if (Math.abs(scrodiffX) < 100) {
                                 viewHolder.itemView.scrollTo(0, 0);
+                                resultBean.setDel(false);
                             } else {
-                                resultBean.setDel(true);
-                                Log.d("AllAdapter", "2");
                                 viewHolder.itemView.scrollTo(200, 0);
+                                resultBean.setDel(true);
                             }
                         } else {
-                            resultBean.setDel(false);
-                            viewHolder.itemView.scrollTo(0, 0);
+                            if (Math.abs(scrodiffX) < 100&&resultBean.isDel()) {
+                                viewHolder.itemView.scrollTo(200, 0);
+                                resultBean.setDel(true);
+                            } else {
+                                viewHolder.itemView.scrollTo(0, 0);
+                                resultBean.setDel(false);
+                            }
                         }
-                        scrodiffx = 0;
+                        scrodiffX = 0;
                         return true;
                 }
                 return false;

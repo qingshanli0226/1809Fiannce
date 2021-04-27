@@ -1,4 +1,4 @@
-package com.example.myfinancial.fragment.inves.invesmvp;
+package com.example.myfinancial.inves;
 
 import androidx.fragment.app.Fragment;
 
@@ -7,9 +7,9 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.framework.BaseFragment;
 import com.example.framework.adapter.VpAdapter;
 import com.example.myfinancial.R;
-import com.example.myfinancial.fragment.inves.fragment.AllFragment;
-import com.example.myfinancial.fragment.inves.fragment.HotFragment;
-import com.example.myfinancial.fragment.inves.fragment.ReCommendFragment;
+import com.example.myfinancial.inves.all.AllFragment;
+import com.example.myfinancial.inves.hot.HotFragment;
+import com.example.myfinancial.inves.recommend.ReCommendFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

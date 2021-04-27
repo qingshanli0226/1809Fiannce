@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.framework.BaseActivity;
-import com.example.myfinancial.fragment.HomeFragment;
-import com.example.myfinancial.fragment.inves.invesmvp.InvestFragment;
-import com.example.myfinancial.fragment.MoreFragment;
-import com.example.myfinancial.fragment.MyMoneyFragment;
+import com.example.myfinancial.home.HomeFragment;
+import com.example.myfinancial.inves.InvestFragment;
+import com.example.myfinancial.more.MoreFragment;
+import com.example.myfinancial.mymoney.MyMoneyFragment;
 import com.example.net.bean.HomeBean;
 import com.example.net.comm.CusComm;
 import com.flyco.tablayout.CommonTabLayout;
