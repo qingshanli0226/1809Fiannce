@@ -59,7 +59,7 @@ public class AllFinanceFragment extends BaseFragment<AllFinancePresenter> implem
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 if (view.getId() == R.id.txt_delete){
                     allFinanceAdapter.getData().remove(position);
-                    allFinanceAdapter.notifyItemRemoved(position);
+                    allFinanceAdapter.notifyDataSetChanged();
                 }
             }
         });

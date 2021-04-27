@@ -1,3 +1,4 @@
+include ':common'
 include ':user'
 include ':pay'
 include ':net'

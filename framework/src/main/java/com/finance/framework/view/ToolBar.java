@@ -31,9 +31,8 @@ public class ToolBar extends RelativeLayout {
     private int rightImgId,leftImgId;
     private ImageView leftImg;
     private ImageView rightImg;
-    private TextView titleTv,rightTv;
+    private TextView titleTv;
     private boolean rightShow,leftShow;
-    private LinearLayout rightArea;
     private IToolbarListener iToolbarListener;
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -49,10 +48,8 @@ public class ToolBar extends RelativeLayout {
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.view_toolbar,this);
         titleTv = findViewById(R.id.titleTv);
-        rightArea = findViewById(R.id.rightArea);
         leftImg = findViewById(R.id.leftImg);
         rightImg = findViewById(R.id.rightImg);
-        rightTv = findViewById(R.id.rightTv);
 
         titleTv.setText(titleText);
         if (rightShow&&rightImgId!=0){

@@ -13,6 +13,7 @@
         app:leftImg="@mipmap/left"
         app:leftIsShow="false"
         app:titleText="@string/mainActivity_fragment_title_my_assets"
+        app:rightImage="@drawable/my_setting_icon"
         android:layout_height="@dimen/ToolBar_height">
         <ImageView
             android:layout_width="wrap_content"
@@ -21,9 +22,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/margin"
-            android:id="@+id/myAssetsSetting">
-
-        </ImageView>
+            android:id="@+id/myAssetsSetting"></ImageView>
     </com.finance.framework.view.ToolBar>
 
     <RelativeLayout
@@ -40,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/item_mid_size"
+            android:id="@+id/userName"
             android:layout_centerInParent="true"
             android:layout_below="@+id/userImg"
             android:textColor="@color/white"></TextView>

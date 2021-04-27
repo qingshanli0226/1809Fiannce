@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.finance.framework.view.ToolBar;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener {
     protected  T httpPresenter;
     private ToolBar toolBar;
     @Override

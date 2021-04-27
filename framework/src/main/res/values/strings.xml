@@ -61,4 +61,17 @@
     <string name="icon_more_about">关于有道理财</string>
 
     <string name="text_delete">删除</string>
+    <string name="text_register">注   册</string>
+    <string name="text_login">登   录</string>
+    <string name="et_tel">请输入手机号</string>
+    <string name="et_user_name">请输入用户名</string>
+    <string name="et_pwd">请输入密码</string>
+    <string name="et_pwd_again">请再次输入密码</string>
+
+    <string name="tel">手机号</string>
+    <string name="user_name">用户名</string>
+    <string name="pwd">密码</string>
+    <string name="pwd_again">确认密码</string>
+
+
 </resources>

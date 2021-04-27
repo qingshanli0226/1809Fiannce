@@ -60,13 +60,13 @@
             android:layout_toRightOf="@+id/icon_more_secret"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/margin"></TextView>
-        <ImageView
+        <ToggleButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/toggle_off"
+            android:background="@drawable/toggle_selector"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:id="@+id/toggleOff"></ImageView>
+            android:id="@+id/toggleOff"></ToggleButton>
     </RelativeLayout>
     <View
         android:layout_width="match_parent"

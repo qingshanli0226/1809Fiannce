@@ -19,7 +19,6 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
 
     private float rawX;
     private int scrollDiffx;
-    private int LastPosition=-1;
     private int VIEW_WIDTH = 200;
     private boolean isOpen = true;
     public AllFinanceAdapter(@Nullable List<ProductBean.ResultBean> data) {
@@ -45,6 +44,7 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
         view6.startProgress(Integer.parseInt(item.getProgress()),false);
 
         helper.addOnClickListener(R.id.txt_delete);
+
         helper.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,11 +96,14 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
                             helper.itemView.scrollTo(VIEW_WIDTH,0);
                         }else if (scrollDiffx>0&&scrollDiffx<VIEW_WIDTH){
                             if (isOpen){
+                                AllFinanceView = null;
                                 helper.itemView.scrollTo(0,0);
                             }else {
+                                AllFinanceView= helper.itemView;
                                 helper.itemView.scrollTo(VIEW_WIDTH,0);
                             }
                         }else if (scrollDiffx>-VIEW_WIDTH&&scrollDiffx<0){
+                            AllFinanceView= helper.itemView;
                             helper.itemView.scrollTo(200,0);
                         }else if (scrollDiffx<-VIEW_WIDTH){
                             AllFinanceView = null;

@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zg"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.finance.zg6.main.more.userRegister.UserRegisterActivity"></activity>
+        <activity android:name="com.finance.user.register.UserRegisterActivity"></activity>
         <activity android:name="com.finance.zg6.welcome.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

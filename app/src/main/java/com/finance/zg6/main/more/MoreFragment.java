@@ -1,11 +1,11 @@
 package com.finance.zg6.main.more;
 
 import android.content.Intent;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ToggleButton;
 
 import com.finance.framework.BaseFragment;
-import com.finance.user.UserActivity;
+import com.finance.user.register.UserRegisterActivity;
 import com.finance.zg.R;
 
 
@@ -14,7 +14,7 @@ public class MoreFragment extends BaseFragment {
 
     private RelativeLayout iconMoreRegister;
     private RelativeLayout iconMoreSecret;
-    private ImageView toggleOff;
+    private ToggleButton toggleOff;
     private RelativeLayout iconMoreReset;
     private RelativeLayout iconMoreContact;
     private RelativeLayout iconMoreSms;
@@ -34,7 +34,7 @@ public class MoreFragment extends BaseFragment {
     @Override
     protected void initData() {
         iconMoreRegister.setOnClickListener(v->{
-            Intent intent = new Intent(getContext(), UserActivity.class);
+            Intent intent = new Intent(getActivity(), UserRegisterActivity.class);
             startActivity(intent);
         });
 
@@ -45,7 +45,7 @@ public class MoreFragment extends BaseFragment {
 
         iconMoreRegister = (RelativeLayout) mView.findViewById(R.id.iconMoreRegister);
         iconMoreSecret = (RelativeLayout) mView.findViewById(R.id.iconMoreSecret);
-        toggleOff = (ImageView) mView.findViewById(R.id.toggleOff);
+        toggleOff = (ToggleButton) mView.findViewById(R.id.toggleOff);
         iconMoreReset = (RelativeLayout) mView.findViewById(R.id.iconMoreReset);
         iconMoreContact = (RelativeLayout) mView.findViewById(R.id.iconMoreContact);
         iconMoreSms = (RelativeLayout) mView.findViewById(R.id.iconMoreSms);

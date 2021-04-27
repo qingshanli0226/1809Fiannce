@@ -8,6 +8,8 @@ public class FinanceApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ARouter.openDebug();
+        ARouter.openLog();
         ARouter.init(this);
     }
 }

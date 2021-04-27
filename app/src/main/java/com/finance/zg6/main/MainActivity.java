@@ -13,18 +13,18 @@ import com.finance.framework.BaseActivity;
 import com.finance.framework.manager.CacheManager;
 import com.finance.net.bean.HomeBean;
 import com.finance.zg.R;
+import com.finance.zg6.bean.CustomBean;
 import com.finance.zg6.main.home.HomeFragment;
 import com.finance.zg6.main.investment.InvestmentFragment;
 import com.finance.zg6.main.more.MoreFragment;
 import com.finance.zg6.main.myassets.MyAssetsFragment;
-import com.finance.zg6.bean.CustomBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 
 import java.util.ArrayList;
 
-@Route(path = "/main/MainActivity")
+@Route(path ="/main/MainActivity")
 public class MainActivity extends BaseActivity {
 
     private CommonTabLayout common;
@@ -136,5 +136,20 @@ public class MainActivity extends BaseActivity {
             }
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
     }
 }
