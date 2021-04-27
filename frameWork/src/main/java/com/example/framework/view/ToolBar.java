@@ -72,12 +72,22 @@ public class ToolBar extends RelativeLayout {
         if (leftIsShow && leftImgId!=0) {
             leftImg.setImageResource(leftImgId);
         }
+
+
         rightImg.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 iToolbarListener.onRightImgClick();
             }
         });
+
+        leftImg.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iToolbarListener.onLeftClick();
+            }
+        });
+
     }
 
     //注册一个回调接口
@@ -89,5 +99,6 @@ public class ToolBar extends RelativeLayout {
         void onLeftClick();
         void onRightImgClick();
         void onRightTvClick();
+
     }
 }

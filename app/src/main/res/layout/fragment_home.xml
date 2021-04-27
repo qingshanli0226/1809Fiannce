@@ -12,7 +12,7 @@
         android:layout_height="@dimen/dp_40"
         app:titleTextColor="@color/small_blue"
         android:id="@+id/toolbar"
-        app:titleText="首页"></com.example.framework.view.ToolBar>
+        app:titleText="@string/app_title_home"></com.example.framework.view.ToolBar>
 
     <com.youth.banner.Banner
         android:id="@+id/banner"
@@ -46,7 +46,7 @@
             android:gravity="center"
             android:background="@drawable/text_xingzhuang"
             android:textSize="@dimen/size_fiften"
-            android:text="每日计息"
+            android:text="@string/home_buttontwo_fragment"
             android:layout_marginLeft="@dimen/size_twetwl"
             android:layout_width="@dimen/size_ninting"
             android:layout_height="wrap_content"></TextView>
@@ -55,7 +55,7 @@
             android:gravity="center"
             android:background="@drawable/text_xingzhuang"
             android:textSize="@dimen/size_fiften"
-            android:text="高额收益"
+            android:text="@string/home_buttonthree_fragment"
             android:layout_marginLeft="@dimen/size_twetwl"
             android:layout_width="@dimen/size_ninting"
             android:layout_height="wrap_content"></TextView>
@@ -66,14 +66,14 @@
     <com.example.framework.view.ProgressView
         android:layout_width="match_parent"
         android:id="@+id/progress_bar"
-        app:textcolor="#DC143D"
+        app:textcolor="@color/big_big_red"
         android:layout_marginTop="@dimen/size_twetwl"
-        android:layout_height="100dp"></com.example.framework.view.ProgressView>
+        android:layout_height="@dimen/dm_dp_100dp"></com.example.framework.view.ProgressView>
 
     <TextView
         android:textSize="20sp"
         android:gravity="center"
-        android:text="预期年利率：8.00%"
+        android:text="@string/home_buttonfour_fragment"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40">
     </TextView>
@@ -86,7 +86,7 @@
         <Button
             android:textColor="@color/white"
             android:textSize="@dimen/text_mid_size"
-            android:text="立即加入"
+            android:text="@string/home_buttonfive_fragment"
             android:background="@color/big_red"
             android:layout_width="@dimen/size_three_harend"
             android:layout_height="wrap_content"></Button>
@@ -98,6 +98,6 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="风险保障金由有道银行监管"></TextView>
+        android:text="@string/home_buttonsix_fragment"></TextView>
 
 </LinearLayout>

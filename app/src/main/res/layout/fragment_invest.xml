@@ -11,7 +11,7 @@
         android:layout_height="@dimen/dp_40"
         android:id="@+id/toolbar"
         app:titleTextColor="@color/small_blue"
-        app:titleText="投资"></com.example.framework.view.ToolBar>
+        app:titleText="@string/app_title_invest"></com.example.framework.view.ToolBar>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/money_tab"
@@ -21,9 +21,9 @@
         app:tabIndicatorHeight="@dimen/welcome_text_size"
         app:tabSelectedTextColor="@color/reddd"></com.google.android.material.tabs.TabLayout>
 
-    <androidx.viewpager.widget.ViewPager
+    <com.example.framework.view.ViewPagers
         android:layout_width="match_parent"
         android:id="@+id/money_vp"
-        android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+        android:layout_height="match_parent"></com.example.framework.view.ViewPagers>
 
 </LinearLayout>

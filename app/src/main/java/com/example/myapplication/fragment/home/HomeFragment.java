@@ -8,10 +8,12 @@ import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
 import com.example.framework.view.ToolBar;
 import com.example.model.HomeBean;
+import com.example.model.LoginBean;
 import com.example.model.ProductBean;
+import com.example.model.RegisterBean;
 import com.example.model.VersionBean;
 import com.example.myapplication.R;
-import com.example.myapplication.demo.Demo;
+import com.example.demo.Demo;
 import com.example.framework.view.ProgressView;
 import com.example.myapplication.welcome.IWelcomeView;
 import com.example.myapplication.welcome.WelcomePresenter;
@@ -88,6 +90,7 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> implements IWel
     public void onProductDara(ProductBean productBean) {
 
     }
+
 
     @Override
     public void showLoading() {

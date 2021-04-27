@@ -1,1 +1,38 @@
-<resources></resources>
+<resources>
+    <string name="app_name">My Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="welcome_title">有道金融</string>
+
+    <string name="home_title_fragment">硅谷彩虹新手计划</string>
+    <string name="home_buttonone_fragment">本息保障</string>
+    <string name="home_buttontwo_fragment">每日计息</string>
+    <string name="home_buttonthree_fragment">高额收益</string>
+    <string name="home_buttonfour_fragment">预期年利率：8.00%</string>
+    <string name="home_buttonfive_fragment">立即加入</string>
+    <string name="home_buttonsix_fragment">风险保障金由有道银行监管</string>
+
+
+    <string name="mymoney_info">提现业务:在p2p平台金融平台中，提现都不是实时到账的,而是审核提现,系统将会告知24小时以内进行转账，如果未收到，请联系客服</string>
+    <string name="mymoney_tishi">充值我们将以集成支付宝sdk支付金额演示充值功能</string>
+    <string name="mymoney_title">学习提示:</string>
+
+    <string name="app_title_home">首页</string>
+    <string name="app_title_invest">投资</string>
+    <string name="app_title_mymoney">我的资产</string>
+    <string name="app_title_more">更多</string>
+
+    <string name="text_light">有道金融豪运当头，首投返现最高1888元</string>
+
+
+    <string name="person_register">用户注册</string>
+    <string name="person_password">手势密码</string>
+    <string name="person_chongzhi_pwd">重置手势密码</string>
+    <string name="person_kefu">联系客服</string>
+    <string name="person_message">用户反馈</string>
+    <string name="person_share">分享给好友</string>
+    <string name="person_about">关于有道理财</string>
+
+
+</resources>

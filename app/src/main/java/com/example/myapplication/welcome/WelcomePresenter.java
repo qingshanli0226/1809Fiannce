@@ -5,7 +5,7 @@ import com.example.framework.BasePresenter;
 import com.example.model.HomeBean;
 import com.example.model.ProductBean;
 import com.example.model.VersionBean;
-import com.example.myapplication.demo.Demo;
+import com.example.demo.Demo;
 import com.example.net.RetrofitCretor;
 
 import java.util.concurrent.TimeUnit;
@@ -70,6 +70,8 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
                     }
                 });
     }
+
+
 
     public void getProductData(){
         RetrofitCretor.getFiannceApiService()

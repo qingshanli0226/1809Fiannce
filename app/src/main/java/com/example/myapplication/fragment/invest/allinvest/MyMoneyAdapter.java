@@ -1,10 +1,9 @@
-package com.example.myapplication.adapter;
+package com.example.myapplication.fragment.invest.allinvest;
 
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
@@ -27,7 +26,7 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
     private TextView view1;
 
     public MyMoneyAdapter( @Nullable List<ProductBean.ResultBean> data) {
-        super(R.layout.layout_home_one, data);
+        super(R.layout.item_allinvest, data);
     }
 
     @Override
@@ -81,10 +80,14 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
                             scrollDiffx = - (int) (event.getRawX() - lastX);
                             Log.i("zrf", "onTouch: "+scrollDiffx);
 
+                            if (scrollDiffx >= viewWindh){
+                                baseViewHolder.itemView.scrollTo(scrollDiffx,0);
+                            }
+
                             baseViewHolder.itemView.scrollTo(scrollDiffx,0);
                             return true;
                         }else {
-                            baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
+//                            baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
                         }
                     case MotionEvent.ACTION_UP:
 

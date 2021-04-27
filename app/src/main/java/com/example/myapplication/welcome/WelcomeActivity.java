@@ -5,11 +5,8 @@ import androidx.appcompat.app.AlertDialog;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
-import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +19,7 @@ import com.example.model.ProductBean;
 import com.example.model.VersionBean;
 import com.example.myapplication.R;
 import com.example.myapplication.apk.APKVersionCodeUtils;
-import com.example.myapplication.demo.Demo;
+import com.example.demo.Demo;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
@@ -55,7 +52,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     protected void initView() {
         contenNum = (TextView) findViewById(R.id.conten_num);
-        bar = (ProgressBar) findViewById(R.id.bar);
 //        homedata = (TextView) findViewById(R.id.homedata);
         contenNum.setText(session+"秒");
     }

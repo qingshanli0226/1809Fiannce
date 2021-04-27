@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".register.PersonRegisterActivity">
+
+    <com.example.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_dp_40dp"
+        app:titleText="用户注册"
+        app:titleTextColor="@color/small_blue"
+        app:leftIsShow="true"
+        app:leftImg="@drawable/left"
+        android:id="@+id/toolbar"></com.example.framework.view.ToolBar>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dm_dp_20dp"
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="@dimen/dm_dp_20dp"
+            android:layout_width="@dimen/dm_dp_100dp"
+            android:layout_height="wrap_content"
+            android:text="手机号:"></TextView>
+
+        <EditText
+            android:hint="请输入手机号"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_dp_1dp"
+        android:background="@color/graty"></View>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dm_dp_20dp"
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="@dimen/dm_dp_20dp"
+            android:layout_width="@dimen/dm_dp_100dp"
+            android:layout_height="wrap_content"
+            android:text="用户名:"></TextView>
+
+        <EditText
+            android:id="@+id/register_name"
+            android:hint="请输入用户名"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_dp_1dp"
+        android:background="@color/graty"></View>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dm_dp_20dp"
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="@dimen/dm_dp_20dp"
+            android:layout_width="@dimen/dm_dp_100dp"
+            android:layout_height="wrap_content"
+            android:text="密码:"></TextView>
+
+        <EditText
+            android:id="@+id/register_pwd"
+            android:hint="请输入密码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_dp_1dp"
+        android:background="@color/graty"></View>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dm_dp_20dp"
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="@dimen/dm_dp_20dp"
+            android:layout_width="@dimen/dm_dp_100dp"
+            android:layout_height="wrap_content"
+            android:text="确认密码:"></TextView>
+
+        <EditText
+            android:id="@+id/cregister_confim_pwd"
+            android:hint="请输入密码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_dp_1dp"
+        android:background="@color/graty"></View>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/register"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dm_dp_30dp"
+            android:text="注册"
+            android:background="@color/small_blue"
+            android:layout_width="@dimen/dm_dp_300dp"
+            android:layout_height="wrap_content"></Button>
+
+    </LinearLayout>
+
+
+</LinearLayout>

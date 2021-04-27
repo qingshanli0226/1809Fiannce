@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.framework.BaseActivity;
-import com.example.myapplication.demo.Demo;
+import com.example.demo.Demo;
 import com.example.myapplication.fragment.home.HomeFragment;
 import com.example.myapplication.fragment.invest.InvestFragment;
 import com.example.myapplication.fragment.more.MoreFragment;

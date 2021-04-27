@@ -53,6 +53,7 @@ public abstract   class BaseFragment <T extends BasePresenter> extends Fragment 
     }
 
 
+
     protected abstract void initData();
 
     protected abstract void initPresenter();

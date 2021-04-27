@@ -46,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="学习提示:"
+            android:text="@string/mymoney_title"
             android:textSize="@dimen/dm_dp_30dp"
             android:textColor="@color/reddd"></TextView>
 
@@ -54,7 +54,7 @@
             android:layout_marginTop="@dimen/dm_dp_13dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="充值我们将以集成支付宝sdk支付金额演示充值功能"
+            android:text="@string/mymoney_tishi"
             android:textSize="@dimen/dm_dp_18dp"
             android:textColor="@color/black"></TextView>
 
@@ -63,7 +63,7 @@
             android:layout_marginTop="@dimen/dp_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="提现业务:在p2p平台金融平台中，提现都不是实时到账的,而是审核提现,系统将会告知24小时以内进行转账，如果未收到，请联系客服"
+            android:text="@string/mymoney_info"
             android:textSize="@dimen/dm_dp_13dp"
             android:textColor="@color/black"></TextView>
 
@@ -92,7 +92,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/dm_dp_0dp"
             android:layout_weight="1">
 
             <ImageView
@@ -117,13 +117,13 @@
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/dm_dp_1dp"
             android:background="@color/graty"></View>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/dm_dp_0dp"
             android:layout_weight="1">
 
             <ImageView
@@ -140,7 +140,7 @@
 
             <ImageView
                 android:layout_marginTop="@dimen/dm_dp_20dp"
-                android:layout_marginLeft="240dp"
+                android:layout_marginLeft="@dimen/dm_dp_185dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/right"></ImageView>
@@ -148,13 +148,13 @@
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/dm_dp_1dp"
             android:background="@color/graty"></View>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/dm_dp_0dp"
             android:layout_weight="1">
             <ImageView
                 android:src="@drawable/my_invest_manage"
@@ -170,7 +170,7 @@
 
             <ImageView
                 android:layout_marginTop="@dimen/dm_dp_20dp"
-                android:layout_marginLeft="240dp"
+                android:layout_marginLeft="@dimen/dm_dp_240dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/right"></ImageView>
@@ -178,7 +178,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/dm_dp_1dp"
             android:background="@color/graty"></View>
 
 

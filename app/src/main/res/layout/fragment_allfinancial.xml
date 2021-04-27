@@ -22,7 +22,7 @@
         android:textColor="@color/reddd"
         android:id="@+id/light"
         android:textSize="@dimen/big_text_size"
-        android:text="有道金融豪运当头，首投返现最高1888元"
+        android:text="@string/text_light"
         android:singleLine="true"
         android:focusableInTouchMode="true"
         android:marqueeRepeatLimit="marquee_forever"

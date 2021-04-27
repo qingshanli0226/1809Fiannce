@@ -4,8 +4,9 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.framework.BaseFragment;
+import com.example.framework.view.ViewPagers;
 import com.example.myapplication.R;
-import com.example.myapplication.adapter.MyFragmentAdapter;
+import com.example.myapplication.fragment.MyFragmentAdapter;
 import com.example.myapplication.fragment.invest.allinvest.AllFinancialFragment;
 import com.example.myapplication.fragment.invest.hotinvest.HotFinancialFragment;
 import com.example.myapplication.fragment.invest.recommendinvest.RecommendFinancialFragment;
@@ -20,7 +21,7 @@ public class InvestFragment extends BaseFragment {
     private List<Fragment> fragmentList = new ArrayList<>();
     private List<String> stringList = new ArrayList<>();
     private TabLayout moneyTab;
-    private ViewPager moneyVp;
+    private ViewPagers moneyVp;
     private MyFragmentAdapter adapter;
 
     @Override
@@ -42,6 +43,8 @@ public class InvestFragment extends BaseFragment {
     }
 
 
+
+
     @Override
     protected void initPresenter() {
 
@@ -51,7 +54,7 @@ public class InvestFragment extends BaseFragment {
     protected void initView() {
 
         moneyTab = (TabLayout) mView.findViewById(R.id.money_tab);
-        moneyVp = (ViewPager) mView.findViewById(R.id.money_vp);
+        moneyVp = (ViewPagers) mView.findViewById(R.id.money_vp);
     }
 
     @Override

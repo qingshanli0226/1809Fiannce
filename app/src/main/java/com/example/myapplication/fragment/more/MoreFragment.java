@@ -1,14 +1,46 @@
 package com.example.myapplication.fragment.more;
 
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseFragment;
+import com.example.framework.view.ToolBar;
 import com.example.myapplication.R;
+import com.example.demo.Demo;
 
 
 public class MoreFragment extends BaseFragment {
 
 
+    private ToolBar toolbar;
+    private TextView personRegister;
+    private ImageView showImg;
+    private boolean isShow = false;
+
     @Override
     protected void initData() {
+
+        personRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance().build(Demo.AROUTE_PATH_REGISTER).withInt("",1).navigation();
+            }
+        });
+
+        showImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isShow){
+                    isShow = false;
+                    showImg.setImageDrawable(getResources().getDrawable(R.drawable.toggle_off));
+                }else {
+                    isShow = true;
+                    showImg.setImageDrawable(getResources().getDrawable(R.drawable.toggle_on));
+                }
+            }
+        });
 
     }
 
@@ -19,7 +51,9 @@ public class MoreFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        toolbar = (ToolBar) mView.findViewById(R.id.toolbar);
+        personRegister = (TextView) mView.findViewById(R.id.person_register);
+        showImg = (ImageView) mView.findViewById(R.id.showImg);
     }
 
     @Override

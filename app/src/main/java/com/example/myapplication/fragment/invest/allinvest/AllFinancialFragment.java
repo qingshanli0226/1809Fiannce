@@ -14,10 +14,11 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.framework.BaseFragment;
 import com.example.model.HomeBean;
+import com.example.model.LoginBean;
 import com.example.model.ProductBean;
+import com.example.model.RegisterBean;
 import com.example.model.VersionBean;
 import com.example.myapplication.R;
-import com.example.myapplication.adapter.MyMoneyAdapter;
 import com.example.myapplication.welcome.IWelcomeView;
 import com.example.myapplication.welcome.WelcomePresenter;
 
@@ -96,6 +97,8 @@ public class AllFinancialFragment extends BaseFragment<WelcomePresenter> impleme
 
 
     }
+
+
 
     @Override
     public void showLoading() {

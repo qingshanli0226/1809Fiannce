@@ -27,12 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ProgressBar
-            android:background="@color/reddd"
-            android:visibility="gone"
-            android:id="@+id/bar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/welcome_progressbar_height"></ProgressBar>
 
         <TextView
             android:gravity="center"
@@ -40,7 +34,7 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/welcome_text_size"
             android:textColor="@color/white"
-            android:text="有道金融"></TextView>
+            android:text="@string/welcome_title"></TextView>
 
     </RelativeLayout>
 
