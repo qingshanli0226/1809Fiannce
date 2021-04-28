@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".many.activity.RegisterActivity">
+    tools:context="com.example.user.reg.RegisterActivity">
     <com.example.framwork.view.TobView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
@@ -15,24 +15,24 @@
         app:left_img="@mipmap/left"
         android:id="@+id/tob"
         app:text="用户注册"></com.example.framwork.view.TobView>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/dp_50"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:text="手机号："
-                android:textColor="#000000"></TextView>
-            <EditText
-                android:layout_width="@dimen/dp_0"
-                android:layout_height="match_parent"
-                android:hint="请输入手机号"
-                android:id="@+id/phone"
-                android:layout_weight="8"></EditText>
-        </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="手机号："
+            android:textColor="#000000"></TextView>
+        <EditText
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:hint="请输入手机号"
+            android:id="@+id/phone"
+            android:layout_weight="8"></EditText>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50">
@@ -49,7 +49,6 @@
             android:layout_height="match_parent"
             android:hint="请输入用户名"
             android:id="@+id/use"
-            android:text="aaa"
             android:layout_weight="8"></EditText>
     </LinearLayout>
     <LinearLayout
@@ -69,7 +68,6 @@
             android:layout_height="match_parent"
             android:hint="请输入密码"
             android:id="@+id/pwd"
-            android:text="aaa"
             android:layout_weight="8"></EditText>
     </LinearLayout>
     <LinearLayout
@@ -87,6 +85,7 @@
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
             android:hint="请输入手机号"
+            android:id="@+id/reuse_phone"
             android:layout_weight="8"></EditText>
     </LinearLayout>
     <RelativeLayout

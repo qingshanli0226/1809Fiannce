@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user">
 <application>
-    <activity android:name=".LogActivity"
-        >
+
+    <activity android:name=".LogActivity">
         <intent-filter>
             <action android:name="123" />
 
             <category android:name="android.intent.category.DEFAULT" />
         </intent-filter>
     </activity>
+    <activity android:name=".reg.RegisterActivity"></activity>
 </application>
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.a1809fiannce.many.activity;
+package com.example.user.reg;
 
 
 import com.example.framwork.IView;

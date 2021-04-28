@@ -1,10 +1,8 @@
-package com.example.a1809fiannce.many.activity;
+package com.example.user.reg;
 
 import com.example.framwork.base.BasePresenter;
 import com.example.network.model.RegBean;
 import com.example.network.retrofit.RetrofitManager;
-
-import javax.security.auth.callback.Callback;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

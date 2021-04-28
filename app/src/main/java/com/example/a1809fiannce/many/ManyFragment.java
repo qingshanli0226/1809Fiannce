@@ -1,6 +1,5 @@
 package com.example.a1809fiannce.many;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.a1809fiannce.R;
-import com.example.a1809fiannce.many.activity.RegisterActivity;
 import com.example.a1809fiannce.view.LinView;
+import com.example.framwork.call.FiannceARouter;
 
 
 public class ManyFragment extends Fragment {
@@ -28,30 +27,10 @@ public class ManyFragment extends Fragment {
         us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getContext(), RegisterActivity.class));
+                FiannceARouter.getFiannceARouter().getUserManager().OpenRegisterActivity(getActivity(),null);
             }
         });
-        us.setiCallBack(new LinView.iCallBack() {
-            @Override
-            public void leftImg() {
 
-            }
-
-            @Override
-            public void rightImg() {
-
-            }
-
-            @Override
-            public void leftText() {
-
-            }
-
-            @Override
-            public void rightText() {
-
-            }
-        });
         return inflate;
     }
 }

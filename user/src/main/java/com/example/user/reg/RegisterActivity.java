@@ -1,22 +1,22 @@
-package com.example.a1809fiannce.many.activity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.user.reg;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.a1809fiannce.R;
-import com.example.a1809fiannce.mian.MainActivity2;
 import com.example.framwork.base.BaseActivity;
+import com.example.framwork.call.FiannceARouter;
 import com.example.framwork.view.TobView;
 import com.example.network.model.RegBean;
+import com.example.user.R;
 
-public class RegisterActivity extends BaseActivity<RegPresenter> implements RegisterCallBack{
+public class RegisterActivity extends BaseActivity<RegPresenter> implements RegisterCallBack {
+
+    private EditText reusePhone;
+    private String reuse;
     private TobView tob;
     private EditText phone;
     private EditText use;
@@ -44,24 +44,19 @@ public class RegisterActivity extends BaseActivity<RegPresenter> implements Regi
 
             }
         });
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-            }
-        });
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(RegisterActivity.this, "111", Toast.LENGTH_SHORT).show();
-                Log.i("zx", "RegData: phoneNum="+phone+"name="+name+"password="+password);
-                if (phoneNum.equals("")&&name.equals("")&&password.equals("")){
+                phoneNum=phone.getText().toString();
+                name=use.getText().toString();
+                password=pwd.getText().toString();
+                reuse=reusePhone.getText().toString();
+                if (phoneNum.equals("")&&name.equals("")&&password.equals("")&&reuse.equals("")){
                     Toast.makeText(RegisterActivity.this, "不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                mPresenter.RegData("aaa","1223");
+                mPresenter.RegData(name,password);
             }
         });
     }
@@ -72,22 +67,20 @@ public class RegisterActivity extends BaseActivity<RegPresenter> implements Regi
         phone = (EditText) findViewById(R.id.phone);
         use = (EditText) findViewById(R.id.use);
         pwd = (EditText) findViewById(R.id.pwd);
+        reusePhone = (EditText) findViewById(R.id.reuse_phone);
         register = (Button) findViewById(R.id.register);
     }
 
     @Override
     protected int FindLayout1() {
-        return R.layout.activity_us;
+        return R.layout.activity_register;
     }
 
     @Override
     public void RegData(RegBean regBean) {
-        Log.i("zx", "RegData: "+regBean.toString());
         Toast.makeText(this, ""+regBean.getMessage(), Toast.LENGTH_SHORT).show();
         if (regBean.getCode().equals("200")){
-            Intent intent = new Intent(RegisterActivity.this, MainActivity2.class);
-            startActivity(intent);
-            finish();
+            FiannceARouter.getFiannceARouter().getAppManager().OpenMainActivity(RegisterActivity.this,null);
         }
     }
 
