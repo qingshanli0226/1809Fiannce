@@ -4,16 +4,23 @@
     android:gravity="center"
     android:layout_height="match_parent">
     <EditText
-        android:layout_margin="20dp"
+        android:background="@color/gray"
+        android:hint="@string/act_login_username_hint"
+        android:id="@+id/act_login_username_eTest"
+        android:layout_margin="@dimen/login_EdiText_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText
-        android:layout_margin="20dp"
+        android:background="@color/gray"
+        android:hint="@string/act_login_password_hint"
+        android:id="@+id/act_login_password_eTest"
+        android:layout_margin="@dimen/login_EdiText_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:layout_margin="20dp"
-        android:text="登录"
+        android:id="@+id/act_login_but"
+        android:layout_margin="@dimen/login_EdiText_margin"
+        android:text="@string/login_but_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </LinearLayout>

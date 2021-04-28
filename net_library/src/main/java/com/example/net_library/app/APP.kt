@@ -2,6 +2,7 @@ package com.example.net_library.app
 
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
+import com.example.net_library.evenuilt.ContextInstrument
 
 
 class APP:Application() {
@@ -10,5 +11,6 @@ class APP:Application() {
         ARouter.openDebug()
         ARouter.openLog()
         ARouter.init(this)
+        ContextInstrument.context=this
     }
 }

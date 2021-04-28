@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Financial">
         <activity android:name=".ui.MainActivity">
         </activity>
-        <activity android:name=".ui.welcome.WelcomeActivity">
+        <activity android:name=".ui.welcome.WelcomeActivity" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

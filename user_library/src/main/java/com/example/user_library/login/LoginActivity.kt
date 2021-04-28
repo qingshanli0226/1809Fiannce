@@ -1,21 +1,26 @@
 package com.example.user_library.login
 
+import android.content.Intent
+import android.view.View
 import android.widget.Toast
 import com.example.frame_library.mvp.BaseActitvty
 import com.example.frame_library.mvp.IPresneter
 import com.example.net_library.evenuilt.Meanger
 import com.example.net_library.evenuilt.Uilt
 import com.example.user_library.R
+import com.example.user_library.base.Requst
+import com.example.user_library.base.User
+import kotlinx.android.synthetic.main.activity_login.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-class LoginActivity : BaseActitvty<IPresneter>() {
+class LoginActivity : BaseActitvty<LoginPresenter>() ,View.OnClickListener,ILoginCanter.View{
     override fun bandLayoutId(): Int = R.layout.activity_login
 
     override fun initView() {
-        EventBus.getDefault().register(this)
-        EventBus.getDefault().post(Meanger(Uilt.ACTVON_LOGIN, "跳转成功，事件发送Toast"))
+        act_login_but.setOnClickListener(this)
+        attaPresenter(LoginPresenter(this,LoginModle()))
     }
 
     override fun initData() {
@@ -32,6 +37,27 @@ class LoginActivity : BaseActitvty<IPresneter>() {
     override fun onDestroy() {
         super.onDestroy()
         EventBus.getDefault().unregister(this)
+    }
+
+    override fun onClick(v: View?) {
+        when(v!!.id){
+            R.id.act_login_but->{
+                mPresenter!!.login()
+            }
+        }
+    }
+
+    override fun getUsername(): String {
+        return act_login_username_eTest.text.toString()
+    }
+
+    override fun getPassword(): String {
+        return act_login_password_eTest.text.toString()
+    }
+
+    override fun onRequst(requst: Requst<User>) {
+        Toast.makeText(this,requst.message,Toast.LENGTH_LONG).show()
+        finish()
     }
 
 //    override fun setPresneter(): IPresneter {
