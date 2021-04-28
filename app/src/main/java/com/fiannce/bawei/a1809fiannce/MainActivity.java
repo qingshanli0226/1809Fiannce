@@ -12,8 +12,12 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.fiannce.bawei.a1809fiannce.startmode.AActivity;
+import com.fiannce.bawei.a1809fiannce.startmode.BActivity;
+import com.fiannce.bawei.common.FiannceConstants;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.framework.manager.CacheManager;
+import com.fiannce.bawei.framework.manager.FiannceArouter;
 import com.fiannce.bawei.framework.view.ProgressView;
 import com.fiannce.bawei.framework.view.ToolBar;
 import com.fiannce.bawei.net.mode.HomeBean;
@@ -41,21 +45,36 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initData() {
         HomeBean homeBean = CacheManager.getInstance().getHomeBean();
-        progressTv.setText("主页面: "+homeBean.toString());
-        progressView.saledProgress(20,true);
+     /*   progressTv.setText("主页面: "+homeBean.toString());
+        progressView.saledProgress(20,true);*/
     }
 
     @Override
     protected void initView() {
-        progressTv = findViewById(R.id.progressTv);
-        progressView = findViewById(R.id.progressView);
+        /*progressTv = findViewById(R.id.progressTv);
+        progressView = findViewById(R.id.progressView);*/
+        findViewById(R.id.startMode).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.callBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FiannceArouter.getInstance().build(FiannceConstants.PAY_PATH).navigation();
+                //FiannceArouter.getInstance().getPayInterface().openPayActivity(MainActivity.this,null);
+            }
+        });
 
     }
 
     @Override
     public void destroy() {
         super.destroy();
-        progressView.destry();
+        //progressView.destry();
     }
 
     @Override

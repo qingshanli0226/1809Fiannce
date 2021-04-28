@@ -1,1 +1,1 @@
-include ':app', ':user', ':pay', ':framework', ':net'
+include ':app', ':user', ':pay', ':framework', ':net', ':common'

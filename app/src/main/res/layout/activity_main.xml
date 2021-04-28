@@ -22,7 +22,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
+        android:visibility="gone"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/toolbar">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="启动模式"
+            android:id="@+id/startMode"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="接口回调"
+            android:id="@+id/callBack"/>
+    </LinearLayout>
 
     <com.fiannce.bawei.framework.view.ProgressView
         android:id="@+id/progressView"
