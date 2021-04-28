@@ -25,7 +25,7 @@ public interface FiannceApiService {
     Observable<RegisterBean> postRegister(@Field("name") String name,@Field("password") String password);
 
     @FormUrlEncoded
-    @POST("login?name=1010&password=1010")
+    @POST("login")
     Observable<LoginBean> postLogin(@Field("name") String name, @Field("password") String password);
 
 }

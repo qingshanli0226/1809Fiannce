@@ -1,5 +1,6 @@
 package com.example.user.register;
 
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -28,6 +29,9 @@ public class PersonRegisterActivity extends BaseActivity<PersonRegisterPresenter
     private EditText registerConfimPwd;
     private Button register;
 
+    private String username;
+    private String password;
+
     @Override
     protected void initData() {
 
@@ -52,8 +56,8 @@ public class PersonRegisterActivity extends BaseActivity<PersonRegisterPresenter
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = registerName.getText().toString().trim();
-                String password = registerPwd.getText().toString().trim();
+                 username = registerName.getText().toString().trim();
+                 password = registerPwd.getText().toString().trim();
                 String confimpwd = registerConfimPwd.getText().toString().trim();
 //                Toast.makeText(PersonRegisterActivity.this, "123", Toast.LENGTH_SHORT).show();
 
@@ -104,10 +108,6 @@ public class PersonRegisterActivity extends BaseActivity<PersonRegisterPresenter
 
     }
 
-    @Override
-    public void onLogin(LoginBean loginBean) {
-
-    }
 
     @Override
     public void showLoading() {

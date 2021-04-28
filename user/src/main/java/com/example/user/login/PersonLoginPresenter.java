@@ -1,10 +1,10 @@
-package com.example.user.register;
+package com.example.user.login;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.example.framework.BasePresenter;
 import com.example.model.LoginBean;
-import com.example.model.RegisterBean;
 import com.example.net.RetrofitCretor;
+import com.example.user.register.IPersonRegisterView;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,16 +16,14 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class PersonRegisterPresenter extends BasePresenter<IPersonRegisterView> {
-
-    public PersonRegisterPresenter(IPersonRegisterView iPersonRegisterView){
-        attachView(iPersonRegisterView);
+public class PersonLoginPresenter extends BasePresenter<IPersonLoginView> {
+    public PersonLoginPresenter(IPersonLoginView iPersonLoginView){
+        attachView(iPersonLoginView);
     }
 
-
-    public void postRegister(String name,String pwd){
+    public void postLogin(String name,String pwd){
         RetrofitCretor.getFiannceApiService()
-                .postRegister(name, pwd)
+                .postLogin(name, pwd)
                 .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -43,17 +41,17 @@ public class PersonRegisterPresenter extends BasePresenter<IPersonRegisterView> 
                         }
                     }
                 })
-                .subscribe(new Observer<RegisterBean>() {
+                .subscribe(new Observer<LoginBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(@NonNull RegisterBean registerBean) {
+                    public void onNext(@NonNull LoginBean loginBean) {
                         if (IView!=null){
-                            IView.onRegister(registerBean);
-                            LogUtils.json(registerBean);
+                            IView.onLogin(loginBean);
+                            LogUtils.json(loginBean);
                         }
                     }
                     @Override
@@ -62,6 +60,7 @@ public class PersonRegisterPresenter extends BasePresenter<IPersonRegisterView> 
                             IView.showError(e.getMessage());
                         }
                     }
+
                     @Override
                     public void onComplete() {
 
@@ -71,3 +70,4 @@ public class PersonRegisterPresenter extends BasePresenter<IPersonRegisterView> 
 
 
 }
+

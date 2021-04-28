@@ -6,5 +6,4 @@ import com.example.model.RegisterBean;
 
 public interface IPersonRegisterView extends IBaseView {
     void onRegister(RegisterBean registerBean);
-    void onLogin(LoginBean loginBean);
 }

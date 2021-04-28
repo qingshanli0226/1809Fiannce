@@ -10,6 +10,7 @@ public class Demo {
 
     public static final String AROUTE_PATH = "/app/MainActivity";
     public static final String AROUTE_PATH_REGISTER = "/main/PersonRegisterActivity";
+    public static final String AROUTE_PATH_LOGIN = "/demo/PersonLoginActivity";
 
     public static final String HINT_DIALOG_MESSAGE = "确定更新版本吗?";
     public static final String HINT_DIALOG_TITLE = "更新";

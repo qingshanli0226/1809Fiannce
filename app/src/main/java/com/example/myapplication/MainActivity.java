@@ -3,6 +3,9 @@ package com.example.myapplication;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.RadioButton;
@@ -10,6 +13,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseActivity;
 import com.example.demo.Demo;
 import com.example.myapplication.fragment.home.HomeFragment;
@@ -67,6 +71,36 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.hide(investFragment);
                         fragmentTransaction.show(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
+
+                        SharedPreferences login = getSharedPreferences("login", 0);
+                        boolean is_login = login.getBoolean("is_login", false);
+                        if (is_login){
+
+                        }else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setIcon(R.drawable.ic_launcher_foreground);
+                            builder.setTitle("登录");
+                            builder.setMessage("还没有登录！");
+                            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    ARouter.getInstance().build(Demo.AROUTE_PATH_LOGIN).navigation();
+                                }
+                            });
+
+                            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+
+                            AlertDialog alertDialog = builder.create();
+                            alertDialog.show();
+
+
+                        }
+
                         break;
                     case R.id.btn_more:
                         fragmentTransaction.hide(homeFragment);
