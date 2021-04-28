@@ -28,6 +28,7 @@
         <activity android:name=".startmode.BActivity"/>
         <activity android:name=".startmode.CActivity"
             android:launchMode="singleTop"/>
+
     </application>
 
 </manifest>

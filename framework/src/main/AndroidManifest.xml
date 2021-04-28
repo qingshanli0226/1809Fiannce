@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fiannce.bawei.framework" />
+    package="com.fiannce.bawei.framework" >
+    <application>
+        <service android:name="com.fiannce.bawei.framework.FiannceService"/>
+    </application>
+</manifest>
+
+

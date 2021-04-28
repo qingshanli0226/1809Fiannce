@@ -18,16 +18,18 @@ import com.fiannce.bawei.common.FiannceConstants;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.framework.manager.CacheManager;
 import com.fiannce.bawei.framework.manager.FiannceArouter;
+import com.fiannce.bawei.framework.manager.FiannceUserManager;
 import com.fiannce.bawei.framework.view.ProgressView;
 import com.fiannce.bawei.framework.view.ToolBar;
 import com.fiannce.bawei.net.mode.HomeBean;
 import com.fiannce.bawei.pay.PayActivity;
 import com.fiannce.bawei.user.LoginActivity;
 
+import java.util.Locale;
 
 
 @Route(path="/main/MainActivity")
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements FiannceUserManager.IUserLoginChanged {
     private TextView progressTv;
     private ProgressView progressView;
 
@@ -51,6 +53,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        if (FiannceUserManager.getInstance().isLogin()) {
+            Toast.makeText(this, "当前用户已经登录", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "当前用户未登录", Toast.LENGTH_SHORT).show();
+        }
         /*progressTv = findViewById(R.id.progressTv);
         progressView = findViewById(R.id.progressView);*/
         findViewById(R.id.startMode).setOnClickListener(new View.OnClickListener() {
@@ -69,12 +76,15 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        FiannceUserManager.getInstance().register(this);
+
     }
 
     @Override
     public void destroy() {
         super.destroy();
         //progressView.destry();
+        FiannceUserManager.getInstance().unRegister(this);
     }
 
     @Override
@@ -116,5 +126,20 @@ public class MainActivity extends BaseActivity {
                 break;
         }
         return super.onTouchEvent(ev);
+    }
+
+    @Override
+    public void onLoginChange(boolean isLogin) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (isLogin) {
+                    Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "退出登录", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 }
