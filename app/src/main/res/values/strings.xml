@@ -9,4 +9,9 @@
     <string name="text1">锁定期</string>
     <string name="text2">预期年利率</string>
     <string name="text3">产品金额</string>
+    <string name="user">hi,welcome</string>
+    <string name="user1">学习提示：</string>
+    <string name="user2">充值我们将以集成支付宝sdk支付金额演示充值功能</string>
+    <string name="user3">提现业务：在p2p金融平台中，提现都不是实时到账的，而是审核提现，
+    系统将会告知24小时内进行转账，如果未收到，请联系客服...</string>
 </resources>

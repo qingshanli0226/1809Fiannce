@@ -1,14 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".fragment.MoreFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="4" />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:id="@+id/regitster">
+          <ImageView
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:src="@drawable/icon_more_regist"
+              android:layout_weight="1"></ImageView>
+          <TextView
+              style="@style/more"
+              android:text="用戶注冊"></TextView>
+      </LinearLayout>
 
-</FrameLayout>
+ <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1">
+          <ImageView
+              android:layout_width="0dp"
+              android:src="@drawable/icon_more_reset"
+              android:layout_height="match_parent"
+              android:layout_weight="1"></ImageView>
+          <TextView
+              style="@style/more"
+              android:text="手势密码"></TextView>
+      </LinearLayout>
+
+ <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1">
+          <ImageView
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:src="@drawable/icon_more_reset"
+              android:layout_weight="1"></ImageView>
+          <TextView
+              style="@style/more"
+              android:text="重置手势密码"></TextView>
+      </LinearLayout>
+
+ <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1">
+          <ImageView
+              android:layout_width="0dp"
+              android:src="@drawable/icon_more_contact"
+              android:layout_height="match_parent"
+              android:layout_weight="1"></ImageView>
+          <TextView
+              style="@style/more"
+              android:text="联系客服"></TextView>
+      </LinearLayout>
+
+ <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1">
+          <ImageView
+              android:layout_width="0dp"
+              android:src="@drawable/icon_more_sms"
+              android:layout_height="match_parent"
+              android:layout_weight="1"></ImageView>
+          <TextView
+              style="@style/more"
+              android:text="用户反馈"></TextView>
+      </LinearLayout>
+
+ <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1">
+          <ImageView
+              android:layout_width="0dp"
+              android:src="@drawable/icon_more_share"
+              android:layout_height="match_parent"
+              android:layout_weight="1"></ImageView>
+          <TextView
+              style="@style/more"
+              android:text="分享给好友"></TextView>
+      </LinearLayout>
+
+ <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1">
+          <ImageView
+              android:layout_width="0dp"
+              android:src="@drawable/icon_more_about"
+              android:layout_height="match_parent"
+              android:layout_weight="1"></ImageView>
+          <TextView
+              style="@style/more"
+              android:text="关于有道理财"></TextView>
+      </LinearLayout>
+
+
+</LinearLayout>

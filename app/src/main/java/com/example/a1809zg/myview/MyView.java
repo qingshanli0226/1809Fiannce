@@ -53,7 +53,7 @@ public class MyView extends View {
     }
 
     public void saprogress(int progress, boolean isAnimal) {
-        offsetAngle = (progress * 360) / 100;
+        offsetAngle = (int) (progress*3.6);
         if (isAnimal) {
             progressAngle = 0;
         } else {
@@ -69,6 +69,7 @@ public class MyView extends View {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
+            //当前绘制=当前绘制+每次自定义绘制大小
             progressAngle = progressAngle + STEP_ANGLE;
             if (progressAngle <= offsetAngle) {
                 invalidate();//重新绘制
@@ -125,6 +126,11 @@ public class MyView extends View {
         setMeasuredDimension(measuredWidth, measuredHeight);
     }
 
+
+//    private final int START_ANGLE = 0;//这是从3点钟方向开始画扇形
+//    private final int STEP_ANGLE = 1;//这是每次一度的加扇形大小
+//    private int offsetAngle;//绘制扇形的角度.该大小根据理财产品销售的百分比进度计算出来的
+//    private int progressAngle = 0;//绘制的角度
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);

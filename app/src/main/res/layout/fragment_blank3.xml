@@ -1,14 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.MineFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".fragment.MineFragment"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:background="@color/blue"
+    android:layout_weight="3"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/my_user_default"></ImageView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_height="wrap_content"
+        android:text="@string/user"></TextView>
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="4"
+    android:background="@color/gray"
+    android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="3" />
+        android:layout_height="wrap_content"
+        android:text="@string/user1"
+        android:textColor="@color/red">
+    </TextView>
+<TextView
+    style="@style/userTextStyle"
+    android:text="@string/user2"
+    ></TextView>
+    <TextView
+        style="@style/userTextStyle"
+        android:text="@string/user3">
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_recharge_bg"
+            android:paddingRight="@dimen/dp_20">
+            </ImageView>
+         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:src="@drawable/my_withdraw_bg"
+            ></ImageView>
 
-</FrameLayout>
+    </LinearLayout>
+</LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="5"
+
+       android:orientation="vertical"
+       >
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/ll_touzi"
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/dp_50"
+               android:drawableLeft="@drawable/my_invest_manage"
+               style="@style/userText"
+               android:gravity="center"
+               android:text="投资管理" />
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/dp_20"
+               android:layout_gravity="center"
+               android:paddingLeft="@dimen/dp_250"
+               android:src="@drawable/right">
+
+           </ImageView>
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/ll_touzi_zhiguan"
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/dp_50"
+               style="@style/userText"
+               android:gravity="center"
+               android:drawableLeft="@drawable/my_reward_manage"
+               android:text="投资管理(直观)" />
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/dp_20"
+               android:layout_gravity="center"
+               android:paddingLeft="@dimen/dp_200"
+               android:src="@drawable/right"></ImageView>
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/ll_zichan"
+               style="@style/userText"
+               android:gravity="center"
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/dp_50"
+               android:drawableLeft="@drawable/my_asset_manage"
+               android:text="资产管理" />
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/dp_20"
+               android:layout_gravity="center"
+               android:paddingLeft="@dimen/dp_250"
+               android:src="@drawable/right"></ImageView>
+       </LinearLayout>
+
+
+   </LinearLayout>
+</LinearLayout>
