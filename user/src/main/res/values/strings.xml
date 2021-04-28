@@ -10,4 +10,6 @@
     <string name="register">注册</string>
     <string name="theUsernameAndPasswordCannotBeEmpty">用户名密码不能为空</string>
     <string name="theTwoPasswordsDontMatch">两次密码不一致</string>
+    <string name="userLogin">用户登录</string>
+    <string name="login">登录</string>
 </resources>

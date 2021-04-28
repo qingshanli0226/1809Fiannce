@@ -2,6 +2,7 @@ package com.example.net;
 
 import com.example.net.model.AllProductBean;
 import com.example.net.model.HoemBean;
+import com.example.net.model.LoginBean;
 import com.example.net.model.RegisterBean;
 import com.example.net.model.VersionBean;
 
@@ -27,6 +28,11 @@ public interface FiannceApiService {
 
     @FormUrlEncoded
     @POST("register")
-    Observable<RegisterBean> getRegisterData(@Field("username") String username,@Field("password") String password);
+    Observable<RegisterBean> getRegisterData(@Field("username") String username, @Field("password") String password);
+
+
+    @FormUrlEncoded
+    @POST("login")
+    Observable<LoginBean> getLoginData(@Field("username") String username, @Field("password") String password);
 
 }
