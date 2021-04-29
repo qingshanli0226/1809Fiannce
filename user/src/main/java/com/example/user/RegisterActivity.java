@@ -1,11 +1,15 @@
 package com.example.user;
 
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.framework.BaseActivity;
+import com.example.framework.mannager.FiannceArote;
+import com.example.net.bean.AutoBean;
 import com.example.user.mvp.MorePresenter;
 import com.example.user.mvp.MoreView;
 import com.example.net.bean.LoginBean;
@@ -64,14 +68,29 @@ public class RegisterActivity extends BaseActivity<MorePresenter> implements Mor
             //注册成功的话就登陆
             MorePresenter morePresenter = new MorePresenter(this);
             morePresenter.getLogin(userName,userPwd);
+
+
         }else {
             Toast.makeText(this, "注册失败", Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
-    public void initLogin(LoginBean loginBean) {
+    public void initLogin(LoginBean loginBean) {//自动登陆
         Toast.makeText(this, "login:"+loginBean.toString(), Toast.LENGTH_SHORT).show();
+        //将token存到SP
+        SharedPreferences autoToken = getSharedPreferences("autoToken", MODE_PRIVATE);
+        SharedPreferences.Editor edit = autoToken.edit();
+        edit.putString("token", loginBean.getResult().getToken());
+        edit.commit();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("page","0");
+        FiannceArote.getInstance().getAppInterface().openMainActivity(this,bundle);
+    }
+
+    @Override
+    public void initAuto(AutoBean autoBean) {
 
     }
 }

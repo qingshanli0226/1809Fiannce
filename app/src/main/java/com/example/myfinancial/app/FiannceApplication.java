@@ -1,12 +1,14 @@
 package com.example.myfinancial.app;
 
 import android.app.Application;
+import android.content.Intent;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.mannager.FiannceArote;
 import com.example.myfinancial.AppModule;
 import com.example.pay.PayModel;
 import com.example.user.UserModule;
+import com.example.user.service.AutoLoginService;
 
 
 public class FiannceApplication extends Application {
@@ -21,5 +23,8 @@ public class FiannceApplication extends Application {
         PayModel.init();
         UserModule.init();
         AppModule.init();
+
+
+        startService(new Intent(this,AutoLoginService.class));
     }
 }

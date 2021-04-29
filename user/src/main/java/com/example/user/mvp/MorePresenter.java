@@ -2,6 +2,7 @@ package com.example.user.mvp;
 
 import com.example.framework.BasePresenter;
 import com.example.net.FiannceHttpMannager;
+import com.example.net.bean.AutoBean;
 import com.example.net.bean.LoginBean;
 import com.example.net.bean.RegisterBean;
 
@@ -96,6 +97,54 @@ public class MorePresenter extends BasePresenter<MoreView> {
                     public void onNext(@NonNull LoginBean loginBean) {
                         if (mView!=null){
                             mView.initLogin(loginBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (mView!=null){
+                            mView.showError(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+
+    public void getAuto(String token){
+        FiannceHttpMannager.getApiModel().getAuto(token)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        if (mView!=null){
+                            mView.showLoading();
+                        }
+                    }
+                })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        if (mView!=null){
+                            mView.hideLoading();
+                        }
+                    }
+                })
+                .subscribe(new Observer<AutoBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull AutoBean autoBean) {
+                        if (mView!=null){
+                            mView.initAuto(autoBean);
                         }
                     }
 

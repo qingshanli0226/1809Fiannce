@@ -1,7 +1,9 @@
 package com.example.myfinancial;
 
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 
@@ -53,6 +55,14 @@ public class MainActivity extends BaseActivity {
         tab.setTextUnselectColor(Color.BLACK);
         tab.setTabData(cusComms, this, R.id.vp, list);
 
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Bundle extras = intent.getExtras();
+        String page = extras.getString("page");
+        Log.d("传过来的页码MainActivity", page);
     }
 
     @Override

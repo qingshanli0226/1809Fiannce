@@ -3,6 +3,11 @@
     package="com.example.user">
 
     <application>
+        <service
+            android:name=".service.AutoLoginService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity android:name=".LogActivity">
             <intent-filter>
                 <action android:name="myuseractivity" />
@@ -10,9 +15,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity">
-
-        </activity>
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>
