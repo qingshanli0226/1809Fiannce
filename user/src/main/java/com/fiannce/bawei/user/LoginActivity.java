@@ -14,17 +14,14 @@ public class LoginActivity extends BaseActivity {
     protected int getLayoutId() {
         return R.layout.activity_login;
     }
-
     @Override
     protected void initPresenter() {
 
     }
-
     @Override
     protected void initData() {
 
     }
-
     @Override
     protected void initView() {
 

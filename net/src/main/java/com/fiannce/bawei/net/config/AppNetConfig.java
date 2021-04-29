@@ -25,6 +25,4 @@ public class AppNetConfig {
     public static final String FEEDBACK = BASE_URL + "FeedBack";//注册
 
     public static final String UPDATE = BASE_URL + "atguigu/json/P2PInvest/update.json";//更新应用
-
-
 }

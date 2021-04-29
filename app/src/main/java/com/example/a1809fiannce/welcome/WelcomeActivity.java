@@ -35,8 +35,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean homeFinsh = false;
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
-    private boolean ONE_finish = false;
-    private boolean TOW_finish = false;
     private int countDown = 3;
     private android.widget.ImageView icon;
     private AlphaAnimation alphaAnimation;
@@ -123,11 +121,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         alerDialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                ONE_finish=true;
-                if (ONE_finish&&TOW_finish){
+
                     ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
                     finish();
-                }
+
             }
         });
         alerDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -157,7 +154,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 case DELAY_INDEX:
                     countDown--;
                     if (countDown>0) {
-
                         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
                     } else {
                         advertistFinsh = true;
@@ -167,15 +163,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 case ONE_TASK_FIISH:
                     if (homeFinsh&&versionFinsh&&advertistFinsh) {
                         handler.sendEmptyMessage(ALL_TASK_FIISH);
-                        Dialog();
                     }
                     break;
                 case ALL_TASK_FIISH:
-                    TOW_finish = true;
-                    if (ONE_finish&&TOW_finish){
-                        ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
-                        finish();
-                    }
+                    Dialog();
                     break;
             }
         }
