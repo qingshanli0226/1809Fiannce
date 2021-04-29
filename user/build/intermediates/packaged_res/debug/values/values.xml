@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">user</string>
+    <color name="coloRed">#EB0808</color>
+    <color name="colorAccent">#111111</color>
+    <color name="colorBlack">#111111</color>
+    <color name="colorPrimary">#111111</color>
+    <color name="colorPrimaryDark">#111111</color>
+    <color name="colorToolbar">#1F8BB4</color>
+    <color name="colorWhite">#ffffff</color>
+    <dimen name="Toolbar_layout_height">50dp</dimen>
+    <string name="app_name">My Application</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="toolbar_login">登录</string>
+    <string name="toolbar_register">注册</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 </resources>

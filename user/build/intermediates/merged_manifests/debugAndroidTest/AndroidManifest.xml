@@ -28,8 +28,8 @@
         android:supportsRtl="true" >
         <uses-library android:name="android.test.runner" />
 
-        <activity android:name="com.fiannce.user.RegisterActivity" />
-        <activity android:name="com.fiannce.user.LoginActivity" />
+        <activity android:name="com.fiannce.user.register.RegisterActivity" />
+        <activity android:name="com.fiannce.user.login.LoginActivity" />
         <activity
             android:name="com.blankj.utilcode.util.Utils$TransActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

@@ -3,24 +3,24 @@
 3    package="com.fiannce.net.test" >
 4
 5    <uses-sdk
-5-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:5:5-74
+5-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:5:5-74
 6        android:minSdkVersion="24"
-6-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:5:15-41
+6-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:5:15-41
 7        android:targetSdkVersion="30" />
-7-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:5:42-71
+7-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:11:5-15:70
+9-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:11:5-15:70
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:11:22-76
+10-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:11:22-76
 11        android:functionalTest="false"
-11-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:14:22-52
+11-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:13:22-53
+12-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:13:22-53
 13        android:label="Tests for com.fiannce.net.test"
-13-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:15:22-68
+13-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:15:22-68
 14        android:targetPackage="com.fiannce.net.test" />
-14-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:12:22-66
+14-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:12:22-66
 15
 16    <uses-permission android:name="android.permission.INTERNET" />
 16-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:26:5-67
@@ -42,20 +42,20 @@
 21-->[androidx.test:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:24:22-69
 22
 23    <application
-23-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:7:5-9:19
+23-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:7:5-9:19
 24        android:allowBackup="true"
 24-->[com.shuyu:GSYVideoPlayer:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\9619ca6846c330e00007a87f02d2823b\GSYVideoPlayer-8.1.0\AndroidManifest.xml:12:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 25-->[androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
 26        android:debuggable="true"
-26-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:7:18-43
+26-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:7:18-43
 27        android:label="@string/app_name"
 27-->[com.shuyu:GSYVideoPlayer:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\9619ca6846c330e00007a87f02d2823b\GSYVideoPlayer-8.1.0\AndroidManifest.xml:13:9-41
 28        android:supportsRtl="true" >
 28-->[com.shuyu:GSYVideoPlayer:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\9619ca6846c330e00007a87f02d2823b\GSYVideoPlayer-8.1.0\AndroidManifest.xml:14:9-35
 29        <uses-library android:name="android.test.runner" />
-29-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:8:9-60
-29-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8666936117847502493.xml:8:23-57
+29-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:8:9-60
+29-->D:\zgsix\1809Fiannce\net\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger8596762461422441584.xml:8:23-57
 30
 31        <activity
 31-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:10:9-15:75

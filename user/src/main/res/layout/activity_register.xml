@@ -11,12 +11,12 @@
     <com.fiannce.framework.view.ToolBar
         android:id="@+id/toobar_fake"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/Toolbar_layout_height"
         android:background="@color/colorBlack"
-        app:titleText="注册"
-        app:leftImg="@drawable/left"
+        app:textcolor="@color/colorToolbar"
         app:leftIsShow="true"
-        ></com.fiannce.framework.view.ToolBar>
+        app:leftImg="@drawable/left"
+        app:titleText="@string/toolbar_register"></com.fiannce.framework.view.ToolBar>
 
     <LinearLayout
         android:layout_width="match_parent"

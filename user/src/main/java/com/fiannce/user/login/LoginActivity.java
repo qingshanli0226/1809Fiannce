@@ -9,10 +9,11 @@ import android.widget.EditText;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.fiannce.framework.BaseActivity;
 import com.fiannce.framework.view.ToolBar;
+import com.fiannce.net.mode.LoginBean;
 import com.fiannce.user.R;
 
 @Route(path = "/login/LoginActivity")
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity<LoginPresenter> implements ILoginView {
 
 
     private com.fiannce.framework.view.ToolBar toobarFake;
@@ -31,12 +32,12 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initPresenter() {
-
+        httppresenter = new LoginPresenter(this);
     }
 
     @Override
     protected void initData() {
-
+        httppresenter.getLogin();
     }
 
     @Override
@@ -56,6 +57,30 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void onRightTvClick() {
+
+    }
+
+    @Override
+    public void getLogin(LoginBean loginBean) {
+        if (loginBean.getCode().equals("200")){
+
+        }else {
+
+        }
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showError(String error) {
 
     }
 }

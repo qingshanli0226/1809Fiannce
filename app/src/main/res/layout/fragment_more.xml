@@ -15,7 +15,6 @@
         app:textcolor="@color/colorToolbar"
         app:titleText="@string/main_more"></com.fiannce.framework.view.ToolBar>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/more_linearLayout_one_layout_height"
@@ -33,16 +32,16 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"
                 android:src="@drawable/icon_more_regist"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="用户注册"
-                android:textColor="#6B7CA6"
-                android:textSize="25dp"></TextView>
+                android:layout_marginLeft="@dimen/more_TextView_one_layout_marginLeft"
+                android:text="@string/more_text_one"
+                android:textColor="@color/colorMoreTextViewtextColor"
+                android:textSize="@dimen/more_TextView_one_textSize"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -55,21 +54,21 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"
                 android:src="@drawable/icon_more_secret"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="手势密码"
-                android:textColor="#6B7CA6"
-                android:textSize="25dp"></TextView>
+                android:layout_marginLeft="@dimen/more_TextView_one_layout_marginLeft"
+                android:text="@string/more_text_two"
+                android:textColor="@color/colorMoreTextViewtextColor"
+                android:textSize="@dimen/more_TextView_one_textSize"></TextView>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
+                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"
                 android:src="@drawable/toggle_off"></ImageView>
 
         </LinearLayout>
@@ -84,16 +83,16 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"
                 android:src="@drawable/icon_more_reset"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="重置手势密码"
-                android:textColor="#6B7CA6"
-                android:textSize="25dp"></TextView>
+                android:layout_marginLeft="@dimen/more_TextView_one_layout_marginLeft"
+                android:text="@string/more_text_three"
+                android:textColor="@color/colorMoreTextViewtextColor"
+                android:textSize="@dimen/more_TextView_one_textSize"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -106,16 +105,16 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"
                 android:src="@drawable/icon_more_contact"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="联系客服"
-                android:textColor="#6B7CA6"
-                android:textSize="25dp"></TextView>
+                android:layout_marginLeft="@dimen/more_TextView_one_layout_marginLeft"
+                android:text="@string/more_text_four"
+                android:textColor="@color/colorMoreTextViewtextColor"
+                android:textSize="@dimen/more_TextView_one_textSize"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -128,16 +127,16 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"
                 android:src="@drawable/icon_more_sms"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="用户反馈"
-                android:textColor="#6B7CA6"
-                android:textSize="25dp"></TextView>
+                android:layout_marginLeft="@dimen/more_TextView_one_layout_marginLeft"
+                android:text="@string/more_text_five"
+                android:textColor="@color/colorMoreTextViewtextColor"
+                android:textSize="@dimen/more_TextView_one_textSize"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -150,19 +149,20 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"
                 android:src="@drawable/icon_more_share"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="分享给好友"
-                android:textColor="#6B7CA6"
-                android:textSize="25dp"></TextView>
+                android:layout_marginLeft="@dimen/more_TextView_one_layout_marginLeft"
+                android:text="@string/more_text_six"
+                android:textColor="@color/colorMoreTextViewtextColor"
+                android:textSize="@dimen/more_TextView_one_textSize"></TextView>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/more_manage"
             android:layout_width="match_parent"
             android:layout_height="@dimen/more_linearLayout_two_layout_height"
             android:layout_weight="1"
@@ -172,16 +172,16 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"
                 android:src="@drawable/icon_more_about"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="关于有道理财"
-                android:textColor="#6B7CA6"
-                android:textSize="25dp"></TextView>
+                android:layout_marginLeft="@dimen/more_TextView_one_layout_marginLeft"
+                android:text="@string/more_text_seven"
+                android:textColor="@color/colorMoreTextViewtextColor"
+                android:textSize="@dimen/more_TextView_one_textSize"></TextView>
         </LinearLayout>
     </LinearLayout>
 

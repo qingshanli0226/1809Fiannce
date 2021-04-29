@@ -38,5 +38,6 @@
     <color name="colorPropertyTextViewone">#F70505</color>
     <!-- TODO: More Fragment-->
     <color name="colorMoreLinearLayoutBackground">#EFEFEF</color>
+    <color name="colorMoreTextViewtextColor">#6B7CA6</color>
 
 </resources>

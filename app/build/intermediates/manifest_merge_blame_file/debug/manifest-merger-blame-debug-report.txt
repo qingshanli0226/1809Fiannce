@@ -11,8 +11,8 @@
 9-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:4:1-62
-11-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:4:18-60
+11-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 12-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:27:5-80
 12-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:27:22-77
@@ -27,46 +27,48 @@
 15-->[com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:11:22-76
 16
 17    <application
-17-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:5:5-23:19
+17-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:7:5-26:19
 18        android:name="com.fiannce.myapplication.FiannceApplication"
-18-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:6:9-43
+18-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:8:9-43
 19        android:allowBackup="true"
-19-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:7:9-35
+19-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:9:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 20-->[androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
 21        android:debuggable="true"
 22        android:icon="@mipmap/app_icon"
-22-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:8:9-40
+22-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:10:9-40
 23        android:label="@string/app_name"
-23-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:9:9-41
+23-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:11:9-41
 24        android:roundIcon="@mipmap/app_icon"
-24-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:10:9-45
+24-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:9-45
 25        android:supportsRtl="true"
-25-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:11:9-35
+25-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:9-35
 26        android:testOnly="true"
 27        android:theme="@style/AppTheme" >
-27-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:9-40
-28        <activity
-28-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:9-19:20
-29            android:name="com.fiannce.myapplication.welcome.WelcomeActivity"
-29-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:19-58
-30            android:screenOrientation="portrait" >
-30-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:59-95
-31            <intent-filter>
-31-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:13-18:29
-32                <action android:name="android.intent.action.MAIN" />
-32-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:17-69
-32-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:25-66
-33
-34                <category android:name="android.intent.category.LAUNCHER" />
-34-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:17-77
-34-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:27-74
-35            </intent-filter>
-36        </activity>
-37        <activity android:name="com.fiannce.myapplication.MainActivity" >
-37-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:9-22:20
-37-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:19-47
-38        </activity>
+27-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:9-40
+28        <activity android:name="com.fiannce.myapplication.ManageActivity" />
+28-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:9-61
+28-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:19-49
+29        <activity
+29-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:16:9-24:20
+30            android:name="com.fiannce.myapplication.welcome.WelcomeActivity"
+30-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:13-52
+31            android:screenOrientation="portrait" >
+31-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:18:13-49
+32            <intent-filter>
+32-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:13-23:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:17-69
+33-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:22:17-77
+35-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:22:27-74
+36            </intent-filter>
+37        </activity>
+38        <activity android:name="com.fiannce.myapplication.MainActivity" />
+38-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:9-59
+38-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:19-47
 39        <activity android:name="com.fiannce.pay.PayActivity" />
 39-->[:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-64
 39-->[:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-61

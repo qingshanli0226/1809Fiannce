@@ -296,12 +296,12 @@
         "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\drawable-xxhdpi\\wc_ac_15.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\f01b27bb220ecb79298884ef36a7a2fb\\core-1.1.0\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_exo_icon_vr.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-xxhdpi-v4\\exo_icon_vr.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\f01b27bb220ecb79298884ef36a7a2fb\\core-1.1.0\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ssdk_title_div.png.flat",
@@ -2000,12 +2000,12 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_exo_ic_play_circle_filled.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-xxxhdpi-v4\\exo_ic_play_circle_filled.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -2042,6 +2042,10 @@
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_manage.xml.flat",
+        "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\layout\\activity_manage.xml"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -2148,12 +2152,12 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_voice_search_api_material.xml.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable\\abc_ic_voice_search_api_material.xml"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_bottom06.png.flat",
         "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\drawable-hdpi\\bottom06.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_voice_search_api_material.xml.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -3644,12 +3648,12 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\149843f22d46580deb62dc097c7abe72\\gsyVideoPlayer-java-8.1.0\\res\\drawable\\video_click_pause_selector.xml"
     },
     {
-        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
-        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
-    },
-    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_bottom05.png.flat",
         "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\drawable-hdpi\\bottom05.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_wc_ac_01.png.flat",

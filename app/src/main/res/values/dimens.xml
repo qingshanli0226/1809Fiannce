@@ -11,6 +11,9 @@
     <!-- TODO: Main Activity-->
     <dimen name="main_linearLayout_layout_height">0dp</dimen>
     <dimen name="main_view_layout_height">1dp</dimen>
+    <!-- TODO: Manage Activity-->
+    <dimen name="manage_TextView_textSize">18dp</dimen>
+    <dimen name="manage_TextView_layout_marginTop">5dp</dimen>
     <!-- TODO: Home Fragment-->
     <dimen name="home_banner_layout_height">180dp</dimen>
     <dimen name="home_relativeLayout_layout_height">80dp</dimen>
@@ -75,5 +78,9 @@
     <!-- TODO: More Fragment-->
     <dimen name="more_linearLayout_one_layout_height">500dp</dimen>
     <dimen name="more_linearLayout_two_layout_height">0dp</dimen>
+    <dimen name="more_ImageView_one_layout_marginLeft">20dp</dimen>
+    <dimen name="more_ImageView_two_layout_marginLeft">150dp</dimen>
+    <dimen name="more_TextView_one_layout_marginLeft">10dp</dimen>
+    <dimen name="more_TextView_one_textSize">25dp</dimen>
 
 </resources>

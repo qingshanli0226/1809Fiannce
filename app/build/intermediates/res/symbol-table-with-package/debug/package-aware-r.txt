@@ -725,6 +725,7 @@ color colorMainViewTextViewFlase
 color colorMainViewTextViewTrue
 color colorMainViewTextViewTrue2
 color colorMoreLinearLayoutBackground
+color colorMoreTextViewtextColor
 color colorPrimary
 color colorPrimaryDark
 color colorPropertyLinearLayoutOne
@@ -1049,6 +1050,10 @@ dimen loading_layout_height
 dimen loading_layout_width
 dimen main_linearLayout_layout_height
 dimen main_view_layout_height
+dimen more_ImageView_one_layout_marginLeft
+dimen more_ImageView_two_layout_marginLeft
+dimen more_TextView_one_layout_marginLeft
+dimen more_TextView_one_textSize
 dimen more_linearLayout_one_layout_height
 dimen more_linearLayout_two_layout_height
 dimen mtrl_bottomappbar_fabOffsetEndMode
@@ -1803,6 +1808,7 @@ id message
 id middle
 id mind_img
 id mini
+id more_manage
 id more_radio
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
@@ -2011,6 +2017,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
+layout activity_manage
 layout activity_pay
 layout activity_register
 layout activity_welcome
@@ -2190,6 +2197,20 @@ string main_home
 string main_investment
 string main_more
 string main_propert
+string manage_text_five
+string manage_text_four
+string manage_text_one
+string manage_text_six
+string manage_text_three
+string manage_text_two
+string manage_title
+string more_text_five
+string more_text_four
+string more_text_one
+string more_text_seven
+string more_text_six
+string more_text_three
+string more_text_two
 string mtrl_chip_close_icon_content_description
 string no_net
 string no_url
@@ -2218,6 +2239,8 @@ string status_bar_notification_info_overflow
 string tips_not_wifi
 string tips_not_wifi_cancel
 string tips_not_wifi_confirm
+string toolbar_login
+string toolbar_register
 string welcome_text
 string welcome_text_title
 style ActivityTranslucent

@@ -18,7 +18,14 @@
     <string name="home_text_three">预期年利率：8.00%</string>
     <string name="home_text_four">立即加入</string>
     <string name="home_text_five">风险保障金由有道银行监管</string>
-
+    <!-- TODO: Manage Activity-->
+    <string name="manage_text_one">有道金融隶属于尚有道IT教育品牌</string>
+    <string name="manage_text_two">有道金融(www.atguigu.com)，系尚有道(中国)旗下独立运营品牌。“有道金融"是一家基于互联网技术为用户提供金融理财服务的专业化公司。</string>
+    <string name="manage_text_three">有道金融自2014年上线运营以来,得到用户的广泛信赖和一致好评。目前“有道金融"服务的用户覆盖全国30余个省市、自治区，成功帮助用户获得借款并让出借用户获得稳定的高收益。</string>
+    <string name="manage_text_four"> 有道金融拥有完善的管理制度、卓越的管理团队、标准的运作流程、严格的风控措施,为平台两端的用户提供咨询、评估、理财方案制定、协议管理等全方位的专业化微金融与财富管理咨询服务。</string>
+    <string name="manage_text_five">有道金融是以个人对个人小额借贷为主要模式,通过为出借人提供可靠、稳健、投资回报高的理财产品，为借款人提供快捷、便利、长期稳定的低成本资金撮合渠道,从而构建透明、便捷、平等的网络金融交易服务平台。有道金融受益于严格的个人金融风险定价体系和安全分散有保障的投资机制,借款人和出借人的权益均可得到充分的保障和满足。</string>
+    <string name="manage_text_six">在互联网金融蓬勃发展的今天,有道金融不断探索创新模式,致力于成为一家卓越的互联网金融企业，为个体金融、普惠金融发展添助力。</string>
+    <string name="manage_title">关于有道理财</string>
 
     <!-- TODO: Allmoney fragment-->
     <string name="allmoney_text">有道金融豪运当头，首投返现最高1888元</string>
@@ -42,5 +49,11 @@
     <string name="property_text_six">投资管理（直观）</string>
     <string name="property_text_seven">资产管理</string>
     <!-- TODO: More Fragment-->
-
+    <string name="more_text_one">用户注册</string>
+    <string name="more_text_two">手势密码</string>
+    <string name="more_text_three">重置手势密码</string>
+    <string name="more_text_four"> 联系客服</string>
+    <string name="more_text_five">用户反馈</string>
+    <string name="more_text_six">分享给好友</string>
+    <string name="more_text_seven">关于有道理财</string>
 </resources>

@@ -195,9 +195,5 @@
     <orderEntry type="module" module-name="pay" />
     <orderEntry type="module" module-name="framework" />
     <orderEntry type="module" module-name="user" />
-    <orderEntry type="module" module-name="net" />
-    <orderEntry type="module" module-name="pay" />
-    <orderEntry type="module" module-name="framework" />
-    <orderEntry type="module" module-name="user" />
   </component>
 </module>

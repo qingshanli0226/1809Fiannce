@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#111111</color>
+    <color name="colorPrimaryDark">#111111</color>
+    <color name="colorAccent">#111111</color>
+
+    <!-- TODO: Toolbar -->
+    <color name="colorToolbar">#1F8BB4</color>
+
+    <!-- TODO: BaseColor -->
+    <color name="colorWhite">#ffffff</color>
+    <color name="coloRed">#EB0808</color>
+    <color name="colorBlack">#111111</color>
+
+</resources>
