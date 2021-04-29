@@ -1,25 +1,33 @@
 package com.example.gitproject;
 
+import android.content.Intent;
+import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.example.common.CommonConstant;
+import com.example.common.SpUtil;
 import com.example.framework.BaseActivity;
+import com.example.framework.manager.CacheUserManager;
+import com.example.framework.module.FrameArouter;
 import com.example.gitproject.invest.InvestFragment;
 import com.example.gitproject.home.HomeFragment;
 import com.example.gitproject.mine.MineFragment;
 import com.example.gitproject.more.MoreFragment;
-import com.example.gitproject.utils.PathConstant;
+import com.example.net.bean.LoginBean;
+import com.example.user.login.LoginActivity;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-@Route(path = PathConstant.APP_MAIN_PATH)
-public class MainActivity extends BaseActivity {
-
+@Route(path = CommonConstant.APP_MAIN_PATH)
+public class MainActivity extends BaseActivity implements CacheUserManager.ILoginChange {
 
 
     private ArrayList<CustomTabEntity> tabEntitys;
@@ -82,10 +90,17 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.hide(moreFragment);
                         break;
                     case R.id.three_btn:
-                        fragmentTransaction.hide(homeFragment);
-                        fragmentTransaction.hide(investFragment);
-                        fragmentTransaction.show(mineFragment);
-                        fragmentTransaction.hide(moreFragment);
+                        //判断是否登录过
+                        LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
+                        if (loginBean != null) {
+                            fragmentTransaction.hide(homeFragment);
+                            fragmentTransaction.hide(investFragment);
+                            fragmentTransaction.show(mineFragment);
+                            fragmentTransaction.hide(moreFragment);
+                        } else {
+                            //FrameArouter
+                            FrameArouter.getInstance().build(CommonConstant.USER_LOGIN_PATH).navigation();
+                        }
                         break;
                     case R.id.four_btn:
                         fragmentTransaction.hide(homeFragment);
@@ -99,6 +114,15 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Intent intent1 = FrameArouter.getInstance().getIntent();
+        setIntent(intent1);
+
+        oneBtn.setChecked(true);
+    }
+
     private void fragmentManager() {
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
@@ -106,6 +130,7 @@ public class MainActivity extends BaseActivity {
         fragmentTransaction.add(R.id.main_linear, investFragment);
         fragmentTransaction.add(R.id.main_linear, mineFragment);
         fragmentTransaction.add(R.id.main_linear, moreFragment);
+        fragmentTransaction.show(homeFragment);
         fragmentTransaction.hide(investFragment);
         fragmentTransaction.hide(mineFragment);
         fragmentTransaction.hide(moreFragment);
@@ -125,6 +150,13 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onClickRight() {
+
+    }
+
+    @Override
+    public void onLoginChange(LoginBean loginBean) {
+        Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+        Log.i("TAG", "onLoginChange: "+loginBean);
 
     }
 }

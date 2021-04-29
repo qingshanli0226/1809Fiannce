@@ -43,6 +43,9 @@ public class ItemBar extends LinearLayout {
     private RelativeLayout reItem;
     private TextView rightItemTitle;
 
+    public ImageView getRightItemPic() {
+        return rightItemPic;
+    }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         LayoutInflater inflater = LayoutInflater.from(context);

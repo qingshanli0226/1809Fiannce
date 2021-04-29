@@ -21,6 +21,7 @@ public class AppNetConfig {
     public static final String INDEX = "atguigu/json/P2PInvest/index.json";//访问“homeFragment”
 
     public static final String USERREGISTER = "register";//注册
+    public static final String AUTOLOGIN = "autoLogin";//自动登录
 
     public static final String FEEDBACK = "FeedBack";
 

@@ -13,10 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.manager.CacheConnectManager;
 import com.example.framework.view.LoadPage;
 import com.example.framework.view.ToolBar;
+import com.example.net.RetrofitManager;
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements ToolBar.IToolbarOnClickLisenter {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements ToolBar.IToolbarOnClickLisenter, CacheConnectManager.IConnect {
     protected P mPresenter;
     protected View rootView;
     protected ToolBar toolBar;
@@ -35,6 +37,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 
         toolBar = findViewById(R.id.toolbar);
         toolBar.setToolbarOnClickLisenter(this);
+        CacheConnectManager.getInstance().registerConnectListener(this);
         initView();
         initPrensenter();
         initData();
@@ -66,5 +69,16 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
         if (mPresenter != null) {
             mPresenter.detachView();
         }
+        CacheConnectManager.getInstance().unRegisterConnectListener(this);
+    }
+
+    @Override
+    public void onConnect() {
+
+    }
+
+    @Override
+    public void onDisConnect() {
+
     }
 }

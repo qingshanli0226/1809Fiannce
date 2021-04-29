@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:tl_indicator_color="@color/blue"
-            app:tl_indicator_height="@dimen/dm_px_150"
+            app:tl_indicator_height="@dimen/dm_px_300"
             app:tl_tab_space_equal="true"
             app:tl_textUnselectColor="@color/black"
             app:tl_textSelectColor="@color/red"

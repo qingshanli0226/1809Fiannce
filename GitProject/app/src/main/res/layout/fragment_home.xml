@@ -15,9 +15,10 @@
 
     <com.youth.banner.Banner
         android:id="@+id/home_banner"
-        android:layout_marginTop="@dimen/dm_px_150"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dm_px_300"/>
+        android:layout_height="@dimen/dm_px_500"
+        android:layout_marginTop="@dimen/dm_px_150" />
+
     <TextView
         android:id="@+id/home_name"
         android:text="title"

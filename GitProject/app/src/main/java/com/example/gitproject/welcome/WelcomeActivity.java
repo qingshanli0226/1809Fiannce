@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Message;
@@ -14,12 +15,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.common.CommonConstant;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
 import com.example.gitproject.R;
-import com.example.gitproject.utils.PathConstant;
+
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.UpdateBean;
+import com.example.user.service.AutoService;
 
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
@@ -46,6 +49,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void initView() {
         countDown = (TextView) findViewById(R.id.countDown);
         welImg = (ImageView) findViewById(R.id.wel_img);
+        //启动自动登录服务
+        Intent intent = new Intent(this, AutoService.class);
+        startService(intent);
     }
 
     @Override
@@ -115,7 +121,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 public void onClick(DialogInterface dialog, int which) {
                     //跳转界面
                     //关闭此页面
-                    ARouter.getInstance().build(PathConstant.APP_MAIN_PATH).navigation();
+                    ARouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
                     finish();
                 }
             });
@@ -125,7 +131,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         } else {
             //最新版本
             finish();
-            ARouter.getInstance().build(PathConstant.APP_MAIN_PATH).navigation();
+            ARouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
 
         }
     }

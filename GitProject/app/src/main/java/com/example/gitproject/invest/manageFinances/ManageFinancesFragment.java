@@ -2,18 +2,15 @@ package com.example.gitproject.invest.manageFinances;
 
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.framework.BaseFragment;
-import com.example.gitproject.invest.manageFinances.adapter.FinancesAdapter;
 import com.example.gitproject.R;
+import com.example.gitproject.invest.manageFinances.adapter.FinancesAdapter;
 import com.example.net.bean.ProductBean;
-
 
 
 public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter> implements IManageFinancesView {
@@ -22,6 +19,7 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
     private RecyclerView financesRv;
     private FinancesAdapter financesAdapter;
     private TextView financesLamp;
+    private TextView financesConnect;
 
     @Override
     protected int getLayoutId() {
@@ -37,6 +35,7 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
 
 
         financesAdapter = new FinancesAdapter();
+        financesConnect = (TextView) findViewById(R.id.finances_connect);
     }
 
     @Override
@@ -44,7 +43,9 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
         mPresenter = new ManageFinancesPresenter(this);
 
     }
+
     private int lastx;
+
     @Override
     protected void initData() {
         mPresenter.getIvnest();
@@ -76,9 +77,10 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
         loadPage.showSuccessLayout();
 
     }
+
     @Override
     public void showLoading() {
-        loadPage.showLoadLayout(false);
+        loadPage.showLoadLayout();
 
     }
 
@@ -104,6 +106,22 @@ public class ManageFinancesFragment extends BaseFragment<ManageFinancesPresenter
 
     @Override
     public void onClickRight() {
+
+    }
+
+    @Override
+    public void onConnect() {
+        super.onConnect();
+        financesConnect.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onDisConnect() {
+        super.onDisConnect();
+        financesConnect.setText("无网络");
+        financesConnect.setVisibility(View.VISIBLE);
+        Toast.makeText(getActivity(), "无网络", Toast.LENGTH_SHORT).show();
+
 
     }
 }

@@ -3,7 +3,14 @@
     package="com.example.user">
 
     <application>
-        <activity android:name=".register.RegisterActivity"></activity>
+        <activity android:name=".exitlogin.ExitActivity"></activity>
+
+        <service
+            android:name=".service.AutoService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".register.RegisterActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="login" />

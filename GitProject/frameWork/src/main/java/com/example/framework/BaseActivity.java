@@ -10,10 +10,15 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framework.manager.CacheConnectManager;
+import com.example.framework.manager.CacheUserManager;
+import com.example.framework.module.FrameArouter;
 import com.example.framework.view.LoadPage;
 import com.example.framework.view.ToolBar;
 
-public abstract class BaseActivity<P extends  BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarOnClickLisenter {
+import okhttp3.Cache;
+
+public abstract class BaseActivity<P extends  BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarOnClickLisenter, CacheConnectManager.IConnect {
     protected P mPresenter;
     protected ToolBar toolBar;
     protected LoadPage loadPage;
@@ -33,6 +38,7 @@ public abstract class BaseActivity<P extends  BasePresenter> extends AppCompatAc
         initView();
         initPresenter();
         initData();
+        CacheConnectManager.getInstance().registerConnectListener(this);
     }
     
     @LayoutRes
@@ -51,9 +57,20 @@ public abstract class BaseActivity<P extends  BasePresenter> extends AppCompatAc
         destroy();
     }
 
+    @Override
+    public void onConnect() {
+
+    }
+
+    @Override
+    public void onDisConnect() {
+
+    }
+
     public void destroy() {
         if (mPresenter != null) {
             mPresenter.detachView();
         }
+        CacheConnectManager.getInstance().unRegisterConnectListener(this);
     }
 }

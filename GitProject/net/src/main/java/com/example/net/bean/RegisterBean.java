@@ -26,6 +26,15 @@ public class RegisterBean {
         this.result = result;
     }
 
+    @Override
+    public String toString() {
+        return "RegisterBean{" +
+                "code='" + code + '\'' +
+                ", message='" + message + '\'' +
+                ", result='" + result + '\'' +
+                '}';
+    }
+
     /**
      * code : 200
      * message : 请求成功

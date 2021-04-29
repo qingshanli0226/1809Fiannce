@@ -31,5 +31,11 @@
             android:layout_height="match_parent"/>
     </LinearLayout>
 
-
+    <TextView
+        android:id="@+id/finances_connect"
+        android:textColor="@color/red"
+        android:textSize="@dimen/dm_px_100"
+        android:layout_marginTop="@dimen/dm_px_150"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

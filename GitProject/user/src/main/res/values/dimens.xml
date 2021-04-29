@@ -22,4 +22,6 @@
 
     <dimen name="edit_height_dp">50dp</dimen>
     <dimen name="text_weight_dp">0dp</dimen>
+    <dimen name="exit_height">300dp</dimen>
+
 </resources>

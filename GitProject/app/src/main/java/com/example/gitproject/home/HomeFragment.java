@@ -9,9 +9,11 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheManager;
+import com.example.framework.manager.CacheUserManager;
 import com.example.framework.view.ProgressView;
 import com.example.gitproject.R;
 import com.example.net.bean.HomeBean;
+import com.example.net.bean.LoginBean;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -20,7 +22,7 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.ArrayList;
 
 
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements CacheUserManager.ILoginChange {
 
     private Banner homeBanner;
     private ProgressView homeProgress;
@@ -40,6 +42,8 @@ public class HomeFragment extends BaseFragment {
         homeName = (TextView) findViewById(R.id.home_name);
         homeYearRate = (TextView) findViewById(R.id.home_yearRate);
         homePay = (Button) findViewById(R.id.home_pay);
+
+
     }
 
     @Override
@@ -81,7 +85,14 @@ public class HomeFragment extends BaseFragment {
 
         homeYearRate.setText(proInfo.getYearRate());
 
+        CacheUserManager.getInstance().registerLogin(this);
+        LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
+        if(loginBean == null){
+            Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(getContext(), "登录", Toast.LENGTH_SHORT).show();
 
+        }
     }
 
 
@@ -105,6 +116,11 @@ public class HomeFragment extends BaseFragment {
     public void destroy() {
         super.destroy();
         homeProgress.destroy();
+        CacheUserManager.getInstance().unRegisterLogin(this);
     }
 
+    @Override
+    public void onLoginChange(LoginBean loginBean) {
+        Toast.makeText(getContext(), ""+loginBean, Toast.LENGTH_SHORT).show();
+    }
 }

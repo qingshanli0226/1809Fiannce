@@ -1,7 +1,9 @@
 package com.example.net.bean;
 
 
-public class LoginBean {
+import java.io.Serializable;
+
+public class LoginBean implements Serializable {
     /**
      * code : 200
      * message : 登录成功
@@ -36,7 +38,16 @@ public class LoginBean {
         this.code = code;
     }
 
-    public static class ResultBean {
+    @Override
+    public String toString() {
+        return "LoginBean{" +
+                "code='" + code + '\'' +
+                ", message='" + message + '\'' +
+                ", result=" + result +
+                '}';
+    }
+
+    public static class ResultBean implements Serializable {
         public String getId() {
             return id;
         }
@@ -115,6 +126,23 @@ public class LoginBean {
 
         public void setToken(String token) {
             this.token = token;
+        }
+
+        @Override
+        public String toString() {
+            return "ResultBean{" +
+                    "id='" + id + '\'' +
+                    ", name='" + name + '\'' +
+                    ", password='" + password + '\'' +
+                    ", email=" + email +
+                    ", phone='" + phone + '\'' +
+                    ", point=" + point +
+                    ", address='" + address + '\'' +
+                    ", money=" + money +
+                    ", avatar='" + avatar + '\'' +
+                    ", token='" + token + '\'' +
+                    ", gPassword=" + gPassword +
+                    '}';
         }
 
         public Object getgPassword() {

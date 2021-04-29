@@ -54,18 +54,18 @@ public abstract class LoadPage extends FrameLayout {
 
     protected abstract int getSuccessLayout();
 
-    public void showLoadLayout(boolean isShow) {
+    public void showLoadLayout() {
         load_layout.setBackgroundColor(Color.WHITE);
         load_layout.setVisibility(VISIBLE);
         error_layout.setVisibility(GONE);
         success_layout.setVisibility(GONE);
     }
 
-    public void showTransparentLoadLayout(boolean isShow) {
+    public void showTransparentLoadLayout() {
         load_layout.setBackgroundColor(Color.TRANSPARENT);
         load_layout.setVisibility(VISIBLE);
         error_layout.setVisibility(GONE);
-        success_layout.setVisibility(GONE);
+        success_layout.setVisibility(VISIBLE);
     }
     public void showErrorLayout() {
         load_layout.setVisibility(GONE);

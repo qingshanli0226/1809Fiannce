@@ -10,6 +10,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface IHttpApiService {
     @GET(AppNetConfig.INDEX)
@@ -22,11 +23,16 @@ public interface IHttpApiService {
 
 
     @FormUrlEncoded
-    @GET(AppNetConfig.USERREGISTER)
+    @POST(AppNetConfig.USERREGISTER)
     Observable<RegisterBean> getRegister(@Field("name")String name, @Field("password")String password);
 
 
     @FormUrlEncoded
-    @GET(AppNetConfig.LOGIN)
+    @POST(AppNetConfig.LOGIN)
     Observable<LoginBean> getLogin(@Field("name")String name, @Field("password")String password);
+
+    @FormUrlEncoded
+    @POST(AppNetConfig.AUTOLOGIN)
+    Observable<LoginBean> getAutoLogin(@Field("token")String token);
+
 }

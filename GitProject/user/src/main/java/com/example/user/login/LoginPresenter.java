@@ -1,14 +1,12 @@
-package com.example.user.register;
+package com.example.user.login;
 
 import com.example.framework.BasePresenter;
 import com.example.net.RetrofitManager;
-import com.example.net.bean.ProductBean;
-import com.example.net.bean.RegisterBean;
+import com.example.net.bean.LoginBean;
 
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
@@ -16,13 +14,13 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class RegisterPresenter extends BasePresenter<IRegisterView> {
-    public RegisterPresenter(IRegisterView iRegisterView) {
-        attchView(iRegisterView);
+public class LoginPresenter extends BasePresenter<ILoginView> {
+    public LoginPresenter(ILoginView iLoginView) {
+        attchView(iLoginView);
     }
-    public void getRegister(String name,String password){
+    public void getLogin(String name,String password){
         RetrofitManager.getHttpApiService()
-                .getRegister(name,password)
+                .getLogin(name,password)
                 .delay(3, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -39,23 +37,25 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
                         mView.hideLoading();
                     }
                 })
-                .subscribe(new Observer<RegisterBean>() {
+                .subscribe(new Observer<LoginBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(@NonNull RegisterBean registerBean) {
+                    public void onNext(@NonNull LoginBean loginBean) {
                         if (mView != null) {
-                            mView.onRegister(registerBean);
+                            mView.onLogin(loginBean);
+
                         }
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
                         if (mView != null) {
-                            mView.showError(e.getMessage().toString());
+                            mView.showError(e.getMessage());
+
                         }
                     }
 
