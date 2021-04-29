@@ -16,6 +16,7 @@ public class AppModule implements FiannceArote.IAppInterface {
     @Override
     public void openMainActivity(Context context, Bundle bundle) {
         Intent intent = new Intent(context, MainActivity.class);
+        intent.putExtras(bundle);
         if (context instanceof Activity){
             intent.putExtra("param",bundle);
             context.startActivity(intent);

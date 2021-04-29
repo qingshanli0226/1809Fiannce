@@ -7,10 +7,11 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framework.mannager.FiannceConnectMannager;
 import com.example.framework.myview.LoadingPage;
 import com.example.framework.myview.ToolBar;
 
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView, ToolBar.IToolbarListener {
+public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView, ToolBar.IToolbarListener, FiannceConnectMannager.IConnectListener {
     protected P mPresenter;
     private ToolBar toolBar;
     protected boolean isUserLoading=true;
@@ -27,6 +28,9 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         initView();
         initPresenter();
         initData();
+
+        //创建网络连接接口
+        FiannceConnectMannager.getInstance().RegisterConnectListener(this);
     }
 
 
@@ -51,6 +55,8 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     protected void onDestroy() {
         super.onDestroy();
         destroy();
+        //如果注销界面就销毁网络连接接口
+        FiannceConnectMannager.getInstance().unRegisterConnectListener(this);
     }
 
      public void destroy(){
@@ -62,6 +68,14 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         }
      }
 
+    @Override
+    public void onConnected() {
+        Toast.makeText(this, "有网", Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    public void onDisConnected() {
+        Toast.makeText(this, "没有网", Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public void onLeftClick() {

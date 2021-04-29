@@ -22,7 +22,7 @@
             android:name="design_height"
             android:value="1280" />
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" android:launchMode="singleTask"></activity>
         <activity android:name=".welcome.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

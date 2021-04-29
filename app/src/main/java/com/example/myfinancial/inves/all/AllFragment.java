@@ -88,4 +88,8 @@ public class AllFragment extends BaseFragment<InVesPresenter> implements IVesVie
     }
 
 
+    @Override
+    public void onLoginChanged(boolean isLogin) {
+
+    }
 }

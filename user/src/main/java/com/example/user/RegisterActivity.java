@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.framework.BaseActivity;
 import com.example.framework.mannager.FiannceArote;
+import com.example.framework.mannager.FiannceUserMannager;
 import com.example.net.bean.AutoBean;
 import com.example.user.mvp.MorePresenter;
 import com.example.user.mvp.MoreView;
@@ -78,15 +79,23 @@ public class RegisterActivity extends BaseActivity<MorePresenter> implements Mor
     @Override
     public void initLogin(LoginBean loginBean) {//自动登陆
         Toast.makeText(this, "login:"+loginBean.toString(), Toast.LENGTH_SHORT).show();
-        //将token存到SP
-        SharedPreferences autoToken = getSharedPreferences("autoToken", MODE_PRIVATE);
-        SharedPreferences.Editor edit = autoToken.edit();
-        edit.putString("token", loginBean.getResult().getToken());
-        edit.commit();
+        if (loginBean.getCode().equals("200")){
+            //将token存到SP
+            SharedPreferences autoToken = getSharedPreferences("autoToken", MODE_PRIVATE);
+            SharedPreferences.Editor edit = autoToken.edit();
+            edit.putString("token", loginBean.getResult().getToken());
+            edit.commit();
 
-        Bundle bundle = new Bundle();
-        bundle.putString("page","0");
-        FiannceArote.getInstance().getAppInterface().openMainActivity(this,bundle);
+            //更改登录状态
+            FiannceUserMannager.getInstance().setIsLwogin(true);
+
+            Bundle bundle = new Bundle();
+            bundle.putString("page","0");
+            FiannceArote.getInstance().getAppInterface().openMainActivity(this,bundle);
+        }else {
+            Toast.makeText(this, "登陆失败", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override

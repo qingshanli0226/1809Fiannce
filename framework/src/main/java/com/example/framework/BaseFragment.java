@@ -9,10 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.mannager.FiannceUserMannager;
 import com.example.framework.myview.LoadingPage;
 import com.example.framework.myview.ToolBar;
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements BaseView, ToolBar.IToolbarListener {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements BaseView, ToolBar.IToolbarListener , FiannceUserMannager.IUserLoginChanged {
 
     protected View rootView;
     protected P mPresenter;

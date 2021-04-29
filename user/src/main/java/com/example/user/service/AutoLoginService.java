@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.blankj.utilcode.util.SPUtils;
 import com.example.common.FiannceConstants;
 import com.example.common.SpUtil;
+import com.example.framework.mannager.FiannceUserMannager;
 import com.example.net.bean.AutoBean;
 import com.example.net.bean.LoginBean;
 import com.example.net.bean.RegisterBean;
@@ -40,9 +41,10 @@ public class AutoLoginService extends Service {
                 if (autoBean.getCode().equals("200")){
                     SpUtil.setString(AutoLoginService.this,autoBean.getResult().getToken());
                     Log.d("AutoLoginService", "自动登陆成功");
-
+                    FiannceUserMannager.getInstance().setIsLwogin(true);
                 }else {
                     Log.d("AutoLoginService", "自动登陆失败");
+                    FiannceUserMannager.getInstance().setIsLwogin(false);
                 }
             }
 

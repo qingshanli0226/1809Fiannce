@@ -62,7 +62,9 @@ public class MainActivity extends BaseActivity {
         super.onNewIntent(intent);
         Bundle extras = intent.getExtras();
         String page = extras.getString("page");
-        Log.d("传过来的页码MainActivity", page);
+        if (page!=null){
+            tab.setCurrentTab(Integer.parseInt(page));
+        }
     }
 
     @Override

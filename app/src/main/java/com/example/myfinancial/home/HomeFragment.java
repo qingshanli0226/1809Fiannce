@@ -124,4 +124,9 @@ public class HomeFragment extends BaseFragment {
             proMyView.destroy();
         }
     }
+
+    @Override
+    public void onLoginChanged(boolean isLogin) {
+
+    }
 }

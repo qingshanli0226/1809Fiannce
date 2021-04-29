@@ -87,4 +87,9 @@ public class InvestFragment extends BaseFragment {
     public void onRightTvClick() {
 
     }
+
+    @Override
+    public void onLoginChanged(boolean isLogin) {
+
+    }
 }

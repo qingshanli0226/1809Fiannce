@@ -68,4 +68,9 @@ public class MoreFragment extends BaseFragment {
     public void onRightTvClick() {
 
     }
+
+    @Override
+    public void onLoginChanged(boolean isLogin) {
+
+    }
 }
