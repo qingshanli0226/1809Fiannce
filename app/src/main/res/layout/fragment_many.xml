@@ -52,6 +52,7 @@
                 android:layout_weight="@dimen/weight_1"
                 app:left_title="联系客服"
                 app:lin_right_show="false"
+                android:id="@+id/tell"
                 app:lin_right_Text_show="true"
                 app:right_title="010-56253825"
                 app:left_icon="@mipmap/icon_more_contact"

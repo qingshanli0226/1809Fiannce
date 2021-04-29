@@ -26,7 +26,6 @@ public class LinView extends LinearLayout {
     private ImageView rightImg;
     private TextView leftTit;
     private TextView rightTit;
-    private iCallBack iCallBack;
     public LinView(Context context) {
         this(context,null);
     }
@@ -50,7 +49,6 @@ public class LinView extends LinearLayout {
         rightImgShow = typedArray.getBoolean(R.styleable.LinView_lin_right_show, false);
         rightTextShow = typedArray.getBoolean(R.styleable.LinView_lin_right_Text_show, false);
 
-        Log.i("zx", "init: "+leftTitle);
         typedArray.recycle();
         View view = LayoutInflater.from(context).inflate(R.layout.item_lin,this);
         leftImg = view.findViewById(R.id.lin_left_img);
@@ -58,30 +56,6 @@ public class LinView extends LinearLayout {
         leftTit = view.findViewById(R.id.lin_left_tit);
         rightTit = view.findViewById(R.id.lin_right_tit);
 
-        leftImg.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                iCallBack.leftImg();
-            }
-        });
-        rightImg.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                iCallBack.rightImg();
-            }
-        });
-        rightTit.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                iCallBack.rightText();
-            }
-        });
-        leftTit.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                iCallBack.leftText();
-            }
-        });
         leftImg.setImageResource(leftIcon);
 
         if (rightImgShow){
@@ -97,14 +71,4 @@ public class LinView extends LinearLayout {
 
     }
 
-    public void setiCallBack(LinView.iCallBack iCallBack) {
-        this.iCallBack = iCallBack;
-    }
-
-    public static interface iCallBack{
-        void leftImg();
-        void rightImg();
-        void leftText();
-        void rightText();
-    }
 }

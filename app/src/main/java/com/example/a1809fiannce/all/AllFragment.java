@@ -19,7 +19,7 @@ public class AllFragment extends BaseFragment<AllPresenter> implements AllCallBa
 
     @Override
     protected void initView() {
-        re = (RecyclerView) BaseView.findViewById(R.id.re);
+        re = (RecyclerView) baseView.findViewById(R.id.re);
         re.setLayoutManager(new LinearLayoutManager(getContext()));
 
     }

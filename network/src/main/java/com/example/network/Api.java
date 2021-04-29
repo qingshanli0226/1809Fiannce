@@ -2,6 +2,7 @@ package com.example.network;
 
 import com.example.network.model.AllBean;
 import com.example.network.model.HomeBean;
+import com.example.network.model.LogBean;
 import com.example.network.model.RegBean;
 import com.example.network.model.UpdateBean;
 
@@ -25,6 +26,9 @@ public interface Api {
     @POST("register")
     Observable<RegBean> RegData(@Field("name") String name,@Field("password") String password);
 
+    @FormUrlEncoded
+    @POST("login")
+    Observable<LogBean> LogData(@Field("name") String name,@Field("password") String password);
 
 
 }

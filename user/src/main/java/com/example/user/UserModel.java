@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.framwork.call.FiannceARouter;
+import com.example.user.log.LogActivity;
 import com.example.user.reg.RegisterActivity;
 
 public class UserModel implements FiannceARouter.iUserManager {

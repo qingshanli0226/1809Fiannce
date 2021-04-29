@@ -38,7 +38,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/user"
             android:textColor="#ffffff"
-            android:text="aaa"
             android:layout_marginTop="@dimen/dp_10"
             android:layout_gravity="center"
             android:textSize="@dimen/dp_25"></TextView>

@@ -25,21 +25,18 @@ public class InvestFragment extends Fragment{
     private ArrayList<Fragment> fragmentList=new ArrayList<>();
     private ArrayList<String> strings=new ArrayList<>();
     private TabLayout tab;
-    //private ViewPager vp;
     private PageView vp;
-    //private CommonTabLayout Comtab;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.fragment_invest, container, false);
-       // Comtab = (CommonTabLayout) inflate.findViewById(R.id.tab);
         tab = (TabLayout) inflate.findViewById(R.id.tab);
-        //vp = (ViewPager) inflate.findViewById(R.id.vp);
         vp = (PageView) inflate.findViewById(R.id.vp);
-
-        mTabEntitys.add(new TabCus1("全部理财"));
+        strings.clear();
+        fragmentList.clear();
+       mTabEntitys.add(new TabCus1("全部理财"));
         mTabEntitys.add(new TabCus1("推荐理财"));
         mTabEntitys.add(new TabCus1("热门理财"));
 

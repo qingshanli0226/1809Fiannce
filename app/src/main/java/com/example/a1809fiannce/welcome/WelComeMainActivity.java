@@ -83,7 +83,7 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
         HomeFinsh=true;
         HomeCallBack.getHomeCallBack().setHomeBean(homeBean);
         handler.sendEmptyMessage(ONE_TASK);
-        //pageView.ShowSuccess();
+        pageView.ShowSuccess();
     }
 
     @Override
@@ -97,7 +97,7 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
 
     @Override
     public void ShowLoading() {
-           // pageView.ShowLoad();
+//            pageView.ShowLoad();
 //        bar.setVisibility(View.VISIBLE);
 
 
@@ -110,7 +110,7 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
 
     @Override
     public void Error(String error) {
-        //pageView.ShowError(error);
+//        pageView.ShowError(error);
         Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
     }
     public void all(){

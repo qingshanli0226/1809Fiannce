@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.a1809fiannce.mian.MainModel;
+import com.example.framwork.call.FiannceNetManager;
+import com.example.framwork.call.FiannceUserManager;
 import com.example.user.UserModel;
 
 public class App extends Application {
@@ -16,5 +18,7 @@ public class App extends Application {
         ARouter.init(this);
         UserModel.init();
         MainModel.init();
+        FiannceNetManager.getInstance().init(this);
+
     }
 }

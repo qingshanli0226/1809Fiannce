@@ -8,9 +8,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.framwork.base.BaseActivity;
-import com.example.framwork.call.FiannceARouter;
 import com.example.framwork.view.TobView;
 import com.example.network.model.RegBean;
+import com.example.user.log.LogActivity;
 import com.example.user.R;
 
 public class RegisterActivity extends BaseActivity<RegPresenter> implements RegisterCallBack {
@@ -80,7 +80,14 @@ public class RegisterActivity extends BaseActivity<RegPresenter> implements Regi
     public void RegData(RegBean regBean) {
         Toast.makeText(this, ""+regBean.getMessage(), Toast.LENGTH_SHORT).show();
         if (regBean.getCode().equals("200")){
-            FiannceARouter.getFiannceARouter().getAppManager().OpenMainActivity(RegisterActivity.this,null);
+            Toast.makeText(this, ""+regBean.getMessage(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, LogActivity.class);
+            intent.putExtra("name",name);
+            intent.putExtra("pwd",password);
+            startActivity(intent);
+        }else {
+            Toast.makeText(this, ""+regBean.getMessage(), Toast.LENGTH_SHORT).show();
+
         }
     }
 

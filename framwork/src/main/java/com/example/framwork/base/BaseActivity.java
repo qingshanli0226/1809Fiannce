@@ -7,11 +7,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.framwork.R;
+import com.example.framwork.call.FiannceNetManager;
 import com.example.framwork.view.PageView;
 import com.example.framwork.view.TobView;
 
 
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements FiannceNetManager.NetConnectListener {
     protected P mPresenter;
     protected PageView pageView;
     protected TobView tobView;
@@ -28,6 +29,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         tobView=pageView.findViewById(R.id.tob);
         initView();
         initData();
+        FiannceNetManager.getInstance().RegisterConnect(this);
 
     }
 
@@ -43,5 +45,14 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         if (mPresenter!=null){
             mPresenter.delView();
         }
+        FiannceNetManager.getInstance().UnRegisterConnect(this);
+    }
+
+    @Override
+    public void OnConnect() {
+    }
+
+    @Override
+    public void DisConnect() {
     }
 }

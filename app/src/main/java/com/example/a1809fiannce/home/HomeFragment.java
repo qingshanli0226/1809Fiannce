@@ -46,7 +46,7 @@ public class HomeFragment extends BaseFragment {
         });
         bar.start();
         name.setText(homeBean.getResult().getProInfo().getName()+"");
-        cus.SealedProgress(50,true);
+        cus.SealedProgress(90,true);
         expect.setText("预期年利润："+homeBean.getResult().getProInfo().getYearRate()+"%");
 
         tobView.setImgCallBackListener(new TobView.iImgCallBack() {
@@ -64,11 +64,11 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        bar = BaseView.findViewById(R.id.bar);
-        cus = BaseView.findViewById(R.id.cus);
-        name = BaseView.findViewById(R.id.name);
+        bar = baseView.findViewById(R.id.bar);
+        cus = baseView.findViewById(R.id.cus);
+        name = baseView.findViewById(R.id.name);
 
-        expect = (TextView) BaseView.findViewById(R.id.expect);
+        expect = (TextView) baseView.findViewById(R.id.expect);
     }
 
     @Override
