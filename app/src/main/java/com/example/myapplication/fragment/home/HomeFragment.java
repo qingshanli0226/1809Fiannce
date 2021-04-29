@@ -2,6 +2,7 @@ package com.example.myapplication.fragment.home;
 
 import android.content.Context;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
@@ -21,6 +22,9 @@ import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.loader.ImageLoader;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +67,8 @@ public class HomeFragment extends BaseFragment<WelcomePresenter> implements IWel
     protected void initPresenter() {
 
     }
+
+
 
     @Override
     protected void initView() {

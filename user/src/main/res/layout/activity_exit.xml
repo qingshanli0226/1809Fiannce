@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login.ExitActivity">
+
+    <com.example.framework.view.ToolBar
+        android:layout_width="match_parent"
+        app:titleTextColor="@color/small_blue"
+        android:layout_height="@dimen/dm_dp_40dp"
+        android:id="@+id/toolbar"
+        app:leftIsShow="true"
+        app:leftImg="@drawable/left"
+        app:titleText="用户信息"></com.example.framework.view.ToolBar>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_dp_200dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_user_default"></ImageView>
+
+        <TextView
+            android:layout_marginTop="@dimen/dm_dp_15dp"
+            android:textColor="@color/small_blue"
+            android:textSize="@dimen/dm_dp_30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更改头像"></TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_dp_1dp"
+        android:background="@color/graty"></View>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dm_dp_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/exit_login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dm_dp_30dp"
+            android:text="退出登录"
+            android:background="@color/small_blue"
+            android:layout_width="@dimen/dm_dp_300dp"
+            android:layout_height="wrap_content"></Button>
+
+    </LinearLayout>
+
+
+</LinearLayout>

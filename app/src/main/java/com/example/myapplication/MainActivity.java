@@ -5,7 +5,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.RadioButton;
@@ -20,6 +22,9 @@ import com.example.myapplication.fragment.home.HomeFragment;
 import com.example.myapplication.fragment.invest.InvestFragment;
 import com.example.myapplication.fragment.more.MoreFragment;
 import com.example.myapplication.fragment.mymoney.MymoneyFragment;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 @Route(path = Demo.AROUTE_PATH)
 public class MainActivity extends BaseActivity {
@@ -37,14 +42,17 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initData() {
 
+
+        EventBus.getDefault().register(this);
+
+        btnHome.setChecked(true);
+
         homeFragment = new HomeFragment();
         investFragment = new InvestFragment();
         mymoneyFragment = new MymoneyFragment();
         moreFragment = new MoreFragment();
 
-        btnHome.setChecked(true);
         fragmentManger();
-
 
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -113,11 +121,29 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+
+    }
+
+    @Subscribe(sticky = true)
+    public void Event(String event){
+        if (event.equals("home_data")){
+//            btnHome.setChecked(true);
+
+            Intent intent = new Intent(MainActivity.this,MainActivity.class);
+            startActivity(intent);
+
+        }
     }
 
     @Override
     protected void initPresenter() {
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("zrf", "onRestart: ");
     }
 
     public void fragmentManger(){

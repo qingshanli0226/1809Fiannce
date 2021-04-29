@@ -1,6 +1,7 @@
 package com.example.framework;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
             }
         };
         setContentView(loadingPage);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN); //隐藏状态栏
         initView();
         toolBar = findViewById(R.id.toolbar);
         //toolBar.setToolbarListener(this);

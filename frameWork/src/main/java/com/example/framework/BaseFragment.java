@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 
-public abstract   class BaseFragment <T extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener{
+public  abstract   class BaseFragment <T extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener{
 
     protected T httpPresenter;
     protected View mView;
@@ -62,4 +62,18 @@ public abstract   class BaseFragment <T extends BasePresenter> extends Fragment 
 
     protected abstract int getLayoutId();
 
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

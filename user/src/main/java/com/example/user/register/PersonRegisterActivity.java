@@ -19,6 +19,8 @@ import com.example.model.RegisterBean;
 import com.example.model.VersionBean;
 import com.example.user.R;
 
+import org.greenrobot.eventbus.EventBus;
+
 @Route(path = Demo.AROUTE_PATH_REGISTER)
 public class PersonRegisterActivity extends BaseActivity<PersonRegisterPresenter> implements IPersonRegisterView {
 
@@ -104,6 +106,9 @@ public class PersonRegisterActivity extends BaseActivity<PersonRegisterPresenter
         String code = registerBean.getCode();
         if (code.equals("200")){
             Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
+            EventBus.getDefault().postSticky("home_data");
+
+            finish();
         }
 
     }
