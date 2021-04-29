@@ -1,5 +1,7 @@
 package com.example.myfinancial.inves;
 
+import android.graphics.Color;
+
 import androidx.fragment.app.Fragment;
 
 import androidx.viewpager.widget.ViewPager;
@@ -39,12 +41,16 @@ public class InvestFragment extends BaseFragment {
         vpAdapter=new VpAdapter(getChildFragmentManager(),list,strings);
         vp.setAdapter(vpAdapter);
         tab.setupWithViewPager(vp);
+
     }
 
     @Override
     public void initView() {
         vp = (ViewPager) findViewById(R.id.vp);
         tab = (TabLayout) findViewById(R.id.tab);
+
+
+
     }
 
     @Override

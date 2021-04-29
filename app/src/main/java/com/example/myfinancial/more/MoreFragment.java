@@ -4,6 +4,7 @@ import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseFragment;
+import com.example.framework.mannager.FiannceArote;
 import com.example.framework.myview.MoreItemPage;
 import com.example.myfinancial.R;
 
@@ -37,7 +38,8 @@ public class MoreFragment extends BaseFragment {
         userRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ARouter.getInstance().build("/mare/register").navigation();
+//                ARouter.getInstance().build("/mare/register").navigation();
+                FiannceArote.getInstance().getUserInterface().openGettureActivity(getActivity(),null);
             }
         });
     }

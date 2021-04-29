@@ -1,4 +1,4 @@
-package com.example.myfinancial.more.mvp;
+package com.example.user.mvp;
 
 import com.example.framework.BaseView;
 import com.example.net.bean.LoginBean;

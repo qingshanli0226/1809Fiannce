@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.framework.BaseActivity;
+import com.example.framework.mannager.FiannceArote;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -23,7 +24,7 @@ public class PayActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        EventBus.getDefault().register(this);
+//        EventBus.getDefault().register(this);
     }
 
     @Subscribe(sticky = true)
@@ -38,6 +39,7 @@ public class PayActivity extends BaseActivity {
     }
 
     public void aa(View view) {
-        startActivity(new Intent("myuseractivity"));
+//        startActivity(new Intent("myuseractivity"));
+        FiannceArote.getInstance().getUserInterface().openLoginActivity(PayActivity.this,null);
     }
 }

@@ -1,17 +1,20 @@
 package com.example.myfinancial.home;
 
 import android.content.Context;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
 import com.example.framework.CacheLoadMore;
+import com.example.framework.mannager.FiannceArote;
 import com.example.framework.myview.PregressMyView;
 import com.example.framework.myview.ToolBar;
 import com.example.myfinancial.R;
 import com.example.net.bean.HomeBean;
+import com.example.pay.PayModel;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
@@ -22,6 +25,7 @@ public class HomeFragment extends BaseFragment {
     private Banner ban;
     private PregressMyView proMyView;
     private ToolBar toolBar;
+    private Button satrtpay;
 
     @Override
     public int getbandLayout() {
@@ -34,6 +38,15 @@ public class HomeFragment extends BaseFragment {
         initlbt();
         proMyView.getProgressNum(Integer.parseInt(homeBean.getResult().getProInfo().getProgress()), true);
         showLoading();
+
+        //点击跳转
+        satrtpay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                PayModel.init();
+                FiannceArote.getInstance().getPayInterface().openPayActivity(getActivity(),null);
+            }
+        });
     }
 
     @Override
@@ -42,6 +55,7 @@ public class HomeFragment extends BaseFragment {
         proMyView = (PregressMyView) findViewById(R.id.proMyView);
         toolBar = (ToolBar) findViewById(R.id.toolBar);
         toolBar.setToolbarListener(this);
+        satrtpay = (Button) findViewById(R.id.satrtpay);
     }
 
     @Override
@@ -97,16 +111,16 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mPresenter!=null){
+        if (mPresenter != null) {
             mPresenter.destroy();
         }
-        if (ban!=null){
+        if (ban != null) {
             ban.clearAnimation();
         }
-        if (loadingPage!=null){
+        if (loadingPage != null) {
             loadingPage.clearAnimation();
         }
-        if (proMyView!=null){
+        if (proMyView != null) {
             proMyView.destroy();
         }
     }

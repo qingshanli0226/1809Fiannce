@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivity {
         tab.setTextSelectColor(Color.BLUE);
         tab.setTextUnselectColor(Color.BLACK);
         tab.setTabData(cusComms, this, R.id.vp, list);
+
     }
 
     @Override

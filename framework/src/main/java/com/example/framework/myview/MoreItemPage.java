@@ -48,6 +48,7 @@ public class MoreItemPage extends FrameLayout {
         leftImageIsShow = typedArray.getBoolean(R.styleable.MoreItem_moreLeftIsShow, false);
         rightImage = typedArray.getResourceId(R.styleable.MoreItem_moreRightImage, 0);
         rightImageIsShow = typedArray.getBoolean(R.styleable.MoreItem_moreRightIsShow, false);
+        typedArray.recycle();
         //获取控件
         View inflate = LayoutInflater.from(context).inflate(R.layout.view_more_item, this);
         moreItemLeftImage= inflate.findViewById(R.id.moreItemLeftImage);

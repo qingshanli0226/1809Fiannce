@@ -14,7 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFinancial"
         android:usesCleartextTraffic="true">
-        <activity android:name=".more.register.RegisterActivity"></activity>
         <!-- 屏幕适配 -->
         <meta-data
             android:name="design_width"
