@@ -1,15 +1,17 @@
 package com.fiannce.bawei.framework;
 
+import android.accessibilityservice.FingerprintGestureController;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.fiannce.bawei.framework.manager.FiannceConnectManager;
 import com.fiannce.bawei.framework.view.LoadingPage;
 import com.fiannce.bawei.framework.view.ToolBar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener{
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener,FiannceConnectManager.IConnectListener {
 
     protected T httpPresenter;
     protected ToolBar toolBar;
@@ -31,6 +33,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         toolBar.setToolbarListener(this);
         initPresenter();
         initData();
+
+        //页面启动时，注册网络回调接口
+        FiannceConnectManager.getInstance().registerConnectListener(this);
     }
 
     protected LoadingPage loadingPage;
@@ -47,6 +52,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onDestroy() {
         super.onDestroy();
         destroy();
+        //页面销毁时，将回调接口注销，避免内存泄漏问题
+        FiannceConnectManager.getInstance().unRegisterConnectListener(this);
     }
 
     public void destroy() {
@@ -67,5 +74,14 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     @Override
     public void onRightTvClick() {
 
+    }
+
+    //在基类里注册回调接口，方法是空实现，子类需要通知的话，就重写一下即可
+    @Override
+    public void onConnected() {
+    }
+
+    @Override
+    public void onDisconnected() {
     }
 }

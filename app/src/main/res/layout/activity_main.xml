@@ -44,6 +44,11 @@
             android:layout_height="wrap_content"
             android:text="登录"
             android:id="@+id/login"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="连接管理"
+            android:id="@+id/connectBtn"/>
     </LinearLayout>
 
     <com.fiannce.bawei.framework.view.ProgressView

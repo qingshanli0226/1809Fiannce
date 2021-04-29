@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.fiannce.bawei.a1809fiannce.connect.ConnectActivity;
 import com.fiannce.bawei.a1809fiannce.startmode.AActivity;
 import com.fiannce.bawei.a1809fiannce.startmode.BActivity;
 import com.fiannce.bawei.common.FiannceConstants;
@@ -73,6 +74,13 @@ public class MainActivity extends BaseActivity implements FiannceUserManager.IUs
             public void onClick(View v) {
                 FiannceArouter.getInstance().build(FiannceConstants.PAY_PATH).navigation();
                 //FiannceArouter.getInstance().getPayInterface().openPayActivity(MainActivity.this,null);
+            }
+        });
+        findViewById(R.id.connectBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ConnectActivity.class);
+                startActivity(intent);
             }
         });
 

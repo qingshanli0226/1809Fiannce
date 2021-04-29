@@ -6,6 +6,7 @@ import android.content.Intent;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.fiannce.bawei.framework.FiannceService;
 import com.fiannce.bawei.framework.manager.FiannceArouter;
+import com.fiannce.bawei.framework.manager.FiannceConnectManager;
 import com.fiannce.bawei.framework.manager.FiannceUserManager;
 import com.fiannce.bawei.net.NetModule;
 import com.fiannce.bawei.pay.PayModule;
@@ -22,6 +23,7 @@ public class FiannceApplication extends Application {
         ARouter.init(this);
 
         FiannceArouter.getInstance().init(this);
+        FiannceConnectManager.getInstance().init(this);
         NetModule.init(this);
         UserModule.init();
         PayModule.init();

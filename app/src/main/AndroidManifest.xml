@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fiannce.bawei.a1809fiannce">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".FiannceApplication"
@@ -20,15 +20,18 @@
             </intent-filter>
         </activity>
 
-       <!-- <activity android:name=".MainActivity"/>-->
-        <activity android:name=".event.EventActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".startmode.AActivity"
-            android:launchMode="singleTask"/>
-        <activity android:name=".startmode.BActivity"/>
-        <activity android:name=".startmode.CActivity"
-            android:launchMode="singleTop"/>
-
+        <!-- <activity android:name=".MainActivity"/> -->
+        <activity
+            android:name=".event.EventActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".startmode.AActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".startmode.BActivity" />
+        <activity
+            android:name=".startmode.CActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".connect.ConnectActivity"></activity>
     </application>
 
 </manifest>
