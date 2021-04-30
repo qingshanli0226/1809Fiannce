@@ -32,5 +32,6 @@ public class FiannceApplication extends Application {
         Intent intent = new Intent(this,FiannceService.class);
         startService(intent);
 
+
     }
 }
