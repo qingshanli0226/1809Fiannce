@@ -1,6 +1,7 @@
 package com.example.a1809fiannce;
 
 import android.app.Application;
+import android.content.Intent;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.a1809fiannce.mian.MainModel;
@@ -19,6 +20,8 @@ public class App extends Application {
         UserModel.init();
         MainModel.init();
         FiannceNetManager.getInstance().init(this);
+        Intent intent = new Intent(this,FiannceService.class);
+        startService(intent);
 
     }
 }

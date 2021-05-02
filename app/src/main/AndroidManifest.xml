@@ -3,7 +3,8 @@
     package="com.example.a1809fiannce">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -12,7 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.1809Fiannce">
-        <activity android:name=".mian.MainActivity2" android:launchMode="singleTask"/>
+        <service
+            android:name=".FiannceService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".mian.MainActivity2"
+            android:launchMode="singleTask" />
         <activity android:name=".welcome.WelComeMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
