@@ -2,6 +2,7 @@ package com.example.user.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -85,12 +86,17 @@ public class PersonLoginActivity extends BaseActivity<PersonLoginPresenter> impl
     public void onLogin(LoginBean loginBean) {
         if (loginBean.getCode().equals("200")){
             Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
+            LoginBean.ResultBean result = loginBean.getResult();
+            String token = result.getToken();
 
             SharedPreferences login = getSharedPreferences("login", 0);
             SharedPreferences.Editor edit = login.edit();
             edit.putBoolean("is_login",true);
             edit.putString("username",name);
+            edit.putString("token",token);
             edit.commit();
+
+            new Intent(PersonLoginActivity.this,)
 
 
 
