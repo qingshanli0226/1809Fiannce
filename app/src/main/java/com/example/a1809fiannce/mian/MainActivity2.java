@@ -8,17 +8,14 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
 import com.example.a1809fiannce.R;
-import com.example.a1809fiannce.mian.TabCus;
 import com.example.a1809fiannce.money.MyMoneyFragment;
 import com.example.a1809fiannce.home.HomeFragment;
 import com.example.a1809fiannce.lnvest.InvestFragment;
 import com.example.a1809fiannce.many.ManyFragment;
-import com.example.framwork.call.FiannceUserManager;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -48,10 +45,10 @@ public class MainActivity2 extends AppCompatActivity {
         tab = (CommonTabLayout) findViewById(R.id.tab);
         vp = (ViewPager) findViewById(R.id.main);
         list.clear();
-        list.add(new TabCus("主页",R.mipmap.bottom02,R.mipmap.bottom01));
-        list.add(new TabCus("投资",R.mipmap.bottom04,R.mipmap.bottom03));
-        list.add(new TabCus("我的资产",R.mipmap.bottom06,R.mipmap.bottom05));
-        list.add(new TabCus("更多",R.mipmap.bottom08,R.mipmap.bottom07));
+        list.add(new MainTabCus("主页",R.mipmap.bottom02,R.mipmap.bottom01));
+        list.add(new MainTabCus("投资",R.mipmap.bottom04,R.mipmap.bottom03));
+        list.add(new MainTabCus("我的资产",R.mipmap.bottom06,R.mipmap.bottom05));
+        list.add(new MainTabCus("更多",R.mipmap.bottom08,R.mipmap.bottom07));
 
         fragmentList.add(new HomeFragment());
         fragmentList.add(new InvestFragment());

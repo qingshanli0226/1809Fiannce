@@ -36,9 +36,9 @@ public class InvestFragment extends Fragment{
         vp = (PageView) inflate.findViewById(R.id.vp);
         strings.clear();
         fragmentList.clear();
-       mTabEntitys.add(new TabCus1("全部理财"));
-        mTabEntitys.add(new TabCus1("推荐理财"));
-        mTabEntitys.add(new TabCus1("热门理财"));
+       mTabEntitys.add(new InvestTabCus("全部理财"));
+        mTabEntitys.add(new InvestTabCus("推荐理财"));
+        mTabEntitys.add(new InvestTabCus("热门理财"));
 
         strings.add("全部理财");
         strings.add("推荐理财");

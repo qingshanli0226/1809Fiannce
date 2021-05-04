@@ -2,10 +2,10 @@ package com.example.a1809fiannce.lnvest;
 
 import com.flyco.tablayout.listener.CustomTabEntity;
 
-public class TabCus1 implements CustomTabEntity {
+public class InvestTabCus implements CustomTabEntity {
     private String tit;
 
-    public TabCus1(String tit) {
+    public InvestTabCus(String tit) {
         this.tit = tit;
 
     }
