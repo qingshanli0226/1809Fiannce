@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
-    <com.example.fiannce.custom_view.ProView
+    <com.example.fiannce.fragment.homefragment.ProView
         android:id="@+id/pro"
-        android:layout_width="300dp"
-        android:layout_height="300dp"></com.example.fiannce.custom_view.ProView>
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_300"></com.example.fiannce.fragment.homefragment.ProView>
 
 </LinearLayout>

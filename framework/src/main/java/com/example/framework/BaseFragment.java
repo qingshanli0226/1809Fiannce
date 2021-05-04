@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.net.PageView;
-import com.example.net.TobView;
 
 public abstract class BaseFragment<T extends BasePresenter>extends Fragment {
 

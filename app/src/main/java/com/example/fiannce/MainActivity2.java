@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.fiannce.custom_view.ProView;
+import com.example.fiannce.fragment.homefragment.ProView;
 
 public class MainActivity2 extends AppCompatActivity {
 

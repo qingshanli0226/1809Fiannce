@@ -6,13 +6,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.net.PageView;
-import com.example.net.TobView;
+import com.example.net.ToolBarView;
 
 public abstract class BaseActivity<T extends BasePresenter>extends AppCompatActivity {
 
     protected T httpPresenter;
     protected PageView pageView;
-    protected TobView tobView;
+    protected ToolBarView tobView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragment.morefragment.MoreFragment">
+
+    <com.example.net.ToolBarView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        app:backgroundColor="#142732"
+        app:text="@string/many"
+        android:id="@+id/tob"
+        app:textColor="#03A9F4"></com.example.net.ToolBarView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.example.fiannce.fragment.morefragment.MoreView
+            android:id="@+id/reg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="@dimen/weight_1"
+            app:left_title="用户注册"
+            app:lin_right_show="false"
+            app:lin_right_Text_show="false"
+            app:left_icon="@mipmap/icon_more_regist"
+            ></com.example.fiannce.fragment.morefragment.MoreView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.example.fiannce.fragment.morefragment.MoreView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="@dimen/weight_1"
+                app:left_title="手势密码"
+                app:lin_right_show="false"
+                app:lin_right_Text_show="false"
+                app:left_icon="@mipmap/icon_more_secret"
+                ></com.example.fiannce.fragment.morefragment.MoreView>
+
+            <ImageView
+                android:src="@mipmap/toggle_on"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+
+        </RelativeLayout>
+
+        <com.example.fiannce.fragment.morefragment.MoreView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="@dimen/weight_1"
+            app:left_title="重置手势密码"
+            app:lin_right_show="false"
+            app:lin_right_Text_show="false"
+            app:left_icon="@mipmap/icon_more_reset"
+            ></com.example.fiannce.fragment.morefragment.MoreView>
+
+        <com.example.fiannce.fragment.morefragment.MoreView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="@dimen/weight_1"
+            app:left_title="联系客服"
+            app:lin_right_show="false"
+            app:lin_right_Text_show="true"
+            app:right_title="010-56253825"
+            app:left_icon="@mipmap/icon_more_contact"
+            ></com.example.fiannce.fragment.morefragment.MoreView>
+
+        <com.example.fiannce.fragment.morefragment.MoreView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="@dimen/weight_1"
+            app:left_title="用户反馈"
+            app:lin_right_show="false"
+            app:lin_right_Text_show="false"
+            app:left_icon="@mipmap/icon_more_sms"
+            ></com.example.fiannce.fragment.morefragment.MoreView>
+
+        <com.example.fiannce.fragment.morefragment.MoreView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="@dimen/weight_1"
+            app:left_title="分享给好友"
+            app:lin_right_show="false"
+            app:lin_right_Text_show="false"
+            app:left_icon="@mipmap/icon_more_share"
+            ></com.example.fiannce.fragment.morefragment.MoreView>
+
+        <com.example.fiannce.fragment.morefragment.MoreView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="@dimen/weight_1"
+            app:left_title="关于有道理财"
+            app:lin_right_show="false"
+            app:lin_right_Text_show="false"
+            app:left_icon="@mipmap/icon_more_about"
+            ></com.example.fiannce.fragment.morefragment.MoreView>
+    </LinearLayout>
+
+</LinearLayout>

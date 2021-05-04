@@ -5,22 +5,22 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".fragment.InvestFragment">
+    tools:context=".fragment.investfragment.InvestFragment">
 
-    <com.example.net.TobView
+    <com.example.net.ToolBarView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_50"
         app:text="投资"
         app:textColor="#03A9F4"
         app:backgroundColor="#142732"
         app:left_show="false"
         app:right_show="false"
-        ></com.example.net.TobView>
+        ></com.example.net.ToolBarView>
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/common"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_50"
         app:tl_textUnselectColor="#000000"
         app:tl_textSelectColor="#ea2f31"></com.flyco.tablayout.CommonTabLayout>
 

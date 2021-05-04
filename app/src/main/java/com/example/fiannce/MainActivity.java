@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment;
 import android.widget.FrameLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.fiannce.adapter.MyTab_Welcome;
-import com.example.fiannce.fragment.HomeFragment;
-import com.example.fiannce.fragment.InvestFragment;
-import com.example.fiannce.fragment.ManyFragment;
-import com.example.fiannce.fragment.MyMoneyFragment;
+import com.example.fiannce.welcome.MyTab_Welcome;
+import com.example.fiannce.fragment.homefragment.HomeFragment;
+import com.example.fiannce.fragment.investfragment.InvestFragment;
+import com.example.fiannce.fragment.morefragment.MoreFragment;
+import com.example.fiannce.fragment.mymoneyfragment.MyMoneyFragment;
 import com.example.framework.BaseActivity;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity {
     private ArrayList<CustomTabEntity> customTabEntities = new ArrayList<>();
     private HomeFragment homeFragment;
     private InvestFragment investFragment;
-    private ManyFragment manyFragment;
+    private MoreFragment manyFragment;
     private MyMoneyFragment myMoneyFragment;
 
     @Override
@@ -45,7 +45,7 @@ public class MainActivity extends BaseActivity {
 
         homeFragment = new HomeFragment();
         investFragment = new InvestFragment();
-        manyFragment = new ManyFragment();
+        manyFragment = new MoreFragment();
         myMoneyFragment = new MyMoneyFragment();
 
         getSupportFragmentManager().beginTransaction()
@@ -71,9 +71,9 @@ public class MainActivity extends BaseActivity {
                 }else if (position == 1){
                     showFragment(investFragment);
                 }else if (position == 2){
-                    showFragment(manyFragment);
-                }else if (position == 3){
                     showFragment(myMoneyFragment);
+                }else if (position == 3){
+                    showFragment(manyFragment);
                 }
                 common.hideMsg(position);
             }

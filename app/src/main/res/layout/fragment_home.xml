@@ -5,36 +5,36 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".fragment.HomeFragment">
+    tools:context=".fragment.homefragment.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="@dimen/dp_50">
 
-        <com.example.net.TobView
+        <com.example.net.ToolBarView
             android:id="@+id/tob"
             android:background="#B6ADAD"
             android:gravity="center"
-            android:text="首页"
-            android:textSize="25sp"
+            app:text="首页"
+            android:textSize="@dimen/sp_25"
             app:left_show="false"
             app:right_show="false"
             android:textColor="#fff"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></com.example.net.TobView>
+            android:layout_height="match_parent"></com.example.net.ToolBarView>
 
     </LinearLayout>
 
     <com.youth.banner.Banner
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"></com.youth.banner.Banner>
+        android:layout_height="@dimen/dp_200"></com.youth.banner.Banner>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_marginTop="15dp"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/dp_40"
         android:layout_gravity="center">
 
             <TextView
@@ -42,13 +42,13 @@
                 android:layout_height="wrap_content"
                 android:text="硅谷彩虹新手计划"
                 android:gravity="right"
-                android:textSize="30dp"
+                android:textSize="@dimen/sp_30"
                 android:id="@+id/name"></TextView>
 
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="@dimen/dp_20"
             android:src="@mipmap/recommend"
             android:layout_gravity="center"></ImageView>
 
@@ -56,15 +56,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_20"
         android:layout_centerInParent="true">
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"></TextView>
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="本息保障"
@@ -97,33 +97,33 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/dp_20"
         android:layout_marginBottom="@dimen/dp_10"
-        android:layout_height="130dp">
+        android:layout_height="@dimen/dp_130">
 
-        <com.example.fiannce.custom_view.CustomView_HomeFragment
+        <com.example.fiannce.fragment.homefragment.CustomView_HomeFragment
             android:id="@+id/customview"
-            android:layout_width="200dp"
-            android:layout_height="130dp"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_130"
             android:layout_centerInParent="true"
             app:textSize="30"
-            app:color="#E91E63"></com.example.fiannce.custom_view.CustomView_HomeFragment>
+            app:color="#E91E63"></com.example.fiannce.fragment.homefragment.CustomView_HomeFragment>
 
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp">
+        android:layout_height="@dimen/dp_30">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="123"
-            android:textSize="20dp"
+            android:textSize="@dimen/sp_20"
             android:gravity="center"
             android:id="@+id/expect"></TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="@dimen/dp_50">
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
             android:textColor="#ffffff"
             android:text="立即购买"></Button>
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"></TextView>
     </LinearLayout>
