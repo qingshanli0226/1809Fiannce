@@ -50,12 +50,12 @@ public class FiannceService extends Service {
             if (runningAppProcess.processName.equals(getPackageName())){
                 if (runningAppProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND){
 
-                    Log.i("zx", "在当前应用: ");
+                    Log.i("zx", "是否在当前应用: "+true);
                     return true;
 
                 }else {
 
-                    Log.i("zx", "不在当前应用: ");
+                    Log.i("zx", "是否在当前应用: "+false);
                     return false;
 
                 }
