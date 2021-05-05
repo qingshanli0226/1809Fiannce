@@ -62,7 +62,6 @@ public class HomeFragment extends BaseFragment {
             public void displayImage(Context context, Object path, ImageView imageView) {
                 HomeBean.ResultBean.ImageArrBean imageArrBean= (HomeBean.ResultBean.ImageArrBean) path;
 
-                LogUtils.d(imageArrBean);
                 Glide.with(context).load(imageArrBean.getImaurl()).into(imageView);
             }
         });

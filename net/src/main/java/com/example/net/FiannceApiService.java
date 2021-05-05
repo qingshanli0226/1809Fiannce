@@ -1,6 +1,7 @@
 package com.example.net;
 
 import com.example.net.mode.AllfinancialBean;
+import com.example.net.mode.AutoLoginBean;
 import com.example.net.mode.HomeBean;
 import com.example.net.mode.LoginBean;
 import com.example.net.mode.RegisterBean;
@@ -31,4 +32,8 @@ public interface FiannceApiService {
     @FormUrlEncoded
     @POST("register")
     Observable<RegisterBean> getRegister(@Field("name")String name, @Field("password")String password);
+
+    @FormUrlEncoded
+    @POST("autoLogin")
+    Observable<LoginBean> getAuto(@Field("token")String token);
 }

@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
@@ -22,6 +24,7 @@ import com.blankj.utilcode.util.LogUtils;
 import com.example.a1809fiannce.MainActivity;
 import com.example.a1809fiannce.R;
 import com.example.framework.BaseActivity;
+import com.example.framework.LoginService;
 import com.example.framework.manager.CacheManager;
 import com.example.net.mode.HomeBean;
 import com.example.net.mode.VersionBean;
@@ -129,10 +132,16 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initData() {
+
+        requestPermissions(new String[]{"android.permission.CALL_PHONE"},100);
+
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
 
         packageManager = getPackageManager();
+
+        Intent intent = new Intent(this, LoginService.class);
+        startService(intent);
 
         D_code = getCode();
 

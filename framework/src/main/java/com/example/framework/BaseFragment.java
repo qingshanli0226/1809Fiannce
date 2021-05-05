@@ -9,11 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.manager.FiannceConnectManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
-public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements IFragment, ToolBar.IToolbarListener {
+public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements IFragment, ToolBar.IToolbarListener, FiannceConnectManager.IConnectListener {
     protected T httpPresenter;
     protected View mView;
     protected ToolBar toolBar;
@@ -79,6 +80,16 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
 
     @Override
     public void onRightTvClick() {
+
+    }
+
+    @Override
+    public void onConnected() {
+
+    }
+
+    @Override
+    public void onDisconnected() {
 
     }
 }

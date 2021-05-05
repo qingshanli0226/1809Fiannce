@@ -1,7 +1,9 @@
 <resources>
 
     <string name="register">注册</string>
-    <string name="userRegister">用户注册：</string>
+    <string name="login">登录</string>
+    <string name="userRegister">用户注册</string>
+    <string name="userLogin">用户登录</string>
     <string name="userName">用户名：</string>
     <string name="password">密码：</string>
     <string name="confirmPassword">确认密码：</string>
@@ -10,5 +12,8 @@
     <string name="pleaseUserName">请输入用户名</string>
     <string name="pleasePassword">请输入密码</string>
     <string name="pleaseConfirmPassword">请再次输入密码</string>
+    <string name="userInfo">用户信息</string>
+    <string name="picture">更改头像</string>
+    <string name="logOut">退出登录</string>
 
 </resources>

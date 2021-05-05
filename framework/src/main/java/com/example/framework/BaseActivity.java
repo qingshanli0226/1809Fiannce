@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framework.manager.FiannceConnectManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
@@ -12,7 +13,7 @@ import com.yatoooon.screenadaptation.ScreenAdapterTools;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener, FiannceConnectManager.IConnectListener {
 
     protected T httpPresenter;
     protected LoadingPage loadingPage;
@@ -23,6 +24,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         ScreenAdapterTools.getInstance().loadView(getWindow().getDecorView());
+
+        FiannceConnectManager.getInstance().registerConnectListener(this);
 
         loadingPage=new LoadingPage(this) {
             @Override
@@ -50,6 +53,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onDestroy() {
         super.onDestroy();
         destroy();
+
+        FiannceConnectManager.getInstance().unRegisterConnectListener(this);
     }
 
     public void destroy(){
@@ -70,6 +75,16 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 
     @Override
     public void onRightTvClick() {
+
+    }
+
+    @Override
+    public void onConnected() {
+
+    }
+
+    @Override
+    public void onDisconnected() {
 
     }
 }

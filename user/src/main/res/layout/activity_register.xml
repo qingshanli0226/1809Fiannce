@@ -1,136 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".register.RegisterActivity">
 
-    <com.example.framework.view.ToolBar
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:id="@+id/toolbar"
-        android:background="@color/darkblue"
-        app:leftImage="@drawable/left"
-        app:leftIsShow="true"
-        app:titleText="@string/userRegister"></com.example.framework.view.ToolBar>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:text="@string/cell_phoneNumber"
-            android:textColor="@color/black"></TextView>
-
-        <EditText
-            android:layout_width="@dimen/dp_200"
+        <com.example.framework.view.ToolBar
+            android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
-            android:layout_marginLeft="@dimen/dp_50"
-            android:inputType="phone"
-            android:background="@drawable/edittext"
-            android:id="@+id/number"
-            android:hint="@string/pleaseNumber"></EditText>
+            android:id="@+id/toolbar"
+            android:background="@color/darkblue"
+            app:leftImage="@drawable/left"
+            app:leftIsShow="true"
+            app:titleText="@string/userRegister"></com.example.framework.view.ToolBar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="@string/cell_phoneNumber"
+                android:textColor="@color/black"></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginLeft="@dimen/dp_50"
+                android:inputType="phone"
+                android:background="@drawable/edittext"
+                android:id="@+id/reg_number"
+                android:hint="@string/pleaseNumber"></EditText>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="@string/userName"
+                android:textColor="@color/black"></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginLeft="@dimen/dp_50"
+                android:background="@drawable/edittext"
+                android:id="@+id/reg_username"
+                android:hint="@string/pleaseUserName"></EditText>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="@string/password"
+                android:textColor="@color/black"></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginLeft="@dimen/dp_64"
+                android:background="@drawable/edittext"
+                android:id="@+id/reg_password"
+                android:hint="@string/pleasePassword"></EditText>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="@string/confirmPassword"
+                android:textColor="@color/black"></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginLeft="@dimen/dp_35"
+                android:background="@drawable/edittext"
+                android:id="@+id/reg_confirmpassword"
+                android:hint="@string/pleaseConfirmPassword"></EditText>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray"></View>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/register_button"
+            android:id="@+id/register"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_20"></Button>
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_1"
-        android:background="@color/gray"></View>
+    <ProgressBar
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:id="@+id/reg_progress"
+        android:visibility="gone"
+        android:layout_centerInParent="true"></ProgressBar>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:text="@string/userName"
-            android:textColor="@color/black"></TextView>
-
-        <EditText
-            android:layout_width="@dimen/dp_200"
-            android:layout_height="@dimen/dp_50"
-            android:layout_marginLeft="@dimen/dp_50"
-            android:background="@drawable/edittext"
-            android:id="@+id/username"
-            android:hint="@string/pleaseUserName"></EditText>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_1"
-        android:background="@color/gray"></View>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:text="@string/password"
-            android:textColor="@color/black"></TextView>
-
-        <EditText
-            android:layout_width="@dimen/dp_200"
-            android:layout_height="@dimen/dp_50"
-            android:layout_marginLeft="@dimen/dp_64"
-            android:background="@drawable/edittext"
-            android:id="@+id/password"
-            android:hint="@string/pleasePassword"></EditText>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_1"
-        android:background="@color/gray"></View>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_15"
-            android:text="@string/confirmPassword"
-            android:textColor="@color/black"></TextView>
-
-        <EditText
-            android:layout_width="@dimen/dp_200"
-            android:layout_height="@dimen/dp_50"
-            android:layout_marginLeft="@dimen/dp_35"
-            android:background="@drawable/edittext"
-            android:id="@+id/confirmpassword"
-            android:hint="@string/pleaseConfirmPassword"></EditText>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_1"
-        android:background="@color/gray"></View>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_60"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="@dimen/dp_20"
-        android:layout_marginRight="@dimen/dp_20"
-        android:background="@drawable/register_button"
-        android:id="@+id/register"
-        android:text="@string/register"
-        android:textColor="@color/white"
-        android:textSize="@dimen/dp_20"></Button>
-
-</LinearLayout>
+</RelativeLayout>

@@ -1,7 +1,9 @@
 <resources>
 
     <string name="register">register</string>
-    <string name="userRegister">user register：</string>
+    <string name="login">login</string>
+    <string name="userRegister">user register</string>
+    <string name="userLogin">user login</string>
     <string name="userName">user name：</string>
     <string name="password">password：</string>
     <string name="confirmPassword">confirm password：</string>
@@ -10,5 +12,8 @@
     <string name="pleaseUserName">please user name</string>
     <string name="pleasePassword">please password</string>
     <string name="pleaseConfirmPassword">please confirm password</string>
+    <string name="userInfo">userinfo</string>
+    <string name="picture">Change the picture</string>
+    <string name="logOut">log out</string>
 
 </resources>

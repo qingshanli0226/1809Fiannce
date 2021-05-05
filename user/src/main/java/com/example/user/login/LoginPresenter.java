@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class LoginPresenter extends BasePresenter<ILogin> {
     public LoginPresenter(ILogin iLogin) {
-        attachView(iView);
+        attachView(iLogin);
     }
 
     public void getLogin(){

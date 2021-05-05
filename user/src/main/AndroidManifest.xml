@@ -3,14 +3,19 @@
     package="com.example.user">
 
     <application>
-        <activity android:name=".register.RegisterActivity" android:launchMode="singleTask">
+        <activity android:name=".userinfo.UserInfoActivity"></activity>
+        <activity
+            android:name=".register.RegisterActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="register" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.LoginActivity" android:launchMode="singleTask">
+        <activity
+            android:name=".login.LoginActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="login" />
 

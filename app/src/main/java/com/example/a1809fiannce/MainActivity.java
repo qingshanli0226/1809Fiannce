@@ -2,6 +2,7 @@ package com.example.a1809fiannce;
 
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.view.KeyEvent;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -12,6 +13,10 @@ import com.example.a1809fiannce.investment.InvestmentFragment;
 import com.example.a1809fiannce.more.MoreFragment;
 import com.example.a1809fiannce.myAssets.MyAssetsFragment;
 import com.example.framework.BaseActivity;
+import com.example.framework.LoginService;
+import com.example.framework.manager.FiannceArouter;
+import com.example.framework.manager.FiannceUserManager;
+import com.example.net.mode.LoginBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -21,6 +26,10 @@ import java.util.ArrayList;
 public class MainActivity extends BaseActivity {
     private LinearLayout ll;
     private CommonTabLayout comm;
+    private HomeFragment homeFragment;
+    private InvestmentFragment investmentFragment;
+    private MyAssetsFragment myAssetsFragment;
+    private MoreFragment moreFragment;
 
     @Override
     protected int getLayoutId() {
@@ -41,10 +50,10 @@ public class MainActivity extends BaseActivity {
         customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.customTab_name3),R.drawable.bottom05,R.drawable.bottom06));
         customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.customTab_name4),R.drawable.bottom07,R.drawable.bottom08));
 
-        HomeFragment homeFragment = new HomeFragment();
-        InvestmentFragment investmentFragment = new InvestmentFragment();
-        MyAssetsFragment myAssetsFragment = new MyAssetsFragment();
-        MoreFragment moreFragment = new MoreFragment();
+        homeFragment = new HomeFragment();
+        investmentFragment = new InvestmentFragment();
+        myAssetsFragment = new MyAssetsFragment();
+        moreFragment = new MoreFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
         fragmentTransaction.add(R.id.ll,homeFragment);
@@ -82,6 +91,12 @@ public class MainActivity extends BaseActivity {
 
                     fragmentTransaction1.commit();
                 }else if (position==2){
+
+                    LoginBean loginBean = FiannceUserManager.getInstance().getLoginBean();
+                    if (loginBean==null){
+                        FiannceArouter.getInstance().getIUserInterface().openLoginActivity(MainActivity.this,null);
+                    }
+
                     FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
 
                     fragmentTransaction1.hide(homeFragment);
@@ -129,5 +144,33 @@ public class MainActivity extends BaseActivity {
         }
 
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        comm.setCurrentTab(0);
+
+        FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+
+        fragmentTransaction1.show(homeFragment);
+        fragmentTransaction1.hide(investmentFragment);
+        fragmentTransaction1.hide(myAssetsFragment);
+        fragmentTransaction1.hide(moreFragment);
+
+        fragmentTransaction1.commit();
+    }
+
+    @Override
+    public void onConnected() {
+        super.onConnected();
+        Toast.makeText(this, "当前有网络", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDisconnected() {
+        super.onDisconnected();
+        Toast.makeText(this, "当前没有网络", Toast.LENGTH_SHORT).show();
     }
 }

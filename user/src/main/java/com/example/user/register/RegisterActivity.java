@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.commom.SpUtil;
 import com.example.framework.BaseActivity;
+import com.example.framework.manager.FiannceArouter;
 import com.example.framework.view.ToolBar;
 import com.example.net.mode.LoginBean;
 import com.example.net.mode.RegisterBean;
@@ -24,6 +27,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     private android.widget.EditText password;
     private android.widget.EditText confirmpassword;
     private android.widget.Button register;
+    private ProgressBar regProgress;
 
     @Override
     protected int getLayoutId() {
@@ -33,11 +37,12 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     @Override
     protected void initView() {
         toolbar = (ToolBar) findViewById(R.id.toolbar);
-        number = (EditText) findViewById(R.id.number);
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        confirmpassword = (EditText) findViewById(R.id.confirmpassword);
+        number = (EditText) findViewById(R.id.reg_number);
+        username = (EditText) findViewById(R.id.reg_username);
+        password = (EditText) findViewById(R.id.reg_password);
+        confirmpassword = (EditText) findViewById(R.id.reg_confirmpassword);
         register = (Button) findViewById(R.id.register);
+        regProgress = (ProgressBar) findViewById(R.id.reg_progress);
     }
 
     @Override
@@ -61,7 +66,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
     @Override
     public String username() {
-        return username.getText().toString().trim();
+        return number.getText().toString().trim();
     }
 
     @Override
@@ -71,29 +76,45 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
     @Override
     public void onLogin(LoginBean loginBean) {
+        if (loginBean.getCode().equals("200")){
+            Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
 
+            SpUtil.setString(this,loginBean.getResult().getToken());
+
+            FiannceArouter.getInstance().getIAppInterface().openMainActivity(this,null);
+        }
     }
 
     @Override
     public void onRegister(RegisterBean registerBean) {
         if (registerBean.getCode().equals("200")){
-//            httpPresenter=new LoginPresenter(this);
             Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
+
+            LoginPresenter loginPresenter = new LoginPresenter(this);
+            loginPresenter.getLogin();
         }
     }
 
     @Override
     public void showLoading() {
-        loadingPage.showTransparentLoadingView();
+//        loadingPage.showTransparentLoadingView();
+        regProgress.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-        loadingPage.showSuccessView();
+//        loadingPage.showSuccessView();
+        regProgress.setVisibility(View.GONE);
     }
 
     @Override
     public void Error(String error) {
         loadingPage.showError(error);
+    }
+
+    @Override
+    public void onLeftClick() {
+        super.onLeftClick();
+        finish();
     }
 }
