@@ -3,10 +3,16 @@ package com.example.myapplication.welcome;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
+import android.Manifest;
 import android.app.ProgressDialog;
+import android.app.Service;
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -15,6 +21,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
+import com.example.framework.manager.FiannceUserManager;
 import com.example.model.HomeBean;
 import com.example.model.ProductBean;
 import com.example.model.VersionBean;
@@ -39,6 +46,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private int session = 3;
     private VersionBean versionBeans;
 
+    private AutoLoginService myservice;
+    private ServiceConnection serviceConnection;
+
     @Override
     protected void initData() {
         httpPresenter.getHomeData();
@@ -53,11 +63,31 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initView() {
+
+        //权限
+        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},100);
+        }
+
         contenNum = (TextView) findViewById(R.id.conten_num);
 //        homedata = (TextView) findViewById(R.id.homedata);
         contenNum.setText(session+"秒");
         Intent intent = new Intent(this, AutoLoginService.class);
         startService(intent);
+
+        serviceConnection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                AutoLoginService.MyBinder myBinder = (AutoLoginService.MyBinder) service;
+                myservice = myBinder.getMyService();
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+
+            }
+        };
+        bindService(intent,serviceConnection, Service.BIND_AUTO_CREATE);
 
     }
 
@@ -148,27 +178,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
-
-                                    ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
-                                    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                                    progressDialog.setTitle(Demo.CONFIRM_DIALOG_TITLE);
-                                    progressDialog.setMessage(Demo.CONFIRM_DIALOG_MESSAGE);
-                                    progressDialog.setIcon(R.drawable.ic_launcher_background);
-                                    progressDialog.setProgress(100);
-                                    progressDialog.setCancelable(true);
-                                    progressDialog.setIndeterminate(true);
-                                    progressDialog.show();
-                                    progressDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                                        @Override
-                                        public void onDismiss(DialogInterface dialog) {
-
-                                            Toast.makeText(WelcomeActivity.this, "取消更新", Toast.LENGTH_SHORT).show();
-
-                                            ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
-                                            finish();
-                                        }
-                                    });
-
+                                    myservice.downLoad("https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2858426577,4189650377&fm=26&gp=0.jpg",handler);
                                 }
                             });
 
@@ -190,7 +200,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     }else {
                         ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
                         finish();
-
                     }
                     break;
             }
@@ -202,5 +211,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
+        unbindService(serviceConnection);
     }
 }

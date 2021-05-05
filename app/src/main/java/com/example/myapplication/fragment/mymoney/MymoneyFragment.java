@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseFragment;
+import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.ToolBar;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
@@ -53,12 +54,19 @@ public class MymoneyFragment extends BaseFragment {
 
     @Subscribe(sticky = true)
     public void Events(String event){
-        if (event.equals("change_message")){
+        if (event.equals("exit_login")){
             userName.setText("");
+            FiannceUserManager.getInstance().setLogin(false);
+        }
+    }
+
+    @Subscribe(sticky = true)
+    public void Svents(String event){
+        if (event.equals("success_login")){
             SharedPreferences login = getActivity().getSharedPreferences("login", 0);
-            SharedPreferences.Editor edit = login.edit();
-            edit.putBoolean("is_login",false);
-            edit.commit();
+            String name = login.getString("username", "");
+            userName.setText(""+name);
+            FiannceUserManager.getInstance().setLogin(true);
         }
     }
 
@@ -72,6 +80,9 @@ public class MymoneyFragment extends BaseFragment {
 
         toolbar = (ToolBar) mView.findViewById(R.id.toolbar);
         userName = (TextView) mView.findViewById(R.id.user_name);
+
+
+
     }
 
     @Override

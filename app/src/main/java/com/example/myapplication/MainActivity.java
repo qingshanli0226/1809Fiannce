@@ -18,6 +18,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseActivity;
 import com.example.demo.Demo;
+import com.example.framework.manager.FiannceUserManager;
 import com.example.myapplication.fragment.home.HomeFragment;
 import com.example.myapplication.fragment.invest.InvestFragment;
 import com.example.myapplication.fragment.more.MoreFragment;
@@ -80,9 +81,8 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.show(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
 
-                        SharedPreferences login = getSharedPreferences("login", 0);
-                        boolean is_login = login.getBoolean("is_login", false);
-                        if (is_login){
+                        boolean login = FiannceUserManager.getInstance().isLogin();
+                        if (login){
 
                         }else {
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -99,7 +99,7 @@ public class MainActivity extends BaseActivity {
                             builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-
+//                                    EventBus.getDefault().postSticky("home_data");
                                 }
                             });
 
@@ -135,13 +135,6 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @Subscribe(sticky = true)
-    public void Events(String event){
-        if (event.equals("exit_login")){
-            Intent intent = new Intent(MainActivity.this,MainActivity.class);
-            startActivity(intent);
-        }
-    }
 
     @Override
     protected void initPresenter() {

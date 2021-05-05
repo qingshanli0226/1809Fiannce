@@ -2,13 +2,16 @@ package com.example.user.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.demo.Demo;
 import com.example.framework.BaseActivity;
+import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.ToolBar;
 import com.example.user.R;
 
@@ -40,18 +43,23 @@ public class ExitActivity extends BaseActivity {
             }
         });
 
-        exitLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
 
         exitLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+
+                FiannceUserManager.getInstance().setLogin(false);
+                boolean login = FiannceUserManager.getInstance().isLogin();
+                if (login==false){
+                    Toast.makeText(ExitActivity.this, "退出成功", Toast.LENGTH_SHORT).show();
+                    SharedPreferences login1 = getSharedPreferences("login", 0);
+                    SharedPreferences.Editor edit = login1.edit();
+                    edit.putBoolean("is_login",false);
+                    edit.commit();
+                }
                 EventBus.getDefault().postSticky("exit_login");
-                EventBus.getDefault().postSticky("change_message");
+
+                finish();
             }
         });
 

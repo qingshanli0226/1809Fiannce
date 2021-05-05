@@ -10,10 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.manager.FiannceConnectManager;
+import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 
-public  abstract   class BaseFragment <T extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener{
+public abstract class BaseFragment <T extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener,FiannceConnectManager.IConnectListener,FiannceUserManager.IUserLoginChanged{
 
     protected T httpPresenter;
     protected View mView;
@@ -37,6 +39,9 @@ public  abstract   class BaseFragment <T extends BasePresenter> extends Fragment
         //toolBar.setToolbarListener(this);
         initPresenter();
         initData();
+
+        FiannceConnectManager.getInstance().registerConnectListenter(this);
+        FiannceUserManager.getInstance().unRegister(this);
         return mView;
     }
 
@@ -44,6 +49,7 @@ public  abstract   class BaseFragment <T extends BasePresenter> extends Fragment
     public void onDestroy() {
         super.onDestroy();
         destroy();
+        FiannceConnectManager.getInstance().unRegisterConnectListenter(this);
     }
 
     public void destroy(){
@@ -51,8 +57,6 @@ public  abstract   class BaseFragment <T extends BasePresenter> extends Fragment
             httpPresenter.detachView();
         }
     }
-
-
 
     protected abstract void initData();
 
@@ -74,6 +78,21 @@ public  abstract   class BaseFragment <T extends BasePresenter> extends Fragment
 
     @Override
     public void onRightTvClick() {
+
+    }
+
+    @Override
+    public void onConnected() {
+
+    }
+
+    @Override
+    public void onDisconnected() {
+
+    }
+
+    @Override
+    public void onLoginChange(boolean isLogin) {
 
     }
 }

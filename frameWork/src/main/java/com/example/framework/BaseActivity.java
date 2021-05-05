@@ -6,10 +6,12 @@ import android.view.WindowManager;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.framework.manager.FiannceConnectManager;
+import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener, FiannceConnectManager.IConnectListener, FiannceUserManager.IUserLoginChanged {
 
     protected T httpPresenter;
     protected ToolBar toolBar;
@@ -26,12 +28,17 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
             }
         };
         setContentView(loadingPage);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN); //隐藏状态栏
         initView();
         toolBar = findViewById(R.id.toolbar);
         //toolBar.setToolbarListener(this);
         initPresenter();
         initData();
+
+        //页面启动时，注册网络回调接口
+        FiannceConnectManager.getInstance().registerConnectListenter(this);
+
+        FiannceUserManager.getInstance().register(this);
+
     }
 
     protected abstract void initData();
@@ -46,6 +53,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onDestroy() {
         super.onDestroy();
         destroy();
+        FiannceConnectManager.getInstance().unRegisterConnectListenter(this);
+        FiannceUserManager.getInstance().unRegister(this);
     }
 
     public void destroy(){
@@ -68,4 +77,18 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 
     }
 
+    @Override
+    public void onConnected() {
+
+    }
+
+    @Override
+    public void onDisconnected() {
+
+    }
+
+    @Override
+    public void onLoginChange(boolean isLogin) {
+
+    }
 }

@@ -33,7 +33,6 @@ public class AllFinancialFragment extends BaseFragment<WelcomePresenter> impleme
     private MyMoneyAdapter adapter;
     private RecyclerView moneyOneRv;
     private TextView light;
-    private AnimationDrawable animationDrawable;
     private List<ProductBean.ResultBean> list = new ArrayList<>();
 
     @Override
@@ -73,6 +72,18 @@ public class AllFinancialFragment extends BaseFragment<WelcomePresenter> impleme
     }
 
     @Override
+    public void onConnected() {
+        super.onConnected();
+        Toast.makeText(getContext(), "网络已连接", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDisconnected() {
+        super.onDisconnected();
+        Toast.makeText(getContext(), "网络未连接", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     public void onProductDara(ProductBean productBean) {
         List<ProductBean.ResultBean> result = productBean.getResult();
         list.addAll(result);
@@ -94,8 +105,6 @@ public class AllFinancialFragment extends BaseFragment<WelcomePresenter> impleme
         });
 
         moneyOneRv.setAdapter(adapter);
-
-
     }
 
 
@@ -107,12 +116,10 @@ public class AllFinancialFragment extends BaseFragment<WelcomePresenter> impleme
 
     @Override
     public void hideLoading() {
-//        loadingPage.showTransparentLoadingView();
     }
 
     @Override
     public void showError(String error) {
-//        Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
         loadingPage.showError(error);
     }
 

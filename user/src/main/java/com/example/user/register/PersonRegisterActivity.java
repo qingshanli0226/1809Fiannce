@@ -124,6 +124,18 @@ public class PersonRegisterActivity extends BaseActivity<PersonRegisterPresenter
     }
 
     @Override
+    public void onConnected() {
+        super.onConnected();
+        Toast.makeText(this, "网络已连接", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDisconnected() {
+        super.onDisconnected();
+        Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     public void showError(String error) {
         loadingPage.showError(error);
     }

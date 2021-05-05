@@ -14,9 +14,12 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.demo.Demo;
 import com.example.framework.BaseActivity;
+import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.ToolBar;
 import com.example.model.LoginBean;
 import com.example.user.R;
+
+import org.greenrobot.eventbus.EventBus;
 
 @Route(path = Demo.AROUTE_PATH_LOGIN)
 public class PersonLoginActivity extends BaseActivity<PersonLoginPresenter> implements IPersonLoginView{
@@ -85,7 +88,11 @@ public class PersonLoginActivity extends BaseActivity<PersonLoginPresenter> impl
     @Override
     public void onLogin(LoginBean loginBean) {
         if (loginBean.getCode().equals("200")){
-            Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
+            FiannceUserManager.getInstance().setLogin(true);
+            boolean login1 = FiannceUserManager.getInstance().isLogin();
+            if (login1){
+                Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
+            }
             LoginBean.ResultBean result = loginBean.getResult();
             String token = result.getToken();
 
@@ -95,6 +102,9 @@ public class PersonLoginActivity extends BaseActivity<PersonLoginPresenter> impl
             edit.putString("username",name);
             edit.putString("token",token);
             edit.commit();
+
+            EventBus.getDefault().postSticky("success_login");
+
             finish();
 
 
