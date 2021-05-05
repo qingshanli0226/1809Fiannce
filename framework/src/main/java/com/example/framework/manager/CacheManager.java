@@ -1,9 +1,19 @@
 package com.example.framework.manager;
 
 import com.example.net.model.HoemBean;
+import com.example.net.model.VersionBean;
 
 public class CacheManager {
 
+    public VersionBean versionBean;
+
+    public VersionBean getVersionBean() {
+        return versionBean;
+    }
+
+    public void setVersionBean(VersionBean versionBean) {
+        this.versionBean = versionBean;
+    }
 
     public HoemBean hoemBean ;
 
@@ -14,6 +24,10 @@ public class CacheManager {
     public void setHoemBean(HoemBean hoemBean) {
         this.hoemBean = hoemBean;
     }
+
+
+
+
 
     private static CacheManager simpleManager;
 

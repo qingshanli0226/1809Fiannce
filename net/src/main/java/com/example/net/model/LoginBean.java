@@ -27,6 +27,15 @@ public class LoginBean {
         this.result = result;
     }
 
+    @Override
+    public String toString() {
+        return "LoginBean{" +
+                "code='" + code + '\'' +
+                ", message='" + message + '\'' +
+                ", result=" + result +
+                '}';
+    }
+
     /**
      * code : 200
      * message : 登录成功
@@ -117,6 +126,22 @@ public class LoginBean {
 
         public void setToken(String token) {
             this.token = token;
+        }
+
+        @Override
+        public String toString() {
+            return "ResultBean{" +
+                    "id='" + id + '\'' +
+                    ", name='" + name + '\'' +
+                    ", password='" + password + '\'' +
+                    ", email=" + email +
+                    ", phone=" + phone +
+                    ", point=" + point +
+                    ", address=" + address +
+                    ", money=" + money +
+                    ", avatar=" + avatar +
+                    ", token='" + token + '\'' +
+                    '}';
         }
 
         /**

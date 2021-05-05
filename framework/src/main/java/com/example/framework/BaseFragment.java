@@ -81,7 +81,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     }
 
     @Override
-    public void onRoghtImgClick() {
+    public void onRightImgClick() {
 
     }
 }

@@ -2,6 +2,7 @@ package com.example.a1809fiannce.main.Welcome;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
@@ -17,7 +18,11 @@ import androidx.annotation.NonNull;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.BarUtils;
 import com.example.a1809fiannce.R;
+import com.example.commom.FianceConstants;
 import com.example.framework.BaseActivity;
+import com.example.framework.manager.FiannceArouter;
+import com.example.framework.service.DownloadApkService;
+import com.example.framework.service.FiannceService;
 import com.example.framework.manager.CacheManager;
 import com.example.net.model.HoemBean;
 import com.example.net.model.VersionBean;
@@ -76,6 +81,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initData() {
+        /**
+         * 自动登录
+         */
+        startService(new Intent(this, FiannceService.class));
+
+
         httpPresenter.getServerVersion();
         httpPresenter.getHomeData();
 
@@ -113,7 +124,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             builder.setMessage(versionBean.getResult().getDesc());
             builder.setNegativeButton(getResources().getText(R.string.no), (dialogInterface, i) -> {
 //                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-                ARouter.getInstance().build(AROUT_MAINACTIVITY).withString("", "").navigation();
+//                ARouter.getInstance().build(AROUT_MAINACTIVITY).withString("", "").navigation();
+
+                FiannceArouter.getInstance().build(FianceConstants.MAIN_PATH).navigation();
                 finish();
             });
             builder.setPositiveButton(getResources().getText(R.string.yes), (dialogInterface, i) -> {
@@ -121,6 +134,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                 progressDialog.setCanceledOnTouchOutside(false);
                 progressDialog.show();
+
+                startService(new Intent(this, DownloadApkService.class));
+
             });
             builder.setCancelable(false);
             builder.show();
@@ -139,6 +155,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void onWelcomeData(VersionBean versionBean) {
         if (versionBean.getCode() == 200) {
+            CacheManager.getInstance().setVersionBean(versionBean);
+
             this.versionBean = versionBean;
             versionCode = versionBean.getResult().getVersionCode();
             switchVersions = true;

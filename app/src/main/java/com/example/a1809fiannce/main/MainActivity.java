@@ -13,7 +13,11 @@ import com.example.a1809fiannce.main.invest.InvestFragment;
 import com.example.a1809fiannce.main.more.MoreFragment;
 import com.example.a1809fiannce.main.property.PropertyFragment;
 import com.example.a1809fiannce.tab.MyCustomTabEntity;
+import com.example.commom.FianceConstants;
 import com.example.framework.BaseActivity;
+import com.example.framework.manager.FiannceArouter;
+import com.example.framework.manager.FiannceUserManager;
+import com.example.net.model.LoginBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -22,7 +26,7 @@ import java.util.ArrayList;
 
 
 @Route(path = "/main/MainActivity")
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity  {
 
     private CommonTabLayout actHomeCt;
 
@@ -88,8 +92,13 @@ public class MainActivity extends BaseActivity {
 
                     fragmentTransaction1.commit();
                 } else if (position == 2) {
-                    FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
 
+                    LoginBean loginBean = FiannceUserManager.getInstance().getLoginBean();
+                    if (loginBean == null) {
+                        FiannceArouter.getInstance().build(FianceConstants.LOGIN_PATH).navigation();
+                    }
+
+                    FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction1.hide(hoemFragment);
                     fragmentTransaction1.hide(investFragment);
                     fragmentTransaction1.show(propertyFragment);
@@ -121,6 +130,7 @@ public class MainActivity extends BaseActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
 
+        actHomeCt.setCurrentTab(0);
         FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
         fragmentTransaction1.show(hoemFragment);
         fragmentTransaction1.hide(investFragment);
@@ -128,7 +138,6 @@ public class MainActivity extends BaseActivity {
         fragmentTransaction1.hide(moreFragment);
 
         fragmentTransaction1.commit();
-
     }
 
     @Override
@@ -159,4 +168,5 @@ public class MainActivity extends BaseActivity {
 
         return super.onKeyDown(keyCode, event);
     }
+
 }

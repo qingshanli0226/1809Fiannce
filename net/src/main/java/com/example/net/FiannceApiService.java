@@ -7,7 +7,6 @@ import com.example.net.model.RegisterBean;
 import com.example.net.model.VersionBean;
 
 import io.reactivex.Observable;
-import io.reactivex.Observer;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -28,11 +27,15 @@ public interface FiannceApiService {
 
     @FormUrlEncoded
     @POST("register")
-    Observable<RegisterBean> getRegisterData(@Field("username") String username, @Field("password") String password);
+    Observable<RegisterBean> getRegisterData(@Field("name") String username, @Field("password") String password);
 
 
     @FormUrlEncoded
     @POST("login")
-    Observable<LoginBean> getLoginData(@Field("username") String username, @Field("password") String password);
+    Observable<LoginBean> getLoginData(@Field("name") String username, @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("autoLogin")
+    Observable<LoginBean> getAutoLoginData(@Field("token") String token);
 
 }

@@ -12,4 +12,7 @@
     <string name="theTwoPasswordsDontMatch">两次密码不一致</string>
     <string name="userLogin">用户登录</string>
     <string name="login">登录</string>
+    <string name="usermassage">用户信息</string>
+    <string name="changeThePicture">更改头像</string>
+    <string name="backLogin">退出登录</string>
 </resources>

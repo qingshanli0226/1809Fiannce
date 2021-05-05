@@ -3,14 +3,17 @@ package com.example.commom;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.net.NetModule;
 
 public class SpUtil {
-
     public static  String getString(Context context ,String key){
-        SpUtil.getString(NetModule.context,FianceConstants.TOKEN_KEY);
-        SharedPreferences fiannceSp = context.getSharedPreferences("fiannceSp", Context.MODE_PRIVATE);
+        SharedPreferences fiannceSp = context.getSharedPreferences(FianceConstants.SP_FIANNCE, Context.MODE_PRIVATE);
         return fiannceSp.getString(key,"");
     }
 
+
+    public static  void setString(Context context ,String key,String mag){
+        SharedPreferences.Editor editor = context.getSharedPreferences(FianceConstants.SP_FIANNCE, Context.MODE_PRIVATE).edit();
+        editor.putString(key,mag);
+        editor.commit();
+    }
 }

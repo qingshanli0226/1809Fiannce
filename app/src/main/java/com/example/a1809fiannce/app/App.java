@@ -3,6 +3,7 @@ package com.example.a1809fiannce.app;
 import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.framework.manager.FianceManager;
 import com.example.framework.manager.FiannceArouter;
 import com.example.net.NetModule;
 import com.example.user.UserModule;
@@ -21,5 +22,9 @@ public class App extends Application {
         UserModule.init();
 
         FiannceArouter.getInstance().init(this);
+
+        AppModel.init();
+
+        FianceManager.getInstance().init(this);
     }
 }

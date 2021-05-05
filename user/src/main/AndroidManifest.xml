@@ -3,7 +3,8 @@
     package="com.example.user">
 
     <application>
-        <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".usermessage.UserActivity"></activity>
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".register.RegisterActivity" />
     </application>
 

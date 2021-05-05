@@ -24,17 +24,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cellPhoneNumber"
+            android:text="@string/username"
             android:textColor="@color/black"
             android:layout_marginLeft="@dimen/dp_20"
-            android:id="@+id/act_log_phone"
             android:layout_centerVertical="true"></TextView>
         <EditText
-            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_100"
-            android:hint="@string/pleaseEnterYourCellPhoneNumber"
+            android:hint="@string/pleaseEnterAUserName"
+            android:id="@+id/act_log_user"
             android:background="@drawable/edit_background_while"></EditText>
     </RelativeLayout>
     <View

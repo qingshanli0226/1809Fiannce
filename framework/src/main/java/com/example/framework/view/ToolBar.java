@@ -2,8 +2,6 @@ package com.example.framework.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -80,7 +78,7 @@ public class ToolBar extends RelativeLayout {
         });
         toolbarRightImg.setOnClickListener(view -> {
             if (toolbarListener!=null) {
-                toolbarListener.onRoghtImgClick();
+                toolbarListener.onRightImgClick();
             }
         });
 
@@ -95,7 +93,7 @@ public class ToolBar extends RelativeLayout {
     public static interface IToolbarListener{
         void onLeftImgClick();
         void onCenterTitleClick();
-        void onRoghtImgClick();
+        void onRightImgClick();
     }
 
 
