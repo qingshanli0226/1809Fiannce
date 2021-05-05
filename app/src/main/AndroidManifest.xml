@@ -3,6 +3,7 @@
     package="com.fiannce.zhaoyuzan">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE" ></uses-permission>
 
     <application
         android:usesCleartextTraffic="true"

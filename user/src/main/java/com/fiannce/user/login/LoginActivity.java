@@ -3,23 +3,34 @@ package com.fiannce.user.login;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.fiannce.framework.BaseActivity;
+import com.fiannce.framework.view.ToolBar;
 import com.fiannce.net.mode.LoginBean;
+import com.fiannce.net.mode.StringBean;
 import com.fiannce.user.R;
+import com.fiannce.user.UserManager;
 import com.fiannce.user.register.RegisterActivity;
 import com.fiannce.user.register.RegisterPresenter;
 
+import org.greenrobot.eventbus.EventBus;
+
 public class LoginActivity extends BaseActivity<LoginPresenter> implements ILoginView {
 
-    private com.fiannce.framework.view.ToolBar toolbar;
-    private android.widget.EditText etLoginNumber;
-    private android.widget.EditText etLoginPwd;
-    private android.widget.Button btnLogin;
+    private ToolBar toolbar;
+    private EditText etLoginNumber;
+    private EditText etLoginPwd;
+    private Button btnLogin;
+    private String name1;
+    private String password1;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void initPresenter() {
@@ -28,13 +39,21 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
 
     @Override
     protected void initData() {
+
+        Intent intent = getIntent();
+        name1 = intent.getStringExtra("name");
+        password1 = intent.getStringExtra("password");
+        etLoginNumber.setText(name1);
+        etLoginPwd.setText(password1);
+
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = etLoginNumber.getText().toString().trim();
-                String password = etLoginPwd.getText().toString().trim();
+                name1 = etLoginNumber.getText().toString().trim();
+                password1 = etLoginPwd.getText().toString().trim();
 
-                httpPresenter.getLoginData(name,password);
+                httpPresenter.getLoginData(name1, password1);
             }
         });
     }
@@ -45,6 +64,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
         etLoginNumber = findViewById(R.id.et_login_number);
         etLoginPwd = findViewById(R.id.et_login_pwd);
         btnLogin = findViewById(R.id.btn_login);
+
     }
 
     @Override
@@ -56,8 +76,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
     public void onLoginData(LoginBean loginBean) {
         if (loginBean.getCode().equals("200")){
             ARouter.getInstance().build("/main/MainActivity").navigation();
-//            Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
-//            startActivity(intent);
+            UserManager.getInstance().saveUserInfo(LoginActivity.this,name1,password1);
+            Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
+            StringBean stringBean = new StringBean();
+            stringBean.setName(name1);
+            EventBus.getDefault().post(stringBean);
         }else {
             Toast.makeText(this, loginBean.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -77,4 +100,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
     public void showToast(String msg) {
 
     }
+
+
 }

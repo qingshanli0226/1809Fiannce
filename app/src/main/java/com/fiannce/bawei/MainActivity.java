@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        requestPermissions(new String[]{
+                "android.permission.CALL_PHONE"
+        },100);
         viewPager = findViewById(R.id.vp);
         commonTabLayout = findViewById(R.id.common);
 
@@ -90,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
                 Object mHelperUtils;
-                Toast.makeText(this, "再按一次退出APP", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.exitApp), Toast.LENGTH_SHORT).show();
                 //System.currentTimeMillis()系统当前时间
                 mExitTime = System.currentTimeMillis();
             } else {

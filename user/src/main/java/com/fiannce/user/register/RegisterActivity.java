@@ -33,6 +33,8 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         if (registerBean.getCode().equals("200")){
 //            ARouter.getInstance().build("/main/MainActivity").navigation();
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            intent.putExtra("name",name);
+            intent.putExtra("password",password);
             startActivity(intent);
         }else {
             Toast.makeText(this, registerBean.getMessage(), Toast.LENGTH_SHORT).show();
@@ -86,5 +88,11 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     @Override
     protected int getLayoutId() {
         return R.layout.activity_register;
+    }
+
+    @Override
+    public void onLeftClick() {
+        super.onLeftClick();
+        finish();
     }
 }

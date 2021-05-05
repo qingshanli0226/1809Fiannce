@@ -78,12 +78,13 @@
 
                 <TextView
                     android:text="@string/connect"
+                    android:id="@+id/tv_more_phone"
                     android:drawableLeft="@drawable/icon_more_contact"
                     android:layout_width="wrap_content"
                     style="@style/MoreTextStyle" />
 
                 <TextView
-                    android:id="@+id/tv_more_phone"
+                    android:id="@+id/tv_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/phone"

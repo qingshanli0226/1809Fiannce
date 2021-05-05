@@ -58,4 +58,8 @@
     <string name="userInfo">用户信息</string>
     <string name="iconUpdate">更改头像</string>
     <string name="exitLogin">退出登录</string>
-</resources>
+    <string name="conect">联系客服</string>
+    <string name="yseOrNo">是否现在联系客服:010-56253825</string>
+    <string name="tel">tel:</string>
+    <string name="exitApp">再按一次退出APP</string>
+ </resources>

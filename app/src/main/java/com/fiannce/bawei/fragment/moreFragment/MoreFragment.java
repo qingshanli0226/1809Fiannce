@@ -1,7 +1,10 @@
 package com.fiannce.bawei.fragment.moreFragment;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +32,7 @@ public class MoreFragment extends Fragment {
     private TextView tvMoreFankui;
     private TextView tvMoreShare;
     private TextView tvMoreAbout;
+    private TextView tvPhone;
 
     public MoreFragment() {
         // Required empty public constructor
@@ -39,7 +43,7 @@ public class MoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View inflate = inflater.inflate(R.layout.fragment_more, container, false);
+        final View inflate = inflater.inflate(R.layout.fragment_more, container, false);
 
         toolbar = inflate.findViewById(R.id.toolbar);
         tvMoreRegist = inflate.findViewById(R.id.tv_more_regist);
@@ -49,6 +53,7 @@ public class MoreFragment extends Fragment {
         tvMoreFankui = inflate.findViewById(R.id.tv_more_fankui);
         tvMoreShare = inflate.findViewById(R.id.tv_more_share);
         tvMoreAbout = inflate.findViewById(R.id.tv_more_about);
+        tvPhone = inflate.findViewById(R.id.tv_phone);
 
         tvMoreRegist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +61,32 @@ public class MoreFragment extends Fragment {
 //                ARouter.getInstance().build("/user/RegisterActivity").withInt("",1).navigation();
                 Intent intent = new Intent(getActivity(), RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        tvMorePhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle(getString(R.string.conect));
+                builder.setMessage(getString(R.string.yseOrNo));
+                builder.setPositiveButton(getString(R.string.sure), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_CALL);
+                        intent.setData(Uri.parse(getString(R.string.tel) + tvPhone));
+                        startActivity(intent);
+                    }
+                });
+
+                builder.setNegativeButton(getString(R.string.cancle), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.show();
             }
         });
 

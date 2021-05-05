@@ -3,7 +3,6 @@ package com.fiannce.user.login;
 import com.fiannce.framework.BasePresenter;
 import com.fiannce.net.RetrofitCreator;
 import com.fiannce.net.mode.LoginBean;
-import com.fiannce.net.mode.RegisterBean;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
