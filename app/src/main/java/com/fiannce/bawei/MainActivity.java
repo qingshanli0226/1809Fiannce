@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         commonTabLayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int i) {
-
                 viewPager.setCurrentItem(i);
             }
 

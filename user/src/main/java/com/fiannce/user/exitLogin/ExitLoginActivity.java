@@ -1,16 +1,15 @@
 package com.fiannce.user.exitLogin;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.fiannce.commond.CommonConstant;
+import com.fiannce.commond.SpUtil;
 import com.fiannce.framework.BaseActivity;
+import com.fiannce.framework.manager.CacheUserManager;
+import com.fiannce.framework.model.FrameArouter;
 import com.fiannce.user.R;
-import com.fiannce.user.UserManager;
-import com.fiannce.user.login.LoginActivity;
 
 public class ExitLoginActivity extends BaseActivity {
 
@@ -26,15 +25,14 @@ public class ExitLoginActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+
         btnUserLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (UserManager.getInstance().hasUserInfo(ExitLoginActivity.this)){
-                    ARouter.getInstance().build("/main/MainActivity").navigation();
-                }else {
-
-                }
-
+                CacheUserManager.getInstance().setLoginBean(null);
+                SpUtil.putString(ExitLoginActivity.this, CommonConstant.SP_TOKEN,"");
+//                FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
+                ARouter.getInstance().build("/main/MainActivity").navigation();
             }
         });
     }

@@ -2,6 +2,7 @@ package com.fiannce.bawei.welcome;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
@@ -12,10 +13,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.fiannce.commond.CommonConstant;
+import com.fiannce.commond.SpUtil;
 import com.fiannce.framework.BaseActivity;
 import com.fiannce.framework.manager.CacheManager;
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.net.mode.VersionBean;
+import com.fiannce.user.service.AutoService;
 import com.fiannce.zhaoyuzan.R;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
@@ -49,6 +53,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
         coundDownTv.setText(countDown + getString(R.string.miao));
 
+        if(!SpUtil.getString(this, CommonConstant.SP_TOKEN).equals("")){
+            Intent intent = new Intent(this, AutoService.class);
+            startService(intent);
+        }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 

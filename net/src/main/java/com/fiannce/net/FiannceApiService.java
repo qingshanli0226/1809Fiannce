@@ -31,4 +31,7 @@ public interface FiannceApiService {
     @FormUrlEncoded
     Observable<LoginBean> getLoginData(@Field("name")String name, @Field("password")String password);
 
+    @FormUrlEncoded
+    @POST(AppNetConfig.AUTOLOGIN)
+    Observable<LoginBean> getAutoLogin(@Field("token")String token);
 }

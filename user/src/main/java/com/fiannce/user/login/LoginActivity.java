@@ -1,24 +1,23 @@
 package com.fiannce.user.login;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.fiannce.commond.CommonConstant;
+import com.fiannce.commond.SpUtil;
 import com.fiannce.framework.BaseActivity;
+import com.fiannce.framework.manager.CacheUserManager;
+import com.fiannce.framework.model.FrameArouter;
 import com.fiannce.framework.view.ToolBar;
 import com.fiannce.net.mode.LoginBean;
 import com.fiannce.net.mode.StringBean;
 import com.fiannce.user.R;
-import com.fiannce.user.UserManager;
-import com.fiannce.user.register.RegisterActivity;
-import com.fiannce.user.register.RegisterPresenter;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -53,7 +52,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
                 name1 = etLoginNumber.getText().toString().trim();
                 password1 = etLoginPwd.getText().toString().trim();
 
-                httpPresenter.getLoginData(name1, password1);
+                if(TextUtils.isEmpty(name1) && TextUtils.isEmpty(password1)){
+                    Toast.makeText(LoginActivity.this, "用户名或密码为空", Toast.LENGTH_SHORT).show();
+                } else{
+                    httpPresenter.getLoginData(name1,password1);
+                }
             }
         });
     }
@@ -74,15 +77,14 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
 
     @Override
     public void onLoginData(LoginBean loginBean) {
-        if (loginBean.getCode().equals("200")){
+        if(loginBean.getCode().equals("200")){
+            SpUtil.putString(this, CommonConstant.SP_TOKEN,loginBean.getResult().getToken());
+            //跳到主页面返回
+            CacheUserManager.getInstance().setLoginBean(loginBean);
+//            FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
             ARouter.getInstance().build("/main/MainActivity").navigation();
-            UserManager.getInstance().saveUserInfo(LoginActivity.this,name1,password1);
-            Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
-            StringBean stringBean = new StringBean();
-            stringBean.setName(name1);
-            EventBus.getDefault().post(stringBean);
-        }else {
-            Toast.makeText(this, loginBean.getMessage(), Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(this, "失败："+loginBean, Toast.LENGTH_SHORT).show();
         }
     }
 

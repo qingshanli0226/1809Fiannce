@@ -4,6 +4,7 @@ package com.fiannce.bawei.fragment.homeFragment;
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -12,8 +13,10 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.fiannce.framework.BaseFragment;
 import com.fiannce.framework.manager.CacheManager;
 
+import com.fiannce.framework.manager.CacheUserManager;
 import com.fiannce.framework.view.ProgressView;
 import com.fiannce.net.mode.HomeBean;
+import com.fiannce.net.mode.LoginBean;
 import com.fiannce.zhaoyuzan.R;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
@@ -24,7 +27,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements CacheUserManager.ILoginChange{
 
     private Banner banner;
     private TextView textView;
@@ -64,6 +67,14 @@ public class HomeFragment extends BaseFragment {
         yuqiText.setText(yearRate);
 
         progressView.saledProgress(90,true);
+
+        CacheUserManager.getInstance().registerLogin(this);
+        LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
+        if(loginBean == null){
+            Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(getContext(), "登录", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -84,5 +95,11 @@ public class HomeFragment extends BaseFragment {
     public void onDestroy() {
         super.onDestroy();
         progressView.destry();
+        CacheUserManager.getInstance().unRegisterLogin(this);
+    }
+
+    @Override
+    public void onLoginChange(LoginBean loginBean) {
+        Toast.makeText(getContext(), ""+loginBean, Toast.LENGTH_SHORT).show();
     }
 }

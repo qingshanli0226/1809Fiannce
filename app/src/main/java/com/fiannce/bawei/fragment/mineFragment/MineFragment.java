@@ -4,8 +4,6 @@ package com.fiannce.bawei.fragment.mineFragment;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,9 +11,10 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.fiannce.framework.BaseFragment;
+import com.fiannce.framework.manager.CacheUserManager;
 import com.fiannce.framework.view.ToolBar;
+import com.fiannce.net.mode.LoginBean;
 import com.fiannce.net.mode.StringBean;
-import com.fiannce.user.UserManager;
 import com.fiannce.user.exitLogin.ExitLoginActivity;
 import com.fiannce.user.login.LoginActivity;
 import com.fiannce.zhaoyuzan.R;
@@ -46,9 +45,10 @@ public class MineFragment extends BaseFragment {
     @Override
     protected void initData() {
 
-        if (UserManager.getInstance().hasUserInfo(getActivity())) {
-
-        } else {
+        LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
+        if(loginBean != null){
+            ivMeIcon.setImageResource(R.drawable.my_user_bg_icon);
+        }else {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle("提示");
             builder.setMessage("您还没有登录哦！");
