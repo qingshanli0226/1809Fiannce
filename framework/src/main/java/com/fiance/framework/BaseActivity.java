@@ -6,7 +6,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.fiance.framework.MyView.LoadingPage;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements FiannceConnectManager.IConnectListener{
     protected  T httpPresenter;
 
     @Override
@@ -23,6 +23,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         initView();
         initPresenter();
         initData();
+
+        FiannceConnectManager.getInstance().registerConnectListener(this);
     }
     protected LoadingPage loadingPage;
     protected abstract int getLayoutId();
@@ -39,5 +41,13 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onDestroy() {
         super.onDestroy();
         destroy();
+        FiannceConnectManager.getInstance().unRegisterConnectListener(this);
+    }
+    @Override
+    public void onConnected() {
+    }
+
+    @Override
+    public void onDisconnected() {
     }
 }
