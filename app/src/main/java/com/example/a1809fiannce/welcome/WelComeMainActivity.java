@@ -3,16 +3,21 @@ package com.example.a1809fiannce.welcome;
 import androidx.annotation.NonNull;
 
 import android.app.AlertDialog;
+import android.app.Service;
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.a1809fiannce.CallUpdate;
 import com.example.a1809fiannce.home.HomeCallBack;
 import com.example.a1809fiannce.mian.MainActivity2;
 import com.example.a1809fiannce.R;
@@ -32,6 +37,8 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
     private boolean AddFinsh=false;
     private int count=3;
     private UpdateBean bean;
+    private UpdateService updateService;
+    private ServiceConnection serviceConnection;
     private Handler handler=new Handler(){
         @Override
         public void dispatchMessage(@NonNull Message msg) {
@@ -64,6 +71,20 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
             mPresenter=new WelcomePresenter(this);
             mPresenter.HomeData();
             mPresenter.UpdateData();
+        serviceConnection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                UpdateService.MyBind myBind = (UpdateService.MyBind) service;
+                updateService = myBind.MyService();
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+
+            }
+        };
+        Intent intent = new Intent(WelComeMainActivity.this, UpdateService.class);
+        bindService(intent,serviceConnection, Service.BIND_AUTO_CREATE);
     }
 
     @Override
@@ -71,6 +92,7 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
         miao = (TextView) findViewById(R.id.miao);
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
         miao.setText(count+"秒");
+
     }
 
     @Override
@@ -80,6 +102,7 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
 
     @Override
     public void HomeData(HomeBean homeBean) {
+
         HomeFinsh=true;
         HomeCallBack.getHomeCallBack().setHomeBean(homeBean);
         handler.sendEmptyMessage(ONE_TASK);
@@ -126,6 +149,10 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            //CallUpdate.getInstance().setUrl("http://www.qubaobei.com/ios/cf/uploadfile/132/9/8289.jpg");
+                            //开启一个服务下载
+                            updateService.DownUpdate("http://www.qubaobei.com/ios/cf/uploadfile/132/9/8289.jpg");
+                            //进入主页面
                             startActivity(new Intent(WelComeMainActivity.this, MainActivity2.class));
                             dialog.dismiss();
                         }

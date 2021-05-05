@@ -1,19 +1,16 @@
 package com.example.user.log;
 
-import android.app.Application;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.common.UserCallBack;
 import com.example.framwork.base.BaseActivity;
 import com.example.framwork.call.FiannceARouter;
 import com.example.framwork.call.FiannceUserManager;
 import com.example.network.model.LogBean;
 import com.example.user.R;
+import com.example.common.Squilts;
 
 public class LogActivity extends BaseActivity<LogPresenter> implements LogCallBack{
     private String name;
@@ -42,14 +39,15 @@ public class LogActivity extends BaseActivity<LogPresenter> implements LogCallBa
         pageView.ShowSuccess();
         if (logBean.getCode().equals("200")){
             Toast.makeText(this, ""+logBean.getMessage(), Toast.LENGTH_SHORT).show();
-            FiannceUserManager.getInstance().setLog(true);
+            FiannceUserManager.getInstance().setIsLog(logBean);
             Bundle bundle = new Bundle();
             bundle.putString("name",name);
+            UserCallBack.getInstance().setName(name);
             bundle.putInt("num",0);
+            Squilts.putString(LogActivity.this,logBean.getResult().getToken());
             FiannceARouter.getFiannceARouter().getAppManager().OpenMainActivity(LogActivity.this,bundle);
         }else {
             Toast.makeText(this, ""+logBean.getMessage(), Toast.LENGTH_SHORT).show();
-
         }
 
     }

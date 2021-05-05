@@ -1,5 +1,7 @@
 package com.example.framwork.call;
 
+import com.example.network.model.LogBean;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,24 +24,19 @@ public class FiannceUserManager {
         list.remove(iUserLoginChanged);
     }
     
-    private boolean isLog;
+    private LogBean isLog;
 
-    public boolean getLog() {
+    public LogBean getIsLog() {
         return isLog;
     }
 
-    public void setLog(boolean isLog) {
-
+    public void setIsLog(LogBean isLog) {
         this.isLog = isLog;
-        for (IUserLoginChanged listener : list) {
-            listener.onLoginChange(isLog);
-        }
-
     }
 
     public interface IUserLoginChanged{
 
-        void onLoginChange(boolean isLog);
+        void onLoginChange(LogBean isLog);
 
     }
 }

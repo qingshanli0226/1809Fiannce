@@ -3,4 +3,12 @@
     package="com.example.framwork">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+        <service
+            android:name=".FiannceService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
 </manifest>

@@ -16,6 +16,7 @@ import com.example.a1809fiannce.money.MyMoneyFragment;
 import com.example.a1809fiannce.home.HomeFragment;
 import com.example.a1809fiannce.lnvest.InvestFragment;
 import com.example.a1809fiannce.many.ManyFragment;
+import com.example.common.UserCallBack;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -38,7 +39,9 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             requestPermissions(new String[]{
-                    Manifest.permission.CALL_PHONE
+                    Manifest.permission.CALL_PHONE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
             },100);
         }
 
@@ -97,7 +100,6 @@ public class MainActivity2 extends AppCompatActivity {
 
         tab.setCurrentTab(num);
         vp.setCurrentItem(num);
-        UserCallBack.getInstance().setName(name);
     }
 
     @Override

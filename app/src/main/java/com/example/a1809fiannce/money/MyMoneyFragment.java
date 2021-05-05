@@ -4,12 +4,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a1809fiannce.R;
-import com.example.a1809fiannce.mian.UserCallBack;
+import com.example.common.UserCallBack;
 import com.example.framwork.base.BaseFragment;
 import com.example.framwork.call.FiannceUserManager;
 import com.example.framwork.view.TobView;
-
-
+import com.example.network.model.LogBean;
 
 
 public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.IUserLoginChanged {
@@ -38,11 +37,7 @@ public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.
     protected void initView() {
         user = baseView.findViewById(R.id.user);
             FiannceUserManager.getInstance().Register(this);
-            if (FiannceUserManager.getInstance().getLog()){
-                Toast.makeText(getContext(), "当前用户已经登录", Toast.LENGTH_SHORT).show();
-            }else {
-                Toast.makeText(getContext(), "当前用户未登录", Toast.LENGTH_SHORT).show();
-            }
+
     }
 
     @Override
@@ -51,14 +46,14 @@ public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.
     }
 
     @Override
-    public void onLoginChange(boolean isLog) {
-        if (isLog){
+    public void onLoginChange(LogBean isLog) {
+        if (isLog!=null){
             Toast.makeText(getContext(), "已登录", Toast.LENGTH_SHORT).show();
+            user.setText(isLog.getResult().getName());
         }else {
             Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
         }
     }
-
 
     @Override
     public void onDestroy() {
@@ -66,4 +61,6 @@ public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.
         FiannceUserManager.getInstance().UnRegister(this);
 
     }
+
+
 }
