@@ -2,12 +2,15 @@ package com.example.a1809fiannce.welcome;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,7 +27,8 @@ import com.blankj.utilcode.util.LogUtils;
 import com.example.a1809fiannce.MainActivity;
 import com.example.a1809fiannce.R;
 import com.example.framework.BaseActivity;
-import com.example.framework.LoginService;
+import com.example.framework.FiannceService;
+
 import com.example.framework.manager.CacheManager;
 import com.example.net.mode.HomeBean;
 import com.example.net.mode.VersionBean;
@@ -35,6 +39,7 @@ import java.util.TimerTask;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 //    private TextView text;
+    private Intent intent;
     private ProgressBar pro;
     private RelativeLayout re;
     private TextView time;
@@ -73,13 +78,34 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         builder.setPositiveButton(getResources().getString(R.string.YES), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
 
-                                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                                bindService(intent, new ServiceConnection() {
+                                    @Override
+                                    public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+                                        FiannceService.FiannceBinder fiannceBinder= (FiannceService.FiannceBinder) iBinder;
 
-                                progressDialog.setCanceledOnTouchOutside(false);
+                                        FiannceService fiannceService=fiannceBinder.getFiannceService();
 
-                                progressDialog.show();
+                                        fiannceService.DownLoad(version.getResult().getApkUrl());
+
+                                        Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+
+                                    @Override
+                                    public void onServiceDisconnected(ComponentName componentName) {
+
+                                    }
+                                },BIND_AUTO_CREATE);
+
+//                                ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
+//
+//                                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+//
+//                                progressDialog.setCanceledOnTouchOutside(false);
+//
+//                                progressDialog.show();
                             }
                         });
 
@@ -133,14 +159,16 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     protected void initData() {
 
-        requestPermissions(new String[]{"android.permission.CALL_PHONE"},100);
+        requestPermissions(new String[]{"android.permission.CALL_PHONE"
+        ,"android.permission.WRITE_EXTERNAL_STORAGE"
+        ,"android.permission.READ_EXTERNAL_STORAGE"},100);
 
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
 
         packageManager = getPackageManager();
 
-        Intent intent = new Intent(this, LoginService.class);
+        intent = new Intent(this, FiannceService.class);
         startService(intent);
 
         D_code = getCode();

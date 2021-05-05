@@ -5,6 +5,6 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application>
-        <service android:name=".LoginService"></service>
+        <service android:name=".FiannceService"></service>
     </application>
 </manifest>

@@ -13,7 +13,7 @@ import com.example.a1809fiannce.investment.InvestmentFragment;
 import com.example.a1809fiannce.more.MoreFragment;
 import com.example.a1809fiannce.myAssets.MyAssetsFragment;
 import com.example.framework.BaseActivity;
-import com.example.framework.LoginService;
+
 import com.example.framework.manager.FiannceArouter;
 import com.example.framework.manager.FiannceUserManager;
 import com.example.net.mode.LoginBean;

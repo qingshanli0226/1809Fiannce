@@ -34,6 +34,7 @@ public class UserInfoActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+
         out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

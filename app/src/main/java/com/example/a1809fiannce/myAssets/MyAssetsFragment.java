@@ -1,5 +1,6 @@
 package com.example.a1809fiannce.myAssets;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,7 @@ import com.example.framework.manager.FiannceArouter;
 import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.ToolBar;
 import com.example.net.mode.LoginBean;
+import com.example.user.userinfo.UserInfoActivity;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 public class MyAssetsFragment extends BaseFragment implements FiannceUserManager.IUserLoginChanged {
@@ -58,6 +60,9 @@ public class MyAssetsFragment extends BaseFragment implements FiannceUserManager
     public void onRightImgClick() {
         super.onRightImgClick();
         FiannceArouter.getInstance().getIUserInterface().openUserInfoActivity(getContext(),null);
+
+//        Intent intent = new Intent(getContext(), UserInfoActivity.class);
+//        startActivity(intent);
     }
 
     @Override

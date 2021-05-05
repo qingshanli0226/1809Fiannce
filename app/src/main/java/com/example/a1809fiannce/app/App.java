@@ -5,7 +5,6 @@ import android.content.Intent;
 
 import com.blankj.utilcode.util.ScreenUtils;
 import com.example.a1809fiannce.AppModule;
-import com.example.framework.LoginService;
 import com.example.framework.manager.FiannceArouter;
 import com.example.framework.manager.FiannceConnectManager;
 import com.example.net.NetModel;
@@ -20,12 +19,8 @@ public class App extends Application {
         super.onCreate();
         ScreenAdapterTools.init(this);
 
-//        Intent intent = new Intent(this, LoginService.class);
-//        startService(intent);
-
-        NetModel.init(this);
-
         FiannceArouter.getInstance().init(this);
+        NetModel.init(this);
         AppModule.init();
         UserModule.init();
         PayModule.init();
