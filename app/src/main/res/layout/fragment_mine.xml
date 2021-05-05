@@ -29,12 +29,12 @@
             android:id="@+id/img_tx"
             android:layout_marginLeft="@dimen/dp_165"></ImageView>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:text="Hi,welcome!"
+            android:text="未登录"
+            android:gravity="center"
             android:id="@+id/username"
-            android:layout_marginLeft="@dimen/dp_165"
             android:layout_marginTop="@dimen/ten"></TextView>
     </LinearLayout>
 

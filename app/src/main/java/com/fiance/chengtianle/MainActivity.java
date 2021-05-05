@@ -69,6 +69,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        if (FiannceConnectManager.getInstance().isConnected()) {
+            Toast.makeText(this, "系统已经连接网络", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "系统没有连接网络", Toast.LENGTH_SHORT).show();
+        }
+
         ArrayList<Fragment> list = new ArrayList<>();
         list.add(new MainFragment());
         list.add(new InvestorFragment());
@@ -89,11 +95,6 @@ public class MainActivity extends BaseActivity {
         tab.getTabAt(2).setIcon(R.drawable.bottom06);
         tab.getTabAt(3).setIcon(R.drawable.bottom08);
 
-        if (FiannceConnectManager.getInstance().isConnected()) {
-            Toast.makeText(this, "系统已经连接网络", Toast.LENGTH_SHORT).show();
-        } else {
-           Toast.makeText(this, "系统没有连接网络", Toast.LENGTH_SHORT).show();
-        }
     }
     private boolean isApplicationUsed() {
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
@@ -110,7 +111,7 @@ public class MainActivity extends BaseActivity {
                 }
             }
         }
-        return false;
+        return true;
     }
 
     @Override

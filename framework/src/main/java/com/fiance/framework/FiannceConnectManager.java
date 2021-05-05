@@ -42,7 +42,7 @@ public class FiannceConnectManager {
     }
 
     private void getCurrentConnectStatus() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();//获取当前系统网络连接的信息
         if (networkInfo!=null && networkInfo.isConnected()) {//如果有连接
             isConnected = true;
@@ -64,14 +64,11 @@ public class FiannceConnectManager {
             //如果收到网络连接通知的广播，代表系统的网络连接发生了改变
             if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
                  getCurrentConnectStatus();
-                 //去通知各个页面去刷新UI
                 notifyConnectChanged();
             }
 
         }
     };
-
-    //回调各个页面注册的接口，通知网络的变化
     private void notifyConnectChanged() {
         for(IConnectListener listener:connectListenerList) {
             if (isConnected) {
@@ -81,7 +78,6 @@ public class FiannceConnectManager {
             }
         }
     }
-
     public synchronized void registerConnectListener(IConnectListener listener) {
         if (!connectListenerList.contains(listener)) {
             connectListenerList.add(listener);
@@ -93,11 +89,8 @@ public class FiannceConnectManager {
             connectListenerList.remove(listener);
         }
     }
-
     public interface IConnectListener {
         void onConnected();
         void onDisconnected();
     }
-
-
 }

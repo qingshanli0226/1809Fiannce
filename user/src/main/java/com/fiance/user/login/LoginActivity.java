@@ -2,10 +2,12 @@ package com.fiance.user.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.LogUtils;
 import com.fiance.framework.BaseActivity;
@@ -14,6 +16,7 @@ import com.fiance.user.R;
 
 import org.greenrobot.eventbus.EventBus;
 
+@Route(path = "/login/LoginActivity")
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginView {
 
 
@@ -21,6 +24,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     private android.widget.EditText username;
     private android.widget.EditText pwd;
     private android.widget.TextView btn;
+    private String userEt;
 
     @Override
     protected int getLayoutId() {
@@ -37,7 +41,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
      btn.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
-             String userEt = username.getText().toString().trim();
+              userEt = username.getText().toString().trim();
              String pwdEt = pwd.getText().toString().trim();
              if (userEt==null || pwdEt==null){
                  Toast.makeText(LoginActivity.this, "填写信息不能为空", Toast.LENGTH_SHORT).show();
@@ -47,7 +51,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
          }
      });
     }
-
     @Override
     protected void initView() {
         toolbar = findViewById(R.id.toolbar);
@@ -59,10 +62,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     public void onLoginData(LoginBean loginBean) {
         LogUtils.json(loginBean);
-
         if (loginBean.getCode().equals("200")){
             Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
-            EventBus.getDefault().postSticky("121");
+            SharedPreferences sflogin = getSharedPreferences("sflogin", MODE_PRIVATE);
+            SharedPreferences.Editor edit = sflogin.edit();
+            edit.putString("username",userEt);
+            edit.putBoolean("islogin",true);
+            edit.commit();
             ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
         }else{
             Toast.makeText(this, loginBean.getMessage(), Toast.LENGTH_SHORT).show();

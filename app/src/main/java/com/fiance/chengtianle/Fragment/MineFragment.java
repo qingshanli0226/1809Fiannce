@@ -1,5 +1,8 @@
 package com.fiance.chengtianle.Fragment;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.fiance.chengtianle.QuitActivity;
 import com.fiance.chengtianle.R;
 import com.fiance.framework.MyView.ToolBar;
 
@@ -22,6 +27,7 @@ public class MineFragment extends Fragment {
     private TextView username;
     private ImageView pay;
     private ImageView cash;
+    public  static String name;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,30 +39,29 @@ public class MineFragment extends Fragment {
         username = inflate.findViewById(R.id.username);
         pay = inflate.findViewById(R.id.pay);
         cash = inflate.findViewById(R.id.cash);
-        if (!EventBus.getDefault().isRegistered(this)){
-            EventBus.getDefault().register(this);
+
+        SharedPreferences sflogin = getActivity().getSharedPreferences("sflogin", Context.MODE_PRIVATE);
+         name = sflogin.getString("username", "未登录");
+        boolean islogin = sflogin.getBoolean("islogin", false);
+        if (islogin){
+            username.setText(name);
         }
-
-
-
-
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (islogin){
+                    Intent intent = new Intent(getActivity(), QuitActivity.class);
+                    startActivity(intent);
+                }else{
+                    ARouter.getInstance().build("/login/LoginActivity").withInt("", 1).navigation();
+                }
+            }
+        });
         return inflate;
     }
 
-    @Subscribe(sticky = true)
-    public void ss(String msg){
-        if (msg.equals("121")){
-            username.setText("   已登陆");
-        }
-    }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (EventBus.getDefault().isRegistered(this)){
-            EventBus.getDefault().register(this);
-        }
-    }
+
 
 
 
