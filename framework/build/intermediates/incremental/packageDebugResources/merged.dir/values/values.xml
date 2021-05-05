@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlueTwo">#28BAED</color>
+    <color name="colorBlueshen">#142732</color>
+    <color name="colorF">#ffffff</color>
+    <color name="colorFive">#5c5c5c</color>
+    <color name="colorPrimary">#208BB4</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorRed">#CF4955</color>
+    <color name="colorRedqian">#f00</color>
+    <color name="colorRedshen">#FB4257</color>
+    <color name="colorSky">#2196F3</color>
+    <color name="colorText">#5A6E9E</color>
+    <color name="colorThree">#333333</color>
+    <color name="colorUpdate">#00baff</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorgray">#D3CECE</color>
+    <dimen name="big_text_size">30sp</dimen>
+    <dimen name="dp_0">0dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+    <dimen name="dp_120">120dp</dimen>
+    <dimen name="dp_140">140dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_150">150dp</dimen>
+    <dimen name="dp_17">17dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_190">190dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_20">17dp</dimen>
+    <dimen name="dp_240">210dp</dimen>
+    <dimen name="dp_25">25dp</dimen>
+    <dimen name="dp_250">250dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_44">44dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_580">580dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_62">62dp</dimen>
+    <dimen name="dp_64">64dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_80">80dp</dimen>
+    <dimen name="dp_9">9dp</dimen>
+    <dimen name="dp_95">95dp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="text_mid_size">20sp</dimen>
+    <dimen name="toolbar_img_size">30dp</dimen>
+    <dimen name="toolbar_margin_size">5dp</dimen>
+    <string name="Youdao_financial">有道金融</string>
+    <string name="about">关于有道理财</string>
+    <string name="activity_home">首页</string>
+    <string name="activity_invest">投资</string>
+    <string name="activity_mine">我的资产</string>
+    <string name="activity_more">更多</string>
+    <string name="all_name">全部理财</string>
+    <string name="app_name">framework</string>
+    <string name="banben_info">获取到版本信息：</string>
+    <string name="bank">风险保障金由有道银行监管</string>
+    <string name="bug">解决一些bug,优化网络请求</string>
+    <string name="cancle">取消</string>
+    <string name="conect">联系客服</string>
+    <string name="connect">联系客服</string>
+    <string name="dangqian_banben">当前版本:1.0</string>
+    <string name="day">天</string>
+    <string name="exitApp">再按一次退出APP</string>
+    <string name="exitLogin">退出登录</string>
+    <string name="expected_annual_interest_rate">预期年利率</string>
+    <string name="expected_annual_interest_rate_1">预期年利率：</string>
+    <string name="handPassword">手势密码</string>
+    <string name="handPasswordTwo">重置手势密码</string>
+    <string name="hi">Hi,welcome!</string>
+    <string name="high_yield">高额收益</string>
+    <string name="hot_name">热门理财</string>
+    <string name="iconUpdate">更改头像</string>
+    <string name="input">请输入手机号</string>
+    <string name="inputName">请输入用户名</string>
+    <string name="inputPassword">请输入密码</string>
+    <string name="invest_manager">投资管理(直观)</string>
+    <string name="join">立即加入</string>
+    <string name="lockup_period">锁定期</string>
+    <string name="login">用户登录</string>
+    <string name="loginBt">登  录</string>
+    <string name="main_mainActivity">/main/MainActivity</string>
+    <string name="manager">投资管理</string>
+    <string name="marquee">有道金融壕运当头，首投返现最高达188元</string>
+    <string name="miao">秒</string>
+    <string name="money_manager">资产管理</string>
+    <string name="my">我的资产</string>
+    <string name="name">用户名:</string>
+    <string name="new_banben">下载最新版本</string>
+    <string name="p2p">提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提现,系统将会告知24小时内进行转账,如果未收到,请联系客服...</string>
+    <string name="password">密码:</string>
+    <string name="percentage">%</string>
+    <string name="phone">010-56253825</string>
+    <string name="phone_number">手机号:</string>
+    <string name="principal_and_interest_security">本息保障</string>
+    <string name="product_money">产品金额</string>
+    <string name="recommed_name">推荐理财</string>
+    <string name="registBt">注  册</string>
+    <string name="register">用户注册</string>
+    <string name="sdk">充值我们将以集成支付宝sdk支付金额演示充值功能</string>
+    <string name="share">分享给好友</string>
+    <string name="study">学习提示:</string>
+    <string name="sure">确定</string>
+    <string name="surePassword">确认密码:</string>
+    <string name="tel">tel:</string>
+    <string name="the_daily_rate">每日计息</string>
+    <string name="user">用户反馈</string>
+    <string name="userInfo">用户信息</string>
+    <string name="wan">万</string>
+    <string name="yseOrNo">是否现在联系客服:010-56253825</string>
+    <style name="LoginStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:layout_marginTop">@dimen/dp_1</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:drawablePadding">@dimen/dp_8</item>
+        <item name="android:drawableRight">@drawable/right</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/text_mid_size</item>
+        <item name="android:paddingRight">@dimen/text_mid_size</item>
+        <item name="android:textColor">@color/colorgray</item>
+        <item name="android:textSize">@dimen/dp_15</item>
+    </style>
+    <style name="MoreTextStyle">
+        <item name="android:layout_height">@dimen/dp_64</item>
+        <item name="android:drawablePadding">@dimen/dp_5</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/text_mid_size</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">@dimen/text_mid_size</item>
+
+    </style>
+    <style name="bigTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="android:textColor">@color/colorSky</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="midTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_mid_size</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <declare-styleable name="ProgressView">
+            <attr format="color" name="textColor"/>
+            <attr format="integer" name="circleWith"/>
+            <attr format="color" name="waiColor"/>
+            <attr format="color" name="neiColor"/>
+        </declare-styleable>
+    <declare-styleable name="ToolBar">
+            <attr format="string" name="titleText"/>
+            <attr format="reference" name="rightImage"/>
+            <attr format="boolean" name="rightIsShow"/>
+            <attr format="reference" name="leftImg"/>
+            <attr format="boolean" name="leftIsShow"/>
+        </declare-styleable>
+</resources>

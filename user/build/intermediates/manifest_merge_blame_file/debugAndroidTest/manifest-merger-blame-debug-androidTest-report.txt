@@ -1,0 +1,93 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.fiannce.user.test" >
+4
+5    <uses-sdk
+5-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:5:5-74
+6        android:minSdkVersion="24"
+6-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:5:15-41
+7        android:targetSdkVersion="30" />
+7-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:5:42-71
+8
+9    <instrumentation
+9-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:11:5-15:71
+10        android:name="androidx.test.runner.AndroidJUnitRunner"
+10-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:11:22-76
+11        android:functionalTest="false"
+11-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:14:22-52
+12        android:handleProfiling="false"
+12-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:13:22-53
+13        android:label="Tests for com.fiannce.user.test"
+13-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:15:22-69
+14        android:targetPackage="com.fiannce.user.test" />
+14-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:12:22-67
+15
+16    <uses-permission android:name="android.permission.REORDER_TASKS" />
+16-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:24:5-72
+16-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:24:22-69
+17
+18    <application
+18-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:7:5-9:19
+19        android:allowBackup="true"
+19-->[com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\e4baf059e0ef62e62a5216ecbeffb7fa\jetified-FlycoTabLayout_Lib-2.0.2\AndroidManifest.xml:12:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.0.1] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\c0a39027978b83a483a047f5c31d0c4e\core-1.0.1\AndroidManifest.xml:22:18-86
+21        android:debuggable="true"
+21-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:7:18-43
+22        android:supportsRtl="true" >
+22-->[com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\e4baf059e0ef62e62a5216ecbeffb7fa\jetified-FlycoTabLayout_Lib-2.0.2\AndroidManifest.xml:13:9-35
+23        <uses-library android:name="android.test.runner" />
+23-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:8:9-60
+23-->D:\git\zyz\1809Fiannce\user\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4413748738136952908.xml:8:23-57
+24
+25        <activity android:name="com.fiannce.user.exitLogin.ExitLoginActivity" />
+25-->[__tested_artifact__::user] D:\git\zyz\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-81
+25-->[__tested_artifact__::user] D:\git\zyz\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-78
+26        <activity android:name="com.fiannce.user.login.LoginActivity" />
+26-->[__tested_artifact__::user] D:\git\zyz\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-73
+26-->[__tested_artifact__::user] D:\git\zyz\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-70
+27        <activity android:name="com.fiannce.user.register.RegisterActivity" />
+27-->[__tested_artifact__::user] D:\git\zyz\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:9-79
+27-->[__tested_artifact__::user] D:\git\zyz\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:19-76
+28        <activity
+28-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:27:9-33:20
+29            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+29-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:28:13-99
+30            android:theme="@style/InstrumentationActivityInvokerBootstrapActivityTheme" >
+30-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:29:13-88
+31            <intent-filter>
+31-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:30:13-32:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:31:17-69
+32-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:31:25-66
+33            </intent-filter>
+34        </activity>
+35        <activity
+35-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:34:9-40:20
+36            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+36-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:35:13-95
+37            android:theme="@style/InstrumentationActivityInvokerEmptyActivityTheme" >
+37-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:36:13-84
+38            <intent-filter>
+38-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:30:13-32:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:31:17-69
+39-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:31:25-66
+40            </intent-filter>
+41        </activity>
+42        <activity
+42-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:41:9-47:20
+43            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+43-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:42:13-103
+44            android:theme="@style/InstrumentationActivityInvokerFloatingActivityTheme" >
+44-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:43:13-87
+45            <intent-filter>
+45-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:30:13-32:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:31:17-69
+46-->[androidx.test:core:1.1.0] C:\Users\赵公子\.gradle\caches\transforms-2\files-2.1\b700bfc0f9180812ac817088e66c00b6\core-1.1.0\AndroidManifest.xml:31:25-66
+47            </intent-filter>
+48        </activity>
+49    </application>
+50
+51</manifest>

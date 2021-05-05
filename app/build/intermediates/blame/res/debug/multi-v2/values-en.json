@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\git\\zyz\\1809Fiannce\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\赵公子\\.gradle\\caches\\transforms-2\\files-2.1\\c13ceb0d7d5e646cbd6c706fb83d8d65\\jetified-BaseRecyclerViewAdapterHelper-2.9.22\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,105,162",
+                        "endColumns": "49,56,46",
+                        "endOffsets": "100,157,204"
+                    }
+                }
+            ]
+        }
+    ]
+}

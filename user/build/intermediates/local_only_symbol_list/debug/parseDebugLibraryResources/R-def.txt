@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+drawable btn_01
+drawable left
+drawable my_user_default
+id btn_login
+id btn_register
+id btn_user_logout
+id et_login_number
+id et_login_pwd
+id et_register_name
+id et_register_number
+id et_register_pwd
+id et_register_pwdagain
+id iv_user_icon
+id toolbar
+id tv_user_change
+layout activity_exit_login
+layout activity_login
+layout activity_register
+string app_name

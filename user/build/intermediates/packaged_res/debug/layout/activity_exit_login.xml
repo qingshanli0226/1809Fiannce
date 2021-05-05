@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.fiannce.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:id="@+id/toolbar"
+        app:titleText="@string/userInfo"
+        app:leftImg="@drawable/left"
+        app:leftIsShow="true"
+        ></com.fiannce.framework.view.ToolBar>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_240">
+
+        <ImageView
+            android:id="@+id/iv_user_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_user_default"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_30"
+            />
+
+            <TextView
+                android:id="@+id/tv_user_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iconUpdate"
+                android:textSize="@dimen/sp_20"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/iv_user_icon"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColor="@color/colorUpdate"
+                />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/colorgray"
+            ></View>
+
+
+        <Button
+            android:id="@+id/btn_user_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exitLogin"
+            android:textSize="@dimen/sp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorBlueTwo"
+            android:layout_marginTop="@dimen/dp_30"
+            />
+
+
+    </LinearLayout>
