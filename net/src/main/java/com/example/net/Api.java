@@ -1,6 +1,7 @@
 package com.example.net;
 
 import com.example.net.bean.HomeBean;
+import com.example.net.bean.LoginBean;
 import com.example.net.bean.ProductBean;
 import com.example.net.bean.RegisterBean;
 import com.example.net.bean.UpdataBean;
@@ -21,5 +22,10 @@ public interface Api {
     Observable<ProductBean>getProductData();
 @FormUrlEncoded
 @POST("register")
-    Observable<RegisterBean> getReisterData(@Field("username")String username,@Field("password")String passord);
+    Observable<RegisterBean> getReisterData(@Field("name")String name,@Field("password")String passord);
+@FormUrlEncoded
+@POST("login")
+    Observable<LoginBean>getLoginData(@Field("name")String name,@Field("password")String password);
+
 }
+

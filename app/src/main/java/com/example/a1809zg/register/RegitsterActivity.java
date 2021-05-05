@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a1809zg.MainActivity;
 import com.example.a1809zg.R;
+import com.example.a1809zg.login.ILoginView;
+import com.example.a1809zg.login.LoginActivity;
+import com.example.a1809zg.login.LoginPresenter;
 import com.example.frame.BaseActivity;
 import com.example.net.bean.RegisterBean;
 
@@ -30,7 +33,8 @@ public class RegitsterActivity extends BaseActivity<IUserPresenter>  implements 
         Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
          code = registerBean.getCode();
         if (code.equals("200")){
-            Intent intent = new Intent(RegitsterActivity.this, MainActivity.class);
+            Intent intent = new Intent(RegitsterActivity.this,MainActivity.class);
+            intent.putExtra("name",0);
             startActivity(intent);
             finish();
         }
@@ -61,13 +65,18 @@ public class RegitsterActivity extends BaseActivity<IUserPresenter>  implements 
         etRegisterPwdagain = findViewById(R.id.et_register_pwdagain);
         btnRegister = findViewById(R.id.btn_register);
 
-         name = etRegisterName.getText().toString();
-         pwd = etRegisterPwd.getText().toString();
-        String pwd2 = etRegisterPwdagain.getText().toString();
+
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                name = etRegisterName.getText().toString();
+                pwd = etRegisterPwd.getText().toString();
+                String pwd2 = etRegisterPwdagain.getText().toString();
+
+
+
                 if (name!=null&&pwd!=null&&pwd2!=null){
                     if (pwd2.equals(pwd)){
                         mPresenter.UserPresenterData(name,pwd);

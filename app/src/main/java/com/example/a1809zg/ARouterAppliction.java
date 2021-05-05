@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.net.NetMoudel;
 
 public class ARouterAppliction extends Application {
     @Override
@@ -13,5 +14,6 @@ public class ARouterAppliction extends Application {
         ARouter.openDebug();
         ARouter.openLog();
         ARouter.init(this);
+        NetMoudel.init(this);
     }
 }
