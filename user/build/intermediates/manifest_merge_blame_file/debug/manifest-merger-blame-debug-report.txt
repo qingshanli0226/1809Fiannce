@@ -11,13 +11,22 @@
 9-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml
 10
 11    <application>
-11-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:5:5-8:19
-12        <activity android:name="com.fiannce.user.register.RegisterActivity" />
-12-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:9-72
-12-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:19-60
-13        <activity android:name="com.fiannce.user.login.LoginActivity" />
-13-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:7:9-57
-13-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:7:19-54
-14    </application>
-15
-16</manifest>
+11-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:5:5-13:19
+12        <service
+12-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:9-9:47
+13            android:name="com.fiannce.user.autologin.AutoLoginService"
+13-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:7:13-55
+14            android:enabled="true"
+14-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:8:13-35
+15            android:exported="true" />
+15-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:9:13-36
+16
+17        <activity android:name="com.fiannce.user.register.RegisterActivity" />
+17-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:11:9-63
+17-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:11:19-60
+18        <activity android:name="com.fiannce.user.login.LoginActivity" />
+18-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:12:9-57
+18-->D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:12:19-54
+19    </application>
+20
+21</manifest>

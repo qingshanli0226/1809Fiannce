@@ -9,6 +9,11 @@
         android:targetSdkVersion="30" />
 
     <application>
+        <service
+            android:name="com.fiannce.user.autologin.AutoLoginService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity android:name="com.fiannce.user.register.RegisterActivity" />
         <activity android:name="com.fiannce.user.login.LoginActivity" />
     </application>

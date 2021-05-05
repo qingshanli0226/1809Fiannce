@@ -1050,6 +1050,8 @@ dimen loading_layout_height
 dimen loading_layout_width
 dimen main_linearLayout_layout_height
 dimen main_view_layout_height
+dimen manage_TextView_layout_marginTop
+dimen manage_TextView_textSize
 dimen more_ImageView_one_layout_marginLeft
 dimen more_ImageView_two_layout_marginLeft
 dimen more_TextView_one_layout_marginLeft

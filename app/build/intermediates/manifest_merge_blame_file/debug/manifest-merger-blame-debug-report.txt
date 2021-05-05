@@ -72,55 +72,65 @@
 39        <activity android:name="com.fiannce.pay.PayActivity" />
 39-->[:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-64
 39-->[:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-61
-40        <activity android:name="com.fiannce.user.register.RegisterActivity" />
-40-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-79
-40-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-76
-41        <activity android:name="com.fiannce.user.login.LoginActivity" />
-41-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-73
-41-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-70
-42        <activity
-42-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:10:9-15:75
-43            android:name="com.blankj.utilcode.util.Utils$TransActivity"
-43-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:11:13-72
-44            android:configChanges="orientation|keyboardHidden|screenSize"
-44-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:12:13-74
-45            android:multiprocess="true"
-45-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:13:13-40
-46            android:theme="@style/ActivityTranslucent"
-46-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:14:13-55
-47            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
-47-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:15:13-72
-48
-49        <provider
-49-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:17:9-26:20
-50            android:name="com.blankj.utilcode.util.Utils$FileProvider4UtilCode"
-50-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:18:13-80
-51            android:authorities="com.Fiannce.myapplication.utilcode.provider"
-51-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:19:13-69
-52            android:exported="false"
-52-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:20:13-37
-53            android:grantUriPermissions="true"
-53-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:21:13-47
-54            android:multiprocess="true" >
-54-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:22:13-40
-55            <meta-data
-55-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:23:13-25:68
-56                android:name="android.support.FILE_PROVIDER_PATHS"
-56-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:24:17-67
-57                android:resource="@xml/util_code_provider_paths" />
-57-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:25:17-65
-58        </provider>
-59
-60        <service android:name="com.blankj.utilcode.util.MessengerUtils$ServerService" >
-60-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:9-32:19
-60-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:18-86
-61            <intent-filter>
-61-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:29:13-31:29
-62                <action android:name="com.Fiannce.myapplication.messenger" />
-62-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:17-69
-62-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:25-66
-63            </intent-filter>
-64        </service>
-65    </application>
-66
-67</manifest>
+40
+41        <service
+41-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-15:39
+42            android:name="com.fiannce.user.autologin.AutoLoginService"
+42-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-71
+43            android:enabled="true"
+43-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-35
+44            android:exported="true" />
+44-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-36
+45
+46        <activity android:name="com.fiannce.user.register.RegisterActivity" />
+46-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:9-79
+46-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:19-76
+47        <activity android:name="com.fiannce.user.login.LoginActivity" />
+47-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-73
+47-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:19-70
+48        <activity
+48-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:10:9-15:75
+49            android:name="com.blankj.utilcode.util.Utils$TransActivity"
+49-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:11:13-72
+50            android:configChanges="orientation|keyboardHidden|screenSize"
+50-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:12:13-74
+51            android:multiprocess="true"
+51-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:13:13-40
+52            android:theme="@style/ActivityTranslucent"
+52-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:14:13-55
+53            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+53-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:15:13-72
+54
+55        <provider
+55-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:17:9-26:20
+56            android:name="com.blankj.utilcode.util.Utils$FileProvider4UtilCode"
+56-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:18:13-80
+57            android:authorities="com.Fiannce.myapplication.utilcode.provider"
+57-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:19:13-69
+58            android:exported="false"
+58-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:20:13-37
+59            android:grantUriPermissions="true"
+59-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:21:13-47
+60            android:multiprocess="true" >
+60-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:22:13-40
+61            <meta-data
+61-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:23:13-25:68
+62                android:name="android.support.FILE_PROVIDER_PATHS"
+62-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:24:17-67
+63                android:resource="@xml/util_code_provider_paths" />
+63-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:25:17-65
+64        </provider>
+65
+66        <service android:name="com.blankj.utilcode.util.MessengerUtils$ServerService" >
+66-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:9-32:19
+66-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:18-86
+67            <intent-filter>
+67-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:29:13-31:29
+68                <action android:name="com.Fiannce.myapplication.messenger" />
+68-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:17-69
+68-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:25-66
+69            </intent-filter>
+70        </service>
+71    </application>
+72
+73</manifest>

@@ -32,6 +32,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         e3 = (EditText) findViewById(R.id.e3);
         e4 = (EditText) findViewById(R.id.e4);
         registerButton = (Button) findViewById(R.id.register_button);
+        toobarFake.setToolbarListener(this);
     }
 
     @Override
@@ -67,7 +68,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
     @Override
     public void onLeftClick() {
-
+        finish();
     }
 
     @Override

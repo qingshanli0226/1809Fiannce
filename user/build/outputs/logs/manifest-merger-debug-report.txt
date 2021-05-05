@@ -1,36 +1,44 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-10:12
-INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-10:12
-INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-10:12
-INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-10:12
-INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-10:12
-INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-10:12
-INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-10:12
+ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-15:12
 	package
 		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:3:5-31
 		INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml
 		INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-10:12
+		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-15:12
 		INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-10:12
+		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:1-15:12
 		INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:5:5-8:19
+ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:5:5-13:19
+service#com.fiannce.user.autologin.AutoLoginService
+ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:9-9:47
+	android:enabled
+		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:8:13-35
+	android:exported
+		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:9:13-36
+	android:name
+		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:7:13-55
 activity#com.fiannce.user.register.RegisterActivity
-ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:9-72
+ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:11:9-63
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:6:19-60
+		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:11:19-60
 activity#com.fiannce.user.login.LoginActivity
-ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:7:9-57
+ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:12:9-57
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:7:19-54
+		ADDED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml:12:19-54
 uses-sdk
 INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\zgsix\1809Fiannce\user\src\main\AndroidManifest.xml

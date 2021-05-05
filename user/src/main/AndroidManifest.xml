@@ -3,7 +3,12 @@
     package="com.fiannce.user">
 
     <application>
-        <activity android:name=".register.RegisterActivity"></activity>
+        <service
+            android:name=".autologin.AutoLoginService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".register.RegisterActivity" />
         <activity android:name=".login.LoginActivity" />
     </application>
 

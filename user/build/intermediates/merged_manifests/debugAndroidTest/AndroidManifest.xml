@@ -28,6 +28,11 @@
         android:supportsRtl="true" >
         <uses-library android:name="android.test.runner" />
 
+        <service
+            android:name="com.fiannce.user.autologin.AutoLoginService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity android:name="com.fiannce.user.register.RegisterActivity" />
         <activity android:name="com.fiannce.user.login.LoginActivity" />
         <activity

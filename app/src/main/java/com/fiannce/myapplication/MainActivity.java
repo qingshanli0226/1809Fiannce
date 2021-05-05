@@ -1,13 +1,18 @@
 package com.fiannce.myapplication;
 
 
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.fiannce.framework.SpUtiles;
 import com.fiannce.myapplication.fragment.more.MoreFragment;
 import com.fiannce.myapplication.fragment.property.PropertyFragment;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -89,6 +94,22 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction2.commit();
                         break;
                     case R.id.property_radio:
+                        SharedPreferences sharedPreferences = getSharedPreferences("login.txt", MODE_PRIVATE);
+                        boolean boo = sharedPreferences.getBoolean("boo", false);
+                        if (boo){
+
+                        }else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setMessage("您还没有登录");
+                            builder.setTitle("提示");
+                            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    ARouter.getInstance().build("/login/LoginActivity").withInt("",1).navigation();
+                                }
+                            });
+                            builder.show();
+                        }
                         FragmentManager supportFragmentManager3 = getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction3 = supportFragmentManager3.beginTransaction();
                         fragmentTransaction3.hide(homeFragment);

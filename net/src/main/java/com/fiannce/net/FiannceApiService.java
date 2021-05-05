@@ -1,6 +1,7 @@
 package com.fiannce.net;
 
 import com.fiannce.net.mode.AllMoneyBean;
+import com.fiannce.net.mode.AutoLoginBean;
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.net.mode.LoginBean;
 import com.fiannce.net.mode.RegisterBean;
@@ -26,7 +27,9 @@ public interface FiannceApiService {
     Observable<RegisterBean> getRegister(@Query("name")String name,@Query("password") String password);
 
     @POST("login")
-    Observable<LoginBean> getLogin();
+    Observable<LoginBean> getLogin(@Query("name")String name,@Query("password") String password);
 
 
+    @POST("autoLogin")
+    Observable<AutoLoginBean> getAutologin();
 }

@@ -19,9 +19,9 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
         attachView(loginView);
     }
 
-    public void getLogin(){
+    public void getLogin(String name,String password){
         RetrofitCreator.getFiannceApiService()
-                .getLogin()
+                .getLogin(name,password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {

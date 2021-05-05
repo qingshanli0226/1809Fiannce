@@ -1,6 +1,7 @@
 package com.fiannce.myapplication.welcome;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import com.fiannce.framework.view.LoadingPage;
 import com.fiannce.myapplication.R;
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.net.mode.VersionBean;
+import com.fiannce.user.autologin.AutoLoginService;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
@@ -33,7 +35,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void initView() {
 
         handler.sendEmptyMessageDelayed(DELAY_INDEX, DELAY);
-
+        Intent intent = new Intent(this,AutoLoginService.class);
+        startService(intent);
     }
 
     @Override
