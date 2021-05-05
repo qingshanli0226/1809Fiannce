@@ -5,22 +5,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.LogUtils;
 import com.finance.framework.BaseActivity;
-import com.finance.framework.BasePresenter;
+import com.finance.framework.manager.CacheManager;
 import com.finance.net.bean.LoginBean;
+import com.finance.net.bean.UserBean;
 import com.finance.user.R;
 import com.finance.user.login.mvp.ILoginView;
 import com.finance.user.login.mvp.LoginPresenter;
 
-//@Route(path = "/UserLoginActivity/MainActivity")
+import org.greenrobot.eventbus.EventBus;
+
 public class UserLoginActivity extends BaseActivity<LoginPresenter> implements ILoginView {
     private android.widget.EditText loginUserNameEt;
     private android.widget.EditText loginPwdEt;
     private android.widget.Button loginBt;
-
+    private UserBean userBean = new UserBean();
     @Override
     protected int getLayoutId() {
         return R.layout.activity_user_login;
@@ -52,6 +53,11 @@ public class UserLoginActivity extends BaseActivity<LoginPresenter> implements I
     public void onLoginData(LoginBean loginBean) {
         LogUtils.json(loginBean);
         if (loginBean.getCode().equals("200")){
+            userBean.setUserName(loginUserNameEt.getText().toString().trim());
+            userBean.setPassWord(loginPwdEt.getText().toString().trim());
+            userBean.setLogin(true);
+
+            CacheManager.getInstance().setUserBean(userBean);
             ARouter.getInstance().build("/main/MainActivity").withInt("",1).navigation();
         }else {
             Toast.makeText(this, loginBean.getMessage(), Toast.LENGTH_SHORT).show();
@@ -95,6 +101,5 @@ public class UserLoginActivity extends BaseActivity<LoginPresenter> implements I
     public void onRightTvClick() {
 
     }
-
 
 }

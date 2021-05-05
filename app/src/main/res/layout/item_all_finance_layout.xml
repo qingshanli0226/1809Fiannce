@@ -13,8 +13,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/all_fiannce_name"
             android:layout_margin="@dimen/button_margin"
+            android:textColor="@color/black"
             android:layout_gravity="center_vertical"
-            android:textSize="@dimen/item_mid_size"></TextView>
+            android:textSize="@dimen/text_mid_size"></TextView>
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/view_height"

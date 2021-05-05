@@ -9,9 +9,12 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.LogUtils;
 import com.finance.framework.BaseActivity;
 import com.finance.net.bean.RegisterBean;
+import com.finance.net.bean.UserBean;
 import com.finance.user.R;
 import com.finance.user.register.mvp.IRegisterView;
 import com.finance.user.register.mvp.RegisterPresenter;
+
+import org.greenrobot.eventbus.EventBus;
 
 
 public class UserRegisterActivity extends BaseActivity<RegisterPresenter> implements IRegisterView {
@@ -36,8 +39,6 @@ public class UserRegisterActivity extends BaseActivity<RegisterPresenter> implem
     @Override
     protected void initData() {
         user = getSharedPreferences("user", MODE_PRIVATE);
-
-
         registerBt.setOnClickListener(v->{
             String userEt = UserNameEt.getText().toString().trim();
             String pwdEt = PwdEt.getText().toString().trim();
@@ -47,8 +48,6 @@ public class UserRegisterActivity extends BaseActivity<RegisterPresenter> implem
                 httpPresenter.getRegisterData(userEt,pwdEt);
             }
         });
-
-
     }
 
     @Override
@@ -66,9 +65,8 @@ public class UserRegisterActivity extends BaseActivity<RegisterPresenter> implem
         LogUtils.json(registerBean);
         if (registerBean.getCode().equals("200")){
             SharedPreferences.Editor edit = user.edit();
-            edit.putBoolean("isLogin",false);
-            edit.putString("user",""+UserNameEt.getText().toString().trim());
-            edit.putString("pwd",""+PwdEt.getText().toString().trim());
+            edit.putString("user",UserNameEt.getText().toString().trim());
+            edit.putBoolean("islogin",true);
             edit.commit();
             ARouter.getInstance().build("/main/MainActivity").withInt("",1).navigation();
         }else {

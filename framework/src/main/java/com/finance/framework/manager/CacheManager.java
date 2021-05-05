@@ -1,10 +1,12 @@
 package com.finance.framework.manager;
 
 import com.finance.net.bean.HomeBean;
+import com.finance.net.bean.UserBean;
 
 public class CacheManager {
     private static CacheManager cacheManager;
     private HomeBean homeBean;
+    private UserBean userBean;
 
     public CacheManager() {
     }
@@ -22,5 +24,13 @@ public class CacheManager {
 
     public void setHomeBean(HomeBean homeBean) {
         this.homeBean = homeBean;
+    }
+
+    public UserBean getUserBean() {
+        return userBean;
+    }
+
+    public void setUserBean(UserBean userBean) {
+        this.userBean = userBean;
     }
 }

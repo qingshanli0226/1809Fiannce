@@ -83,7 +83,7 @@ public class ToolBar extends RelativeLayout {
         this.iToolbarListener = iToolbarListener;
     }
 
-    public static interface IToolbarListener {
+    public interface IToolbarListener {
         void onLeftClick();
         void onRightImgClick();
         void onRightTvClick();

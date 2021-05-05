@@ -70,7 +70,7 @@ public class ProgressView extends View {
         }
     }
 
-    private Handler handler = new Handler(){
+    private final Handler handler = new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);

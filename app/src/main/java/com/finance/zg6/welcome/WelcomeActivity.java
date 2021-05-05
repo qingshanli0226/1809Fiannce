@@ -90,7 +90,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
-    private Handler handler = new Handler(){
+    private final Handler handler = new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);

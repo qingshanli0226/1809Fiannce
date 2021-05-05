@@ -6,7 +6,7 @@ import java.util.List;
 import io.reactivex.disposables.Disposable;
 
 public class BasePresenter<V> {
-    private List<Disposable> disposablesList = new ArrayList<>();
+    private final List<Disposable> disposablesList = new ArrayList<>();
 
     public synchronized void add(Disposable disposable){
         disposablesList.add(disposable);

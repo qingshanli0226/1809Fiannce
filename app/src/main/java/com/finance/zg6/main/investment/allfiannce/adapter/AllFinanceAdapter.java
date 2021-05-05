@@ -19,7 +19,7 @@ public class AllFinanceAdapter extends BaseQuickAdapter<ProductBean.ResultBean, 
 
     private float rawX;
     private int scrollDiffx;
-    private int VIEW_WIDTH = 200;
+    private final int VIEW_WIDTH = 200;
     private boolean isOpen = true;
     public AllFinanceAdapter(@Nullable List<ProductBean.ResultBean> data) {
         super(R.layout.item_all_finance_layout, data);
