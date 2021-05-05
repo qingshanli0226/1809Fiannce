@@ -1,11 +1,13 @@
 package com.example.myfinancial.mymoney;
 
+import android.content.Intent;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.framework.BaseFragment;
+import com.example.framework.mannager.FiannceArote;
 import com.example.framework.mannager.FiannceUserMannager;
 import com.example.myfinancial.R;
 
@@ -23,7 +25,6 @@ public class MyMoneyFragment extends BaseFragment {
     public void initView() {
         headPortrait = (ImageView) findViewById(R.id.headPortrait);
         loginName = (TextView) findViewById(R.id.loginName);
-
         //注册登陆状态
         FiannceUserMannager.getInstance().register(this);
     }
@@ -71,7 +72,12 @@ public class MyMoneyFragment extends BaseFragment {
 
     @Override
     public void onRightImgClick() {
-
+       if (FiannceUserMannager.getInstance().isLogin()){
+           startActivity(new Intent(getActivity(),UserMessageActivity.class));
+       }else {
+           Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+           FiannceArote.getInstance().getUserInterface().openLoginActivity(getActivity(),null);
+       }
     }
 
     @Override

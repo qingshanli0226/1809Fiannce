@@ -2,20 +2,32 @@ package com.example.myfinancial.welcome;
 
 import androidx.annotation.NonNull;
 
+import android.app.AlertDialog;
+import android.content.ComponentName;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.graphics.PixelFormat;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
+import android.service.autofill.AutofillService;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.framework.AppVerSion;
 import com.example.framework.BaseActivity;
 import com.example.framework.CacheLoadMore;
 import com.example.myfinancial.R;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.VersionBean;
+import com.example.user.service.AutoLoginService;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelComeView {
     private android.widget.TextView countdowntv;
@@ -27,6 +39,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean getv = false;
     private boolean drawtime = false;
     private int drawtimetv = 3;
+    private int newAppVerSionCode;
+    private int currentAppVerSionCode;
+    private AutoLoginService.MyBinder myBinder ;
 
     @Override
     public int getbandLayout() {
@@ -42,6 +57,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void initData() {
         mPresenter.getVersion();
         mPresenter.getHome();
+
+
+
     }
 
     @Override
@@ -65,6 +83,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void initVersion(VersionBean versionBean) {
         Log.d("WelcomeActivity", versionBean.toString());
+        newAppVerSionCode = versionBean.getResult().getVersionCode();//最新版本号
         getv = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
     }
@@ -108,12 +127,55 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 case ALL_TASK_FINISH:
                     Toast.makeText(WelcomeActivity.this, "全部运行完成", Toast.LENGTH_SHORT).show();
                     Log.d("WelcomeActivity", "全部运行完成");
-                    ARouter.getInstance().build("/main/MainActivity").navigation();
-                    finish();
+                    currentAppVerSionCode = AppVerSion.getVersionCode(WelcomeActivity.this);//当前版本号
+                    Log.d("WelcomeActivity", "currentAppVerSionCode:" + currentAppVerSionCode);
+                    Log.d("WelcomeActivity", "newAppVerSionCode:" + newAppVerSionCode);
+                    if (currentAppVerSionCode < newAppVerSionCode) {//需要更新
+                        //对话框
+                        AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+                        builder.setTitle("检测到新版本");
+                        builder.setMessage("检测到新版本  是否下载安装");
+                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ARouter.getInstance().build("/main/MainActivity").navigation();
+                                finish();
+                            }
+                        });
+                        builder.setPositiveButton("下载", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(WelcomeActivity.this, "正在下载", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(WelcomeActivity.this, AutoLoginService.class);
+                                ServiceConnection serviceConnection = new ServiceConnection() {
+                                    @Override
+                                    public void onServiceConnected(ComponentName name, IBinder service) {
+                                        myBinder = (AutoLoginService.MyBinder) service;
+                                    }
+
+                                    @Override
+                                    public void onServiceDisconnected(ComponentName name) {
+
+                                    }
+                                };
+                                //绑定服务
+                                bindService(intent,serviceConnection,BIND_AUTO_CREATE);
+
+                                myBinder.myMethod();
+                            }
+                        });
+                        AlertDialog alertDialog = builder.create();
+                        alertDialog.show();
+                    } else {//不需要更新
+                        ARouter.getInstance().build("/main/MainActivity").navigation();
+                        finish();
+                    }
                     break;
             }
         }
     };
+
 
     //加载页面期间不可返回
     @Override
@@ -127,7 +189,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         if (handler != null) {
             handler.removeCallbacksAndMessages(null);
         }
-        if (mPresenter!=null){
+        if (mPresenter != null) {
             mPresenter.destroy();
         }
     }

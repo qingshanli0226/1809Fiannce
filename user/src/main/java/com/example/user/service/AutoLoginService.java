@@ -3,6 +3,7 @@ package com.example.user.service;
 import android.app.Service;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
@@ -38,11 +39,11 @@ public class AutoLoginService extends Service {
 
             @Override
             public void initAuto(AutoBean autoBean) {
-                if (autoBean.getCode().equals("200")){
-                    SpUtil.setString(AutoLoginService.this,autoBean.getResult().getToken());
+                if (autoBean.getCode().equals("200")) {
+                    SpUtil.setString(AutoLoginService.this, autoBean.getResult().getToken());
                     Log.d("AutoLoginService", "自动登陆成功");
                     FiannceUserMannager.getInstance().setIsLwogin(true);
-                }else {
+                } else {
                     Log.d("AutoLoginService", "自动登陆失败");
                     FiannceUserMannager.getInstance().setIsLwogin(false);
                 }
@@ -69,10 +70,20 @@ public class AutoLoginService extends Service {
     }
 
 
+    //代理人的类
+   public class MyBinder extends Binder {
+        public void myMethod() {
+            startXz("");
+        }
+    }
 
     @Override
     public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+        return new MyBinder();
+    }
+
+    //下载
+    private void startXz(String path) {
+        Toast.makeText(this, "下载", Toast.LENGTH_SHORT).show();
     }
 }

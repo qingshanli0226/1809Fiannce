@@ -3,12 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:gravity="center"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".LogActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="登陆界面"
-        android:layout_height="wrap_content"></TextView>
+    <com.example.framework.myview.ToolBar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftImage="@drawable/left"
+        app:leftIsShow="true"
+        app:titleText="登陆"></com.example.framework.myview.ToolBar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="wrap_content"
+            android:text="用户名："></TextView>
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入用户名"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="wrap_content"
+            android:text="密码："></TextView>
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"></EditText>
+    </LinearLayout>
+
+
+    <Button
+        android:layout_gravity="center"
+        android:text="登陆"
+        android:id="@+id/login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"></Button>
+
+
+
 </LinearLayout>
