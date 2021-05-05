@@ -1,12 +1,10 @@
-package com.example.user.login;
+package com.example.user.autologin;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.example.framework.BasePresenter;
+import com.example.model.AutoLoginBean;
 import com.example.model.LoginBean;
 import com.example.net.RetrofitCretor;
-import com.example.user.register.IPersonRegisterView;
-
-import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -16,14 +14,15 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class PersonLoginPresenter extends BasePresenter<IPersonLoginView> {
-    public PersonLoginPresenter(IPersonLoginView iPersonLoginView){
-        attachView(iPersonLoginView);
+public class PersonAutoLoginPresenter extends BasePresenter<IPersonLoginAutoView> {
+
+    public PersonAutoLoginPresenter(IPersonLoginAutoView iPersonLoginAutoView) {
+        attachView(iPersonLoginAutoView);
     }
 
-    public void postLogin(String name,String pwd){
+    public void postAutoLogin(String token){
         RetrofitCretor.getFiannceApiService()
-                .postLogin(name, pwd)
+                .postAutoLogin(token)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -40,17 +39,17 @@ public class PersonLoginPresenter extends BasePresenter<IPersonLoginView> {
                         }
                     }
                 })
-                .subscribe(new Observer<LoginBean>() {
+                .subscribe(new Observer<AutoLoginBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(@NonNull LoginBean loginBean) {
+                    public void onNext(@NonNull AutoLoginBean autoLoginBean) {
                         if (IView!=null){
-                            IView.onLogin(loginBean);
-                            LogUtils.json(loginBean);
+                            IView.autoLogin(autoLoginBean);
+                            LogUtils.json(autoLoginBean);
                         }
                     }
                     @Override
@@ -67,6 +66,4 @@ public class PersonLoginPresenter extends BasePresenter<IPersonLoginView> {
                 });
     }
 
-
 }
-

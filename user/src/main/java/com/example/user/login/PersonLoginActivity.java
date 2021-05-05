@@ -95,8 +95,8 @@ public class PersonLoginActivity extends BaseActivity<PersonLoginPresenter> impl
             edit.putString("username",name);
             edit.putString("token",token);
             edit.commit();
+            finish();
 
-            new Intent(PersonLoginActivity.this,)
 
 
 
@@ -116,5 +116,11 @@ public class PersonLoginActivity extends BaseActivity<PersonLoginPresenter> impl
     @Override
     public void showError(String error) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        destroy();
     }
 }

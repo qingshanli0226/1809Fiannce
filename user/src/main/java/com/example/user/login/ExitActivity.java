@@ -12,6 +12,8 @@ import com.example.framework.BaseActivity;
 import com.example.framework.view.ToolBar;
 import com.example.user.R;
 
+import org.greenrobot.eventbus.EventBus;
+
 @Route(path = Demo.AROUTE_PATH_EXIT_LOGIN)
 public class ExitActivity extends BaseActivity {
 
@@ -41,7 +43,15 @@ public class ExitActivity extends BaseActivity {
         exitLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            }
+        });
+
+        exitLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
+                EventBus.getDefault().postSticky("exit_login");
+                EventBus.getDefault().postSticky("change_message");
             }
         });
 

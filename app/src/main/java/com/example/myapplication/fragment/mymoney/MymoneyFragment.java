@@ -1,5 +1,6 @@
 package com.example.myapplication.fragment.mymoney;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -7,7 +8,11 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseFragment;
 import com.example.framework.view.ToolBar;
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import static com.example.demo.Demo.AROUTE_PATH_EXIT_LOGIN;
 
@@ -19,6 +24,8 @@ public class MymoneyFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+
+        EventBus.getDefault().register(this);
 
         SharedPreferences login = getActivity().getSharedPreferences("login", 0);
         String name = login.getString("username", "");
@@ -42,6 +49,17 @@ public class MymoneyFragment extends BaseFragment {
             }
         });
 
+    }
+
+    @Subscribe(sticky = true)
+    public void Events(String event){
+        if (event.equals("change_message")){
+            userName.setText("");
+            SharedPreferences login = getActivity().getSharedPreferences("login", 0);
+            SharedPreferences.Editor edit = login.edit();
+            edit.putBoolean("is_login",false);
+            edit.commit();
+        }
     }
 
     @Override

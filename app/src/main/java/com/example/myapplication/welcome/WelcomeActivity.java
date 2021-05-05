@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.ProgressBar;
@@ -20,6 +21,7 @@ import com.example.model.VersionBean;
 import com.example.myapplication.R;
 import com.example.myapplication.apk.APKVersionCodeUtils;
 import com.example.demo.Demo;
+import com.example.user.autologin.AutoLoginService;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
@@ -54,6 +56,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         contenNum = (TextView) findViewById(R.id.conten_num);
 //        homedata = (TextView) findViewById(R.id.homedata);
         contenNum.setText(session+"秒");
+        Intent intent = new Intent(this, AutoLoginService.class);
+        startService(intent);
+
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.net;
 
+import com.example.model.AutoLoginBean;
 import com.example.model.HomeBean;
 import com.example.model.LoginBean;
 import com.example.model.ProductBean;
@@ -27,5 +28,9 @@ public interface FiannceApiService {
     @FormUrlEncoded
     @POST("login")
     Observable<LoginBean> postLogin(@Field("name") String name, @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("autoLogin")
+    Observable<AutoLoginBean> postAutoLogin(@Field("token") String token);
 
 }

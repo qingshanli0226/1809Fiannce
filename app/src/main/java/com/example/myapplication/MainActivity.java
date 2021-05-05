@@ -135,6 +135,14 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    @Subscribe(sticky = true)
+    public void Events(String event){
+        if (event.equals("exit_login")){
+            Intent intent = new Intent(MainActivity.this,MainActivity.class);
+            startActivity(intent);
+        }
+    }
+
     @Override
     protected void initPresenter() {
 

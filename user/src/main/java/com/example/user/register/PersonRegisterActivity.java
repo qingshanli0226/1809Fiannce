@@ -108,7 +108,6 @@ public class PersonRegisterActivity extends BaseActivity<PersonRegisterPresenter
             Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
             EventBus.getDefault().postSticky("home_data");
 
-            finish();
         }
 
     }
