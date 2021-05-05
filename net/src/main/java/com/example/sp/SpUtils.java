@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 
 public class SpUtils {
 
-
     public static String getString(Context context){
         SharedPreferences login = context.getSharedPreferences("login", 0);
         String token = login.getString("token", "");

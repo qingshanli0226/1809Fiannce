@@ -3,8 +3,10 @@ package com.example.user.autologin;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.widget.Toast;
 
 import com.blankj.utilcode.util.LogUtils;
+import com.example.framework.view.ToolBar;
 import com.example.model.AutoLoginBean;
 import com.example.sp.SpUtils;
 
@@ -27,7 +29,10 @@ public class AutoLoginService extends Service {
                     LogUtils.json(autoLoginBean);
 //                AutoLoginBean.ResultBean result = autoLoginBean.getResult();
 //                String token = result.getToken();
-                    SpUtils.putString(AutoLoginService.this,autoLoginBean.getResult().getToken());
+                    if (autoLoginBean.getCode().equals("200")){
+                        Toast.makeText(AutoLoginService.this, "自动登录成功", Toast.LENGTH_SHORT).show();
+                        SpUtils.putString(AutoLoginService.this,autoLoginBean.getResult().getToken());
+                    }
                 }
 
                 @Override
