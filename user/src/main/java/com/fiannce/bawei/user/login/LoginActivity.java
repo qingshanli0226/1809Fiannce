@@ -1,9 +1,10 @@
-package com.fiannce.bawei.user;
+package com.fiannce.bawei.user.login;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.fiannce.bawei.framework.BaseActivity;
+import com.fiannce.bawei.user.R;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;

@@ -3,8 +3,8 @@
     package="com.fiannce.bawei.user">
 
     <application>
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".regiseter.RegisterActivity"></activity>
+        <activity android:name=".login.LoginActivity" />
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -63,6 +64,23 @@ public class ToolBar extends RelativeLayout {
         titleTv.setText(titleText);
         titleTv.setTextColor(titletextColor);
         mRelayiveLayou.setBackgroundColor(mbackgroundColor);
+        leftImg.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (iToolbarListener != null){
+                    iToolbarListener.onLeftClick();
+                }
+            }
+        });
+        rightImg.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (iToolbarListener != null){
+                    iToolbarListener.onRightImgClick();
+                }
+            }
+        });
+
         if (rightIsShow && rightImgId!=0) {
             rightImg.setImageResource(rightImgId);
         }

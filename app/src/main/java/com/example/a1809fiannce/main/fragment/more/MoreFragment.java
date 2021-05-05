@@ -4,16 +4,14 @@ package com.example.a1809fiannce.main.fragment.more;
 import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.main.fragment.more.adapter.MyFragmentAdapter;
 import com.fiannce.bawei.framework.BaseFragmnet;
-import com.fiannce.bawei.user.RegisterActivity;
+import com.fiannce.bawei.user.regiseter.RegisterActivity;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

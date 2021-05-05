@@ -1,4 +1,4 @@
-package com.fiannce.bawei.user;
+package com.fiannce.bawei.user.regiseter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.framework.view.ToolBar;
+import com.fiannce.bawei.user.R;
 
 public class RegisterActivity extends BaseActivity implements ToolBar.IToolbarListener {
 
@@ -41,9 +42,16 @@ public class RegisterActivity extends BaseActivity implements ToolBar.IToolbarLi
         registerToolbar = (ToolBar) findViewById(R.id.register_toolbar);
         registerToolbar.setToolbarListener(this);
     }
+
+
+
+
+
+
+
     @Override
     public void onLeftClick() {
-        fileList();
+        finish();
     }
 
     @Override
@@ -55,4 +63,5 @@ public class RegisterActivity extends BaseActivity implements ToolBar.IToolbarLi
     public void onRightTvClick() {
 
     }
+
 }
