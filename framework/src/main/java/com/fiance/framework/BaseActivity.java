@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.fiance.framework.MyView.LoadingPage;
 
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
@@ -25,7 +24,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         initPresenter();
         initData();
     }
-
     protected LoadingPage loadingPage;
     protected abstract int getLayoutId();
     protected abstract void initPresenter();
@@ -42,5 +40,4 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         super.onDestroy();
         destroy();
     }
-
 }

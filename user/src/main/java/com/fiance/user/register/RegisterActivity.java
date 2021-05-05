@@ -1,7 +1,9 @@
 package com.fiance.user.register;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import com.fiance.framework.BaseActivity;
 import com.fiance.framework.MyView.ToolBar;
 import com.fiance.net.mode.RegisterBean;
 import com.fiance.user.R;
+import com.fiance.user.login.LoginActivity;
 
 @Route(path = "/user/RegisterActivity")
 public class RegisterActivity extends BaseActivity<RegisterPresenter> implements RegisterView {
@@ -46,7 +49,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
             public void onClick(View v) {
                 String userEt = username.getText().toString().trim();
                 String pwdEt = pwd.getText().toString().trim();
-                if (userEt==null || pwdEt==null){
+                if (TextUtils.isEmpty(userEt) && TextUtils.isEmpty(pwdEt)){
                     Toast.makeText(RegisterActivity.this, "填写信息不能为空", Toast.LENGTH_SHORT).show();
                 }else{
                     httpPresenter.getRegisterData(userEt,pwdEt);
@@ -75,6 +78,8 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
             editor.putString(""+pwd.getText().toString().trim(),"123");
             editor.commit();
             Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
         }else{
             Toast.makeText(this, registerBean.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -89,7 +94,6 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     public void hideLoading() {
 
     }
-
     @Override
     public void showError(String error) {
 

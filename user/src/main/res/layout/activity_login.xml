@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login.LoginActivity">
+
+    <com.fiance.framework.MyView.ToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:rightIsShow="true"
+        app:leftIsShow="false"
+        app:titleText="登录"
+        android:layout_height="@dimen/sixty">
+    </com.fiance.framework.MyView.ToolBar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sixty"
+            android:src="@drawable/product_edit_bg"
+            android:scaleType="fitXY"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名:"
+            android:layout_marginTop="@dimen/twenty"
+            android:textSize="@dimen/twenty"></TextView>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/onehundred"
+            android:background="@null"
+            android:hint="请输入用户名"
+            android:id="@+id/username"
+            android:layout_marginTop="@dimen/twenty"></EditText>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sixty"
+            android:src="@drawable/product_edit_bg"
+            android:scaleType="fitXY"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码:"
+            android:layout_marginTop="@dimen/twenty"
+            android:textSize="@dimen/twenty"></TextView>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/onehundred"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:id="@+id/pwd"
+            android:layout_marginTop="@dimen/twenty"></EditText>
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_width="@dimen/three_fivety"
+        android:layout_height="@dimen/sixty"
+        android:text="登录"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/three_o"
+        android:layout_marginTop="@dimen/twenty"
+        android:background="#27BAED"
+        android:id="@+id/btn"
+        android:textSize="@dimen/three_o"
+        android:textColor="#ffffff"></TextView>
+
+
+</LinearLayout>

@@ -27,11 +27,9 @@ public class UserActivity extends AppCompatActivity {
             text.setText("cheng");
         }
     }
-
     private void initView() {
         text = findViewById(R.id.text);
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

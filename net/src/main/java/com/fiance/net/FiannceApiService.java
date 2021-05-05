@@ -25,8 +25,9 @@ public interface FiannceApiService {
     @POST("register?")
     Observable<RegisterBean> getRegisterData(@Field("name")String name,@Field("password")String password);
 
-    @GET("login?")
-    Observable<LoginBean> getLoginBean(@Field("name")String name,@Field("password")String password);
+    @FormUrlEncoded
+    @POST("login?")
+    Observable<LoginBean> getLoginData(@Field("name")String name,@Field("password")String password);
 
 
 
