@@ -3,7 +3,7 @@ package com.example.user_library.login
 import com.example.frame_library.mvp.BaseModle
 import com.example.net_library.http.RetrofitManger
 import com.example.net_library.http.observer.BaseObserver
-import com.example.user_library.Api
+import com.example.user_library.api.Api
 import com.example.user_library.base.Requst
 import com.example.user_library.base.User
 import io.reactivex.android.schedulers.AndroidSchedulers

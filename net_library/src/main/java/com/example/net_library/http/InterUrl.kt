@@ -7,13 +7,13 @@ object InterUrl {
 
     const val PRODUCT = "atguigu/json/P2PInvest/product.json" //访问“全部理财”产品
 
-    const val LOGIN = BASE_URL + "login" //登录
+    const val LOGIN = "login" //登录
 
     const val INDEX = "atguigu/json/P2PInvest/index.json" //访问“homeFragment”
 
     const val USERREGISTER = "register" //访问“homeFragment”
 
-    const val FEEDBACK = BASE_URL + "FeedBack" //注册
+    const val FEEDBACK = "FeedBack" //注册
 
     const val UPDATE = "atguigu/json/P2PInvest/update.json" //更新应用
 }

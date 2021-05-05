@@ -14,6 +14,7 @@ import com.example.financial.ulit.DataUlit
 import com.example.frame_library.mvp.BaseActitvty
 import com.example.frame_library.mvp.IPresneter
 import com.example.frame_library.view.FragmentManger
+import com.example.net_library.communication.ModuleCommunication
 import kotlinx.android.synthetic.main.activity_main.*
 
 @Route(path = DataUlit.AROUTER_JUMP_MAIN)
@@ -37,6 +38,8 @@ class MainActivity : BaseActitvty<IPresneter>(), RadioGroup.OnCheckedChangeListe
         fragmentManger
 
         act_main_radiogroup.setOnCheckedChangeListener(this)
+
+
     }
 
     override fun initData() {

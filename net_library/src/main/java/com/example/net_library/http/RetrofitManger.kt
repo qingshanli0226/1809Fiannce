@@ -16,6 +16,7 @@ object RetrofitManger {
             .addConverterFactory(GsonConverterFactory.create())
             .callFactory(OkHttpClient.Builder()
                 .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .addInterceptor(TokenHand())
                 .writeTimeout(time, TimeUnit.SECONDS)
                 .readTimeout(time, TimeUnit.SECONDS)
                 .connectTimeout(time, TimeUnit.SECONDS)

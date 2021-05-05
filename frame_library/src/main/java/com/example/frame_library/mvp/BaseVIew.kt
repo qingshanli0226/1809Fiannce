@@ -14,6 +14,7 @@ interface IView {
     fun showTaos(meang: String)
     fun showLodin()
     fun hideLodin()
+    fun showEroor(meang: String)
 }
 
 interface IActivity : IView {
@@ -38,7 +39,6 @@ abstract class BaseActitvty<P : IPresneter> : AppCompatActivity(), IActivity {
 
     protected var mPresenter: P? = null
 
-    //protected abstract fun setPresneter():P?
     protected fun attaPresenter(mPresenter: P) {
         this.mPresenter = mPresenter
     }
@@ -52,7 +52,6 @@ abstract class BaseActitvty<P : IPresneter> : AppCompatActivity(), IActivity {
 
     override fun showTaos(meang: String) {
         Toast.makeText(this, meang, Toast.LENGTH_LONG).show()
-        lodingPage!!.showError(meang)
     }
 
     override fun showLodin() {
@@ -63,23 +62,20 @@ abstract class BaseActitvty<P : IPresneter> : AppCompatActivity(), IActivity {
         lodingPage!!.showSuccessLayout()
     }
 
+    override fun showEroor(meang: String) {
+        lodingPage!!.showError(meang)
+        showTaos(meang)
+    }
 }
 
 abstract class BaseFragment<P : IPresneter> : IActivity, Fragment(), ToBar.OnClickListener {
 
     protected var mPresenter: P? = null
 
-    //    by lazy {
-//        setPresenter();
-//    }
     private var mToBar: ToBar? = null
-//    by lazy {
-//        initToBar().setonClickListener(this)
-//    }
 
     protected var lodingPage: LodingPage? = null
 
-    //abstract fun initToBar(): ToBar
     protected fun attaToBar(toBar: ToBar) {
         mToBar = toBar
         mToBar!!.setonClickListener(this)
@@ -88,8 +84,6 @@ abstract class BaseFragment<P : IPresneter> : IActivity, Fragment(), ToBar.OnCli
     protected fun attaPresenter(mPresenter: P) {
         this.mPresenter = mPresenter
     }
-
-    //protected abstract fun setPresenter():P
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -116,11 +110,15 @@ abstract class BaseFragment<P : IPresneter> : IActivity, Fragment(), ToBar.OnCli
 
     override fun showTaos(meang: String) {
         Toast.makeText(activity, meang, Toast.LENGTH_LONG).show()
-        lodingPage!!.showError(meang)
     }
 
     override fun hideLodin() {
         lodingPage!!.showSuccessLayout()
+    }
+
+    override fun showEroor(meang: String) {
+        lodingPage!!.showError(meang)
+        showTaos(meang)
     }
 
     override fun onDestroy() {

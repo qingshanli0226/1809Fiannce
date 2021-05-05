@@ -1,29 +1,46 @@
 package com.example.financial.ui.welcome
 
 import android.app.AlertDialog
+import android.content.ComponentName
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.ServiceConnection
 import android.os.Handler
+import android.os.IBinder
 import android.os.Message
 import android.view.KeyEvent
 import android.view.WindowManager
-import com.alibaba.android.arouter.launcher.ARouter
 import com.example.financial.ui.MainActivity
 import com.example.financial.R
+import com.example.financial.automatic.LoginServer
 import com.example.financial.base.Index
 import com.example.financial.base.UpData
 import com.example.financial.ulit.DataUlit
 import com.example.frame_library.mvp.BaseActitvty
+import com.example.net_library.User
 import kotlinx.android.synthetic.main.activity_welcome.*
 import java.util.*
 import kotlin.concurrent.timerTask
 
+/**
+ * 欢迎页实现
+ * 1.判断是否需要更新应用，
+ *  当需要更新时弹出是否更新的对话框
+ * 2.请求首页数据
+ * 3.欢迎动画或是倒计时
+ * 4.当1。2。3.都完成后才能跳转到首页
+ * 5。在开启的后台服务请求自动登录
+ * 6.需要更新时在欢迎页开启的后台下载并在通知栏中显示进度
+ * 7.销毁页面时注意内存泄露
+ * 8.本页不能退出
+ */
 class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
     /**
      * 是否需要更新
      */
     protected var IsUp: Boolean = false
-
+    private var bind: LoginServer.Bind?=null
+    private var updata:UpData?=null
     /***
      * 常量
      * 网络请求
@@ -38,9 +55,9 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
 
     /***
      * handler 接收消息 每个任务完成时都会发送一条消息由handler处理，所有任务都完成以后弹出是否更新的弹窗
-     * 是否完成网络请求
-     * 是否获取最新版本并判断
-     * 是否完成倒计时
+     * @param ISLODINDATA 是否完成加载首页
+     * @param ISUPDATA 是否获取最新最新版本并弹出是否更新的弹框
+     * @param ISTIME 是否完成倒计时
      */
     private val handler: Handler = object : Handler() {
 
@@ -58,24 +75,47 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
             }
 
             if (ISLODINDATA && ISTIME && ISUPDATA) {
-                if (IsUp) {
-                    ARouter.getInstance().build(DataUlit.AROUTER_JUMP_MAIN).navigation()
-                    finish()
-                } else {
-                    UpData()
-                }
+//                if (IsUp) {
+//
+//                } else {
+//                    //UpData()
+//                }
             }
         }
     }
 
-    private val timer: Timer by lazy {
-        Countdown()
+    /**
+     * 将倒计时的timer对象提为全局便于销毁
+     */
+    //private val timer: Timer =starTimer(3)
+
+    /**
+     * @return 返回计数器对象
+     */
+    private fun starTimer(i:Int): Timer {
+        var time=i
+        var timer = Timer()
+        timer.schedule(timerTask {
+            if (time == 0) {
+                handler.sendEmptyMessage(TIME)
+                cancel()
+            } else {
+                handler.post {
+                    act_welcome_time_text.setText("${time}")
+                }
+                time--
+            }
+
+        }, 1000, 1000)
+        return timer
     }
+
 
     override fun bandLayoutId(): Int {
         getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN);// 设置全屏
+
         return R.layout.activity_welcome
     }
 
@@ -88,7 +128,24 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
 
         mPresenter!!.getVersion()
 
-        timer
+        starTimer(3)
+
+        starAutomaticLogin()
+    }
+
+    private fun starAutomaticLogin() {
+        if (!User.long) {
+            bindService(Intent(this, LoginServer::class.java), object : ServiceConnection {
+                override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+                    bind = service as LoginServer.Bind
+                    bind!!.getParent().starLogin()
+                }
+
+                override fun onServiceDisconnected(name: ComponentName?) {
+
+                }
+            }, BIND_AUTO_CREATE)
+        }
     }
 
     /**
@@ -108,7 +165,7 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
     }
 
     /**
-     * 询问弹窗如果不需要更新泽
+     * 弹出对话框是否需要更新
      */
     private fun UpData() {
         var create = AlertDialog.Builder(this)
@@ -125,28 +182,26 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
                 override fun onClick(dialog: DialogInterface?, which: Int) {
                     //ARouter.getInstance().build(DataUlit.AROUTER_JUMP_MAIN).withInt("",1).navigation()
                     startActivity(Intent(this@WelcomeActivity, MainActivity::class.java))
-                    finish()
                 }
             })
             .create()
         create.show()
     }
 
-    /***
-     * @return初始化Presneter
+    /**
+     * 销毁计时器
      */
-    //override fun setPresneter(): WelcomePresenter = WelcomePresenter(WelcomeModle(), this)
-
-    override fun onDestroy() {
-        super.onDestroy()
-        timer.cancel()
-    }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        timer.cancel()
+//    }
 
     /**
      * 从网络获取最新版本号，判断
      * @param upData 网络请求获取的数据
      */
     override fun onUpdate(upData: UpData) {
+        this.updata=updata
         handler.sendEmptyMessage(UPDATA)
         IsUp = upData.versionCode == getVersionNumer()
     }
@@ -161,30 +216,13 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
     }
 
     /**
-     * 倒计时
+     * 此页面禁止回退
      */
-    private fun Countdown(): Timer {
-        var time = 3
-        var timer1 = Timer()
-        timer1.schedule(timerTask {
-            if (time == 0) {
-                handler.sendEmptyMessage(TIME)
-                cancel()
-            } else {
-                handler.post {
-                    act_welcome_time_text.setText("${time}")
-                }
-                time--
-            }
-
-        }, 1000, 1000)
-        return timer1
-    }
-
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             return false
         }
         return super.onKeyDown(keyCode, event)
     }
+
 }
