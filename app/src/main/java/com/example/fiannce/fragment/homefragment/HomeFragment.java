@@ -16,6 +16,7 @@ import com.example.net.mode.HomeBean;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends BaseFragment {
@@ -26,6 +27,7 @@ public class HomeFragment extends BaseFragment {
     private TextView expect;
     private Button buy;
     private ToolBarView tobView;
+    List<HomeBean.ResultBean.ImageArrBean> imageArr = new ArrayList<>();
 
     @Override
     protected int getLayoutId() {
@@ -41,7 +43,7 @@ public class HomeFragment extends BaseFragment {
     protected void initData() {
         HomeBean homeBean = CacheManager.getInstance().getHomeBean();
 
-        List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
+        imageArr = homeBean.getResult().getImageArr();
         LogUtils.json(imageArr);
 
         banner.setImages(imageArr);

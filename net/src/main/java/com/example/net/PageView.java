@@ -48,28 +48,28 @@ public abstract class PageView extends RelativeLayout {
 
     protected abstract int FindLayout();
 
-//    public void ShowError(String str){
-//
-//        ErrorText.setText(str);
-//        errorLayout.setVisibility(VISIBLE);
-//        LoadLayout.setVisibility(GONE);
-//        SuccessView.setVisibility(GONE);
-//
-//    }
-//
-//    public void ShowLoad(){
-//
-//        errorLayout.setVisibility(GONE);
-//        LoadLayout.setVisibility(VISIBLE);
-//        SuccessView.setVisibility(GONE);
-//
-//    }
-//
-//    public void ShowSuccess(){
-//
-//        errorLayout.setVisibility(GONE);
-//        LoadLayout.setVisibility(GONE);
-//        SuccessView.setVisibility(VISIBLE);
-//
-//    }
+    public void ShowError(String str){
+
+        ErrorText.setText(str);
+        errorLayout.setVisibility(VISIBLE);
+        LoadLayout.setVisibility(GONE);
+        SuccessView.setVisibility(GONE);
+
+    }
+
+    public void ShowLoad(){
+
+        errorLayout.setVisibility(GONE);
+        LoadLayout.setVisibility(VISIBLE);
+        SuccessView.setVisibility(GONE);
+
+    }
+
+    public void ShowSuccess(){
+
+        errorLayout.setVisibility(GONE);
+        LoadLayout.setVisibility(GONE);
+        SuccessView.setVisibility(VISIBLE);
+
+    }
 }

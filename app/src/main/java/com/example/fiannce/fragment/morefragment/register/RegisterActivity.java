@@ -14,10 +14,12 @@ import com.example.fiannce.MainActivity;
 import com.example.fiannce.MainActivity2;
 import com.example.fiannce.R;
 import com.example.fiannce.fragment.BeanBack;
+import com.example.fiannce.fragment.morefragment.login.LoginActivity;
 import com.example.framework.BaseActivity;
 import com.example.net.ToolBarView;
 import com.example.net.mode.AllBean;
 import com.example.net.mode.HomeBean;
+import com.example.net.mode.LogBean;
 import com.example.net.mode.RegBean;
 import com.example.net.mode.UpdateBean;
 import com.google.android.exoplayer2.source.dash.manifest.Representation;
@@ -54,12 +56,15 @@ public class RegisterActivity extends BaseActivity<RegPresenter> implements Bean
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                phoneNum = phone.getText().toString();
+                name =use.getText().toString();
+                password = pwd.getText().toString();
 
                 if (phoneNum.equals("")&&name.equals("")&&password.equals("")){
                     Toast.makeText(RegisterActivity.this, "不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                httpPresenter.RegData("aaa","1223");
+                httpPresenter.RegData(name,password);
             }
         });
     }
@@ -92,10 +97,21 @@ public class RegisterActivity extends BaseActivity<RegPresenter> implements Bean
     public void RegData(RegBean regBean) {
         if (regBean.getCode().equals("200")){
             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+
+            intent.putExtra("name",name);
+            intent.putExtra("password",password);
+
             startActivity(intent);
+
+
             Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
             finish();
         }
+    }
+
+    @Override
+    public void LogData(LogBean logBean) {
+
     }
 
     @Override

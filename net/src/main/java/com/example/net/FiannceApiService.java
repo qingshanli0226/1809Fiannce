@@ -2,6 +2,7 @@ package com.example.net;
 
 import com.example.net.mode.AllBean;
 import com.example.net.mode.HomeBean;
+import com.example.net.mode.LogBean;
 import com.example.net.mode.RegBean;
 import com.example.net.mode.VersionBean;
 
@@ -26,5 +27,7 @@ public interface FiannceApiService {
     @POST("register")
     Observable<RegBean> RegData(@Field("name") String name, @Field("password") String password);
 
-
+    @FormUrlEncoded
+    @POST("login")
+    Observable<LogBean> LogData(@Field("name") String name, @Field("password") String password);
 }

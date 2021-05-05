@@ -3,6 +3,7 @@ package com.example.fiannce.fragment;
 import com.example.framework.IBaseView;
 import com.example.net.mode.AllBean;
 import com.example.net.mode.HomeBean;
+import com.example.net.mode.LogBean;
 import com.example.net.mode.RegBean;
 import com.example.net.mode.UpdateBean;
 
@@ -15,4 +16,6 @@ public interface BeanBack extends IBaseView {
     void AllData(AllBean allBean);
 
     void RegData(RegBean regBean);
+
+    void LogData(LogBean logBean);
 }

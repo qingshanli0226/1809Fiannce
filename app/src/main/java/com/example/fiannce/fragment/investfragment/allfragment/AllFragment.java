@@ -8,6 +8,7 @@ import com.example.fiannce.fragment.BeanBack;
 import com.example.framework.BaseFragment;
 import com.example.net.mode.AllBean;
 import com.example.net.mode.HomeBean;
+import com.example.net.mode.LogBean;
 import com.example.net.mode.RegBean;
 import com.example.net.mode.UpdateBean;
 
@@ -59,6 +60,11 @@ public class AllFragment extends BaseFragment<UpdatePresenter_AllFragment> imple
 
     @Override
     public void RegData(RegBean regBean) {
+
+    }
+
+    @Override
+    public void LogData(LogBean logBean) {
 
     }
 

@@ -16,91 +16,91 @@
         app:textColor="#fff"></com.example.net.ToolBarView>
 
     <LinearLayout
-        android:background="#03A9F4"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#27baed">
 
         <ImageView
-            android:id="@+id/img"
-            android:src="@mipmap/my_user_default"
-            android:layout_width="100dp"
-            android:layout_height="100dp"></ImageView>
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/many_img"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center"></ImageView>
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user"
+            android:textColor="#ffffff"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center"
+            android:textSize="@dimen/dp_25"></TextView>
     </LinearLayout>
 
     <LinearLayout
-        android:background="#F6F7F8"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1.5"
+        android:background="#f0f0f0"
         android:orientation="vertical">
-
         <TextView
-            android:textColor="#FB0404"
-            android:text="学习提示:"
-            android:layout_marginLeft="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TextView>
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/many1"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textColor="#E91E63"></TextView>
         <TextView
-            android:text="充值我们将以集成支付宝sdk支付金额演示充值功能"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TextView>
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:text="@string/many2"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textColor="#515151"></TextView>
         <TextView
-            android:text="提现业务:在判p2p金融平台中,提现都不是实时到账的，而是审核提现，系统将会告知24小时内进行转账，如果未收到，请联系克服"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TextView>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/many3"
+            android:textColor="#515151"
+            android:layout_marginLeft="@dimen/dp_10"></TextView>
 
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="@dimen/dp_70"
+            android:layout_marginTop="@dimen/dp_20">
             <ImageView
-                android:src="@mipmap/my_recharge_bg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"></ImageView>
-
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:id="@+id/recharge"
+                android:src="@mipmap/my_recharge_bg"></ImageView>
             <ImageView
-                android:src="@mipmap/my_withdraw_bg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"></ImageView>
-
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:id="@+id/withdraw"
+                android:src="@mipmap/my_withdraw_bg"></ImageView>
         </LinearLayout>
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_weight="1.5">
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="30dp">
+        android:layout_height="0dp"
+        android:background="#f0f0f0"
+        android:layout_weight="1"></LinearLayout>
 
-        <ImageView
-            android:src="@mipmap/my_invest_manage"
-            android:layout_width="30dp"
-            android:layout_height="30dp"></ImageView>
-
-        <TextView
-            android:text="投资管理"
-            android:layout_marginLeft="20dp"
-            android:textSize="25sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TextView>
-
-        <ImageView
-            android:layout_marginLeft="220dp"
-            android:src="@mipmap/right"
-            android:layout_width="30dp"
-            android:layout_height="30dp"></ImageView>
-
-    </LinearLayout>
 
 </LinearLayout>

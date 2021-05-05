@@ -10,9 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.manager.FiannceNetManager;
 import com.example.net.PageView;
 
-public abstract class BaseFragment<T extends BasePresenter>extends Fragment {
+public abstract class BaseFragment<T extends BasePresenter>extends Fragment implements FiannceNetManager.NetConnectListener {
 
     protected T httpPresenter;
     protected View mView;
@@ -41,6 +42,7 @@ public abstract class BaseFragment<T extends BasePresenter>extends Fragment {
         initView();
         initPresenter();
         initData();
+        FiannceNetManager.getInstance().RegisterConnect(this);
     }
 
     protected abstract int getLayoutId();
@@ -61,5 +63,17 @@ public abstract class BaseFragment<T extends BasePresenter>extends Fragment {
         if (httpPresenter != null){
             httpPresenter.detachView();
         }
+
+        FiannceNetManager.getInstance().UnRegisterConnect(this);
+    }
+
+    @Override
+    public void onConnect() {
+
+    }
+
+    @Override
+    public void DisConnect() {
+
     }
 }

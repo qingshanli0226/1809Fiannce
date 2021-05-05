@@ -32,6 +32,12 @@ public class FiannceUserManager {
         iUserLoginChangedList.remove(iUserLoginChanged);
     }
 
+    private boolean isLog;
+
+    public boolean getLog(){
+        return isLog;
+    }
+
     public void setLogin(boolean isLogin){
         this.isLogin = isLogin;
 

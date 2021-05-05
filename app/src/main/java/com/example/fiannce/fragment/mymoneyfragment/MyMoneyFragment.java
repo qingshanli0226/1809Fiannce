@@ -1,5 +1,6 @@
 package com.example.fiannce.fragment.mymoneyfragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,39 +8,67 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fiannce.R;
+import com.example.framework.BaseFragment;
+import com.example.framework.manager.FiannceUserManager;
 import com.example.net.ToolBarView;
 
-public class MyMoneyFragment extends Fragment {
+public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.IUserLoginChanged {
 
     private ToolBarView tobView;
+    private TextView user;
+
 
     public MyMoneyFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View inflate = inflater.inflate(R.layout.fragment_my_money, container, false);
+    protected int getLayoutId() {
+        return R.layout.fragment_my_money;
+    }
 
-        tobView = (ToolBarView) inflate.findViewById(R.id.tob);
+    @Override
+    protected void initPresenter() {
 
-        tobView.ImgCallBackListener(new ToolBarView.ImgCallBack() {
-            @Override
-            public void OnLeftImg() {
-                Toast.makeText(getContext(), "图片", Toast.LENGTH_SHORT).show();
-            }
+    }
 
-            @Override
-            public void OnRightImg() {
-                Toast.makeText(getContext(), "图片", Toast.LENGTH_SHORT).show();
-            }
-        });
+    @Override
+    protected void initData() {
+        if (UserCallBack.getInstance().getName() != null){
+            user.setText(UserCallBack.getInstance().getName()+"");
+        }
+    }
 
-        return inflate;
+    @Override
+    protected void initView() {
+        user = (TextView) mView.findViewById(R.id.user);
+
+        FiannceUserManager.getInstance().register(this);
+
+        if (FiannceUserManager.getInstance().getLog()){
+            Toast.makeText(getContext(), "当前用户已登录", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onLoginChange(boolean isLogin) {
+        if (isLogin){
+            Toast.makeText(getContext(), "已登录", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        FiannceUserManager.getInstance().unRegister(this);
     }
 }

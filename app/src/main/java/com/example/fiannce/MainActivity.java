@@ -2,6 +2,9 @@ package com.example.fiannce;
 
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
+import android.content.Intent;
+import android.os.Build;
 import android.widget.FrameLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -42,6 +45,15 @@ public class MainActivity extends BaseActivity {
     protected void initData() {
         frame = (FrameLayout) findViewById(R.id.frame);
         common = (CommonTabLayout) findViewById(R.id.common);
+
+        Intent intent = getIntent();
+        String use = intent.getStringExtra("use");
+
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            requestPermissions(new String[]{
+                    Manifest.permission.CALL_PHONE
+            },100);
+        }
 
         homeFragment = new HomeFragment();
         investFragment = new InvestFragment();
