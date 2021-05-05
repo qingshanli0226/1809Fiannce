@@ -1,9 +1,11 @@
 package com.example.designed.welcome;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.designed.MainActivity;
@@ -62,8 +65,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         LIFinsih = true;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void initData() {
+
+        requestPermissions(new String[]{"android.permission.CALL_PHONE"},100);
+
         welcomePresenter.getHomeData();
         welcomePresenter.getVersionData();
         welcomePresenter.getLiData();

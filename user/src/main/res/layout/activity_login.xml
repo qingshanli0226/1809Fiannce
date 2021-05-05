@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login.LoginActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1"
+
+        android:background="@color/colorShen"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_35"
+            android:src="@drawable/left"
+            android:layout_gravity="center"
+            android:id="@+id/back"
+            ></ImageView>
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp_30"
+            android:textColor="@color/colorWathet"
+            android:text="@string/login"
+            android:gravity="center"
+            android:layout_gravity="center"
+            ></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <!--手机号-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/p"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@drawable/bei"
+                android:textSize="@dimen/dp_20"
+                ></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_330"
+                android:background="@drawable/bei"
+                android:layout_height="match_parent"
+                android:hint="请输入手机号"
+                android:id="@+id/phone"
+                ></EditText>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#979393"
+            ></View>
+        <!--用户名-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/paw"
+                android:background="@drawable/bei"
+                android:layout_marginRight="@dimen/dp_35"
+                android:textSize="@dimen/dp_20"
+                ></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_330"
+                android:layout_height="match_parent"
+                android:hint="请输入密码"
+                android:background="@drawable/bei"
+                android:id="@+id/pass"
+                ></EditText>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#979393"
+        ></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="@dimen/dp_330"
+            android:layout_height="@dimen/dp_50"
+            android:id="@+id/register"
+            android:text="登录"
+            android:textSize="@dimen/dp_30"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/yuan"
+            ></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"></LinearLayout>
+
+</RelativeLayout>

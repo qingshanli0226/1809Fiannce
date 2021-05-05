@@ -11,16 +11,29 @@
         android:layout_height="@dimen/dp_0"
         android:layout_weight="1"
         android:gravity="center"
+        android:orientation="horizontal"
         android:background="@color/colorShen"
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/dp_30"
+            android:layout_weight="9"
             android:textColor="@color/colorWathet"
-            android:text="@string/tou"
+            android:text="@string/my"
+            android:gravity="center"
             android:layout_gravity="center"
             ></TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/setting"
+            android:src="@drawable/my_setting_icon"
+            ></ImageView>
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -36,6 +49,7 @@
             android:layout_width="@dimen/dp_70"
             android:layout_height="@dimen/dp_70"
             android:src="@drawable/quan"
+            android:id="@+id/pic"
             android:layout_marginBottom="@dimen/dp_10"
             ></ImageView>
 
@@ -98,6 +112,7 @@
                 android:layout_width="@dimen/dp_150"
                 android:layout_height="@dimen/dp_50"
                 android:text="@string/ch"
+                android:id="@+id/moery"
                 android:textSize="@dimen/dp_20"
                 android:layout_marginRight="@dimen/dp_72"
                 android:layout_gravity="center"
@@ -114,6 +129,7 @@
                 android:background="@drawable/chang"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:id="@+id/withdraw"
                 android:textColor="@color/colorWathet"
                 ></TextView>
 
@@ -137,6 +153,7 @@
             android:showDividers="end"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/invest"
             android:orientation="horizontal"
             >
 
@@ -172,6 +189,7 @@
             android:showDividers="end"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/manage"
             android:orientation="horizontal"
             >
 
@@ -207,6 +225,7 @@
             android:showDividers="end"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:id="@+id/property"
             android:orientation="horizontal"
             >
 

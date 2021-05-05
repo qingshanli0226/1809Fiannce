@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Register">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@color/colorShen"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp_30"
+            android:textColor="@color/colorWathet"
+            android:text="@string/regist"
+            android:layout_gravity="center"
+            ></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+    >
+        <!--手机号-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/p"
+                android:textSize="@dimen/dp_20"
+                ></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_330"
+                android:layout_height="match_parent"
+                android:hint="请输入手机号"
+                android:id="@+id/phone"
+                ></EditText>
+
+        </LinearLayout>
+
+        <!--用户名-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="@dimen/dp_20"
+                ></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_330"
+                android:layout_height="match_parent"
+                android:hint="请输入用户名"
+                android:id="@+id/name"
+                ></EditText>
+
+        </LinearLayout>
+
+        <!--用户名-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/paw"
+                android:textSize="@dimen/dp_20"
+                ></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_330"
+                android:layout_height="match_parent"
+                android:hint="请输入密码"
+                android:id="@+id/pass"
+                ></EditText>
+
+        </LinearLayout>
+
+        <!--用户名-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unpaw"
+                android:textSize="@dimen/dp_20"
+                ></TextView>
+
+            <EditText
+                android:layout_width="@dimen/dp_330"
+                android:layout_height="match_parent"
+                android:hint="请确认密码"
+                android:id="@+id/unpaw"
+                ></EditText>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="@dimen/dp_330"
+            android:layout_height="match_parent"
+            android:id="@+id/register"
+            android:text="注册"
+            android:textSize="@dimen/dp_30"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorWathet"
+            ></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"></LinearLayout>
+
+
+</LinearLayout>

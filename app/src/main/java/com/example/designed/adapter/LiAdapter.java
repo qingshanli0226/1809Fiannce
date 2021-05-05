@@ -15,7 +15,7 @@ import com.fiannce.bawei.net.model.Libean;
 import java.util.List;
 
 public class LiAdapter extends BaseQuickAdapter<Libean.ResultBean, BaseViewHolder> {
-
+   private TextView textView;
     private int lastX;
     private  View lastView;
     private int lastPosition;
@@ -34,13 +34,15 @@ public class LiAdapter extends BaseQuickAdapter<Libean.ResultBean, BaseViewHolde
         helper.setText(R.id.all_investment_memberNum,item.getMemberNum());
 
 
-        TextView textView = helper.getView(R.id.textView);
+        textView = helper.getView(R.id.textView);
 
 
         helper.addOnClickListener(R.id.textView);
 
         CustomView customView = helper.getView(R.id.custom);
-        customView.startmcurrent(Integer.parseInt(item.getProgress()),false);
+       // customView.startmcurrent(Integer.parseInt(item.getProgress()),false);
+
+
 
         helper.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +71,9 @@ public class LiAdapter extends BaseQuickAdapter<Libean.ResultBean, BaseViewHolde
                         if (lastX>500 && motionEvent.getRawX()<lastX){
                             helper.itemView.getParent().requestDisallowInterceptTouchEvent(true);
 
+
+
+
                             if (lastView != null && lastPosition != helper.getAdapterPosition() ){
                                lastView.scrollTo(0,0);
                             }
@@ -76,10 +81,24 @@ public class LiAdapter extends BaseQuickAdapter<Libean.ResultBean, BaseViewHolde
                             lastPosition = helper.getAdapterPosition();
                             lastView = helper.itemView;
                             helper.itemView.scrollTo((int) (lastX-motionEvent.getRawX()),0);
+
+
+
                             return  true;
 
                         }else {
                             helper.itemView.getParent().requestDisallowInterceptTouchEvent(false);
+                        }
+                        break;
+
+                    case  MotionEvent.ACTION_UP:
+                        int width = textView.getWidth();
+
+                        float v = lastX - motionEvent.getRawX();
+                        if (v<width/2){
+                            lastView.scrollTo(0,0);
+                        }else {
+                            lastView.scrollTo(width,0);
                         }
                         break;
 

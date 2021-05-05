@@ -1,20 +1,9 @@
 package com.example.designed.bufragment;
-
-
-import android.graphics.Color;
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 
@@ -24,13 +13,15 @@ import com.example.designed.R;
 import com.example.designed.adapter.LiAdapter;
 import com.example.designed.welcome.IWelcomeView;
 import com.example.designed.welcome.WelcomePresenter;
-import com.example.net.BuildConfig;
 import com.fiannce.bawei.framework.BaseFragment;
 import com.fiannce.bawei.framework.IBaseView;
-import com.fiannce.bawei.framework.manager.CacheManager;
 import com.fiannce.bawei.net.model.HomeBean;
 import com.fiannce.bawei.net.model.Libean;
 import com.fiannce.bawei.net.model.VersionBean;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +40,7 @@ public class QuanFragment extends BaseFragment implements IBaseView, IWelcomeVie
     LiAdapter liAdapter;
     private WelcomePresenter welcomePresenter;
     private RecyclerView rv;
+    private SmartRefreshLayout sm;
     List<Libean.ResultBean> list = new ArrayList<>();
 
     public QuanFragment() {
@@ -72,6 +64,7 @@ public class QuanFragment extends BaseFragment implements IBaseView, IWelcomeVie
         fragment = (FrameLayout) findViewById(R.id.fragment);
         rv = (RecyclerView) findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        sm = (SmartRefreshLayout) findViewById(R.id.sm);
 
         DanmakuManager dm = DanmakuManager.getInstance();
         dm.setDanmakuContainer(fragment);
@@ -150,17 +143,38 @@ public class QuanFragment extends BaseFragment implements IBaseView, IWelcomeVie
 
         rv.setAdapter(liAdapter);
 
+        rv.setTop(0);
+        liAdapter.notifyDataSetChanged();
+
         liAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 if (view.getId() == R.id.textView){
                     list.remove(position);
                     liAdapter.notifyItemRemoved(position);
+
                 }
             }
         });
 
+        sm.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                welcomePresenter.getHomeData();
+                liAdapter.notifyDataSetChanged();
+                sm.finishLoadMore();
+            }
+
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                welcomePresenter.getHomeData();
+                liAdapter.notifyDataSetChanged();
+                sm.finishRefresh();
+            }
+        });
+
     }
+
 
 
 

@@ -13,6 +13,12 @@
     <string name="li">立即加入 </string>
     <string name="feng">风险保障金由有道银行监管 </string>
     <string name="tou">投资 </string>
+    <string name="p">  手机号: </string>
+    <string name="name">  用户名: </string>
+    <string name="paw">  密码: </string>
+    <string name="unpaw">  确认密码: </string>
+    <string name="my">我的投资 </string>
+    <string name="register">用户注册 </string>
     <string name="dao">倒计时: 3 秒 </string>
     <string name="xue">  学习提示 : </string>
     <string name="chong">  充值我们将以集成支付宝sdk支付金额演示充值功能</string>
@@ -33,6 +39,14 @@
     <string name="zhi">投资管理(直观)</string>
     <string name="chang">资产管理</string>
     <string name="one">万</string>
+    <string name="phone">010-56253825</string>
+    <string name="regist">  用户注册</string>
+    <string name="password">  手势密码</string>
+    <string name="unpassword">  重置手势密码</string>
+    <string name="contact">  联系客服</string>
+    <string name="user">  用户反馈</string>
+    <string name="share">  分享给好友</string>
+    <string name="About">  关于有道理财</string>
     <string name="del">删除</string>
     <string name="you">有道金融壕运当头,首投返现最高达188元</string>
     <string name="Allfinancial">全部理财</string>
