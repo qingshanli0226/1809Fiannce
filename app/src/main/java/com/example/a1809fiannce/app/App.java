@@ -23,7 +23,7 @@ public class App extends Application {
 
         FiannceArouter.getInstance().init(this);
 
-        AppModel.init();
+        AppModule.init();
 
         FianceManager.getInstance().init(this);
     }

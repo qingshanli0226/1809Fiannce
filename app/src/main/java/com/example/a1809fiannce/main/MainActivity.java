@@ -2,7 +2,9 @@ package com.example.a1809fiannce.main;
 
 import androidx.fragment.app.FragmentTransaction;
 
+import android.Manifest;
 import android.content.Intent;
+import android.os.Build;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
@@ -42,6 +44,13 @@ public class MainActivity extends BaseActivity  {
 
     @Override
     protected void initData() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.CALL_PHONE}, 100);
+        }
+
         ArrayList<CustomTabEntity> customTabEntities = new ArrayList<>();
         customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.frag_home), R.mipmap.bottom01, R.mipmap.bottom02));
         customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.investment), R.mipmap.bottom03, R.mipmap.bottom04));

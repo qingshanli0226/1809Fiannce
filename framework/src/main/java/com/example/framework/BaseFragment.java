@@ -11,11 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.framework.manager.FianceManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener, FianceManager.IConnectListener {
 
     protected P httpPresenter;
     private View rootview;
@@ -82,6 +83,16 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 
     @Override
     public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onConnected() {
+
+    }
+
+    @Override
+    public void onDisconnected() {
 
     }
 }

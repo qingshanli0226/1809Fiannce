@@ -1,12 +1,5 @@
 package com.example.a1809fiannce.main.invest.allfinancial;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,7 +17,6 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
     private AllProductAdapter allProductAdapter;
 
 
-    private int item = 0;
 
     @Override
     protected int getLayoutId() {
@@ -77,4 +69,13 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IAllView 
         loadingPage.showErrorView(error.trim());
     }
 
+    @Override
+    public void onConnected() {
+        super.onConnected();
+    }
+
+    @Override
+    public void onDisconnected() {
+        super.onDisconnected();
+    }
 }

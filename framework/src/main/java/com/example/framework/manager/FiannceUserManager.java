@@ -18,11 +18,11 @@ public class FiannceUserManager {
         void onLoginChange(LoginBean loginBean);
     }
 
-    public LoginBean getLoginBean() {
+    public synchronized LoginBean getLoginBean() {
         return loginBean;
     }
 
-    public void setLoginBean(LoginBean loginBean) {
+    public synchronized void  setLoginBean(LoginBean loginBean) {
         this.loginBean = loginBean;
         for (IUserLoginChanged iUserLoginChanged : iUserLoginChangedList) {
             iUserLoginChanged.onLoginChange(loginBean);

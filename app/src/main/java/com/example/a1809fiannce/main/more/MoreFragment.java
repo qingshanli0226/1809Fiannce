@@ -30,11 +30,7 @@ public class MoreFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            getActivity().requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.CALL_PHONE}, 100);
-        }
+
 
         fragMoreUserRigister.setOnClickListener(view -> {
 //            ARouter.getInstance().build("/user/LoginActivity").withString("","").navigation();

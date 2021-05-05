@@ -22,8 +22,6 @@ public class UserModule implements FiannceArouter.IUsetInterface {
 
     @Override
     public void openLoginActivity(Context context, Bundle bundle) {
-
-
     }
 
     @Override

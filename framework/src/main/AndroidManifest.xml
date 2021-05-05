@@ -5,6 +5,5 @@
 
     <application>
         <service android:name=".service.FiannceService"></service>
-        <service android:name=".service.DownloadApkService"></service>
     </application>
 </manifest>

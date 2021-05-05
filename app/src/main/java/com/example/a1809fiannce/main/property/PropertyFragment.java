@@ -56,7 +56,7 @@ public class PropertyFragment extends BaseFragment implements FiannceUserManager
         if (loginBean!=null){
             fragProperName.setText(loginBean.getResult().getName()+"");
         }else {
-            fragProperName.setText("请先登录");
+            fragProperName.setText(R.string.please_login_first);
         }
 
     }

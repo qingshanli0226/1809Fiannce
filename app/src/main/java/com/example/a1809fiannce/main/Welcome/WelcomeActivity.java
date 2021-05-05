@@ -2,10 +2,14 @@ package com.example.a1809fiannce.main.Welcome;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.app.Service;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.animation.AlphaAnimation;
@@ -15,13 +19,12 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.BarUtils;
 import com.example.a1809fiannce.R;
 import com.example.commom.FianceConstants;
+import com.example.commom.SpUtil;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.FiannceArouter;
-import com.example.framework.service.DownloadApkService;
 import com.example.framework.service.FiannceService;
 import com.example.framework.manager.CacheManager;
 import com.example.net.model.HoemBean;
@@ -57,6 +60,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private AlphaAnimation alphaAnimation;
     private VersionBean versionBean;
     private String AROUT_MAINACTIVITY = "/main/MainActivity";
+    private Intent intent;
 
     @Override
     protected int getLayoutId() {
@@ -81,10 +85,15 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initData() {
+
         /**
          * 自动登录
          */
-        startService(new Intent(this, FiannceService.class));
+        String token = SpUtil.getString(this, FianceConstants.TOKEN_KEY);
+        if (!(token == null || token.equals(""))) {
+            intent = new Intent(this, FiannceService.class);
+            startService(intent);
+        }
 
 
         httpPresenter.getServerVersion();
@@ -130,13 +139,28 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 finish();
             });
             builder.setPositiveButton(getResources().getText(R.string.yes), (dialogInterface, i) -> {
-                ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
-                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                progressDialog.setCanceledOnTouchOutside(false);
-                progressDialog.show();
+//                ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
+//                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+//                progressDialog.setCanceledOnTouchOutside(false);
+//                progressDialog.show();
 
-                startService(new Intent(this, DownloadApkService.class));
+                bindService(intent, new ServiceConnection() {
 
+                    @Override
+                    public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+                        FiannceService.FiannceBinder fiannceBinder = (FiannceService.FiannceBinder) iBinder;
+                        FiannceService fiannceService = fiannceBinder.getFiannceService();
+                        fiannceService.DownloadApk(CacheManager.getInstance().getVersionBean().getResult().getApkUrl());
+                    }
+
+                    @Override
+                    public void onServiceDisconnected(ComponentName componentName) {
+
+                    }
+                }, Service.BIND_AUTO_CREATE);
+
+                FiannceArouter.getInstance().build(FianceConstants.MAIN_PATH).navigation();
+//                finish();
             });
             builder.setCancelable(false);
             builder.show();
