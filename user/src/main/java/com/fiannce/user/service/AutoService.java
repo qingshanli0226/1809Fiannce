@@ -15,10 +15,19 @@ import com.fiannce.user.register.IUserView;
 import com.fiannce.user.register.UserPresenter;
 
 public class AutoService extends Service {
+    public AutoService() {
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        // TODO: Return the communication channel to the service.
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
 
     @Override
     public void onCreate() {
-        Log.d("AutoService", "123123");
+        super.onCreate();
+        Log.d("AutoService", "112211");
         new UserPresenter(new IUserView() {
             @Override
             public void onRegister(RegisterBean registerBean) {
@@ -33,7 +42,7 @@ public class AutoService extends Service {
             @Override
             public void onAutoLogin(LoginBean loginBean) {
                 SpUtil.putString(AutoService.this, CommonConstant.SP_TOKEN, loginBean.getResult().getToken());
-
+                Log.d("zyz", "123123");
                 CacheUserManager.getInstance().setLoginBean(loginBean);
 //                FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
                 ARouter.getInstance().build("/main/MainActivity").navigation();
@@ -53,23 +62,7 @@ public class AutoService extends Service {
             public void showToast(String error) {
 
             }
-        }).getAutoLogin(SpUtil.getString(this, CommonConstant.SP_NAME));
+        }).getAutoLogin(SpUtil.getString(this, CommonConstant.SP_TOKEN));
+
     }
-
-    public AutoService() {
-    }
-
-    @Override
-    public IBinder onBind(Intent intent) {
-
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-
-
-        return super.onStartCommand(intent, flags, startId);
-    }
-
 }

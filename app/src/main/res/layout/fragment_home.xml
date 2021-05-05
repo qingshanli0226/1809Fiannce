@@ -40,7 +40,7 @@
     <com.youth.banner.Banner
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_190"
-        android:id="@+id/banner"
+        android:id="@+id/banner1"
         ></com.youth.banner.Banner>
 
     <LinearLayout
@@ -49,7 +49,7 @@
         android:layout_gravity="center"
         >
         <TextView
-            android:id="@+id/guigu"
+            android:id="@+id/guigu1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/text_mid_size"
@@ -104,7 +104,7 @@
         android:layout_width="@dimen/dp_100"
         android:layout_height="@dimen/dp_100"
         android:layout_gravity="center"
-        android:id="@+id/progress"
+        android:id="@+id/progress1"
         android:layout_marginTop="@dimen/text_mid_size"
         ></com.fiannce.framework.view.ProgressView>
     <LinearLayout
@@ -124,7 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_15"
-            android:id="@+id/yuqi"
+            android:id="@+id/yuqi1"
             android:textSize="@dimen/dp_25"
             >
         </TextView>

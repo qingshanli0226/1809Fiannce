@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.fiannce.framework.manager.CacheConnectManager;
+import com.fiannce.framework.manager.CacheUserManager;
 import com.fiannce.framework.model.FrameArouter;
 import com.fiannce.net.model.NetModel;
 import com.fiannce.user.model.UserModel;
@@ -29,7 +30,7 @@ public class App extends Application {
 
         //自定义arouter
         FrameArouter.getInstance().init(this);
-
+        CacheConnectManager.getInstance().init(this);
 
         startService(new Intent(this, AutoService.class));
     }

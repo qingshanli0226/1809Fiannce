@@ -79,10 +79,10 @@ public class HomeFragment extends BaseFragment implements CacheUserManager.ILogi
 
     @Override
     protected void initView() {
-        banner = mBaseView.findViewById(R.id.banner);
-        progressView = mBaseView.findViewById(R.id.progress);
-        textView = mBaseView.findViewById(R.id.guigu);
-        yuqiText = mBaseView.findViewById(R.id.yuqi);
+        banner = mBaseView.findViewById(R.id.banner1);
+        progressView = mBaseView.findViewById(R.id.progress1);
+        textView = mBaseView.findViewById(R.id.guigu1);
+        yuqiText = mBaseView.findViewById(R.id.yuqi1);
 
     }
 
