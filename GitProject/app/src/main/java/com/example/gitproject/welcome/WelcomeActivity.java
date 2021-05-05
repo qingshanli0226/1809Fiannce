@@ -11,18 +11,23 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.WindowManager;
+import android.webkit.DownloadListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.common.CommonConstant;
+import com.example.common.SpUtil;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
+import com.example.framework.manager.CacheUserManager;
 import com.example.gitproject.R;
 
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.UpdateBean;
 import com.example.user.service.AutoService;
+
+import okio.BufferedSource;
 
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
@@ -50,8 +55,11 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         countDown = (TextView) findViewById(R.id.countDown);
         welImg = (ImageView) findViewById(R.id.wel_img);
         //启动自动登录服务
-        Intent intent = new Intent(this, AutoService.class);
-        startService(intent);
+        if(!SpUtil.getString(this,CommonConstant.SP_TOKEN).equals("")){
+            Intent intent = new Intent(this, AutoService.class);
+            startService(intent);
+        }
+//        DownloadListener
     }
 
     @Override
@@ -114,6 +122,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     ProgressDialog pro = new ProgressDialog(WelcomeActivity.this);
                     pro.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                     pro.show();
+                    //启动下载服务服务
+
                 }
             });
             builder.setPositiveButton(wel_alert_no, new DialogInterface.OnClickListener() {

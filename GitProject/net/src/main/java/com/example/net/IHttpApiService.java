@@ -7,10 +7,12 @@ import com.example.net.bean.RegisterBean;
 import com.example.net.bean.UpdateBean;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Streaming;
 
 public interface IHttpApiService {
     @GET(AppNetConfig.INDEX)
@@ -34,5 +36,10 @@ public interface IHttpApiService {
     @FormUrlEncoded
     @POST(AppNetConfig.AUTOLOGIN)
     Observable<LoginBean> getAutoLogin(@Field("token")String token);
+
+    //下载
+    @Streaming
+    @GET
+    Observable<RequestBody> getDownLoad();
 
 }

@@ -13,6 +13,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class CacheConnectManager {
+
+    //单例
     public static CacheConnectManager cacheConnectManager;
     private CacheConnectManager() {
     }
@@ -38,12 +40,7 @@ public class CacheConnectManager {
         getCurrentConnectStatus();
         initReceiver();
     }
-
-    public void initReceiver() {
-        IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        context.registerReceiver(broadcastReceiver,intentFilter);
-    }
-
+    //获得链接状态
     public void getCurrentConnectStatus() {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
@@ -53,10 +50,16 @@ public class CacheConnectManager {
             isConnect = false;
         }
     }
+    //注册广播
+    public void initReceiver() {
+        IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        context.registerReceiver(broadcastReceiver,intentFilter);
+    }
 
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            //网络发生改变自动发送广播
             if(intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)){
                 getCurrentConnectStatus();
                 notifyConnectChange();
@@ -64,6 +67,7 @@ public class CacheConnectManager {
         }
     };
 
+    //判断状态
     public void notifyConnectChange(){
         for (IConnect iConnect : list) {
             if(isConnect){
@@ -74,11 +78,13 @@ public class CacheConnectManager {
         }
     }
 
+    //注册接口
     public void registerConnectListener(IConnect connect){
         if (!list.contains(connect)) {
             list.add(connect);
         }
     }
+    //取消注册接口
     public void unRegisterConnectListener(IConnect connect){
         if (list.contains(connect)) {
             list.remove(connect);
@@ -86,6 +92,7 @@ public class CacheConnectManager {
     }
 
 
+    //链接状态返回
     public interface IConnect{
         void onConnect();
         void onDisConnect();
