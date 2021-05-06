@@ -81,8 +81,9 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.show(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
 
-                        boolean login = FiannceUserManager.getInstance().isLogin();
-                        if (login){
+                        SharedPreferences login1 = getSharedPreferences("login", MODE_PRIVATE);
+                        boolean is_login = login1.getBoolean("is_login", false);
+                        if (is_login){
 
                         }else {
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);

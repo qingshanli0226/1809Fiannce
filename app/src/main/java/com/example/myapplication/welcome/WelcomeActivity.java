@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 import android.Manifest;
-import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.DialogInterface;
@@ -15,7 +14,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
-import android.widget.ProgressBar;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,15 +28,13 @@ import com.example.model.VersionBean;
 import com.example.myapplication.R;
 import com.example.myapplication.apk.APKVersionCodeUtils;
 import com.example.demo.Demo;
-import com.example.user.autologin.AutoLoginService;
+import com.example.user.autologin.UserService;
 
 import java.io.File;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
     private TextView contenNum;
-    private ProgressBar bar;
-    private TextView homedata;
     private final int ONE_TASK_FINISH = 0;
     private final int All_TASK_FINISH = 1;
     private final int DELAY_INDEX = 2;
@@ -48,8 +45,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private int FINISH_SESSION = 0;
     private int session = 3;
     private VersionBean versionBeans;
+    private Intent intent;
 
-    private AutoLoginService myservice;
+    private UserService myservice;
     private ServiceConnection serviceConnection;
 
     @Override
@@ -57,6 +55,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
+
     }
 
     @Override
@@ -67,21 +66,21 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     protected void initView() {
 
-        //权限
+        //动态权限添加权限
         if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},100);
         }
 
         contenNum = (TextView) findViewById(R.id.conten_num);
-//        homedata = (TextView) findViewById(R.id.homedata);
         contenNum.setText(session+"秒");
-        Intent intent = new Intent(this, AutoLoginService.class);
+        intent = new Intent(this, UserService.class);
         startService(intent);
 
+        //绑定服务
         serviceConnection = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
-                AutoLoginService.MyBinder myBinder = (AutoLoginService.MyBinder) service;
+                UserService.MyBinder myBinder = (UserService.MyBinder) service;
                 myservice = myBinder.getMyService();
             }
 
@@ -92,6 +91,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         };
         bindService(intent,serviceConnection, Service.BIND_AUTO_CREATE);
 
+
+
     }
 
     @Override
@@ -101,8 +102,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onHomeData(HomeBean homeBean) {
+        //将下载的数据存储到单例里面,方便下一个页面使用
         CacheManager.getInstance().setHomeBean(homeBean);
-//        homedata.setText(""+homeBean.toString());
         home_finish = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
     }
@@ -122,19 +123,14 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void showLoading() {
-//        bar.setVisibility(View.VISIBLE);
-//        loadingPage.showLoadingView();
     }
 
     @Override
     public void hideLoading() {
-//        bar.setVisibility(View.GONE);
-//        loadingPage.showTransparentLoadingView();
     }
 
     @Override
     public void showError(String error) {
-//        Toast.makeText(this, "请求出现错误:"+error, Toast.LENGTH_SHORT).show();
         loadingPage.showError(error);
     }
 
@@ -177,20 +173,23 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                             builder.setTitle(Demo.HINT_DIALOG_TITLE);
                             builder.setCancelable(true);
 
+                            //点击确定之后下载文件
                             builder.setPositiveButton(Demo.HINT_DIALOG_CONFIRM, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
 
                                     //判断是否下载过这个文件 如果下载过直接跳转
-                                    String apkPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download/aaa.apk";
+                                    String apkPath = Environment.getExternalStorageDirectory().getAbsolutePath() + Demo.SDCARD_ADDRESS;
                                     File file = new File(apkPath);
                                     if (file.exists()){
                                         Toast.makeText(WelcomeActivity.this, "已下载完成", Toast.LENGTH_SHORT).show();
                                         ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
                                         return ;
                                     }else {
-                                        myservice.downLoad("http://49.233.0.68:8080//atguigu/apk/P2PInvest/app-debug.apk",handler);
+                                        ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
+                                        //启动服务
+                                        myservice.downLoad(Demo.DOWNLOAD_ADDRESS);
                                     }
 
                                 }
@@ -225,6 +224,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
+        //解除绑定
         unbindService(serviceConnection);
+        //停止服务
+        stopService(intent);
     }
 }

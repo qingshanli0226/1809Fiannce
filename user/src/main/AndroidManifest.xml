@@ -4,7 +4,7 @@
 
     <application>
         <service
-            android:name=".autologin.AutoLoginService"
+            android:name=".autologin.UserService"
             android:enabled="true"
             android:exported="true"></service>
 
