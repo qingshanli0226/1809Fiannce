@@ -58,7 +58,6 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         });
 
     }
-
     @Override
     protected void initView() {
         toolbar = findViewById(R.id.toolbar);
