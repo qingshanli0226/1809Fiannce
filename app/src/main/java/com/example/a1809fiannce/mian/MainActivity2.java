@@ -41,7 +41,8 @@ public class MainActivity2 extends AppCompatActivity {
             requestPermissions(new String[]{
                     Manifest.permission.CALL_PHONE,
                     Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.SYSTEM_ALERT_WINDOW,
             },100);
         }
 

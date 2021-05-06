@@ -7,9 +7,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.RemoteViews;
 
-import com.example.a1809fiannce.CallUpdate;
 import com.example.a1809fiannce.R;
 import com.example.network.retrofit.RetrofitManager;
 
@@ -51,7 +49,7 @@ public class UpdateService extends Service {
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         Notification.Builder builder = new Notification.Builder(this);
         builder.setSmallIcon(R.mipmap.ic_launcher);
-        builder.setContentTitle("下载");
+        builder.setContentTitle("下载中");
 //        builder.setPriority(Notification.PRIORITY_MAX);
 //        builder.setDefaults(Notification.DEFAULT_ALL);
         builder.setProgress(100,0,false);
@@ -71,30 +69,37 @@ public class UpdateService extends Service {
                         public void onNext(@NonNull ResponseBody responseBody) {
                             InputStream inputStream = null;
                             FileOutputStream fileOutputStream = null;
-                            File file = new File("/sdcard/Download/a.jpg");
+                            File file = new File("/sdcard/Download/a.apk");
                             if (file.exists()) {
                                 return;
                             }
                             long length = responseBody.contentLength();
+                            Log.i("aa", "onNext: "+length);
                             int i = -1;
+                            int count = 0;
                             byte[] bytes = new byte[1024];
                             inputStream = responseBody.byteStream();
                             try {
                                 fileOutputStream = new FileOutputStream(file);
-                                while ((length = inputStream.read(bytes)) != -1) {
+                                while ((i = inputStream.read(bytes)) != -1) {
                                     fileOutputStream.write(bytes, 0, i);
                                     int current = (int) (length / i);
-                                    Log.i("zx", "onNext: "+current);
-                                    builder.setProgress(100, current, false);
+                                    count += i*50;
+                                    Log.i("aa", "onNext: "+current);
+                                    if (count>=length){
+                                        builder.setContentTitle("下载完成");
+                                        manager.notify(1, builder.build());
+                                    }
+                                    builder.setProgress((int) length, count, false);
                                     manager.notify(1, builder.build());
+
                                 }
                             } catch (FileNotFoundException e) {
                                 e.printStackTrace();
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                            builder.setContentTitle("下载完成");
-                            manager.notify(1, builder.build());
+
                         }
 
                         @Override

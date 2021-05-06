@@ -114,7 +114,7 @@ public class CusView extends View {
         //内圈
         paint.setColor(Color.GRAY);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(20);
+        paint.setStrokeWidth(30);
         paint.setAntiAlias(true);
         int ScaX = getMeasuredWidth()/2;
         int ScaY = getMeasuredHeight()/2;
@@ -126,12 +126,12 @@ public class CusView extends View {
         paint.setColor(color);
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(15);
+        paint.setStrokeWidth(30);
         canvas.drawArc(rectF,START_ANGLE,progressangle,false,paint);
 
         //画文本
         Rect rect = new Rect();
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.BLUE);
         paint.setTextSize(50);
         paint.setStrokeWidth(5);
 

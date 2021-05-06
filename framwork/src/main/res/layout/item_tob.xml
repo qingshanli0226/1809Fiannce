@@ -14,7 +14,7 @@
         android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
         android:textSize="@dimen/dp_25"
-        android:text="名字"
+        android:text="@string/name"
         android:layout_centerInParent="true"
         android:layout_weight="@dimen/weight_3"
         android:id="@+id/tob_tit"></TextView>

@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="默认值"
+            android:text="@string/default1"
             android:textSize="@dimen/dp_20"
             android:id="@+id/lin_left_tit"
             android:layout_marginLeft="@dimen/dp_10"
@@ -27,8 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_50"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:id="@+id/lin_right"></ImageView>

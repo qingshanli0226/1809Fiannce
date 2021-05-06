@@ -1,5 +1,6 @@
 package com.example.network.retrofit;
 
+import com.example.common.FiannceNetConfig;
 import com.example.network.Api;
 
 import java.util.concurrent.TimeUnit;
@@ -29,7 +30,7 @@ public class RetrofitManager {
                     .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                     .build();
             Retrofit build = new Retrofit.Builder()
-                    .baseUrl("http://49.233.0.68:8080/")
+                    .baseUrl(FiannceNetConfig.BASE_URL)
                     .client(okHttpClient)
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())

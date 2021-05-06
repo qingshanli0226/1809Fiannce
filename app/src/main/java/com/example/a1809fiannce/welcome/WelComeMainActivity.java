@@ -17,7 +17,6 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.a1809fiannce.CallUpdate;
 import com.example.a1809fiannce.home.HomeCallBack;
 import com.example.a1809fiannce.mian.MainActivity2;
 import com.example.a1809fiannce.R;
@@ -151,7 +150,10 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
                         public void onClick(DialogInterface dialog, int which) {
                             //CallUpdate.getInstance().setUrl("http://www.qubaobei.com/ios/cf/uploadfile/132/9/8289.jpg");
                             //开启一个服务下载
-                            updateService.DownUpdate("http://www.qubaobei.com/ios/cf/uploadfile/132/9/8289.jpg");
+//                            startService(new Intent(WelComeMainActivity.this,UpdateService.class));
+                            //http://49.233.0.68:8080//atguigu/apk/P2PInvest/app-debug.apk
+//                            Log.i("aa", "onClick: "+"http://49.233.0.68:8080/"+bean.getResult().getApkUrl().split("9999")[1]);
+                            updateService.DownUpdate("http://49.233.0.68:8080//atguigu/apk/P2PInvest/app-debug.apk");
                             //进入主页面
                             startActivity(new Intent(WelComeMainActivity.this, MainActivity2.class));
                             dialog.dismiss();

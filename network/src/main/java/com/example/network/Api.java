@@ -1,5 +1,6 @@
 package com.example.network;
 
+import com.example.common.FiannceNetConfig;
 import com.example.network.model.AllBean;
 import com.example.network.model.HomeBean;
 import com.example.network.model.LogBean;
@@ -18,31 +19,31 @@ import retrofit2.http.Url;
 public interface Api {
 
     //主页
-    @GET("atguigu/json/P2PInvest/index.json")
+    @GET(FiannceNetConfig.HOME)
     Observable<HomeBean> HomeData();
 
     //下载
-    @GET("atguigu/json/P2PInvest/update.json")
+    @GET(FiannceNetConfig.UPDATE)
     Observable<UpdateBean> UpdateData();
 
     //全部理财
-    @GET("atguigu/json/P2PInvest/product.json")
+    @GET(FiannceNetConfig.ALL)
     Observable<AllBean> AllData();
 
     //注册
     @FormUrlEncoded
-    @POST("register")
-    Observable<RegBean> RegData(@Field("name") String name,@Field("password") String password);
+    @POST(FiannceNetConfig.REGISTER)
+    Observable<RegBean> RegData(@Field(FiannceNetConfig.NAME) String name,@Field(FiannceNetConfig.PASSWORD) String password);
 
     //登录
     @FormUrlEncoded
-    @POST("login")
-    Observable<LogBean> LogData(@Field("name") String name,@Field("password") String password);
+    @POST(FiannceNetConfig.LOGIN)
+    Observable<LogBean> LogData(@Field(FiannceNetConfig.NAME) String name,@Field(FiannceNetConfig.PASSWORD) String password);
 
     //自动登录
     @FormUrlEncoded
-    @POST("autoLogin")
-    Observable<LogBean> AutoData(@Field("token") String token);
+    @POST(FiannceNetConfig.AUTO)
+    Observable<LogBean> AutoData(@Field(FiannceNetConfig.TOKEN) String token);
 
     //下载文件
     @GET

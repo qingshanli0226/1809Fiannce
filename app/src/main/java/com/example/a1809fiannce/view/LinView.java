@@ -26,6 +26,7 @@ public class LinView extends LinearLayout {
     private ImageView rightImg;
     private TextView leftTit;
     private TextView rightTit;
+    private iRightImgCallBack iRightImgCallBack;
     public LinView(Context context) {
         this(context,null);
     }
@@ -67,8 +68,30 @@ public class LinView extends LinearLayout {
         if (rightTextShow){
             rightTit.setText(rightTitle+"");
         }
-
+        rightImg.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iRightImgCallBack.OnRightListener();
+            }
+        });
 
     }
 
+    public void setRightIcon(int rightIcon) {
+        this.rightIcon = rightIcon;
+        rightImg.setImageResource(rightIcon);
+        invalidate();
+    }
+
+    public LinView.iRightImgCallBack getiRightImgCallBack() {
+        return iRightImgCallBack;
+    }
+
+    public void setiRightImgCallBack(LinView.iRightImgCallBack iRightImgCallBack) {
+        this.iRightImgCallBack = iRightImgCallBack;
+    }
+
+    public static interface iRightImgCallBack{
+        void OnRightListener();
+    }
 }

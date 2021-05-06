@@ -6,7 +6,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="错误"
+        android:text="@string/error"
         android:gravity="center"
         android:textColor="#E91E63"
         android:textSize="@dimen/dp_50"

@@ -19,7 +19,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0"
-        android:layout_weight="1"
+        android:layout_weight="@dimen/weight_1"
         android:orientation="vertical"
         android:background="#27baed">
 
@@ -46,7 +46,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0"
-        android:layout_weight="1.5"
+        android:layout_weight="@dimen/weight_1.5"
         android:background="#f0f0f0"
         android:orientation="vertical">
         <TextView
@@ -78,55 +78,55 @@
             <ImageView
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_40"
-                android:layout_weight="1"
+                android:layout_weight="@dimen/weight_1"
                 android:id="@+id/recharge"
                 android:src="@mipmap/my_recharge_bg"></ImageView>
             <ImageView
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_40"
-                android:layout_weight="1"
+                android:layout_weight="@dimen/weight_1"
                 android:id="@+id/withdraw"
                 android:src="@mipmap/my_withdraw_bg"></ImageView>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dp_0"
         android:orientation="vertical"
         android:layout_marginTop="@dimen/dp_20"
-        android:layout_weight="1.5">
+        android:layout_weight="@dimen/weight_1.5">
         <com.example.a1809fiannce.view.LinView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/dp_0"
             app:left_icon="@mipmap/my_invest_manage"
-            app:left_title="投资管理"
+            app:left_title="@string/investManage"
             app:lin_right_show="true"
             app:right_icon="@mipmap/right"
             app:lin_right_Text_show="false"
-            android:layout_weight="1"></com.example.a1809fiannce.view.LinView>
+            android:layout_weight="@dimen/weight_1"></com.example.a1809fiannce.view.LinView>
         <com.example.a1809fiannce.view.LinView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/dp_0"
             app:left_icon="@mipmap/my_reward_manage"
-            app:left_title="投资管理(直观)"
+            app:left_title="@string/investManageTo"
             app:lin_right_show="true"
             app:right_icon="@mipmap/right"
             app:lin_right_Text_show="false"
-            android:layout_weight="1"></com.example.a1809fiannce.view.LinView>
+            android:layout_weight="@dimen/weight_1"></com.example.a1809fiannce.view.LinView>
         <com.example.a1809fiannce.view.LinView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/dp_0"
             app:left_icon="@mipmap/my_asset_manage"
-            app:left_title="资产管理"
+            app:left_title="@string/assetManage"
             app:lin_right_show="true"
             app:right_icon="@mipmap/right"
             app:lin_right_Text_show="false"
-            android:layout_weight="1"></com.example.a1809fiannce.view.LinView>
+            android:layout_weight="@dimen/weight_1"></com.example.a1809fiannce.view.LinView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dp_0"
         android:background="#f0f0f0"
-        android:layout_weight="1"></LinearLayout>
+        android:layout_weight="@dimen/weight_1"></LinearLayout>
 
 </LinearLayout>

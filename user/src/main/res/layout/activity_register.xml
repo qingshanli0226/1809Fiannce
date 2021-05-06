@@ -24,14 +24,15 @@
             android:layout_height="@dimen/dp_50"
             android:layout_weight="2"
             android:gravity="center"
-            android:text="手机号："
+            android:text="@string/phoneNum"
             android:textColor="#000000"></TextView>
+
         <EditText
-            android:layout_width="@dimen/dp_0"
-            android:layout_height="match_parent"
-            android:hint="请输入手机号"
             android:id="@+id/phone"
-            android:layout_weight="8"></EditText>
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="64dp"
+            android:layout_weight="@dimen/weight_8"
+            android:hint="@string/PleasePhoneNum"></EditText>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,51 +43,51 @@
             android:layout_height="@dimen/dp_50"
             android:layout_weight="2"
             android:gravity="center"
-            android:text="用户名："
+            android:text="@string/user"
             android:textColor="#000000"></TextView>
         <EditText
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
-            android:hint="请输入用户名"
+            android:hint="@string/PleaseUser"
             android:id="@+id/use"
-            android:layout_weight="8"></EditText>
+            android:layout_weight="@dimen/weight_8"></EditText>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_50"
-            android:layout_weight="2"
+            android:layout_weight="@dimen/weight_2"
             android:gravity="center"
-            android:text="密码："
+            android:text="@string/password"
 
             android:textColor="#000000"></TextView>
         <EditText
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
-            android:hint="请输入密码"
+            android:hint="@string/PleasePassword"
             android:id="@+id/pwd"
-            android:layout_weight="8"></EditText>
+            android:layout_weight="@dimen/weight_8"></EditText>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_50"
-            android:layout_weight="2"
+            android:layout_weight="@dimen/weight_2"
             android:gravity="center"
-            android:text="确认密码："
+            android:text="@string/ConfigPwd"
             android:textColor="#000000"></TextView>
         <EditText
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
-            android:hint="请输入手机号"
+            android:hint="@string/ConfigPhone"
             android:id="@+id/reuse_phone"
-            android:layout_weight="8"></EditText>
+            android:layout_weight="@dimen/weight_8"></EditText>
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -96,7 +97,7 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:background="#27baed"
-            android:text="注册"
+            android:text="@string/reg"
             android:id="@+id/register"
             android:textColor="#ffffff"
             ></Button>
