@@ -15,6 +15,7 @@
     <string name="tou">投资 </string>
     <string name="p">  手机号: </string>
     <string name="name">  用户名: </string>
+    <string name="in">  用户信息 </string>
     <string name="paw">  密码: </string>
     <string name="unpaw">  确认密码: </string>
     <string name="my">我的投资 </string>

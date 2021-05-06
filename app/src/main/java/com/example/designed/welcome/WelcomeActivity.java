@@ -102,6 +102,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
                 startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
             }
         });
@@ -163,6 +166,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+
+
+
                             Intent intent = new Intent();
                             intent.setAction("wang");
                             startActivity(intent);

@@ -1,6 +1,7 @@
 package com.example.designed.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +13,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.designed.InActivity;
 import com.example.designed.R;
+import com.example.user.login.LoginActivity;
 import com.fiannce.bawei.framework.BaseFragment;
 
 /**
@@ -52,6 +55,19 @@ public class BlankFragment3 extends BaseFragment  {
         manage = (LinearLayout) findViewById(R.id.manage);
         property = (LinearLayout) findViewById(R.id.property);
 
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), InActivity.class));
+            }
+        });
+
+        pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+            }
+        });
     }
 
     @Override

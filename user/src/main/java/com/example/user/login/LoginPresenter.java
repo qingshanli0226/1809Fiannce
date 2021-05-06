@@ -62,4 +62,34 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
                 });
 
     }
+
+    public void getTokenData(String token){
+        RetrofitCreator.getfiannceApiService().getToken(token)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .delay(2,TimeUnit.SECONDS)
+                .subscribe(new Observer<LoginBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(LoginBean loginBean) {
+                            if (iView!= null){
+                                iView.onLoginData(loginBean);
+                            }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
 }

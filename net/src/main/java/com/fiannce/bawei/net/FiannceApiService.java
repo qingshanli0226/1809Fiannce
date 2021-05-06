@@ -7,6 +7,8 @@ import com.fiannce.bawei.net.model.RegisterBean;
 import com.fiannce.bawei.net.model.VersionBean;
 
 import io.reactivex.Observable;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -23,9 +25,15 @@ public interface FiannceApiService {
     Observable<Libean> getLiData();
 
     @POST("login")
-    Observable<LoginBean> getLogin(@Query("name") String name,@Query("password")String password);
+    @FormUrlEncoded
+    Observable<LoginBean> getLogin(@Field("name") String name,@Field("password")String password);
+
+    @POST("autoLogin")
+    @FormUrlEncoded
+    Observable<LoginBean> getToken(@Field("token") String token);
 
     @POST("register")
-    Observable<RegisterBean> getRegister(@Query("name") String name, @Query("password")String password);
+    @FormUrlEncoded
+    Observable<RegisterBean> getRegister(@Field("name") String name, @Field("password")String password);
 
 }

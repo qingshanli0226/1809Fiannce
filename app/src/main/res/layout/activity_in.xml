@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".InActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/colorShen"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:id="@+id/back"
+            android:src="@drawable/left"
+            >
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="@dimen/dp_0"
+            android:layout_weight="9"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp_30"
+            android:textColor="#26B8EE"
+            android:gravity="center"
+            android:text="@string/in"
+            android:layout_gravity="center"
+            ></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:src="@drawable/my_user_default"
+            ></ImageView>
+
+        <TextView
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_50"
+            android:text="更改头像"
+            android:gravity="center"
+            android:textSize="@dimen/dp_20"
+            android:textColor="#03A9F4"
+            ></TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="#CCC7C7"
+        ></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_50"
+        android:layout_weight="1"
+        android:gravity="center"
+        >
+
+        <Button
+            android:layout_width="@dimen/dp_330"
+            android:layout_height="@dimen/dp_70"
+            android:background="@drawable/injiao"
+            android:text="退出登录"
+            android:textSize="@dimen/dp_30"
+            android:textColor="#ffffff"
+            ></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+
+        ></LinearLayout>
+</LinearLayout>
