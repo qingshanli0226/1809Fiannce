@@ -13,9 +13,9 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class LogPresenter extends BasePresenter<BeanBack> {
+public class LogPresenter extends BasePresenter<LogCallBack> {
 
-    public LogPresenter(BeanBack beanBack){
+    public LogPresenter(LogCallBack beanBack){
         attachView(beanBack);
     }
 

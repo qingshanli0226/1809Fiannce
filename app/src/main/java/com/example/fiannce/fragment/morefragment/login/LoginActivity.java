@@ -2,12 +2,18 @@ package com.example.fiannce.fragment.morefragment.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.example.common.Squilts;
+import com.example.fiannce.MainActivity;
 import com.example.fiannce.R;
 import com.example.fiannce.fragment.BeanBack;
+import com.example.fiannce.fragment.mymoneyfragment.UserCallBack;
 import com.example.framework.BaseActivity;
 import com.example.framework.FiannceARouter;
 import com.example.framework.manager.FiannceUserManager;
@@ -17,42 +23,27 @@ import com.example.net.mode.LogBean;
 import com.example.net.mode.RegBean;
 import com.example.net.mode.UpdateBean;
 
-public class LoginActivity extends BaseActivity<LogPresenter> implements BeanBack {
+public class LoginActivity extends BaseActivity<LogPresenter> implements LogCallBack {
 
     private String pwd;
     private String name;
 
     @Override
-    public void HomeData(HomeBean homeBean) {
-
-    }
-
-    @Override
-    public void UpdateData(UpdateBean updateBean) {
-
-    }
-
-    @Override
-    public void AllData(AllBean allBean) {
-
-    }
-
-    @Override
-    public void RegData(RegBean regBean) {
-
-    }
-
-    @Override
     public void LogData(LogBean logBean) {
         pageView.ShowSuccess();
         if (logBean.getCode().equals("200")){
-            FiannceUserManager.getInstance().setLogin(true);
+            Toast.makeText(this, "log", Toast.LENGTH_SHORT).show();
+            FiannceUserManager.getInstance().setLogin(logBean);
 
             Bundle bundle = new Bundle();
             bundle.putString("name",name);
+            UserCallBack.getInstance().setName(name);
             bundle.putInt("num",0);
 
+            Squilts.putString(LoginActivity.this,logBean.getResult().getToken());
+
             FiannceARouter.getFiannceARouter().getAppManager().OpenMainActivity(LoginActivity.this,bundle);
+
         }else {
             Toast.makeText(this, ""+logBean.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -93,6 +84,7 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements BeanBac
 
     @Override
     public void showError(String error) {
-        Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
     }
+
 }

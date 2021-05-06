@@ -31,5 +31,6 @@ public class MainModel implements FiannceARouter.iAppManager {
             intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
+
     }
 }

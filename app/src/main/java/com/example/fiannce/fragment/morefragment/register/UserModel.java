@@ -36,4 +36,5 @@ public class UserModel implements FiannceARouter.iUserManager {
             context.startActivity(intent);
         }
     }
+
 }

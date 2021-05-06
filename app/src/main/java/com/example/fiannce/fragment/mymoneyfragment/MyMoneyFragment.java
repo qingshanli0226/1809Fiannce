@@ -15,6 +15,7 @@ import com.example.fiannce.R;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.FiannceUserManager;
 import com.example.net.ToolBarView;
+import com.example.net.mode.LogBean;
 
 public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.IUserLoginChanged {
 
@@ -49,20 +50,6 @@ public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.
 
         FiannceUserManager.getInstance().register(this);
 
-        if (FiannceUserManager.getInstance().getLog()){
-            Toast.makeText(getContext(), "当前用户已登录", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
-    public void onLoginChange(boolean isLogin) {
-        if (isLogin){
-            Toast.makeText(getContext(), "已登录", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
-        }
     }
 
     @Override
@@ -70,5 +57,16 @@ public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.
         super.onDestroy();
 
         FiannceUserManager.getInstance().unRegister(this);
+    }
+
+    @Override
+    public void onLoginChange(LogBean isLogin) {
+
+        if (isLogin != null){
+            Toast.makeText(getContext(), "已登录", Toast.LENGTH_SHORT).show();
+            user.setText(isLogin.getResult().getName());
+        }else {
+            Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.example.fiannce.R;
 import com.example.fiannce.fragment.morefragment.register.RegisterActivity;
+import com.example.framework.FiannceARouter;
 
 public class MoreFragment extends Fragment {
 
@@ -43,8 +44,7 @@ public class MoreFragment extends Fragment {
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), RegisterActivity.class);
-                startActivity(intent);
+                FiannceARouter.getFiannceARouter().getUserManager().OpenRegisterActivity(getActivity(),null);
             }
         });
 

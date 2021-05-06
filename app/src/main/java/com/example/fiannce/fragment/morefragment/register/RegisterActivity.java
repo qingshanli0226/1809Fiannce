@@ -96,16 +96,15 @@ public class RegisterActivity extends BaseActivity<RegPresenter> implements Bean
     @Override
     public void RegData(RegBean regBean) {
         if (regBean.getCode().equals("200")){
-            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
 
             intent.putExtra("name",name);
-            intent.putExtra("password",password);
+            intent.putExtra("pwd",password);
 
             startActivity(intent);
 
-
-            Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
-            finish();
+        }else {
+            Toast.makeText(this, ""+regBean.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 

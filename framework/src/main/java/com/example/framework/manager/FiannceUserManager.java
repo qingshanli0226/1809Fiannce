@@ -1,5 +1,7 @@
 package com.example.framework.manager;
 
+import com.example.net.mode.LogBean;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,21 +34,19 @@ public class FiannceUserManager {
         iUserLoginChangedList.remove(iUserLoginChanged);
     }
 
-    private boolean isLog;
+    private LogBean isLog;
 
-    public boolean getLog(){
+    public LogBean getLog(){
         return isLog;
     }
 
-    public void setLogin(boolean isLogin){
+    public void setLogin(LogBean isLog){
         this.isLogin = isLogin;
 
-        for (IUserLoginChanged listenr : iUserLoginChangedList){
-            listenr.onLoginChange(isLogin);
-        }
     }
 
+
     public interface IUserLoginChanged{
-        void onLoginChange(boolean isLogin);
+        void onLoginChange(LogBean isLogin);
     }
 }

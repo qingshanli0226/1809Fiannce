@@ -28,6 +28,7 @@ public class HomeFragment extends BaseFragment {
     private Button buy;
     private ToolBarView tobView;
     List<HomeBean.ResultBean.ImageArrBean> imageArr = new ArrayList<>();
+    private HomeBean homeBean = new HomeBean();
 
     @Override
     protected int getLayoutId() {
@@ -41,7 +42,7 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        HomeBean homeBean = CacheManager.getInstance().getHomeBean();
+        homeBean = CacheManager.getInstance().getHomeBean();
 
         imageArr = homeBean.getResult().getImageArr();
         LogUtils.json(imageArr);
