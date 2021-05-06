@@ -2,6 +2,7 @@ package com.fiannce.user.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +14,11 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.fiannce.framework.BaseActivity;
 import com.fiannce.framework.view.ToolBar;
 import com.fiannce.net.mode.LoginBean;
+import com.fiannce.net.mode.UserBean;
 import com.fiannce.user.R;
 import com.fiannce.user.register.RegisterActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 @Route(path = "/login/LoginActivity")
 public class LoginActivity extends BaseActivity<LoginPresenter> implements ILoginView {
@@ -73,9 +77,20 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
     @Override
     public void getLogin(LoginBean loginBean) {
         if (loginBean.getCode().equals("200")){
+            UserBean userBean = new UserBean();
+            userBean.setName(""+e1.getText().toString());
+            userBean.setPossword(""+e3.getText().toString());
+            EventBus.getDefault().post(userBean);
+
+            SharedPreferences sharedPreferences = getSharedPreferences("login.txt", MODE_PRIVATE);
+            SharedPreferences.Editor edit = sharedPreferences.edit();
+            edit.putBoolean("boo",true);
+            edit.putString("name",e1.getText().toString());
+            edit.putString("pass",e3.getText().toString());
+            edit.commit();
 
             Toast.makeText(this, ""+loginBean.getMessage(), Toast.LENGTH_SHORT).show();
-            finish();
+            ARouter.getInstance().build("/main/MainActivity").withInt("",0).navigation();
         }else {
             Toast.makeText(this, ""+loginBean.getMessage(), Toast.LENGTH_SHORT).show();
         }

@@ -31,10 +31,9 @@ public class AutoLoginService extends Service {
                     String token = result.getToken();
                     if (autoLoginBean.getCode().equals("200")){
                         SpUtiles.putString(AutoLoginService.this,token);
+
                     }
-
                 }
-
                 @Override
                 public void showLoading() {
 

@@ -178,7 +178,9 @@ ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:22:27-74
 activity#com.fiannce.myapplication.MainActivity
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:9-59
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:9-90
+	android:launchMode
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:48-78
 	android:name
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:19-47
 uses-sdk

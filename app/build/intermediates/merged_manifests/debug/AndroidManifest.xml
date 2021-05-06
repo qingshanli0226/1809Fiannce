@@ -35,7 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.fiannce.myapplication.MainActivity" />
+        <activity
+            android:name="com.fiannce.myapplication.MainActivity"
+            android:launchMode="singleTop" />
         <activity android:name="com.fiannce.pay.PayActivity" />
 
         <service

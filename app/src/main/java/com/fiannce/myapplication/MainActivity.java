@@ -21,6 +21,9 @@ import com.fiannce.framework.manager.CacheManager;
 import com.fiannce.myapplication.fragment.home.HomeFragment;
 import com.fiannce.myapplication.fragment.investment.InvestmentFragment;
 import com.fiannce.net.mode.HomeBean;
+import com.fiannce.net.mode.UserBean;
+
+import org.greenrobot.eventbus.EventBus;
 
 @Route(path = "/main/MainActivity")
 public class MainActivity extends BaseActivity {
@@ -96,16 +99,19 @@ public class MainActivity extends BaseActivity {
                     case R.id.property_radio:
                         SharedPreferences sharedPreferences = getSharedPreferences("login.txt", MODE_PRIVATE);
                         boolean boo = sharedPreferences.getBoolean("boo", false);
-                        if (boo){
-
-                        }else {
+                        String name = sharedPreferences.getString("name","");
+                        if (boo) {
+                            UserBean userBean = new UserBean();
+                            userBean.setName(name);
+                            EventBus.getDefault().post(userBean);
+                        } else {
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                             builder.setMessage("您还没有登录");
                             builder.setTitle("提示");
                             builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    ARouter.getInstance().build("/login/LoginActivity").withInt("",1).navigation();
+                                    ARouter.getInstance().build("/login/LoginActivity").withInt("", 1).navigation();
                                 }
                             });
                             builder.show();
