@@ -14,8 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zg"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.finance.user.login.UserLoginActivity"></activity>
-        <activity android:name="com.finance.user.register.UserRegisterActivity"></activity>
+        <activity android:name="com.finance.zg6.main.myassets.ProlifePicActivity"></activity>
+        <activity android:name="com.finance.user.login.UserLoginActivity" />
+        <activity android:name="com.finance.user.register.UserRegisterActivity" />
         <activity android:name="com.finance.zg6.welcome.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.finance.zg6.main.MainActivity"></activity>
+        <activity android:name="com.finance.zg6.main.MainActivity" />
     </application>
 
 </manifest>

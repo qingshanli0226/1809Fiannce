@@ -16,8 +16,11 @@ import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.LogUtils;
 import com.finance.framework.BaseActivity;
 import com.finance.framework.manager.CacheManager;
+import com.finance.framework.sp.Constant;
+import com.finance.framework.sp.SPUtil;
 import com.finance.net.bean.HomeBean;
 import com.finance.net.bean.VersionBean;
+import com.finance.user.service.AutoService;
 import com.finance.zg.R;
 import com.finance.zg6.main.MainActivity;
 
@@ -58,6 +61,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void initView() {
         countDownTv = (TextView) findViewById(R.id.countDown);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        //启动自动登录服务
+        if(!SPUtil.getString(this, Constant.SP_TOKEN).equals("")){
+            Intent intent = new Intent(this, AutoService.class);
+            startService(intent);
+        }
     }
 
     @Override

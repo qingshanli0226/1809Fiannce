@@ -1,5 +1,7 @@
 package com.finance.net.bean;
 
+import java.io.Serializable;
+
 public class UserBean {
     private String userName;
     private String passWord;

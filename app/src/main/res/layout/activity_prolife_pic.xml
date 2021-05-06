@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.finance.zg6.main.myassets.ProlifePicActivity">
+    
+    <com.finance.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ToolBar_height"
+        app:titleText="@string/user_info"></com.finance.framework.view.ToolBar>
+    <ImageView
+        android:layout_width="@dimen/RelativeLayout_height"
+        android:layout_height="@dimen/RelativeLayout_height"
+        android:layout_gravity="center"
+        android:id="@+id/userImg"
+        android:src="@drawable/user_img"></ImageView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/big_text_size"
+        android:textColor="@color/colorBlue"
+        android:gravity="center"
+        android:id="@+id/profilePic"
+        android:text="@string/profile_pic"></TextView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:background="@color/grey"
+        android:layout_marginBottom="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"></View>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margin"
+        android:textSize="@dimen/big_text_size"
+        android:textColor="@color/white"
+        android:text="@string/exit_login"
+        android:id="@+id/exitLogin"
+        android:background="@drawable/exit_login"></Button>
+</LinearLayout>

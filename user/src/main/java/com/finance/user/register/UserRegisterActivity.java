@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.LogUtils;
 import com.finance.framework.BaseActivity;
+import com.finance.net.bean.LoginBean;
 import com.finance.net.bean.RegisterBean;
 import com.finance.net.bean.UserBean;
 import com.finance.user.R;
@@ -64,14 +65,20 @@ public class UserRegisterActivity extends BaseActivity<RegisterPresenter> implem
     public void onRegisterData(RegisterBean registerBean) {
         LogUtils.json(registerBean);
         if (registerBean.getCode().equals("200")){
-            SharedPreferences.Editor edit = user.edit();
-            edit.putString("user",UserNameEt.getText().toString().trim());
-            edit.putBoolean("islogin",true);
-            edit.commit();
             ARouter.getInstance().build("/main/MainActivity").withInt("",1).navigation();
         }else {
             Toast.makeText(this, registerBean.getMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onLogin(LoginBean loginBean) {
+
+    }
+
+    @Override
+    public void onAutoLogin(LoginBean loginBean) {
+
     }
 
     @Override
@@ -90,7 +97,7 @@ public class UserRegisterActivity extends BaseActivity<RegisterPresenter> implem
     }
     @Override
     public void onLeftClick() {
-
+        finish();
     }
 
     @Override

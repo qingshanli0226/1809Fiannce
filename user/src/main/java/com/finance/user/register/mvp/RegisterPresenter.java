@@ -1,8 +1,11 @@
 package com.finance.user.register.mvp;
 
 import com.finance.framework.BasePresenter;
+import com.finance.net.bean.LoginBean;
 import com.finance.net.bean.RegisterBean;
 import com.finance.net.model.RetrofitCreator;
+
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -50,6 +53,52 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
                     @Override
                     public void onError(@NonNull Throwable e) {
                         if (iView!=null){
+                            iView.showError(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public void getAutoLogin(String token){
+        RetrofitCreator.getFinanceApiService()
+                .getAutoLogin(token)
+                .delay(3, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        add(disposable);
+                        iView.showLoading();
+                    }
+                })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        iView.hideLoading();
+                    }
+                })
+                .subscribe(new Observer<LoginBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull LoginBean loginBean) {
+                        if (iView != null) {
+                            iView.onAutoLogin(loginBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (iView != null) {
                             iView.showError(e.getMessage());
                         }
                     }

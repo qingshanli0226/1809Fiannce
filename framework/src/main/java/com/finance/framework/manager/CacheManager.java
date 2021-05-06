@@ -6,7 +6,6 @@ import com.finance.net.bean.UserBean;
 public class CacheManager {
     private static CacheManager cacheManager;
     private HomeBean homeBean;
-    private UserBean userBean;
 
     public CacheManager() {
     }
@@ -26,11 +25,4 @@ public class CacheManager {
         this.homeBean = homeBean;
     }
 
-    public UserBean getUserBean() {
-        return userBean;
-    }
-
-    public void setUserBean(UserBean userBean) {
-        this.userBean = userBean;
-    }
 }

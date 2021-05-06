@@ -1,6 +1,8 @@
 package com.finance.net.bean;
 
-public class LoginBean {
+import java.io.Serializable;
+
+public class LoginBean implements Serializable {
 
     /**
      * code : 200

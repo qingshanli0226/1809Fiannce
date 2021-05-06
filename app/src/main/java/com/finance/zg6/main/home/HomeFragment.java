@@ -3,12 +3,16 @@ package com.finance.zg6.main.home;
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.bumptech.glide.Glide;
 import com.finance.framework.BaseFragment;
 import com.finance.framework.manager.CacheManager;
+import com.finance.framework.manager.CacheUserManager;
 import com.finance.net.bean.HomeBean;
+import com.finance.net.bean.LoginBean;
+import com.finance.net.bean.UserBean;
 import com.finance.zg.R;
 import com.finance.zg6.view.ProgressView;
 import com.youth.banner.Banner;
@@ -17,7 +21,7 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.List;
 
 
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements CacheUserManager.ILoginChange{
 
     private Banner banner;
     private TextView homeTitle;
@@ -56,6 +60,15 @@ public class HomeFragment extends BaseFragment {
         homeTitle.setText("" + homeBean.getResult().getProInfo().getName());
         annualInterestRate.setText(getString(R.string.homeFragment_YearRate)+homeBean.getResult().getProInfo().getYearRate()+getString(R.string.homeFragment_YearRate_Percent_sign));
         progressView.startProgress(Integer.valueOf(homeBean.getResult().getProInfo().getProgress()),true);
+
+        CacheUserManager.getInstance().registerLogin(this);
+        LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
+        if (loginBean == null){
+            Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getContext(), "登录", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
@@ -80,5 +93,10 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onRightTvClick() {
 
+    }
+
+    @Override
+    public void onLoginChange(LoginBean loginBean) {
+        Toast.makeText(getContext(), ""+loginBean, Toast.LENGTH_SHORT).show();
     }
 }

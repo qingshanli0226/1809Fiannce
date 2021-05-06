@@ -1,6 +1,9 @@
 package com.finance.zg6.main;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.KeyEvent;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -11,7 +14,10 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.blankj.utilcode.util.LogUtils;
 import com.finance.framework.BaseActivity;
 import com.finance.framework.manager.CacheManager;
+import com.finance.framework.manager.CacheUserManager;
 import com.finance.net.bean.HomeBean;
+import com.finance.net.bean.LoginBean;
+import com.finance.user.login.UserLoginActivity;
 import com.finance.zg.R;
 import com.finance.zg6.bean.CustomBean;
 import com.finance.zg6.main.home.HomeFragment;
@@ -25,7 +31,7 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import java.util.ArrayList;
 
 @Route(path ="/main/MainActivity")
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements CacheUserManager.ILoginChange{
 
     private CommonTabLayout common;
     private android.widget.LinearLayout li;
@@ -91,6 +97,7 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction2.commit();
                         break;
                     case 2:
+                        LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
                         FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction3.hide(homeFragment);
                         fragmentTransaction3.hide(investmentFragment);
@@ -151,5 +158,10 @@ public class MainActivity extends BaseActivity {
     @Override
     public void onRightTvClick() {
 
+    }
+
+    @Override
+    public void onLoginChange(LoginBean loginBean) {
+        Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
     }
 }

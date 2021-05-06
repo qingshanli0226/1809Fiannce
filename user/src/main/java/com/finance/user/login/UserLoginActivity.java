@@ -9,6 +9,9 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.LogUtils;
 import com.finance.framework.BaseActivity;
 import com.finance.framework.manager.CacheManager;
+import com.finance.framework.manager.CacheUserManager;
+import com.finance.framework.sp.Constant;
+import com.finance.framework.sp.SPUtil;
 import com.finance.net.bean.LoginBean;
 import com.finance.net.bean.UserBean;
 import com.finance.user.R;
@@ -21,7 +24,6 @@ public class UserLoginActivity extends BaseActivity<LoginPresenter> implements I
     private android.widget.EditText loginUserNameEt;
     private android.widget.EditText loginPwdEt;
     private android.widget.Button loginBt;
-    private UserBean userBean = new UserBean();
     @Override
     protected int getLayoutId() {
         return R.layout.activity_user_login;
@@ -53,11 +55,9 @@ public class UserLoginActivity extends BaseActivity<LoginPresenter> implements I
     public void onLoginData(LoginBean loginBean) {
         LogUtils.json(loginBean);
         if (loginBean.getCode().equals("200")){
-            userBean.setUserName(loginUserNameEt.getText().toString().trim());
-            userBean.setPassWord(loginPwdEt.getText().toString().trim());
-            userBean.setLogin(true);
-
-            CacheManager.getInstance().setUserBean(userBean);
+            SPUtil.putString(this, Constant.SP_TOKEN,loginBean.getResult().getToken());
+            //跳到主页面返回
+            CacheUserManager.getInstance().setLoginBean(loginBean);
             ARouter.getInstance().build("/main/MainActivity").withInt("",1).navigation();
         }else {
             Toast.makeText(this, loginBean.getMessage(), Toast.LENGTH_SHORT).show();

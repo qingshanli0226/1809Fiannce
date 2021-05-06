@@ -33,4 +33,8 @@ public interface FinanceApiService {
     @FormUrlEncoded
     Observable<LoginBean> getLogin(@Field("name")String name, @Field("password")String password);
 
+    @FormUrlEncoded
+    @POST("autoLogin")
+    Observable<LoginBean> getAutoLogin(@Field("token")String token);
+
 }
