@@ -13,7 +13,7 @@ public class CommonAdapter extends FragmentPagerAdapter {
 
     List<Fragment> list;
 
-    public CommonAdapter(FragmentManager fm,List<Fragment> list) {
+    public CommonAdapter(FragmentManager fm, List<Fragment> list) {
         super(fm);
         this.list = list;
     }

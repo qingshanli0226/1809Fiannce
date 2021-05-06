@@ -20,30 +20,30 @@ public abstract class LoadingPage extends FrameLayout {
 
     public LoadingPage(Context context) {
         super(context);
-        init(context, null,0);
+        init(context, null, 0);
     }
 
     public LoadingPage(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context,attrs,0);
+        init(context, attrs, 0);
     }
 
     public LoadingPage(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs,0);
+        init(context, attrs, 0);
     }
 
     private void init(Context context, AttributeSet attrs, int i) {
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        errorView = inflater.inflate(R.layout.view_error,null);
+        errorView = inflater.inflate(R.layout.view_error, null);
         errorTv = errorView.findViewById(R.id.errorTv);
         LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        addView(errorView,layoutParams);
+        addView(errorView, layoutParams);
         successView = inflater.inflate(getSuccessLayoutId(), null);
-        addView(successView,layoutParams);
-        loadingView = inflater.inflate(R.layout.view_loading,null);
-        addView(loadingView,layoutParams);
+        addView(successView, layoutParams);
+        loadingView = inflater.inflate(R.layout.view_loading, null);
+        addView(loadingView, layoutParams);
         showSuccessView();
     }
 

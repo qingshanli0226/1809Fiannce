@@ -16,10 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class SlideRecyclerView extends RecyclerView {
 
-    private static final String TAG="SlideRecyclerView";
+    private static final String TAG = "SlideRecyclerView";
     private static final int INVALID_POSITION = -1;
-    private static final int INVALID_CHILD_WIDTH  = -1;
-    private static final int SNAP_VELOCITY  = 600;
+    private static final int INVALID_CHILD_WIDTH = -1;
+    private static final int SNAP_VELOCITY = 600;
 
     private VelocityTracker mVelocityTracker;
     private int mTouchSlop;
@@ -87,7 +87,7 @@ public class SlideRecyclerView extends RecyclerView {
                     mIsSlide = true;
                     return true;
                 }
-                if(e.getRawX()>500){
+                if (e.getRawX() > 500) {
                     getParent().requestDisallowInterceptTouchEvent(true);
                 } else {
                     getParent().requestDisallowInterceptTouchEvent(false);

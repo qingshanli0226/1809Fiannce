@@ -25,14 +25,13 @@ public class ExitLoginActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
         btnUserLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CacheUserManager.getInstance().setLoginBean(null);
-                SpUtil.putString(ExitLoginActivity.this, CommonConstant.SP_TOKEN,"");
+                SpUtil.putString(ExitLoginActivity.this, CommonConstant.SP_TOKEN, "");
 //                FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
-                ARouter.getInstance().build("/main/MainActivity").navigation();
+                ARouter.getInstance().build(getString(R.string.main_mainActivity)).navigation();
             }
         });
     }

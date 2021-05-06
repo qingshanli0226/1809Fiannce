@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.fiannce.framework.view.LoadingPage;
 import com.fiannce.framework.view.ToolBar;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener{
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener {
 
     protected T httpPresenter;
     protected boolean isUseLoading = true;
@@ -47,7 +47,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     }
 
     public void destroy() {
-        if (httpPresenter != null){
+        if (httpPresenter != null) {
             httpPresenter.detachView();
         }
     }

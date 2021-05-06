@@ -16,7 +16,7 @@ public class FragAdapter extends FragmentPagerAdapter {
     private List<Fragment> list;
     private List<String> title;
 
-    public FragAdapter(FragmentManager fm,List<Fragment> list,List<String> title) {
+    public FragAdapter(FragmentManager fm, List<Fragment> list, List<String> title) {
         super(fm);
         this.list = list;
         this.title = title;

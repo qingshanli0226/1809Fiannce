@@ -53,7 +53,7 @@
     <string name="inputPassword">请输入密码</string>
     <string name="surePassword">确认密码:</string>
     <string name="registBt">注  册</string>
-    <string name="login">用户登录</string>
+    <string name="userlogin">用户登录</string>
     <string name="loginBt">登  录</string>
     <string name="userInfo">用户信息</string>
     <string name="iconUpdate">更改头像</string>
@@ -62,4 +62,15 @@
     <string name="yseOrNo">是否现在联系客服:010-56253825</string>
     <string name="tel">tel:</string>
     <string name="exitApp">再按一次退出APP</string>
+    <string name="ti">提示</string>
+    <string name="noLogin">您还没有登录哦！</string>
+    <string name="two">200</string>
+    <string name="defect">登录失败：</string>
+    <string name="small_name">name</string>
+    <string name="small_password">password</string>
+    <string name="nameOrpasswordNull">用户名或密码为空</string>
+    <string name="loginNo">未登录</string>
+    <string name="login">登录</string>
+    <string name="callPhone">"android.permission.CALL_PHONE"</string>
+    <string name="twoPassword">两次密码不一致</string>
  </resources>

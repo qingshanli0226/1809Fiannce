@@ -11,6 +11,7 @@ import com.fiannce.commond.SpUtil;
 import com.fiannce.framework.manager.CacheUserManager;
 import com.fiannce.net.mode.LoginBean;
 import com.fiannce.net.mode.RegisterBean;
+import com.fiannce.user.R;
 import com.fiannce.user.register.IUserView;
 import com.fiannce.user.register.UserPresenter;
 
@@ -27,7 +28,6 @@ public class AutoService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d("AutoService", "112211");
         new UserPresenter(new IUserView() {
             @Override
             public void onRegister(RegisterBean registerBean) {
@@ -41,11 +41,12 @@ public class AutoService extends Service {
 
             @Override
             public void onAutoLogin(LoginBean loginBean) {
-                SpUtil.putString(AutoService.this, CommonConstant.SP_TOKEN, loginBean.getResult().getToken());
-                Log.d("zyz", "123123");
-                CacheUserManager.getInstance().setLoginBean(loginBean);
+                if (loginBean.getResult() != null) {
+                    SpUtil.putString(AutoService.this, CommonConstant.SP_TOKEN, loginBean.getResult().getToken());
+                    CacheUserManager.getInstance().setLoginBean(loginBean);
 //                FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
-                ARouter.getInstance().build("/main/MainActivity").navigation();
+                    ARouter.getInstance().build(getString(R.string.main_mainActivity)).navigation();
+                }
             }
 
             @Override

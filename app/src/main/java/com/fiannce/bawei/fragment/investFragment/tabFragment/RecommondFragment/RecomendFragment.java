@@ -1,4 +1,4 @@
-package com.fiannce.bawei.fragment.investFragment.tabFragment.RecommondAdapter;
+package com.fiannce.bawei.fragment.investFragment.tabFragment.RecommondFragment;
 
 
 import android.os.Bundle;

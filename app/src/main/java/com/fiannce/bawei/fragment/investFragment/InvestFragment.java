@@ -13,7 +13,7 @@ import com.fiannce.zhaoyuzan.R;
 import com.fiannce.bawei.fragment.investFragment.tabFragment.adapter.FragAdapter;
 import com.fiannce.bawei.fragment.investFragment.tabFragment.allFragment.AllFragment;
 import com.fiannce.bawei.fragment.investFragment.tabFragment.hotFragment.HotFragment;
-import com.fiannce.bawei.fragment.investFragment.tabFragment.RecommondAdapter.RecomendFragment;
+import com.fiannce.bawei.fragment.investFragment.tabFragment.RecommondFragment.RecomendFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public class InvestFragment extends Fragment {
         fragments.add(new RecomendFragment());
         fragments.add(new HotFragment());
 
-        fragAdapter = new FragAdapter(getActivity().getSupportFragmentManager(),fragments,list);
+        fragAdapter = new FragAdapter(getActivity().getSupportFragmentManager(), fragments, list);
 
         viewPager.setAdapter(fragAdapter);
         tabLayout.setupWithViewPager(viewPager);

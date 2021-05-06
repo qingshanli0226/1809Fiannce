@@ -19,7 +19,7 @@ public class InvestPresenter extends BasePresenter<IInvestView> {
         attachView(iInvestView);
     }
 
-    public void getProductData(){
+    public void getProductData() {
         RetrofitCreator.getFiannceApiService().getProductData()
                 .delay(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
@@ -38,29 +38,29 @@ public class InvestPresenter extends BasePresenter<IInvestView> {
                     }
                 })
                 .subscribe(new Observer<InvestBean>() {
-            @Override
-            public void onSubscribe(Disposable disposable) {
+                    @Override
+                    public void onSubscribe(Disposable disposable) {
 
-            }
+                    }
 
-            @Override
-            public void onNext(InvestBean investBean) {
-                if (iView != null){
-                    iView.onProductData(investBean);
-                }
-            }
+                    @Override
+                    public void onNext(InvestBean investBean) {
+                        if (iView != null) {
+                            iView.onProductData(investBean);
+                        }
+                    }
 
-            @Override
-            public void onError(Throwable throwable) {
-                if (iView != null){
-                    iView.showToast(throwable.getMessage());
-                }
-            }
+                    @Override
+                    public void onError(Throwable throwable) {
+                        if (iView != null) {
+                            iView.showToast(throwable.getMessage());
+                        }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 }

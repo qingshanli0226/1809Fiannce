@@ -25,13 +25,13 @@ public interface FiannceApiService {
 
     @POST("register?")
     @FormUrlEncoded
-    Observable<RegisterBean> getRegisterData(@Field("name")String name,@Field("password")String password);
+    Observable<RegisterBean> getRegisterData(@Field("name") String name, @Field("password") String password);
 
     @POST("login?")
     @FormUrlEncoded
-    Observable<LoginBean> getLoginData(@Field("name")String name, @Field("password")String password);
+    Observable<LoginBean> getLoginData(@Field("name") String name, @Field("password") String password);
 
     @FormUrlEncoded
     @POST(AppNetConfig.AUTOLOGIN)
-    Observable<LoginBean> getAutoLogin(@Field("token")String token);
+    Observable<LoginBean> getAutoLogin(@Field("token") String token);
 }

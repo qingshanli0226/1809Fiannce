@@ -13,7 +13,7 @@ public class RetrofitCreator {
     private static FiannceApiService fiannceApiService;
 
     public static FiannceApiService getFiannceApiService() {
-        if (fiannceApiService == null){
+        if (fiannceApiService == null) {
             fiannceApiService = createKSApiService();
         }
         return fiannceApiService;
@@ -26,9 +26,10 @@ public class RetrofitCreator {
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
+                .addInterceptor(new TokenInterceptor())
                 .connectTimeout(15, TimeUnit.SECONDS)
-                .writeTimeout(15,TimeUnit.SECONDS)
-                .readTimeout(15,TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -37,7 +38,6 @@ public class RetrofitCreator {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
 
 
         return retrofit.create(FiannceApiService.class);

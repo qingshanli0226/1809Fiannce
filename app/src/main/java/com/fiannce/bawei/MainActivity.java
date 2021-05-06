@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         requestPermissions(new String[]{
-                "android.permission.CALL_PHONE"
-        },100);
+                getString(R.string.callPhone)
+        }, 100);
+
         viewPager = findViewById(R.id.vp);
         commonTabLayout = findViewById(R.id.common);
 
@@ -49,13 +49,13 @@ public class MainActivity extends AppCompatActivity {
         list.add(new InvestFragment());
         list.add(new MineFragment());
         list.add(new MoreFragment());
-        commonAdapter = new CommonAdapter(getSupportFragmentManager(),list);
+        commonAdapter = new CommonAdapter(getSupportFragmentManager(), list);
         viewPager.setAdapter(commonAdapter);
 
-        mTabEntities.add(new CommonBean(getString(R.string.activity_home),R.drawable.bottom02,R.drawable.bottom01));
-        mTabEntities.add(new CommonBean(getString(R.string.activity_invest),R.drawable.bottom04,R.drawable.bottom03));
-        mTabEntities.add(new CommonBean(getString(R.string.activity_mine),R.drawable.bottom06,R.drawable.bottom05));
-        mTabEntities.add(new CommonBean(getString(R.string.activity_more),R.drawable.bottom08,R.drawable.bottom07));
+        mTabEntities.add(new CommonBean(getString(R.string.activity_home), R.drawable.bottom02, R.drawable.bottom01));
+        mTabEntities.add(new CommonBean(getString(R.string.activity_invest), R.drawable.bottom04, R.drawable.bottom03));
+        mTabEntities.add(new CommonBean(getString(R.string.activity_mine), R.drawable.bottom06, R.drawable.bottom05));
+        mTabEntities.add(new CommonBean(getString(R.string.activity_more), R.drawable.bottom08, R.drawable.bottom07));
         commonTabLayout.setTabData(mTabEntities);
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {

@@ -30,20 +30,20 @@ public class InvestAdapter extends BaseQuickAdapter<InvestBean.ResultBean, BaseV
 
     @Override
     protected void convert(final BaseViewHolder baseViewHolder, InvestBean.ResultBean resultBean) {
-        baseViewHolder.setText(R.id.alltitle,resultBean.getName());
-        baseViewHolder.setText(R.id.allonemoney,resultBean.getMoney());
-        baseViewHolder.setText(R.id.alltwopercentage,resultBean.getYearRate());
-        baseViewHolder.setText(R.id.allthreeday,resultBean.getSuodingDays());
-        baseViewHolder.setText(R.id.allonenum,resultBean.getMinTouMoney());
-        baseViewHolder.setText(R.id.allthreenum,resultBean.getMemberNum());
+        baseViewHolder.setText(R.id.alltitle, resultBean.getName());
+        baseViewHolder.setText(R.id.allonemoney, resultBean.getMoney());
+        baseViewHolder.setText(R.id.alltwopercentage, resultBean.getYearRate());
+        baseViewHolder.setText(R.id.allthreeday, resultBean.getSuodingDays());
+        baseViewHolder.setText(R.id.allonenum, resultBean.getMinTouMoney());
+        baseViewHolder.setText(R.id.allthreenum, resultBean.getMemberNum());
         Button button = baseViewHolder.getView(R.id.txt_delete);
         baseViewHolder.addOnClickListener(R.id.txt_delete);
         ProgressView progressView = baseViewHolder.getView(R.id.allmyview);
-        progressView.saledProgress(Integer.valueOf(resultBean.getProgress()),false);
+        progressView.saledProgress(Integer.valueOf(resultBean.getProgress()), false);
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lastItemView.scrollTo(0,0);
+                lastItemView.scrollTo(0, 0);
                 lastItemView = null;
                 lastPosition = -1;
 
@@ -62,33 +62,33 @@ public class InvestAdapter extends BaseQuickAdapter<InvestBean.ResultBean, BaseV
                         baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
                         return true;
                     case MotionEvent.ACTION_MOVE:
-                        if (lastX > 300 && event.getRawX()<lastX) {
+                        if (lastX > 300 && event.getRawX() < lastX) {
                             baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
-                            if (lastItemView!=null&&baseViewHolder.getPosition()!=lastPosition) {
-                                lastItemView.scrollTo(0,0);
+                            if (lastItemView != null && baseViewHolder.getPosition() != lastPosition) {
+                                lastItemView.scrollTo(0, 0);
                             }
                             lastPosition = baseViewHolder.getAdapterPosition();
                             lastItemView = baseViewHolder.itemView;
                             scrollDiffX = (int) (lastX - event.getRawX());
-                            if (scrollDiffX > 200){
+                            if (scrollDiffX > 200) {
                                 scrollDiffX = 200;
                             }
-                            baseViewHolder.itemView.scrollTo(scrollDiffX,0);
+                            baseViewHolder.itemView.scrollTo(scrollDiffX, 0);
                             return true;
-                        } else if (lastX > 500 && event.getRawX() > lastX){
+                        } else if (lastX > 500 && event.getRawX() > lastX) {
                             baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
                             scrollDiffX = (int) (lastX - event.getRawX());
                             if (scrollDiffX < 0) {
                                 baseViewHolder.itemView.scrollTo(0, 0);
                             }
-                        }else {
+                        } else {
                             baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(false);
                         }
                     case MotionEvent.ACTION_UP:
-                        if (scrollDiffX > 80){
+                        if (scrollDiffX > 80) {
                             baseViewHolder.itemView.scrollTo(200, 0);
-                        }else {
-                            baseViewHolder.itemView.scrollTo(0,0);
+                        } else {
+                            baseViewHolder.itemView.scrollTo(0, 0);
                         }
                         return true;
                 }

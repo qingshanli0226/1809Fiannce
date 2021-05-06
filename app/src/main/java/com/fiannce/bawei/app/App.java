@@ -17,21 +17,14 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-
         ARouter.init(this);
-        //net传入上下文
+
         NetModel.init(this);
-
-        //user模块初始
         UserModel.init();
-        //app
         AppModel.init();
-
-
-        //自定义arouter
         FrameArouter.getInstance().init(this);
-        CacheConnectManager.getInstance().init(this);
 
+        CacheConnectManager.getInstance().init(this);
         startService(new Intent(this, AutoService.class));
     }
 }

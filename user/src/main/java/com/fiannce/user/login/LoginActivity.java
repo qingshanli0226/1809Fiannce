@@ -45,17 +45,15 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
         etLoginNumber.setText(name1);
         etLoginPwd.setText(password1);
 
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 name1 = etLoginNumber.getText().toString().trim();
                 password1 = etLoginPwd.getText().toString().trim();
-
-                if(TextUtils.isEmpty(name1) && TextUtils.isEmpty(password1)){
+                if (TextUtils.isEmpty(name1) && TextUtils.isEmpty(password1)) {
                     Toast.makeText(LoginActivity.this, "用户名或密码为空", Toast.LENGTH_SHORT).show();
-                } else{
-                    httpPresenter.getLoginData(name1,password1);
+                } else {
+                    httpPresenter.getLoginData(name1, password1);
                 }
             }
         });
@@ -77,14 +75,14 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
 
     @Override
     public void onLoginData(LoginBean loginBean) {
-        if(loginBean.getCode().equals("200")){
-            SpUtil.putString(this, CommonConstant.SP_TOKEN,loginBean.getResult().getToken());
+        if (loginBean.getCode().equals("200")) {
+            SpUtil.putString(this, CommonConstant.SP_TOKEN, loginBean.getResult().getToken());
             //跳到主页面返回
             CacheUserManager.getInstance().setLoginBean(loginBean);
 //            FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
             ARouter.getInstance().build("/main/MainActivity").navigation();
-        } else{
-            Toast.makeText(this, "失败："+loginBean, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "失败：" + loginBean, Toast.LENGTH_SHORT).show();
         }
     }
 

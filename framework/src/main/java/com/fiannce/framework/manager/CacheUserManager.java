@@ -10,7 +10,8 @@ public class CacheUserManager {
 
     private CacheUserManager() {
     }
-    public synchronized static CacheUserManager getInstance(){
+
+    public synchronized static CacheUserManager getInstance() {
         if (cacheUserManager == null) {
             cacheUserManager = new CacheUserManager();
         }
@@ -18,14 +19,14 @@ public class CacheUserManager {
     }
 
 
-
     private LoginBean loginBean;
     private List<ILoginChange> loginChangeList = new ArrayList<>();
-    public void registerLogin(ILoginChange iLoginChange){
+
+    public void registerLogin(ILoginChange iLoginChange) {
         loginChangeList.add(iLoginChange);
     }
 
-    public void unRegisterLogin(ILoginChange iLoginChange){
+    public void unRegisterLogin(ILoginChange iLoginChange) {
         loginChangeList.remove(iLoginChange);
     }
 
@@ -40,7 +41,7 @@ public class CacheUserManager {
         }
     }
 
-    public interface ILoginChange{
+    public interface ILoginChange {
         void onLoginChange(LoginBean loginBean);
     }
 }

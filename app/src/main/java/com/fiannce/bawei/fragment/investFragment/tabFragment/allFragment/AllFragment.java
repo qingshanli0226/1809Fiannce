@@ -42,7 +42,7 @@ public class AllFragment extends BaseFragment<InvestPresenter> implements IInves
     protected void initView() {
         recyclerView = mBaseView.findViewById(R.id.allRv);
 
-        investAdapter = new InvestAdapter(R.layout.all_item,list);
+        investAdapter = new InvestAdapter(R.layout.all_item, list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(investAdapter);
 
@@ -55,7 +55,6 @@ public class AllFragment extends BaseFragment<InvestPresenter> implements IInves
                 }
             }
         });
-
 
 
     }

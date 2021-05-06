@@ -17,54 +17,54 @@ public class ToolBar extends RelativeLayout {
     private TextView titleTv;
     private ImageView leftImg;
     private ImageView rightImg;
-    private boolean rightAreaIsShow,leftIsShow;
+    private boolean rightAreaIsShow, leftIsShow;
     private String titleText;
-    private int rightImgId,leftImgId;
+    private int rightImgId, leftImgId;
     private IToolbarListener iToolbarListener;
 
     public ToolBar(Context context) {
         super(context);
-        init(context,null,0);
+        init(context, null, 0);
     }
 
     public ToolBar(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context,attrs,0);
+        init(context, attrs, 0);
     }
 
     public ToolBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs,defStyleAttr);
+        init(context, attrs, defStyleAttr);
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ToolBar);
         titleText = typedArray.getString(R.styleable.ToolBar_titleText);
-        leftImgId  = typedArray.getResourceId(R.styleable.ToolBar_leftImg, 0);
+        leftImgId = typedArray.getResourceId(R.styleable.ToolBar_leftImg, 0);
         rightImgId = typedArray.getResourceId(R.styleable.ToolBar_rightImage, 0);
-        leftIsShow  = typedArray.getBoolean(R.styleable.ToolBar_leftIsShow, false);
-        rightAreaIsShow = typedArray.getBoolean(R.styleable.ToolBar_rightIsShow,false);
+        leftIsShow = typedArray.getBoolean(R.styleable.ToolBar_leftIsShow, false);
+        rightAreaIsShow = typedArray.getBoolean(R.styleable.ToolBar_rightIsShow, false);
         typedArray.recycle();
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.view_toolbar,this);
+        inflater.inflate(R.layout.view_toolbar, this);
 
         titleTv = findViewById(R.id.titleTv);
         leftImg = findViewById(R.id.leftImg);
         rightImg = findViewById(R.id.rightImg);
 
         titleTv.setText(titleText);
-        if (rightAreaIsShow && rightImgId != 0){
+        if (rightAreaIsShow && rightImgId != 0) {
             rightImg.setImageResource(rightImgId);
         }
-        if (leftIsShow && leftImgId != 0){
+        if (leftIsShow && leftImgId != 0) {
             leftImg.setImageResource(leftImgId);
         }
 
         leftImg.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (iToolbarListener != null){
+                if (iToolbarListener != null) {
                     iToolbarListener.onLeftClick();
                 }
             }
@@ -72,20 +72,22 @@ public class ToolBar extends RelativeLayout {
         rightImg.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (iToolbarListener != null){
+                if (iToolbarListener != null) {
                     iToolbarListener.onRightImgClick();
                 }
             }
         });
     }
 
-    public void setToolbarListener(IToolbarListener iToolbarListener){
+    public void setToolbarListener(IToolbarListener iToolbarListener) {
         this.iToolbarListener = iToolbarListener;
     }
 
-    public static interface IToolbarListener{
+    public static interface IToolbarListener {
         void onLeftClick();
+
         void onRightImgClick();
+
         void onRightTvClick();
     }
 }

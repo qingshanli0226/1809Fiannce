@@ -15,7 +15,7 @@ public class TokenInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         String token = SpUtil.getString(NetModel.context, CommonConstant.SP_TOKEN);
-        Request newRequest = request.newBuilder().addHeader(CommonConstant.SP_TOKEN,token).build();
+        Request newRequest = request.newBuilder().addHeader(CommonConstant.SP_TOKEN, token).build();
         return chain.proceed(newRequest);
     }
 }

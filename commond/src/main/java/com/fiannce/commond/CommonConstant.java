@@ -1,7 +1,7 @@
 package com.fiannce.commond;
 
 public class CommonConstant {
-    public static final String SP_NAME = "autoToken";
+//    public static final String SP_NAME = "autoToken";
     public static final String SP_TOKEN = "token";
 
     public static final String APP_MAIN_PATH = "/app/MainActivity";

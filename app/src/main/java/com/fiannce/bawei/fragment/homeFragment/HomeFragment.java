@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends BaseFragment implements CacheUserManager.ILoginChange{
+public class HomeFragment extends BaseFragment implements CacheUserManager.ILoginChange {
 
     private Banner banner;
     private TextView textView;
@@ -66,14 +66,14 @@ public class HomeFragment extends BaseFragment implements CacheUserManager.ILogi
         String yearRate = proInfo.getYearRate();
         yuqiText.setText(yearRate);
 
-        progressView.saledProgress(90,true);
+        progressView.saledProgress(90, true);
 
         CacheUserManager.getInstance().registerLogin(this);
         LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
-        if(loginBean == null){
-            Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
-        } else{
-            Toast.makeText(getContext(), "登录", Toast.LENGTH_SHORT).show();
+        if (loginBean == null) {
+            Toast.makeText(getContext(), getString(R.string.loginNo), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getContext(), getString(R.string.login), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -100,6 +100,6 @@ public class HomeFragment extends BaseFragment implements CacheUserManager.ILogi
 
     @Override
     public void onLoginChange(LoginBean loginBean) {
-        Toast.makeText(getContext(), ""+loginBean, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "" + loginBean, Toast.LENGTH_SHORT).show();
     }
 }

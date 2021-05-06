@@ -19,9 +19,10 @@ public class UserPresenter extends BasePresenter<IUserView> {
     public UserPresenter(IUserView iRegisterView) {
         attachView(iRegisterView);
     }
-    public void getRegister(String name,String password){
+
+    public void getRegister(String name, String password) {
         RetrofitCreator.getFiannceApiService()
-                .getRegisterData(name,password)
+                .getRegisterData(name, password)
                 .delay(3, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -66,9 +67,9 @@ public class UserPresenter extends BasePresenter<IUserView> {
 
     }
 
-    public void getLogin(String name,String password){
+    public void getLogin(String name, String password) {
         RetrofitCreator.getFiannceApiService()
-                .getLoginData(name,password)
+                .getLoginData(name, password)
                 .delay(3, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -95,7 +96,6 @@ public class UserPresenter extends BasePresenter<IUserView> {
                     public void onNext(@NonNull LoginBean loginBean) {
                         if (iView != null) {
                             iView.onLogin(loginBean);
-
                         }
                     }
 
@@ -103,7 +103,6 @@ public class UserPresenter extends BasePresenter<IUserView> {
                     public void onError(@NonNull Throwable e) {
                         if (iView != null) {
                             iView.showToast(e.getMessage());
-
                         }
                     }
 
@@ -114,7 +113,8 @@ public class UserPresenter extends BasePresenter<IUserView> {
                 });
 
     }
-    public void getAutoLogin(String token){
+
+    public void getAutoLogin(String token) {
         RetrofitCreator.getFiannceApiService()
                 .getAutoLogin(token)
                 .delay(3, TimeUnit.SECONDS)
@@ -143,7 +143,6 @@ public class UserPresenter extends BasePresenter<IUserView> {
                     public void onNext(@NonNull LoginBean loginBean) {
                         if (iView != null) {
                             iView.onAutoLogin(loginBean);
-
                         }
                     }
 
@@ -151,7 +150,6 @@ public class UserPresenter extends BasePresenter<IUserView> {
                     public void onError(@NonNull Throwable e) {
                         if (iView != null) {
                             iView.showToast(e.getMessage());
-
                         }
                     }
 

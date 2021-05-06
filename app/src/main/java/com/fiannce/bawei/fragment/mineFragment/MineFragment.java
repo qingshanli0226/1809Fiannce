@@ -44,18 +44,18 @@ public class MineFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-
         LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
-        if(loginBean != null){
+        if (loginBean != null) {
             ivMeIcon.setImageResource(R.drawable.my_user_bg_icon);
-        }else {
+            tvMeName.setText(loginBean.getResult().getName());
+        } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setTitle("提示");
-            builder.setMessage("您还没有登录哦！");
+            builder.setTitle(getString(R.string.ti));
+            builder.setMessage(getString(R.string.noLogin));
             builder.setPositiveButton(getString(R.string.sure), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent intent = new Intent(getActivity(),LoginActivity.class);
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent);
                 }
             });
@@ -68,14 +68,13 @@ public class MineFragment extends BaseFragment {
             builder.show();
         }
 
-
     }
 
     @Override
     protected void initView() {
-        EventBus.getDefault().register(this);
         toolbar = mBaseView.findViewById(R.id.toolbar);
         ivMeIcon = mBaseView.findViewById(R.id.iv_me_icon);
+        tvMeName = mBaseView.findViewById(R.id.tv_me_name);
         recharge = mBaseView.findViewById(R.id.recharge);
         withdraw = mBaseView.findViewById(R.id.withdraw);
         llTouzi = mBaseView.findViewById(R.id.ll_touzi);
@@ -83,13 +82,6 @@ public class MineFragment extends BaseFragment {
         llZichan = mBaseView.findViewById(R.id.ll_zichan);
     }
 
-    @Subscribe
-    public void event(StringBean bundle){
-        tvMeName = mBaseView.findViewById(R.id.tv_me_name);
-        final String name = bundle.getName();
-        Toast.makeText(getActivity(), name, Toast.LENGTH_SHORT).show();
-        tvMeName.setText(name+"");
-    }
 
     @Override
     protected int getLayoutId() {
@@ -102,14 +94,7 @@ public class MineFragment extends BaseFragment {
         super.onRightImgClick();
         Intent intent = new Intent(getActivity(), ExitLoginActivity.class);
         startActivity(intent);
-
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (EventBus.getDefault().isRegistered(this)){
-            EventBus.getDefault().unregister(this);
-        }
-    }
+
 }

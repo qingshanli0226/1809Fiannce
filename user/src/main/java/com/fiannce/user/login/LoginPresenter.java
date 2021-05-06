@@ -13,12 +13,12 @@ import io.reactivex.schedulers.Schedulers;
 
 public class LoginPresenter extends BasePresenter<ILoginView> {
 
-    public LoginPresenter(ILoginView iLoginViewView){
+    public LoginPresenter(ILoginView iLoginViewView) {
         attachView(iLoginViewView);
     }
 
-    public void getLoginData(String name,String password){
-        RetrofitCreator.getFiannceApiService().getLoginData(name,password)
+    public void getLoginData(String name, String password) {
+        RetrofitCreator.getFiannceApiService().getLoginData(name, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -42,14 +42,14 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
 
                     @Override
                     public void onNext(LoginBean loginBean) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.onLoginData(loginBean);
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.showToast(e.getMessage());
                         }
                     }

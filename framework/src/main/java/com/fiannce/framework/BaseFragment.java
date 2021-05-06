@@ -45,7 +45,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     }
 
 
-
     protected abstract void initPresenter();
 
     protected abstract void initData();
@@ -61,7 +60,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     }
 
     public void destroy() {
-        if (httpPresenter != null){
+        if (httpPresenter != null) {
             httpPresenter.detachView();
         }
     }

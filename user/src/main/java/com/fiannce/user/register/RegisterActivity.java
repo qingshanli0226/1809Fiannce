@@ -58,21 +58,18 @@ public class RegisterActivity extends BaseActivity<UserPresenter> implements IUs
                 password = etRegisterPwd.getText().toString().trim();
                 String yesPwd = etRegisterPwdagain.getText().toString().trim();
 
-                if(TextUtils.isEmpty(name)|| TextUtils.isEmpty(password)||TextUtils.isEmpty(yesPwd)){
-                    Toast.makeText(RegisterActivity.this, "用户名或密码为空", Toast.LENGTH_SHORT).show();
-                } else{
+                if (TextUtils.isEmpty(name) || TextUtils.isEmpty(password) || TextUtils.isEmpty(yesPwd)) {
+                    Toast.makeText(RegisterActivity.this, getString(R.string.nameOrpasswordNull), Toast.LENGTH_SHORT).show();
+                } else {
                     //判断两次密码不一样
-
-                    if(password.equals(yesPwd)){
+                    if (password.equals(yesPwd)) {
                         //一致
-                        httpPresenter.getRegister(name,password);
-                    } else{
+                        httpPresenter.getRegister(name, password);
+                    } else {
                         //不一致
-                        Toast.makeText(RegisterActivity.this, "两次密码不一样", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, getString(R.string.twoPassword), Toast.LENGTH_SHORT).show();
                     }
                 }
-
-
             }
         });
 
@@ -100,15 +97,15 @@ public class RegisterActivity extends BaseActivity<UserPresenter> implements IUs
 
     @Override
     public void onRegister(RegisterBean registerBean) {
-        if(registerBean.getCode().equals("200")){
+        if (registerBean.getCode().equals(getString(R.string.two))) {
             //跳转登录页面
 //            FrameArouter.getInstance().build(CommonConstant.USER_LOGIN_PATH).navigation();
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-            intent.putExtra("name",name);
-            intent.putExtra("password",password);
+            intent.putExtra(getString(R.string.small_name), name);
+            intent.putExtra(getString(R.string.small_password), password);
             startActivity(intent);
-        } else{
-            Toast.makeText(this, ""+registerBean.getResult(), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "" + registerBean.getResult(), Toast.LENGTH_SHORT).show();
         }
     }
 
