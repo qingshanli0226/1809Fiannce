@@ -1,7 +1,9 @@
 package com.example.a1809zg;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +14,8 @@ import com.example.a1809zg.fragment.HomeFragment;
 import com.example.a1809zg.fragment.InvestFragment;
 import com.example.a1809zg.fragment.MineFragment;
 import com.example.a1809zg.fragment.MoreFragment;
+import com.example.frame.CommonConstant;
+import com.example.frame.FrameArouter;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //                .withString("name","123")
 //                .navigation(MainActivity.this);
         initView();
+        FrameArouter.getInstance().registerpath(CommonConstant.APP_MAIN_PATH,MainActivity.class);
 
 
 
@@ -55,10 +60,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
+
+
+
 
     private void initView() {
         line = findViewById(R.id.line);
         com = findViewById(R.id.com);
+
     }
 }

@@ -10,7 +10,8 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.a1809zg.R;
-import com.example.a1809zg.register.RegitsterActivity;
+import com.example.frame.CommonConstant;
+import com.example.frame.FrameArouter;
 
 
 public class MoreFragment extends Fragment {
@@ -27,8 +28,7 @@ public class MoreFragment extends Fragment {
           regitster.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                  Intent intent = new Intent(getActivity(), RegitsterActivity.class);
-                  startActivity(intent);
+                  FrameArouter.getInstance().build(CommonConstant.USER_REGISTER_PATH).navigation();
               }
           });
         return inflate;

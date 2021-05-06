@@ -1,15 +1,13 @@
-package com.example.a1809zg.login;
+package com.example.user.login;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.a1809zg.R;
 import com.example.frame.BaseActivity;
+import com.example.frame.CacheUserManager;
+import com.example.frame.SpUtil;
 import com.example.net.bean.LoginBean;
+import com.example.user.R;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements ILoginView {
 
@@ -24,12 +22,15 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
         String message = loginBean.getMessage();
        if (code.equals("200")){
            Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
+           SpUtil.putString(this,"token",loginBean.getResult().getToken());
+           CacheUserManager.getInstance().setLoginBean(loginBean);
+
        }
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_login;
+        return R.layout.log;
     }
 
     @Override
@@ -75,6 +76,21 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
 
     @Override
     public void showError(String msg) {
+
+    }
+
+    @Override
+    public void onConnect() {
+
+    }
+
+    @Override
+    public void onDisConnect() {
+
+    }
+
+    @Override
+    public void onLoginChange(LoginBean loginBean) {
 
     }
 }

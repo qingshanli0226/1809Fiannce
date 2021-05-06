@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements CacheUserManager.ILoginChange{
     protected P mPresenter;
     protected LoadingPage loadingPage;
     protected MyToolbar myToolbar;
@@ -35,13 +35,14 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
         initView();
         initData();
         initPresenter();
-
+       CacheUserManager.getInstance().registerLogin(this);
     }
 
 
     public <V extends View> V findViewById(int resId){
         return mView.findViewById(resId);
     }
+
     protected abstract void initPresenter();
 
     protected abstract void initView();
@@ -53,6 +54,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         ondestroy();
+        CacheUserManager.getInstance().unregisterLogin(this);
     }
     public void ondestroy(){
         if (mPresenter!=null){

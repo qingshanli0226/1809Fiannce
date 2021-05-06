@@ -16,7 +16,9 @@ import com.example.a1809zg.R;
 import com.example.frame.BaseActivity;
 import com.example.frame.CacheMore;
 import com.example.net.bean.HomeBean;
+import com.example.net.bean.LoginBean;
 import com.example.net.bean.UpdataBean;
+import com.example.user.AutoService;
 
 public class HomeActivity extends BaseActivity<HomePresenter> implements IHomeView {
 private HomePresenter homePresenter;
@@ -101,6 +103,8 @@ private HomePresenter homePresenter;
 
         miao = findViewById(R.id.contentTv);
         progressBar = findViewById(R.id.progressBar);
+        Intent intent = new Intent(this, AutoService.class);
+        startService(intent);
     }
 
     @Override
@@ -131,8 +135,7 @@ private HomePresenter homePresenter;
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            startActivity(new Intent(HomeActivity.this,MainActivity.class));
-                            dialog.dismiss();
+                            
                         }
                     });
                     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -166,5 +169,20 @@ private HomePresenter homePresenter;
         super.destroy();
         handler.removeCallbacksAndMessages(true);
         mPresenter.detachView();
+    }
+
+    @Override
+    public void onConnect() {
+
+    }
+
+    @Override
+    public void onDisConnect() {
+
+    }
+
+    @Override
+    public void onLoginChange(LoginBean loginBean) {
+
     }
 }

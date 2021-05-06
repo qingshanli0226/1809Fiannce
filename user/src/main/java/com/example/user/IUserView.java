@@ -1,0 +1,11 @@
+package com.example.user;
+
+import com.example.frame.IBaseView;
+import com.example.net.bean.LoginBean;
+import com.example.net.bean.RegisterBean;
+
+public interface IUserView extends IBaseView {
+    public void onRegister(RegisterBean registerBean);
+    public void onLogin(LoginBean loginBean);
+    public void onAutoLogin(LoginBean loginBean);
+}

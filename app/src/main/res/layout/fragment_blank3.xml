@@ -20,7 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_marginTop="@dimen/dp_10"
         android:layout_height="wrap_content"
-        android:text="@string/user"></TextView>
+        android:text="@string/user"
+        android:id="@+id/name"></TextView>
 </LinearLayout>
 <LinearLayout
     android:layout_width="match_parent"

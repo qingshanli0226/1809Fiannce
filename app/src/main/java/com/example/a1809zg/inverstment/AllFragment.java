@@ -11,6 +11,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.a1809zg.R;
 import com.example.frame.BaseFragment;
+import com.example.net.bean.LoginBean;
 import com.example.net.bean.ProductBean;
 
 import java.util.ArrayList;
@@ -80,6 +81,11 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IFragView
 
     @Override
     public void showError(String msg) {
+
+    }
+
+    @Override
+    public void onLoginChange(LoginBean loginBean) {
 
     }
 }

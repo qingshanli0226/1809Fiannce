@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity<T extends BasePresenter>extends AppCompatActivity{
+public abstract class BaseActivity<T extends BasePresenter>extends AppCompatActivity implements CacheconnetManager.IConnect,CacheUserManager.ILoginChange{
     protected T mPresenter;
     protected MyToolbar myToolbar;
     protected LoadingPage loadingPage;
@@ -22,6 +22,8 @@ public abstract class BaseActivity<T extends BasePresenter>extends AppCompatActi
         initView();
         initPresenter();
         initData();
+        CacheconnetManager.getInstance().registerConnectListener(this);
+        CacheUserManager.getInstance().registerLogin(this);
     }
 
     protected abstract int getLayoutId();
@@ -36,6 +38,7 @@ public abstract class BaseActivity<T extends BasePresenter>extends AppCompatActi
     protected void onDestroy() {
         super.onDestroy();
         destroy();
+        CacheUserManager.getInstance().unregisterLogin(this);
     }
 
     public void destroy() {

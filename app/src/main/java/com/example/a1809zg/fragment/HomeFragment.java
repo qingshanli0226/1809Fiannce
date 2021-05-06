@@ -12,6 +12,7 @@ import com.example.a1809zg.welcome.IHomeView;
 import com.example.frame.BaseFragment;
 import com.example.frame.CacheMore;
 import com.example.net.bean.HomeBean;
+import com.example.net.bean.LoginBean;
 import com.example.net.bean.UpdataBean;
 import com.scwang.smartrefresh.layout.BuildConfig;
 import com.youth.banner.Banner;
@@ -84,6 +85,11 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements IHomeVi
 
     @Override
     public void showError(String msg) {
+
+    }
+
+    @Override
+    public void onLoginChange(LoginBean loginBean) {
 
     }
 }

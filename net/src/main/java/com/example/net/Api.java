@@ -26,6 +26,8 @@ public interface Api {
 @FormUrlEncoded
 @POST("login")
     Observable<LoginBean>getLoginData(@Field("name")String name,@Field("password")String password);
-
+@FormUrlEncoded
+    @POST("autoLogin")
+    Observable<LoginBean> getAutoData(@Field("token")String token);
 }
 
