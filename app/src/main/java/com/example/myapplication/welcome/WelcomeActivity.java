@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -29,6 +30,8 @@ import com.example.myapplication.R;
 import com.example.myapplication.apk.APKVersionCodeUtils;
 import com.example.demo.Demo;
 import com.example.user.autologin.AutoLoginService;
+
+import java.io.File;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
@@ -178,7 +181,18 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
-                                    myservice.downLoad("https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2858426577,4189650377&fm=26&gp=0.jpg",handler);
+
+                                    //判断是否下载过这个文件 如果下载过直接跳转
+                                    String apkPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download/aaa.apk";
+                                    File file = new File(apkPath);
+                                    if (file.exists()){
+                                        Toast.makeText(WelcomeActivity.this, "已下载完成", Toast.LENGTH_SHORT).show();
+                                        ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
+                                        return ;
+                                    }else {
+                                        myservice.downLoad("http://49.233.0.68:8080//atguigu/apk/P2PInvest/app-debug.apk",handler);
+                                    }
+
                                 }
                             });
 

@@ -92,8 +92,10 @@ public class AutoLoginService extends Service {
         builder.setSmallIcon(R.drawable.icon_more_on);
         builder.setProgress(100,0,false);
         builder.setContentTitle("下载中");
+        builder.setPriority(Notification.PRIORITY_MAX);
+        builder.setDefaults(Notification.PRIORITY_DEFAULT);
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        manager.notify(1,builder.build());
+        manager.notify(2,builder.build());
 
         RetrofitCretor.getFiannceApiService()
                 .downLoadFile(url)
@@ -110,30 +112,29 @@ public class AutoLoginService extends Service {
 
                         InputStream inputStream = null;
                         FileOutputStream fileOutputStream = null;
-                        File file = new File("/sdcard/Download/aaa.gif");
-                        if (file.exists()){
-                            return;
-                        }
+                        File file = new File("/sdcard/Download/aaa.apk");
 
                         try {
                             long totalByte  = responseBody.contentLength();
                             int len = -1;
                             byte[] bytes = new byte[1024];
-
+                            int count = 0;
                             inputStream = responseBody.byteStream();
                             fileOutputStream = new FileOutputStream(file);
 
                             while ((len = inputStream.read(bytes))!=-1){
                                 fileOutputStream.write(bytes,0,len);
+                                Log.i("zrfs", "onNexttotalByte: "+totalByte);
+                                Log.i("zrfs", "onNextlen: "+len);
+
                                 long curr = totalByte / len;
-
-                                builder.setContentTitle("下载完成");
-                                builder.setProgress(30, (int) curr,false);
-                                manager.notify(1,builder.build());
-
-                                ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
-
+                                count+=len;
+                                Log.i("zrf", "onNext: "+curr);
                             }
+                            builder.setContentTitle("下载完成");
+                            builder.setProgress((int) totalByte, count,false);
+                            manager.notify(2,builder.build());
+                            ARouter.getInstance().build(Demo.AROUTE_PATH).navigation();
 
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
