@@ -7,15 +7,11 @@ import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.PixelFormat;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
-import android.service.autofill.AutofillService;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +38,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private int newAppVerSionCode;
     private int currentAppVerSionCode;
     private AutoLoginService.MyBinder myBinder ;
+    private String apkPath;
 
     @Override
     public int getbandLayout() {
@@ -64,6 +61,21 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void initView() {
+        Intent intent = new Intent(WelcomeActivity.this, AutoLoginService.class);
+        ServiceConnection serviceConnection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                myBinder = (AutoLoginService.MyBinder) service;
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+
+            }
+        };
+        //绑定服务
+        bindService(intent,serviceConnection,BIND_AUTO_CREATE);
+
         //向上顶  全屏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         countdowntv = (TextView) findViewById(R.id.countDownTv);
@@ -84,6 +96,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void initVersion(VersionBean versionBean) {
         Log.d("WelcomeActivity", versionBean.toString());
         newAppVerSionCode = versionBean.getResult().getVersionCode();//最新版本号
+        apkPath ="http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk";//获取下载链接
         getv = true;
         handler.sendEmptyMessage(ONE_TASK_FINISH);
     }
@@ -146,23 +159,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(WelcomeActivity.this, "正在下载", Toast.LENGTH_SHORT).show();
-
-                                Intent intent = new Intent(WelcomeActivity.this, AutoLoginService.class);
-                                ServiceConnection serviceConnection = new ServiceConnection() {
-                                    @Override
-                                    public void onServiceConnected(ComponentName name, IBinder service) {
-                                        myBinder = (AutoLoginService.MyBinder) service;
-                                    }
-
-                                    @Override
-                                    public void onServiceDisconnected(ComponentName name) {
-
-                                    }
-                                };
-                                //绑定服务
-                                bindService(intent,serviceConnection,BIND_AUTO_CREATE);
-
-                                myBinder.myMethod();
+                                myBinder.myMethod(apkPath);
                             }
                         });
                         AlertDialog alertDialog = builder.create();

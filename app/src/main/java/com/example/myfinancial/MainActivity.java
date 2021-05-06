@@ -1,8 +1,10 @@
 package com.example.myfinancial;
 
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -70,6 +72,14 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initView() {
         tab = (CommonTabLayout) findViewById(R.id.tab);
+
+        //动态权限
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            requestPermissions(new String[]{
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+            },100);
+        }
     }
 
     @Override
