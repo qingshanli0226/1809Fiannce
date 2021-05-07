@@ -1,6 +1,7 @@
 package com.finance.zg6.welcome;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
@@ -132,7 +133,13 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     builder.setPositiveButton(getString(R.string.welcomeActivity_alert_button_yes), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-
+                            ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
+                            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                            progressDialog.setTitle(getString(R.string.welcomeActivity_alert_title));
+                            progressDialog.setMessage(getString(R.string.welcomeActivity_progress_message));
+                            progressDialog.setProgress(100);
+                            progressDialog.setCancelable(true);
+                            progressDialog.show();
                         }
                     });
                     builder.show();

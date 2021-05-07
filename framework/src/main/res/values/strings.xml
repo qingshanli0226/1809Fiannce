@@ -19,6 +19,7 @@
     <string name="welcomeActivity_latest_version_number_toast">最新版本号:</string>
     <string name="welcomeActivity_alert_title">下载最新版本</string>
     <string name="welcomeActivity_alert_message">解决一些bug，优化网络请求！</string>
+    <string name="welcomeActivity_progress_message">正在下载中,请稍后...</string>
     <string name="welcomeActivity_alert_button_yes">确定</string>
     <string name="welcomeActivity_alert_button_no">取消</string>
     <string name="welcomeActivity_alert_success_toast">所有任务已完成</string>
