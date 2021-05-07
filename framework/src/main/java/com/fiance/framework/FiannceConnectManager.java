@@ -12,7 +12,7 @@ import java.util.List;
 
 public class FiannceConnectManager {
 
-    private boolean isConnected;//当前应用的网络连接状态
+    private boolean isConnected;
     private Context context;
 
     private static FiannceConnectManager instance;
@@ -43,15 +43,14 @@ public class FiannceConnectManager {
 
     private void getCurrentConnectStatus() {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();//获取当前系统网络连接的信息
-        if (networkInfo!=null && networkInfo.isConnected()) {//如果有连接
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo!=null && networkInfo.isConnected()) {
             isConnected = true;
         } else {
             isConnected = false;
         }
     }
 
-    //因为网络连接的状态是变化的，所以我们要监听系统网络连接的变化。系统通过广播来通知网络连接的变化
     private void initReceiver() {
 
         IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
@@ -61,12 +60,10 @@ public class FiannceConnectManager {
     private BroadcastReceiver netConnectReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            //如果收到网络连接通知的广播，代表系统的网络连接发生了改变
             if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
                  getCurrentConnectStatus();
                 notifyConnectChanged();
             }
-
         }
     };
     private void notifyConnectChanged() {

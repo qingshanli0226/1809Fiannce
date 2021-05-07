@@ -1,5 +1,9 @@
 package com.fiance.chengtianle.welcome;
 
+import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
@@ -15,6 +19,9 @@ import com.fiance.framework.CacheManager;
 import com.fiance.net.mode.HomeBean;
 import com.fiance.net.mode.VersionBean;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 
 
@@ -29,6 +36,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
     private int countDown = 3;
+    private AlertDialog.Builder builder;
 
     @Override
     public void onHomeData(HomeBean homeBean) {
@@ -70,6 +78,40 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         coundDownTv = findViewById(R.id.countDownTv);
         handler.sendEmptyMessageDelayed(DELAY_INDEX, DELAY);
         coundDownTv.setText(countDown + "秒");
+         builder = new AlertDialog.Builder(this);
+        builder.setTitle("下载最新版本");
+        builder.setMessage("解决一些bug,优化网络请求!");
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                progressDialog.setMax(100);
+                progressDialog.setMessage("正在下载");
+                progressDialog.show();
+
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    int progress=0;
+                    @Override
+                    public void run() {
+                        if (progress==100){
+                            progressDialog.dismiss();
+                            timer.cancel();
+                        }
+                        progressDialog.setProgress(progress+=24);
+                    }
+                },0,1000);
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override

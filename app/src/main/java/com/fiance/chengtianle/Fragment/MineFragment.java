@@ -1,6 +1,8 @@
 package com.fiance.chengtianle.Fragment;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -33,7 +35,6 @@ public class MineFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.fragment_mine, container, false);
-        // Inflate the layout for this fragment
         toolbar =inflate.findViewById(R.id.toolbar);
         imgTx = inflate.findViewById(R.id.img_tx);
         username = inflate.findViewById(R.id.username);
@@ -45,6 +46,18 @@ public class MineFragment extends Fragment {
         boolean islogin = sflogin.getBoolean("islogin", false);
         if (islogin){
             username.setText(name);
+        }else{
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setTitle("提示");
+            builder.setMessage("您还没有登录哦");
+            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    ARouter.getInstance().build("/login/LoginActivity").withInt("", 1).navigation();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         }
         toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +67,7 @@ public class MineFragment extends Fragment {
                     startActivity(intent);
                 }else{
                     ARouter.getInstance().build("/login/LoginActivity").withInt("", 1).navigation();
+
                 }
             }
         });

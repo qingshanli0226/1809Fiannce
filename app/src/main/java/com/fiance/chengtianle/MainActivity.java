@@ -45,16 +45,8 @@ public class MainActivity extends BaseActivity {
             e.printStackTrace();
         }
 
-        Toast.makeText(this,isApplicationUsed()+" 应用是否是用户正在操作", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,isApplicationUsed()+" 应用是否是用户正在操作", Toast.LENGTH_SHORT).show();
 
-      /*  ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-        List<ActivityManager.RunningTaskInfo> runningTaskInfoList = activityManager.getRunningTasks(1);
-        if (android.os.Build.VERSION.SDK_INT >= 29) {
-            ComponentName componentName = runningTaskInfoList.get(0).topActivity;
-            if(componentName.getPackageName().equals(getPackageName())) {
-
-            }
-        }*/
 
     }
     @Override
