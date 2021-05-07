@@ -6,7 +6,9 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.net.Uri;
 import android.os.Binder;
+import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +16,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.core.content.FileProvider;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.LogUtils;
@@ -92,7 +96,7 @@ public class UserService extends Service {
 
         return super.onStartCommand(intent, flags, startId);
     }
-
+x
     public void downLoad(String url){
         Notification.Builder builder = new Notification.Builder(this);
         builder.setSmallIcon(R.drawable.icon_more_on);
@@ -142,6 +146,8 @@ public class UserService extends Service {
                             builder.setContentTitle(DOWNLOAD_FINISH);
                             manager.notify(2,builder.build());
 
+//                            start7Install();
+
 
 
                         } catch (FileNotFoundException e) {
@@ -165,6 +171,19 @@ public class UserService extends Service {
                 });
 
     }
+
+    public void start7Install() {
+        File imagePath = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), "/sdcard/Download/aaa.apk");
+        File newFile = new File(imagePath, "/sdcard/Download/aaa.apk");
+        Uri apkUri = FileProvider.getUriForFile(UserService.this, "cn.test.zz.fileprovider", newFile);//在AndroidManifest中的android:authorities值
+        Intent install =new Intent(Intent.ACTION_VIEW);
+        // 由于没有在Activity环境下启动Activity,设置下面的标签
+        install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        install.setDataAndType(apkUri, "application/vnd.android.package-archive");
+        startActivity(install);
+    }
+
 
         //检查当前我们的应用是否用户正在使用
         private boolean isApplicationUsed() {
