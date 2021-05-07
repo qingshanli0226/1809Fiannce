@@ -10,16 +10,7 @@ import org.junit.Test
 class ExampleUnitTest {
 
     @Test
-    public fun addition_isCorrect() {
-        TestCalss().name="llll"
+    fun addition_isCorrect() {
+        print("123".hashCode())
     }
-}
-
-class TestCalss {
-    var name: String
-        get():String = name
-        set(name: String) {
-            this.name = name
-            print("1111")
-        }
 }

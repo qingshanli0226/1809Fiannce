@@ -1,10 +1,10 @@
 package com.example.financial.ui.welcome
 
+import android.Manifest
 import android.app.AlertDialog
 import android.content.ComponentName
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.ServiceConnection
 import android.os.Handler
 import android.os.IBinder
 import android.os.Message
@@ -21,6 +21,7 @@ import com.example.net_library.User
 import kotlinx.android.synthetic.main.activity_welcome.*
 import java.util.*
 import kotlin.concurrent.timerTask
+import android.content.ServiceConnection as ServiceConnection1
 
 /**
  * 欢迎页实现
@@ -35,12 +36,6 @@ import kotlin.concurrent.timerTask
  * 8.本页不能退出
  */
 class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
-    /**
-     * 是否需要更新
-     */
-    protected var IsUp: Boolean = false
-    private var bind: LoginServer.Bind?=null
-    private var updata:UpData?=null
     /***
      * 常量
      * 网络请求
@@ -51,6 +46,23 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
         val LODINDATA: Int = -10001
         val UPDATA: Int = -10002
         val TIME: Int = -10003
+    }
+
+    private var loginServer: LoginServer? = null
+    private val serviceConnection=object : ServiceConnection1 {
+
+        override fun onServiceConnected(
+            name: ComponentName?,
+            service: IBinder?
+        ) {
+            var value = service as LoginServer.Bind
+            loginServer = value.getParent()
+            starAutomaticLogin()
+        }
+
+        override fun onServiceDisconnected(name: ComponentName?) {
+
+        }
     }
 
     /***
@@ -75,25 +87,17 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
             }
 
             if (ISLODINDATA && ISTIME && ISUPDATA) {
-//                if (IsUp) {
-//
-//                } else {
-//                    //UpData()
-//                }
+                startActivity(Intent(this@WelcomeActivity, MainActivity::class.java))
+                finish()
             }
         }
     }
 
     /**
-     * 将倒计时的timer对象提为全局便于销毁
-     */
-    //private val timer: Timer =starTimer(3)
-
-    /**
      * @return 返回计数器对象
      */
-    private fun starTimer(i:Int): Timer {
-        var time=i
+    private fun starTimer(i: Int): Timer {
+        var time = i
         var timer = Timer()
         timer.schedule(timerTask {
             if (time == 0) {
@@ -114,13 +118,18 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
     override fun bandLayoutId(): Int {
         getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN);// 设置全屏
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        );// 设置全屏
 
         return R.layout.activity_welcome
     }
 
     override fun initView() {
         attaPresenter(WelcomePresenter(WelcomeModle(), this))
+
+        requestPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE),100)
+
+        bindService(Intent(this, LoginServer::class.java), serviceConnection!!, BIND_AUTO_CREATE)
     }
 
     override fun initData() {
@@ -129,22 +138,11 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
         mPresenter!!.getVersion()
 
         starTimer(3)
-
-        starAutomaticLogin()
     }
 
     private fun starAutomaticLogin() {
         if (!User.long) {
-            bindService(Intent(this, LoginServer::class.java), object : ServiceConnection {
-                override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-                    bind = service as LoginServer.Bind
-                    bind!!.getParent().starLogin()
-                }
-
-                override fun onServiceDisconnected(name: ComponentName?) {
-
-                }
-            }, BIND_AUTO_CREATE)
+            loginServer!!.returnAutomaticLogin()
         }
     }
 
@@ -167,43 +165,43 @@ class WelcomeActivity : BaseActitvty<WelcomePresenter>(), IWelcomeCanter.View {
     /**
      * 弹出对话框是否需要更新
      */
-    private fun UpData() {
+    private fun initPopBos(path: String) {
         var create = AlertDialog.Builder(this)
             .setIcon(R.drawable.ic_launcher_background)
             .setMessage("优化bug,新增功能")
             .setTitle("下载最新版本")
             .setNegativeButton("确定", object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface?, which: Int) {
-
+                    handler.sendEmptyMessage(UPDATA)
+                    loginServer!!.returnUpDataApk(path)
                 }
             })
 
             .setPositiveButton("取消", object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface?, which: Int) {
-                    //ARouter.getInstance().build(DataUlit.AROUTER_JUMP_MAIN).withInt("",1).navigation()
-                    startActivity(Intent(this@WelcomeActivity, MainActivity::class.java))
+                    handler.sendEmptyMessage(UPDATA)
                 }
             })
             .create()
         create.show()
     }
 
-    /**
-     * 销毁计时器
-     */
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        timer.cancel()
-//    }
+    override fun onDestroy() {
+        super.onDestroy()
+        unbindService(serviceConnection!!)
+        handler.removeCallbacksAndMessages(null)
+    }
 
     /**
      * 从网络获取最新版本号，判断
      * @param upData 网络请求获取的数据
      */
     override fun onUpdate(upData: UpData) {
-        this.updata=updata
-        handler.sendEmptyMessage(UPDATA)
-        IsUp = upData.versionCode == getVersionNumer()
+        if (!(upData.versionCode == getVersionNumer())) {
+            initPopBos(upData.apkUrl)
+        } else {
+            handler.sendEmptyMessage(UPDATA)
+        }
     }
 
     /**

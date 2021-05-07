@@ -44,7 +44,6 @@ class LoginActivity : BaseActitvty<LoginPresenter>() ,View.OnClickListener,ILogi
     }
 
     override fun onRequst(requst: Requst<User>) {
-        //Toast.makeText(this,requst.message,Toast.LENGTH_LONG).show()
         if (requst.code.equals("200")){
             com.example.net_library.User.long=true
             com.example.net_library.User.name=requst.result.name
