@@ -67,7 +67,6 @@ public class MineFragment extends Fragment {
                     startActivity(intent);
                 }else{
                     ARouter.getInstance().build("/login/LoginActivity").withInt("", 1).navigation();
-
                 }
             }
         });

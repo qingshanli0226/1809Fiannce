@@ -1,5 +1,7 @@
 package com.fiance.framework;
 
+import android.Manifest;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -20,6 +22,14 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
             }
         };
         setContentView(loadingPage);
+
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            requestPermissions(new String[]{
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+            },100);
+        }
+
         initView();
         initPresenter();
         initData();
