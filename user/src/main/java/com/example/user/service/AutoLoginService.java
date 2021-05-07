@@ -43,29 +43,6 @@ public class AutoLoginService extends Service {
     private long totaBute=100;//总长度
     private float pregress=0;//现在的长度
 
-//    private Handler handler = new Handler() {
-//        @Override
-//        public void handleMessage(@androidx.annotation.NonNull Message msg) {
-//            super.handleMessage(msg);
-//            switch (msg.what) {
-//                case 1://下载失败
-//                    notification.contentView.setTextViewText(R.id.content_view_text1, "下载失败，请重试");
-//                    notification.flags = Notification.FLAG_AUTO_CANCEL; // 设置为自动取消
-//                    mNotificationManager.notify(1, notification);
-//                    AutoLoginService.this.stopSelf();
-//                    break;
-//                case 2://下载完成
-//
-//                case 3://下载中 更新进度
-//                    Log.d("AutoLoginService", "zkh 刷新");
-//                    notification.contentView.setProgressBar(R.id.content_view_progress, (int) totaBute, (int) pregress, false);
-//                    mNotificationManager.notify(1, notification);
-//                    break;
-//            }
-//
-//
-//        }
-//    };
 
     @Override
     public void onCreate() {
@@ -142,45 +119,6 @@ public class AutoLoginService extends Service {
 
         Log.d("AutoLoginService", "zkh2");
         String apkName = "youdao.apk";
-//        File tmpFile=new File("/sdcard/youdao/");
-//        if (!tmpFile.exists()){
-//            tmpFile.mkdir();
-//        }
-//        File file=new File("/sdcard/youdao/"+apkName);
-//        try {
-//            URL url=new URL(path);
-//            HttpURLConnection connection= (HttpURLConnection) url.openConnection();
-//            InputStream is=connection.getInputStream();
-//            FileOutputStream fos=new FileOutputStream(file);
-//            byte[] buf = new byte[1024];
-//            connection.connect();
-//            double count=0;
-//            if (connection.getResponseCode()>=500){
-//                Toast.makeText(this, "链接超时", Toast.LENGTH_SHORT).show();
-//            }else {
-//                while (count<=100){
-//                    if (is!=null){
-//                        int numRead=is.read(buf);
-//                        if (numRead<=0){
-//                            break;
-//                        } else {
-//                          fos.write(buf,0,numRead);
-//                        }
-//                    }else {
-//                        break;
-//                    }
-//                }
-//            }
-//            connection.disconnect();
-//            fos.close();
-//            is.close();
-////            File file1=new File("/sdcard/youdao/youdao.apk");//下载后的路径
-//            Toast.makeText(this, "下载完成", Toast.LENGTH_SHORT).show();
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         FiannceHttpMannager.getApiModel().downLoadApk(path)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -203,7 +141,7 @@ public class AutoLoginService extends Service {
                             //总长度
                             totaBute = responseBody.contentLength();
                             int len = -1;
-                            byte[] bytes = new byte[512];
+                            byte[] bytes = new byte[1024];
                             InputStream inputStream = responseBody.byteStream();
                             fos = new FileOutputStream(instanll);
                             while ((len = inputStream.read(bytes)) != -1) {

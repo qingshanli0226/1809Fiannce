@@ -37,6 +37,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private int drawtimetv = 3;
     private int newAppVerSionCode;
     private int currentAppVerSionCode;
+
     private AutoLoginService.MyBinder myBinder ;
     private String apkPath;
 
