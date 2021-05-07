@@ -53,11 +53,9 @@ public class InvestFragment extends Fragment {
         fragments.add(new HotFragment());
 
         fragAdapter = new FragAdapter(getActivity().getSupportFragmentManager(), fragments, list);
-
         viewPager.setAdapter(fragAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
         return inflate;
     }
-
 }
