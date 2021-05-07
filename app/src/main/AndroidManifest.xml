@@ -31,7 +31,10 @@
         <activity
             android:name=".startmode.CActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".connect.ConnectActivity"></activity>
+        <activity android:name=".connect.ConnectActivity" />
+        <activity android:name=".leak.MemActivity" />
+        <activity android:name=".leak.ThreadActivity" />
+        <activity android:name=".leak.MVPActivity"></activity>
     </application>
 
 </manifest>

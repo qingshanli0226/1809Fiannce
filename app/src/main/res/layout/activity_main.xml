@@ -49,6 +49,11 @@
             android:layout_height="wrap_content"
             android:text="连接管理"
             android:id="@+id/connectBtn"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="内存管理"
+            android:id="@+id/menBtn"/>
     </LinearLayout>
 
     <com.fiannce.bawei.framework.view.ProgressView

@@ -58,7 +58,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onHomeData(HomeBean homeBean) {
-        CacheManager.getInstance().setHomeBean(homeBean);
+        //CacheManager.getInstance().setHomeBean(homeBean);
         contentTv.setText(homeBean.toString());
         homeFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);

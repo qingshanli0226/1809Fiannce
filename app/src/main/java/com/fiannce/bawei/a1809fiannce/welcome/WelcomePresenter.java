@@ -74,20 +74,24 @@ public class WelcomePresenter extends BasePresenter<IWelcomeView> {
     public void getVersionData() {
         RetrofitCreator.getFiannceApiService()
                 .getServerVersion()
-                .delay(2,TimeUnit.SECONDS)
+                .delay(20,TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {//该函数当RxJava发起网络请求时调用
                     @Override
                     public void accept(Disposable disposable) throws Exception {
                         add(disposable);//将disposable存储起来，当页面销毁时，可以通过它去判断当前获取数据的线程是否已经停止，如果没有停止，则停止
-                        iView.showLoading();
+                        if (iView!=null) {
+                            iView.showLoading();
+                        }
                     }
                 })
                 .doFinally(new Action() {//当网络请求结束时回调该方法
                     @Override
                     public void run() throws Exception {
-                        iView.hideLoading();
+                        if (iView!=null) {
+                            iView.hideLoading();
+                        }
                     }
                 })
                 .subscribe(new Observer<VersionBean>() {

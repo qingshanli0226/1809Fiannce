@@ -13,6 +13,9 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.fiannce.bawei.a1809fiannce.connect.ConnectActivity;
+import com.fiannce.bawei.a1809fiannce.leak.MVPActivity;
+import com.fiannce.bawei.a1809fiannce.leak.MemActivity;
+import com.fiannce.bawei.a1809fiannce.leak.ThreadActivity;
 import com.fiannce.bawei.a1809fiannce.startmode.AActivity;
 import com.fiannce.bawei.a1809fiannce.startmode.BActivity;
 import com.fiannce.bawei.common.FiannceConstants;
@@ -47,7 +50,7 @@ public class MainActivity extends BaseActivity implements FiannceUserManager.IUs
 
     @Override
     protected void initData() {
-        HomeBean homeBean = CacheManager.getInstance().getHomeBean();
+        //HomeBean homeBean = CacheManager.getInstance().getHomeBean();
      /*   progressTv.setText("主页面: "+homeBean.toString());
         progressView.saledProgress(20,true);*/
     }
@@ -81,6 +84,14 @@ public class MainActivity extends BaseActivity implements FiannceUserManager.IUs
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ConnectActivity.class);
                 startActivity(intent);
+            }
+        });
+        findViewById(R.id.menBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               /* Intent intent = new Intent(MainActivity.this,ThreadActivity.class);
+                startActivity(intent);*/
+               CacheManager.getInstance().init(MainActivity.this);
             }
         });
 

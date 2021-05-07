@@ -1,13 +1,19 @@
 package com.fiannce.bawei.framework;
 
 import android.accessibilityservice.FingerprintGestureController;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.widget.Toast;
 
 import com.fiannce.bawei.framework.manager.FiannceConnectManager;
 import com.fiannce.bawei.framework.view.LoadingPage;
 import com.fiannce.bawei.framework.view.ToolBar;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,6 +44,13 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         FiannceConnectManager.getInstance().registerConnectListener(this);
     }
 
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+        }
+    };
+
     protected LoadingPage loadingPage;
 
     protected abstract int getLayoutId();
@@ -58,7 +71,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 
     public void destroy() {
         if (httpPresenter!=null) {
-            httpPresenter.detachView();
+            //httpPresenter.detachView();
         }
     }
 
