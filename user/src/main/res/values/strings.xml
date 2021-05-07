@@ -7,5 +7,15 @@
     <!-- TODO: Toolbar -->
     <string name="toolbar_register">注册</string>
     <string name="toolbar_login">登录</string>
+    <string name="toolbar_unlogin">用户信息</string>
+    <string name="property_text_one">更改头像</string>
+
+    <string name="login_text">手机号：</string>
+    <string name="login_hint">请输入手机号</string>
+    <string name="login_text_two">密码：</string>
+    <string name="login_hint_two">请输入密码</string>
+    <string name="login_button">登录</string>
+
+
 
 </resources>

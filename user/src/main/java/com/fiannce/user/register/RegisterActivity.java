@@ -27,9 +27,9 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     protected void initView() {
 
         toobarFake = (ToolBar) findViewById(R.id.toobar_fake);
-        e1 = (EditText) findViewById(R.id.e1);
+        e1 = (EditText) findViewById(R.id.number);
         e2 = (EditText) findViewById(R.id.e2);
-        e3 = (EditText) findViewById(R.id.e3);
+        e3 = (EditText) findViewById(R.id.password);
         e4 = (EditText) findViewById(R.id.e4);
         registerButton = (Button) findViewById(R.id.register_button);
         toobarFake.setToolbarListener(this);

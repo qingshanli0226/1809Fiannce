@@ -58,6 +58,7 @@ public class MoreFragment extends BaseFragment {
         toobarFake = (ToolBar) mView.findViewById(R.id.toobar_fake);
         userRegister = (LinearLayout) mView.findViewById(R.id.user_register);
         moreManage = (LinearLayout) mView.findViewById(R.id.more_manage);
+        toobarFake.setToolbarListener(this);
     }
 
     @Override

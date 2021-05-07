@@ -3,10 +3,12 @@
     package="com.fiannce.user">
 
     <application>
+        <activity android:name=".unLoginActivity"></activity>
+
         <service
             android:name=".autologin.AutoLoginService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".login.LoginActivity" />

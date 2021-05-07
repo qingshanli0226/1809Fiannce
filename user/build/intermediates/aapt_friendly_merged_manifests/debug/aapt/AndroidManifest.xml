@@ -9,6 +9,8 @@
         android:targetSdkVersion="30" />
 
     <application>
+        <activity android:name="com.fiannce.user.unLoginActivity" />
+
         <service
             android:name="com.fiannce.user.autologin.AutoLoginService"
             android:enabled="true"

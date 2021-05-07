@@ -2952,6 +2952,10 @@
         "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\drawable\\main_text2_select.xml"
     },
     {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_un_login.xml.flat",
+        "source": "D:\\zgsix\\1809Fiannce\\user\\build\\intermediates\\packaged_res\\debug\\layout\\activity_un_login.xml"
+    },
+    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
@@ -3006,6 +3010,10 @@
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_exo_icon_fullscreen_exit.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-xxhdpi-v4\\exo_icon_fullscreen_exit.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable_my_user_default.png.flat",
+        "source": "D:\\zgsix\\1809Fiannce\\framework\\build\\intermediates\\packaged_res\\debug\\drawable\\my_user_default.png"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_exo_ic_chevron_left.png.flat",

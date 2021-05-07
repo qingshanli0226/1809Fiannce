@@ -737,6 +737,7 @@ color colorToolbar
 color colorW
 color colorWhite
 color colorcome
+color colorloginEditTextbackground
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
 color design_default_color_primary_dark
@@ -1048,6 +1049,10 @@ dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
 dimen loading_layout_height
 dimen loading_layout_width
+dimen login_LinearLayout_layout_height
+dimen login_LinearLayout_two_layout_height
+dimen login_TextView_layout_marginLeft
+dimen login_TextView_textSize
 dimen main_linearLayout_layout_height
 dimen main_view_layout_height
 dimen manage_TextView_layout_marginTop
@@ -1647,6 +1652,7 @@ id beginning
 id blocking
 id bottom
 id bottom_progressbar
+id bt
 id buttonPanel
 id cancel_action
 id center
@@ -1683,9 +1689,7 @@ id direct
 id disableHome
 id duration_image_tip
 id duration_progressbar
-id e1
 id e2
-id e3
 id e4
 id edit_query
 id end
@@ -1824,6 +1828,7 @@ id notification_main_column
 id notification_main_column_container
 id numIndicator
 id numIndicatorInside
+id number
 id off
 id on
 id one
@@ -1833,6 +1838,7 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id password
 id percent
 id pin
 id preview_layout
@@ -2023,6 +2029,7 @@ layout activity_main
 layout activity_manage
 layout activity_pay
 layout activity_register
+layout activity_un_login
 layout activity_welcome
 layout banner
 layout custom_dialog
@@ -2196,6 +2203,11 @@ string jump_ad
 string load_end
 string load_failed
 string loading
+string login_button
+string login_hint
+string login_hint_two
+string login_text
+string login_text_two
 string main_home
 string main_investment
 string main_more
@@ -2244,6 +2256,7 @@ string tips_not_wifi_cancel
 string tips_not_wifi_confirm
 string toolbar_login
 string toolbar_register
+string toolbar_unlogin
 string welcome_text
 string welcome_text_title
 style ActivityTranslucent

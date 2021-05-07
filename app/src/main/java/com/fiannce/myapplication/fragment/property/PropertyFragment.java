@@ -47,9 +47,7 @@ public class PropertyFragment extends BaseFragment {
         toobarFake = (ToolBar) mView.findViewById(R.id.toobar_fake);
         mindImg = (ImageView) mView.findViewById(R.id.mind_img);
         tv = (TextView) mView.findViewById(R.id.tv);
-
-
-
+        toobarFake.setToolbarListener(this);
     }
 
     @Subscribe
@@ -71,7 +69,7 @@ public class PropertyFragment extends BaseFragment {
 
     @Override
     public void onRightImgClick() {
-
+        ARouter.getInstance().build("/user/unLoginActivity").withInt("",0).navigation();
     }
 
     @Override

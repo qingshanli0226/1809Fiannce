@@ -2,6 +2,14 @@
 <resources>
     <!-- TODO: Toolbar -->
     <dimen name="Toolbar_layout_height">50dp</dimen>
+    <dimen name="property_linearLayout_one_layout_height">100dp</dimen>
+    <dimen name="property_ImageView_one_layout_width">60dp</dimen>
+    <dimen name="property_ImageView_one_layout_height">75dp</dimen>
+    <dimen name="property_TextView_one_textSize">15dp</dimen>
 
+    <dimen name="login_LinearLayout_layout_height">100dp</dimen>
+    <dimen name="login_LinearLayout_two_layout_height">0dp</dimen>
+    <dimen name="login_TextView_textSize">15dp</dimen>
+    <dimen name="login_TextView_layout_marginLeft">10dp</dimen>
 
 </resources>

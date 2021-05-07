@@ -11,5 +11,8 @@
     <color name="colorWhite">#ffffff</color>
     <color name="coloRed">#EB0808</color>
     <color name="colorBlack">#111111</color>
+    <color name="colorPropertyLinearLayoutOne">#45C2F0</color>
+    <color name="colorloginEditTextbackground">#00FFFFFF</color>
+
 
 </resources>

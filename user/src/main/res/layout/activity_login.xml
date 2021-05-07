@@ -22,54 +22,53 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#FFFFFF"
+        android:layout_height="@dimen/login_LinearLayout_layout_height"
+        android:background="@color/colorWhite"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/login_LinearLayout_two_layout_height"
             android:layout_weight="1"
             android:background="@drawable/register_bro"
             android:gravity="center_vertical">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="@dimen/login_LinearLayout_layout_height"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="手机号："
-                android:textColor="#111111"
-                android:textSize="15dp"></TextView>
+                android:layout_marginLeft="@dimen/login_TextView_layout_marginLeft"
+                android:text="@string/login_text"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/login_TextView_textSize"></TextView>
             <EditText
-                android:id="@+id/e1"
+                android:id="@+id/number"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="请输入手机号"
-                android:background="#00FFFFFF"
+                android:hint="@string/login_hint"
+                android:background="@color/colorloginEditTextbackground"
                 ></EditText>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/login_LinearLayout_two_layout_height"
             android:layout_weight="1"
             android:background="@drawable/register_bro"
-
             android:gravity="center_vertical">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="@dimen/login_LinearLayout_layout_height"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="密码："
-                android:textColor="#111111"
-                android:textSize="15dp"></TextView>
+                android:layout_marginLeft="@dimen/login_TextView_layout_marginLeft"
+                android:text="@string/login_text_two"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/login_TextView_textSize"></TextView>
             <EditText
-                android:id="@+id/e3"
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="请输入密码"
+                android:hint="@string/login_hint_two"
                 android:password="true"
-                android:background="#00FFFFFF"
+                android:background="@color/colorloginEditTextbackground"
                 ></EditText>
         </LinearLayout>
     </LinearLayout>
@@ -79,8 +78,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="登录"
-        android:textColor="#ffffff"
-        android:background="#27BAED"
+        android:text="@string/login_button"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorPropertyLinearLayoutOne"
         ></Button>
 </LinearLayout>

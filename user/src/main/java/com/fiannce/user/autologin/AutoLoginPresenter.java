@@ -17,9 +17,9 @@ public class AutoLoginPresenter extends BasePresenter<IAutoLoginView> {
         attachView(autoLoginView);
     }
 
-    public void getAutoLogin(){
+    public void getAutoLogin(String token){
         RetrofitCreator.getFiannceApiService()
-                .getAutologin()
+                .getAutologin(token)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -43,7 +43,7 @@ public class AutoLoginPresenter extends BasePresenter<IAutoLoginView> {
                     @Override
                     public void onNext(AutoLoginBean autoLoginBean) {
                         if (iView != null){
-                            iView.getAutoLogin(autoLoginBean);
+                            iView.AutoLogin(autoLoginBean);
                         }
                     }
 

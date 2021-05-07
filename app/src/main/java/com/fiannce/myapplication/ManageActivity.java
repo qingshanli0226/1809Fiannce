@@ -5,13 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.fiannce.framework.BaseActivity;
+import com.fiannce.framework.view.ToolBar;
 
 public class ManageActivity extends BaseActivity {
 
 
+    private com.fiannce.framework.view.ToolBar toobarFake;
+
     @Override
     protected void initView() {
 
+        toobarFake = (ToolBar) findViewById(R.id.toobar_fake);
+        toobarFake.setToolbarListener(this);
     }
 
     @Override
@@ -31,7 +36,7 @@ public class ManageActivity extends BaseActivity {
 
     @Override
     public void onLeftClick() {
-
+        finish();
     }
 
     @Override

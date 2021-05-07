@@ -5,5 +5,5 @@ import com.fiannce.net.mode.AutoLoginBean;
 
 public interface IAutoLoginView extends IBaseView {
 
-    void getAutoLogin(AutoLoginBean autoLoginBean);
+    void AutoLogin(AutoLoginBean autoLoginBean);
 }
