@@ -8,10 +8,13 @@ import com.finance.net.bean.RegisterBean;
 import com.finance.net.bean.VersionBean;
 
 import io.reactivex.Observable;
+import okhttp3.ResponseBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Streaming;
+import retrofit2.http.Url;
 
 public interface FinanceApiService {
 
@@ -36,5 +39,10 @@ public interface FinanceApiService {
     @FormUrlEncoded
     @POST("autoLogin")
     Observable<LoginBean> getAutoLogin(@Field("token")String token);
+
+    @GET
+    @Streaming
+//防止占用内存过多，避免OOM问题也就是内存溢出
+    Observable<ResponseBody> downloadFile(@Url String url);
 
 }

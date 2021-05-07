@@ -11,5 +11,6 @@ public class FinanceApplication extends Application {
         ARouter.openDebug();
         ARouter.openLog();
         ARouter.init(this);
+
     }
 }

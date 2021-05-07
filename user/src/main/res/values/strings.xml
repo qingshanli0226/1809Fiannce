@@ -1,1 +1,4 @@
-<resources></resources>
+<resources>
+    <string name="downloading">下载</string>
+    <string name="downloadCompletes">下载完成!</string>
+</resources>
