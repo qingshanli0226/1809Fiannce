@@ -12,8 +12,11 @@ public class CommonConstant {
 //    public static final String SP_NAME_LOGIN = "login";
 //    public static final String SP_FLAG = "flag";
 
+    public static final String INSTANLL = "/sdcard/Download/install.apk";
 
 
-    public static final String INTENT_PARAM = "flag";
 
+
+    public static final String INSTANLL_NAME = "install";
+    public static final String INSTANLL_FLAG = "flag";
 }

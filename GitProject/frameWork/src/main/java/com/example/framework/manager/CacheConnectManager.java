@@ -41,7 +41,7 @@ public class CacheConnectManager {
         initReceiver();
     }
     //获得链接状态
-    public void getCurrentConnectStatus() {
+    public synchronized void getCurrentConnectStatus() {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         if(activeNetworkInfo != null && activeNetworkInfo.isConnected()){
@@ -68,7 +68,7 @@ public class CacheConnectManager {
     };
 
     //判断状态
-    public void notifyConnectChange(){
+    public synchronized void notifyConnectChange(){
         for (IConnect iConnect : list) {
             if(isConnect){
                 iConnect.onConnect();
@@ -79,13 +79,13 @@ public class CacheConnectManager {
     }
 
     //注册接口
-    public void registerConnectListener(IConnect connect){
+    public synchronized void registerConnectListener(IConnect connect){
         if (!list.contains(connect)) {
             list.add(connect);
         }
     }
     //取消注册接口
-    public void unRegisterConnectListener(IConnect connect){
+    public synchronized void unRegisterConnectListener(IConnect connect){
         if (list.contains(connect)) {
             list.remove(connect);
         }

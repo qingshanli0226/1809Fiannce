@@ -1,7 +1,6 @@
 package com.example.gitproject;
 
 import android.app.Application;
-import android.content.Intent;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.manager.CacheConnectManager;
@@ -9,7 +8,6 @@ import com.example.framework.module.FrameArouter;
 import com.example.gitproject.module.AppModule;
 import com.example.net.module.NetModule;
 import com.example.user.module.UserModule;
-import com.example.user.service.AutoService;
 
 
 public class App extends Application {
@@ -32,6 +30,7 @@ public class App extends Application {
         FrameArouter.getInstance().init(this);
 
         CacheConnectManager.getInstance().init(this);
+
 
 
     }

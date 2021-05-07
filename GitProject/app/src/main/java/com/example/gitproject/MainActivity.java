@@ -1,7 +1,13 @@
 package com.example.gitproject;
 
+import android.app.ActivityManager;
 import android.content.Intent;
+import android.graphics.PixelFormat;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -25,6 +31,7 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 @Route(path = CommonConstant.APP_MAIN_PATH)
 public class MainActivity extends BaseActivity implements CacheUserManager.ILoginChange {
@@ -69,7 +76,7 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
         fragmentManager();
 
         oneBtn.setChecked(true);
-
+//        windon();
         //选择
         mainRadiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -112,6 +119,64 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
                 fragmentTransaction.commit();
             }
         });
+    }
+
+    //检查当前我们的应用是否用户正在使用
+    private boolean isApplicationUsed() {
+        ActivityManager systemService = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = systemService.getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo runningAppProcess : runningAppProcesses) {
+            if(runningAppProcess.processName.equals(getPackageName())){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        return false;
+    }
+
+
+    private void windon() {
+        //判断是否可以安装
+        if (isApplicationUsed() && SpUtil.getBoolean(CommonConstant.INSTANLL_NAME, MainActivity.this,CommonConstant.INSTANLL_FLAG)) {
+
+
+            WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+
+            //设置小窗口尺寸的类
+            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+
+            //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
+            layoutParams.type= WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+            //像素格式为透明的
+            layoutParams.format = PixelFormat.TRANSPARENT;
+
+            //设置该flag在显示该小窗口时，其他窗口的按钮或者其他控件都可以点击.
+            layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+
+            //设置小窗口的尺寸
+            //单位是像素
+            layoutParams.width=700;
+            layoutParams.height=500;
+
+            //生成一个窗口的布局view，并且将该view添加到窗口里.
+            View rootView = LayoutInflater.from(this).inflate(com.example.user.R.layout.window_itl, null);
+            windowManager.addView(rootView, layoutParams);
+
+
+            Button windowInstall = rootView.findViewById(com.example.user.R.id.window_install);
+            windowInstall.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, "安装成功", Toast.LENGTH_SHORT).show();
+                }
+            });
+            windowManager.addView(rootView, layoutParams);
+
+        } else{
+
+        }
     }
 
     @Override

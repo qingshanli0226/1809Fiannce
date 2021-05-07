@@ -35,4 +35,6 @@ public class RetrofitManager {
                 .build();
         return retrofit.create(IHttpApiService.class);
     }
+
+
 }

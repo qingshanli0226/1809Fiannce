@@ -29,11 +29,11 @@ public class CacheUserManager {
         loginChangeList.remove(iLoginChange);
     }
 
-    public LoginBean getLoginBean() {
+    public synchronized LoginBean getLoginBean() {
         return loginBean;
     }
 
-    public void setLoginBean(LoginBean loginBean) {
+    public synchronized void setLoginBean(LoginBean loginBean) {
         this.loginBean = loginBean;
         for (ILoginChange iLoginChange : loginChangeList) {
             iLoginChange.onLoginChange(loginBean);

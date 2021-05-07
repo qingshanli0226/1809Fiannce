@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.common.CommonConstant;
 import com.example.common.SpUtil;
@@ -13,6 +14,7 @@ import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheUserManager;
 import com.example.framework.module.FrameArouter;
 import com.example.user.R;
+import com.google.android.material.tabs.TabLayout;
 
 public class ExitActivity extends BaseActivity {
 
@@ -36,14 +38,12 @@ public class ExitActivity extends BaseActivity {
 
     @Override
     public void initPresenter() {
-
     }
 
     @Override
     public void initData() {
         int anInt = FrameArouter.getInstance().getIntent().getBundleExtra("param").getInt("img");
         exitHead.setImageResource(anInt);
-
         exit.setOnClickListener(v -> {
             CacheUserManager.getInstance().setLoginBean(null);
             SpUtil.putString(this, CommonConstant.SP_TOKEN,"");
