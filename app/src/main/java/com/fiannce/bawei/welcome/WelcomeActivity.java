@@ -2,11 +2,17 @@ package com.fiannce.bawei.welcome;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -15,6 +21,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.fiannce.bawei.MainActivity;
 import com.fiannce.commond.CommonConstant;
 import com.fiannce.commond.SpUtil;
 import com.fiannce.framework.BaseActivity;
@@ -36,6 +43,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
     private VersionBean versionBean;
+    private ServiceConnection serviceConnection;
+    private int D_code;
+    private Intent intent;
+    private PackageManager packageManager;
 
 
     @Override
@@ -45,9 +56,22 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initData() {
+
+        requestPermissions(new String[]{"android.permission.CALL_PHONE"
+                ,"android.permission.WRITE_EXTERNAL_STORAGE"
+                ,"android.permission.READ_EXTERNAL_STORAGE"
+                ,"android.permission.SYSTEM_ALERT_WINDOW"},100);
+
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
+
+        intent = new Intent(this,AutoService.class);
+        startService(intent);
+
+        D_code = getLocalVersion(this);
     }
+
+
 
     @Override
     protected void initView() {
@@ -62,6 +86,32 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
+    private String getName() {
+        try {
+            String versionName = packageManager.getPackageInfo(getPackageName(), 0).versionName;
+
+            return versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    public static int getLocalVersion(Context ctx) {
+        int localVersion = 0;
+        try {
+            PackageInfo packageInfo = ctx.getApplicationContext()
+                    .getPackageManager()
+                    .getPackageInfo(ctx.getPackageName(), 0);
+            localVersion = packageInfo.versionCode;
+            Log.d("TAG", "当前版本号：" + localVersion);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return localVersion;
+    }
+
 
     @Override
     protected int getLayoutId() {
@@ -126,69 +176,68 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     }
                     break;
                 case ALL_TASK_FIISH:
-                    showAlert();
+                    if (D_code < versionBean.getResult().getVersionCode()) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+
+                        builder.setTitle(getResources().getString(R.string.downLoad));
+                        builder.setMessage(getResources().getString(R.string.requests));
+
+                        builder.setNegativeButton(getResources().getString(R.string.cancle), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+
+                        builder.setPositiveButton(getResources().getString(R.string.sure), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                serviceConnection = new ServiceConnection() {
+                                    @Override
+                                    public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+                                        AutoService.AutoBinder fiannceBinder = (AutoService.AutoBinder) iBinder;
+
+                                        AutoService fiannceService = fiannceBinder.getAutoService();
+
+                                        fiannceService.DownLoad(versionBean.getResult().getApkUrl());
+
+                                        Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+
+                                    @Override
+                                    public void onServiceDisconnected(ComponentName componentName) {
+
+                                    }
+                                };
+
+                                bindService(intent, serviceConnection,BIND_AUTO_CREATE);
+                            }
+                        });
+
+                        builder.show();
+                    }else {
+                        Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
                     break;
             }
         }
     };
 
-    private void showAlert() {
-        int code = 0;
-        try {
-            code = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        if (code < versionBean.getResult().getVersionCode()) {
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
-            builder.setTitle(getString(R.string.new_banben));
-            builder.setMessage(versionBean.getResult().getDesc());
-            builder.setNegativeButton(getString(R.string.sure), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    final ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
-                    progressDialog.setTitle("下载中...");
-                    progressDialog.setMessage("请等待");
-                    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                    progressDialog.setIndeterminate(false);
-                    progressDialog.show();
-
-                    final Thread thread = new Thread() {
-                        public void run() {
-                            super.run();
-                            for (int i = 0; i <= 100; i++) {
-                                progressDialog.setProgress(i);
-                                try {
-                                    Thread.sleep(50);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                            progressDialog.dismiss();
-                        }
-                    };
-                    thread.start();      //启动线程
-
-                }
-            });
-            builder.setPositiveButton(getString(R.string.cancle), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    ARouter.getInstance().build(getString(R.string.main_mainActivity)).navigation();
-                    finish();
-                }
-            });
-            builder.show();
-        } else {
-            finish();
-            ARouter.getInstance().build(getString(R.string.main_mainActivity)).navigation();
-        }
-    }
 
     @Override
     public void destroy() {
         super.destroy();
         handler.removeCallbacksAndMessages(null);
+        if (serviceConnection!=null){
+            unbindService(serviceConnection);
+        }
     }
 }
