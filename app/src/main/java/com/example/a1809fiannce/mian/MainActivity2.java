@@ -5,9 +5,16 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
@@ -22,6 +29,7 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -31,12 +39,15 @@ public class MainActivity2 extends AppCompatActivity {
     private long CurrentTime = 0;
     private ViewPager vp;
     private String name;
-
-
+    private Broad broad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        broad = new Broad();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("complete");
+        registerReceiver(broad,intentFilter);
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             requestPermissions(new String[]{
                     Manifest.permission.CALL_PHONE,
@@ -116,10 +127,39 @@ public class MainActivity2 extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+    class Broad extends BroadcastReceiver{
 
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals("complete")){
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity2.this);
+                builder.setTitle("下载完成");
+                builder.setMessage("是否安装");
+                builder.setIcon(R.mipmap.app_name);
+                builder.setPositiveButton("安装", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+//                        Intent intent = new Intent(Intent.ACTION_VIEW);
+//                        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+//                        startActivity(intent);
+                        dialog.dismiss();
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(context, "取消安装", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        }
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        unregisterReceiver(broad);
     }
 }

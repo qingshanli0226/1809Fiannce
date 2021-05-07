@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.a1809fiannce.R;
 import com.example.network.retrofit.RetrofitManager;
@@ -71,6 +72,7 @@ public class UpdateService extends Service {
                             FileOutputStream fileOutputStream = null;
                             File file = new File("/sdcard/Download/a.apk");
                             if (file.exists()) {
+                                Toast.makeText(UpdateService.this, "文件已存在,无需下载", Toast.LENGTH_SHORT).show();
                                 return;
                             }
                             long length = responseBody.contentLength();
@@ -84,14 +86,19 @@ public class UpdateService extends Service {
                                 while ((i = inputStream.read(bytes)) != -1) {
                                     fileOutputStream.write(bytes, 0, i);
                                     int current = (int) (length / i);
-                                    count += i*50;
+                                    count += i*500;
                                     Log.i("aa", "onNext: "+current);
+                                    builder.setProgress((int) length, count, false);
+                                    manager.notify(1, builder.build());
                                     if (count>=length){
                                         builder.setContentTitle("下载完成");
                                         manager.notify(1, builder.build());
+                                        Intent intent = new Intent();
+                                        intent.setAction("complete");
+                                        sendBroadcast(intent);
+                                        return;
                                     }
-                                    builder.setProgress((int) length, count, false);
-                                    manager.notify(1, builder.build());
+
 
                                 }
                             } catch (FileNotFoundException e) {

@@ -41,7 +41,6 @@ public class AllPresenter extends BasePresenter<AllCallBack>{
                         if (iView!=null){
                             iView.HideLoading();
                         }
-
                     }
                 })
                 .subscribe(new Observer<AllBean>() {

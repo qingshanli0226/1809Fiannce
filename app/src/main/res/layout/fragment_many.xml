@@ -35,7 +35,6 @@
                 app:left_title="@string/pwd"
                 android:id="@+id/pwd"
                 app:lin_right_show="true"
-                app:right_icon="@mipmap/toggle_off"
                 app:lin_right_Text_show="false"
                 app:left_icon="@mipmap/icon_more_secret"
                 ></com.example.a1809fiannce.view.LinView>

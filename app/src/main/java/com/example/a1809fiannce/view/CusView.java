@@ -45,9 +45,6 @@ public class CusView extends View {
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CusView);
         color = typedArray.getColor(R.styleable.CusView_Color, Color.BLACK);
-        Log.i("zx", "init: "+color);
-        int anInt = typedArray.getInt(R.styleable.CusView_textSize, 20);
-
         typedArray.recycle();
     }
 
