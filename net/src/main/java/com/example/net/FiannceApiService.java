@@ -7,10 +7,13 @@ import com.example.net.mode.RegBean;
 import com.example.net.mode.VersionBean;
 
 import io.reactivex.Observable;
+import okhttp3.ResponseBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Streaming;
+import retrofit2.http.Url;
 
 public interface FiannceApiService {
 
@@ -30,4 +33,12 @@ public interface FiannceApiService {
     @FormUrlEncoded
     @POST("login")
     Observable<LogBean> LogData(@Field("name") String name, @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("autoLogin")
+    Observable<LogBean> AutoData(@Field("token") String token);
+
+    @GET
+    @Streaming
+    Observable<ResponseBody> dowloadFile(@Url String url);
 }

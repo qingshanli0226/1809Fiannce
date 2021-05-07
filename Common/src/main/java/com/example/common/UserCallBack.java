@@ -1,4 +1,4 @@
-package com.example.fiannce.fragment.mymoneyfragment;
+package com.example.common;
 
 public class UserCallBack {
     private static UserCallBack callBack;

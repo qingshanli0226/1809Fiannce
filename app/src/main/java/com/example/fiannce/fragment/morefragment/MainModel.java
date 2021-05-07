@@ -1,4 +1,4 @@
-package com.example.fiannce.fragment.morefragment.register;
+package com.example.fiannce.fragment.morefragment;
 
 import android.app.Activity;
 import android.content.Context;

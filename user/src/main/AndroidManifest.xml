@@ -3,7 +3,22 @@
     package="com.example.user">
 
     <application>
-        <activity android:name=".LoginActivity"></activity>
+
+        <service android:name=".self.SelfService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".login.LoginActivity"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="123" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".register.RegisterActivity"></activity>
     </application>
 
 </manifest>

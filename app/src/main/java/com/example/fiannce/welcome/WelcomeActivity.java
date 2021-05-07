@@ -38,6 +38,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
     private int countDown = 3;
+    private UpdateService updateService;
 
     @Override
     protected int getLayoutId() {
@@ -129,6 +130,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     log.setPositiveButton("确定",null).setOnCancelListener(new DialogInterface.OnCancelListener() {
                         @Override
                         public void onCancel(DialogInterface dialogInterface) {
+                            updateService.DownUpdate("http://49.233.0.68:8080//atguigu/apk/P2PInvest/app-debug.apk");
+
+                            startActivity(new Intent(WelcomeActivity.this,MainActivity.class));
 
                         }
                     });

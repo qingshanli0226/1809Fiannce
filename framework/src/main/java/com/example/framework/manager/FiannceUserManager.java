@@ -2,12 +2,13 @@ package com.example.framework.manager;
 
 import com.example.net.mode.LogBean;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class FiannceUserManager {
 
-    private List<IUserLoginChanged> iUserLoginChangedList = new LinkedList<>();
+    private List<IUserLoginChanged> iUserLoginChangedList = new ArrayList<>();
 
     private static FiannceUserManager instance;
 

@@ -1,27 +1,17 @@
-package com.example.fiannce.fragment.morefragment.login;
+package com.example.user.login;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.example.common.Squilts;
-import com.example.fiannce.MainActivity;
-import com.example.fiannce.R;
-import com.example.fiannce.fragment.BeanBack;
-import com.example.fiannce.fragment.mymoneyfragment.UserCallBack;
+import com.example.common.UserCallBack;
 import com.example.framework.BaseActivity;
 import com.example.framework.FiannceARouter;
 import com.example.framework.manager.FiannceUserManager;
-import com.example.net.mode.AllBean;
-import com.example.net.mode.HomeBean;
 import com.example.net.mode.LogBean;
-import com.example.net.mode.RegBean;
-import com.example.net.mode.UpdateBean;
+import com.example.user.R;
 
 public class LoginActivity extends BaseActivity<LogPresenter> implements LogCallBack {
 
@@ -29,24 +19,20 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements LogCall
     private String name;
 
     @Override
-    public void LogData(LogBean logBean) {
-        pageView.ShowSuccess();
-        if (logBean.getCode().equals("200")){
-            Toast.makeText(this, "log", Toast.LENGTH_SHORT).show();
-            FiannceUserManager.getInstance().setLogin(logBean);
+    protected void initData() {
+        httpPresenter = new LogPresenter(this);
+        httpPresenter.LogData(name, pwd);
+            Log.i("123", "initView: 3333333333333");
+    }
 
-            Bundle bundle = new Bundle();
-            bundle.putString("name",name);
-            UserCallBack.getInstance().setName(name);
-            bundle.putInt("num",0);
+    @Override
+    protected void initView() {
 
-            Squilts.putString(LoginActivity.this,logBean.getResult().getToken());
+        Intent intent = getIntent();
 
-            FiannceARouter.getFiannceARouter().getAppManager().OpenMainActivity(LoginActivity.this,bundle);
+        name = intent.getStringExtra("name");
+        pwd = intent.getStringExtra("pwd");
 
-        }else {
-            Toast.makeText(this, ""+logBean.getMessage(), Toast.LENGTH_SHORT).show();
-        }
     }
 
     @Override
@@ -55,21 +41,27 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements LogCall
     }
 
     @Override
+    public void LogData(LogBean logBean) {
+        pageView.ShowSuccess();
+        if (logBean.getCode().equals("200")){
+
+            FiannceUserManager.getInstance().setLogin(logBean);
+            Bundle bundle = new Bundle();
+            bundle.putString("name",name);
+            UserCallBack.getInstance().setName(name);
+            bundle.putInt("num",0);
+
+            Squilts.putString(LoginActivity.this,logBean.getResult().getToken());
+
+            FiannceARouter.getFiannceARouter().getAppManager().OpenMainActivity(LoginActivity.this,bundle);
+        }else {
+            Toast.makeText(this, ""+logBean.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
     protected void initPresenter() {
 
-    }
-
-    @Override
-    protected void initData() {
-        httpPresenter = new LogPresenter(this);
-        httpPresenter.LogData(name, pwd);
-    }
-
-    @Override
-    protected void initView() {
-        Intent intent = getIntent();
-        name = intent.getStringExtra("name");
-        pwd = intent.getStringExtra("pwd");
     }
 
     @Override
@@ -84,7 +76,8 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements LogCall
 
     @Override
     public void showError(String error) {
-        //Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
+        Log.i("123", "showError: "+error);
     }
 
 }

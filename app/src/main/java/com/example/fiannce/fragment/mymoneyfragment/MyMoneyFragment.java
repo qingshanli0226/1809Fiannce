@@ -1,16 +1,9 @@
 package com.example.fiannce.fragment.mymoneyfragment;
 
-import android.content.Intent;
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.common.UserCallBack;
 import com.example.fiannce.R;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.FiannceUserManager;

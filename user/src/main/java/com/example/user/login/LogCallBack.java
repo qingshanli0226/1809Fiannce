@@ -1,4 +1,4 @@
-package com.example.fiannce.fragment.morefragment.login;
+package com.example.user.login;
 
 import com.example.framework.IBaseView;
 import com.example.net.mode.LogBean;

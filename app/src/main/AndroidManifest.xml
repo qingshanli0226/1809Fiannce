@@ -15,8 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fiannce"
         android:usesCleartextTraffic="true">
-        <activity android:name=".fragment.morefragment.login.LoginActivity"></activity>
-        <activity android:name=".fragment.morefragment.register.RegisterActivity" />
+        <activity android:name="com.example.user.login.LoginActivity"></activity>
+        <activity android:name="com.example.user.register.RegisterActivity" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".welcome.WelcomeActivity">
             <intent-filter>

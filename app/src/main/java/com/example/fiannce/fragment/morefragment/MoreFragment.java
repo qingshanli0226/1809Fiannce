@@ -11,15 +11,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.fiannce.R;
-import com.example.fiannce.fragment.morefragment.register.RegisterActivity;
 import com.example.framework.FiannceARouter;
 
 public class MoreFragment extends Fragment {
 
     private MoreView reg;
     private MoreView tell;
+    private int i = 0;
+    private MoreView pwd;
 
     public MoreFragment() {
         // Required empty public constructor
@@ -40,6 +42,7 @@ public class MoreFragment extends Fragment {
 
         reg = (MoreView) inflate.findViewById(R.id.reg);
         tell = (MoreView) inflate.findViewById(R.id.tell);
+        pwd = (MoreView) inflate.findViewById(R.id.pwd);
 
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +58,19 @@ public class MoreFragment extends Fragment {
                 intent.setAction(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:"+123456));
                 startActivity(intent);
+            }
+        });
+
+        pwd.setiRightImgCallBack(new MoreView.iRightImgCallBack() {
+            @Override
+            public void OnRightListener() {
+                if (i == 0){
+                    pwd.setRightIcon(R.mipmap.toggle_on);
+                    i = 1;
+                }else if (i == 1){
+                    pwd.setRightIcon(R.mipmap.toggle_off);
+                    i = 0;
+                }
             }
         });
 

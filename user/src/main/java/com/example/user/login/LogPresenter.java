@@ -1,9 +1,10 @@
-package com.example.fiannce.fragment.morefragment.register;
+package com.example.user.login;
 
-import com.example.fiannce.fragment.BeanBack;
+import android.util.Log;
+
 import com.example.framework.BasePresenter;
 import com.example.framework.manager.RetrofitManager;
-import com.example.net.mode.RegBean;
+import com.example.net.mode.LogBean;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -13,20 +14,21 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class RegPresenter extends BasePresenter<BeanBack> {
+public class LogPresenter extends BasePresenter<LogCallBack> {
 
-    public RegPresenter(BeanBack beanBack) {
+    public LogPresenter(LogCallBack beanBack){
         attachView(beanBack);
     }
 
-    public void RegData(String user,String pwd){
+    public void LogData(String name,String pwd){
         RetrofitManager.getRetrofit()
-                .RegData(user,pwd)
+                .LogData(name, pwd)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
+                        add(disposable);
                         iView.showLoading();
                     }
                 })
@@ -36,15 +38,16 @@ public class RegPresenter extends BasePresenter<BeanBack> {
                         iView.hideLoading();
                     }
                 })
-                .subscribe(new Observer<RegBean>() {
+                .subscribe(new Observer<LogBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-
+                        Log.i("123", "onSubscribe: first");
                     }
 
                     @Override
-                    public void onNext(@NonNull RegBean regBean) {
-                        iView.RegData(regBean);
+                    public void onNext(@NonNull LogBean logBean) {
+                        Log.i("123", "onNext: 111111111111111");
+                        iView.LogData(logBean);
                     }
 
                     @Override
@@ -57,6 +60,6 @@ public class RegPresenter extends BasePresenter<BeanBack> {
 
                     }
                 });
-    }
 
+    }
 }

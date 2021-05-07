@@ -1,12 +1,13 @@
-package com.example.fiannce.fragment.morefragment.register;
+package com.example.user;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.fiannce.fragment.morefragment.login.LoginActivity;
+import com.example.user.login.LoginActivity;
 import com.example.framework.FiannceARouter;
+import com.example.user.register.RegisterActivity;
 
 public class UserModel implements FiannceARouter.iUserManager {
 
@@ -28,7 +29,7 @@ public class UserModel implements FiannceARouter.iUserManager {
 
     @Override
     public void OpenRegisterActivity(Context context, Bundle bundle) {
-        Intent intent = new Intent(context,RegisterActivity.class);
+        Intent intent = new Intent(context, RegisterActivity.class);
         if (context instanceof Activity){
             context.startActivity(intent);
         }else {

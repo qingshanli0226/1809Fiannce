@@ -36,20 +36,16 @@
             android:layout_weight="1">
 
             <com.example.fiannce.fragment.morefragment.MoreView
+                android:id="@+id/pwd"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="@dimen/weight_1"
                 app:left_title="手势密码"
-                app:lin_right_show="false"
+                app:lin_right_show="true"
                 app:lin_right_Text_show="false"
+                app:right_icon="@mipmap/toggle_off"
                 app:left_icon="@mipmap/icon_more_secret"
                 ></com.example.fiannce.fragment.morefragment.MoreView>
-
-            <ImageView
-                android:src="@mipmap/toggle_on"
-                android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></ImageView>
 
         </RelativeLayout>
 

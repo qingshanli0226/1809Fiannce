@@ -25,6 +25,8 @@ public class MoreView extends LinearLayout {
     private ImageView rightImg;
     private TextView leftTit;
     private TextView rightTit;
+    private iRightImgCallBack iRightImgCallBack;
+
     private iCallBack iCallBack = new iCallBack() {
         @Override
         public void leftImg() {
@@ -129,5 +131,23 @@ public class MoreView extends LinearLayout {
         void rightImg();
         void leftText();
         void rightText();
+    }
+
+    public void setRightIcon(int rightIcon){
+        this.rightIcon = rightIcon;
+        rightImg.setImageResource(rightIcon);
+        invalidate();
+    }
+
+    public MoreView.iRightImgCallBack getiRightImgCallBack() {
+        return iRightImgCallBack;
+    }
+
+    public void setiRightImgCallBack(MoreView.iRightImgCallBack iRightImgCallBack) {
+        this.iRightImgCallBack = iRightImgCallBack;
+    }
+
+    public static interface iRightImgCallBack{
+        void OnRightListener();
     }
 }
