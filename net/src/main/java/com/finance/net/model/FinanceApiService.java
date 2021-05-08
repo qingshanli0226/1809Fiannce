@@ -20,18 +20,20 @@ public interface FinanceApiService {
 
     @GET("atguigu/json/P2PInvest/index.json")
     Observable<HomeBean> getHomeData();
+
     @GET("atguigu/json/P2PInvest/update.json")
     Observable<VersionBean> getServerVersion();
+
     //http://49.233.0.68:8080/atguigu/json/P2PInvest/product.json
     @GET("atguigu/json/P2PInvest/product.json")
     Observable<ProductBean> getProduct();
 
-    //    http://49.233.0.68:8080/register  注册
+    //http://49.233.0.68:8080/register  注册
     @POST("register?")
     @FormUrlEncoded
     Observable<RegisterBean> getRegister(@Field("name")String name, @Field("password")String password);
 
-    //    http://49.233.0.68:8080/login //登录
+    //http://49.233.0.68:8080/login //登录
     @POST("login?")
     @FormUrlEncoded
     Observable<LoginBean> getLogin(@Field("name")String name, @Field("password")String password);
@@ -40,9 +42,9 @@ public interface FinanceApiService {
     @POST("autoLogin")
     Observable<LoginBean> getAutoLogin(@Field("token")String token);
 
+    //防止占用内存过多，避免OOM问题也就是内存溢出
     @GET
     @Streaming
-//防止占用内存过多，避免OOM问题也就是内存溢出
     Observable<ResponseBody> downloadFile(@Url String url);
 
 }

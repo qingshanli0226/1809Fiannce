@@ -97,13 +97,29 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
                         fragmentTransaction2.commit();
                         break;
                     case 2:
-                        LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
                         FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction3.hide(homeFragment);
                         fragmentTransaction3.hide(investmentFragment);
                         fragmentTransaction3.show(myAssetsFragment);
                         fragmentTransaction3.hide(moreFragment);
                         fragmentTransaction3.commit();
+
+                        LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
+                        if (loginBean==null){
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setTitle("提示");
+                            builder.setMessage("你还没有登录哦！么么~");
+                            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Intent intent = new Intent(MainActivity.this, UserLoginActivity.class);
+                                    startActivity(intent);
+                                }
+                            });
+                            builder.show();
+                        }
+
                         break;
                     case 3:
                         FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();

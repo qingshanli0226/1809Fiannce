@@ -8,6 +8,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.widget.RemoteViews;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.finance.framework.manager.CacheUserManager;
 import com.finance.framework.sp.Constant;
 import com.finance.framework.sp.SPUtil;
@@ -64,6 +65,7 @@ public class AutoService extends Service {
                     SPUtil.putString(AutoService.this, "token",loginBean.getResult().getToken());
                     //跳到主页面返回
                     CacheUserManager.getInstance().setLoginBean(loginBean);
+                    ARouter.getInstance().build("/main/MainActivity").withInt("",1).navigation();
                 }
 
             }
@@ -99,24 +101,16 @@ public class AutoService extends Service {
                     @Override
                     public void onNext(@NonNull ResponseBody responseBody) {
                         InputStream inputStream = responseBody.byteStream();
-
                         try {
                             File file = new File(Constant.DOWNLOAD_PATH);
-
                             FileOutputStream fileOutputStream = new FileOutputStream(file);
-
                             long length = responseBody.contentLength();
-
                             byte[] bytes = new byte[1024];
-
                             int len;
                             int count = 0;
-
                             while ((len = inputStream.read(bytes)) != -1) {
                                 count += len;
-
                                 fileOutputStream.write(bytes, 0, len);
-
                                 setNotification((int) length, count, false);
                             }
                             setNotification((int) length, count, true);
@@ -142,9 +136,7 @@ public class AutoService extends Service {
                 });
     }
     public void setNotification(int length, int count, boolean is) {
-
         Notification.Builder builder = new Notification.Builder(AutoService.this);
-
         builder.setContentTitle(getResources().getString(R.string.downloading));
         builder.setSmallIcon(R.drawable.icon_more_on);
 
@@ -155,9 +147,7 @@ public class AutoService extends Service {
         }
 
         remoteViews.setProgressBar(R.id.download_progress, length, count, false);
-
         builder.setCustomContentView(remoteViews);
-
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.notify(1, builder.build());
     }

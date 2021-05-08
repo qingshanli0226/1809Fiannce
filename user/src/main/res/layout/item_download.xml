@@ -7,14 +7,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/downloading"
-        android:textSize="20dp"
+        android:textSize="@dimen/text_mid_size"
         android:id="@+id/download_title"
-        android:layout_margin="10dp"></TextView>
+        android:layout_margin="@dimen/margin"></TextView>
 
     <ProgressBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/margin"
         android:id="@+id/download_progress"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"></ProgressBar>
 </LinearLayout>

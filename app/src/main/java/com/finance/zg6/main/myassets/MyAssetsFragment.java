@@ -46,21 +46,12 @@ public class MyAssetsFragment extends BaseFragment {
     protected void initData() {
         loginBean = CacheUserManager.getInstance().getLoginBean();
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("提示");
-        builder.setMessage("你还没有登录哦！么么~");
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Intent intent = new Intent(getContext(), UserLoginActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
         if (loginBean!=null){
             userNameTv.setText(""+loginBean.getResult().getName());
         }else {
-            builder.create().show();
+            userNameTv.setText("");
         }
 
         myAssetsSetting.setOnClickListener(v->{

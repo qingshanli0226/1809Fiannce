@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
@@ -61,9 +62,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initData() {
-
-
         intent = new Intent(this,AutoService.class);
+        startService(intent);
 
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
@@ -85,6 +85,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         //启动自动登录服务
         if(!SPUtil.getString(this, Constant.SP_TOKEN).equals("")){
+            Log.i("zddl", "initView: 111111111111111");
             Intent intent = new Intent(this, AutoService.class);
             startService(intent);
         }
@@ -121,8 +122,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
-
-
     private final Handler handler = new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -147,7 +146,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Toast.makeText(WelcomeActivity.this, getString(R.string.welcomeActivity_alert_success_toast), Toast.LENGTH_SHORT).show();
-//                    ARouter.getInstance().build("/main/MainActivity").withInt("",1).navigation();
                             Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -156,23 +154,13 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     builder.setPositiveButton(getString(R.string.welcomeActivity_alert_button_yes), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-//                            ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
-//                            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-//                            progressDialog.setTitle(getString(R.string.welcomeActivity_alert_title));
-//                            progressDialog.setMessage(getString(R.string.welcomeActivity_progress_message));
-//                            progressDialog.setProgress(100);
-//                            progressDialog.setCancelable(true);
-//                            progressDialog.show();
-
                             serviceConnection = new ServiceConnection() {
                                 @Override
                                 public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
                                     AutoService.FiannceBinder financeBinder= (AutoService.FiannceBinder) iBinder;
-
                                     AutoService autoService=financeBinder.getFiannceService();
-
                                     autoService.DownLoad(version.getResult().getApkUrl());
-//
+
                                     Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
@@ -184,7 +172,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                                 }
                             };
                             bindService(intent,serviceConnection,BIND_AUTO_CREATE);
-
                         }
                     });
                     builder.show();
