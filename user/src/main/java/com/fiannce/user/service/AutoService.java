@@ -151,7 +151,7 @@ public class AutoService extends Service {
         builder.setContentTitle(getResources().getString(R.string.downloading));
         builder.setSmallIcon(R.drawable.icon_more_on);
 
-        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.item_download);
+        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.item_downloading);
 
         if (is) {
             remoteViews.setTextViewText(R.id.download_title, getResources().getString(R.string.downloadCompletes));

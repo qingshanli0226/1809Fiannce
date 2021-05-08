@@ -40,8 +40,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
     protected void initData() {
 
         Intent intent = getIntent();
-        name1 = intent.getStringExtra("name");
-        password1 = intent.getStringExtra("password");
+        name1 = intent.getStringExtra(getString(R.string.small_name));
+        password1 = intent.getStringExtra(getString(R.string.small_password));
         etLoginNumber.setText(name1);
         etLoginPwd.setText(password1);
 
@@ -51,7 +51,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
                 name1 = etLoginNumber.getText().toString().trim();
                 password1 = etLoginPwd.getText().toString().trim();
                 if (TextUtils.isEmpty(name1) && TextUtils.isEmpty(password1)) {
-                    Toast.makeText(LoginActivity.this, "用户名或密码为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, getString(R.string.nameOrpasswordNull), Toast.LENGTH_SHORT).show();
                 } else {
                     httpPresenter.getLoginData(name1, password1);
                 }

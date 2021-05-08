@@ -86,17 +86,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
-    private String getName() {
-        try {
-            String versionName = packageManager.getPackageInfo(getPackageName(), 0).versionName;
-
-            return versionName;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 
     public static int getLocalVersion(Context ctx) {
         int localVersion = 0;
