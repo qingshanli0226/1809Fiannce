@@ -4,8 +4,7 @@
 
     <application>
         <activity android:name=".register.RegisterActivity"></activity>
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".register.RegisterPresenter" />
+        <activity android:name=".login.LoginActivity" ></activity>
     </application>
 
 </manifest>

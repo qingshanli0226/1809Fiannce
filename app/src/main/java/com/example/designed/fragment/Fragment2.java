@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment2 extends BaseFragment implements IBaseView {
+public class Fragment2 extends BaseFragment implements IBaseView {
     private TabLayout tab1;
     private ViewPager vp1;
     List<Fragment> list;
@@ -37,7 +37,7 @@ public class BlankFragment2 extends BaseFragment implements IBaseView {
     private FragmentManager supportFragmentManager;
 
 
-    public BlankFragment2() {
+    public Fragment2() {
         // Required empty public constructor
     }
 

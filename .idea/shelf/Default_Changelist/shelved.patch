@@ -1,0 +1,44 @@
+Index: framework/src/main/java/com/fiannce/bawei/framework/FiannceService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.fiannce.bawei.framework;\r\n\r\nimport android.app.Notification;\r\nimport android.app.NotificationManager;\r\nimport android.app.Service;\r\nimport android.content.Intent;\r\nimport android.os.Binder;\r\nimport android.os.Build;\r\nimport android.os.IBinder;\r\nimport android.util.Log;\r\nimport android.widget.RemoteViews;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.RequiresApi;\r\n\r\nimport com.blankj.utilcode.util.LogUtils;\r\nimport com.example.commom.FiannceContants;\r\nimport com.example.framework.R;\r\nimport com.fiannce.bawei.framework.manager.FiannceUserManager;\r\nimport com.fiannce.bawei.net.RetrofitCreator;\r\nimport com.fiannce.bawei.net.model.LoginBean;\r\n\r\nimport java.io.File;\r\nimport java.io.FileNotFoundException;\r\nimport java.io.FileOutputStream;\r\nimport java.io.IOException;\r\nimport java.io.InputStream;\r\n\r\nimport io.reactivex.Observer;\r\nimport io.reactivex.android.schedulers.AndroidSchedulers;\r\nimport io.reactivex.disposables.Disposable;\r\nimport io.reactivex.schedulers.Schedulers;\r\nimport okhttp3.ResponseBody;\r\n\r\nimport static android.content.ContentValues.TAG;\r\n\r\npublic class FiannceService extends Service {\r\n    private  String string;\r\n    public FiannceService() {\r\n    }\r\n\r\n    @Override\r\n    public IBinder onBind(Intent intent) {\r\n\r\n        return new FiannceBinder();\r\n    }\r\n\r\n    public class FiannceBinder extends Binder{\r\n\r\n        public FiannceService getFiannceService(){\r\n            return FiannceService.this;\r\n        }\r\n\r\n    }\r\n\r\n    @Override\r\n    public int onStartCommand(Intent intent, int flags, int startId) {\r\n       // String string = SpUtil.getString(FiannceService.this, FiannceConstants.TOKEN_KEY);\r\n\r\n\r\n        if (!string.equals(\"\")) {\r\n            RetrofitCreator.getfiannceApiService()\r\n                    .getToken(string)\r\n                    .subscribeOn(Schedulers.io())\r\n                    .observeOn(AndroidSchedulers.mainThread())\r\n                    .subscribe(new Observer<LoginBean>() {\r\n                        @Override\r\n                        public void onSubscribe(@NonNull Disposable d) {\r\n\r\n                        }\r\n\r\n                        @Override\r\n                        public void onNext(@NonNull LoginBean loginBean) {\r\n                            if (loginBean.getCode().equals(\"200\")) {\r\n                                FiannceUserManager.getInstance()\r\n                                        .setLoginBean(loginBean);\r\n\r\n                               // SpUtil.setString(NetModel.context, loginBean.getResult().getToken());\r\n                            }\r\n                        }\r\n\r\n                        @Override\r\n                        public void onError(@NonNull Throwable e) {\r\n\r\n                        }\r\n\r\n                        @Override\r\n                        public void onComplete() {\r\n\r\n                        }\r\n                    });\r\n        }\r\n        return super.onStartCommand(intent, flags, startId);\r\n    }\r\n\r\n    public void DownLoad(String url){\r\n\r\n        RetrofitCreator.getfiannceApiService()\r\n                .downloadFile(\"atguigu/apk/P2PInvest/app-debug.apk\")\r\n                .subscribeOn(Schedulers.io())\r\n                .observeOn(AndroidSchedulers.mainThread())\r\n                .subscribe(new Observer<ResponseBody>() {\r\n                    @Override\r\n                    public void onSubscribe(Disposable d) {\r\n\r\n                    }\r\n\r\n\r\n                    @RequiresApi(api = Build.VERSION_CODES.N)\r\n                    @Override\r\n                    public void onNext(ResponseBody responseBody) {\r\n\r\n                        InputStream inputStream = responseBody.byteStream();\r\n\r\n\r\n                        try {\r\n\r\n                            File file = new File(FiannceContants.DOWNLOAD_PATH);\r\n\r\n                            FileOutputStream fileOutputStream = new FileOutputStream(file);\r\n\r\n                            long length = responseBody.contentLength();\r\n                            byte[] bytes = new byte[1024];\r\n                            int len ;\r\n                            int count = 0;\r\n\r\n                            while ((len = inputStream.read(bytes)) != -1){\r\n                                count += len;\r\n\r\n                                fileOutputStream.write(bytes,0,len);\r\n                                setNotification((int) length,count,false);\r\n                            }\r\n\r\n                            setNotification((int) length,count,false);\r\n\r\n                            inputStream.close();\r\n                            fileOutputStream.close();\r\n\r\n                        } catch (FileNotFoundException e) {\r\n                            e.printStackTrace();\r\n                        } catch (IOException e) {\r\n                            e.printStackTrace();\r\n                        }\r\n\r\n                    }\r\n\r\n                    @Override\r\n                    public void onError(Throwable e) {\r\n                        Log.d(TAG, \"onError: \"+e.toString());\r\n                    }\r\n\r\n                    @Override\r\n                    public void onComplete() {\r\n\r\n                    }\r\n                });\r\n\r\n    }\r\n\r\n    @RequiresApi(api = Build.VERSION_CODES.N)\r\n    public void setNotification(int length, int count, boolean is){\r\n\r\n        Notification.Builder builder = new Notification.Builder(FiannceService.this);\r\n        builder.setContentTitle(getResources().getString(R.string.downloading));\r\n        builder.setSmallIcon(R.drawable.tou);\r\n\r\n        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.item_download);\r\n\r\n        if (is){\r\n            remoteViews.setTextViewText(R.id.download_title,getResources().getString(R.string.downloadCompletes));\r\n        }\r\n\r\n        remoteViews.setProgressBar(R.id.download_progress,length,count,false);\r\n        //builder.setProgress(100,10,false);\r\n\r\n        builder.setCustomContentView(remoteViews);\r\n\r\n\r\n        NotificationManager systemService = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);\r\n        systemService.notify(1,builder.build());\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- framework/src/main/java/com/fiannce/bawei/framework/FiannceService.java	(revision 9a8a385c96065e88c0270146510377cecb2013f3)
++++ framework/src/main/java/com/fiannce/bawei/framework/FiannceService.java	(date 1620442315526)
+@@ -96,7 +96,7 @@
+     public void DownLoad(String url){
+ 
+         RetrofitCreator.getfiannceApiService()
+-                .downloadFile("atguigu/apk/P2PInvest/app-debug.apk")
++                .downloadFile("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk")
+                 .subscribeOn(Schedulers.io())
+                 .observeOn(AndroidSchedulers.mainThread())
+                 .subscribe(new Observer<ResponseBody>() {
+@@ -106,7 +106,7 @@
+                     }
+ 
+ 
+-                    @RequiresApi(api = Build.VERSION_CODES.N)
++
+                     @Override
+                     public void onNext(ResponseBody responseBody) {
+ 
+@@ -128,10 +128,14 @@
+                                 count += len;
+ 
+                                 fileOutputStream.write(bytes,0,len);
+-                                setNotification((int) length,count,false);
++                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
++                                    setNotification((int) length,count,false);
++                                }
+                             }
+ 
+-                            setNotification((int) length,count,false);
++                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
++                                setNotification((int) length,count,false);
++                            }
+ 
+                             inputStream.close();
+                             fileOutputStream.close();

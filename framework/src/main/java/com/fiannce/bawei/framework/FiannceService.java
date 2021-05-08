@@ -1,5 +1,6 @@
 package com.fiannce.bawei.framework;
 
+
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.Service;
@@ -13,10 +14,11 @@ import android.widget.RemoteViews;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import com.blankj.utilcode.util.LogUtils;
+
 import com.example.commom.FiannceContants;
 import com.example.framework.R;
 import com.fiannce.bawei.framework.manager.FiannceUserManager;
+import com.fiannce.bawei.net.NetModel;
 import com.fiannce.bawei.net.RetrofitCreator;
 import com.fiannce.bawei.net.model.LoginBean;
 
@@ -55,10 +57,10 @@ public class FiannceService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-       // String string = SpUtil.getString(FiannceService.this, FiannceConstants.TOKEN_KEY);
-
-
+        String string = SpUtil.getString(FiannceService.this, FiannceContants.TOKEN_KEY);
+        Log.d(TAG, "onStartCommand: "+string);
         if (!string.equals("")) {
+            Log.i(TAG, "onStartCommand: ");
             RetrofitCreator.getfiannceApiService()
                     .getToken(string)
                     .subscribeOn(Schedulers.io())
@@ -74,8 +76,8 @@ public class FiannceService extends Service {
                             if (loginBean.getCode().equals("200")) {
                                 FiannceUserManager.getInstance()
                                         .setLoginBean(loginBean);
-
-                               // SpUtil.setString(NetModel.context, loginBean.getResult().getToken());
+                            
+                                SpUtil.setString(NetModel.context, loginBean.getResult().getToken());
                             }
                         }
 
@@ -96,9 +98,9 @@ public class FiannceService extends Service {
     public void DownLoad(String url){
 
         RetrofitCreator.getfiannceApiService()
-                .downloadFile("atguigu/apk/P2PInvest/app-debug.apk")
+                .downloadFile(" http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk")
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(Schedulers.io())
                 .subscribe(new Observer<ResponseBody>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -131,7 +133,7 @@ public class FiannceService extends Service {
                                 setNotification((int) length,count,false);
                             }
 
-                            setNotification((int) length,count,false);
+                            setNotification((int) length,count,true);
 
                             inputStream.close();
                             fileOutputStream.close();
@@ -161,16 +163,16 @@ public class FiannceService extends Service {
     public void setNotification(int length, int count, boolean is){
 
         Notification.Builder builder = new Notification.Builder(FiannceService.this);
-        builder.setContentTitle(getResources().getString(R.string.downloading));
+        builder.setContentTitle(getResources().getString(R.string.down));
         builder.setSmallIcon(R.drawable.tou);
 
         RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.item_download);
 
         if (is){
-            remoteViews.setTextViewText(R.id.download_title,getResources().getString(R.string.downloadCompletes));
+            remoteViews.setTextViewText(R.id.down_title,getResources().getString(R.string.download));
         }
 
-        remoteViews.setProgressBar(R.id.download_progress,length,count,false);
+        remoteViews.setProgressBar(R.id.down_progress,length,count,false);
         //builder.setProgress(100,10,false);
 
         builder.setCustomContentView(remoteViews);

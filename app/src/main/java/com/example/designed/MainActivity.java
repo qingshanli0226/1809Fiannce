@@ -1,5 +1,6 @@
 package com.example.designed;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -7,18 +8,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-import android.util.Log;
+
 import android.view.KeyEvent;
 import android.widget.Toast;
-import com.alibaba.android.arouter.facade.annotation.Route;
+
 import com.example.designed.adapter.FragmentAdapter;
 import com.example.designed.fragment.BlankFragment;
-import com.example.designed.fragment.BlankFragment2;
-import com.example.designed.fragment.BlankFragment3;
-import com.example.designed.fragment.BlankFragment4;
+import com.example.designed.fragment.Fragment2;
+import com.example.designed.fragment.Fragment3;
+import com.example.designed.fragment.Fragment4;
+import com.example.user.login.LoginActivity;
 import com.fiannce.bawei.framework.manager.CacheManager;
+import com.fiannce.bawei.framework.manager.FiannceUserManager;
 import com.fiannce.bawei.net.model.HomeBean;
+import com.fiannce.bawei.net.model.LoginBean;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -31,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     List<String> title = new ArrayList<>();
     private ViewPager vp;
     private TabLayout tab;
-private long time;
+    private long time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +50,9 @@ private long time;
         title.add("更多");
 
         list.add(new BlankFragment());
-        list.add(new BlankFragment2());
-        list.add(new BlankFragment3());
-        list.add(new BlankFragment4());
+        list.add(new Fragment2());
+        list.add(new Fragment3());
+        list.add(new Fragment4());
 
         FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), list, title);
         vp.setAdapter(fragmentAdapter);
@@ -60,6 +63,29 @@ private long time;
         tab.getTabAt(2).setIcon(R.drawable.bottom05);
         tab.getTabAt(3).setIcon(R.drawable.bottom07);
 
+        tab.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int position = tab.getPosition();
+                if (position==2){
+                    LoginBean loginBean = FiannceUserManager.getInstance().getLoginBean();
+                    if (loginBean== null){
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 //        Intent intent = new Intent();
 //        intent.setAction("event");
 //        startActivity(intent);

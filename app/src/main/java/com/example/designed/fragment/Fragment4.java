@@ -19,7 +19,7 @@ import com.fiannce.bawei.framework.BaseFragment;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment4 extends BaseFragment {
+public class Fragment4 extends BaseFragment {
     private LinearLayout register;
     private LinearLayout password;
     private ImageView off;
@@ -30,7 +30,7 @@ public class BlankFragment4 extends BaseFragment {
     private LinearLayout about;
     private boolean isChanged = false;
 
-    public BlankFragment4() {
+    public Fragment4() {
         // Required empty public constructor
     }
 

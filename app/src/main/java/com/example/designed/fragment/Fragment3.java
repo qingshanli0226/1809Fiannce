@@ -21,7 +21,7 @@ import com.fiannce.bawei.framework.BaseFragment;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment3 extends BaseFragment  {
+public class Fragment3 extends BaseFragment  {
 
     private ImageView setting;
     private ImageView pic;
@@ -31,7 +31,7 @@ public class BlankFragment3 extends BaseFragment  {
     private LinearLayout manage;
     private LinearLayout property;
 
-    public BlankFragment3() {
+    public Fragment3() {
         // Required empty public constructor
     }
 

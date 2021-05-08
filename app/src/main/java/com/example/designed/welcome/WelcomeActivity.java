@@ -80,7 +80,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         requestPermissions(new String[]{"android.permission.CALL_PHONE","android.permission.READ_EXTERNAL_STORAGE"
                             ,"android.permission.WRITE_EXTERNAL_STORAGE"
         ,"android.permission.CALL_PHONE"
-        ,"android.permission.SYSTEM_OVERLAY_WINDOW" },100);
+        ,"android.permission.SYSTEM_OVERLAY_WINDOW","android.permission.ACCESS_NETWORK_STATE "},100);
 
         welcomePresenter.getHomeData();
         welcomePresenter.getVersionData();
@@ -88,7 +88,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
 
         intent = new Intent(this,FiannceService.class);
-
+        startService(intent);
 
     }
 
@@ -243,5 +243,17 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         }
 
 
+    }
+
+    @Override
+    public void onDisconnected() {
+        super.onDisconnected();
+        Toast.makeText(this, "没网", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onConnected() {
+        super.onConnected();
+        Toast.makeText(this, "有网", Toast.LENGTH_SHORT).show();
     }
 }

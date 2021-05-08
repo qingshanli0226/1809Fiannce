@@ -41,7 +41,6 @@ public interface FiannceApiService {
 
     @GET
     @Streaming
-    //防止占用内存过多，避免OOM问题也就是内存溢出
     Observable<ResponseBody> downloadFile(@Url String url);
 
 }

@@ -9,9 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.framework.R;
+import com.fiannce.bawei.framework.manager.FiannceConnectManager;
 import com.fiannce.bawei.framework.view.LoadingPage;
 
-public abstract class BaseActivity<T extends  BasePresenter> extends AppCompatActivity  {
+public abstract class BaseActivity<T extends  BasePresenter> extends AppCompatActivity implements FiannceConnectManager.IConnectListener {
 
     protected T httpPresenter;
     protected boolean isUseLoading = true;
@@ -21,6 +22,8 @@ public abstract class BaseActivity<T extends  BasePresenter> extends AppCompatAc
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLaoutId());
+
+        FiannceConnectManager.getInstance().registerConnectListener(this);
 
         loadingPage=  new LoadingPage(this){
 
@@ -39,6 +42,7 @@ public abstract class BaseActivity<T extends  BasePresenter> extends AppCompatAc
         initData();
 
 
+
     }
 
     protected abstract void initData();
@@ -55,5 +59,17 @@ public abstract class BaseActivity<T extends  BasePresenter> extends AppCompatAc
         if (httpPresenter != null){
             httpPresenter.detachView();
         }
+
+        FiannceConnectManager.getInstance().unRegisterConnectListener(this);
+    }
+
+    @Override
+    public void onConnected() {
+
+    }
+
+    @Override
+    public void onDisconnected() {
+
     }
 }

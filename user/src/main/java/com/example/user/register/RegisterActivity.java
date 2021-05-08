@@ -129,4 +129,16 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     public void showError(String error) {
 
     }
+
+    @Override
+    public void onConnected() {
+        super.onConnected();
+        Toast.makeText(this, "有网", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDisconnected() {
+        super.onDisconnected();
+        Toast.makeText(this, "你猜有网没", Toast.LENGTH_SHORT).show();
+    }
 }
