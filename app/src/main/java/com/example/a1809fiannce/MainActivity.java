@@ -1,8 +1,12 @@
 package com.example.a1809fiannce;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
 import android.view.KeyEvent;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -44,6 +48,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        requestPermission();
+
         ArrayList<CustomTabEntity> customTabEntities = new ArrayList<>();
         customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.customTab_name1),R.drawable.bottom01,R.drawable.bottom02));
         customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.customTab_name2),R.drawable.bottom03,R.drawable.bottom04));
@@ -172,5 +178,32 @@ public class MainActivity extends BaseActivity {
     public void onDisconnected() {
         super.onDisconnected();
         Toast.makeText(this, "当前没有网络", Toast.LENGTH_SHORT).show();
+    }
+
+    private void requestPermission() {
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(MainActivity.this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, 10);
+            } else {
+                Toast.makeText(MainActivity.this, "granted show-- 悬浮窗", Toast.LENGTH_SHORT);
+            }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 10) {
+            if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+                if (!Settings.canDrawOverlays(this)) {
+                    // SYSTEM_ALERT_WINDOW permission not granted...
+                    Toast.makeText(MainActivity.this, "not granted", Toast.LENGTH_SHORT);
+                } else {
+                    Toast.makeText(MainActivity.this, "granted show 悬浮窗", Toast.LENGTH_SHORT);
+                }
+            }
+        }
     }
 }

@@ -39,6 +39,8 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
         initView();
         toolBar=mView.findViewById(R.id.toolbar);
         toolBar.setToolbarListener(this);
+
+        FiannceConnectManager.getInstance().registerConnectListener(this);
         initPresenter();
         initData();
     }
@@ -55,6 +57,8 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     public void onDestroy() {
         super.onDestroy();
         destroy();
+
+        FiannceConnectManager.getInstance().unRegisterConnectListener(this);
     }
 
     public void destroy(){

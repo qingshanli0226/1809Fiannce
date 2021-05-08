@@ -46,5 +46,6 @@
     <string name="share">分享给好友</string>
     <string name="inRegardTo">关于有道理财</string>
     <string name="phone">010-56253825</string>
+    <string name="network">当前无网络</string>
 
 </resources>

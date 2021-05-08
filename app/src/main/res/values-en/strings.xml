@@ -46,5 +46,6 @@
     <string name="share">share</string>
     <string name="inRegardTo">in regard to</string>
     <string name="phone">010-56253825</string>
+    <string name="network">No network currently</string>
 
 </resources>

@@ -98,7 +98,6 @@ public class FiannceService extends Service {
     }
 
     public void DownLoad(String url) {
-
         //http://49.233.93.155:9999/atguigu/apk/P2PInvest/app-debug.apk
         LogUtils.d("123");
         RetrofitCreator.getFiannceApiService()
@@ -209,8 +208,8 @@ public class FiannceService extends Service {
 
         //设置小窗口的尺寸
         //单位是像素
-        layoutParams.width=300;
-        layoutParams.height=200;
+        layoutParams.width=700;
+        layoutParams.height=500;
 
         //生成一个窗口的布局view，并且将该view添加到窗口里.
         View rootView = LayoutInflater.from(this).inflate(R.layout.window_ijk, null);
