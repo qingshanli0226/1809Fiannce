@@ -1,6 +1,7 @@
 package com.example.gitproject.welcome;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import android.Manifest;
@@ -14,10 +15,12 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.graphics.PixelFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -33,6 +36,7 @@ import com.example.common.CommonConstant;
 import com.example.common.SpUtil;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
+import com.example.gitproject.MainActivity;
 import com.example.gitproject.R;
 
 import com.example.net.bean.HomeBean;
@@ -70,15 +74,25 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.SYSTEM_ALERT_WINDOW,
             Manifest.permission.SYSTEM_ALERT_WINDOW},100);
         }
+        requestPermission();
         countDown = (TextView) findViewById(R.id.countDown);
         welImg = (ImageView) findViewById(R.id.wel_img);
     }
 
-
-
+    //权限
+    private void requestPermission() {
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(WelcomeActivity.this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, 10);
+            } else {
+                Toast.makeText(WelcomeActivity.this, "granted show-- 悬浮窗", Toast.LENGTH_SHORT);
+            }
+        }
+    }
 
     @Override
     public void initPresenter() {
@@ -199,6 +213,20 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 10) {
+            if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+                if (!Settings.canDrawOverlays(this)) {
+                    // SYSTEM_ALERT_WINDOW permission not granted...
+                    Toast.makeText(WelcomeActivity.this, "not granted", Toast.LENGTH_SHORT);
+                } else {
+                    Toast.makeText(WelcomeActivity.this, "granted show 悬浮窗", Toast.LENGTH_SHORT);
+                }
+            }
+        }
+    }
+    @Override
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
         task_two = true;
@@ -254,7 +282,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             handler.removeCallbacksAndMessages(null);
         }
         unbindService(serviceConnection);
-
     }
 
 }

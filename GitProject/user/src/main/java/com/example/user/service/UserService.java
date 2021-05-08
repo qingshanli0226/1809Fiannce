@@ -48,6 +48,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.temporal.ValueRange;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.xml.transform.sax.TemplatesHandler;
 
@@ -55,12 +56,15 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
 public class UserService extends Service {
     public UserService() {
     }
+
     @Override
     public IBinder onBind(Intent intent) {
 
@@ -77,51 +81,45 @@ public class UserService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (!SpUtil.getString(this, CommonConstant.SP_TOKEN).equals("")) {
-            new UserPresenter(new IUserView() {
-                @Override
-                public void onRegister(RegisterBean registerBean) {
+            RetrofitManager.getHttpApiService()
+                    .getAutoLogin(SpUtil.getString(this, CommonConstant.SP_TOKEN))
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Observer<LoginBean>() {
+                        @Override
+                        public void onSubscribe(@NonNull Disposable d) {
 
-                }
+                        }
 
-                @Override
-                public void onLogin(LoginBean loginBean) {
-
-                }
-
-                @Override
-                public void onAutoLogin(LoginBean loginBean) {
-                    if (loginBean.getResult() != null) {
-                        SpUtil.putString(UserService.this, CommonConstant.SP_TOKEN, loginBean.getResult().getToken());
-                        //跳到主页面返回
-                        CacheUserManager.getInstance().setLoginBean(loginBean);
+                        @Override
+                        public void onNext(@NonNull LoginBean loginBean) {
+                            if (loginBean.getResult() != null) {
+                                SpUtil.putString(UserService.this, CommonConstant.SP_TOKEN, loginBean.getResult().getToken());
+                                //跳到主页面返回
+                                CacheUserManager.getInstance().setLoginBean(loginBean);
 //                FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
-                    }
+                            }
+                        }
 
-                }
+                        @Override
+                        public void onError(@NonNull Throwable e) {
 
-                @Override
-                public void showLoading() {
+                        }
 
-                }
+                        @Override
+                        public void onComplete() {
 
-                @Override
-                public void hideLoading() {
-
-                }
-
-                @Override
-                public void showError(String error) {
-
-                }
-            }).getAutoLogin(SpUtil.getString(this, CommonConstant.SP_TOKEN));
+                        }
+                    });
         }
+//        windon();
         return super.onStartCommand(intent, flags, startId);
     }
 
 
-
     private Context context;
-    public void init(Context context){
+
+    public void init(Context context) {
         this.context = context;
     }
 
@@ -130,7 +128,7 @@ public class UserService extends Service {
 
         File instanll = new File(CommonConstant.INSTANLL);
         if (instanll.exists()) {
-            openAPK(CommonConstant.INSTANLL);
+            windon();
             return;
         }
         //通道
@@ -152,7 +150,7 @@ public class UserService extends Service {
         RetrofitManager.getHttpApiService()
                 .getDownLoad(url)
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(Schedulers.io())
                 .subscribe(new Observer<ResponseBody>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
@@ -188,13 +186,12 @@ public class UserService extends Service {
                             }
                             //完成
                             builder.setContentTitle(getString(R.string.service_title_finish));
-                            builder.setProgress((int)totalByte, count, false);
+                            builder.setProgress((int) totalByte, count, false);
                             notificationManager.notify(666, builder.build());
 
-                            SpUtil.putBoolean(CommonConstant.INSTANLL_NAME,context,CommonConstant.INSTANLL_FLAG,true);
+                            SpUtil.putBoolean(CommonConstant.INSTANLL_NAME, context, CommonConstant.INSTANLL_FLAG, true);
 
-
-//                            windon();
+                            windon();
                         } catch (IOException e) {
                             e.printStackTrace();
                         } finally {
@@ -223,15 +220,13 @@ public class UserService extends Service {
                 });
 
 
-
-
     }
 
 
-    private void openAPK(String fileSavePath){
+    private void openAPK(String fileSavePath) {
         Toast.makeText(context, "aaa", Toast.LENGTH_SHORT).show();
 
-        File file=new File(Uri.parse(fileSavePath).getPath());
+        File file = new File(Uri.parse(fileSavePath).getPath());
         String filePath = file.getAbsolutePath();
         Intent intent = new Intent(Intent.ACTION_VIEW);
         Uri data = null;
@@ -246,39 +241,21 @@ public class UserService extends Service {
 
         intent.setDataAndType(data, "application/vnd.android.package-archive");
         startActivity(intent);
-        Toast.makeText(context, "aaa", Toast.LENGTH_SHORT).show();
-        Toast.makeText(context, "bbb", Toast.LENGTH_SHORT).show();
 
     }
 
 
-    //检查当前我们的应用是否用户正在使用
-    private boolean isApplicationUsed() {
-        ActivityManager systemService = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-        List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = systemService.getRunningAppProcesses();
-        for (ActivityManager.RunningAppProcessInfo runningAppProcess : runningAppProcesses) {
-            if(runningAppProcess.processName.equals(getPackageName())){
-                return true;
-            }else{
-                return false;
-            }
-        }
-        return false;
-    }
-
-
+    private WindowManager windowManager;
+    private WindowManager.LayoutParams layoutParams;
+    private View rootView;
     private void windon() {
         //判断是否可以安装
         if (isApplicationUsed() && SpUtil.getBoolean(CommonConstant.INSTANLL_NAME, context,CommonConstant.INSTANLL_FLAG)) {
-
-
-            WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
-
+            windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
             //设置小窗口尺寸的类
-            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-
+            layoutParams = new WindowManager.LayoutParams();
             //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
-            layoutParams.type= WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+            layoutParams.type= WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
             //像素格式为透明的
             layoutParams.format = PixelFormat.TRANSPARENT;
 
@@ -292,21 +269,33 @@ public class UserService extends Service {
             layoutParams.height=500;
 
             //生成一个窗口的布局view，并且将该view添加到窗口里.
-            View rootView = LayoutInflater.from(this).inflate(R.layout.window_itl, null);
+            rootView = LayoutInflater.from(this).inflate(R.layout.window_itl, null);
             windowManager.addView(rootView, layoutParams);
-
-
-            Button windowInstall = rootView.findViewById(R.id.window_install);
-            windowInstall.setOnClickListener(new View.OnClickListener() {
+            rootView.findViewById(R.id.window_install).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "安装成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "安装", Toast.LENGTH_SHORT).show();
+                    //            openAPK(CommonConstant.INSTANLL);
+
                 }
             });
-            windowManager.addView(rootView, layoutParams);
 
         } else{
 
         }
+    }
+
+    //检查当前我们的应用是否用户正在使用
+    private boolean isApplicationUsed() {
+        ActivityManager systemService = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = systemService.getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo runningAppProcess : runningAppProcesses) {
+            if(runningAppProcess.processName.equals(getPackageName())){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        return false;
     }
 }

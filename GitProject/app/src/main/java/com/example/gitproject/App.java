@@ -9,6 +9,8 @@ import com.example.gitproject.module.AppModule;
 import com.example.net.module.NetModule;
 import com.example.user.module.UserModule;
 
+import leakcanary.LeakCanary;
+
 
 public class App extends Application {
     @Override
