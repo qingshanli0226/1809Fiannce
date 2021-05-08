@@ -167,8 +167,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     if (D_code < versionBean.getResult().getVersionCode()) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
 
-                        builder.setTitle(getResources().getString(R.string.downLoad));
-                        builder.setMessage(getResources().getString(R.string.requests));
+                        builder.setTitle(getResources().getString(R.string.new_banben));
+                        builder.setMessage(getResources().getString(R.string.bug));
 
                         builder.setNegativeButton(getResources().getString(R.string.cancle), new DialogInterface.OnClickListener() {
                             @Override

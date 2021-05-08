@@ -87,7 +87,7 @@ public class AutoService extends Service {
     }
 
     public void setDownLoad(String url) {
-      
+
         RetrofitCreator.getFiannceApiService()
                 .downloadFile("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk")
                 .subscribeOn(Schedulers.io())
