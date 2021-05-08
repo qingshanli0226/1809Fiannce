@@ -301,9 +301,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
-//        //解除绑定
-//        unbindService(serviceConnection);
-        //停止服务
-        stopService(intent);
+        //解除绑定
+        unbindService(serviceConnection);
+//        //停止服务
+//        stopService(intent);
     }
 }
