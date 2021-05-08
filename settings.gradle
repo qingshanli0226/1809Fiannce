@@ -1,2 +1,2 @@
-include ':app', ':framework', ':user', ':pay', ':net'
+include ':app', ':framework', ':user', ':pay', ':net', ':commom'
 rootProject.name='Designed'

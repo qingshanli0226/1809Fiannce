@@ -3,10 +3,13 @@ package com.example.designed.welcome;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Build;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,6 +24,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.designed.MainActivity;
 import com.example.designed.R;
 import com.fiannce.bawei.framework.BaseActivity;
+import com.fiannce.bawei.framework.FiannceService;
 import com.fiannce.bawei.framework.manager.CacheManager;
 import com.fiannce.bawei.net.model.HomeBean;
 import com.fiannce.bawei.net.model.Libean;
@@ -32,6 +36,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     WelcomePresenter welcomePresenter;
     private final int ONE_FILSH = 0;
+    private Intent intent;
     private final int ALLFILSH = 1;
     private final int DELAY_INDEX = 2;
     private final int DELAT = 1*1000;//1秒
@@ -43,6 +48,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private ProgressBar progressBar;
     private TextView dao;
     private int countDown = 3;
+
+    private  ServiceConnection serviceConnection;
+
     @Override
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);
@@ -69,11 +77,18 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     protected void initData() {
 
-        requestPermissions(new String[]{"android.permission.CALL_PHONE"},100);
+        requestPermissions(new String[]{"android.permission.CALL_PHONE","android.permission.READ_EXTERNAL_STORAGE"
+                            ,"android.permission.WRITE_EXTERNAL_STORAGE"
+        ,"android.permission.CALL_PHONE"},100);
 
         welcomePresenter.getHomeData();
         welcomePresenter.getVersionData();
         welcomePresenter.getLiData();
+
+
+        intent = new Intent(this,FiannceService.class);
+
+
     }
 
     @Override
@@ -167,8 +182,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
 
-
-
                             Intent intent = new Intent();
                             intent.setAction("wang");
                             startActivity(intent);
@@ -178,12 +191,28 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
-                            progressDialog.setMax(100);
-                            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
+                            serviceConnection  = new ServiceConnection(){
 
-                            progressDialog.show();
+                                @Override
+                                public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+                                    FiannceService.FiannceBinder fiannceBinder = (FiannceService.FiannceBinder) iBinder;
+
+                                    FiannceService fiannceService = fiannceBinder.getFiannceService();
+                                    fiannceService.DownLoad(null);
+                                    Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+
+                                @Override
+                                public void onServiceDisconnected(ComponentName componentName) {
+
+                                }
+                            };
+
+                            bindService(intent,serviceConnection,BIND_AUTO_CREATE);
+
                         }
                     });
 
@@ -207,5 +236,11 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
+
+        if (serviceConnection != null){
+            unbindService(serviceConnection);
+        }
+
+
     }
 }
