@@ -4,9 +4,16 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.PixelFormat;
 import android.os.Binder;
+import android.os.Handler;
 import android.os.IBinder;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.RemoteViews;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -34,6 +41,10 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
 public class FiannceService extends Service {
+
+    private Notification.Builder builder;
+    private Handler handler = new Handler();
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -87,6 +98,7 @@ public class FiannceService extends Service {
     }
 
     public void DownLoad(String url) {
+
         //http://49.233.93.155:9999/atguigu/apk/P2PInvest/app-debug.apk
         LogUtils.d("123");
         RetrofitCreator.getFiannceApiService()
@@ -124,8 +136,16 @@ public class FiannceService extends Service {
                             }
                             setNotification((int) length, count, true);
 
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Window();
+                                }
+                            });
+
                             inputStream.close();
                             fileOutputStream.close();
+
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
@@ -148,7 +168,9 @@ public class FiannceService extends Service {
     public void setNotification(int length, int count, boolean is) {
         LogUtils.d(is);
 
-        Notification.Builder builder = new Notification.Builder(FiannceService.this);
+        if (builder==null){
+            builder = new Notification.Builder(FiannceService.this);
+        }
 
         builder.setContentTitle(getResources().getString(R.string.downloading));
         builder.setSmallIcon(R.drawable.icon_more_on);
@@ -156,6 +178,7 @@ public class FiannceService extends Service {
         RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.item_download);
 
         if (is) {
+            LogUtils.d("123----"+is);
             remoteViews.setTextViewText(R.id.download_title, getResources().getString(R.string.downloadCompletes));
         }
 
@@ -164,6 +187,45 @@ public class FiannceService extends Service {
         builder.setCustomContentView(remoteViews);
 
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        manager.notify(1, builder.build());
+//        if (is){
+//            manager.notify(2, builder.build());
+//        }else {
+            manager.notify(1, builder.build());
+//        }
     }
+
+    public void Window(){
+        WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        //设置小窗口尺寸的类
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
+        layoutParams.type= WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+        //像素格式为透明的
+        layoutParams.format = PixelFormat.TRANSPARENT;
+
+        //设置该flag在显示该小窗口时，其他窗口的按钮或者其他控件都可以点击.
+        layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+
+        //设置小窗口的尺寸
+        //单位是像素
+        layoutParams.width=300;
+        layoutParams.height=200;
+
+        //生成一个窗口的布局view，并且将该view添加到窗口里.
+        View rootView = LayoutInflater.from(this).inflate(R.layout.window_ijk, null);
+        windowManager.addView(rootView, layoutParams);
+
+
+//        ijkVideoView = rootView.findViewById(R.id.ijkVideoView);
+//        rootView.findViewById(R.id.close).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("LQS", "position:" + ijkVideoView.getCurrentPosition());
+//                ijkVideoView.stopPlayback();
+//                windowManager.removeView(rootView);
+//            }
+//        });
+    }
+
 }

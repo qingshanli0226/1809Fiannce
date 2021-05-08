@@ -90,7 +90,7 @@
         android:layout_marginTop="@dimen/dp_10"
         app:PaintColor1="@color/bluegrey"
         app:PaintColor2="@color/pink"
-        app:PaintSize="35"
+        app:PaintSize="25"
         app:TextColor="@color/bluegrey"
         app:TextSize="80"></com.example.framework.view.ProgressView>
 

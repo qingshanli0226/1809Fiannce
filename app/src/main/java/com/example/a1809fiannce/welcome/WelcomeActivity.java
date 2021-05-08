@@ -53,6 +53,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean VERSION=false;
 
     private VersionBean version;
+    private ServiceConnection serviceConnection;
 
     private Handler handler=new Handler(){
         @Override
@@ -79,12 +80,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                bindService(intent, new ServiceConnection() {
+                                serviceConnection = new ServiceConnection() {
                                     @Override
                                     public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-                                        FiannceService.FiannceBinder fiannceBinder= (FiannceService.FiannceBinder) iBinder;
+                                        FiannceService.FiannceBinder fiannceBinder = (FiannceService.FiannceBinder) iBinder;
 
-                                        FiannceService fiannceService=fiannceBinder.getFiannceService();
+                                        FiannceService fiannceService = fiannceBinder.getFiannceService();
 
                                         fiannceService.DownLoad(version.getResult().getApkUrl());
 
@@ -97,7 +98,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                                     public void onServiceDisconnected(ComponentName componentName) {
 
                                     }
-                                },BIND_AUTO_CREATE);
+                                };
+
+                                bindService(intent, serviceConnection,BIND_AUTO_CREATE);
 
 //                                ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
 //
@@ -161,7 +164,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         requestPermissions(new String[]{"android.permission.CALL_PHONE"
         ,"android.permission.WRITE_EXTERNAL_STORAGE"
-        ,"android.permission.READ_EXTERNAL_STORAGE"},100);
+        ,"android.permission.READ_EXTERNAL_STORAGE"
+        ,"android.permission.SYSTEM_ALERT_WINDOW"},100);
 
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
@@ -265,6 +269,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         super.destroy();
         alphaAnimation.cancel();
         handler.removeCallbacksAndMessages(null);
+
+        if (serviceConnection!=null){
+            unbindService(serviceConnection);
+        }
     }
 
     @Override
