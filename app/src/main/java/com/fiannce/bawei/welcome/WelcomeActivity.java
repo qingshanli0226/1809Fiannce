@@ -44,7 +44,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean advertistFinsh = false;
     private VersionBean versionBean;
     private ServiceConnection serviceConnection;
-    private int D_code;
+    private int code;
     private Intent intent;
     private PackageManager packageManager;
 
@@ -68,7 +68,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         intent = new Intent(this, AutoService.class);
         startService(intent);
 
-        D_code = getLocalVersion(this);
+        code = getLocalVersion(this);
     }
 
 
@@ -164,7 +164,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     }
                     break;
                 case ALL_TASK_FIISH:
-                    if (D_code < versionBean.getResult().getVersionCode()) {
+                    if (code < versionBean.getResult().getVersionCode()) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
 
                         builder.setTitle(getResources().getString(R.string.new_banben));
