@@ -96,7 +96,7 @@ public class UserService extends Service {
 
         return super.onStartCommand(intent, flags, startId);
     }
-x
+
     public void downLoad(String url){
         Notification.Builder builder = new Notification.Builder(this);
         builder.setSmallIcon(R.drawable.icon_more_on);
@@ -147,6 +147,11 @@ x
                             manager.notify(2,builder.build());
 
 //                            start7Install();
+//                            if (isApplicationUsed()){
+//                                window();
+//                            }else {
+//                                Toast.makeText(UserService.this, "当前应用未打开", Toast.LENGTH_SHORT).show();
+//                            }
 
 
 

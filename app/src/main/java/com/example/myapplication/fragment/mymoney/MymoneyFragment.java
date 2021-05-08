@@ -72,17 +72,18 @@ public class MymoneyFragment extends BaseFragment {
 
     @Override
     protected void initPresenter() {
-
     }
 
     @Override
     protected void initView() {
-
         toolbar = (ToolBar) mView.findViewById(R.id.toolbar);
         userName = (TextView) mView.findViewById(R.id.user_name);
+    }
 
-
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override

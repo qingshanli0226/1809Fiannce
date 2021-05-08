@@ -42,10 +42,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
-
         EventBus.getDefault().register(this);
-
         btnHome.setChecked(true);
 
         homeFragment = new HomeFragment();
@@ -62,12 +59,10 @@ public class MainActivity extends BaseActivity {
                 FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
                 switch (checkedId) {
                     case R.id.btn_home:
-//                        Toast.makeText(MainActivity.this, "123", Toast.LENGTH_SHORT).show();
                         fragmentTransaction.show(homeFragment);
                         fragmentTransaction.hide(investFragment);
                         fragmentTransaction.hide(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
-
                         break;
                     case R.id.btn_money:
                         fragmentTransaction.hide(homeFragment);
@@ -96,20 +91,14 @@ public class MainActivity extends BaseActivity {
                                     ARouter.getInstance().build(Demo.AROUTE_PATH_LOGIN).navigation();
                                 }
                             });
-
                             builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-//                                    EventBus.getDefault().postSticky("home_data");
                                 }
                             });
-
                             AlertDialog alertDialog = builder.create();
                             alertDialog.show();
-
-
                         }
-
                         break;
                     case R.id.btn_more:
                         fragmentTransaction.hide(homeFragment);
@@ -121,25 +110,18 @@ public class MainActivity extends BaseActivity {
                 fragmentTransaction.commit();
             }
         });
-
-
     }
 
     @Subscribe(sticky = true)
     public void Event(String event){
         if (event.equals("home_data")){
-//            btnHome.setChecked(true);
-
             Intent intent = new Intent(MainActivity.this,MainActivity.class);
             startActivity(intent);
-
         }
     }
 
-
     @Override
     protected void initPresenter() {
-
     }
 
     @Override
@@ -162,18 +144,19 @@ public class MainActivity extends BaseActivity {
         fragmentTransaction.hide(mymoneyFragment);
         fragmentTransaction.hide(moreFragment);
         fragmentTransaction.commit();
+    }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        destroy();
+        //注销eventbus
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
     protected void initView() {
-//透明状态栏
-//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN); //隐藏状态栏
-//        banner = (Banner) findViewById(R.id.banner);
-//        tab = (TabLayout) findViewById(R.id.tab);
-//        vp = (ViewPager) findViewById(R.id.vp);
         btnHome = (RadioButton) findViewById(R.id.btn_home);
         btnMoney = (RadioButton) findViewById(R.id.btn_money);
         btnMymoney = (RadioButton) findViewById(R.id.btn_mymoney);
@@ -186,22 +169,21 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-    private long keybackTime = 0;
+    private long keyBackTime = 0;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
         if (keyCode == KeyEvent.KEYCODE_BACK){
-            if (System.currentTimeMillis() - keybackTime > 2000){
-                keybackTime = System.currentTimeMillis();
+            if (System.currentTimeMillis() - keyBackTime > 2000){
+                keyBackTime = System.currentTimeMillis();
                 Toast.makeText(this, "再按一次返回键退出程序", Toast.LENGTH_SHORT).show();
             }else {
                 finish();
+                onDestroy();
             }
         }else if (event.getKeyCode() == KeyEvent.KEYCODE_HOME){
             return false;
         }
-
         return true;
     }
 }
