@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
 }
 
-//apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 30
@@ -38,8 +37,9 @@ android {
 
 dependencies {
 
-//    implementation 'com.github.ihsg:PatternLocker:2.5.7'
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    compile 'com.wangnan:gesturelockview:1.0.1'//解锁
+
+
 
     //图片处理框架
     implementation 'com.github.bumptech.glide:glide:4.12.0'

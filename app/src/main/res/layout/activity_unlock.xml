@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.more.password.UnlockActivity"
+    android:background="#8D000000">
+
+    <com.example.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        app:wp_CenterTitle="@string/gesturalCode"
+        android:id="@+id/toolbar"></com.example.framework.view.ToolBar>
+
+    <com.wangnan.library.GestureLockView
+        android:id="@+id/act_inlock_glv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:line_thickness="@dimen/dp_10"
+        app:press_color="#3cb6fb"
+        app:error_color="#b32818"
+        android:layout_centerInParent="true"
+        app:is_use_animation="true"
+        app:animation_scale_mode="reverse"></com.wangnan.library.GestureLockView>
+
+</RelativeLayout>

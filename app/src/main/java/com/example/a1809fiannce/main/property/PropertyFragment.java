@@ -2,6 +2,7 @@ package com.example.a1809fiannce.main.property;
 
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a1809fiannce.R;
 import com.example.commom.FianceConstants;
@@ -48,7 +49,11 @@ public class PropertyFragment extends BaseFragment implements FiannceUserManager
     @Override
     public void onRightImgClick() {
         super.onRightImgClick();
-        FiannceArouter.getInstance().build(FianceConstants.USER_PATH).navigation();
+        if (FiannceUserManager.getInstance().getLoginBean()!=null) {
+            FiannceArouter.getInstance().build(FianceConstants.USER_PATH).navigation();
+        }else {
+            Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

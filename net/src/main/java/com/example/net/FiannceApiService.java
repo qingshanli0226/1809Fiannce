@@ -4,10 +4,12 @@ import com.example.net.model.AllProductBean;
 import com.example.net.model.HoemBean;
 import com.example.net.model.LoginBean;
 import com.example.net.model.RegisterBean;
+import com.example.net.model.UnlockBean;
 import com.example.net.model.VersionBean;
 
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -45,5 +47,9 @@ public interface FiannceApiService {
     @GET
     @Streaming //防止占用内存过多，避免OOM问题也就是内存溢出
     Observable<ResponseBody> downloadFile(@Url String url);
+
+    @POST("setGesturePassword")
+    Observable<UnlockBean> getUnlockData(@Body String gPassword);
+
 
 }

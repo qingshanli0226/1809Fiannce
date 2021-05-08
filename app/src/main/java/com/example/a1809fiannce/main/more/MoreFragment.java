@@ -1,6 +1,7 @@
 package com.example.a1809fiannce.main.more;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -47,6 +48,18 @@ public class MoreFragment extends BaseFragment {
 
         fragMorePwdOff.setOnClickListener(view -> {
             fragMorePwdOff.setImageResource(R.drawable.toggle_on);
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle("是否要开启手势密码");
+            builder.setNegativeButton("取消",(dialogInterface, i) -> {
+                fragMorePwdOff.setImageResource(R.drawable.toggle_off);
+            });
+            builder.setPositiveButton("确定",(dialogInterface, i) -> {
+                FiannceArouter.getInstance().build(FianceConstants.UNLOCK_PATH).navigation();
+            });
+
+            builder.show();
+
+
         });
     }
 

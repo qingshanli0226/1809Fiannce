@@ -40,5 +40,6 @@
     <string name="contactCustomerPhone">010-56253825</string>
     <string name="userRegister">user register</string>
     <string name="financialUpdate">Financial Update...</string>
+    <string name="gesturalCode">gestural code</string>
 
 </resources>
