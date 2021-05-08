@@ -79,7 +79,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         requestPermissions(new String[]{"android.permission.CALL_PHONE","android.permission.READ_EXTERNAL_STORAGE"
                             ,"android.permission.WRITE_EXTERNAL_STORAGE"
-        ,"android.permission.CALL_PHONE"},100);
+        ,"android.permission.CALL_PHONE"
+        ,"android.permission.SYSTEM_OVERLAY_WINDOW" },100);
 
         welcomePresenter.getHomeData();
         welcomePresenter.getVersionData();

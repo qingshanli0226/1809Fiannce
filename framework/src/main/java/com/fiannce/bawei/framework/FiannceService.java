@@ -10,11 +10,14 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.example.commom.FiannceContants;
 import com.example.framework.R;
 import com.fiannce.bawei.net.RetrofitCreator;
+import com.fiannce.bawei.net.model.LoginBean;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,6 +34,7 @@ import okhttp3.ResponseBody;
 import static android.content.ContentValues.TAG;
 
 public class FiannceService extends Service {
+    private  String string;
     public FiannceService() {
     }
 
@@ -50,7 +54,40 @@ public class FiannceService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+       // String string = SpUtil.getString(FiannceService.this, FiannceConstants.TOKEN_KEY);
 
+
+        if (!string.equals("")) {
+            RetrofitCreator.getfiannceApiService()
+                    .getToken(string)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Observer<LoginBean>() {
+                        @Override
+                        public void onSubscribe(@NonNull Disposable d) {
+
+                        }
+
+                        @Override
+                        public void onNext(@NonNull LoginBean loginBean) {
+                            if (loginBean.getCode().equals("200")) {
+                              
+
+                               // SpUtil.setString(NetModel.context, loginBean.getResult().getToken());
+                            }
+                        }
+
+                        @Override
+                        public void onError(@NonNull Throwable e) {
+
+                        }
+
+                        @Override
+                        public void onComplete() {
+
+                        }
+                    });
+        }
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -65,6 +102,7 @@ public class FiannceService extends Service {
                     public void onSubscribe(Disposable d) {
 
                     }
+
 
                     @RequiresApi(api = Build.VERSION_CODES.N)
                     @Override
@@ -122,7 +160,7 @@ public class FiannceService extends Service {
 
         Notification.Builder builder = new Notification.Builder(FiannceService.this);
         builder.setContentTitle(getResources().getString(R.string.downloading));
-        builder.setSmallIcon(R.drawable.icon_more_on);
+        builder.setSmallIcon(R.drawable.tou);
 
         RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.item_download);
 
