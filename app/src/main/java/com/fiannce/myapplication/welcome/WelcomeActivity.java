@@ -1,8 +1,12 @@
 package com.fiannce.myapplication.welcome;
 
+import android.app.Service;
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.widget.Toast;
 
@@ -11,6 +15,7 @@ import androidx.appcompat.app.AlertDialog;
 
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.LogUtils;
 import com.fiannce.framework.BaseActivity;
 import com.fiannce.framework.manager.CacheManager;
 import com.fiannce.framework.view.LoadingPage;
@@ -30,12 +35,14 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
     private int countDown = 3;
-
+    ServiceConnection serviceConnection;
+    AutoLoginService autoLoginService;
+    Intent intent;
     @Override
     protected void initView() {
 
         handler.sendEmptyMessageDelayed(DELAY_INDEX, DELAY);
-        Intent intent = new Intent(this,AutoLoginService.class);
+         intent = new Intent(this,AutoLoginService.class);
         startService(intent);
     }
 
@@ -77,8 +84,24 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    versionFinsh = true;
-                    handler.sendEmptyMessage(ONE_TASK_FIISH);
+//                    versionFinsh = true;
+//                    handler.sendEmptyMessage(ONE_TASK_FIISH);
+
+                    serviceConnection = new ServiceConnection() {
+                        @Override
+                        public void onServiceConnected(ComponentName name, IBinder service) {
+                            AutoLoginService.MyBinder myBinder = (AutoLoginService.MyBinder) service;
+                             autoLoginService = myBinder.getAutoLoginService();
+                            autoLoginService.downLoad("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk");
+                        }
+
+                        @Override
+                        public void onServiceDisconnected(ComponentName name) {
+
+                        }
+                    };
+                    bindService(intent,serviceConnection, Service.BIND_AUTO_CREATE);
+
                 }
             });
             builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {

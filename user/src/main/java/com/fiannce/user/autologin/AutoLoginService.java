@@ -117,7 +117,7 @@ public class AutoLoginService extends Service {
                     public void onNext(ResponseBody responseBody) {
                         InputStream inputStream = null;
                         FileOutputStream fileOutputStream = null;
-                        File file = new File("/sdcard/Download/aaa.apk");
+                        File file = new File("/sdcard/Download/news.apk");
                         try {
                             long totalByte  = responseBody.contentLength();
                             int len = -1;
