@@ -7,7 +7,6 @@
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".UserActivity" />
         <service android:name=".AutoLoginService"/>
-
     </application>
 
 </manifest>

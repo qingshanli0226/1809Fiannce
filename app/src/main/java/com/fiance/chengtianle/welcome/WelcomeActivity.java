@@ -147,10 +147,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 case ALL_TASK_FIISH:
                     Toast.makeText(WelcomeActivity.this, "所有任务完成", Toast.LENGTH_SHORT).show();
                       currentAppVerSionCode=AppVerSion.getVersionCode(WelcomeActivity.this);
-
-
+                      //版本号判断
                     if (currentAppVerSionCode<newAppVerSionCode){
-                        //对话框
                         AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
                         builder.setTitle("检测到新版本");
                         builder.setMessage("检测到新版本  是否下载安装");
@@ -175,7 +173,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         ARouter.getInstance().build("/main/MainActivity").navigation();
                      finish();
                     }
-
                     break;
             }
         }

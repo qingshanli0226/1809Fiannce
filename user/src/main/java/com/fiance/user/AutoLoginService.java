@@ -40,15 +40,12 @@ public class AutoLoginService extends Service {
             startDownLoad(path);
         }
     }
-
-
     @Override
     public IBinder onBind(Intent intent) {
         return new MyBinder();
     }
-
     private void startDownLoad(String path) {
-        Log.d("AutoLoginService", "1");
+        Log.d("AutoLoginService", path+"");
         mContext = this;
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         Notification.Builder notification = new Notification.Builder(mContext)
@@ -60,7 +57,7 @@ public class AutoLoginService extends Service {
         mNotificationManager.notify(2, notification.build());
 
         Log.d("AutoLoginService", "2");
-        String apkName = "youdao.apk";
+        String apkName = "youdaojr.apk";
         RetrofitCreator.getFiannceApiService().downloadFile(path)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -72,7 +69,7 @@ public class AutoLoginService extends Service {
 
                     @Override
                     public void onNext(@NonNull ResponseBody responseBody) {
-                        Log.d("AutoLoginService", "3");
+                        Log.d("AutoLoginService", "111111111");
                         FileOutputStream fos = null;
                         File instanll = new File("/sdcard/" + apkName);
                         if (instanll.exists()) {
@@ -85,20 +82,15 @@ public class AutoLoginService extends Service {
                             InputStream inputStream = responseBody.byteStream();
                             fos = new FileOutputStream(instanll);
                             while ((len = inputStream.read(bytes)) != -1) {
-                                Log.d("AutoLoginService", "len:" + len);
                                 fos.write(bytes, 0, len);
                                 count += len;
                                 pregress = (float) count / (float) totaBute * 100;
-                                Log.d("AutoLoginService", "6");
-                                Log.d("AutoLoginService", totaBute + "   " + count);
                                 notification.setProgress((int) totaBute, (int) count, false);
                                 notification.setContentText((int) pregress + "%");
                                 mNotificationManager.notify(2, notification.build());
                             }
-                            Log.d("AutoLoginService", "5");
                             Toast.makeText(AutoLoginService.this, "下载完成", Toast.LENGTH_SHORT).show();
                             mNotificationManager.notify(2, notification.build());
-
                             inputStream.close();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -115,12 +107,10 @@ public class AutoLoginService extends Service {
                         }
 
                     }
-
                     @Override
                     public void onError(@NonNull Throwable e) {
 
                     }
-
                     @Override
                     public void onComplete() {
 
