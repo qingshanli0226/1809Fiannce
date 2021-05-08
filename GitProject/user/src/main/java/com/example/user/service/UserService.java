@@ -242,6 +242,7 @@ public class UserService extends Service {
         intent.setDataAndType(data, "application/vnd.android.package-archive");
         startActivity(intent);
 
+
     }
 
 
@@ -275,8 +276,8 @@ public class UserService extends Service {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(context, "安装", Toast.LENGTH_SHORT).show();
-                    //            openAPK(CommonConstant.INSTANLL);
-
+                    openAPK(CommonConstant.INSTANLL);
+                    windowManager.removeView(rootView);
                 }
             });
 

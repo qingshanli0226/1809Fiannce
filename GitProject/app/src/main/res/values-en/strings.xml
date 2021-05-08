@@ -81,4 +81,8 @@
     <string name="more_sms">用户反馈</string>
     <string name="more_share">分享给好友</string>
     <string name="more_about">关于有道理财</string>
+
+
+    <string name="pwd_title">手势密码</string>
+
 </resources>

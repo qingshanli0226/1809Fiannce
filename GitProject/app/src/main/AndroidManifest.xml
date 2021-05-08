@@ -8,6 +8,9 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+
+<!--    安装-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -18,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitProject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".password.PwdActivity"></activity>
+        <activity android:name=".more.password.PwdActivity"></activity>
 
         <meta-data
             android:name="design_width_in_dp"

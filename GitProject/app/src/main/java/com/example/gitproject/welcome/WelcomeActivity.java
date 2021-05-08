@@ -3,6 +3,7 @@ package com.example.gitproject.welcome;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.ActivityManager;
@@ -66,15 +67,18 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public int getLayoutId() {
         return R.layout.activity_welcome;
     }
-
+    /**
+     * 判断是否是8.0,8.0需要处理未知应用来源权限问题,否则直接安装
+     */
     @Override
     public void initView() {
 
         //权限
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.SYSTEM_ALERT_WINDOW},100);
+                    Manifest.permission.SYSTEM_ALERT_WINDOW,
+                    Manifest.permission.REQUEST_INSTALL_PACKAGES}, 100);
         }
         requestPermission();
         countDown = (TextView) findViewById(R.id.countDown);
@@ -83,7 +87,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     //权限
     private void requestPermission() {
-        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!Settings.canDrawOverlays(WelcomeActivity.this)) {
                 Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                         Uri.parse("package:" + getPackageName()));
@@ -93,6 +97,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             }
         }
     }
+
+
+
 
     @Override
     public void initPresenter() {
@@ -117,12 +124,13 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 myService = myBinder.getMyService();
                 myService.init(WelcomeActivity.this);
             }
+
             @Override
             public void onServiceDisconnected(ComponentName name) {
             }
         };
         startService(intent);
-        bindService(intent,serviceConnection,BIND_AUTO_CREATE);
+        bindService(intent, serviceConnection, BIND_AUTO_CREATE);
 
     }
 
@@ -144,12 +152,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     //跳转
                     showAlert();
                 }
-            } else if(msg.what == 7){
+            } else if (msg.what == 7) {
                 Long obj = (Long) msg.obj;
                 int progress = progressDialog.getProgress();
 
-                progressDialog.setProgress(progress+obj.intValue());
-                if(progress == 100){
+                progressDialog.setProgress(progress + obj.intValue());
+                if (progress == 100) {
                     progressDialog.hide();
                     ARouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
                     finish();
@@ -159,6 +167,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         }
     };
     private ProgressDialog progressDialog;
+
     //弹出对话框
     private void showAlert() {
         int oldCode = 0;
@@ -186,7 +195,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 //                    progressDialog.show();
 
                     //启动下载服务服务
-                    myService.downLoad("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk",handler);
+                    myService.downLoad("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk", handler);
                     ARouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
                     finish();
 
@@ -216,7 +225,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 10) {
-            if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (!Settings.canDrawOverlays(this)) {
                     // SYSTEM_ALERT_WINDOW permission not granted...
                     Toast.makeText(WelcomeActivity.this, "not granted", Toast.LENGTH_SHORT);
@@ -226,6 +235,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             }
         }
     }
+
     @Override
     public void onHomeData(HomeBean homeBean) {
         CacheManager.getInstance().setHomeBean(homeBean);

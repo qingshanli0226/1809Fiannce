@@ -126,6 +126,9 @@ public class MoreFragment extends BaseFragment implements CacheUserManager.ILogi
                         rightItemPic.setImageResource(R.drawable.toggle_off);
                         isFlag = false;
                     } else{
+                        FrameArouter.getInstance().build(CommonConstant.APP_PWD_PATH).navigation();
+
+
                         rightItemPic.setImageResource(R.drawable.toggle_on);
                         isFlag = true;
                         HashMap<String, String> stringStringHashMap = new HashMap<>();
@@ -158,6 +161,8 @@ public class MoreFragment extends BaseFragment implements CacheUserManager.ILogi
 
                                     }
                                 });
+
+
                     }
                 }
 
