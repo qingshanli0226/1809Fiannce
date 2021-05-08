@@ -195,5 +195,7 @@
     <orderEntry type="module" module-name="framework" />
     <orderEntry type="module" module-name="net" />
     <orderEntry type="module" module-name="framework" />
+    <orderEntry type="module" module-name="net" />
+    <orderEntry type="module" module-name="framework" />
   </component>
 </module>

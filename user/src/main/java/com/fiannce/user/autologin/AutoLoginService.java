@@ -7,6 +7,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.net.Uri;
+import android.os.Binder;
 import android.os.Environment;
 import android.os.IBinder;
 import android.service.autofill.AutofillService;
@@ -43,8 +44,14 @@ public class AutoLoginService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+
+        return new MyBinder();
+    }
+
+    public class MyBinder extends Binder{
+        public AutoLoginService getAutoLoginService(){
+            return AutoLoginService.this;
+        }
     }
 
     @Override
