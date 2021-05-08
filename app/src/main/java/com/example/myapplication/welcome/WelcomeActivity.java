@@ -240,9 +240,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     int code = versionBeans.getCode();
                     if (code == Demo.VERSION_CODE){
                         VersionBean.ResultBean result = versionBeans.getResult();
-                        int versionCode = result.getVersionCode();
-                        int versionCode1 = APKVersionCodeUtils.getVersionCode(WelcomeActivity.this);
-                        if (versionCode1<versionCode){
+                        int newVersionCode = result.getVersionCode();
+                        int oldVersionCode = APKVersionCodeUtils.getVersionCode(WelcomeActivity.this);
+                        if (oldVersionCode < newVersionCode){
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
                             builder.setIcon(R.drawable.ic_launcher_background);
@@ -301,8 +301,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
-        //解除绑定
-        unbindService(serviceConnection);
+//        //解除绑定
+//        unbindService(serviceConnection);
         //停止服务
         stopService(intent);
     }

@@ -13,6 +13,7 @@ import com.example.demo.Demo;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.ToolBar;
+import com.example.sp.SpUtils;
 import com.example.user.R;
 
 import org.greenrobot.eventbus.EventBus;
@@ -49,6 +50,7 @@ public class ExitActivity extends BaseActivity {
             public void onClick(View v) {
 
                 FiannceUserManager.getInstance().setLogin(false);
+//                String string = SpUtils.getString(ExitActivity.this);
                 boolean login = FiannceUserManager.getInstance().isLogin();
                 if (login==false){
                     Toast.makeText(ExitActivity.this, "退出成功", Toast.LENGTH_SHORT).show();
