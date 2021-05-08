@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi;
 import com.blankj.utilcode.util.LogUtils;
 import com.example.commom.FiannceContants;
 import com.example.framework.R;
+import com.fiannce.bawei.framework.manager.FiannceUserManager;
 import com.fiannce.bawei.net.RetrofitCreator;
 import com.fiannce.bawei.net.model.LoginBean;
 
@@ -71,7 +72,8 @@ public class FiannceService extends Service {
                         @Override
                         public void onNext(@NonNull LoginBean loginBean) {
                             if (loginBean.getCode().equals("200")) {
-                              
+                                FiannceUserManager.getInstance()
+                                        .setLoginBean(loginBean);
 
                                // SpUtil.setString(NetModel.context, loginBean.getResult().getToken());
                             }
