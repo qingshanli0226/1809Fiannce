@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.example.a1809fiannce.Gesture.GestureActivity;
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.view.LinView;
 import com.example.framwork.call.FiannceARouter;
@@ -30,9 +31,11 @@ public class ManyFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_many, container, false);
+
         us = (LinView) view.findViewById(R.id.us);
         tell = view.findViewById(R.id.tell);
         pwd = view.findViewById(R.id.pwd);
+
         //注册
         us.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +43,7 @@ public class ManyFragment extends Fragment {
                 FiannceARouter.getFiannceARouter().getUserManager().OpenRegisterActivity(getActivity(),null);
             }
         });
+
         //打电话
         tell.setiRightImgCallBack(new LinView.iRightImgCallBack() {
             @Override
@@ -50,6 +54,7 @@ public class ManyFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
         //读取sp判断是否打开手势密码
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("pwd", Context.MODE_PRIVATE);
         boolean isPwd = sharedPreferences.getBoolean("isPwd", false);
@@ -59,6 +64,7 @@ public class ManyFragment extends Fragment {
         }else {
             pwd.setRightIcon(R.mipmap.toggle_off);
         }
+
         //手势密码点击事件
         pwd.setiRightImgCallBack(new LinView.iRightImgCallBack() {
             @Override
@@ -77,7 +83,10 @@ public class ManyFragment extends Fragment {
                     SharedPreferences.Editor edit = ShowSharedPreferences.edit();
                     edit.putBoolean("isPwd",true);
                     edit.commit();
+                    startActivity(new Intent(getContext(), GestureActivity.class));
+
                 }
+
 
 //                    WindowManager manager = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
 //                    WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
@@ -88,6 +97,7 @@ public class ManyFragment extends Fragment {
 //                    layoutParams.height=500;
 //                    View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_window, null);
 //                    manager.addView(inflate,layoutParams);
+
             }
         });
         return view;

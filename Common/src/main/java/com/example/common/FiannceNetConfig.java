@@ -22,4 +22,12 @@ public class FiannceNetConfig {
     public static final String PASSWORD="password";
     //自动登录的token
     public static final String TOKEN="token";
+    //设置手势密码
+    public static final String SETGESTUREPWD="setGesturePassword";
+    //验证手势密码
+    public static final String VERIFYGESTUREPWD="loginByGesturePassword";
+    //清除手势密码
+    public static final String CLEARGESTUREPWD="clearByGesturePassword";
+
+
 }

@@ -54,7 +54,6 @@ public class WelcomePresenter extends BasePresenter<WelcomeCallBack> {
                                public void onNext(@NonNull HomeBean homeBean) {
                                    if (iView!=null){
                                        iView.HomeData(homeBean);
-                                       Log.i("zx", "HomeData: "+homeBean.toString());
                                    }
 
                                }

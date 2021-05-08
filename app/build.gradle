@@ -55,4 +55,5 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.10'
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'
     implementation 'com.android.support:design:29.0.0'
+    implementation 'com.itsxtt:patternlockview:0.1.0'
 }

@@ -40,26 +40,29 @@ public class MainActivity2 extends AppCompatActivity {
     private ViewPager vp;
     private String name;
     private Broad broad;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
         broad = new Broad();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("complete");
         registerReceiver(broad,intentFilter);
+
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             requestPermissions(new String[]{
                     Manifest.permission.CALL_PHONE,
                     Manifest.permission.READ_EXTERNAL_STORAGE,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.SYSTEM_ALERT_WINDOW,
             },100);
         }
 
         tab = (CommonTabLayout) findViewById(R.id.tab);
         vp = (ViewPager) findViewById(R.id.main);
         list.clear();
+
         list.add(new MainTabCus("主页",R.mipmap.bottom02,R.mipmap.bottom01));
         list.add(new MainTabCus("投资",R.mipmap.bottom04,R.mipmap.bottom03));
         list.add(new MainTabCus("我的资产",R.mipmap.bottom06,R.mipmap.bottom05));
@@ -69,9 +72,11 @@ public class MainActivity2 extends AppCompatActivity {
         fragmentList.add(new InvestFragment());
         fragmentList.add(new MyMoneyFragment());
         fragmentList.add(new ManyFragment());
+
         MainFragment mainFragment = new MainFragment(getSupportFragmentManager(), fragmentList);
         vp.setAdapter(mainFragment);
         tab.setTabData(list);
+
         tab.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
@@ -83,6 +88,7 @@ public class MainActivity2 extends AppCompatActivity {
 
             }
         });
+
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -127,6 +133,7 @@ public class MainActivity2 extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
     class Broad extends BroadcastReceiver{
 
         @Override
@@ -139,9 +146,6 @@ public class MainActivity2 extends AppCompatActivity {
                 builder.setPositiveButton("安装", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-//                        Intent intent = new Intent(Intent.ACTION_VIEW);
-//                        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-//                        startActivity(intent);
                         dialog.dismiss();
                     }
                 });
@@ -157,6 +161,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         }
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

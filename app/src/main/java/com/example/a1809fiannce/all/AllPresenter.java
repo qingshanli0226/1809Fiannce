@@ -51,7 +51,9 @@ public class AllPresenter extends BasePresenter<AllCallBack>{
 
                     @Override
                     public void onNext(@NonNull AllBean allBean) {
-                        iView.AllData(allBean);
+                        if (iView!=null) {
+                            iView.AllData(allBean);
+                        }
                     }
 
                     @Override

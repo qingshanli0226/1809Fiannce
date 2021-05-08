@@ -2,6 +2,7 @@ package com.example.network;
 
 import com.example.common.FiannceNetConfig;
 import com.example.network.model.AllBean;
+import com.example.network.model.GesturePwd;
 import com.example.network.model.HomeBean;
 import com.example.network.model.LogBean;
 import com.example.network.model.RegBean;
@@ -49,4 +50,7 @@ public interface Api {
     @GET
     @Streaming   //防止占用内存过多，避免OOM问题也就是内存溢出
     Observable<ResponseBody> downloadFile(@Url String url);
+
+    @POST(FiannceNetConfig.SETGESTUREPWD)
+    Observable<GesturePwd> setGesturePwd(@Field("gPassword") String gPassword);
 }
