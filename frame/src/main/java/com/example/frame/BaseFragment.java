@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements CacheUserManager.ILoginChange{
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements CacheUserManager.ILoginChange,CacheconnetManager.IConnect{
     protected P mPresenter;
     protected LoadingPage loadingPage;
     protected MyToolbar myToolbar;
@@ -36,6 +36,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
         initData();
         initPresenter();
        CacheUserManager.getInstance().registerLogin(this);
+       CacheconnetManager.getInstance().registerConnectListener(this);
     }
 
 
@@ -55,6 +56,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
         super.onDestroy();
         ondestroy();
         CacheUserManager.getInstance().unregisterLogin(this);
+        CacheconnetManager.getInstance().unRegisterConnectListener(this);
     }
     public void ondestroy(){
         if (mPresenter!=null){

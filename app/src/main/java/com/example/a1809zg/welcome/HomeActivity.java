@@ -3,18 +3,23 @@ package com.example.a1809zg.welcome;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.example.a1809zg.MainActivity;
 import com.example.a1809zg.R;
 import com.example.frame.BaseActivity;
 import com.example.frame.CacheMore;
+import com.example.frame.FiannceService;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.LoginBean;
 import com.example.net.bean.UpdataBean;
@@ -27,12 +32,14 @@ private HomePresenter homePresenter;
     private final int ONE_TASK=0;
     private final int ALL_TASK=1;
     private final int DELAY_INDEX=2;
+
     private final int DELAY=1*1000;
     private boolean HomeFinsh=false;
     private boolean UpdateFinsh=false;
     private boolean AddFinsh=false;
     private int count=3;
     private UpdataBean bean;
+    private Intent intent;
 
     private Handler handler=new Handler(){
         @Override
@@ -96,6 +103,12 @@ private HomePresenter homePresenter;
          homePresenter.getHomeData();
          homePresenter.getVersionData();
          handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
+        requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"
+                ,"android.permission.READ_EXTERNAL_STORAGE"},100);
+
+        intent = new Intent(this, FiannceService.class);
+        startService(intent);
+
     }
 
     @Override
@@ -135,9 +148,30 @@ private HomePresenter homePresenter;
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            
+
+                            bindService(intent, new ServiceConnection() {
+                                @Override
+                                public void onServiceConnected(ComponentName name, IBinder service) {
+                                    LogUtils.d("1233");
+
+                                    FiannceService.FiannceBinder fiannceBinder= (FiannceService.FiannceBinder) service;
+                                    FiannceService fiannceService = fiannceBinder.getFiannceService();
+                                    fiannceService.DownLoad(bean.getResult().getApkUrl());
+
+                                }
+
+                                @Override
+                                public void onServiceDisconnected(ComponentName name) {
+
+                                }
+                            },BIND_AUTO_CREATE);
+
+                            Intent intent = new Intent(HomeActivity.this,MainActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
                     });
+
                     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -168,17 +202,19 @@ private HomePresenter homePresenter;
     public void destroy() {
         super.destroy();
         handler.removeCallbacksAndMessages(true);
-        mPresenter.detachView();
+
+        homePresenter.detachView();
+
     }
 
     @Override
     public void onConnect() {
-
+         Toast.makeText(this, "有网络了", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onDisConnect() {
-
+        Toast.makeText(this, "网络错误", Toast.LENGTH_SHORT).show();
     }
 
     @Override

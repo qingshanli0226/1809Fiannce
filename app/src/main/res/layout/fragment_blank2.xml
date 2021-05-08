@@ -12,7 +12,7 @@
         app:isleft="true"
         app:isright="false"
         app:titletext="投资"
-        app:leftimg="@mipmap/mine"
+
         android:id="@+id/bar"
         >
     </com.example.frame.MyToolbar>

@@ -23,6 +23,7 @@ public abstract class BaseActivity<T extends BasePresenter>extends AppCompatActi
         initPresenter();
         initData();
         CacheconnetManager.getInstance().registerConnectListener(this);
+
         CacheUserManager.getInstance().registerLogin(this);
     }
 
@@ -39,6 +40,7 @@ public abstract class BaseActivity<T extends BasePresenter>extends AppCompatActi
         super.onDestroy();
         destroy();
         CacheUserManager.getInstance().unregisterLogin(this);
+        CacheconnetManager.getInstance().unRegisterConnectListener(this);
     }
 
     public void destroy() {

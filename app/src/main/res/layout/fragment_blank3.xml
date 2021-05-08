@@ -3,9 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.MineFragment"
     android:orientation="vertical">
-<LinearLayout
+
+    <com.example.frame.MyToolbar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:id="@+id/bar"
+        app:isright="true"
+        app:isleft="false"
+        app:rightimg="@drawable/icon_more_on"
+
+        app:titletext="我的资产" />
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:background="@color/blue"

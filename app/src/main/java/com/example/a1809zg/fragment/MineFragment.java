@@ -1,6 +1,7 @@
 package com.example.a1809zg.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.a1809zg.R;
+import com.example.frame.MyToolbar;
 
 public class MineFragment extends Fragment {
 
@@ -20,6 +22,7 @@ public class MineFragment extends Fragment {
     private TextView llZichan;
     private View inflate;
     private TextView name;
+    private MyToolbar bar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,10 +43,27 @@ public class MineFragment extends Fragment {
         SharedPreferences login = getActivity().getSharedPreferences("login", Context.MODE_PRIVATE);
         String name1 = login.getString("name", "");
         boolean islogin = login.getBoolean("islogin", false);
-        if (islogin){
-            name.setText(name1+"");
+        if (islogin) {
+            name.setText(name1 + "");
 
         }
+        bar.setToolbarlistenr(new MyToolbar.ItoolbarListenr() {
+            @Override
+            public void onLeftClick() {
+
+            }
+
+            @Override
+            public void onRightClick() {
+                Intent intent = new Intent(getActivity(),UserMessage.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onTextClick() {
+
+            }
+        });
         return inflate;
     }
 
@@ -52,5 +72,6 @@ public class MineFragment extends Fragment {
         llTouziZhiguan = inflate.findViewById(R.id.ll_touzi_zhiguan);
         llZichan = inflate.findViewById(R.id.ll_zichan);
         name = inflate.findViewById(R.id.name);
+        bar = inflate.findViewById(R.id.bar);
     }
 }

@@ -8,6 +8,7 @@ public class CommonConstant {
     public static final String USER_REGISTER_PATH = "/user/registerActivity";
     public static final String USER_LOGIN_PATH = "/user/loginActivity";
     public static final String USER_EXIT_PATH = "/user/ExitActivity";
+    public static String DOWNLOAD_PATH="/sdcard/Download/1809Fiannce.apk";
 
 //    public static final String SP_NAME_LOGIN = "login";
 //    public static final String SP_FLAG = "flag";

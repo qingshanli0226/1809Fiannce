@@ -10,5 +10,8 @@
     <color name="blue">#6DBCEC</color>
     <color name="red">#C62828</color>
     <color name="gray">#CAC2C2</color>
-
+    <color name="home_back_unselected">#676767</color>
+    <color name="home_back_selected">#3883D1</color>
+    <color name="home_back_selected01">#E24242</color>
+    <color name="product_detail_common">#666666</color>
 </resources>

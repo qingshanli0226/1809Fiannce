@@ -3,6 +3,7 @@ package com.example.a1809zg.fragment;
 import android.content.Context;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.a1809zg.myview.MyView;
@@ -91,5 +92,15 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements IHomeVi
     @Override
     public void onLoginChange(LoginBean loginBean) {
 
+    }
+
+    @Override
+    public void onConnect() {
+        Toast.makeText(getActivity(), "有网络了", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDisConnect() {
+        Toast.makeText(getActivity(), "网络错误", Toast.LENGTH_SHORT).show();
     }
 }

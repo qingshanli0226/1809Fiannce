@@ -88,4 +88,14 @@ public class AllFragment extends BaseFragment<AllPresenter> implements IFragView
     public void onLoginChange(LoginBean loginBean) {
 
     }
+
+    @Override
+    public void onConnect() {
+
+    }
+
+    @Override
+    public void onDisConnect() {
+
+    }
 }
