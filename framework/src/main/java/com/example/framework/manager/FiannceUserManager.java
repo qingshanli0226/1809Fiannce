@@ -34,6 +34,10 @@ public class FiannceUserManager {
     }
 
 
+    public void unregister(IUserLoginChanged iUserLoginChanged){
+        iUserLoginChangedList.remove(iUserLoginChanged);
+    }
+
 
     private static FiannceUserManager fiannceUserManager;
 

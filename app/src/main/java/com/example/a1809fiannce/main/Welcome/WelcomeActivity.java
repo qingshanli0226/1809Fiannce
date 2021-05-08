@@ -57,10 +57,26 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             super.handleMessage(msg);
         }
     };
+
+    private  ServiceConnection serviceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            FiannceService.FiannceBinder fiannceBinder = (FiannceService.FiannceBinder) iBinder;
+            fiannceService = fiannceBinder.getFiannceService();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+
+        }
+    };
+
     private AlphaAnimation alphaAnimation;
     private VersionBean versionBean;
     private String AROUT_MAINACTIVITY = "/main/MainActivity";
     private Intent intent;
+    FiannceService fiannceService;
 
     @Override
     protected int getLayoutId() {
@@ -75,6 +91,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         actGreetDown = (TextView) findViewById(R.id.act_greet_down);
         actGreetVersionName = (TextView) findViewById(R.id.act_greet_versionName);
         actGreetRl = (RelativeLayout) findViewById(R.id.act_greet_rl);
+        intent = new Intent(this, FiannceService.class);
+
+        bindService(intent, serviceConnection, Service.BIND_AUTO_CREATE);
+
     }
 
     @Override
@@ -91,7 +111,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
          */
         String token = SpUtil.getString(this, FianceConstants.TOKEN_KEY);
         if (!(token == null || token.equals(""))) {
-            intent = new Intent(this, FiannceService.class);
             startService(intent);
         }
 
@@ -126,6 +145,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         }
     }
 
+
+
     private void addAlertDialogBuilder() {
         if (versionCode > getVersionCode()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
@@ -144,26 +165,14 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 //                progressDialog.setCanceledOnTouchOutside(false);
 //                progressDialog.show();
 
-                bindService(intent, new ServiceConnection() {
-
-                    @Override
-                    public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-                        FiannceService.FiannceBinder fiannceBinder = (FiannceService.FiannceBinder) iBinder;
-                        FiannceService fiannceService = fiannceBinder.getFiannceService();
-                        fiannceService.DownloadApk(CacheManager.getInstance().getVersionBean().getResult().getApkUrl());
-                    }
-
-                    @Override
-                    public void onServiceDisconnected(ComponentName componentName) {
-
-                    }
-                }, Service.BIND_AUTO_CREATE);
+                fiannceService.DownloadApk(CacheManager.getInstance().getVersionBean().getResult().getApkUrl());
 
                 FiannceArouter.getInstance().build(FianceConstants.MAIN_PATH).navigation();
-//                finish();
+                finish();
             });
             builder.setCancelable(false);
             builder.show();
+
         }
 
     }
@@ -230,6 +239,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         super.destroy();
         handler.removeCallbacksAndMessages(null);
         alphaAnimation.cancel();
+        unbindService(serviceConnection);
+
     }
 
 

@@ -27,7 +27,7 @@ public class PropertyFragment extends BaseFragment implements FiannceUserManager
     protected void initData() {
         FiannceUserManager.getInstance().register(this);
         LoginBean loginBean = FiannceUserManager.getInstance().getLoginBean();
-        if (loginBean!=null){
+        if (loginBean != null) {
             fragProperName.setText(loginBean.getResult().getName());
         }
     }
@@ -53,13 +53,18 @@ public class PropertyFragment extends BaseFragment implements FiannceUserManager
 
     @Override
     public void onLoginChange(LoginBean loginBean) {
-        if (loginBean!=null){
-            fragProperName.setText(loginBean.getResult().getName()+"");
-        }else {
+        if (loginBean != null) {
+            fragProperName.setText(loginBean.getResult().getName() + "");
+        } else {
             fragProperName.setText(R.string.please_login_first);
         }
 
     }
 
+    @Override
+    public void destroy() {
+        super.destroy();
+        FiannceUserManager.getInstance().unregister(this);
 
+    }
 }

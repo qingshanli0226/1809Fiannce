@@ -16,9 +16,11 @@ import com.example.a1809fiannce.main.more.MoreFragment;
 import com.example.a1809fiannce.main.property.PropertyFragment;
 import com.example.a1809fiannce.tab.MyCustomTabEntity;
 import com.example.commom.FianceConstants;
+import com.example.commom.SpUtil;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.FiannceArouter;
 import com.example.framework.manager.FiannceUserManager;
+import com.example.framework.service.FiannceService;
 import com.example.net.model.LoginBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -50,6 +52,10 @@ public class MainActivity extends BaseActivity  {
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.CALL_PHONE}, 100);
         }
+        if (SpUtil.getUpdateApk(this, FianceConstants.APK_UPDATE)) {
+            Toast.makeText(this, "下载完了更新的安装包", Toast.LENGTH_SHORT).show();
+        }
+
 
         ArrayList<CustomTabEntity> customTabEntities = new ArrayList<>();
         customTabEntities.add(new MyCustomTabEntity(getResources().getString(R.string.frag_home), R.mipmap.bottom01, R.mipmap.bottom02));
