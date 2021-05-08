@@ -58,19 +58,18 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     protected void initData() {
 
         requestPermissions(new String[]{"android.permission.CALL_PHONE"
-                ,"android.permission.WRITE_EXTERNAL_STORAGE"
-                ,"android.permission.READ_EXTERNAL_STORAGE"
-                ,"android.permission.SYSTEM_ALERT_WINDOW"},100);
+                , "android.permission.WRITE_EXTERNAL_STORAGE"
+                , "android.permission.READ_EXTERNAL_STORAGE"
+                , "android.permission.SYSTEM_ALERT_WINDOW"}, 100);
 
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
 
-        intent = new Intent(this,AutoService.class);
+        intent = new Intent(this, AutoService.class);
         startService(intent);
 
         D_code = getLocalVersion(this);
     }
-
 
 
     @Override
@@ -188,10 +187,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                                     @Override
                                     public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
                                         AutoService.AutoBinder fiannceBinder = (AutoService.AutoBinder) iBinder;
-
                                         AutoService fiannceService = fiannceBinder.getAutoService();
-
-                                        fiannceService.DownLoad(versionBean.getResult().getApkUrl());
+                                        fiannceService.setDownLoad(versionBean.getResult().getApkUrl());
 
                                         Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                                         startActivity(intent);
@@ -204,12 +201,12 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                                     }
                                 };
 
-                                bindService(intent, serviceConnection,BIND_AUTO_CREATE);
+                                bindService(intent, serviceConnection, BIND_AUTO_CREATE);
                             }
                         });
 
                         builder.show();
-                    }else {
+                    } else {
                         Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
@@ -220,12 +217,11 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     };
 
 
-
     @Override
     public void destroy() {
         super.destroy();
         handler.removeCallbacksAndMessages(null);
-        if (serviceConnection!=null){
+        if (serviceConnection != null) {
             unbindService(serviceConnection);
         }
     }
