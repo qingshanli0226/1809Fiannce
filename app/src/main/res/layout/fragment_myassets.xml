@@ -12,6 +12,7 @@
         android:layout_height="@dimen/dp_40"
         app:ToolBar_titleTextColor="#23A2D2"
         app:rightIsShow="true"
+        android:id="@+id/toolbar"
         app:rightImage="@drawable/my_setting_icon"
         app:titleText="我的资产"/>
     <RelativeLayout

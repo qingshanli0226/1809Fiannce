@@ -44,9 +44,5 @@
                 style="@style/midTextStyle"
                 android:layout_centerVertical="true"/>
         </RelativeLayout>
-
-
-
     </LinearLayout>
-
 </RelativeLayout>

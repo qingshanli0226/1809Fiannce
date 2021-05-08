@@ -79,4 +79,18 @@ public class HomeFragment extends BaseFragmnet {
     }
 
 
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

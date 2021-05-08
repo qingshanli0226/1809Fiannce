@@ -5,6 +5,8 @@ package com.fiannce.bawei.net;
 import com.fiannce.bawei.net.mode.HomeBean;
 import com.fiannce.bawei.net.mode.ProductBean;
 import com.fiannce.bawei.net.mode.VersionBean;
+import com.fiannce.bawei.net.user.login.bean.LoginBean;
+import com.fiannce.bawei.net.user.register.bean.RegisterBean;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.Map;
 import io.reactivex.Observable;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -27,4 +30,13 @@ public interface FiannceApiService {
     Observable<VersionBean> getServerVersion();
     @GET("atguigu/json/P2PInvest/product.json")
     Observable<ProductBean> getProductData();
+
+    @FormUrlEncoded
+    @POST("register")
+    Observable<RegisterBean> getRegister(@Field("name") String name,@Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("login")
+    Observable<LoginBean> getLogin(@Field("name") String name, @Field("password") String password);
+
 }

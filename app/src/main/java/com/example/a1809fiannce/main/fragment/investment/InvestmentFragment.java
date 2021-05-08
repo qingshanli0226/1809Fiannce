@@ -55,4 +55,19 @@ public class InvestmentFragment extends BaseFragmnet {
         InvestmentTabLayout = (TabLayout) mView.findViewById(R.id.Investment_TabLayout);
         InvestmentViewPager = (mViewPager) mView.findViewById(R.id.Investment_view_pager);
     }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

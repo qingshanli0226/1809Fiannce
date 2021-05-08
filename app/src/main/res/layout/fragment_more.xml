@@ -9,6 +9,7 @@
     <com.fiannce.bawei.framework.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:id="@+id/toolbar"
         app:ToolBar_titleTextColor="#23A2D2"
         app:titleText="更多"/>
     <LinearLayout

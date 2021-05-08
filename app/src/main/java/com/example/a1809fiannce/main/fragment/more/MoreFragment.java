@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.main.fragment.more.adapter.MyFragmentAdapter;
 import com.fiannce.bawei.framework.BaseFragmnet;
+import com.fiannce.bawei.user.UserModule;
 import com.fiannce.bawei.user.regiseter.RegisterActivity;
 import com.google.android.material.tabs.TabLayout;
 
@@ -60,8 +61,7 @@ public class MoreFragment extends BaseFragmnet {
         nameRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)  {
-                Intent intent = new Intent(getActivity(), RegisterActivity.class);
-                startActivity(intent);
+                new UserModule().openRegisterActivity(getActivity(),null);
             }
         });
         contactTheCustomerService.setOnClickListener(new View.OnClickListener() {
@@ -80,5 +80,20 @@ public class MoreFragment extends BaseFragmnet {
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_more;
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
     }
 }

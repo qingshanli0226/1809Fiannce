@@ -178,4 +178,19 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         alphaAnimation.cancel();
         handler.removeCallbacksAndMessages(null);
     }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

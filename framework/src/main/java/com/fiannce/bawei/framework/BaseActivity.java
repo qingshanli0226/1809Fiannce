@@ -5,19 +5,24 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fiannce.bawei.framework.view.ToolBar;
 
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener  {
 
     protected T httpPresenter;
 //    protected  LoadingPage loadingPage;
-
+    protected ToolBar toolBar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(getLayoutId());
         initView();
+        toolBar =(ToolBar)findViewById(R.id.toolbar);
+        if (toolBar !=null){
+            toolBar.setToolbarListener(this);
+        }
         initPresenter();
         initData();
     }

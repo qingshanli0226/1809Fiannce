@@ -12,6 +12,7 @@
     <com.fiannce.bawei.framework.view.ToolBar
         app:titleText="首页"
         app:mbackground="#142732"
+        android:id="@+id/toolbar"
         app:ToolBar_titleTextColor="#239ECD"
         android:layout_width="wrap_content"
         android:background="#fff"

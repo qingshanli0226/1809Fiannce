@@ -39,5 +39,4 @@ public class FiannceUserManager {
     public interface IUserLoginChanged{
         void onLoginChange(boolean isLogin);
     }
-
 }

@@ -91,4 +91,19 @@ public class AllfinancialFragment extends BaseFragmnet<WelcomePresenter> impleme
     public void showError(String error) {
 
     }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
 }

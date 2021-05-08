@@ -16,10 +16,11 @@ import com.example.a1809fiannce.main.fragment.investment.InvestmentFragment;
 import com.example.a1809fiannce.main.fragment.more.MoreFragment;
 import com.example.a1809fiannce.main.fragment.MyassetsFragment;
 import com.fiannce.bawei.framework.BaseActivity;
+import com.fiannce.bawei.framework.manager.FiannceUserManager;
 
 
 @Route(path="/main/MainActivity")
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements FiannceUserManager.IUserLoginChanged {
 
     private android.widget.LinearLayout HomeLinearLayout;
     private android.widget.RadioButton homeFragment;
@@ -43,6 +44,7 @@ public class MainActivity extends BaseActivity {
     //拿到的数据
     @Override
     protected void initData() {
+        FiannceUserManager.getInstance().register(this);
 
     }
 
@@ -206,5 +208,45 @@ public class MainActivity extends BaseActivity {
         moreFragment.setCompoundDrawables(null,drawableSearch3,null,null);
         moreFragment.setText("更多");
         moreFragment.setTextColor(Color.parseColor("#6D6D6D"));
+    }
+
+    @Override
+    public void onLeftClick() {
+
+    }
+
+    @Override
+    public void onRightImgClick() {
+
+    }
+
+    @Override
+    public void onRightTvClick() {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
+    public void onLoginChange(boolean isLogin) {
+//        if (isLogin){
+//            initDrawable();
+//            FragmentManager supportFragmentManager = getSupportFragmentManager();
+//            FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+//            fragmentTransaction.show(homeFragments);
+//            fragmentTransaction.hide(investmentFragments);
+//            fragmentTransaction.hide(myassetsFragments);
+//            fragmentTransaction.hide(moreFragments);
+//            fragmentTransaction.commitAllowingStateLoss();
+//        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FiannceUserManager.getInstance().unRegister(this);
     }
 }

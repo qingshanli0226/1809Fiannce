@@ -57,6 +57,7 @@ public class FiannceArouter {
     public interface IUserInterface{
         void openLoginAcivity(Context context, Bundle bundle);
         void openGetureActivity(Context context, Bundle bundle);
+        void openRegisterActivity(Context context, Bundle bundle);
     }
 
     public interface IAppInterface{
