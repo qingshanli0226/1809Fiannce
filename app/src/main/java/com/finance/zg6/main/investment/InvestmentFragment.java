@@ -40,7 +40,6 @@ public class InvestmentFragment extends BaseFragment {
                 getString(R.string.investmentFragment_fragment_title_recommend),
                 getString(R.string.investmentFragment_fragment_title_hot)}, getActivity(), list);
 
-        
     }
 
     @Override

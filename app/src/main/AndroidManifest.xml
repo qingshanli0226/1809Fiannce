@@ -3,9 +3,9 @@
     package="com.finance.zg">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zg"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.finance.zg6.main.myassets.ProlifePicActivity"></activity>
+        <activity android:name="com.finance.zg6.gesture.GestureActivity"></activity>
+        <activity android:name="com.finance.zg6.main.myassets.ProlifePicActivity" />
         <activity android:name="com.finance.user.login.UserLoginActivity" />
         <activity android:name="com.finance.user.register.UserRegisterActivity" />
         <activity android:name="com.finance.zg6.welcome.WelcomeActivity">
@@ -28,7 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.finance.zg6.main.MainActivity" />
+        <activity
+            android:name="com.finance.zg6.main.MainActivity"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>

@@ -25,7 +25,7 @@
     <string name="welcomeActivity_alert_success_toast">所有任务已完成</string>
 
     <string name="mianActivity_exit_the_program_toast">再点击一次,退出当前应用</string>
-
+    <string name="login_success">登陆成功</string>
     <string name="horseRaceLampView_text">有道金融壕运当头，首投返现最高达188元</string>
     <string name="homeFragment_button_Protection_of_principal_and_interest">本息保障</string>
     <string name="homeFragment_button_Daily_interest">每日计息</string>

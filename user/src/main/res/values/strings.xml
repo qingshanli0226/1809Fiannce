@@ -1,4 +1,5 @@
 <resources>
     <string name="downloading">下载</string>
     <string name="downloadCompletes">下载完成!</string>
+    <string name="no_Null">填写信息不能为空</string>
 </resources>

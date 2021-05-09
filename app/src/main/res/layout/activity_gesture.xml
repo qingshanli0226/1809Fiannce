@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.finance.zg6.gesture.GestureActivity">
+
+    <com.wangnan.library.GestureLockView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:normal_color="#FA1010"
+        app:press_color="#000"
+        android:id="@+id/mGestureLockView"
+        app:line_thickness="6px"></com.wangnan.library.GestureLockView>
+
+</LinearLayout>

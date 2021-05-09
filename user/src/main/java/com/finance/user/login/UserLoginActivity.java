@@ -42,7 +42,7 @@ public class UserLoginActivity extends BaseActivity<LoginPresenter> implements I
                 String logUser = loginUserNameEt.getText().toString().trim();
                 String logPwd = loginPwdEt.getText().toString().trim();
                 if (logUser==null||logPwd==null){
-                    Toast.makeText(UserLoginActivity.this, "填写信息不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserLoginActivity.this, getString(R.string.no_Null), Toast.LENGTH_SHORT).show();
                 }else {
                     httpPresenter.getLoginData(logUser,logPwd);
                 }

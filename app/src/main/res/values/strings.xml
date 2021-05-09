@@ -2,5 +2,7 @@
     <string name="app_name">zg</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Tips">提示</string>
+    <string name="TipsMessage">你还没有登录哦！么么~</string>
 
 </resources>

@@ -106,11 +106,10 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
 
                         LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
                         if (loginBean==null){
-
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                            builder.setTitle("提示");
-                            builder.setMessage("你还没有登录哦！么么~");
-                            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            builder.setTitle(getString(R.string.Tips));
+                            builder.setMessage(getString(R.string.TipsMessage));
+                            builder.setPositiveButton(getString(R.string.welcomeActivity_alert_button_yes), new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     Intent intent = new Intent(MainActivity.this, UserLoginActivity.class);
@@ -119,7 +118,6 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
                             });
                             builder.show();
                         }
-
                         break;
                     case 3:
                         FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
@@ -155,7 +153,7 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
                 i =System.currentTimeMillis();
                 return true;
             }else {
-                finish();
+                System.exit(0);
             }
         }
         return super.onKeyDown(keyCode, event);
@@ -178,6 +176,6 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
 
     @Override
     public void onLoginChange(LoginBean loginBean) {
-        Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ""+getString(R.string.login_success), Toast.LENGTH_SHORT).show();
     }
 }

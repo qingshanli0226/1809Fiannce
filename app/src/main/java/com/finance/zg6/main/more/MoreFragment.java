@@ -7,6 +7,7 @@ import android.widget.ToggleButton;
 import com.finance.framework.BaseFragment;
 import com.finance.user.register.UserRegisterActivity;
 import com.finance.zg.R;
+import com.finance.zg6.gesture.GestureActivity;
 
 
 public class MoreFragment extends BaseFragment {
@@ -38,6 +39,10 @@ public class MoreFragment extends BaseFragment {
             startActivity(intent);
         });
 
+        toggleOff.setOnClickListener(v->{
+            Intent intent = new Intent(getActivity(), GestureActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override

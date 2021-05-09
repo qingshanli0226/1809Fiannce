@@ -62,6 +62,7 @@ public class HomeFragment extends BaseFragment implements CacheUserManager.ILogi
         progressView.startProgress(Integer.valueOf(homeBean.getResult().getProInfo().getProgress()),true);
 
         CacheUserManager.getInstance().registerLogin(this);
+
         LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
         if (loginBean == null){
             Toast.makeText(getContext(), "未登录", Toast.LENGTH_SHORT).show();
