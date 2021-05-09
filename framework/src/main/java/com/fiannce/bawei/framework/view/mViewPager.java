@@ -12,6 +12,8 @@ import com.blankj.utilcode.util.LogUtils;
 
 public class mViewPager extends ViewPager {
     private boolean  mboolean;
+    private int   lofitY;
+    private int   lofitX;
     public mViewPager(@NonNull Context context) {
         super(context);
     }
@@ -23,27 +25,14 @@ public class mViewPager extends ViewPager {
     public boolean onInterceptTouchEvent(MotionEvent e) {
         switch (e.getAction()){
             case MotionEvent.ACTION_DOWN:
-                int x = (int) e.getX();
-                int y = (int) e.getY();
-//                LogUtils.e(x+"aaa"+getMeasuredWidth());
-                if (x>=getMeasuredWidth()-500){
-                    mboolean = true;
-                    return false;
-                }else {
-                    mboolean = false;
-                    return true;
-                }
-//                if (x<=getMeasuredHeight()-500){
-//                    mboolean = true;
-//                    return false;
-//                }
-//                    mboolean=false;
-//                    return true;
-
+                lofitX = (int) e.getX();
+                lofitY = (int) e.getY();
             case MotionEvent.ACTION_MOVE:
-                if (mboolean){
+                int y1 = (int) getY();
+                if (y1!=lofitY||lofitX>=getMeasuredWidth()-500){
                     return false;
                 }else {
+                    LogUtils.e("aaa");
                     return true;
                 }
             case MotionEvent.ACTION_UP:
