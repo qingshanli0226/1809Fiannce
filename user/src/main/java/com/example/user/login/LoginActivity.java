@@ -33,6 +33,8 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements LogCall
         name = intent.getStringExtra("name");
         pwd = intent.getStringExtra("pwd");
 
+        Log.i("123", "initView: "+name+pwd);
+
     }
 
     @Override
@@ -42,7 +44,7 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements LogCall
 
     @Override
     public void LogData(LogBean logBean) {
-        pageView.ShowSuccess();
+        //pageView.ShowSuccess();
         if (logBean.getCode().equals("200")){
 
             FiannceUserManager.getInstance().setLogin(logBean);
@@ -55,7 +57,7 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements LogCall
 
             FiannceARouter.getFiannceARouter().getAppManager().OpenMainActivity(LoginActivity.this,bundle);
         }else {
-            Toast.makeText(this, ""+logBean.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "登录失败", Toast.LENGTH_SHORT).show();
         }
     }
 

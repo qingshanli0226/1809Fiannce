@@ -1,7 +1,9 @@
 package com.example.fiannce.fragment.morefragment;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,8 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.fiannce.R;
+import com.example.fiannce.fragment.morefragment.gesture.GestureActivity;
 import com.example.framework.FiannceARouter;
 
 public class MoreFragment extends Fragment {
@@ -22,6 +26,7 @@ public class MoreFragment extends Fragment {
     private MoreView tell;
     private int i = 0;
     private MoreView pwd;
+    private boolean isBoolean;
 
     public MoreFragment() {
         // Required empty public constructor
@@ -61,19 +66,50 @@ public class MoreFragment extends Fragment {
             }
         });
 
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("pwd", Context.MODE_PRIVATE);
+        boolean isPwd = sharedPreferences.getBoolean("isPwd", false);
+
+        isBoolean = isPwd;
+
+        if (isPwd){
+            pwd.setRightIcon(R.mipmap.toggle_on);
+        }else {
+            pwd.setRightIcon(R.mipmap.toggle_off);
+        }
+
         pwd.setiRightImgCallBack(new MoreView.iRightImgCallBack() {
             @Override
             public void OnRightListener() {
-                if (i == 0){
-                    pwd.setRightIcon(R.mipmap.toggle_on);
-                    i = 1;
-                }else if (i == 1){
+                if (isBoolean){
+                    isBoolean = false;
+
                     pwd.setRightIcon(R.mipmap.toggle_off);
-                    i = 0;
+                    Toast.makeText(getActivity(), "关闭手势密码", Toast.LENGTH_SHORT).show();
+                }else {
+                    isBoolean = true;
+
+                    pwd.setRightIcon(R.mipmap.toggle_on);
+                    Toast.makeText(getActivity(), "开始手势密码", Toast.LENGTH_SHORT).show();
+                    if (PwdManage.getManage().isPwd()){
+                        PwdManage.getManage().setPwd(false);
+
+                        Intent intent = new Intent(getContext(), GestureActivity.class);
+                        startActivity(intent);
+                    }
                 }
             }
         });
 
         return inflate;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("pwd", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putBoolean("isPwd",isBoolean);
+        edit.commit();
     }
 }

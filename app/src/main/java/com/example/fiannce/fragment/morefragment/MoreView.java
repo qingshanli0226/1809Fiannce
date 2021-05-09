@@ -78,16 +78,10 @@ public class MoreView extends LinearLayout {
         leftTit = view.findViewById(R.id.lin_left_tit);
         rightTit = view.findViewById(R.id.lin_right_tit);
 
-        leftImg.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                iCallBack.leftImg();
-            }
-        });
         rightImg.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                iCallBack.rightImg();
+                iRightImgCallBack.OnRightListener();
             }
         });
         rightTit.setOnClickListener(new OnClickListener() {
@@ -102,6 +96,7 @@ public class MoreView extends LinearLayout {
                 iCallBack.leftText();
             }
         });
+
         leftImg.setImageResource(leftIcon);
 
         if (rightImgShow){

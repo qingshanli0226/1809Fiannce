@@ -1,13 +1,16 @@
 package com.example.net;
 
 import com.example.net.mode.AllBean;
+import com.example.net.mode.GestureBean;
 import com.example.net.mode.HomeBean;
 import com.example.net.mode.LogBean;
 import com.example.net.mode.RegBean;
 import com.example.net.mode.VersionBean;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -41,4 +44,7 @@ public interface FiannceApiService {
     @GET
     @Streaming
     Observable<ResponseBody> dowloadFile(@Url String url);
+
+    @POST("setGesturePassword")
+    Observable<GestureBean> setGesturePwd(@Body RequestBody gPasswordBody);
 }

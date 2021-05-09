@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fiannce">
 
-    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-
     <application
         android:name=".FiannceApplication"
         android:allowBackup="true"
@@ -15,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fiannce"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.example.user.login.LoginActivity"></activity>
+        <activity android:name=".fragment.morefragment.gesture.GestureActivity"></activity>
+
+        <activity android:name="com.example.user.login.LoginActivity" />
+
         <activity android:name="com.example.user.register.RegisterActivity" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".welcome.WelcomeActivity">
@@ -25,9 +25,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask" />
+        <service
+            android:name=".welcome.UpdateService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>
