@@ -40,12 +40,10 @@ public class LogActivity extends BaseActivity<LogPresenter> implements LogCallBa
         if (logBean.getCode().equals("200")){
             Toast.makeText(this, ""+logBean.getMessage(), Toast.LENGTH_SHORT).show();
             FiannceUserManager.getInstance().setIsLog(logBean);
-            Bundle bundle = new Bundle();
-            bundle.putString("name",name);
+
             UserCallBack.getInstance().setName(name);
-            bundle.putInt("num",0);
             Squilts.putString(LogActivity.this,logBean.getResult().getToken());
-            FiannceARouter.getFiannceARouter().getAppManager().OpenMainActivity(LogActivity.this,bundle);
+            FiannceARouter.getFiannceARouter().getAppManager().OpenMainActivity(LogActivity.this,null);
         }else {
             Toast.makeText(this, ""+logBean.getMessage(), Toast.LENGTH_SHORT).show();
         }

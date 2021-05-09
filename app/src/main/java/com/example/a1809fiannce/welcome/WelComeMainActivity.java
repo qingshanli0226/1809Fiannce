@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a1809fiannce.home.HomeCallBack;
-import com.example.a1809fiannce.mian.MainActivity2;
+import com.example.a1809fiannce.main.MainActivity2;
 import com.example.a1809fiannce.R;
 import com.example.framwork.base.BaseActivity;
 import com.example.network.model.HomeBean;
@@ -70,7 +70,7 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
             mPresenter=new WelcomePresenter(this);
             mPresenter.HomeData();
             mPresenter.UpdateData();
-        serviceConnection = new ServiceConnection() {
+            serviceConnection = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
                 UpdateService.MyBind myBind = (UpdateService.MyBind) service;
@@ -190,6 +190,7 @@ public class WelComeMainActivity extends BaseActivity<WelcomePresenter> implemen
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
         mPresenter.delView();
+        unbindService(serviceConnection);
 
     }
 

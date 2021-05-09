@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
@@ -76,7 +77,7 @@ public class UpdateService extends Service {
                                 return;
                             }
                             long length = responseBody.contentLength();
-                            Log.i("aa", "onNext: "+length);
+                            Log.i("aa", "length: "+length);
                             int i = -1;
                             int count = 0;
                             byte[] bytes = new byte[1024];
@@ -85,22 +86,26 @@ public class UpdateService extends Service {
                                 fileOutputStream = new FileOutputStream(file);
                                 while ((i = inputStream.read(bytes)) != -1) {
                                     fileOutputStream.write(bytes, 0, i);
-                                    int current = (int) (length / i);
-                                    count += i*500;
-                                    Log.i("aa", "onNext: "+current);
+                                    count += i;
                                     builder.setProgress((int) length, count, false);
                                     manager.notify(1, builder.build());
+                                    Log.i("aa", "count: "+count);
                                     if (count>=length){
                                         builder.setContentTitle("下载完成");
                                         manager.notify(1, builder.build());
+                                        SharedPreferences sharedPreferences = getSharedPreferences("install", MODE_PRIVATE);
+                                        SharedPreferences.Editor edit = sharedPreferences.edit();
+                                        edit.putBoolean("isInstall",true);
+                                        edit.commit();
                                         Intent intent = new Intent();
                                         intent.setAction("complete");
                                         sendBroadcast(intent);
                                         return;
                                     }
 
-
                                 }
+                                inputStream.close();
+                                fileOutputStream.close();
                             } catch (FileNotFoundException e) {
                                 e.printStackTrace();
                             } catch (IOException e) {

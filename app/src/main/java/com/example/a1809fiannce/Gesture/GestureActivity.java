@@ -42,8 +42,10 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
                 for (Integer integer : list) {
                     aPwd+=integer.toString();
                 }
+
                 Log.i("zx", "onComplete: "+aPwd);
                 mPresenter.GestureData(aPwd);
+
                 return true;
             }
         });
@@ -76,6 +78,6 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
 
     @Override
     public void Error(String error) {
-
+        Log.i("zx", "Error: "+error);
     }
 }

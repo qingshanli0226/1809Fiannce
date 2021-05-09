@@ -1,4 +1,4 @@
-package com.example.a1809fiannce.mian;
+package com.example.a1809fiannce.main;
 
 import com.flyco.tablayout.listener.CustomTabEntity;
 

@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.example.a1809fiannce.mian.MainModel;
+import com.example.a1809fiannce.main.MainModel;
+import com.example.common.ComContext;
 import com.example.framwork.FiannceService;
 import com.example.framwork.call.FiannceNetManager;
+import com.example.network.retrofit.Head;
 import com.example.user.auto.AutoService;
 import com.example.common.Squilts;
 import com.example.user.UserModel;
@@ -26,15 +28,16 @@ public class App extends Application {
         FiannceNetManager.getInstance().init(this);
 
 
-        Intent intent = new Intent(this, FiannceService.class);
-        startService(intent);
+        Intent connectService = new Intent(this, FiannceService.class);
+        startService(connectService);
 
         if (Squilts.getString(this)!=null){
             Log.i("zx", "onCreate: "+Squilts.getString(this));
-            Intent intent1 = new Intent(this, AutoService.class);
-            startService(intent1);
+            Intent autoService = new Intent(this, AutoService.class);
+            startService(autoService);
         }
 
+        ComContext.getInstance().init(this);
 
 
     }

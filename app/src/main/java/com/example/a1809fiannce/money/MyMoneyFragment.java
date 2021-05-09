@@ -1,9 +1,11 @@
 package com.example.a1809fiannce.money;
 
+import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a1809fiannce.R;
+import com.example.a1809fiannce.usermessage.MessageActivity;
 import com.example.common.UserCallBack;
 import com.example.framwork.base.BaseFragment;
 import com.example.framwork.call.FiannceUserManager;
@@ -19,12 +21,12 @@ public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.
              tobView.setImgCallBackListener(new TobView.iImgCallBack() {
                  @Override
                  public void OnLeftImgListener() {
-                     Toast.makeText(getContext(), "这是图片", Toast.LENGTH_SHORT).show();
+
                  }
 
                  @Override
                  public void OnRightImgListener() {
-                     Toast.makeText(getContext(), "这是图片", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getContext(), MessageActivity.class));
                  }
              });
 
@@ -36,7 +38,7 @@ public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.
     @Override
     protected void initView() {
         user = baseView.findViewById(R.id.user);
-            FiannceUserManager.getInstance().Register(this);
+        FiannceUserManager.getInstance().Register(this);
 
     }
 

@@ -1,4 +1,4 @@
-package com.example.a1809fiannce.mian;
+package com.example.a1809fiannce.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

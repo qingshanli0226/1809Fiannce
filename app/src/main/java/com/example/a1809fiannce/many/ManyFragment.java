@@ -26,6 +26,7 @@ public class ManyFragment extends Fragment {
     private LinView tell;
     private int i=0;
     private LinView pwd;
+    private boolean isBoolean;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,7 +59,9 @@ public class ManyFragment extends Fragment {
         //读取sp判断是否打开手势密码
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("pwd", Context.MODE_PRIVATE);
         boolean isPwd = sharedPreferences.getBoolean("isPwd", false);
+        isBoolean=isPwd;
         if (isPwd){
+
             pwd.setRightIcon(R.mipmap.toggle_on);
 
         }else {
@@ -69,24 +72,21 @@ public class ManyFragment extends Fragment {
         pwd.setiRightImgCallBack(new LinView.iRightImgCallBack() {
             @Override
             public void OnRightListener() {
-                if (isPwd){
+                if (isBoolean){
+                    isBoolean=false;
                     pwd.setRightIcon(R.mipmap.toggle_off);
                     Toast.makeText(getContext(), "关闭手势密码", Toast.LENGTH_SHORT).show();
-                    SharedPreferences CloseSharedPreferences = getActivity().getSharedPreferences("pwd", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor edit = CloseSharedPreferences.edit();
-                    edit.putBoolean("isPwd",false);
-                    edit.commit();
+
                 }else {
+                    isBoolean=true;
                     pwd.setRightIcon(R.mipmap.toggle_on);
                     Toast.makeText(getContext(), "开启手势密码", Toast.LENGTH_SHORT).show();
-                    SharedPreferences ShowSharedPreferences = getActivity().getSharedPreferences("pwd", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor edit = ShowSharedPreferences.edit();
-                    edit.putBoolean("isPwd",true);
-                    edit.commit();
-                    startActivity(new Intent(getContext(), GestureActivity.class));
+                    if (PwdManage.getManage().isPwd()){
+                        PwdManage.getManage().setPwd(false);
+                        startActivity(new Intent(getContext(), GestureActivity.class));
+                    }
 
                 }
-
 
 //                    WindowManager manager = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
 //                    WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
@@ -103,4 +103,12 @@ public class ManyFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("pwd", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putBoolean("isPwd",isBoolean);
+        edit.commit();
+    }
 }
