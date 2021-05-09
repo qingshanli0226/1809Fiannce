@@ -45,11 +45,11 @@ public class unLoginActivity extends BaseActivity {
             public void onClick(View v) {
                 SharedPreferences sharedPreferences = getSharedPreferences("login.txt", MODE_PRIVATE);
                 SharedPreferences.Editor edit = sharedPreferences.edit();
-                edit.putBoolean("boo",false);
-                edit.putString("name","");
-                edit.putString("pass","");
+                edit.putBoolean("boo", false);
+                edit.putString("name", "");
+                edit.putString("pass", "");
                 edit.commit();
-                ARouter.getInstance().build("/main/MainActivity").withInt("",0).navigation();
+                ARouter.getInstance().build("/main/MainActivity").withInt("", 0).navigation();
             }
         });
     }

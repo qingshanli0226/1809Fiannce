@@ -190,7 +190,8 @@
     <orderEntry type="library" name="Gradle: com.youth.banner:banner:1.4.10@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.alibaba:arouter-api:1.5.0@aar" level="project" />
     <orderEntry type="module" module-name="net" />
+    <orderEntry type="module" module-name="common" />
     <orderEntry type="module" module-name="net" />
-    <orderEntry type="module" module-name="net" />
+    <orderEntry type="module" module-name="common" />
   </component>
 </module>

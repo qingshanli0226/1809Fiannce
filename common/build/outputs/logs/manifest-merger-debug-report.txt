@@ -1,23 +1,23 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:42
-INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:42
-INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:42
-INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:42
-INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:42
-INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:42
-INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:42
+ADDED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:36
+INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:36
+INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:36
+INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:36
+INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:36
+INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:36
+INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:36
 	package
-		ADDED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:2:5-39
+		ADDED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:2:5-33
 		INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml
 		INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:42
+		ADDED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:36
 		INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:42
+		ADDED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:1-2:36
 		INJECTED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\zgsix\1809Fiannce\common\src\main\AndroidManifest.xml:1:11-69

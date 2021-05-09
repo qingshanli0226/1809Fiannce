@@ -13,11 +13,11 @@ import io.reactivex.schedulers.Schedulers;
 
 public class AutoLoginPresenter extends BasePresenter<IAutoLoginView> {
 
-    public AutoLoginPresenter (IAutoLoginView autoLoginView){
+    public AutoLoginPresenter(IAutoLoginView autoLoginView) {
         attachView(autoLoginView);
     }
 
-    public void getAutoLogin(String token){
+    public void getAutoLogin(String token) {
         RetrofitCreator.getFiannceApiService()
                 .getAutologin(token)
                 .subscribeOn(Schedulers.io())
@@ -42,14 +42,14 @@ public class AutoLoginPresenter extends BasePresenter<IAutoLoginView> {
 
                     @Override
                     public void onNext(AutoLoginBean autoLoginBean) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.AutoLogin(autoLoginBean);
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.showError(e.getMessage());
                         }
                     }

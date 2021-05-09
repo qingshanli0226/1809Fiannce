@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".unLoginActivity">
+
     <com.fiannce.framework.view.ToolBar
         android:id="@+id/toobar_fake"
         android:layout_width="match_parent"
         android:layout_height="@dimen/Toolbar_layout_height"
         android:background="@color/colorBlack"
-        app:textcolor="@color/colorToolbar"
-        app:leftIsShow="true"
         app:leftImg="@drawable/left"
+        app:leftIsShow="true"
+        app:textcolor="@color/colorToolbar"
         app:titleText="@string/toolbar_unlogin"></com.fiannce.framework.view.ToolBar>
 
 
@@ -42,11 +43,10 @@
     <Button
         android:id="@+id/bt"
         android:layout_width="match_parent"
-        android:text="退出登录"
-        android:textColor="@color/colorWhite"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:layout_height="wrap_content"
         android:background="@color/colorPropertyLinearLayoutOne"
-        ></Button>
+        android:text="退出登录"
+        android:textColor="@color/colorWhite"></Button>
 </LinearLayout>

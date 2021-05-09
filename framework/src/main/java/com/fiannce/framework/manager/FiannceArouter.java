@@ -12,7 +12,7 @@ public class FiannceArouter {
     public Class<?> displayActivityClass;
     private Context context;
 
-    private HashMap<String,Class<?>> pathMap = new HashMap<>();
+    private HashMap<String, Class<?>> pathMap = new HashMap<>();
 
     private IUserInterface iUserInterface;
     private IPayInterface iPayInterface;
@@ -20,73 +20,81 @@ public class FiannceArouter {
 
     private static FiannceArouter instance;
 
-    private FiannceArouter(){
+    private FiannceArouter() {
 
     }
 
-    public void init(Context context){
+    public void init(Context context) {
         this.context = context;
     }
 
-    public static synchronized FiannceArouter getInstance(){
-        if (instance == null){
+    public static synchronized FiannceArouter getInstance() {
+        if (instance == null) {
             instance = new FiannceArouter();
         }
         return instance;
     }
 
 
-    public void registerIUserInterface(IUserInterface iUserInterface){
+    public void registerIUserInterface(IUserInterface iUserInterface) {
         this.iUserInterface = iUserInterface;
     }
+
     public IUserInterface getiUserInterface() {
         return iUserInterface;
     }
 
-    public void registerIPayInterface(IPayInterface iPayInterface){
+    public void registerIPayInterface(IPayInterface iPayInterface) {
         this.iPayInterface = iPayInterface;
     }
+
     public IPayInterface getiPayInterface() {
         return iPayInterface;
     }
 
-    public void registerIAppInterface(IAppInterface iAppInterface){
+    public void registerIAppInterface(IAppInterface iAppInterface) {
         this.iAppInterface = iAppInterface;
     }
+
     public IAppInterface getiAppInterface() {
         return iAppInterface;
     }
 
-    public interface IUserInterface{
+    public interface IUserInterface {
         void openLoginActivity(Context context, Bundle bundle);
-        void openGetureActivity(Context context,Bundle bundle);
+
+        void openGetureActivity(Context context, Bundle bundle);
     }
-    public interface IPayInterface{
-        void openPayActivity(Context context,Bundle bundle);
+
+    public interface IPayInterface {
+        void openPayActivity(Context context, Bundle bundle);
     }
-    public interface IAppInterface{
-        void openMainActivity(Context context,Bundle bundle);
+
+    public interface IAppInterface {
+        void openMainActivity(Context context, Bundle bundle);
+
         void onEvent(String event);
     }
 
-    public void registerActivityPath(String path,Class<?> clazz){
-        if (!pathMap.containsKey(path)){
-            pathMap.put(path,clazz);
+    public void registerActivityPath(String path, Class<?> clazz) {
+        if (!pathMap.containsKey(path)) {
+            pathMap.put(path, clazz);
         }
     }
 
-    public FiannceArouter build(String path){
+    public FiannceArouter build(String path) {
         displayActivityClass = pathMap.get(path);
         return this;
     }
 
-    public void navigation(){
+    public void navigation() {
         Intent intent = new Intent(context, displayActivityClass);
-        if (context instanceof Activity){
+        if (context instanceof Activity) {
             context.startActivity(intent);
-        }{
-         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-         context.startActivity(intent);
+        }
+        {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
         }
     }
 

@@ -8,17 +8,12 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.blankj.utilcode.util.LogUtils;
+import com.fiannce.common.SpUtiles;
 import com.fiannce.framework.BaseActivity;
-import com.fiannce.framework.SpUtiles;
 import com.fiannce.framework.view.ToolBar;
-import com.fiannce.net.mode.AutoLoginBean;
 import com.fiannce.net.mode.LoginBean;
 import com.fiannce.net.mode.UserBean;
 import com.fiannce.user.R;
-import com.fiannce.user.autologin.AutoLoginPresenter;
-import com.fiannce.user.autologin.AutoLoginService;
-import com.fiannce.user.autologin.IAutoLoginView;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -51,7 +46,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    httppresenter.getLogin(number.getText().toString(),e3.getText().toString());
+                httppresenter.getLogin(number.getText().toString(), e3.getText().toString());
             }
         });
     }
@@ -78,25 +73,25 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
 
     @Override
     public void getLogin(LoginBean loginBean) {
-        if (loginBean.getCode().equals("200")){
+        if (loginBean.getCode().equals("200")) {
             UserBean userBean = new UserBean();
-            userBean.setName(""+number.getText().toString());
-            userBean.setPossword(""+e3.getText().toString());
+            userBean.setName("" + number.getText().toString());
+            userBean.setPossword("" + e3.getText().toString());
             EventBus.getDefault().post(userBean);
 
             SharedPreferences sharedPreferences = getSharedPreferences("login.txt", MODE_PRIVATE);
             SharedPreferences.Editor edit = sharedPreferences.edit();
-            edit.putBoolean("boo",true);
-            edit.putString("name",number.getText().toString());
-            edit.putString("pass",e3.getText().toString());
+            edit.putBoolean("boo", true);
+            edit.putString("name", number.getText().toString());
+            edit.putString("pass", e3.getText().toString());
             edit.commit();
 
-            SpUtiles.putString(this,loginBean.getResult().getToken());
+            SpUtiles.putString(this, loginBean.getResult().getToken());
 
-            Toast.makeText(this, ""+loginBean.getMessage(), Toast.LENGTH_SHORT).show();
-            ARouter.getInstance().build("/main/MainActivity").withInt("",0).navigation();
-        }else {
-            Toast.makeText(this, ""+loginBean.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "" + loginBean.getMessage(), Toast.LENGTH_SHORT).show();
+            ARouter.getInstance().build("/main/MainActivity").withInt("", 0).navigation();
+        } else {
+            Toast.makeText(this, "" + loginBean.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 

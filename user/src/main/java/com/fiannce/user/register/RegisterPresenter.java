@@ -16,13 +16,13 @@ import io.reactivex.schedulers.Schedulers;
 
 public class RegisterPresenter extends BasePresenter<IRegisterView> {
 
-    public  RegisterPresenter(IRegisterView iRegisterView){
+    public RegisterPresenter(IRegisterView iRegisterView) {
         attachView(iRegisterView);
     }
 
-    public void getRegister(String name,String password){
+    public void getRegister(String name, String password) {
         RetrofitCreator.getFiannceApiService()
-                .getRegister(name,password)
+                .getRegister(name, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -46,7 +46,7 @@ public class RegisterPresenter extends BasePresenter<IRegisterView> {
 
                     @Override
                     public void onNext(RegisterBean registerBean) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.onRegister(registerBean);
                         }
                     }

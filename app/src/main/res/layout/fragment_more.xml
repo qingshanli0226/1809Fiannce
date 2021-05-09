@@ -65,11 +65,13 @@
                 android:textColor="@color/colorMoreTextViewtextColor"
                 android:textSize="@dimen/more_TextView_one_textSize"></TextView>
 
-            <ImageView
+            <RadioButton
+                android:id="@+id/more_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"
-                android:src="@drawable/toggle_off"></ImageView>
+                android:button="@null"
+                android:background="@drawable/more_button_select"
+                android:layout_marginLeft="@dimen/more_ImageView_one_layout_marginLeft"></RadioButton>
 
         </LinearLayout>
 

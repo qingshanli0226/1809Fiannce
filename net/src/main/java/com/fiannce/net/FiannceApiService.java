@@ -30,7 +30,7 @@ public interface FiannceApiService {
 
     @FormUrlEncoded
     @POST("register")
-    Observable<RegisterBean> getRegister(@Field("name")String name,@Field("password") String password);
+    Observable<RegisterBean> getRegister(@Field("name") String name, @Field("password") String password);
 
     @FormUrlEncoded
     @POST("login")
@@ -41,6 +41,7 @@ public interface FiannceApiService {
     Observable<AutoLoginBean> getAutologin(@Field("token") String token);
 
     @GET
-    @Streaming //防止占用内存过多，避免OOM问题也就是内存溢出
+    @Streaming
+        //防止占用内存过多，避免OOM问题也就是内存溢出
     Observable<ResponseBody> downloadFile(@Url String url);
 }

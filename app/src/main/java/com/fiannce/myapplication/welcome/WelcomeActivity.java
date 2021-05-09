@@ -2,12 +2,16 @@ package com.fiannce.myapplication.welcome;
 
 import android.app.Service;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +23,7 @@ import com.blankj.utilcode.util.LogUtils;
 import com.fiannce.framework.BaseActivity;
 import com.fiannce.framework.manager.CacheManager;
 import com.fiannce.framework.view.LoadingPage;
+import com.fiannce.myapplication.MainActivity;
 import com.fiannce.myapplication.R;
 import com.fiannce.net.mode.HomeBean;
 import com.fiannce.net.mode.VersionBean;
@@ -35,15 +40,15 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private boolean versionFinsh = false;
     private boolean advertistFinsh = false;
     private int countDown = 3;
-    ServiceConnection serviceConnection;
-    AutoLoginService autoLoginService;
-    Intent intent;
+    private ServiceConnection serviceConnection;
+    private AutoLoginService autoLoginService;
+    private Intent intent;
+    private int code;
+    private VersionBean versionBean;
+
     @Override
     protected void initView() {
-
         handler.sendEmptyMessageDelayed(DELAY_INDEX, DELAY);
-         intent = new Intent(this,AutoLoginService.class);
-        startService(intent);
     }
 
     @Override
@@ -53,8 +58,31 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initData() {
+        requestPermissions(new String[]{"android.permission.CALL_PHONE"
+                , "android.permission.WRITE_EXTERNAL_STORAGE"
+                , "android.permission.READ_EXTERNAL_STORAGE"
+                , "android.permission.SYSTEM_ALERT_WINDOW"}, 100);
+
         httppresenter.getHomeData();
         httppresenter.getVersionData();
+
+        intent = new Intent(this, AutoLoginService.class);
+        startService(intent);
+        code = getLocalVersion(this);
+    }
+
+    public static int getLocalVersion(Context ctx) {
+        int localVersion = 0;
+        try {
+            PackageInfo packageInfo = ctx.getApplicationContext()
+                    .getPackageManager()
+                    .getPackageInfo(ctx.getPackageName(), 0);
+            localVersion = packageInfo.versionCode;
+            Log.i("TAG", "当前版本号：" + localVersion);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return localVersion;
     }
 
     @Override
@@ -72,54 +100,14 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onVersionData(VersionBean versionBean) {
-
-        Toast.makeText(this, "获取到版本信息：" + versionBean.getResult().getVersion(), Toast.LENGTH_SHORT).show();
-        if (versionBean.getResult().getVersion().equals("1.0")) {
-            versionFinsh = true;
-            handler.sendEmptyMessage(ONE_TASK_FIISH);
-        } else {
-            AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
-            builder.setTitle("下载最新版本");
-            builder.setMessage("解决一些bug,优化网络请求");
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-//                    versionFinsh = true;
-//                    handler.sendEmptyMessage(ONE_TASK_FIISH);
-
-                    serviceConnection = new ServiceConnection() {
-                        @Override
-                        public void onServiceConnected(ComponentName name, IBinder service) {
-                            AutoLoginService.MyBinder myBinder = (AutoLoginService.MyBinder) service;
-                             autoLoginService = myBinder.getAutoLoginService();
-                            autoLoginService.downLoad("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk");
-                        }
-
-                        @Override
-                        public void onServiceDisconnected(ComponentName name) {
-
-                        }
-                    };
-                    bindService(intent,serviceConnection, Service.BIND_AUTO_CREATE);
-
-                }
-            });
-            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    versionFinsh = true;
-                    handler.sendEmptyMessage(ONE_TASK_FIISH);
-                }
-            });
-            builder.show();
-        }
-
-//        loadingPage.showSuccessView();
+        this.versionBean = versionBean;
+        versionFinsh = true;
+        handler.sendEmptyMessage(ONE_TASK_FIISH);
     }
 
     @Override
     public void showLoading() {
-//        loadingPage.showTransparentLoadingView();
+
     }
 
     @Override
@@ -153,9 +141,47 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     }
                     break;
                 case ALL_TASK_FIISH:
-                    Toast.makeText(WelcomeActivity.this, "所有任务完成", Toast.LENGTH_SHORT).show();
-                    ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
-                    finish();
+                    if (code < versionBean.getResult().getVersionCode()) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+                        builder.setTitle("下载最新版本");
+                        builder.setMessage("解决一些bug,优化网络请求");
+                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(WelcomeActivity.this, "所有任务完成", Toast.LENGTH_SHORT).show();
+                                ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
+                                finish();
+                            }
+                        });
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                serviceConnection = new ServiceConnection() {
+                                    @Override
+                                    public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+                                        AutoLoginService.MyBinder myBinder = (AutoLoginService.MyBinder) iBinder;
+                                        AutoLoginService autoLoginService = myBinder.getAutoLoginService();
+                                        Toast.makeText(WelcomeActivity.this, "所有任务完成", Toast.LENGTH_SHORT).show();
+                                        ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
+                                        finish();
+                                    }
+
+                                    @Override
+                                    public void onServiceDisconnected(ComponentName componentName) {
+
+                                    }
+                                };
+
+                                bindService(intent, serviceConnection, BIND_AUTO_CREATE);
+                            }
+                        });
+                        builder.show();
+                    } else {
+                        Toast.makeText(WelcomeActivity.this, "所有任务完成", Toast.LENGTH_SHORT).show();
+                        ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
+                        finish();
+                    }
+
                     break;
             }
         }
@@ -165,6 +191,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void destory() {
         super.destory();
         handler.removeCallbacksAndMessages(null);
+        if (serviceConnection != null) {
+            unbindService(serviceConnection);
+        }
     }
 
     @Override

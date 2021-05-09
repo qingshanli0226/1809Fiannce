@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FAFAFA"
+    android:orientation="vertical"
     tools:context=".register.RegisterActivity">
 
     <com.fiannce.framework.view.ToolBar
@@ -13,9 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/Toolbar_layout_height"
         android:background="@color/colorBlack"
-        app:textcolor="@color/colorToolbar"
-        app:leftIsShow="true"
         app:leftImg="@drawable/left"
+        app:leftIsShow="true"
+        app:textcolor="@color/colorToolbar"
         app:titleText="@string/toolbar_register"></com.fiannce.framework.view.ToolBar>
 
     <LinearLayout
@@ -38,13 +38,13 @@
                 android:text="手机号："
                 android:textColor="@color/colorBlack"
                 android:textSize="15dp"></TextView>
+
             <EditText
                 android:id="@+id/number"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="请输入手机号"
                 android:background="#00FFFFFF"
-                ></EditText>
+                android:hint="请输入手机号"></EditText>
         </LinearLayout>
 
         <LinearLayout
@@ -62,14 +62,15 @@
                 android:text="用户名："
                 android:textColor="@color/colorBlack"
                 android:textSize="15dp"></TextView>
+
             <EditText
                 android:id="@+id/e2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="请输入用户名"
                 android:background="#00FFFFFF"
-                ></EditText>
+                android:hint="请输入用户名"></EditText>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -85,14 +86,15 @@
                 android:text="密码："
                 android:textColor="@color/colorBlack"
                 android:textSize="15dp"></TextView>
+
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="请输入密码"
                 android:background="#00FFFFFF"
-                ></EditText>
+                android:hint="请输入密码"></EditText>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -108,13 +110,13 @@
                 android:text="确认密码："
                 android:textColor="@color/colorBlack"
                 android:textSize="15dp"></TextView>
+
             <EditText
                 android:id="@+id/e4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="请输入确认密码"
                 android:background="#00FFFFFF"
-                ></EditText>
+                android:hint="请输入确认密码"></EditText>
         </LinearLayout>
     </LinearLayout>
 
@@ -123,10 +125,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="注册"
-        android:textColor="@color/colorWhite"
         android:background="#27BAED"
-        ></Button>
+        android:text="注册"
+        android:textColor="@color/colorWhite"></Button>
 
 
 </LinearLayout>

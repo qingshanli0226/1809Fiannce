@@ -83,7 +83,10 @@ attr alertDialogTheme
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
+attr animation_duration
 attr animation_enabled
+attr animation_scale_mode
+attr animation_scale_rate
 attr arrowHeadLength
 attr arrowShaftLength
 attr autoCompleteTextViewStyle
@@ -261,6 +264,8 @@ attr enforceMaterialTheme
 attr enforceTextAppearance
 attr errorEnabled
 attr errorTextAppearance
+attr error_color
+attr error_image
 attr expandActivityOverflowButtonDrawable
 attr expanded
 attr expandedTitleGravity
@@ -335,6 +340,10 @@ attr initialActivityCount
 attr insetForeground
 attr isLightTheme
 attr is_auto_play
+attr is_line_top
+attr is_show_guides
+attr is_use_animation
+attr is_use_vibrate
 attr itemBackground
 attr itemHorizontalPadding
 attr itemHorizontalTranslationEnabled
@@ -418,6 +427,7 @@ attr leftIsShow
 attr liftOnScroll
 attr lineHeight
 attr lineSpacing
+attr line_thickness
 attr listChoiceBackgroundIndicator
 attr listChoiceIndicatorMultipleAnimated
 attr listChoiceIndicatorSingleAnimated
@@ -447,6 +457,8 @@ attr navigationContentDescription
 attr navigationIcon
 attr navigationMode
 attr navigationViewStyle
+attr normal_color
+attr normal_image
 attr numericModifiers
 attr overlapAnchor
 attr paddingBottomNoButtons
@@ -472,12 +484,15 @@ attr popupMenuStyle
 attr popupTheme
 attr popupWindowStyle
 attr preserveIconSpacing
+attr press_color
+attr press_image
 attr pressedTranslationZ
 attr progressBarPadding
 attr progressBarStyle
 attr queryBackground
 attr queryHint
 attr radioButtonStyle
+attr radius_ratio
 attr ratingBarStyle
 attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
@@ -614,6 +629,8 @@ attr thickness
 attr thumbTextPadding
 attr thumbTint
 attr thumbTintMode
+attr thumbnail_color
+attr thumbnail_ratio
 attr tickMark
 attr tickMarkTint
 attr tickMarkTintMode
@@ -652,6 +669,7 @@ attr useCompatPadding
 attr use_artwork
 attr use_controller
 attr use_sensor_rotation
+attr vibrate_duration
 attr viewInflaterClass
 attr voiceIcon
 attr windowActionBar
@@ -1418,6 +1436,7 @@ drawable manage_list_count
 drawable manage_list_guarantee
 drawable manage_list_interest
 drawable manage_list_member
+drawable more_button_select
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable my_acount_safety
@@ -1687,6 +1706,8 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id download_progress
+id download_title
 id duration_image_tip
 id duration_progressbar
 id e2
@@ -1762,6 +1783,7 @@ id fixed_width
 id forever
 id full_id
 id fullscreen
+id gesture
 id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
@@ -1814,6 +1836,7 @@ id message
 id middle
 id mind_img
 id mini
+id more_img
 id more_manage
 id more_radio
 id mtrl_child_content_container
@@ -1848,6 +1871,7 @@ id progress_horizontal
 id property_radio
 id radio
 id register_button
+id reverse
 id right
 id rightArea
 id rightImg
@@ -2024,6 +2048,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_gesture
 layout activity_login
 layout activity_main
 layout activity_manage
@@ -2065,6 +2090,7 @@ layout fragment_investment
 layout fragment_more
 layout fragment_property
 layout fragment_recommed
+layout item_downloading
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -2846,6 +2872,8 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable GestureLockThumbnailView thumbnail_color thumbnail_ratio
+styleable GestureLockView animation_duration animation_scale_mode animation_scale_rate error_color error_image is_line_top is_show_guides is_use_animation is_use_vibrate line_thickness normal_color normal_image press_color press_image radius_ratio vibrate_duration
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation

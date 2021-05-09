@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.fiannce.framework.SpUtiles;
 import com.fiannce.myapplication.fragment.more.MoreFragment;
 import com.fiannce.myapplication.fragment.property.PropertyFragment;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -99,7 +98,7 @@ public class MainActivity extends BaseActivity {
                     case R.id.property_radio:
                         SharedPreferences sharedPreferences = getSharedPreferences("login.txt", MODE_PRIVATE);
                         boolean boo = sharedPreferences.getBoolean("boo", false);
-                        String name = sharedPreferences.getString("name","");
+                        String name = sharedPreferences.getString("name", "");
                         if (boo) {
                             UserBean userBean = new UserBean();
                             userBean.setName(name);

@@ -19,9 +19,9 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
         attachView(loginView);
     }
 
-    public void getLogin(String name,String password){
+    public void getLogin(String name, String password) {
         RetrofitCreator.getFiannceApiService()
-                .getLogin(name,password)
+                .getLogin(name, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -45,14 +45,14 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
 
                     @Override
                     public void onNext(LoginBean loginBean) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.getLogin(loginBean);
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if (iView != null){
+                        if (iView != null) {
                             iView.showError(e.getMessage());
                         }
                     }

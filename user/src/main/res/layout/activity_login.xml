@@ -8,15 +8,14 @@
     tools:context=".login.LoginActivity">
 
 
-
     <com.fiannce.framework.view.ToolBar
         android:id="@+id/toobar_fake"
         android:layout_width="match_parent"
         android:layout_height="@dimen/Toolbar_layout_height"
         android:background="@color/colorBlack"
-        app:textcolor="@color/colorToolbar"
-        app:leftIsShow="true"
         app:leftImg="@drawable/left"
+        app:leftIsShow="true"
+        app:textcolor="@color/colorToolbar"
         app:titleText="@string/toolbar_login"></com.fiannce.framework.view.ToolBar>
 
 
@@ -40,14 +39,15 @@
                 android:text="@string/login_text"
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/login_TextView_textSize"></TextView>
+
             <EditText
                 android:id="@+id/number"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/login_hint"
                 android:background="@color/colorloginEditTextbackground"
-                ></EditText>
+                android:hint="@string/login_hint"></EditText>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/login_LinearLayout_two_layout_height"
@@ -62,14 +62,14 @@
                 android:text="@string/login_text_two"
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/login_TextView_textSize"></TextView>
+
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/login_hint_two"
-                android:password="true"
                 android:background="@color/colorloginEditTextbackground"
-                ></EditText>
+                android:hint="@string/login_hint_two"
+                android:password="true"></EditText>
         </LinearLayout>
     </LinearLayout>
 
@@ -78,8 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="@string/login_button"
-        android:textColor="@color/colorWhite"
         android:background="@color/colorPropertyLinearLayoutOne"
-        ></Button>
+        android:text="@string/login_button"
+        android:textColor="@color/colorWhite"></Button>
 </LinearLayout>

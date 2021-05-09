@@ -13,7 +13,7 @@ import com.fiannce.net.mode.RegisterBean;
 import com.fiannce.user.R;
 
 @Route(path = "/user/RegisterActivity")
-public class RegisterActivity extends BaseActivity<RegisterPresenter> implements IRegisterView{
+public class RegisterActivity extends BaseActivity<RegisterPresenter> implements IRegisterView {
 
 
     private com.fiannce.framework.view.ToolBar toobarFake;
@@ -46,13 +46,13 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (e1.getText().length() == 0||e2.getText().length() == 0||e3.getText().length() == 0||e4.getText().length() == 0){
+                if (e1.getText().length() == 0 || e2.getText().length() == 0 || e3.getText().length() == 0 || e4.getText().length() == 0) {
                     Toast.makeText(RegisterActivity.this, "填写信息不能为空", Toast.LENGTH_SHORT).show();
-                }else {
-                    httppresenter.getRegister(e2.getText().toString(),e3.getText().toString());
-                    if (e3.getText().toString().equals(e4.getText().toString())){
+                } else {
+                    httppresenter.getRegister(e2.getText().toString(), e3.getText().toString());
+                    if (e3.getText().toString().equals(e4.getText().toString())) {
 
-                    }else {
+                    } else {
                         e3.setText("");
                         e4.setText("");
                     }
@@ -83,13 +83,13 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
     @Override
     public void onRegister(RegisterBean registerBean) {
-        if (registerBean.getCode().equals("200")){
+        if (registerBean.getCode().equals("200")) {
             String result = registerBean.getResult();
-            Toast.makeText(this, ""+result, Toast.LENGTH_SHORT).show();
-            ARouter.getInstance().build("/login/LoginActivity").withInt("",3).navigation();
-        }else {
+            Toast.makeText(this, "" + result, Toast.LENGTH_SHORT).show();
+            ARouter.getInstance().build("/login/LoginActivity").withInt("", 3).navigation();
+        } else {
             String result = registerBean.getResult();
-            Toast.makeText(this, ""+result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "" + result, Toast.LENGTH_SHORT).show();
         }
 
     }

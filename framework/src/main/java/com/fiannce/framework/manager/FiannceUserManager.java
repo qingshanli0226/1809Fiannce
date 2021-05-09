@@ -11,10 +11,12 @@ public class FiannceUserManager {
     private List<IUserLoginChanged> iUserLoginChangedList = new LinkedList<>();
 
     private static FiannceUserManager instance;
-    private FiannceUserManager(){}
 
-    public static synchronized FiannceUserManager getInstance(){
-        if (instance == null){
+    private FiannceUserManager() {
+    }
+
+    public static synchronized FiannceUserManager getInstance() {
+        if (instance == null) {
             instance = new FiannceUserManager();
         }
         return instance;
@@ -22,26 +24,27 @@ public class FiannceUserManager {
 
     private boolean islogin;
 
-    private boolean isLogin(){
+    private boolean isLogin() {
         return islogin;
     }
 
-    public void register(IUserLoginChanged iUserLoginChanged){
+    public void register(IUserLoginChanged iUserLoginChanged) {
         iUserLoginChangedList.add(iUserLoginChanged);
     }
-    public void unRegister(IUserLoginChanged iUserLoginChanged){
+
+    public void unRegister(IUserLoginChanged iUserLoginChanged) {
         iUserLoginChangedList.remove(iUserLoginChanged);
     }
 
-    public void setLogin(boolean isLogin){
+    public void setLogin(boolean isLogin) {
         this.islogin = isLogin;
-        for (IUserLoginChanged listenr: iUserLoginChangedList
-             ) {
+        for (IUserLoginChanged listenr : iUserLoginChangedList
+        ) {
             listenr.onLoginChange(isLogin);
         }
     }
 
-    public interface IUserLoginChanged{
+    public interface IUserLoginChanged {
         void onLoginChange(boolean isLogin);
     }
 }
