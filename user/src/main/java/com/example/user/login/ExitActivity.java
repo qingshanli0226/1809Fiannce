@@ -51,6 +51,8 @@ public class ExitActivity extends BaseActivity {
 
                 FiannceUserManager.getInstance().setLogin(false);
 //                String string = SpUtils.getString(ExitActivity.this);
+                SpUtils.putString(ExitActivity.this,"");
+
                 boolean login = FiannceUserManager.getInstance().isLogin();
                 if (login==false){
                     Toast.makeText(ExitActivity.this, "退出成功", Toast.LENGTH_SHORT).show();

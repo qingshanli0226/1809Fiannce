@@ -12,8 +12,10 @@ public class Demo {
     public static final String AROUTE_PATH_REGISTER = "/main/PersonRegisterActivity";
     public static final String AROUTE_PATH_LOGIN = "/demo/PersonLoginActivity";
     public static final String AROUTE_PATH_EXIT_LOGIN = "/test/PersonLoginActivity";
+    public static final String AROUTE_PATH_GESTUREPASSWORD = "/Demos/GesturePassowrdActivity";
     public static final String DOWNLOAD_ADDRESS = "http://49.233.0.68:8080//atguigu/apk/P2PInvest/app-debug.apk";
     public static final String SDCARD_ADDRESS = "/Download/aaa.apk";
+    public static final String SDCARD_DOWNLOAD_ADDRESS = "/sdcard/Download/aaa.apk";
 
     public static final String HINT_DIALOG_MESSAGE = "确定更新版本吗?";
     public static final String HINT_DIALOG_TITLE = "更新";

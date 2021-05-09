@@ -9,6 +9,9 @@ import com.example.framework.BaseFragment;
 import com.example.framework.view.ToolBar;
 import com.example.myapplication.R;
 import com.example.demo.Demo;
+import com.example.sp.SpUtils;
+
+import static com.example.demo.Demo.AROUTE_PATH_GESTUREPASSWORD;
 
 
 public class MoreFragment extends BaseFragment {
@@ -35,9 +38,12 @@ public class MoreFragment extends BaseFragment {
                 if (isShow){
                     isShow = false;
                     showImg.setImageDrawable(getResources().getDrawable(R.drawable.toggle_off));
+                    SpUtils.putGestureBoolean(getContext(),false);
                 }else {
                     isShow = true;
                     showImg.setImageDrawable(getResources().getDrawable(R.drawable.toggle_on));
+                    SpUtils.putGestureBoolean(getContext(),true);
+                    ARouter.getInstance().build(AROUTE_PATH_GESTUREPASSWORD).navigation();
                 }
             }
         });

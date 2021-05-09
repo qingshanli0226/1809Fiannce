@@ -1,6 +1,7 @@
 package com.example.net;
 
 import com.example.model.AutoLoginBean;
+import com.example.model.GesturePasswordBean;
 import com.example.model.HomeBean;
 import com.example.model.LoginBean;
 import com.example.model.ProductBean;
@@ -8,7 +9,9 @@ import com.example.model.RegisterBean;
 import com.example.model.VersionBean;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -35,6 +38,9 @@ public interface FiannceApiService {
     @FormUrlEncoded
     @POST("autoLogin")
     Observable<AutoLoginBean> postAutoLogin(@Field("token") String token);
+
+    @POST("setGesturePassword")
+    Observable<GesturePasswordBean> setGesturePassword(@Body RequestBody requestBody);
 
     //下载文件
     @GET

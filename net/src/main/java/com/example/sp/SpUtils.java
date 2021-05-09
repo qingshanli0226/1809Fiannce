@@ -18,4 +18,17 @@ public class SpUtils {
         edit.commit();
     }
 
+    public static Boolean getGestureBoolean(Context context){
+        SharedPreferences login = context.getSharedPreferences("gesture", 0);
+        Boolean gestureboolean = login.getBoolean("gestureboolean", false);
+        return gestureboolean;
+    }
+
+    public static void putGestureBoolean(Context context,Boolean gestureboolean){
+        SharedPreferences login = context.getSharedPreferences("gesture", 0);
+        SharedPreferences.Editor edit = login.edit();
+        edit.putBoolean("gestureboolean",gestureboolean);
+        edit.commit();
+    }
+
 }

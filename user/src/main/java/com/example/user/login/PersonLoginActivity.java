@@ -17,6 +17,7 @@ import com.example.framework.BaseActivity;
 import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.ToolBar;
 import com.example.model.LoginBean;
+import com.example.sp.SpUtils;
 import com.example.user.R;
 
 import org.greenrobot.eventbus.EventBus;
@@ -92,6 +93,7 @@ public class PersonLoginActivity extends BaseActivity<PersonLoginPresenter> impl
             boolean login1 = FiannceUserManager.getInstance().isLogin();
             if (login1){
                 Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
+                SpUtils.putString(PersonLoginActivity.this,loginBean.getResult().getToken());
             }
             LoginBean.ResultBean result = loginBean.getResult();
             String token = result.getToken();

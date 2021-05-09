@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Binder;
+import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
@@ -44,6 +45,7 @@ import okhttp3.ResponseBody;
 
 import static com.example.demo.Demo.CONFIRM_DIALOG_MESSAGE;
 import static com.example.demo.Demo.DOWNLOAD_FINISH;
+import static com.example.demo.Demo.SDCARD_DOWNLOAD_ADDRESS;
 
 public class UserService extends Service {
     public UserService() {
@@ -146,21 +148,16 @@ public class UserService extends Service {
                             builder.setContentTitle(DOWNLOAD_FINISH);
                             manager.notify(2,builder.build());
 
-//                            start7Install();
-//                            if (isApplicationUsed()){
-//                                window();
-//                            }else {
-//                                Toast.makeText(UserService.this, "当前应用未打开", Toast.LENGTH_SHORT).show();
-//                            }
-
-
-
+                            if (isApplicationUsed()){
+                                window();
+                            }else {
+                                Toast.makeText(UserService.this, "当前应用未打开", Toast.LENGTH_SHORT).show();
+                            }
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
 
                     }
 
@@ -177,74 +174,85 @@ public class UserService extends Service {
 
     }
 
-    public void start7Install() {
-        File imagePath = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), "/sdcard/Download/aaa.apk");
-        File newFile = new File(imagePath, "/sdcard/Download/aaa.apk");
-        Uri apkUri = FileProvider.getUriForFile(UserService.this, "cn.test.zz.fileprovider", newFile);//在AndroidManifest中的android:authorities值
-        Intent install =new Intent(Intent.ACTION_VIEW);
-        // 由于没有在Activity环境下启动Activity,设置下面的标签
-        install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        install.setDataAndType(apkUri, "application/vnd.android.package-archive");
-        startActivity(install);
-    }
-
-
-        //检查当前我们的应用是否用户正在使用
-        private boolean isApplicationUsed() {
-            ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-            //Androi系统里所有的应用都被ActivityMananger管理，它可以获取所有的应用列表
-            List<ActivityManager.RunningAppProcessInfo> runningAppProcessInfoList = activityManager.getRunningAppProcesses();
-            //遍历应用列表，比较每个应用程序包名和我们应用的包名是否一致，如果一致就代表找到了我们的应用
-            for(ActivityManager.RunningAppProcessInfo runningAppProcessInfo:runningAppProcessInfoList) {
-                if (runningAppProcessInfo.processName.equals(getPackageName())) {
-                    //判断当前我们的应用是否是前台进程，如果是代表着用户正在操作我们的应用
-                    if (runningAppProcessInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            }
-            return false;
-        }
-
     private WindowManager windowManager;
     private WindowManager.LayoutParams layoutParams;
     private Button install;
 
     public void window(){
-            windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
-            //设置小窗口尺寸的类
-            layoutParams = new WindowManager.LayoutParams();
-            //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
-            layoutParams.type= WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
-            //像素格式为透明的
-            layoutParams.format = PixelFormat.TRANSPARENT;
+        windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        //设置小窗口尺寸的类
+        layoutParams = new WindowManager.LayoutParams();
+        //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
+        layoutParams.type= WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+        //像素格式为透明的
+        layoutParams.format = PixelFormat.TRANSPARENT;
 
-            //设置该flag在显示该小窗口时，其他窗口的按钮或者其他控件都可以点击.
-            layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
-                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+        //设置该flag在显示该小窗口时，其他窗口的按钮或者其他控件都可以点击.
+        layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
 
-            //设置小窗口的尺寸
-            //单位是像素
-            layoutParams.width=700;
-            layoutParams.height=500;
+        //设置小窗口的尺寸
+        //单位是像素
+        layoutParams.width=700;
+        layoutParams.height=500;
 
-            //生成一个窗口的布局view，并且将该view添加到窗口里.
-            View rootView = LayoutInflater.from(this).inflate(R.layout.window_ijk, null);
-            windowManager.addView(rootView, layoutParams);
+        //生成一个窗口的布局view，并且将该view添加到窗口里.
+        View rootView = LayoutInflater.from(this).inflate(com.example.user.R.layout.window_ijk, null);
+        windowManager.addView(rootView, layoutParams);
 
+        install = rootView.findViewById(com.example.user.R.id.window_install);
+        install.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAPK(SDCARD_DOWNLOAD_ADDRESS);
+                Toast.makeText(UserService.this, "安装成功", Toast.LENGTH_SHORT).show();
+                windowManager.removeView(rootView);
+            }
+        });
+//        windowManager.addView(rootView, layoutParams);
+    }
 
-            install = rootView.findViewById(R.id.window_install);
-            install.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(UserService.this, "安装成功", Toast.LENGTH_SHORT).show();
-                    windowManager.removeView(rootView);
-                }
-            });
-            windowManager.addView(rootView, layoutParams);
+    private void openAPK(String fileSavePath) {
+
+        File file = new File(Uri.parse(fileSavePath).getPath());
+        String filePath = file.getAbsolutePath();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        Uri data = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {//判断版本大于等于7.0
+            // 生成文件的uri，，
+            // 注意 下面参数com.ausee.fileprovider 为apk的包名加上.fileprovider，
+            data = FileProvider.getUriForFile(this, "com.example.myapplication", new File(filePath));
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);// 给目标应用一个临时授权
+        } else {
+            data = Uri.fromFile(file);
         }
+
+        intent.setDataAndType(data, "application/vnd.android.package-archive");
+        startActivity(intent);
+    }
+
+    //检查当前我们的应用是否用户正在使用
+    private boolean isApplicationUsed() {
+        ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        //Androi系统里所有的应用都被ActivityMananger管理，它可以获取所有的应用列表
+        List<ActivityManager.RunningAppProcessInfo> runningAppProcessInfoList = activityManager.getRunningAppProcesses();
+        //遍历应用列表，比较每个应用程序包名和我们应用的包名是否一致，如果一致就代表找到了我们的应用
+        for(ActivityManager.RunningAppProcessInfo runningAppProcessInfo:runningAppProcessInfoList) {
+            if (runningAppProcessInfo.processName.equals(getPackageName())) {
+                //判断当前我们的应用是否是前台进程，如果是代表着用户正在操作我们的应用
+                if (runningAppProcessInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
+
+
+
+
 
 }
