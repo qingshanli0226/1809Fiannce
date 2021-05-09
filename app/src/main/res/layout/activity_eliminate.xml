@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".eliminate.EliminateActivity">
+
+    <com.wangnan.library.GestureLockView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:normal_color="@color/colorCh"
+        app:press_color="@color/colorCh"
+        app:error_color="@color/colorWhite"
+        app:line_thickness="@dimen/dp_6"
+        ></com.wangnan.library.GestureLockView>
+
+</LinearLayout>

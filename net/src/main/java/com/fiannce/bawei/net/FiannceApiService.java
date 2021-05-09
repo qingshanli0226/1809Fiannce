@@ -1,13 +1,16 @@
 package com.fiannce.bawei.net;
 
+import com.fiannce.bawei.net.model.EliminateBean;
 import com.fiannce.bawei.net.model.HomeBean;
 import com.fiannce.bawei.net.model.Libean;
 import com.fiannce.bawei.net.model.LoginBean;
 import com.fiannce.bawei.net.model.RegisterBean;
+import com.fiannce.bawei.net.model.SetGesturesBean;
+import com.fiannce.bawei.net.model.VerifyBean;
 import com.fiannce.bawei.net.model.VersionBean;
-
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -42,5 +45,14 @@ public interface FiannceApiService {
     @GET
     @Streaming
     Observable<ResponseBody> downloadFile(@Url String url);
+
+    @POST("setGesturePassword")
+    Observable<SetGesturesBean> getSetgestures(@Body String gpassword);
+
+    @POST("loginByGesturePassword")
+    Observable<VerifyBean> getVerify(@Body String gpassword);
+
+    @POST("clearByGesturePassword")
+    Observable<EliminateBean> getVersion(@Body String gpassword);
 
 }

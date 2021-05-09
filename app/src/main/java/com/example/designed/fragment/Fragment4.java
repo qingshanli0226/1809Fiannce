@@ -1,6 +1,8 @@
 package com.example.designed.fragment;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 
@@ -13,6 +15,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.designed.R;
+import com.example.designed.eliminate.EliminateActivity;
+import com.example.designed.shou.UnlockActivity;
 import com.example.user.register.RegisterActivity;
 import com.fiannce.bawei.framework.BaseFragment;
 
@@ -58,6 +62,12 @@ public class Fragment4 extends BaseFragment {
         about = (LinearLayout) findViewById(R.id.about);
 
 
+        unpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), EliminateActivity.class));
+            }
+        });
 
 
 
@@ -85,21 +95,42 @@ public class Fragment4 extends BaseFragment {
             @Override
             public void onClick(View view) {
                     off.setImageResource(R.drawable.toggle_on);
-                if (view == off){
+                    Glide.with(getActivity()).load(R.drawable.toggle_on).into(off);
+                     Toast.makeText(getActivity(), "开启手势密码", Toast.LENGTH_SHORT).show();
 
-                    if (isChanged){
-                        Glide.with(getActivity()).load(R.drawable.toggle_off).into(off);
-                        Toast.makeText(getActivity(), "关闭手势密码", Toast.LENGTH_SHORT).show();
-                    }else {
-                        Glide.with(getActivity()).load(R.drawable.toggle_on).into(off);
-                        Toast.makeText(getActivity(), "开启手势密码", Toast.LENGTH_SHORT).show();
+                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                     builder.setTitle("设置手势密码");
+                     builder.setMessage("是否现在设置手势密码");
+
+                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                         @Override
+                         public void onClick(DialogInterface dialogInterface, int i) {
+
+                             Intent intent = new Intent(getActivity(), UnlockActivity.class);
+                             startActivity(intent);
+                         }
+                     });
+
+                     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                         @Override
+                         public void onClick(DialogInterface dialogInterface, int i) {
+                             Glide.with(getActivity()).load(R.drawable.toggle_off).into(off);
+                             Toast.makeText(getActivity(), "关闭手势密码", Toast.LENGTH_SHORT).show();
+                         }
+                     });
+
+                     builder.show();
+
+
+
+
                     }
 
-                   isChanged = !isChanged;
 
-                }
 
-            }
+
+
+
         });
     }
 

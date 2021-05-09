@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InActivity"></activity>
+        <activity android:name=".eliminate.EliminateActivity"></activity>
+        <activity android:name=".shou.UnlockActivity" />
+        <activity android:name=".InActivity" />
         <activity android:name=".Recharge" />
         <activity
             android:name=".MainActivity"
@@ -39,8 +41,7 @@
             </intent-filter>
             -->
         </activity>
-        <activity
-            android:name=".welcome.WelcomeActivity">
+        <activity android:name=".welcome.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
