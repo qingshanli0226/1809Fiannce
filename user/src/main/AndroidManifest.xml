@@ -4,9 +4,10 @@
 
     <application>
         <service
-            android:name=".service.AutoLoginService"
+            android:name=".service.FiannceService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true">
+        </service>
 
         <activity android:name=".LogActivity">
             <intent-filter>
@@ -16,6 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".UserMessageActivity"></activity>
+
+        <provider
+            android:authorities="com.example.gitproject"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
     </application>
 
 </manifest>

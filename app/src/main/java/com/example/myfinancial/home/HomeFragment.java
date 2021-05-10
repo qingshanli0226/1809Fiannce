@@ -18,6 +18,7 @@ import com.example.pay.PayModel;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends BaseFragment {
@@ -91,6 +92,12 @@ public class HomeFragment extends BaseFragment {
                 Glide.with(context).load(imaurl).into(imageView);
             }
         }).start();
+        List<String> stringList=new ArrayList<>();
+        stringList.add("第一个");
+        stringList.add("第二个");
+        stringList.add("第三个");
+        stringList.add("四");
+        ban.setBannerTitles(stringList);
     }
 
     @Override
@@ -124,6 +131,7 @@ public class HomeFragment extends BaseFragment {
             proMyView.destroy();
         }
     }
+
 
     @Override
     public void onLoginChanged(boolean isLogin) {

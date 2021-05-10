@@ -11,6 +11,7 @@ import com.example.myfinancial.R;
 public class MoreFragment extends BaseFragment {
 
     private MoreItemPage userRegister;
+    private MoreItemPage resturePwd;
 
     @Override
     public void showLoading() {
@@ -39,7 +40,14 @@ public class MoreFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
 //                ARouter.getInstance().build("/mare/register").navigation();
-                FiannceArote.getInstance().getUserInterface().openGettureActivity(getActivity(),null);
+                FiannceArote.getInstance().getUserInterface().openGettureActivity(getActivity(), null);
+            }
+        });
+        //手势密码
+        resturePwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FiannceArote.getInstance().getGestureInterface().openGestureActivity(getActivity(),null);
             }
         });
     }
@@ -47,6 +55,7 @@ public class MoreFragment extends BaseFragment {
     @Override
     public void initView() {
         userRegister = (MoreItemPage) findViewById(R.id.userRegister);
+        resturePwd = (MoreItemPage) findViewById(R.id.resturePwd);
     }
 
     @Override

@@ -21,6 +21,7 @@
         app:moreLeftText="用户注册"></com.example.framework.myview.MoreItemPage>
 
     <com.example.framework.myview.MoreItemPage
+        android:id="@+id/resturePwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:moreLeftImage="@drawable/icon_more_secret"

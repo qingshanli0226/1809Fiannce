@@ -67,7 +67,7 @@ public class WelcomePresenter extends BasePresenter<IWelComeView> {
                 });
     }
     public void getHome(){
-        FiannceHttpMannager.getApiModel().getHome()
+        FiannceHttpMannager.getApiModel().gettHome()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {

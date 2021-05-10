@@ -1,15 +1,19 @@
 package com.example.myfinancial.welcome;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.WindowManager;
@@ -23,7 +27,7 @@ import com.example.framework.CacheLoadMore;
 import com.example.myfinancial.R;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.VersionBean;
-import com.example.user.service.AutoLoginService;
+import com.example.user.service.FiannceService;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelComeView {
     private android.widget.TextView countdowntv;
@@ -38,7 +42,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private int newAppVerSionCode;
     private int currentAppVerSionCode;
 
-    private AutoLoginService.MyBinder myBinder ;
+    private FiannceService.MyBinder myBinder ;
     private String apkPath;
 
     @Override
@@ -55,30 +59,30 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     public void initData() {
         mPresenter.getVersion();
         mPresenter.getHome();
-
-
-
     }
 
     @Override
     public void initView() {
-        Intent intent = new Intent(WelcomeActivity.this, AutoLoginService.class);
-        ServiceConnection serviceConnection = new ServiceConnection() {
-            @Override
-            public void onServiceConnected(ComponentName name, IBinder service) {
-                myBinder = (AutoLoginService.MyBinder) service;
+        //系统弹框权限
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, 10);
+            } else {
+                Toast.makeText(this, "granted show-- 悬浮窗", Toast.LENGTH_SHORT).show();
             }
+        }
 
-            @Override
-            public void onServiceDisconnected(ComponentName name) {
 
-            }
-        };
-        //绑定服务
-        bindService(intent,serviceConnection,BIND_AUTO_CREATE);
 
-        //向上顶  全屏
+//        向上顶  全屏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //设置沉浸式状态栏
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//        }
+
         countdowntv = (TextView) findViewById(R.id.countDownTv);
         handler.sendEmptyMessageDelayed(DELAT_INDEX, DELAY);//发送倒计时  handler
         countdowntv.setText(drawtimetv + "");//修改
@@ -140,10 +144,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                     break;
                 case ALL_TASK_FINISH:
                     Toast.makeText(WelcomeActivity.this, "全部运行完成", Toast.LENGTH_SHORT).show();
-                    Log.d("WelcomeActivity", "全部运行完成");
                     currentAppVerSionCode = AppVerSion.getVersionCode(WelcomeActivity.this);//当前版本号
-                    Log.d("WelcomeActivity", "currentAppVerSionCode:" + currentAppVerSionCode);
-                    Log.d("WelcomeActivity", "newAppVerSionCode:" + newAppVerSionCode);
                     if (currentAppVerSionCode < newAppVerSionCode) {//需要更新
                         //对话框
                         AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
@@ -160,11 +161,30 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(WelcomeActivity.this, "正在下载", Toast.LENGTH_SHORT).show();
-                                myBinder.myMethod(apkPath);
+
+                                ARouter.getInstance().build("/main/MainActivity").navigation();
+                                finish();
+
+                                Intent intent = new Intent(WelcomeActivity.this, FiannceService.class);
+                                ServiceConnection serviceConnection = new ServiceConnection() {
+                                    @Override
+                                    public void onServiceConnected(ComponentName name, IBinder service) {
+                                        myBinder = (FiannceService.MyBinder) service;
+                                        myBinder.myMethod(apkPath);
+                                    }
+
+                                    @Override
+                                    public void onServiceDisconnected(ComponentName name) {
+
+                                    }
+                                };
+                                //绑定服务
+                                bindService(intent,serviceConnection,BIND_AUTO_CREATE);
                             }
                         });
                         AlertDialog alertDialog = builder.create();
                         alertDialog.show();
+
                     } else {//不需要更新
                         ARouter.getInstance().build("/main/MainActivity").navigation();
                         finish();
@@ -189,6 +209,21 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         }
         if (mPresenter != null) {
             mPresenter.destroy();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 10) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (!Settings.canDrawOverlays(this)) {
+                    // SYSTEM_ALERT_WINDOW permission not granted...
+                    Toast.makeText(this, "not granted", Toast.LENGTH_SHORT);
+                } else {
+                    Toast.makeText(this, "granted show 悬浮窗", Toast.LENGTH_SHORT);
+                }
+            }
         }
     }
 }

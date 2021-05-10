@@ -73,7 +73,7 @@ public class MyMoneyFragment extends BaseFragment {
     @Override
     public void onRightImgClick() {
        if (FiannceUserMannager.getInstance().isLogin()){
-           startActivity(new Intent(getActivity(),UserMessageActivity.class));
+           FiannceArote.getInstance().getUserInterface().openUserMessageActivity(getActivity(),null);
        }else {
            Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
            FiannceArote.getInstance().getUserInterface().openLoginActivity(getActivity(),null);

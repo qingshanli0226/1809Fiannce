@@ -19,9 +19,6 @@ public class FiannceConnectMannager {
 
     private static FiannceConnectMannager mannager;
 
-    public FiannceConnectMannager() {
-    }
-
     public static synchronized FiannceConnectMannager getInstance() {
         if (mannager == null) {
             mannager = new FiannceConnectMannager();
@@ -43,50 +40,52 @@ public class FiannceConnectMannager {
     }
 
     //获取当前状态
-    private void getCurrentConnectStatus(){
-        ConnectivityManager connectivityManager= (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo=connectivityManager.getActiveNetworkInfo();//获取当前网络状态
-        if (networkInfo!=null&&networkInfo.isConnected()){//如果有连接
-            isConnect=true;
-        }else {
-            isConnect=false;
+    private void getCurrentConnectStatus() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();//获取当前网络状态
+        if (networkInfo != null && networkInfo.isConnected()) {//如果有连接
+            isConnect = true;
+        } else {
+            isConnect = false;
         }
     }
-private BroadcastReceiver netConnectReceiver=new BroadcastReceiver() {
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        //如果收到网络连接通知的广播
-        if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)){
-            getCurrentConnectStatus();
-            //通知各个页面刷新ui
-            notifyConnectChanged();
+
+    private BroadcastReceiver netConnectReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //如果收到网络连接通知的广播
+            if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
+                getCurrentConnectStatus();
+                //通知各个页面刷新ui
+                notifyConnectChanged();
+            }
         }
-    }
-};
+    };
 
     //回调各个页面注册接口  通知网络变化
-    private void notifyConnectChanged(){
-        for (IConnectListener listener:connectListenerList){
-            if (isConnect){
+    private void notifyConnectChanged() {
+        for (IConnectListener listener : connectListenerList) {
+            if (isConnect) {
                 listener.onConnected();
-            }else {
+            } else {
                 listener.onDisConnected();
             }
         }
     }
 
 
-    public synchronized void RegisterConnectListener(IConnectListener listener){
-        if (!connectListenerList.contains(listener)){
+    public synchronized void RegisterConnectListener(IConnectListener listener) {
+        if (!connectListenerList.contains(listener)) {
             connectListenerList.add(listener);
         }
     }
 
-public synchronized void unRegisterConnectListener(IConnectListener listener){
-    if (connectListenerList.contains(listener)){
-        connectListenerList.remove(listener);
+    public synchronized void unRegisterConnectListener(IConnectListener listener) {
+        if (connectListenerList.contains(listener)) {
+            connectListenerList.remove(listener);
+        }
     }
-}
+
     public interface IConnectListener {
         void onConnected();
 

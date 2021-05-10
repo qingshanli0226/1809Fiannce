@@ -1,8 +1,11 @@
 package com.example.framework;
 
 import android.Manifest;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -31,7 +34,8 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             requestPermissions(new String[]{
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_EXTERNAL_STORAGE
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.REQUEST_INSTALL_PACKAGES
             },100);
         }
         initView();

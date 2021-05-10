@@ -1,6 +1,5 @@
 package com.example.user;
 
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,6 +9,7 @@ import com.example.framework.BaseActivity;
 import com.example.framework.mannager.FiannceUserMannager;
 import com.example.net.bean.AutoBean;
 import com.example.net.bean.LoginBean;
+import com.example.net.bean.LogoutBean;
 import com.example.net.bean.RegisterBean;
 import com.example.user.mvp.MorePresenter;
 import com.example.user.mvp.MoreView;
@@ -30,7 +30,7 @@ public class LogActivity extends BaseActivity<MorePresenter> implements MoreView
         login.setOnClickListener(v -> {
             String loginname = name.getText().toString().trim();
             String loginpwd = pwd.getText().toString().trim();
-           mPresenter.getLogin(loginname,loginpwd);
+           mPresenter.onLogin(loginname,loginpwd);
         });
     }
 
@@ -58,6 +58,7 @@ public class LogActivity extends BaseActivity<MorePresenter> implements MoreView
             SpUtil.setString(this,loginBean.getResult().getToken());
             Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
             FiannceUserMannager.getInstance().setIsLwogin(true);
+            SpUtil.setString(this,loginBean.getResult().getToken());
             finish();
         }else {
             Toast.makeText(this, "用户名或密码错误  请重新输入或注册", Toast.LENGTH_SHORT).show();
@@ -66,6 +67,11 @@ public class LogActivity extends BaseActivity<MorePresenter> implements MoreView
 
     @Override
     public void initAuto(AutoBean autoBean) {
+
+    }
+
+    @Override
+    public void initLogout(LogoutBean logoutBean) {
 
     }
 }

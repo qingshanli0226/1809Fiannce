@@ -7,10 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.common.FiannceConstants;
+import com.example.common.SpUtil;
 import com.example.framework.BaseActivity;
 import com.example.framework.mannager.FiannceArote;
 import com.example.framework.mannager.FiannceUserMannager;
 import com.example.net.bean.AutoBean;
+import com.example.net.bean.LogoutBean;
 import com.example.user.mvp.MorePresenter;
 import com.example.user.mvp.MoreView;
 import com.example.net.bean.LoginBean;
@@ -50,7 +53,7 @@ public class RegisterActivity extends BaseActivity<MorePresenter> implements Mor
                 Toast.makeText(this, "不能为空", Toast.LENGTH_SHORT).show();
                 return;
             }
-            mPresenter.getRegister(userName,userPwd);
+            mPresenter.onRegister(userName,userPwd);
             name.setText("");
             pwd.setText("");
         });
@@ -68,8 +71,7 @@ public class RegisterActivity extends BaseActivity<MorePresenter> implements Mor
             Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
             //注册成功的话就登陆
             MorePresenter morePresenter = new MorePresenter(this);
-            morePresenter.getLogin(userName,userPwd);
-
+            morePresenter.onLogin(userName,userPwd);
 
         }else {
             Toast.makeText(this, "注册失败", Toast.LENGTH_SHORT).show();
@@ -81,10 +83,11 @@ public class RegisterActivity extends BaseActivity<MorePresenter> implements Mor
         Toast.makeText(this, "login:"+loginBean.toString(), Toast.LENGTH_SHORT).show();
         if (loginBean.getCode().equals("200")){
             //将token存到SP
-            SharedPreferences autoToken = getSharedPreferences("autoToken", MODE_PRIVATE);
-            SharedPreferences.Editor edit = autoToken.edit();
-            edit.putString("token", loginBean.getResult().getToken());
-            edit.commit();
+//            SharedPreferences autoToken = getSharedPreferences("autoToken", MODE_PRIVATE);
+//            SharedPreferences.Editor edit = autoToken.edit();
+//            edit.putString("token", loginBean.getResult().getToken());
+//            edit.commit();
+            SpUtil.setString(this,loginBean.getResult().getToken());
 
             //更改登录状态
             FiannceUserMannager.getInstance().setIsLwogin(true);
@@ -100,6 +103,11 @@ public class RegisterActivity extends BaseActivity<MorePresenter> implements Mor
 
     @Override
     public void initAuto(AutoBean autoBean) {
+
+    }
+
+    @Override
+    public void initLogout(LogoutBean logoutBean) {
 
     }
 }

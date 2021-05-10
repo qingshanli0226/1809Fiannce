@@ -10,9 +10,6 @@ public class FiannceUserMannager {
 
     private static FiannceUserMannager mannager;
 
-    public FiannceUserMannager() {
-    }
-
     public static FiannceUserMannager getInstance() {
         if (mannager == null) {
             mannager = new FiannceUserMannager();

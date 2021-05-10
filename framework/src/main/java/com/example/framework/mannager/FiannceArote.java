@@ -18,6 +18,7 @@ public class FiannceArote {
     }
 
     private IUserInterface iUserInterface;
+    private IGestureInterface iGestureInterface;
     private IPayInterface iPayInterface;
     private IAppInterface iAppInterface;
     private Context context;
@@ -33,6 +34,15 @@ public class FiannceArote {
     //回去User模块的接口
     public IUserInterface getUserInterface() {
         return iUserInterface;
+    }
+
+    //注册手势模块的回调借口
+    public void registerIGestureInterface(IGestureInterface iGesturerInterface) {
+        this.iGestureInterface = iGesturerInterface;
+    }
+    //回去手势模块的接口
+    public IGestureInterface getGestureInterface() {
+        return iGestureInterface;
     }
 
     //注册支付页面回调接口
@@ -55,6 +65,12 @@ public class FiannceArote {
     public interface IUserInterface {
         void openLoginActivity(Context context, Bundle bundle);
         void openGettureActivity(Context context, Bundle bundle);
+        void openUserMessageActivity(Context context, Bundle bundle);
+    }
+
+    ////在框架里约定好手势要实现的接口，其他页面可以调用此接口
+    public interface IGestureInterface {
+        void openGestureActivity(Context context, Bundle bundle);
     }
 
     //定义支付模块实现接口
