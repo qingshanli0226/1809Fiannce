@@ -4,6 +4,8 @@ package com.fiannce.bawei.fragment.mineFragment;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.provider.MediaStore;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -68,6 +70,14 @@ public class MineFragment extends BaseFragment {
             builder.show();
         }
 
+        ivMeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                
+            }
+        });
     }
 
     @Override
