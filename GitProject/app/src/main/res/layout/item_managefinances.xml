@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:padding="@dimen/dm_px_20">
+    android:padding="@dimen/dm_dp_10">
 
     <androidx.cardview.widget.CardView
+        app:cardElevation="@dimen/dm_dp_10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="@dimen/dm_px_20">
-
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,48 +18,48 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dm_px_100">
+                android:layout_height="@dimen/dm_dp_60">
 
                 <TextView
                     android:id="@+id/finances_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/dm_px_40"
+                    android:layout_marginLeft="@dimen/dm_dp_15"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/dm_px_60"></TextView>
+                    android:textSize="@dimen/dm_dp_20"></TextView>
 
                 <ImageView
-                    android:layout_width="@dimen/dm_px_30"
-                    android:layout_height="@dimen/dm_px_30"
+                    android:layout_width="@dimen/dm_dp_20"
+                    android:layout_height="@dimen/dm_dp_20"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/dm_px_40"
+                    android:layout_marginRight="@dimen/dm_dp_15"
                     android:src="@drawable/right"></ImageView>
+
             </RelativeLayout>
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dm_px_1"
+                android:layout_width="@dimen/dm_dp_380"
+                android:layout_height="@dimen/dm_dp_1"
                 android:layout_gravity="center"
                 android:background="@color/gray"></View>
 
             <LinearLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:layout_width="@dimen/dm_px_800"
+                    android:layout_width="@dimen/dm_dp_300"
                     android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="@dimen/dm_px_20"
-                        android:layout_marginTop="@dimen/dm_px_30"
+                        android:layout_marginLeft="@dimen/dm_dp_15"
+                        android:layout_marginTop="@dimen/dm_dp_15"
                         android:orientation="vertical">
 
                         <TextView
@@ -71,7 +70,7 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dm_px_10">
+                            android:layout_marginTop="@dimen/dm_dp_5">
 
                             <TextView
                                 android:id="@+id/finances_money"
@@ -89,21 +88,20 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dm_px_20">
+                            android:layout_marginTop="@dimen/dm_dp_10">
 
 
                             <ImageView
-                                android:layout_width="@dimen/dm_px_30"
-                                android:layout_height="@dimen/dm_px_30"
-                                android:layout_marginLeft="@dimen/dm_px_10"
-                                android:layout_marginTop="@dimen/dm_px_10"
+                                android:layout_width="@dimen/dm_dp_20"
+                                android:layout_height="@dimen/dm_dp_20"
+                                android:layout_marginLeft="@dimen/dm_dp_5"
                                 android:src="@drawable/product_part1_icon"></ImageView>
 
                             <TextView
                                 android:id="@+id/finances_minTouMoney"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/dm_px_10"></TextView>
+                                android:layout_marginLeft="@dimen/dm_dp_5"></TextView>
 
                         </LinearLayout>
 
@@ -113,8 +111,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="@dimen/dm_px_70"
-                        android:layout_marginTop="@dimen/dm_px_30"
+                        android:layout_marginLeft="@dimen/dm_dp_50"
+                        android:layout_marginTop="@dimen/dm_dp_15"
                         android:orientation="vertical">
 
                         <TextView
@@ -126,7 +124,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/dm_px_10">
+                            android:layout_marginTop="@dimen/dm_dp_5">
 
                             <TextView
                                 android:id="@+id/finances_yeatRate"
@@ -144,42 +142,43 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dm_px_10">
+                            android:layout_marginTop="@dimen/dm_dp_10">
 
                             <ImageView
-                                android:layout_width="@dimen/dm_px_30"
-                                android:layout_height="@dimen/dm_px_30"
-                                android:layout_marginLeft="@dimen/dm_px_10"
-                                android:layout_marginTop="@dimen/dm_px_10"
+                                android:layout_width="@dimen/dm_dp_20"
+                                android:layout_height="@dimen/dm_dp_20"
+                                android:layout_marginLeft="@dimen/dm_dp_5"
                                 android:src="@drawable/product_part3_icon"></ImageView>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/dm_px_10"
+                                android:layout_marginLeft="@dimen/dm_dp_5"
                                 android:text="@string/home_one_btn"></TextView>
+
                         </LinearLayout>
+
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginLeft="@dimen/dm_px_100"
-                        android:layout_marginTop="@dimen/dm_px_30"
+                        android:layout_marginLeft="@dimen/dm_dp_70"
+                        android:layout_marginTop="@dimen/dm_dp_15"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dm_px_10"
+                            android:layout_marginLeft="@dimen/dm_dp_10"
                             android:text="@string/finances_item_lock"></TextView>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dm_px_40"
-                            android:layout_marginTop="@dimen/dm_px_10">
+                            android:layout_marginLeft="@dimen/dm_dp_20"
+                            android:layout_marginTop="@dimen/dm_dp_5">
 
                             <TextView
                                 android:id="@+id/finances_suodingDays"
@@ -197,23 +196,23 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dm_px_10">
-
+                            android:layout_marginTop="@dimen/dm_dp_10">
                             <ImageView
-                                android:layout_width="@dimen/dm_px_40"
-
-                                android:layout_height="@dimen/dm_px_40"
-                                android:layout_marginLeft="@dimen/dm_px_10"
-                                android:layout_marginTop="@dimen/dm_px_10"
+                                android:layout_width="@dimen/dm_dp_20"
+                                android:layout_height="@dimen/dm_dp_20"
+                                android:layout_marginLeft="@dimen/dm_dp_5"
                                 android:src="@drawable/product_part4_icon"></ImageView>
 
                             <TextView
                                 android:id="@+id/finances_memberNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/dm_px_10"></TextView>
+                                android:layout_marginLeft="@dimen/dm_dp_5"></TextView>
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </RelativeLayout>
 
                 <LinearLayout
@@ -223,23 +222,21 @@
 
                     <com.example.framework.view.ProgressView
                         android:id="@+id/finances_progress"
-                        android:layout_width="@dimen/dm_px_150"
-                        android:layout_height="@dimen/dm_px_150"
+                        android:layout_width="@dimen/dm_dp_70"
+                        android:layout_height="@dimen/dm_dp_70"
                         app:app_color="#03A9F4"
-                        app:app_textsize="@dimen/dm_px_30"></com.example.framework.view.ProgressView>
+                        app:app_textsize="@dimen/dm_dp_20"></com.example.framework.view.ProgressView>
+
                 </LinearLayout>
+
             </LinearLayout>
-
         </LinearLayout>
-
-
     </androidx.cardview.widget.CardView>
-
     <TextView
         android:id="@+id/item_del"
         android:textColor="@color/white"
-        android:layout_width="@dimen/dm_px_300"
-        android:layout_height="@dimen/dm_px_300"
+        android:layout_width="@dimen/dm_dp_200"
+        android:layout_height="@dimen/dm_dp_150"
         android:background="@color/red"
         android:gravity="center"
         android:text="@string/finances_del"></TextView>

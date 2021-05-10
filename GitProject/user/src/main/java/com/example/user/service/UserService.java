@@ -112,16 +112,10 @@ public class UserService extends Service {
                         }
                     });
         }
-//        windon();
+
         return super.onStartCommand(intent, flags, startId);
     }
 
-
-    private Context context;
-
-    public void init(Context context) {
-        this.context = context;
-    }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void downLoad(String url, Handler handler) {
@@ -161,10 +155,7 @@ public class UserService extends Service {
                     public void onNext(@NonNull ResponseBody requestBody) {
                         InputStream inputStream = null;
                         FileOutputStream fileOutputStream = null;
-//                        File instanll = new File(CommonConstant.INSTANLL);
-
                         try {
-
                             //一共长度
                             long totalByte = requestBody.contentLength();
                             int len = -1;
@@ -188,10 +179,14 @@ public class UserService extends Service {
                             builder.setContentTitle(getString(R.string.service_title_finish));
                             builder.setProgress((int) totalByte, count, false);
                             notificationManager.notify(666, builder.build());
+//                            SpUtil.putBoolean(CommonConstant.INSTANLL_NAME, context, CommonConstant.INSTANLL_FLAG, true);
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    windon();
 
-                            SpUtil.putBoolean(CommonConstant.INSTANLL_NAME, context, CommonConstant.INSTANLL_FLAG, true);
-
-                            windon();
+                                }
+                            });
                         } catch (IOException e) {
                             e.printStackTrace();
                         } finally {
@@ -224,8 +219,6 @@ public class UserService extends Service {
 
 
     private void openAPK(String fileSavePath) {
-        Toast.makeText(context, "aaa", Toast.LENGTH_SHORT).show();
-
         File file = new File(Uri.parse(fileSavePath).getPath());
         String filePath = file.getAbsolutePath();
         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -250,8 +243,11 @@ public class UserService extends Service {
     private WindowManager.LayoutParams layoutParams;
     private View rootView;
     private void windon() {
+
         //判断是否可以安装
-        if (isApplicationUsed() && SpUtil.getBoolean(CommonConstant.INSTANLL_NAME, context,CommonConstant.INSTANLL_FLAG)) {
+        if (isApplicationUsed()) {
+
+
             windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
             //设置小窗口尺寸的类
             layoutParams = new WindowManager.LayoutParams();
@@ -275,7 +271,6 @@ public class UserService extends Service {
             rootView.findViewById(R.id.window_install).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "安装", Toast.LENGTH_SHORT).show();
                     openAPK(CommonConstant.INSTANLL);
                     windowManager.removeView(rootView);
                 }

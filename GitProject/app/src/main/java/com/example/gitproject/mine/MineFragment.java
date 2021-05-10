@@ -77,7 +77,11 @@ public class MineFragment extends BaseFragment implements CacheUserManager.ILogi
             mineHead.setImageResource(R.drawable.my_user_bg_icon);
             mineName.setText(loginBean.getResult().getName());
         }
+    }
 
-
+    @Override
+    public void destroy() {
+        super.destroy();
+        CacheUserManager.getInstance().unRegisterLogin(this);
     }
 }

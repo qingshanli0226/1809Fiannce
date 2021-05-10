@@ -65,6 +65,10 @@ public class FrameArouter {
         return intent;
     }
 
+    public Bundle getBundle() {
+        return bundle;
+    }
+
     //第一种跳转 接口回调
     private IUserInterface iUserInterface;
 

@@ -3,6 +3,7 @@ package com.example.gitproject;
 import android.app.ActivityManager;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import com.example.gitproject.invest.InvestFragment;
 import com.example.gitproject.home.HomeFragment;
 import com.example.gitproject.mine.MineFragment;
 import com.example.gitproject.more.MoreFragment;
+import com.example.gitproject.more.password.status.GestureStatus;
 import com.example.gitproject.welcome.WelcomeActivity;
 import com.example.net.bean.LoginBean;
 import com.example.user.login.LoginActivity;
@@ -101,10 +103,15 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
                         //判断是否登录过
                         LoginBean loginBean = CacheUserManager.getInstance().getLoginBean();
                         if (loginBean != null) {
-                            fragmentTransaction.hide(homeFragment);
-                            fragmentTransaction.hide(investFragment);
-                            fragmentTransaction.show(mineFragment);
-                            fragmentTransaction.hide(moreFragment);
+                            if(loginBean.getResult().getgPassword() != null){
+                                GestureStatus.getInstance().setPwdStatus(CommonConstant.STATUS_LOGIN);
+                                FrameArouter.getInstance().build(CommonConstant.APP_PWD_PATH).navigation();
+                            } else{
+                                fragmentTransaction.hide(homeFragment);
+                                fragmentTransaction.hide(investFragment);
+                                fragmentTransaction.show(mineFragment);
+                                fragmentTransaction.hide(moreFragment);
+                            }
                         } else {
                             //FrameArouter
                             FrameArouter.getInstance().build(CommonConstant.USER_LOGIN_PATH).navigation();
@@ -127,6 +134,29 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
         super.onNewIntent(intent);
         Intent intent1 = FrameArouter.getInstance().getIntent();
         setIntent(intent1);
+
+        Bundle bundle = FrameArouter.getInstance().getBundle();
+        int anInt = bundle.getInt("page");
+        Log.i("TAG", "onNewIntent: "+anInt);
+
+        FragmentManager supportFragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+        switch (anInt) {
+            case 0:
+                fragmentTransaction.show(homeFragment);
+                fragmentTransaction.hide(investFragment);
+                fragmentTransaction.hide(mineFragment);
+                fragmentTransaction.hide(moreFragment);
+                break;
+            case 2:
+                fragmentTransaction.hide(homeFragment);
+                fragmentTransaction.hide(investFragment);
+                fragmentTransaction.show(mineFragment);
+                fragmentTransaction.hide(moreFragment);
+                break;
+        }
+        fragmentTransaction.commit();
+
 
         oneBtn.setChecked(true);
     }

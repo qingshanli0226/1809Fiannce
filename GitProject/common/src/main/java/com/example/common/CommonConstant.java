@@ -10,8 +10,6 @@ public class CommonConstant {
     public static final String USER_LOGIN_PATH = "/user/loginActivity";
     public static final String USER_EXIT_PATH = "/user/ExitActivity";
 
-//    public static final String SP_NAME_LOGIN = "login";
-//    public static final String SP_FLAG = "flag";
 
     public static final String INSTANLL = "/sdcard/Download/install.apk";
 
@@ -20,4 +18,8 @@ public class CommonConstant {
 
     public static final String INSTANLL_NAME = "install";
     public static final String INSTANLL_FLAG = "flag";
+
+    public static final int STATUS_SET = 0;//设置手势密码
+    public static final int STATUS_LOGIN = 1;//登录手势密码
+    public static final int STATUS_CLEAR = 2;//清除手势密码
 }

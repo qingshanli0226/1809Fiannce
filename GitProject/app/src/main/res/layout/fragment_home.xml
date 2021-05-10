@@ -16,69 +16,69 @@
     <com.youth.banner.Banner
         android:id="@+id/home_banner"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dm_px_500"
-        android:layout_marginTop="@dimen/dm_px_150" />
+        android:layout_height="@dimen/dm_dp_200"
+        android:layout_marginTop="@dimen/dm_dp_50" />
 
     <TextView
         android:id="@+id/home_name"
         android:text="title"
         android:layout_below="@id/home_banner"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dm_px_20"
-        android:textSize="@dimen/dm_px_100"
+        android:layout_marginTop="@dimen/dm_dp_10"
+        android:textSize="@dimen/dm_dp_25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <ImageView
         android:layout_toRightOf="@id/home_name"
         android:layout_alignTop="@id/home_name"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="@dimen/dm_dp_20"
         android:src="@drawable/recommend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <LinearLayout
-        android:layout_marginTop="@dimen/dm_px_10"
+        android:layout_marginTop="5dp"
         android:layout_below="@id/home_name"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
-            android:layout_marginLeft="@dimen/dm_px_20"
+            android:layout_marginLeft="@dimen/dm_dp_10"
             android:text="@string/home_one_btn"
             android:background="@drawable/home_attribute_bg"
             android:layout_width="wrap_content"
-            android:layout_marginTop="@dimen/dm_px_20"
+            android:layout_marginTop="@dimen/dm_dp_10"
             android:gravity="center"
-            android:layout_height="@dimen/dm_px_60"/>
+            android:layout_height="@dimen/dm_dp_30"/>
         <Button
-            android:layout_marginLeft="@dimen/dm_px_10"
-            android:layout_marginTop="@dimen/dm_px_20"
+            android:layout_marginLeft="@dimen/dm_dp_5"
+            android:layout_marginTop="@dimen/dm_dp_10"
             android:text="@string/home_two_btn"
             android:gravity="center"
             android:background="@drawable/home_attribute_bg"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dm_px_60"/>
+            android:layout_height="@dimen/dm_dp_30"/>
         <Button
-            android:layout_marginLeft="@dimen/dm_px_10"
-            android:layout_marginTop="@dimen/dm_px_20"
+            android:layout_marginLeft="@dimen/dm_dp_5"
+            android:layout_marginTop="@dimen/dm_dp_10"
             android:text="@string/home_three_btn"
             android:gravity="center"
             android:background="@drawable/home_attribute_bg"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dm_px_60"/>
+            android:layout_height="@dimen/dm_dp_30"/>
     </LinearLayout>
 
 
     <com.example.framework.view.ProgressView
         android:layout_below="@id/home_name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dm_px_150"
+        android:layout_marginTop="@dimen/dm_dp_75"
         android:id="@+id/home_progress"
-        android:layout_width="@dimen/dm_px_300"
-        app:app_textsize="@dimen/dm_px_50"
-        android:layout_height="@dimen/dm_px_300"/>
+        android:layout_width="@dimen/dm_dp_100"
+        app:app_textsize="@dimen/dm_dp_25"
+        android:layout_height="@dimen/dm_dp_100"/>
     <LinearLayout
-        android:layout_marginTop="@dimen/dm_px_30"
+        android:layout_marginTop="@dimen/dm_dp_15"
         android:layout_below="@id/home_progress"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -100,14 +100,14 @@
         android:id="@+id/home_pay"
         android:layout_below="@id/home_progress"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dm_px_120"
+        android:layout_marginTop="@dimen/dm_dp_40"
         android:background="@drawable/arc_btn"
         android:textColor="#ffffff"
         android:text="@string/home_join"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
-        android:layout_marginTop="@dimen/dm_px_50"
+        android:layout_marginTop="@dimen/dm_dp_10"
         android:layout_below="@id/home_pay"
         android:layout_centerHorizontal="true"
         android:text="@string/home_company"

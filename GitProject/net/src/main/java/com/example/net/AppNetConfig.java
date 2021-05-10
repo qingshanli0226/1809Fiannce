@@ -28,6 +28,7 @@ public class AppNetConfig {
     public static final String SETGESTUREPASSWORD = "setGesturePassword";
     public static final String LOGINGESTUREPASSWORD = "loginByGesturePassword";
     public static final String CLEARESTUREPASSWORD = "clearByGesturePassword";
+    public static final String LOGOUT = "logout";
 
 
 

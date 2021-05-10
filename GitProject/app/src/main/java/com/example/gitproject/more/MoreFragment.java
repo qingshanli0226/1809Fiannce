@@ -11,6 +11,7 @@ import com.example.framework.manager.CacheUserManager;
 import com.example.framework.module.FrameArouter;
 import com.example.framework.view.ItemBar;
 import com.example.gitproject.R;
+import com.example.gitproject.more.password.status.GestureStatus;
 import com.example.net.RetrofitManager;
 import com.example.net.bean.GesturePassword;
 import com.example.net.bean.LoginBean;
@@ -42,6 +43,7 @@ public class MoreFragment extends BaseFragment implements CacheUserManager.ILogi
     private ItemBar itemShare;
     private boolean isFlag = false;
     private boolean isLogin = false;
+    private ImageView rightItemPic;
 
     @Override
     protected int getLayoutId() {
@@ -58,6 +60,8 @@ public class MoreFragment extends BaseFragment implements CacheUserManager.ILogi
         itemAbs = (ItemBar) findViewById(R.id.item_abs);
         itemSms = (ItemBar) findViewById(R.id.item_sms);
         itemShare = (ItemBar) findViewById(R.id.item_share);
+        rightItemPic = itemPwd.getRightItemPic();
+
     }
 
     @Override
@@ -70,7 +74,7 @@ public class MoreFragment extends BaseFragment implements CacheUserManager.ILogi
 
         CacheUserManager.getInstance().registerLogin(this);
         LoginBean cache = CacheUserManager.getInstance().getLoginBean();
-        isFlag = isGPassword(cache);
+        isLogin = isGPassword(cache);
 
 
         //注册
@@ -120,52 +124,19 @@ public class MoreFragment extends BaseFragment implements CacheUserManager.ILogi
 
             @Override
             public void rightOnClick() {
-                ImageView rightItemPic = itemPwd.getRightItemPic();
                 if(isLogin){
                     if(isFlag){
                         rightItemPic.setImageResource(R.drawable.toggle_off);
                         isFlag = false;
-                    } else{
+                        GestureStatus.getInstance().setPwdStatus(CommonConstant.STATUS_CLEAR);
                         FrameArouter.getInstance().build(CommonConstant.APP_PWD_PATH).navigation();
-
-
+                    } else{
                         rightItemPic.setImageResource(R.drawable.toggle_on);
                         isFlag = true;
-                        HashMap<String, String> stringStringHashMap = new HashMap<>();
-                        stringStringHashMap.put("gPassword","123");
-                        String s = new Gson().toJson(stringStringHashMap);
-                        MediaType parse = MediaType.parse("application/json;charset=UTF-8");
-                        RequestBody requestBody = RequestBody.create(parse, s);
-                        RetrofitManager.getHttpApiService().setGesturePassword(requestBody)
-                                .subscribeOn(Schedulers.io())
-                                .observeOn(AndroidSchedulers.mainThread())
-                                .subscribe(new Observer<GesturePassword>() {
-                                    @Override
-                                    public void onSubscribe(@NonNull Disposable d) {
-
-                                    }
-
-                                    @Override
-                                    public void onNext(@NonNull GesturePassword gesturePassword) {
-                                        Toast.makeText(getActivity(), ""+gesturePassword, Toast.LENGTH_SHORT).show();
-                                    }
-
-                                    @Override
-                                    public void onError(@NonNull Throwable e) {
-                                        Toast.makeText(getActivity(), "aaaa", Toast.LENGTH_SHORT).show();
-                                        Log.i("TAG", "onError: "+e.getMessage());
-                                    }
-
-                                    @Override
-                                    public void onComplete() {
-
-                                    }
-                                });
-
-
+                        GestureStatus.getInstance().setPwdStatus(CommonConstant.STATUS_SET);
+                        FrameArouter.getInstance().build(CommonConstant.APP_PWD_PATH).navigation();
                     }
                 }
-
 
             }
 
@@ -184,6 +155,8 @@ public class MoreFragment extends BaseFragment implements CacheUserManager.ILogi
 
             }
         });
+
+
 
     }
 
@@ -204,21 +177,29 @@ public class MoreFragment extends BaseFragment implements CacheUserManager.ILogi
 
     @Override
     public void onLoginChange(LoginBean loginBean) {
-        isFlag = isGPassword(loginBean);
+        isLogin = isGPassword(loginBean);
 
     }
 
     private boolean isGPassword(LoginBean loginBean) {
-        if(loginBean == null){
-            isLogin = false;
-            return false;
-        }
-        isLogin = true;
-        if(loginBean.getResult() != null){
-            if(loginBean.getResult().getgPassword() != null){
-                return false;
+        if(loginBean != null){
+            Object o = loginBean.getResult().getgPassword();
+            if(o != null){
+                rightItemPic.setImageResource(R.drawable.toggle_on);
+                isFlag = true;
+            } else{
+                rightItemPic.setImageResource(R.drawable.toggle_off);
+                isFlag = false;
             }
+            return true;
         }
-        return true;
+        return false;
+
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        CacheUserManager.getInstance().unRegisterLogin(this);
     }
 }

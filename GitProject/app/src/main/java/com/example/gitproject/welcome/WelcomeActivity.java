@@ -37,6 +37,7 @@ import com.example.common.CommonConstant;
 import com.example.common.SpUtil;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
+import com.example.framework.manager.CacheUserManager;
 import com.example.gitproject.MainActivity;
 import com.example.gitproject.R;
 
@@ -122,7 +123,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             public void onServiceConnected(ComponentName name, IBinder service) {
                 UserService.MyBinder myBinder = (UserService.MyBinder) service;
                 myService = myBinder.getMyService();
-                myService.init(WelcomeActivity.this);
+
             }
 
             @Override
@@ -291,7 +292,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         if (handler != null) {
             handler.removeCallbacksAndMessages(null);
         }
+//        myService.init(null);
         unbindService(serviceConnection);
+
     }
 
 }

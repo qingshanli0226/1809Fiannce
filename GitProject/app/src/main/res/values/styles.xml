@@ -5,6 +5,6 @@
         <item name="app_item_right_isshow">true</item>
         <item name="app_item_text_color">@color/gray</item>
         <item name="app_item_back_color">#ffffff</item>
-        <item name="app_item_text_size">@dimen/dm_px_30</item>
+        <item name="app_item_text_size">@dimen/mine_item_textsize</item>
     </style>
 </resources>

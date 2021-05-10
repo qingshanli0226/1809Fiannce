@@ -83,7 +83,9 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
             SpUtil.putString(this, CommonConstant.SP_TOKEN,loginBean.getResult().getToken());
             //跳到主页面返回
             CacheUserManager.getInstance().setLoginBean(loginBean);
-            FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
+            Bundle bundle = new Bundle();
+            bundle.putInt("page",0);
+            FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).with(bundle).navigation();
         } else{
             Toast.makeText(this, "失败："+loginBean, Toast.LENGTH_SHORT).show();
         }

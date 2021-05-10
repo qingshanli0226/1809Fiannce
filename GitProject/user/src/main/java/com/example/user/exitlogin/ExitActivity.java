@@ -13,10 +13,11 @@ import com.example.common.SpUtil;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheUserManager;
 import com.example.framework.module.FrameArouter;
+import com.example.net.bean.GesturePassword;
 import com.example.user.R;
 import com.google.android.material.tabs.TabLayout;
 
-public class ExitActivity extends BaseActivity {
+public class ExitActivity extends BaseActivity<ExitPresenter> implements IExitView {
 
 
     private ImageView exitHead;
@@ -38,6 +39,7 @@ public class ExitActivity extends BaseActivity {
 
     @Override
     public void initPresenter() {
+        mPresenter = new ExitPresenter(this);
     }
 
     @Override
@@ -45,9 +47,9 @@ public class ExitActivity extends BaseActivity {
         int anInt = FrameArouter.getInstance().getIntent().getBundleExtra("param").getInt("img");
         exitHead.setImageResource(anInt);
         exit.setOnClickListener(v -> {
-            CacheUserManager.getInstance().setLoginBean(null);
-            SpUtil.putString(this, CommonConstant.SP_TOKEN,"");
-            FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
+
+
+            mPresenter.getExit();
         });
 
 
@@ -66,5 +68,14 @@ public class ExitActivity extends BaseActivity {
     @Override
     public void onClickRight() {
 
+    }
+
+    @Override
+    public void onExit(GesturePassword gesturePassword) {
+        if(gesturePassword.getCode().equals("200")){
+            CacheUserManager.getInstance().setLoginBean(null);
+            SpUtil.putString(this, CommonConstant.SP_TOKEN,"");
+            FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
+        }
     }
 }

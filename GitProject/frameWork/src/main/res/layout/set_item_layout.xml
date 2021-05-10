@@ -7,24 +7,24 @@
 
         <ImageView
             android:id="@+id/left_item_pic"
-            android:layout_marginLeft="@dimen/dm_px_20"
+            android:layout_marginLeft="@dimen/dm_dp_10"
             android:layout_centerVertical="true"
-            android:layout_width="@dimen/dm_px_80"
-            android:layout_height="@dimen/dm_px_80"/>
+            android:layout_width="@dimen/dm_dp_40"
+            android:layout_height="@dimen/dm_dp_40"/>
         <TextView
             android:id="@+id/center_item_title"
             android:text=""
-            android:layout_marginLeft="@dimen/dm_px_120"
+            android:layout_marginLeft="@dimen/dm_dp_60"
             android:textColor="@color/blue"
             android:layout_centerVertical="true"
-            android:textSize="@dimen/dm_px_80"
+            android:textSize="@dimen/dm_dp_40"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <ImageView
             android:id="@+id/right_item_pic"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/dm_px_20"
+            android:layout_marginRight="@dimen/dm_dp_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
@@ -34,8 +34,8 @@
             android:textColor="@color/blue"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:textSize="@dimen/dm_px_50"
-            android:layout_marginRight="@dimen/dm_px_20"
+            android:textSize="@dimen/dm_dp_25"
+            android:layout_marginRight="@dimen/dm_dp_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

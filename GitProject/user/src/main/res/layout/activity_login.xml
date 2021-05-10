@@ -58,7 +58,7 @@
         android:id="@+id/login"
         android:text="@string/login_btn_name"
         android:textColor="@color/white"
-        android:layout_margin="@dimen/dm_px_50"
+        android:layout_margin="@dimen/login_25"
         android:background="@drawable/register_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

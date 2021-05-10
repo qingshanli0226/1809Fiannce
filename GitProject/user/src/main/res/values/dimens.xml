@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="dm_px_0">0px</dimen>
-    <dimen name="dm_px_1">1px</dimen>
-    <dimen name="dm_px_10">10px</dimen>
-    <dimen name="dm_px_15">15px</dimen>
-    <dimen name="dm_px_20">20px</dimen>
-    <dimen name="dm_px_30">30px</dimen>
-    <dimen name="dm_px_40">40px</dimen>
-    <dimen name="dm_px_50">50px</dimen>
-    <dimen name="dm_px_60">60px</dimen>
-    <dimen name="dm_px_70">70px</dimen>
-    <dimen name="dm_px_80">80px</dimen>
-    <dimen name="dm_px_90">90px</dimen>
-    <dimen name="dm_px_100">100px</dimen>
-    <dimen name="dm_px_120">120px</dimen>
-    <dimen name="dm_px_150">150px</dimen>
-    <dimen name="dm_px_200">200px</dimen>
-    <dimen name="dm_px_300">300px</dimen>
-    <dimen name="dm_px_600">600px</dimen>
-
-
     <dimen name="edit_height_dp">50dp</dimen>
     <dimen name="text_weight_dp">0dp</dimen>
     <dimen name="exit_height">300dp</dimen>
+    <dimen name="login_25">25dp</dimen>
 
 </resources>

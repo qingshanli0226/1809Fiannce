@@ -43,14 +43,23 @@ public interface IHttpApiService {
     @POST(AppNetConfig.AUTOLOGIN)
     Observable<LoginBean> getAutoLogin(@Field("token")String token);
 
+
+
+    @POST(AppNetConfig.LOGOUT)
+    Observable<GesturePassword> exit();
     //下载
     @Streaming
     @GET
     Observable<ResponseBody> getDownLoad(@Url String url);
 
 
-    //验证密码
+    //设置密码
     @POST(AppNetConfig.SETGESTUREPASSWORD)
     Observable<GesturePassword> setGesturePassword(@Body RequestBody requestBody);
-
+    //登录密码
+    @POST(AppNetConfig.LOGINGESTUREPASSWORD)
+    Observable<GesturePassword> loginGesturePassword(@Body RequestBody requestBody);
+    //清除密码
+    @POST(AppNetConfig.CLEARESTUREPASSWORD)
+    Observable<GesturePassword> clearPassword(@Body RequestBody requestBody);
 }
