@@ -53,4 +53,11 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.10'//轮播图
     implementation 'com.github.bumptech.glide:glide:4.9.0'//glide依赖
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0'
+
+
+    /*手势解锁依赖：两个*/
+    implementation 'com.andrognito.patternlockview:patternlockview:1.0.0'
+    // Optional, for RxJava2 adapter
+    implementation 'com.andrognito.patternlockview:patternlockview-reactive:1.0.0'
+
 }

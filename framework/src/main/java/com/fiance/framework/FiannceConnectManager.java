@@ -29,18 +29,14 @@ public class FiannceConnectManager {
         }
         return instance;
     }
-
-
     public void init(Context applicatitonContext) {
         this.context = applicatitonContext;
         getCurrentConnectStatus();
         initReceiver();
     }
-
     public boolean isConnected() {
         return isConnected;
     }
-
     private void getCurrentConnectStatus() {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
@@ -50,13 +46,10 @@ public class FiannceConnectManager {
             isConnected = false;
         }
     }
-
     private void initReceiver() {
-
         IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         context.registerReceiver(netConnectReceiver, intentFilter);
     }
-
     private BroadcastReceiver netConnectReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {

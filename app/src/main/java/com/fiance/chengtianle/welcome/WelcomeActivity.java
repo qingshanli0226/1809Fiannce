@@ -105,7 +105,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         coundDownTv = findViewById(R.id.countDownTv);
 
 
-
         handler.sendEmptyMessageDelayed(DELAY_INDEX, DELAY);
         coundDownTv.setText(countDown + "秒");
 
@@ -155,6 +154,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                ARouter.getInstance().build("/main/MainActivity").navigation();
                                 finish();
                             }
                         });

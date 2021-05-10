@@ -46,18 +46,6 @@ public class MineFragment extends Fragment {
         boolean islogin = sflogin.getBoolean("islogin", false);
         if (islogin){
             username.setText(name);
-        }else{
-            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setTitle("提示");
-            builder.setMessage("您还没有登录哦");
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    ARouter.getInstance().build("/login/LoginActivity").withInt("", 1).navigation();
-                }
-            });
-            AlertDialog alertDialog = builder.create();
-            alertDialog.show();
         }
         toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,10 +60,6 @@ public class MineFragment extends Fragment {
         });
         return inflate;
     }
-
-
-
-
 
 
 }
