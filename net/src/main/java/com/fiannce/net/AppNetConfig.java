@@ -23,6 +23,8 @@ public class AppNetConfig {
     public static final String USERREGISTER = "register";//注册
     public static final String AUTOLOGIN = "autoLogin";//自动登录
 
+    public static final String SETGESTUREPASSWORD = "setGesturePassword";//设置手势密码
+
     public static final String FEEDBACK = "FeedBack";
 
     public static final String UPDATE = "atguigu/json/P2PInvest/update.json";//更新应用

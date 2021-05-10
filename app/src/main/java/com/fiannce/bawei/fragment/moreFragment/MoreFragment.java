@@ -14,6 +14,7 @@ import android.widget.ToggleButton;
 
 import androidx.fragment.app.Fragment;
 
+import com.fiannce.bawei.gesturelock.GestureLockActivity;
 import com.fiannce.framework.view.ToolBar;
 import com.fiannce.user.register.RegisterActivity;
 import com.fiannce.zhaoyuzan.R;
@@ -87,6 +88,14 @@ public class MoreFragment extends Fragment {
                     }
                 });
                 builder.show();
+            }
+        });
+
+        toggleMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), GestureLockActivity.class);
+                startActivity(intent);
             }
         });
 
