@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -27,6 +29,9 @@ public class GesturePasswordActivity extends BaseActivity<GesturePasswordPresent
     private ToolBar toolbar;
     private GestureLockView glv;
     private Map<String,String> map = new HashMap<>();
+    private String oneResult = "";
+    private boolean is_one = false;
+    private android.widget.TextView tishi;
 
     @Override
     protected void initData() {
@@ -44,11 +49,25 @@ public class GesturePasswordActivity extends BaseActivity<GesturePasswordPresent
 
             @Override
             public void onComplete(String result) {
-                if (!result.equals("")){
+                if (!result.equals("") && is_one == false){
                     map.put("gPassword",result);
                     httpPresenter.postGesturePassword(map);
-                }
+                    oneResult = result;
+                    is_one = true;
+                    tishi.setText("请再次输入手势密码");
+                    tishi.setVisibility(View.VISIBLE);
+                    glv.clearView();
+                }else if (is_one == true && result.equals(oneResult) ){
+                    tishi.setText("设置成功");
+                    SpUtils.putGesturePwdResule(GesturePasswordActivity.this,result);
 
+                    glv.clearView();
+                    finish();
+                }else if (is_one == true && !result.equals(oneResult)){
+                    tishi.setText("密码错误请重新输入");
+                    is_one=false;
+                    glv.clearView();
+                }
             }
         });
 
@@ -63,6 +82,7 @@ public class GesturePasswordActivity extends BaseActivity<GesturePasswordPresent
     protected void initView() {
         toolbar = (ToolBar) findViewById(R.id.toolbar);
         glv = (GestureLockView) findViewById(R.id.glv);
+        tishi = (TextView) findViewById(R.id.tishi);
     }
 
     @Override
@@ -74,7 +94,7 @@ public class GesturePasswordActivity extends BaseActivity<GesturePasswordPresent
     public void getGesturePassword(GesturePasswordBean gesturePasswordBean) {
         Log.i("zrf", "getGesturePassword: "+gesturePasswordBean.getCode());
         if (gesturePasswordBean.getCode().equals("200")){
-            Toast.makeText(this, "设置完成", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "设置完成", Toast.LENGTH_SHORT).show();
             SpUtils.putGestureBoolean(GesturePasswordActivity.this,true);
         }
     }

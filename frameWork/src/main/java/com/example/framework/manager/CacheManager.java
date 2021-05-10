@@ -8,6 +8,7 @@ public class CacheManager {
     private static CacheManager instance;
     private HomeBean homeBean;
 
+
     public CacheManager() {
     }
 

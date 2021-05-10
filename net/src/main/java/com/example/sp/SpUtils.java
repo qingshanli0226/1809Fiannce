@@ -31,4 +31,17 @@ public class SpUtils {
         edit.commit();
     }
 
+    public static String getGesturePwdResult(Context context){
+        SharedPreferences login = context.getSharedPreferences("gestureresult", 0);
+        String gestureresult = login.getString("gestureresult", "");
+        return gestureresult;
+    }
+
+    public static void putGesturePwdResule(Context context,String result){
+        SharedPreferences login = context.getSharedPreferences("gestureresult", 0);
+        SharedPreferences.Editor edit = login.edit();
+        edit.putString("gestureresult",result);
+        edit.commit();
+    }
+
 }

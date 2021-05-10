@@ -3,6 +3,7 @@ package com.example.myapplication.fragment.more.loginbygesturepassword;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -43,9 +44,15 @@ public class LoginByGestPasswordActivity extends BaseActivity<LoginByGesturePass
             @Override
             public void onComplete(String result) {
                 if (!result.equals("")){
-                    String token = SpUtils.getString(LoginByGestPasswordActivity.this);
-                    map.put("token",token);
-                    httpPresenter.postLoginByGesturePassword(map);
+                    String pwdResult = SpUtils.getGesturePwdResult(LoginByGestPasswordActivity.this);
+                    Log.i("zrf", "onComplete: "+pwdResult);
+                    if (pwdResult.equals(result)){
+                        map.put("gPassword",result);
+                        httpPresenter.postLoginByGesturePassword(map);
+                    }else {
+                        glvs.clearView();
+                        Toast.makeText(LoginByGestPasswordActivity.this, "密码错误请重新尝试", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

@@ -30,7 +30,7 @@ public class LoginByGesturePasswordPresenter extends BasePresenter<ILoginByGestu
         RequestBody requestBody = RequestBody.create(parse, s);
 
         RetrofitCretor.getFiannceApiService()
-                .setGesturePassword(requestBody)
+                .setLoginByGesturePassword(requestBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<GesturePasswordBean>() {
