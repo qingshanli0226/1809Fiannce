@@ -96,6 +96,7 @@ public class MoreFragment extends Fragment {
                         Intent intent = new Intent(getContext(), GestureActivity.class);
                         startActivity(intent);
                     }
+
                 }
             }
         });

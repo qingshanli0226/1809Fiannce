@@ -27,6 +27,7 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
 
     }
 
+    //
     @Override
     protected void initData() {
         aPwd = "";
