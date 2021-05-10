@@ -3,7 +3,7 @@
     package="com.example.pay">
 
     <application>
-        <activity android:name="com.example.user.reg.RegisterActivity"></activity>
+        <activity android:name="com.example.user.user.reg.RegisterActivity"></activity>
         <activity android:name=".PayActivity" />
     </application>
 

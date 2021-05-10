@@ -1,7 +1,7 @@
-package com.example.user.reg;
+package com.example.user.user.log;
 
 import com.example.framwork.base.BasePresenter;
-import com.example.network.model.RegBean;
+import com.example.network.model.LogBean;
 import com.example.network.retrofit.RetrofitManager;
 
 import io.reactivex.Observer;
@@ -12,20 +12,22 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class RegPresenter extends BasePresenter<RegisterCallBack> {
-
-    public RegPresenter(RegisterCallBack callback) {
-        addThouView(callback);
+public class LogPresenter extends BasePresenter<LogCallBack> {
+    public LogPresenter(LogCallBack callBack) {
+        addThouView(callBack);
     }
 
-    public void RegData(String user,String pwd){
+
+
+    public void LogData(String name,String pwd){
         RetrofitManager.getRetrofit()
-                .RegData(user,pwd)
+                .LogData(name,pwd)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
+                        addView(disposable);
                         iView.ShowLoading();
                     }
                 })
@@ -35,15 +37,15 @@ public class RegPresenter extends BasePresenter<RegisterCallBack> {
                         iView.HideLoading();
                     }
                 })
-                .subscribe(new Observer<RegBean>() {
+                .subscribe(new Observer<LogBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(@NonNull RegBean regBean) {
-                        iView.RegData(regBean);
+                    public void onNext(@NonNull LogBean logBean) {
+                        iView.LogData(logBean);
                     }
 
                     @Override

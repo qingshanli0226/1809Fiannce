@@ -11,7 +11,7 @@
         android:layout_height="@dimen/dp_50"
         app:left_show="true"
         app:right_show="false"
-        app:text="用户信息"
+        app:text="@string/us_message"
         app:textColor="#03A9F4"
         app:backgroundColor="#142732"
         android:id="@+id/tob"
@@ -27,20 +27,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="更换头像"
+        android:text="@string/change_message"
         android:textColor="#03A9F4"
         android:textSize="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_10"
         android:layout_gravity="center"
         android:id="@+id/head"></TextView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_1"
             android:background="#999999"
-            android:layout_marginTop="@dimen/dp_50"></LinearLayout>
+            android:layout_marginTop="@dimen/dp_20"></LinearLayout>
     <Button
         android:layout_width="@dimen/dp_270"
         android:layout_height="wrap_content"
-        android:text="退出登录"
+        android:text="@string/out_log"
         android:layout_gravity="center"
         android:background="#03A9F4"
         android:layout_marginTop="@dimen/dp_40"

@@ -1,4 +1,4 @@
-package com.example.user.reg;
+package com.example.user.user.reg;
 
 
 import com.example.framwork.IView;

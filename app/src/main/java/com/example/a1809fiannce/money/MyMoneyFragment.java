@@ -1,11 +1,15 @@
 package com.example.a1809fiannce.money;
 
 import android.content.Intent;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.a1809fiannce.CallImgPath;
 import com.example.a1809fiannce.R;
 import com.example.a1809fiannce.usermessage.MessageActivity;
+import com.example.a1809fiannce.view.LinView;
 import com.example.common.UserCallBack;
 import com.example.framwork.base.BaseFragment;
 import com.example.framwork.call.FiannceUserManager;
@@ -15,6 +19,10 @@ import com.example.network.model.LogBean;
 
 public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.IUserLoginChanged {
     private TextView user;
+    private LinView investManage;
+    private LinView investManageDia;
+    private LinView assetsManage;
+    private ImageView manyImg;
 
     @Override
     protected void initData() {
@@ -33,13 +41,38 @@ public class MyMoneyFragment extends BaseFragment implements FiannceUserManager.
         if (UserCallBack.getInstance().getName()!=null){
             user.setText(UserCallBack.getInstance().getName()+"");
         }
+        investManage.setiRightImgCallBack(new LinView.iRightImgCallBack() {
+            @Override
+            public void OnRightListener() {
+
+            }
+        });
+        investManageDia.setiRightImgCallBack(new LinView.iRightImgCallBack() {
+            @Override
+            public void OnRightListener() {
+
+            }
+        });
+        assetsManage.setiRightImgCallBack(new LinView.iRightImgCallBack() {
+            @Override
+            public void OnRightListener() {
+
+            }
+        });
+
     }
 
     @Override
     protected void initView() {
         user = baseView.findViewById(R.id.user);
+        investManage = baseView.findViewById(R.id.investManage);
+        investManageDia =baseView.findViewById(R.id.investManageDia);
+        assetsManage =baseView.findViewById(R.id.assetsManage);
+        manyImg = baseView.findViewById(R.id.many_img);
         FiannceUserManager.getInstance().Register(this);
-
+        if (CallImgPath.getInstance().getPath()!=null){
+            Glide.with(getContext()).load(CallImgPath.getInstance().getPath()).into(manyImg);
+        }
     }
 
     @Override

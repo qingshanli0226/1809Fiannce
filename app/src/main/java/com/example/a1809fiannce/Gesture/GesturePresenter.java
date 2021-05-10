@@ -3,6 +3,7 @@ package com.example.a1809fiannce.Gesture;
 import com.example.framwork.base.BasePresenter;
 import com.example.network.model.GesturePwd;
 import com.example.network.retrofit.RetrofitManager;
+import com.google.gson.JsonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,6 +52,83 @@ public class GesturePresenter extends BasePresenter<CallGesture> {
                             if (iView!=null){
                                 iView.Error(e.getMessage());
                             }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+    public void ResetPwd(String aPwd){
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("aPwd",aPwd);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), jsonObject.toString());
+        RetrofitManager.getRetrofit()
+                .setReset(requestBody)
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io())
+                .subscribe(new Observer<GesturePwd>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull GesturePwd gesturePwd) {
+                        if (iView!=null){
+                            iView.OnResetData(gesturePwd);
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (iView!=null){
+                            iView.Error(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public void VerityPwd(String aPwd){
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("aPwd",aPwd);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), jsonObject.toString());
+        RetrofitManager.getRetrofit()
+                .setReset(requestBody)
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io())
+                .subscribe(new Observer<GesturePwd>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull GesturePwd gesturePwd) {
+                        if (iView!=null){
+                            iView.OnVerityData(gesturePwd);
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (iView!=null){
+                            iView.Error(e.getMessage());
+                        }
                     }
 
                     @Override

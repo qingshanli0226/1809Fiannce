@@ -1,4 +1,4 @@
-package com.example.user.log;
+package com.example.user.user.log;
 
 import com.example.framwork.IView;
 import com.example.network.model.LogBean;

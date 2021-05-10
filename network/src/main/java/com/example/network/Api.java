@@ -56,4 +56,12 @@ public interface Api {
     //设置手势密码
     @POST(FiannceNetConfig.SETGESTUREPWD)
     Observable<GesturePwd> setGesturePwd(@Body RequestBody gPasswordBody);
+
+    //验证手势密码
+    @POST(FiannceNetConfig.VERIFYGESTUREPWD)
+    Observable<GesturePwd> setVerify(@Body RequestBody gPasswordBody);
+
+    //重置手势密码
+    @POST(FiannceNetConfig.CLEARGESTUREPWD)
+    Observable<GesturePwd> setReset(@Body RequestBody gPasswordBody);
 }

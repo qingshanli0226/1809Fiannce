@@ -1,7 +1,7 @@
-package com.example.user.log;
+package com.example.user.user.reg;
 
 import com.example.framwork.base.BasePresenter;
-import com.example.network.model.LogBean;
+import com.example.network.model.RegBean;
 import com.example.network.retrofit.RetrofitManager;
 
 import io.reactivex.Observer;
@@ -12,19 +12,20 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class LogPresenter extends BasePresenter<LogCallBack> {
-    public LogPresenter(LogCallBack callBack) {
-        addThouView(callBack);
+public class RegPresenter extends BasePresenter<RegisterCallBack> {
+
+    public RegPresenter(RegisterCallBack callback) {
+        addThouView(callback);
     }
-    public void LogData(String name,String pwd){
+
+    public void RegData(String user,String pwd){
         RetrofitManager.getRetrofit()
-                .LogData(name,pwd)
+                .RegData(user,pwd)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
-                        addView(disposable);
                         iView.ShowLoading();
                     }
                 })
@@ -34,15 +35,15 @@ public class LogPresenter extends BasePresenter<LogCallBack> {
                         iView.HideLoading();
                     }
                 })
-                .subscribe(new Observer<LogBean>() {
+                .subscribe(new Observer<RegBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(@NonNull LogBean logBean) {
-                        iView.LogData(logBean);
+                    public void onNext(@NonNull RegBean regBean) {
+                        iView.RegData(regBean);
                     }
 
                     @Override

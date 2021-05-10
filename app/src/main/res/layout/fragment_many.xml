@@ -46,6 +46,7 @@
                 app:lin_right_show="false"
                 app:lin_right_Text_show="false"
                 app:left_icon="@mipmap/icon_more_reset"
+                android:id="@+id/reset"
                 ></com.example.a1809fiannce.view.LinView>
             <com.example.a1809fiannce.view.LinView
                 android:layout_width="match_parent"

@@ -38,9 +38,15 @@
             <string name="user">用户名：</string>
             <string name="PleaseUser">请输入用户名</string>
             <string name="reg">注册</string>
+            <string name="log">登录</string>
             <string name="password">密码：</string>
             <string name="PleasePassword">请输入密码</string>
             <string name="ConfigPwd">请输入密码</string>
             <string name="ConfigPhone">请输入手机号</string>
-
+            <string name="us_message">用户信息</string>
+            <string name="change_message">更改头像</string>
+            <string name="out_log">退出登录</string>
+            <string name="whether_install">是否安装</string>
+            <string name="install">安装</string>
+            <string name="cancel">取消</string>
 </resources>

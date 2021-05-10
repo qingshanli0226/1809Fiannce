@@ -13,9 +13,10 @@ import com.itsxtt.patternlock.PatternLockView;
 import java.util.ArrayList;
 
 public class GestureActivity extends BaseActivity<GesturePresenter> implements CallGesture{
+
     private PatternLockView patternLockView;
     private String aPwd="";
-
+    private String name;
     @Override
     protected void initData() {
         aPwd="";
@@ -44,7 +45,13 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
                 }
 
                 Log.i("zx", "onComplete: "+aPwd);
-                mPresenter.GestureData(aPwd);
+                if (name.equals("set")){
+                    mPresenter.GestureData(aPwd);
+                }else if (name.equals("reset")){
+                    mPresenter.ResetPwd(aPwd);
+                }else if (name.equals("verity")){
+                    mPresenter.VerityPwd(aPwd);
+                }
 
                 return true;
             }
@@ -54,6 +61,7 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
     @Override
     protected void initView() {
         patternLockView = findViewById(R.id.patternLockView);
+        name=getIntent().getStringExtra("name");
     }
 
     @Override
@@ -64,6 +72,16 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
     @Override
     public void OnGestureData(GesturePwd gesturePwd) {
         Log.i("zx", "OnGestureData: "+gesturePwd.toString());
+    }
+
+    @Override
+    public void OnResetData(GesturePwd gesturePwd) {
+        Log.i("zx", "OnResetData: "+gesturePwd.toString());
+    }
+
+    @Override
+    public void OnVerityData(GesturePwd gesturePwd) {
+        Log.i("zx", "OnVerityData: "+gesturePwd.toString());
     }
 
     @Override

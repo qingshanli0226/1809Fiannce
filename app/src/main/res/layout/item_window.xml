@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="是否安装"
+        android:text="@string/whether_install"
         android:textSize="@dimen/dp_30"
         android:textColor="#03A9F4"
         android:layout_gravity="center"></TextView>
@@ -17,12 +17,12 @@
         <Button
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
-            android:text="取消"
+            android:text="@string/cancel"
             android:layout_weight="1"></Button>
         <Button
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
-            android:text="安装"
+            android:text="@string/install"
             android:layout_weight="1"></Button>
     </LinearLayout>
 </LinearLayout>

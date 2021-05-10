@@ -35,8 +35,7 @@ public class FiannceARouter {
     }
 
     public interface iUserManager{
-        void OpenLoginActivity(Context context, Bundle bundle);
-        void OpenRegisterActivity(Context context,Bundle bundle);
+        void OpenUserActivity(Context context,Bundle bundle);
     }
 
     public interface iAppManager{

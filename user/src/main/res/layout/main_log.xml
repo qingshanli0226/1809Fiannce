@@ -1,8 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.example.framwork.view.TobView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        app:left_show="false"
+        app:backgroundColor="#142732"
+        app:textColor="#27b8ee"
+        app:right_show="false"
+        android:id="@+id/tob"
+        app:text="用户登录"></com.example.framwork.view.TobView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/phoneNum"
+            android:textColor="#000000"></TextView>
+
+        <EditText
+            android:id="@+id/log_phone"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="64dp"
+            android:layout_weight="@dimen/weight_8"
+            android:hint="@string/PleasePhoneNum"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/user"
+            android:textColor="#000000"></TextView>
+        <EditText
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:hint="@string/PleaseUser"
+            android:id="@+id/log_use"
+            android:layout_weight="@dimen/weight_8"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+
+        <TextView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_50"
+            android:layout_weight="@dimen/weight_2"
+            android:gravity="center"
+            android:text="@string/password"
+
+            android:textColor="#000000"></TextView>
+        <EditText
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:hint="@string/PleasePassword"
+            android:id="@+id/log_pwd"
+            android:layout_weight="@dimen/weight_8"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+
+        <TextView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_50"
+            android:layout_weight="@dimen/weight_2"
+            android:gravity="center"
+            android:text="@string/ConfigPwd"
+            android:textColor="#000000"></TextView>
+        <EditText
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:hint="@string/ConfigPhone"
+            android:id="@+id/log_phone_two"
+            android:layout_weight="@dimen/weight_8"></EditText>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+        <Button
+            android:layout_width="@dimen/dp_230"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#27baed"
+            android:text="@string/log"
+            android:id="@+id/log"
+            android:textColor="#ffffff"
+            ></Button>
+    </RelativeLayout>
 </LinearLayout>

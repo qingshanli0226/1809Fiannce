@@ -30,4 +30,5 @@ public class FiannceNetConfig {
     public static final String CLEARGESTUREPWD="clearByGesturePassword";
 
 
+
 }
