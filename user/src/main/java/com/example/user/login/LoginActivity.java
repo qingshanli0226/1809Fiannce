@@ -69,6 +69,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
                 loginPresenter.getLoginData();
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
 

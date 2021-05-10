@@ -38,6 +38,7 @@ import static android.content.ContentValues.TAG;
 
 public class FiannceService extends Service {
     private  String string;
+    private FileOutputStream fileOutputStream;
     public FiannceService() {
     }
 
@@ -108,7 +109,7 @@ public class FiannceService extends Service {
                     }
 
 
-                    @RequiresApi(api = Build.VERSION_CODES.N)
+
                     @Override
                     public void onNext(ResponseBody responseBody) {
 
@@ -119,7 +120,7 @@ public class FiannceService extends Service {
 
                             File file = new File(FiannceContants.DOWNLOAD_PATH);
 
-                            FileOutputStream fileOutputStream = new FileOutputStream(file);
+                             fileOutputStream = new FileOutputStream(file);
 
                             long length = responseBody.contentLength();
                             byte[] bytes = new byte[1024];
@@ -135,13 +136,25 @@ public class FiannceService extends Service {
 
                             setNotification((int) length,count,true);
 
-                            inputStream.close();
-                            fileOutputStream.close();
 
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
                             e.printStackTrace();
+                        }finally {
+
+                                try {
+                                    if (inputStream != null){
+                                    inputStream.close();
+                                    }
+
+                                    if (fileOutputStream != null){
+                                        fileOutputStream.close();
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
                         }
 
                     }
@@ -159,7 +172,7 @@ public class FiannceService extends Service {
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
     public void setNotification(int length, int count, boolean is){
 
         Notification.Builder builder = new Notification.Builder(FiannceService.this);

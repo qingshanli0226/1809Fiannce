@@ -8,34 +8,52 @@
     tools:context=".shou.UnlockActivity">
 
     <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:background="@color/colorShen"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp_30"
+        android:textColor="@color/colorWhite"
+        android:text="@string/unlok"
+        android:layout_gravity="center"
+        ></TextView>
+</LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:background="@color/colorShen"
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:background="@color/colorHui"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/dp_30"
-            android:textColor="@color/colorWhite"
-            android:text="@string/unlok"
+
+        <com.wangnan.library.GestureLockThumbnailView
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:id="@+id/glt"
             android:layout_gravity="center"
-            ></TextView>
+            ></com.wangnan.library.GestureLockThumbnailView>
+
+        <com.wangnan.library.GestureLockView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_400"
+            android:id="@+id/glv"
+            android:layout_gravity="center"
+            app:normal_color="@color/colorCh"
+            app:press_color="@color/colorCh"
+            app:error_color="@color/colorWhite"
+            app:line_thickness="@dimen/dp_6"
+            ></com.wangnan.library.GestureLockView>
+
     </LinearLayout>
 
 
-    <com.wangnan.library.GestureLockView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/glv"
-        android:layout_weight="9"
-        android:layout_gravity="center"
-        app:normal_color="@color/colorCh"
-        app:press_color="@color/colorCh"
-        app:error_color="@color/colorWhite"
-        app:line_thickness="@dimen/dp_6"
-        ></com.wangnan.library.GestureLockView>
 
 
 </LinearLayout>

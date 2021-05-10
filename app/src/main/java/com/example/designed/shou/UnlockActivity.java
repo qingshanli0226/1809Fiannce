@@ -2,12 +2,14 @@ package com.example.designed.shou;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.designed.R;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.net.model.SetGesturesBean;
+import com.wangnan.library.GestureLockThumbnailView;
 import com.wangnan.library.GestureLockView;
 import com.wangnan.library.listener.OnGestureLockListener;
 
@@ -16,6 +18,10 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter>  implements Iu
 
     private GestureLockView glv;
     UnlockPresenter unlockPresenter;
+    private GestureLockThumbnailView glt;
+
+
+
 
 
     @Override
@@ -33,7 +39,12 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter>  implements Iu
 
             @Override
             public void onComplete(String result) {
-                    unlockPresenter.getUnlock(result);
+                glv.clearView();
+
+                glt.setThumbnailView(result, Color.BLUE);
+
+                unlockPresenter.getUnlock(result);
+
             }
         });
     }
@@ -51,18 +62,21 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter>  implements Iu
     @Override
     protected void initView() {
         glv = (GestureLockView) findViewById(R.id.glv);
-
+        glt = (GestureLockThumbnailView) findViewById(R.id.glt);
     }
 
     @Override
     public void getUnlockData(SetGesturesBean setGesturesBean) {
         if (setGesturesBean.getCode().equals("200")){
-            Toast.makeText(this, "设置成功", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UnlockActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
             finish();
         }else {
-            Toast.makeText(this, "设置失败", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UnlockActivity.this, "设置失败", Toast.LENGTH_SHORT).show();
             glv.showErrorStatus(600);
         }
+
+
+
     }
 
     @Override

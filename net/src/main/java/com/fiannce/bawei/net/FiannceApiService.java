@@ -53,6 +53,6 @@ public interface FiannceApiService {
     Observable<VerifyBean> getVerify(@Body String gpassword);
 
     @POST("clearByGesturePassword")
-    Observable<EliminateBean> getVersion(@Body String gpassword);
+    Observable<EliminateBean> getEliminate(@Body String gpassword);
 
 }

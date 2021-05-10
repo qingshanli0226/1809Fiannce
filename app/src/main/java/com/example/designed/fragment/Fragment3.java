@@ -1,11 +1,15 @@
 package com.example.designed.fragment;
 
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +17,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.designed.InActivity;
 import com.example.designed.R;
 import com.example.user.login.LoginActivity;
 import com.fiannce.bawei.framework.BaseFragment;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +39,7 @@ public class Fragment3 extends BaseFragment  {
     private LinearLayout invest;
     private LinearLayout manage;
     private LinearLayout property;
+    private String path;
 
     public Fragment3() {
         // Required empty public constructor
@@ -62,17 +72,33 @@ public class Fragment3 extends BaseFragment  {
             }
         });
 
-        pic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), LoginActivity.class));
-            }
-        });
+//        pic.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                path = "/sdcard/DCIM/Camera/wang.jpg";
+//
+//                Intent intent = new Intent();
+//                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+//
+//                Uri uri = FileProvider.getUriForFile(getActivity(), "com.example.designed", new File(path));
+//
+//                intent.putExtra(MediaStore.EXTRA_OUTPUT,uri);
+//                startActivityForResult(intent,103);
+//
+//
+//                Glide.with(getActivity()).load(path).into(pic);
+//
+//            }
+//        });
     }
+
+
 
     @Override
     protected int getLoutId() {
         return R.layout.fragment_blank_fragment3;
     }
+
 
 }

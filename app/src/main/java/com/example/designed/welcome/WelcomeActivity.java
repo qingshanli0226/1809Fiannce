@@ -77,10 +77,13 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     protected void initData() {
 
-        requestPermissions(new String[]{"android.permission.CALL_PHONE","android.permission.READ_EXTERNAL_STORAGE"
-                            ,"android.permission.WRITE_EXTERNAL_STORAGE"
-        ,"android.permission.CALL_PHONE"
-        ,"android.permission.SYSTEM_OVERLAY_WINDOW","android.permission.ACCESS_NETWORK_STATE "},100);
+        requestPermissions(new String[]{"android.permission.CALL_PHONE"
+                ,"android.permission.READ_EXTERNAL_STORAGE"
+                ,"android.permission.WRITE_EXTERNAL_STORAGE"
+                ,"android.permission.CALL_PHONE"
+                ,"android.permission.SYSTEM_OVERLAY_WINDOW"
+                ,"android.permission.ACCESS_NETWORK_STATE "
+           ,"android.permission.ACTION_IMAGE_CAPTURE" },100);
 
         welcomePresenter.getHomeData();
         welcomePresenter.getVersionData();
