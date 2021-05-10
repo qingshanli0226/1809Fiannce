@@ -8,6 +8,7 @@ import com.example.net.model.UnlockBean;
 import com.example.net.model.VersionBean;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -39,17 +40,28 @@ public interface FiannceApiService {
     @POST("login")
     Observable<LoginBean> getLoginData(@Field("name") String username, @Field("password") String password);
 
+    @POST("logout")
+    Observable<UnlockBean> getLoginOut();
+
+
     @FormUrlEncoded
     @POST("autoLogin")
     Observable<LoginBean> getAutoLoginData(@Field("token") String token);
 
 
     @GET
-    @Streaming //防止占用内存过多，避免OOM问题也就是内存溢出
+    @Streaming
+        //防止占用内存过多，避免OOM问题也就是内存溢出
     Observable<ResponseBody> downloadFile(@Url String url);
 
     @POST("setGesturePassword")
-    Observable<UnlockBean> getUnlockData(@Body String gPassword);
+    Observable<UnlockBean> setUnlockData(@Body RequestBody gPasswordBody);
+
+    @POST("loginByGesturePassword")
+    Observable<UnlockBean> verifyUnlockData(@Body RequestBody gPasswordBody);
+
+    @POST("clearByGesturePassword")
+    Observable<UnlockBean> clearUnlockData(@Body RequestBody gPasswordBody);
 
 
 }

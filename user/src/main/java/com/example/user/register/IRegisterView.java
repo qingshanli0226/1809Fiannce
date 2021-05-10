@@ -4,5 +4,5 @@ import com.example.framework.IBaseView;
 import com.example.net.model.RegisterBean;
 
 public interface IRegisterView extends IBaseView {
-    public void getRegisterData(RegisterBean registerBean);
+    public void onRegisterData(RegisterBean registerBean);
 }

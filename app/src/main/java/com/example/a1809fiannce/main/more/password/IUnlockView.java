@@ -6,6 +6,9 @@ import com.example.net.model.UnlockBean;
 
 public interface IUnlockView extends IBaseView {
 
-    void getUnlockData(UnlockBean unlockBean);
+    void onUnlockData(UnlockBean unlockBean);
+    void verifyUnlockData(UnlockBean unlockBean);
+    void clearUnlockData(UnlockBean unlockBean);
+
 
 }

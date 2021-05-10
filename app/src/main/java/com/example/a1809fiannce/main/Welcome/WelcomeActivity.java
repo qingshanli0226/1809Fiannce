@@ -1,7 +1,6 @@
 package com.example.a1809fiannce.main.Welcome;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -58,7 +57,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         }
     };
 
-    private  ServiceConnection serviceConnection = new ServiceConnection() {
+    private ServiceConnection serviceConnection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
@@ -146,7 +145,6 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     }
 
 
-
     private void addAlertDialogBuilder() {
         if (versionCode > getVersionCode()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
@@ -164,15 +162,17 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 //                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 //                progressDialog.setCanceledOnTouchOutside(false);
 //                progressDialog.show();
-
-                fiannceService.DownloadApk(CacheManager.getInstance().getVersionBean().getResult().getApkUrl());
-
+                fiannceService.downloadApk(CacheManager.getInstance().getVersionBean().getResult().getApkUrl());
+//                fiannceService.openAPK(FianceConstants.SD_DOWNLOAD);
                 FiannceArouter.getInstance().build(FianceConstants.MAIN_PATH).navigation();
                 finish();
             });
             builder.setCancelable(false);
             builder.show();
 
+        } else {
+            FiannceArouter.getInstance().build(FianceConstants.MAIN_PATH).navigation();
+            finish();
         }
 
     }

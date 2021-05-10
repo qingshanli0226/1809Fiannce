@@ -3,7 +3,6 @@ package com.example.user.login;
 import com.example.framework.BasePresenter;
 import com.example.net.RetrofitCreator;
 import com.example.net.model.LoginBean;
-import com.example.net.model.RegisterBean;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -36,7 +35,7 @@ public class LoginPresneter extends BasePresenter<ILoginView> {
                     @Override
                     public void onNext(@NonNull LoginBean loginBean) {
                         if (iView != null) {
-                            iView.getLoginData(loginBean);
+                            iView.onLoginData(loginBean);
                         }
                     }
 

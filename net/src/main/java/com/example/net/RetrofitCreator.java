@@ -28,6 +28,7 @@ public class RetrofitCreator {
                                 .writeTimeout(60 * 1000, TimeUnit.MILLISECONDS)
                                 .readTimeout(60 * 1000, TimeUnit.MILLISECONDS)
                                 .connectTimeout(60 * 1000, TimeUnit.MILLISECONDS)
+                                .addInterceptor(new TokenInterceptor())
                                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                                 .build()
                 )

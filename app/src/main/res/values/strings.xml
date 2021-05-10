@@ -32,6 +32,7 @@
     <string name="investmentManagementVisual">投资管理(直观)</string>
     <string name="assetsManagement">资产管理</string>
     <string name="gesturePassword">手势密码</string>
+    <string name="setGesturePassword">设置手势密码</string>
     <string name="resetTheGesturePassword">重置手势密码</string>
     <string name="contactCustomer">联系客服</string>
     <string name="userFeedback">用户反馈</string>
@@ -41,4 +42,6 @@
     <string name="userRegister">用户注册</string>
     <string name="financialUpdate">金融更新中...</string>
     <string name="gesturalCode">手势密码</string>
+    <string name="opengesturalCode">是否打开手势密码</string>
+    <string name="pleaseCheckThatTheGesturePasswordIsEnabled">请检查是否开启了手势密码</string>
 </resources>

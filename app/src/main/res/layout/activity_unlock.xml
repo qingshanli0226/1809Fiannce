@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.more.password.UnlockActivity"
-    android:background="#8D000000">
+    android:background="@color/french_grey">
 
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_45"
-        app:wp_CenterTitle="@string/gesturalCode"
+        app:wp_CenterTitle=""
         android:id="@+id/toolbar"></com.example.framework.view.ToolBar>
 
     <com.wangnan.library.GestureLockView
@@ -18,8 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:line_thickness="@dimen/dp_10"
-        app:press_color="#3cb6fb"
-        app:error_color="#b32818"
+        app:press_color="@color/colorA"
+        app:error_color="@color/dark_red"
         android:layout_centerInParent="true"
         app:is_use_animation="true"
         app:animation_scale_mode="reverse"></com.wangnan.library.GestureLockView>

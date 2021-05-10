@@ -5,5 +5,5 @@ import com.example.net.model.LoginBean;
 import com.example.net.model.RegisterBean;
 
 public interface ILoginView extends IBaseView {
-    public void getLoginData(LoginBean loginBean);
+    public void onLoginData(LoginBean loginBean);
 }

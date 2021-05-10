@@ -72,7 +72,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresneter> implements
     }
 
     @Override
-    public void getRegisterData(RegisterBean registerBean) {
+    public void onRegisterData(RegisterBean registerBean) {
         if (registerBean.getCode().equals("200")) {
             String user = actRegUsername.getText().toString().trim();
             String pwd = actRegPassword.getText().toString().trim();
@@ -114,7 +114,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresneter> implements
     }
 
     @Override
-    public void getLoginData(LoginBean loginBean) {
+    public void onLoginData(LoginBean loginBean) {
         if (loginBean.getCode().equals("200")) {
             FiannceUserManager.getInstance().setLoginBean(loginBean);
             SpUtil.setString(this, FianceConstants.TOKEN_KEY, loginBean.getResult().getToken());

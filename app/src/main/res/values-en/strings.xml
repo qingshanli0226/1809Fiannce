@@ -41,5 +41,8 @@
     <string name="userRegister">user register</string>
     <string name="financialUpdate">Financial Update...</string>
     <string name="gesturalCode">gestural code</string>
+    <string name="opengesturalCode">open gestural code</string>
+    <string name="setGesturePassword">set gesture password</string>
+    <string name="pleaseCheckThatTheGesturePasswordIsEnabled">Please check that the Gesture Password is enabled</string>
 
 </resources>

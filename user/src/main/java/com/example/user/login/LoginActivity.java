@@ -87,7 +87,7 @@ public class LoginActivity extends BaseActivity<LoginPresneter> implements ILogi
     }
 
     @Override
-    public void getLoginData(LoginBean loginBean) {
+    public void onLoginData(LoginBean loginBean) {
         if (loginBean.getCode().equals("200")) {
             FiannceUserManager.getInstance().setLoginBean(loginBean);
             SpUtil.setString(this,FianceConstants.TOKEN_KEY,loginBean.getResult().getToken());

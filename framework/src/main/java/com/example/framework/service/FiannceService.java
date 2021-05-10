@@ -9,11 +9,15 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -51,6 +55,8 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
 public class FiannceService extends Service {
+
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -71,12 +77,16 @@ public class FiannceService extends Service {
 
     }
 
+    private Handler handler = new Handler();
 
-    public void DownloadApk(String url) {
+    public void downloadApk(String url) {
         Log.i("wpppp", "DownloadApk: " + url);
         RetrofitCreator.getFiannceApiService().downloadFile("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk")
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
+                .doOnSubscribe(disposable -> {
+                    initNotification(100, 0, "正在更新金融...", "0%", 1);
+                })
                 .subscribe(new Observer<ResponseBody>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
@@ -116,8 +126,7 @@ public class FiannceService extends Service {
                             SpUtil.setUpdateApk(FiannceService.this, FianceConstants.APK_UPDATE, true);
                             if (isApplicationUsed()) {
                                 Log.i("wppp", "onNext:下载完毕 + 是自己的应用");
-
-                                new Handler().post(new Runnable() {
+                                handler.post(new Runnable() {
                                     @Override
                                     public void run() {
                                         showSystemWindow();
@@ -125,22 +134,9 @@ public class FiannceService extends Service {
                                 });
                             }
 
-
-//                            Intent intent = new Intent(Intent.ACTION_VIEW);
-//                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { //android N的权限问题
-//                                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);//授权读权限
-//                                Uri contentUri = FileProvider.getUriForFile(FiannceService.this, "com.nongyan.xinzhihouse.fileprovider", new File(FianceConstants.SD_DOWNLOAD, "ZhouzhiHouse.apk"));//注意修改
-//                                intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
-//                            } else {
-//                                intent.setDataAndType(Uri.fromFile(new File(FianceConstants.SD_DOWNLOAD, "ZhouzhiHouse.apk")), "application/vnd.android.package-archive");
-//                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                            }
-//                            startActivity(intent);
-
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
                     }
 
                     @Override
@@ -204,27 +200,85 @@ public class FiannceService extends Service {
         return false;
     }
 
+    private WindowManager windowManager;
+    private WindowManager.LayoutParams layoutParams;
+    private View rootView;
+
     private void showSystemWindow() {
-        //注意此处传入的是Applcation的上下文，所以说明系统窗口不依赖任何的窗口
-        final WindowManager wm = (WindowManager) getApplicationContext()
-                .getSystemService(Context.WINDOW_SERVICE);
+        windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        //设置小窗口尺寸的类
+        layoutParams = new WindowManager.LayoutParams();
+        //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
+        //TYPE_SYSTEM_ALERT
+        layoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        //像素格式为透明的
+        layoutParams.format = PixelFormat.TRANSPARENT;
 
-        final WindowManager.LayoutParams params = new WindowManager.LayoutParams();
+        //设置该flag在显示该小窗口时，其他窗口的按钮或者其他控件都可以点击.
+        layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
 
-        params.width = WindowManager.LayoutParams.WRAP_CONTENT;
-        params.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        params.gravity = Gravity.CENTER;
-        // 注意要设置此属性，不然其它的View无法获取焦点
-        params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+        //设置小窗口的尺寸
+        //单位是像素
+        layoutParams.width = 700;
+        layoutParams.height = 500;
 
-        params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;//这个地方是重点，设置窗口的类型
+        //生成一个窗口的布局view，并且将该view添加到窗口里.
+        rootView = LayoutInflater.from(this).inflate(R.layout.pop_dsuccess, null);
+        windowManager.addView(rootView, layoutParams);
+        rootView.findViewById(R.id.window_yes).setOnClickListener(view -> {
+            Toast.makeText(FiannceService.this, "安装", Toast.LENGTH_SHORT).show();
+//            openAPK(FianceConstants.SD_DOWNLOAD);
+            windowManager.removeView(rootView);
+        });
+        rootView.findViewById(R.id.window_no).setOnClickListener(view -> {
+            Toast.makeText(FiannceService.this, "已取消安装", Toast.LENGTH_SHORT).show();
+            windowManager.removeView(rootView);
+        });
+    }
 
-        //通过布局加载器加载布局文件
-        final View mView = LayoutInflater.from(this).inflate(R.layout.pop_dsuccess, null);
+    public void openAPK(String fileSavePath) {
+        Toast.makeText(FiannceService.this, "aaaaaaaaaaaaaa", Toast.LENGTH_SHORT).show();
+        File file = new File(Uri.parse(fileSavePath).getPath());
+        String filePath = file.getAbsolutePath();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        Uri data = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {//判断版本大于等于7.0
+            // 生成文件的uri，，
+            // 注意 下面参数com.ausee.fileprovider 为apk的包名加上.fileprovider，
+            data = FileProvider.getUriForFile(FiannceService.this, "com.example.a1809fiannce.fileProvider", new File(filePath));
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);// 给目标应用一个临时授权
+        } else {
+            data = Uri.fromFile(file);
+        }
 
-        wm.addView(mView, params);//调用WindowMangerImpl添加窗口
+        PackageManager pm=getPackageManager();
+
+        ComponentName comp = new ComponentName(getPackageName(),
+
+                "com.ebook.timeset.TimeSetMain");
+
+        intent.setComponent(comp);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setDataAndType(data, "application/vnd.android.package-archive");
+
+        List<ResolveInfo> activities=pm.queryIntentActivities(intent,0);
+        if(activities.size()<=0)
+        {
+            //不存在匹配跳转隐式intent的Activity
+            Log.d("LQS", "无");
+        }
+        else{
+            //存在匹配跳转隐式intent的Activity
+            Log.d("LQS", "有");
+
+        }
+        startActivity(intent);
 
     }
+
+
+
 
 
     @Override

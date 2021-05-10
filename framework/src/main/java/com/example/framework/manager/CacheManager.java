@@ -5,6 +5,8 @@ import com.example.net.model.VersionBean;
 
 public class CacheManager {
 
+    public boolean gesture = false;
+
     public VersionBean versionBean;
 
     public VersionBean getVersionBean() {

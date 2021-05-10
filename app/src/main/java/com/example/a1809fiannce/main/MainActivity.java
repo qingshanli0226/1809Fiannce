@@ -4,12 +4,15 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
+import android.provider.Settings;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.a1809fiannce.R;
+import com.example.a1809fiannce.main.Welcome.WelcomeActivity;
 import com.example.a1809fiannce.main.home.HoemFragment;
 import com.example.a1809fiannce.main.invest.InvestFragment;
 import com.example.a1809fiannce.main.more.MoreFragment;
@@ -47,11 +50,17 @@ public class MainActivity extends BaseActivity  {
     @Override
     protected void initData() {
 
+        //权限
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.CALL_PHONE}, 100);
+                    Manifest.permission.CALL_PHONE,
+                    Manifest.permission.SYSTEM_ALERT_WINDOW,
+                    Manifest.permission.REQUEST_INSTALL_PACKAGES}, 100);
         }
+        requestPermission();
+
+
         if (SpUtil.getUpdateApk(this, FianceConstants.APK_UPDATE)) {
             Toast.makeText(this, "下载完了更新的安装包", Toast.LENGTH_SHORT).show();
         }
@@ -139,6 +148,18 @@ public class MainActivity extends BaseActivity  {
         });
 
 
+    }
+
+    private void requestPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(MainActivity.this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, 10);
+            } else {
+                Toast.makeText(MainActivity.this, "granted show-- 悬浮窗", Toast.LENGTH_SHORT);
+            }
+        }
     }
 
     @Override
