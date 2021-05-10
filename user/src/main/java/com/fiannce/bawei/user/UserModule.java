@@ -16,12 +16,12 @@ public class UserModule implements FiannceArouter.IUserInterface {
     public void initLogin(){
         UserModule userModule = new UserModule();
         FiannceArouter.getInstance().registerIUserInterface(userModule);
-        FiannceArouter.getInstance().registerActivityPath(FiannceConstants.LOGIN_PATH, LoginActivity.class);
+        FiannceArouter.getInstance().registerActivityPath(FiannceConstants.USER_LOGIN_PATH, LoginActivity.class);
     }
     public void initRegister(){
         UserModule userModule = new UserModule();
         FiannceArouter.getInstance().registerIUserInterface(userModule);
-        FiannceArouter.getInstance().registerActivityPath(FiannceConstants.REGISTER_PATH, LoginActivity.class);
+        FiannceArouter.getInstance().registerActivityPath(FiannceConstants.USER_REGISTER_PATH, LoginActivity.class);
     }
 
     @Override

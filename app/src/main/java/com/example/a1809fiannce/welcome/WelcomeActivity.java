@@ -1,8 +1,14 @@
 package com.example.a1809fiannce.welcome;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
@@ -17,17 +23,24 @@ import android.widget.VideoView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
+import com.example.a1809fiannce.MainActivity;
 import com.example.a1809fiannce.R;
+import com.example.common.FiannceConstants;
+import com.example.common.SpUtil;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.framework.manager.CacheManager;
+import com.fiannce.bawei.framework.manager.FiannceArouter;
+import com.fiannce.bawei.framework.manager.FiannceUserManager;
 import com.fiannce.bawei.net.mode.HomeBean;
 import com.fiannce.bawei.net.mode.ProductBean;
 import com.fiannce.bawei.net.mode.VersionBean;
+import com.fiannce.bawei.net.user.login.bean.LoginBean;
+import com.fiannce.bawei.user.service.AutoService;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
-public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView{
+public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView, FiannceUserManager.IUserLoginChanged {
     private final int ONE_TASK_FIISH = 0;
     private final int ALL_TASK_FIISH = 1;
     private final int DELAY_INDEX = 2;
@@ -40,7 +53,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private AlphaAnimation alphaAnimation;
     private TextView correntTv;
     private AlertDialog.Builder alerDialog;
-
+    private int code;
+    private Intent intent;
+    private VersionBean versionBean;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_welcome;
@@ -49,12 +64,37 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     protected void initPresenter() {
         httpPresenter = new WelcomePresenter(this);
+        FiannceUserManager.getInstance().register(this);
+
     }
 
     @Override
     protected void initData() {
+        requestPermissions(new String[]{"android.permission.CALL_PHONE"
+                , "android.permission.WRITE_EXTERNAL_STORAGE"
+                , "android.permission.READ_EXTERNAL_STORAGE"
+                , "android.permission.SYSTEM_ALERT_WINDOW"}, 100);
+
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
+
+        Intent intent = new Intent(this, AutoService.class);
+        startService(intent);
+        code = getLocalVersion(this);
+    }
+    //获取版本号
+    public static int getLocalVersion(Context ctx) {
+        int localVersion = 0;
+        try {
+            PackageInfo packageInfo = ctx.getApplicationContext()
+                    .getPackageManager()
+                    .getPackageInfo(ctx.getPackageName(), 0);
+            localVersion = packageInfo.versionCode;
+            Log.d("TAG", "当前版本号：" + localVersion);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return localVersion;
     }
 
     private void iconAnimation() {
@@ -84,9 +124,15 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initView() {
+
         handler.sendEmptyMessageDelayed(DELAY_INDEX,DELAY);
         correntTv = (TextView) findViewById(R.id.correntTv);
         icon = (ImageView) findViewById(R.id.icon);
+        if (!SpUtil.getString(this, FiannceConstants.SP_TOKEN).equals("")) {
+            Intent intent = new Intent(this, AutoService.class);
+            startService(intent);
+        }
+
         iconAnimation();
         correntTv.setText("当前版本:1.0");
     }
@@ -100,6 +146,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onVersionData(VersionBean versionBean) {
+        this.versionBean = versionBean;
         versionFinsh = true;
         handler.sendEmptyMessage(ONE_TASK_FIISH);
     }
@@ -122,7 +169,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                    ARouter.getInstance().build("/main/MainActivity").withInt("", 1).navigation();
+                    ARouter.getInstance().build(getString(R.string.main_mainActivity)).withInt("", 1).navigation();
                     finish();
 
             }
@@ -130,7 +177,24 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         alerDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                intent = new Intent(WelcomeActivity.this, AutoService.class);
+                bindService(intent, new ServiceConnection() {
+                    @Override
+                    public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+                        AutoService.AutoBinder fiannceBinder = (AutoService.AutoBinder) iBinder;
+                        AutoService fiannceService = fiannceBinder.getAutoService();
+                        fiannceService.setDownLoad(versionBean.getResult().getApkUrl());
 
+                        Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+                    @Override
+                    public void onServiceDisconnected(ComponentName componentName) {
+
+                    }
+                },BIND_AUTO_CREATE);
             }
         });
         alerDialog.show();
@@ -191,6 +255,11 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onRightTvClick() {
+
+    }
+
+    @Override
+    public void onLoginChange(LoginBean isLogin) {
 
     }
 }

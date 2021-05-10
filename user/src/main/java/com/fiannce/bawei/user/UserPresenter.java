@@ -6,13 +6,18 @@ import com.fiannce.bawei.net.RetrofitCreator;
 import com.fiannce.bawei.net.user.login.bean.LoginBean;
 import com.fiannce.bawei.net.user.register.bean.RegisterBean;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class UserPresengter extends BasePresenter<UserView> {
-        public UserPresengter(UserView view){
+public class UserPresenter extends BasePresenter<UserView> {
+        public UserPresenter(UserView view){
             attachView(view);
         }
         public void UserLogin(String name,String password){
@@ -73,5 +78,52 @@ public class UserPresengter extends BasePresenter<UserView> {
                                 }
                         });
         }
+
+    public void getAutoLogin(String token) {
+        RetrofitCreator.getFiannceApiService()
+                .getAutoLogin(token)
+                .delay(3, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        add(disposable);
+//                        iView.showLoading();
+                    }
+                })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+//                        iView.hideLoading();
+                    }
+                })
+                .subscribe(new Observer<LoginBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull LoginBean loginBean) {
+                        if (iView != null) {
+                            iView.onAutoLogin(loginBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (iView != null) {
+//                            iView.showToast(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
 
 }

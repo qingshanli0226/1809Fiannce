@@ -1,7 +1,5 @@
 package com.fiannce.bawei.user.regiseter;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,10 +12,10 @@ import com.fiannce.bawei.net.user.login.bean.LoginBean;
 import com.fiannce.bawei.net.user.register.bean.RegisterBean;
 import com.fiannce.bawei.user.R;
 import com.fiannce.bawei.user.UserModule;
-import com.fiannce.bawei.user.UserPresengter;
+import com.fiannce.bawei.user.UserPresenter;
 import com.fiannce.bawei.user.UserView;
 
-public class RegisterActivity extends BaseActivity<UserPresengter>  implements UserView {
+public class RegisterActivity extends BaseActivity<UserPresenter>  implements UserView {
 
 
     private android.widget.EditText registerPhone;
@@ -37,7 +35,7 @@ public class RegisterActivity extends BaseActivity<UserPresengter>  implements U
 
     @Override
     protected void initPresenter() {
-        httpPresenter = new UserPresengter(this);
+        httpPresenter = new UserPresenter(this);
     }
 
     @Override
@@ -97,6 +95,11 @@ public class RegisterActivity extends BaseActivity<UserPresengter>  implements U
             new UserModule().openLoginAcivity(this,bundle);
             finish();
        }
+    }
+
+    @Override
+    public void onAutoLogin(LoginBean loginBean) {
+
     }
 
     @Override

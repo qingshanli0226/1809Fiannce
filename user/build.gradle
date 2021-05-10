@@ -11,7 +11,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -35,6 +39,11 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation('com.alibaba:arouter-api:1.4.1')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'//ARouter依赖
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2' //ARouter依赖
+
     implementation("com.squareup.okhttp3:okhttp:3.14.9")
     implementation project(':framework')
     implementation project(':net')

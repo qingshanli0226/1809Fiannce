@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -17,6 +18,7 @@ import com.example.a1809fiannce.main.fragment.more.MoreFragment;
 import com.example.a1809fiannce.main.fragment.MyassetsFragment;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.framework.manager.FiannceUserManager;
+import com.fiannce.bawei.net.user.login.bean.LoginBean;
 
 
 @Route(path="/main/MainActivity")
@@ -231,17 +233,18 @@ public class MainActivity extends BaseActivity implements FiannceUserManager.IUs
     }
 
     @Override
-    public void onLoginChange(boolean isLogin) {
-//        if (isLogin){
-//            initDrawable();
-//            FragmentManager supportFragmentManager = getSupportFragmentManager();
-//            FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
-//            fragmentTransaction.show(homeFragments);
-//            fragmentTransaction.hide(investmentFragments);
-//            fragmentTransaction.hide(myassetsFragments);
-//            fragmentTransaction.hide(moreFragments);
-//            fragmentTransaction.commitAllowingStateLoss();
-//        }
+    public void onLoginChange(LoginBean isLogin) {
+        if (isLogin!=null){
+            Toast.makeText(this, ""+isLogin.getCode(), Toast.LENGTH_SHORT).show();
+            initDrawable();
+            FragmentManager supportFragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+            fragmentTransaction.show(homeFragments);
+            fragmentTransaction.hide(investmentFragments);
+            fragmentTransaction.hide(myassetsFragments);
+            fragmentTransaction.hide(moreFragments);
+            fragmentTransaction.commitAllowingStateLoss();
+        }
     }
 
     @Override

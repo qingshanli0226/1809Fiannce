@@ -10,5 +10,5 @@ public interface UserView {
 
         void onLoginData(LoginBean loginBean);
         void onRegisterData(RegisterBean registerBean);
-
+        void onAutoLogin(LoginBean loginBean);
 }

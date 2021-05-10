@@ -18,6 +18,8 @@ public class AppNetConfig {
 
     public static final String LOGIN = BASE_URL + "login";//登录
 
+    public static final String AUTOLOGIN = "autoLogin";//自动登录
+
     public static final String INDEX = BASE_URL + "atguigu/json/P2PInvest/index.json";//访问“homeFragment”
 
     public static final String USERREGISTER = BASE_URL + "register";//访问“homeFragment”

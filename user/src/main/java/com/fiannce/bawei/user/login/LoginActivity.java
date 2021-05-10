@@ -13,13 +13,10 @@ import com.fiannce.bawei.framework.view.ToolBar;
 import com.fiannce.bawei.net.user.login.bean.LoginBean;
 import com.fiannce.bawei.net.user.register.bean.RegisterBean;
 import com.fiannce.bawei.user.R;
-import com.fiannce.bawei.user.UserPresengter;
+import com.fiannce.bawei.user.UserPresenter;
 import com.fiannce.bawei.user.UserView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-public class LoginActivity extends BaseActivity<UserPresengter> implements UserView {
+public class LoginActivity extends BaseActivity<UserPresenter> implements UserView ,FiannceUserManager.IUserLoginChanged{
 
     private com.fiannce.bawei.framework.view.ToolBar toolbar;
     private android.widget.EditText loginName;
@@ -33,7 +30,7 @@ public class LoginActivity extends BaseActivity<UserPresengter> implements UserV
 
     @Override
     protected void initPresenter() {
-        httpPresenter = new UserPresengter(this);
+        httpPresenter = new UserPresenter(this);
     }
 
     @Override
@@ -68,6 +65,8 @@ public class LoginActivity extends BaseActivity<UserPresengter> implements UserV
         loginName = (EditText) findViewById(R.id.login_name);
         loginPassword = (EditText) findViewById(R.id.login_password);
         login = (Button) findViewById(R.id.login);
+        FiannceUserManager.getInstance().register(this);
+
     }
 
     @Override
@@ -89,13 +88,24 @@ public class LoginActivity extends BaseActivity<UserPresengter> implements UserV
     public void onLoginData(LoginBean loginBean) {
         if (loginBean.getCode().equals("200")){
             Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
-            FiannceUserManager.getInstance().setLogin(true);
+            FiannceUserManager.getInstance().setLogin(loginBean);
+//            FiannceUserManager.getInstance().setLogin(true);
             finish();
         }
     }
 
     @Override
     public void onRegisterData(RegisterBean registerBean) {
+
+    }
+
+    @Override
+    public void onAutoLogin(LoginBean loginBean) {
+
+    }
+
+    @Override
+    public void onLoginChange(LoginBean isLogin) {
 
     }
 }
