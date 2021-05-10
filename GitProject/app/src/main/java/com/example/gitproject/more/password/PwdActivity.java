@@ -29,6 +29,7 @@ public class PwdActivity extends BaseActivity<GesturePresenter> implements IGest
     private ToolBar toolbar;
     private GestureLockView gle;
     private boolean isPwd = true;
+    private String pwdResult = null;
 
     @Override
     public int getLayoutId() {
@@ -49,7 +50,19 @@ public class PwdActivity extends BaseActivity<GesturePresenter> implements IGest
 
     @Override
     public void initData() {
-        gle.setGestureLockListener(new OnGestureLockListener() {
+        switch (GestureStatus.getInstance().getPwdStatus()) {
+            case CommonConstant.STATUS_SET:
+                toolbar.setText("设置密码");
+                break;
+            case CommonConstant.STATUS_LOGIN:
+                toolbar.setText("验证密码");
+                break;
+            case CommonConstant.STATUS_CLEAR:
+                toolbar.setText("清除密码");
+                break;
+        }
+
+            gle.setGestureLockListener(new OnGestureLockListener() {
             @Override
             public void onStarted() {
 
@@ -64,10 +77,12 @@ public class PwdActivity extends BaseActivity<GesturePresenter> implements IGest
             public void onComplete(String result) {
                 HashMap<String, String> stringStringHashMap = new HashMap<>();
                 stringStringHashMap.put("gPassword", result);
+                Log.i("zyb", "onComplete: "+ CacheUserManager.getInstance().getLoginBean());
                 if(GestureStatus.getInstance().getPwdStatus() == CommonConstant.STATUS_SET){
                     //设置手势密码
                     if(isPwd){
                         mPresenter.setGeseture(stringStringHashMap);
+                        pwdResult = result;
                         Toast.makeText(PwdActivity.this, "再次输入密码", Toast.LENGTH_SHORT).show();
                     } else{
                         String getgPassword = (String) CacheUserManager.getInstance().getLoginBean().getResult().getgPassword();
@@ -75,7 +90,6 @@ public class PwdActivity extends BaseActivity<GesturePresenter> implements IGest
                             return;
                         } else if (getgPassword.equals(result)) {
                             Toast.makeText(PwdActivity.this, "完成", Toast.LENGTH_SHORT).show();
-                            gle.clearView();
                             finish();
                             Bundle bundle = new Bundle();
                             bundle.putInt("page",0);
@@ -86,22 +100,33 @@ public class PwdActivity extends BaseActivity<GesturePresenter> implements IGest
                     }
                 } else if(GestureStatus.getInstance().getPwdStatus() == CommonConstant.STATUS_LOGIN){
                     //登录手势密码
-                    mPresenter.loginGeseture(stringStringHashMap);
+                    String getgPassword = (String) CacheUserManager.getInstance().getLoginBean().getResult().getgPassword();
+                    if (TextUtils.isEmpty(result)) {
+                        return;
+                    } else if (getgPassword.equals(result)) {
+                        mPresenter.loginGeseture(stringStringHashMap);
 
+                    } else {
+                        Toast.makeText(PwdActivity.this, "密码输入错误", Toast.LENGTH_SHORT).show();
+                    }
                 } else if(GestureStatus.getInstance().getPwdStatus() == CommonConstant.STATUS_CLEAR){
                     //清除手势密码
                     String getgPassword = (String) CacheUserManager.getInstance().getLoginBean().getResult().getgPassword();
                     if (TextUtils.isEmpty(result)) {
                         return;
                     } else if (getgPassword.equals(result)) {
-                        mPresenter.clearGeseture(stringStringHashMap);
+                        mPresenter.clearGeseture();
+                        finish();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("page",0);
+                        FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).with(bundle).navigation();
                     } else {
                         Toast.makeText(PwdActivity.this, "密码输入错误", Toast.LENGTH_SHORT).show();
                     }
-
                 } else{
                     Toast.makeText(PwdActivity.this, "错误", Toast.LENGTH_SHORT).show();
                 }
+                gle.clearView();
 
             }
         });
@@ -127,7 +152,7 @@ public class PwdActivity extends BaseActivity<GesturePresenter> implements IGest
     public void onSetGesture(GesturePassword gesturePassword) {
         if (gesturePassword.getCode().equals("200")) {
             isPwd = false;
-            gle.clearView();
+            CacheUserManager.getInstance().getLoginBean().getResult().setgPassword(pwdResult);
 
         }
 
@@ -145,13 +170,11 @@ public class PwdActivity extends BaseActivity<GesturePresenter> implements IGest
 
     @Override
     public void onClearGesture(GesturePassword gesturePassword) {
-        if(gesturePassword.getCode().equals("200")){
-            gle.clearView();
 
-            finish();
-            Bundle bundle = new Bundle();
-            bundle.putInt("page",0);
-            FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).with(bundle).navigation();
+
+        if(gesturePassword.getCode().equals("200")){
+            Toast.makeText(this, "成功2", Toast.LENGTH_SHORT).show();
+
         }
     }
 

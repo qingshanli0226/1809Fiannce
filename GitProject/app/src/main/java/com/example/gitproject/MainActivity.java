@@ -107,10 +107,10 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
                                 GestureStatus.getInstance().setPwdStatus(CommonConstant.STATUS_LOGIN);
                                 FrameArouter.getInstance().build(CommonConstant.APP_PWD_PATH).navigation();
                             } else{
-                                fragmentTransaction.hide(homeFragment);
-                                fragmentTransaction.hide(investFragment);
-                                fragmentTransaction.show(mineFragment);
-                                fragmentTransaction.hide(moreFragment);
+//                                fragmentTransaction.hide(homeFragment);
+//                                fragmentTransaction.hide(investFragment);
+//                                fragmentTransaction.show(mineFragment);
+//                                fragmentTransaction.hide(moreFragment);
                             }
                         } else {
                             //FrameArouter
@@ -147,18 +147,20 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
                 fragmentTransaction.hide(investFragment);
                 fragmentTransaction.hide(mineFragment);
                 fragmentTransaction.hide(moreFragment);
+                oneBtn.setChecked(true);
                 break;
             case 2:
                 fragmentTransaction.hide(homeFragment);
                 fragmentTransaction.hide(investFragment);
                 fragmentTransaction.show(mineFragment);
                 fragmentTransaction.hide(moreFragment);
+                threeBtn.setChecked(true);
                 break;
         }
         fragmentTransaction.commit();
 
 
-        oneBtn.setChecked(true);
+
     }
 
     private void fragmentManager() {

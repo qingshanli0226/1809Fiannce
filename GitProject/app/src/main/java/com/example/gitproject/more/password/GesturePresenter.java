@@ -89,11 +89,8 @@ public class GesturePresenter  extends BasePresenter<IGestureView> {
                     }
                 });
     }
-    public void clearGeseture(Map<String,String> map){
-        String s = new Gson().toJson(map);
-        MediaType parse = MediaType.parse("application/json;charset=UTF-8");
-        RequestBody requestBody = RequestBody.create(parse, s);
-        RetrofitManager.getHttpApiService().clearPassword(requestBody)
+    public void clearGeseture(){
+        RetrofitManager.getHttpApiService().clearPassword()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<GesturePassword>() {

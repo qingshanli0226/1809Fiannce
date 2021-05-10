@@ -61,5 +61,5 @@ public interface IHttpApiService {
     Observable<GesturePassword> loginGesturePassword(@Body RequestBody requestBody);
     //清除密码
     @POST(AppNetConfig.CLEARESTUREPASSWORD)
-    Observable<GesturePassword> clearPassword(@Body RequestBody requestBody);
+    Observable<GesturePassword> clearPassword();
 }

@@ -67,7 +67,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
 
     @Override
     public void onClickLeft() {
-        FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
+        finish();
+        Bundle bundle = new Bundle();
+        bundle.putInt("page",0);
+        FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).with(bundle).navigation();
 
     }
 

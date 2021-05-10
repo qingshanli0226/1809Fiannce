@@ -69,6 +69,7 @@ public class MineFragment extends BaseFragment implements CacheUserManager.ILogi
         Bundle bundle = new Bundle();
         bundle.getInt("img",R.drawable.my_user_bg_icon);
         FrameArouter.getInstance().build(CommonConstant.USER_EXIT_PATH).with(bundle).navigation();
+
     }
 
     @Override
