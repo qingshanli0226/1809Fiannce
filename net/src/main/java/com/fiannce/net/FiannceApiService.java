@@ -8,6 +8,7 @@ import com.fiannce.net.mode.RegisterBean;
 import com.fiannce.net.mode.VersionBean;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -45,11 +46,11 @@ public interface FiannceApiService {
     Observable<ResponseBody> downloadFile(@Url String url);
 
     @POST("setGesturePassword")
-    Observable<GestureBean> setPassword(@Body ResponseBody responseBody);
+    Observable<GestureBean> setPassword(@Body RequestBody requestBody);
 
     @POST("loginByGesturePassword")
-    Observable<GestureBean> loginPassword(@Body ResponseBody responseBody);
+    Observable<GestureBean> loginPassword(@Body RequestBody requestBody);
 
     @POST("clearByGesturePassword")
-    Observable<GestureBean> clearPassword(@Body ResponseBody responseBody);
+    Observable<GestureBean> clearPassword(@Body RequestBody requestBody);
 }

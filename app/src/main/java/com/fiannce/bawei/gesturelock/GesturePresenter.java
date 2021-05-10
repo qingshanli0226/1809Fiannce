@@ -4,14 +4,17 @@ import com.fiannce.framework.BasePresenter;
 import com.fiannce.net.RetrofitCreator;
 import com.fiannce.net.mode.GestureBean;
 import com.fiannce.net.mode.HomeBean;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
@@ -26,63 +29,43 @@ public class GesturePresenter extends BasePresenter<IGestureView> {
         attachView(iGestureView);
     }
 
-//    JSONObject jsonObject = new JSONObject();
-//        try{
-//            jsonObject.put("productId", productId);
-//            jsonObject.put("productNum", productNum);
-//            jsonObject.put("productName", productName);
-//            jsonObject.put("url", url);
-//            jsonObject.put("productPrice", productPrice);
-//        } catch(JSONException e){
-//            e.printStackTrace();
-//        }
 
+    public void postGesturePassword(Map<String,String> map){
 
-//    RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), jsonObject.toString());
+        String s = new Gson().toJson(map);
+        MediaType parse = MediaType.parse("application/json;charset=UTF-8");
+        RequestBody requestBody = RequestBody.create(parse, s);
 
-//    public void setPassword() {
-//        RetrofitCreator.getFiannceApiService()
-//                .setPassword()
-//                .delay(2, TimeUnit.SECONDS)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .doOnSubscribe(new Consumer<Disposable>() {
-//                    @Override
-//                    public void accept(Disposable disposable) throws Exception {
-//                        add(disposable);
-//                        iView.showLoading();
-//                    }
-//                })
-//                .doFinally(new Action() {
-//                    @Override
-//                    public void run() throws Exception {
-//                        iView.hideLoading();
-//                    }
-//                })
-//                .subscribe(new Observer<GestureBean>() {
-//                    @Override
-//                    public void onSubscribe(Disposable disposable) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onNext(GestureBean gestureBean) {
-//                        if (iView != null) {
-//                            iView.onGestureData(gestureBean);
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable throwable) {
-//                        if (iView != null) {
-//                            iView.showToast(throwable.getMessage());
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onComplete() {
-//
-//                    }
-//                });
-//    }
+        RetrofitCreator.getFiannceApiService()
+                .setPassword(requestBody)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<GestureBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        add(d);
+                    }
+
+                    @Override
+                    public void onNext(@NonNull GestureBean gesturePasswordBean) {
+                        if (iView != null){
+                            iView.onGestureData(gesturePasswordBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (iView!=null){
+                            iView.showToast(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+
 }
