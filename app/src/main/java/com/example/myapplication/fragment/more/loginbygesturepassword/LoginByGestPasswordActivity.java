@@ -1,9 +1,8 @@
-package com.example.myapplication.fragment.more.gesturepassword;
+package com.example.myapplication.fragment.more.loginbygesturepassword;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -18,20 +17,19 @@ import com.wangnan.library.listener.OnGestureLockListener;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.example.demo.Demo.AROUTE_PATH_GESTUREPASSWORD;
+import static com.example.demo.Demo.AROUTE_PATH_LOGINBYGESTUREPASSWORD;
 
-@Route(path = AROUTE_PATH_GESTUREPASSWORD)
-public class GesturePasswordActivity extends BaseActivity<GesturePasswordPresenter> implements IGesturePasswordView{
+@Route(path = AROUTE_PATH_LOGINBYGESTUREPASSWORD)
+public class LoginByGestPasswordActivity extends BaseActivity<LoginByGesturePasswordPresenter> implements ILoginByGesturepasswordView {
 
-
-    private ToolBar toolbar;
-    private GestureLockView glv;
     private Map<String,String> map = new HashMap<>();
+    private com.example.framework.view.ToolBar toolbar;
+    private com.wangnan.library.GestureLockView glvs;
 
     @Override
     protected void initData() {
 
-        glv.setGestureLockListener(new OnGestureLockListener() {
+        glvs.setGestureLockListener(new OnGestureLockListener() {
             @Override
             public void onStarted() {
 
@@ -45,37 +43,38 @@ public class GesturePasswordActivity extends BaseActivity<GesturePasswordPresent
             @Override
             public void onComplete(String result) {
                 if (!result.equals("")){
-                    map.put("gPassword",result);
-                    httpPresenter.postGesturePassword(map);
+                    String token = SpUtils.getString(LoginByGestPasswordActivity.this);
+                    map.put("token",token);
+                    httpPresenter.postLoginByGesturePassword(map);
                 }
-
             }
         });
+
 
     }
 
     @Override
     protected void initPresenter() {
-        httpPresenter = new GesturePasswordPresenter(this);
+        httpPresenter = new LoginByGesturePasswordPresenter(this);
     }
 
     @Override
     protected void initView() {
+
         toolbar = (ToolBar) findViewById(R.id.toolbar);
-        glv = (GestureLockView) findViewById(R.id.glv);
+        glvs = (GestureLockView) findViewById(R.id.glvs);
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_gesture_password;
+        return R.layout.activity_login_by_gest_password;
     }
 
     @Override
-    public void getGesturePassword(GesturePasswordBean gesturePasswordBean) {
-        Log.i("zrf", "getGesturePassword: "+gesturePasswordBean.getCode());
+    public void getLoginByGesturePwd(GesturePasswordBean gesturePasswordBean) {
         if (gesturePasswordBean.getCode().equals("200")){
-            Toast.makeText(this, "设置完成", Toast.LENGTH_SHORT).show();
-            SpUtils.putGestureBoolean(GesturePasswordActivity.this,true);
+            Toast.makeText(this, "成功啦", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 

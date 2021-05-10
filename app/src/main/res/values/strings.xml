@@ -34,8 +34,8 @@
     <string name="person_share">分享给好友</string>
     <string name="person_about">关于有道理财</string>
 
-    <string name="gesturepassword">手势密码</string>
-
+    <string name="setgesturepassword">设置手势密码</string>
+    <string name="gesturepasswordsss">手势密码</string>
 
 
 </resources>

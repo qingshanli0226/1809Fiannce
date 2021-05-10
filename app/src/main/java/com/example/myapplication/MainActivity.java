@@ -23,9 +23,12 @@ import com.example.myapplication.fragment.home.HomeFragment;
 import com.example.myapplication.fragment.invest.InvestFragment;
 import com.example.myapplication.fragment.more.MoreFragment;
 import com.example.myapplication.fragment.mymoney.MymoneyFragment;
+import com.example.sp.SpUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+
+import static com.example.demo.Demo.AROUTE_PATH_LOGINBYGESTUREPASSWORD;
 
 @Route(path = Demo.AROUTE_PATH)
 public class MainActivity extends BaseActivity {
@@ -99,12 +102,20 @@ public class MainActivity extends BaseActivity {
                             AlertDialog alertDialog = builder.create();
                             alertDialog.show();
                         }
+
+
+                        Boolean gestureBoolean = SpUtils.getGestureBoolean(MainActivity.this);
+                        if (gestureBoolean){
+                            ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
+                        }
+
                         break;
                     case R.id.btn_more:
                         fragmentTransaction.hide(homeFragment);
                         fragmentTransaction.hide(investFragment);
                         fragmentTransaction.hide(mymoneyFragment);
                         fragmentTransaction.show(moreFragment);
+
                         break;
                 }
                 fragmentTransaction.commit();

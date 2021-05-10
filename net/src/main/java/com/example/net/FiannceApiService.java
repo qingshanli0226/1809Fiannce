@@ -39,8 +39,13 @@ public interface FiannceApiService {
     @POST("autoLogin")
     Observable<AutoLoginBean> postAutoLogin(@Field("token") String token);
 
+    //设置手势密码
     @POST("setGesturePassword")
     Observable<GesturePasswordBean> setGesturePassword(@Body RequestBody requestBody);
+
+    //验证手势密码
+    @POST("loginByGesturePassword")
+    Observable<GesturePasswordBean> setLoginByGesturePassword(@Body RequestBody requestBody);
 
     //下载文件
     @GET
