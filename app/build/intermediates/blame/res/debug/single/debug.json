@@ -1944,6 +1944,10 @@
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\149843f22d46580deb62dc097c7abe72\\gsyVideoPlayer-java-8.1.0\\res\\drawable\\video_progress.xml"
     },
     {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\layout_window_install.xml.flat",
+        "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\layout\\window_install.xml"
+    },
+    {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_exo_icon_repeat_all.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-mdpi-v4\\exo_icon_repeat_all.png"
     },
@@ -2770,6 +2774,10 @@
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_exo_ic_skip_previous.png.flat",
         "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\851935d5e6a437e9dc11546a1053aae3\\jetified-exoplayer-ui-2.12.1\\res\\drawable-xxhdpi-v4\\exo_ic_skip_previous.png"
+    },
+    {
+        "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\xml_file_paths.xml.flat",
+        "source": "D:\\zgsix\\1809Fiannce\\app\\src\\main\\res\\xml\\file_paths.xml"
     },
     {
         "merged": "D:\\zgsix\\1809Fiannce\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_video_small_close.png.flat",

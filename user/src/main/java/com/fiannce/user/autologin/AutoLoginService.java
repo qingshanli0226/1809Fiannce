@@ -1,16 +1,25 @@
 package com.fiannce.user.autologin;
 
+import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.PixelFormat;
+import android.net.Uri;
 import android.os.Binder;
+import android.os.Build;
 import android.os.IBinder;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.FileProvider;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.fiannce.common.SpUtiles;
@@ -27,6 +36,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -35,6 +45,11 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
 public class AutoLoginService extends Service {
+
+    private WindowManager windowManager;
+    private WindowManager.LayoutParams layoutParams;
+    private View rootView;
+
     public AutoLoginService() {
     }
 
@@ -96,7 +111,7 @@ public class AutoLoginService extends Service {
 
     public void setDownLoad(String url) {
         RetrofitCreator.getFiannceApiService()
-                .downloadFile("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk")
+                .downloadFile(url)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<ResponseBody>() {
@@ -142,6 +157,40 @@ public class AutoLoginService extends Service {
         RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.item_downloading);
         if (is) {
             remoteViews.setTextViewText(R.id.download_title, "下载完成");
+            if (isApplicationUsed()) {
+                windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+                //设置小窗口尺寸的类
+                layoutParams = new WindowManager.LayoutParams();
+                //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
+                layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+                //像素格式为透明的
+                layoutParams.format = PixelFormat.TRANSPARENT;
+
+                //设置该flag在显示该小窗口时，其他窗口的按钮或者其他控件都可以点击.
+                layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+
+                //设置小窗口的尺寸
+                //单位是像素
+                layoutParams.width = 700;
+                layoutParams.height = 500;
+
+
+                rootView = LayoutInflater.from(this).inflate(R.layout.window_install, null);
+                windowManager.addView(rootView, layoutParams);
+                Button install = rootView.findViewById(R.id.install);
+                install.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        openAPK("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk");
+                        windowManager.removeView(rootView);
+                    }
+                });
+
+            } else {
+
+            }
         }
         remoteViews.setProgressBar(R.id.download_progress, length, count, false);
         builder.setCustomContentView(remoteViews);
@@ -149,5 +198,72 @@ public class AutoLoginService extends Service {
         manager.notify(1, builder.build());
     }
 
+    private void windon() {
+//        if (isApplicationUsed()) {
+//            windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+//            //设置小窗口尺寸的类
+//            layoutParams = new WindowManager.LayoutParams();
+//            //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
+//            layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+//            //像素格式为透明的
+//            layoutParams.format = PixelFormat.TRANSPARENT;
+//
+//            //设置该flag在显示该小窗口时，其他窗口的按钮或者其他控件都可以点击.
+//            layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+//                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+//
+//            //设置小窗口的尺寸
+//            //单位是像素
+//            layoutParams.width = 700;
+//            layoutParams.height = 500;
+//
+//
+//            rootView = LayoutInflater.from(this).inflate(R.layout.window_install, null);
+//            windowManager.addView(rootView, layoutParams);
+//            rootView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(WelcomeActivity.this, "安装", Toast.LENGTH_SHORT).show();
+//                    openAPK("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk");
+//                    windowManager.removeView(rootView);
+//                }
+//            });
+//
+//        } else {
+//
+//        }
+    }
+
+    private void openAPK(String fileSavePath) {
+
+        File file = new File(Uri.parse(fileSavePath).getPath());
+        String filePath = file.getAbsolutePath();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        Uri data = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            data = FileProvider.getUriForFile(this, "com.example.gitproject", new File(filePath));
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        } else {
+            data = Uri.fromFile(file);
+        }
+
+        intent.setDataAndType(data, "application/vnd.android.package-archive");
+        startActivity(intent);
+    }
+
+    private boolean isApplicationUsed() {
+        ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> runningAppProcessInfoList = activityManager.getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcessInfoList) {
+            if (runningAppProcessInfo.processName.equals(getPackageName())) {
+                if (runningAppProcessInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
 
 }

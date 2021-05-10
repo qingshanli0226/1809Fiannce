@@ -2125,6 +2125,7 @@ int layout view_error 0x7f0d0066
 int layout view_loading 0x7f0d0067
 int layout view_toolbar 0x7f0d0068
 int layout view_toolbar_fake 0x7f0d0069
+int layout window_install 0x7f0d006a
 int mipmap app_icon 0x7f0e0000
 int mipmap ic_launcher 0x7f0e0001
 int mipmap ic_launcher_round 0x7f0e0002
@@ -3946,4 +3947,5 @@ int styleable play_play_bg_line_color 0
 int styleable play_play_bg_line_width 1
 int styleable play_play_line_color 2
 int styleable play_play_line_width 3
-int xml util_code_provider_paths 0x7f130000
+int xml file_paths 0x7f130000
+int xml util_code_provider_paths 0x7f130001

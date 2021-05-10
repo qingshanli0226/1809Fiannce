@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-33:12
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-48:12
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-23:12
 MERGED from [:framework] D:\zgsix\1809Fiannce\framework\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -78,20 +78,20 @@ MERGED from [com.shuyu:gsyVideoPlayer-base:8.1.0] C:\Users\lenovo\.gradle\caches
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\fba01d97d009b8201bc51c25d1e794d5\ijkplayer-java-0.8.8\AndroidManifest.xml:2:1-9:12
 MERGED from [com.shuyu:gsyvideoplayer-androidvideocache:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a01f3484766ce20f364e7953e4bb413d\gsyvideoplayer-androidvideocache-8.1.0\AndroidManifest.xml:2:1-17:12
 MERGED from [net.butterflytv.utils:rtmp-client:3.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f0f3bb22d0347c455b4fc0ce05bc2991\rtmp-client-3.1.0\AndroidManifest.xml:2:1-13:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-48:12
 	package
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-48:12
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:1-48:12
 		INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:2:11-69
@@ -111,8 +111,12 @@ uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:7:5-78
 	android:name
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:7:22-75
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:8:5-82
+	android:name
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:8:22-80
 application
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:9:5-31:19
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:9:5-43:19
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
 MERGED from [:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:19
 MERGED from [:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-21:19
@@ -153,10 +157,12 @@ MERGED from [com.shuyu:gsyVideoPlayer-x86:8.1.0] C:\Users\lenovo\.gradle\caches\
 MERGED from [com.shuyu:gsyVideoPlayer-x86:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\3db20842262d3754d4869cbbc190f791\gsyVideoPlayer-x86-8.1.0\AndroidManifest.xml:11:5-15:19
 MERGED from [com.shuyu:gsyvideoplayer-androidvideocache:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a01f3484766ce20f364e7953e4bb413d\gsyvideoplayer-androidvideocache-8.1.0\AndroidManifest.xml:11:5-15:19
 MERGED from [com.shuyu:gsyvideoplayer-androidvideocache:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a01f3484766ce20f364e7953e4bb413d\gsyvideoplayer-androidvideocache-8.1.0\AndroidManifest.xml:11:5-15:19
+	android:requestLegacyExternalStorage
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:16:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:9-41
 	android:roundIcon
@@ -166,39 +172,57 @@ MERGED from [com.shuyu:gsyvideoplayer-androidvideocache:8.1.0] C:\Users\lenovo\.
 	android:allowBackup
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:16:9-40
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:18:9-40
+	android:usesCleartextTraffic
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:9-44
 	android:name
 		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:10:9-43
 activity#com.fiannce.myapplication.gestureActivity
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:9-62
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:9-62
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:19-50
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:19-50
 activity#com.fiannce.myapplication.ManageActivity
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:18:9-52
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:9-52
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:18:19-49
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:19-49
 activity#com.fiannce.myapplication.welcome.WelcomeActivity
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:9-27:20
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:21:9-29:20
 	android:screenOrientation
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:21:13-49
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:23:13-49
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:13-52
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:22:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:22:13-26:29
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:27:27-74
 activity#com.fiannce.myapplication.MainActivity
-ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:28:9-30:46
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:30:9-32:46
 	android:launchMode
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:30:13-43
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:32:13-43
 	android:name
-		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:29:13-41
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:31:13-41
+provider#androidx.core.content.FileProvider
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:34:9-42:20
+	android:grantUriPermissions
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:38:13-47
+	android:authorities
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:36:13-57
+	android:exported
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:37:13-37
+	android:name
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:35:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:39:13-41:54
+	android:resource
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:41:17-51
+	android:name
+		ADDED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:40:17-67
 uses-sdk
 INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml
@@ -421,12 +445,6 @@ ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transfor
 		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:20:13-37
 	android:name
 		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:18:13-80
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:23:13-25:68
-	android:resource
-		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:25:17-65
-	android:name
-		ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:24:17-67
 service#com.blankj.utilcode.util.MessengerUtils$ServerService
 ADDED from [com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:9-32:19
 	android:name

@@ -19,136 +19,162 @@
 13    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 13-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:7:5-78
 13-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:7:22-75
-14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-14-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:27:5-80
-14-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:27:22-77
-15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:28:5-81
-15-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:28:22-78
-16    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 震动权限 -->
-16-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:29:5-84
-16-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:29:22-81
-17    <uses-permission android:name="android.permission.VIBRATE" />
-17-->[com.wangnan:gesturelockview:1.0.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f07198482c5d5e270b0707260576ff8c\jetified-gesturelockview-1.0.1\AndroidManifest.xml:12:5-66
-17-->[com.wangnan:gesturelockview:1.0.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f07198482c5d5e270b0707260576ff8c\jetified-gesturelockview-1.0.1\AndroidManifest.xml:12:22-63
-18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-18-->[com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:11:5-79
-18-->[com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:11:22-76
-19
-20    <application
-20-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:9:5-31:19
-21        android:name="com.fiannce.myapplication.FiannceApplication"
-21-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:10:9-43
-22        android:allowBackup="true"
-22-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:11:9-35
-23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
-24        android:debuggable="true"
-25        android:icon="@mipmap/app_icon"
-25-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:9-40
-26        android:label="@string/app_name"
-26-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:9-41
-27        android:roundIcon="@mipmap/app_icon"
-27-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:9-45
-28        android:supportsRtl="true"
-28-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:9-35
-29        android:testOnly="true"
-30        android:theme="@style/AppTheme" >
-30-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:16:9-40
-31        <activity android:name="com.fiannce.myapplication.gestureActivity" />
-31-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:9-62
-31-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:19-50
-32        <activity android:name="com.fiannce.myapplication.ManageActivity" />
-32-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:18:9-52
-32-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:18:19-49
-33        <activity
-33-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:9-27:20
-34            android:name="com.fiannce.myapplication.welcome.WelcomeActivity"
-34-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:13-52
-35            android:screenOrientation="portrait" >
-35-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:21:13-49
-36            <intent-filter>
-36-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:22:13-26:29
-37                <action android:name="android.intent.action.MAIN" />
-37-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:23:17-69
-37-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:23:25-66
-38
-39                <category android:name="android.intent.category.LAUNCHER" />
-39-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:17-77
-39-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:27-74
-40            </intent-filter>
-41        </activity>
-42        <activity
-42-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:28:9-30:46
-43            android:name="com.fiannce.myapplication.MainActivity"
-43-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:29:13-41
-44            android:launchMode="singleTop" />
-44-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:30:13-43
-45        <activity android:name="com.fiannce.pay.PayActivity" />
-45-->[:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-64
-45-->[:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-61
-46        <activity android:name="com.fiannce.user.unLoginActivity" />
-46-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-69
-46-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-66
-47
-48        <service
-48-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:9-17:39
-49            android:name="com.fiannce.user.autologin.AutoLoginService"
-49-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-71
-50            android:enabled="true"
-50-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-35
-51            android:exported="true" />
-51-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-36
-52
-53        <activity android:name="com.fiannce.user.register.RegisterActivity" />
-53-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-79
-53-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:19-76
-54        <activity android:name="com.fiannce.user.login.LoginActivity" />
-54-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-73
-54-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-70
-55        <activity
-55-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:10:9-15:75
-56            android:name="com.blankj.utilcode.util.Utils$TransActivity"
-56-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:11:13-72
-57            android:configChanges="orientation|keyboardHidden|screenSize"
-57-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:12:13-74
-58            android:multiprocess="true"
-58-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:13:13-40
-59            android:theme="@style/ActivityTranslucent"
-59-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:14:13-55
-60            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
-60-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:15:13-72
+14    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+14-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:8:5-82
+14-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:8:22-80
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:27:5-80
+15-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:27:22-77
+16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:28:5-81
+16-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:28:22-78
+17    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 震动权限 -->
+17-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:29:5-84
+17-->[com.lzy.net:okgo:3.0.4] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\a326e161e3b1e97f3a8983cd0124f1f6\okgo-3.0.4\AndroidManifest.xml:29:22-81
+18    <uses-permission android:name="android.permission.VIBRATE" />
+18-->[com.wangnan:gesturelockview:1.0.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f07198482c5d5e270b0707260576ff8c\jetified-gesturelockview-1.0.1\AndroidManifest.xml:12:5-66
+18-->[com.wangnan:gesturelockview:1.0.1] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f07198482c5d5e270b0707260576ff8c\jetified-gesturelockview-1.0.1\AndroidManifest.xml:12:22-63
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->[com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:11:5-79
+19-->[com.shuyu:gsyVideoPlayer-java:8.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\149843f22d46580deb62dc097c7abe72\gsyVideoPlayer-java-8.1.0\AndroidManifest.xml:11:22-76
+20
+21    <application
+21-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:9:5-43:19
+22        android:name="com.fiannce.myapplication.FiannceApplication"
+22-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:10:9-43
+23        android:allowBackup="true"
+23-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:11:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.1.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
+25        android:debuggable="true"
+26        android:icon="@mipmap/app_icon"
+26-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:12:9-40
+27        android:label="@string/app_name"
+27-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:13:9-41
+28        android:requestLegacyExternalStorage="true"
+28-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:16:9-52
+29        android:roundIcon="@mipmap/app_icon"
+29-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:14:9-45
+30        android:supportsRtl="true"
+30-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:17:9-35
+31        android:testOnly="true"
+32        android:theme="@style/AppTheme"
+32-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:18:9-40
+33        android:usesCleartextTraffic="true" >
+33-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:15:9-44
+34        <activity android:name="com.fiannce.myapplication.gestureActivity" />
+34-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:9-62
+34-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:19:19-50
+35        <activity android:name="com.fiannce.myapplication.ManageActivity" />
+35-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:9-52
+35-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:20:19-49
+36        <activity
+36-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:21:9-29:20
+37            android:name="com.fiannce.myapplication.welcome.WelcomeActivity"
+37-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:22:13-52
+38            android:screenOrientation="portrait" >
+38-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:23:13-49
+39            <intent-filter>
+39-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:24:13-28:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:17-69
+40-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:25:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:27:17-77
+42-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:27:27-74
+43            </intent-filter>
+44        </activity>
+45        <activity
+45-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:30:9-32:46
+46            android:name="com.fiannce.myapplication.MainActivity"
+46-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:31:13-41
+47            android:launchMode="singleTop" />
+47-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:32:13-43
+48
+49        <provider
+49-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:34:9-42:20
+50            android:name="androidx.core.content.FileProvider"
+50-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:35:13-62
+51            android:authorities="com.example.gitproject"
+51-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:36:13-57
+52            android:exported="false"
+52-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:37:13-37
+53            android:grantUriPermissions="true" >
+53-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:38:13-47
+54            <meta-data
+54-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:39:13-41:54
+55                android:name="android.support.FILE_PROVIDER_PATHS"
+55-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:40:17-67
+56                android:resource="@xml/file_paths" />
+56-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:41:17-51
+57        </provider>
+58
+59        <activity android:name="com.fiannce.pay.PayActivity" />
+59-->[:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-64
+59-->[:pay] D:\zgsix\1809Fiannce\pay\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-61
+60        <activity android:name="com.fiannce.user.unLoginActivity" />
+60-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-69
+60-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-66
 61
-62        <provider
-62-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:17:9-26:20
-63            android:name="com.blankj.utilcode.util.Utils$FileProvider4UtilCode"
-63-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:18:13-80
-64            android:authorities="com.Fiannce.myapplication.utilcode.provider"
-64-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:19:13-69
-65            android:exported="false"
-65-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:20:13-37
-66            android:grantUriPermissions="true"
-66-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:21:13-47
-67            android:multiprocess="true" >
-67-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:22:13-40
-68            <meta-data
-68-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:23:13-25:68
-69                android:name="android.support.FILE_PROVIDER_PATHS"
-69-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:24:17-67
-70                android:resource="@xml/util_code_provider_paths" />
-70-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:25:17-65
-71        </provider>
-72
-73        <service android:name="com.blankj.utilcode.util.MessengerUtils$ServerService" >
-73-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:9-32:19
-73-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:18-86
-74            <intent-filter>
-74-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:29:13-31:29
-75                <action android:name="com.Fiannce.myapplication.messenger" />
-75-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:17-69
-75-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:25-66
-76            </intent-filter>
-77        </service>
-78    </application>
-79
-80</manifest>
+62        <service
+62-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:9-17:39
+63            android:name="com.fiannce.user.autologin.AutoLoginService"
+63-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-71
+64            android:enabled="true"
+64-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-35
+65            android:exported="true" />
+65-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-36
+66
+67        <activity android:name="com.fiannce.user.register.RegisterActivity" />
+67-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-79
+67-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:19-76
+68        <activity android:name="com.fiannce.user.login.LoginActivity" />
+68-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-73
+68-->[:user] D:\zgsix\1809Fiannce\user\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-70
+69        <activity
+69-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:10:9-15:75
+70            android:name="com.blankj.utilcode.util.Utils$TransActivity"
+70-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:11:13-72
+71            android:configChanges="orientation|keyboardHidden|screenSize"
+71-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:12:13-74
+72            android:multiprocess="true"
+72-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:13:13-40
+73            android:theme="@style/ActivityTranslucent"
+73-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:14:13-55
+74            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+74-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:15:13-72
+75
+76        <provider
+76-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:17:9-26:20
+77            android:name="com.blankj.utilcode.util.Utils$FileProvider4UtilCode"
+77-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:18:13-80
+78            android:authorities="com.Fiannce.myapplication.utilcode.provider"
+78-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:19:13-69
+79            android:exported="false"
+79-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:20:13-37
+80            android:grantUriPermissions="true"
+80-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:21:13-47
+81            android:multiprocess="true" >
+81-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:22:13-40
+82            <meta-data
+82-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:39:13-41:54
+83                android:name="android.support.FILE_PROVIDER_PATHS"
+83-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:40:17-67
+84                android:resource="@xml/util_code_provider_paths" />
+84-->D:\zgsix\1809Fiannce\app\src\main\AndroidManifest.xml:41:17-51
+85        </provider>
+86
+87        <service android:name="com.blankj.utilcode.util.MessengerUtils$ServerService" >
+87-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:9-32:19
+87-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:28:18-86
+88            <intent-filter>
+88-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:29:13-31:29
+89                <action android:name="com.Fiannce.myapplication.messenger" />
+89-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:17-69
+89-->[com.blankj:utilcodex:1.26.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\7ed64262b4721338aaef2b729592af8b\jetified-utilcodex-1.26.0\AndroidManifest.xml:30:25-66
+90            </intent-filter>
+91        </service>
+92    </application>
+93
+94</manifest>

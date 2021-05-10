@@ -2126,6 +2126,7 @@ layout view_error
 layout view_loading
 layout view_toolbar
 layout view_toolbar_fake
+layout window_install
 mipmap app_icon
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -2918,4 +2919,5 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable download download_bg_line_color download_bg_line_width download_line_color download_line_width download_text_color download_text_size
 styleable play play_bg_line_color play_bg_line_width play_line_color play_line_width
+xml file_paths
 xml util_code_provider_paths
