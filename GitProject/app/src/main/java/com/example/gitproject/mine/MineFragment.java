@@ -1,10 +1,18 @@
 package com.example.gitproject.mine;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
+
+import com.bumptech.glide.Glide;
 import com.example.common.CommonConstant;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheUserManager;
@@ -13,6 +21,8 @@ import com.example.framework.view.ToolBar;
 import com.example.gitproject.R;
 import com.example.net.bean.LoginBean;
 
+import java.io.File;
+
 
 public class MineFragment extends BaseFragment implements CacheUserManager.ILoginChange {
 
@@ -20,6 +30,7 @@ public class MineFragment extends BaseFragment implements CacheUserManager.ILogi
 
     private ImageView mineHead;
     private TextView mineName;
+    private String path;
 
     @Override
     protected int getLayoutId() {
@@ -51,6 +62,30 @@ public class MineFragment extends BaseFragment implements CacheUserManager.ILogi
             mineName.setText("未登录");
         }
 
+        mineHead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 path = "/sdcard/DCIM/Camera/"+time();
+                Intent intent = new Intent();
+                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                Uri uriForFile = FileProvider.getUriForFile(getActivity(), "com.example.gitproject", new File(path));
+                intent.putExtra(MediaStore.EXTRA_OUTPUT,uriForFile);
+                startActivityForResult(intent,103);
+            }
+        });
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 103){
+            Glide.with(getActivity()).load(path).into(mineHead);
+        }
+    }
+
+    private String time() {
+        return "IMG_"+System.currentTimeMillis()+".jpg";
     }
 
     @Override

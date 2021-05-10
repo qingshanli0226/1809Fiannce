@@ -42,7 +42,15 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask" />
-
+        <provider
+            android:grantUriPermissions="true"
+            android:authorities="com.example.gitproject"
+            android:name="androidx.core.content.FileProvider">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+            </meta-data>
+        </provider>
     </application>
 
 </manifest>
