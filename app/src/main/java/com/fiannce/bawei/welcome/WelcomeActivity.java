@@ -47,7 +47,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private int code;
     private Intent intent;
     private PackageManager packageManager;
-
+    private AutoService autoService;
 
     @Override
     protected void initPresenter() {
@@ -187,8 +187,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                                     @Override
                                     public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
                                         AutoService.AutoBinder fiannceBinder = (AutoService.AutoBinder) iBinder;
-                                        AutoService fiannceService = fiannceBinder.getAutoService();
-                                        fiannceService.setDownLoad(versionBean.getResult().getApkUrl());
+                                        autoService = fiannceBinder.getAutoService();
+                                        autoService.downloadApk("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk");
+
 
                                         Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                                         startActivity(intent);
