@@ -123,6 +123,7 @@ public class ToolBar extends RelativeLayout {
 
     public void setCenterTitle(String centerTitle) {
         CenterTitle = centerTitle;
+        toolbarCenterTitle.setText(CenterTitle);
     }
 
     public void setLeftImgId(int leftImgId) {

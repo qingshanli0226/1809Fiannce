@@ -37,7 +37,9 @@ android {
 
 dependencies {
 
-    compile 'com.wangnan:gesturelockview:1.0.1'//解锁
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.5'//内存泄漏
+
+    compile 'com.wangnan:gesturelockview:1.0.1'//手势密码解锁
 
 
 
@@ -60,7 +62,7 @@ dependencies {
     //万能适配器
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0'
 
-    implementation 'me.yatoooon:screenadaptation:1.1.1'//屏幕适配
+    implementation 'me.jessyan:autosize:1.1.2'//屏幕适配
 
     implementation 'org.greenrobot:eventbus:3.1.1'// EventBus依赖  带值  Subscribe
     implementation project(path: ':net')

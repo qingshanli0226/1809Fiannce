@@ -33,10 +33,4 @@
     <dimen name="dp_380">380dp</dimen>
 
     <dimen name="text_dp_16">16dp</dimen>
-
-    <item name="BaseQuickAdapter_databinding_support" type="id"/>
-    <item name="BaseQuickAdapter_dragging_support" type="id"/>
-    <item name="BaseQuickAdapter_swiping_support" type="id"/>
-    <item name="BaseQuickAdapter_viewholder_support" type="id"/>
-
 </resources>

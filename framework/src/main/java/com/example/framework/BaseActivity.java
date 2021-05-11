@@ -1,12 +1,17 @@
 package com.example.framework;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.commom.FianceConstants;
+import com.example.framework.manager.CacheManager;
 import com.example.framework.manager.FianceManager;
+import com.example.framework.manager.FiannceArouter;
+import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
@@ -83,5 +88,23 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     @Override
     public void onDisconnected() {
         Toast.makeText(this, "没网", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        long l = System.currentTimeMillis();
+        if (CacheManager.getInstance().verify+5000<l&& FiannceUserManager.getInstance().getLoginBean()!=null) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("judge", 2);
+            FiannceArouter.getInstance().build(FianceConstants.UNLOCK_PATH).navigation(bundle);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        CacheManager.getInstance().verify = System.currentTimeMillis();
     }
 }

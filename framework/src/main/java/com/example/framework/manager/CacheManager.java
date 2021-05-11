@@ -4,6 +4,7 @@ import com.example.net.model.HoemBean;
 import com.example.net.model.VersionBean;
 
 public class CacheManager {
+    public Long verify=0l;
 
     public boolean gesture = false;
 

@@ -51,7 +51,7 @@ public interface FiannceApiService {
 
     @GET
     @Streaming
-        //防止占用内存过多，避免OOM问题也就是内存溢出
+//防止占用内存过多，避免OOM问题也就是内存溢出
     Observable<ResponseBody> downloadFile(@Url String url);
 
     @POST("setGesturePassword")
@@ -60,7 +60,7 @@ public interface FiannceApiService {
     @POST("loginByGesturePassword")
     Observable<UnlockBean> verifyUnlockData(@Body RequestBody gPasswordBody);
 
-    @POST("clearByGesturePassword")
+    @POST("clearGesturePassword")
     Observable<UnlockBean> clearUnlockData(@Body RequestBody gPasswordBody);
 
 

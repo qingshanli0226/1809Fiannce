@@ -77,7 +77,7 @@ public class FianceManager {
 
 
     public synchronized void unregisterConnectListener(IConnectListener iConnectListener) {
-        if (!connectListeners.contains(iConnectListener)) {
+        if (connectListeners.contains(iConnectListener)) {
             connectListeners.remove(iConnectListener);
         }
     }

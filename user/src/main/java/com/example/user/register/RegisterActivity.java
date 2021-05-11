@@ -110,6 +110,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresneter> implements
         super.destroy();
         if (loginPresneter!=null){
             loginPresneter.detachView();
+            loginPresneter=null;
         }
     }
 

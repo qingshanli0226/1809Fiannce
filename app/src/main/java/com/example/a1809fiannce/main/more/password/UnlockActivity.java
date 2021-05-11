@@ -1,6 +1,7 @@
 package com.example.a1809fiannce.main.more.password;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
 import com.example.framework.view.ToolBar;
 import com.example.net.model.UnlockBean;
+import com.wangnan.library.GestureLockThumbnailView;
 import com.wangnan.library.GestureLockView;
 import com.wangnan.library.listener.OnGestureLockListener;
 
@@ -21,6 +23,9 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter> implements IUn
     private GestureLockView mGestureLockView;
     private int judge = 0;
     private ToolBar toolbar;
+    private GestureLockThumbnailView actInlockGtv;
+
+
 
     @Override
     protected int getLayoutId() {
@@ -43,9 +48,10 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter> implements IUn
                 toolbar.setCenterTitle(getResources().getString(R.string.setGesturePassword));
                 break;
             case 2:
-                toolbar.setCenterTitle(getResources().getString(R.string.resetTheGesturePassword));
+                toolbar.setCenterTitle("验证手势密码");
                 break;
             case 3:
+                toolbar.setCenterTitle(getResources().getString(R.string.resetTheGesturePassword));
                 break;
         }
 
@@ -58,11 +64,12 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter> implements IUn
 
             @Override
             public void onProgress(String progress) {
-
+                actInlockGtv.setThumbnailView(progress, Color.parseColor("#ff9900"));
             }
 
             @Override
             public void onComplete(String result) {
+                actInlockGtv.setThumbnailView(result, Color.parseColor("#ff9900"));
                 switch (judge) {
                     case 1:
                         httpPresenter.getUnlockData(result);
@@ -71,7 +78,6 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter> implements IUn
                         httpPresenter.verifyUnlockData(result);
                         break;
                     case 3:
-                        Log.i("wppp", "initData: +33333");
                         httpPresenter.clearUnlockData(result);
                         break;
                 }
@@ -90,6 +96,7 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter> implements IUn
     protected void initView() {
         mGestureLockView = (GestureLockView) findViewById(R.id.act_inlock_glv);
         toolbar = (ToolBar) findViewById(R.id.toolbar);
+        actInlockGtv = (GestureLockThumbnailView) findViewById(R.id.act_inlock_gtv);
     }
 
     @Override
@@ -107,7 +114,13 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter> implements IUn
 
     @Override
     public void verifyUnlockData(UnlockBean unlockBean) {
-
+        if (unlockBean.getCode().equals("200")) {
+            Toast.makeText(this, unlockBean.getMessage(), Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            Toast.makeText(this, "设置手势密码失败请重试", Toast.LENGTH_SHORT).show();
+            mGestureLockView.showErrorStatus(600);
+        }
     }
 
     @Override
@@ -136,5 +149,10 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter> implements IUn
     public void Error(String error) {
         Toast.makeText(this, "" + error, Toast.LENGTH_SHORT).show();
         LogUtils.e(error);
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
     }
 }
