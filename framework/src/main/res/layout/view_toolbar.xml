@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_mid_size"
-        android:textColor="#3883D1"
+        android:textColor="@color/blue"
         android:id="@+id/titleTv"
         android:layout_centerInParent="true"
         android:gravity="center"></TextView>

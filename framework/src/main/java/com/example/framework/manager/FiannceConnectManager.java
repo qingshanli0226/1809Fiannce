@@ -82,7 +82,7 @@ public class FiannceConnectManager {
 
     public synchronized void unRegisterConnectListener(IConnectListener iConnectListener){
         if (connectListenerList.contains(iConnectListener)){
-            connectListenerList.add(iConnectListener);
+            connectListenerList.remove(iConnectListener);
         }
     }
 

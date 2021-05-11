@@ -47,5 +47,7 @@
     <string name="inRegardTo">关于有道理财</string>
     <string name="phone">010-56253825</string>
     <string name="network">当前无网络</string>
+    <string name="setGesturePassword">设置手势密码</string>
+    <string name="nowGesturePassword">是否现在设置手势密码</string>
 
 </resources>

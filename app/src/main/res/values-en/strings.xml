@@ -47,5 +47,7 @@
     <string name="inRegardTo">in regard to</string>
     <string name="phone">010-56253825</string>
     <string name="network">No network currently</string>
+    <string name="setGesturePassword">set gesture password</string>
+    <string name="nowGesturePassword">Whether to set the gesture password now</string>
 
 </resources>

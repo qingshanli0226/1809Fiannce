@@ -6,15 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.commom.SpUtil;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.FiannceArouter;
 import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.ToolBar;
+import com.example.net.mode.RegisterBean;
 import com.example.user.R;
 
-public class UserInfoActivity extends BaseActivity {
+public class UserInfoActivity extends BaseActivity<UserInfoPresenter> implements IUserInfo {
 
     private com.example.framework.view.ToolBar toolbar;
     private android.widget.ImageView userImg;
@@ -38,23 +40,34 @@ public class UserInfoActivity extends BaseActivity {
         out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FiannceUserManager.getInstance().setLoginBean(null);
-
-                SpUtil.setString(UserInfoActivity.this,"");
-
-                FiannceArouter.getInstance().getIAppInterface().openMainActivity(UserInfoActivity.this,null);
+                if (httpPresenter!=null){
+                    httpPresenter.getUserInfo();
+                }
             }
         });
     }
 
     @Override
     protected void initPresenter() {
-
+        httpPresenter=new UserInfoPresenter(this);
     }
 
     @Override
     public void onLeftClick() {
         super.onLeftClick();
         finish();
+    }
+
+    @Override
+    public void onUserInfo(RegisterBean registerBean) {
+        if (registerBean.getCode().equals("200")){
+            FiannceUserManager.getInstance().setLoginBean(null);
+
+            SpUtil.setString(UserInfoActivity.this,"");
+
+            Toast.makeText(this, getResources().getString(R.string.logOut), Toast.LENGTH_SHORT).show();
+
+            FiannceArouter.getInstance().getIAppInterface().openMainActivity(UserInfoActivity.this,null);
+        }
     }
 }

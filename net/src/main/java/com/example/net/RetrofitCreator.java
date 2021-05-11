@@ -21,13 +21,15 @@ public class RetrofitCreator {
 
     private static FiannceApiService createkSApiService() {
         OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(new TokenInterceptor())
+                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
                 .callTimeout(15, TimeUnit.SECONDS)
-                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build();
 
         Retrofit build = new Retrofit.Builder()
+                .client(client)
                 .baseUrl("http://49.233.0.68:8080/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())

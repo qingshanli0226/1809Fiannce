@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:id="@+id/toolbar"
         app:titleText="@string/customTab_name2"
+        app:titleColor="@color/blue"
         android:background="@color/darkblue"
         android:layout_height="@dimen/dp_50"></com.example.framework.view.ToolBar>
 

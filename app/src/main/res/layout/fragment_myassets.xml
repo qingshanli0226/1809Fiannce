@@ -15,6 +15,7 @@
         android:background="@color/darkblue"
         app:rightImage="@drawable/my_setting_icon"
         app:rightIsShow="true"
+        app:titleColor="@color/blue"
         app:titleText="@string/customTab_name3"></com.example.framework.view.ToolBar>
 
     <RelativeLayout

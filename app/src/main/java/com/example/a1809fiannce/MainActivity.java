@@ -24,6 +24,7 @@ import com.example.net.mode.LoginBean;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.umeng.socialize.UMShareAPI;
 
 import java.util.ArrayList;
 
@@ -195,6 +196,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == 10) {
             if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
                 if (!Settings.canDrawOverlays(this)) {

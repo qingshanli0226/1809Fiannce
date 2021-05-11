@@ -2,6 +2,7 @@ package com.example.framework.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import java.util.TimerTask;
 
 public class ToolBar extends RelativeLayout {
     private TextView titleTV;
+    private int titleColor;
     private LinearLayout rightArea;
     private ImageView leftImg;
     private ImageView rightImg;
@@ -50,6 +52,7 @@ public class ToolBar extends RelativeLayout {
         rightImgId = typedArray.getResourceId(R.styleable.ToolBar_rightImage, 0);
         rightAreaIsShow = typedArray.getBoolean(R.styleable.ToolBar_rightIsShow, false);
         leftIsShow = typedArray.getBoolean(R.styleable.ToolBar_leftIsShow, false);
+        titleColor=typedArray.getColor(R.styleable.ToolBar_titleColor,Color.WHITE);
 
         typedArray.recycle();
 
@@ -63,6 +66,7 @@ public class ToolBar extends RelativeLayout {
         rightTv = findViewById(R.id.rightTv);
 
         titleTV.setText(titleText);
+        titleTV.setTextColor(titleColor);
         if (rightAreaIsShow && rightImgId != 0) {
             rightImg.setImageResource(rightImgId);
         }
@@ -131,6 +135,10 @@ public class ToolBar extends RelativeLayout {
 
     public void setLeftImgId(int leftImgId) {
         this.leftImgId = leftImgId;
+    }
+
+    public void setTitleColor(int titleColor) {
+        this.titleColor = titleColor;
     }
 
     public static interface IToolbarListener {

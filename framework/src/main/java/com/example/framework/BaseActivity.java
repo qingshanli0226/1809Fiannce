@@ -8,10 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.framework.manager.FiannceConnectManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
-import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener, FiannceConnectManager.IConnectListener {
 
@@ -23,7 +21,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        ScreenAdapterTools.getInstance().loadView(getWindow().getDecorView());
 
         FiannceConnectManager.getInstance().registerConnectListener(this);
 
@@ -58,6 +55,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     }
 
     public void destroy(){
+        if (loadingPage!=null){
+            loadingPage=null;
+        }
         if (httpPresenter!=null){
             httpPresenter.detachView();
         }

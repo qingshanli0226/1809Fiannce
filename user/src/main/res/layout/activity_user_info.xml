@@ -12,6 +12,7 @@
         android:layout_height="@dimen/dp_50"
         android:background="@color/darkblue"
         app:titleText="@string/userInfo"
+        app:titleColor="@color/blue"
         app:leftIsShow="true"
         app:leftImage="@drawable/left"
         android:id="@+id/toolbar"></com.example.framework.view.ToolBar>

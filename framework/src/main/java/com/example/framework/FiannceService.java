@@ -1,22 +1,28 @@
 package com.example.framework;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.net.Uri;
 import android.os.Binder;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.core.content.FileProvider;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.example.commom.FiannceConstants;
@@ -44,6 +50,7 @@ public class FiannceService extends Service {
 
     private Notification.Builder builder;
     private Handler handler = new Handler();
+    private NotificationChannel channel = null;
 
     @Nullable
     @Override
@@ -61,7 +68,6 @@ public class FiannceService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         String string = SpUtil.getString(FiannceService.this, FiannceConstants.TOKEN_KEY);
 
-        LogUtils.e(string);
         if (!string.equals("")) {
             RetrofitCreator.getFiannceApiService()
                     .getAuto(string)
@@ -97,8 +103,17 @@ public class FiannceService extends Service {
         return super.onStartCommand(intent, flags, startId);
     }
 
-    public void DownLoad(String url) {
+    public void downLoad(String url) {
         //http://49.233.93.155:9999/atguigu/apk/P2PInvest/app-debug.apk
+
+        File file = new File(FiannceConstants.DOWNLOAD_PATH);
+
+
+        if (file.exists()){
+            window();
+            return;
+        }
+
         LogUtils.d("123");
         RetrofitCreator.getFiannceApiService()
                 .downloadFile("http://49.233.0.68:8080/atguigu/apk/P2PInvest/app-debug.apk")
@@ -110,15 +125,17 @@ public class FiannceService extends Service {
 
                     }
 
+                    @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onNext(@NonNull ResponseBody responseBody) {
+                        LogUtils.d(123);
                         InputStream inputStream = responseBody.byteStream();
-
+                        LogUtils.d(123);
                         try {
-                            File file = new File(FiannceConstants.DOWNLOAD_PATH);
-
+                            LogUtils.d(123);
+                            LogUtils.d(file.getPath());
                             FileOutputStream fileOutputStream = new FileOutputStream(file);
-
+                            LogUtils.d(123);
                             long length = responseBody.contentLength();
 
                             byte[] bytes = new byte[1024];
@@ -129,6 +146,8 @@ public class FiannceService extends Service {
                             while ((len = inputStream.read(bytes)) != -1) {
                                 count += len;
 
+                                LogUtils.d(count);
+
                                 fileOutputStream.write(bytes, 0, len);
 
                                 setNotification((int) length, count, false);
@@ -138,7 +157,7 @@ public class FiannceService extends Service {
                             handler.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Window();
+                                    window();
                                 }
                             });
 
@@ -147,8 +166,10 @@ public class FiannceService extends Service {
 
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
+                            LogUtils.e("file:"+e.getMessage());
                         } catch (IOException e) {
                             e.printStackTrace();
+                            LogUtils.e("io:"+e.getMessage());
                         }
                     }
 
@@ -164,40 +185,45 @@ public class FiannceService extends Service {
                 });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void setNotification(int length, int count, boolean is) {
         LogUtils.d(is);
 
-        if (builder==null){
-            builder = new Notification.Builder(FiannceService.this);
-        }
+//        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
-        builder.setContentTitle(getResources().getString(R.string.downloading));
-        builder.setSmallIcon(R.drawable.icon_more_on);
+            if (builder==null){
+                channel = new NotificationChannel("channel_1","com.example.a1809fiannce",NotificationManager.IMPORTANCE_HIGH);
+                builder = new Notification.Builder(FiannceService.this,"channel_1");
+            }
 
-        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.item_download);
+            builder.setContentTitle(getResources().getString(R.string.downloading));
+            builder.setSmallIcon(R.drawable.icon_more_on);
 
-        if (is) {
-            LogUtils.d("123----"+is);
-            remoteViews.setTextViewText(R.id.download_title, getResources().getString(R.string.downloadCompletes));
-        }
+            RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.item_download);
 
-        remoteViews.setProgressBar(R.id.download_progress, length, count, false);
+            if (is) {
+                LogUtils.d("123----"+is);
+                remoteViews.setTextViewText(R.id.download_title, getResources().getString(R.string.downloadCompletes));
+            }
 
-        builder.setCustomContentView(remoteViews);
+            remoteViews.setProgressBar(R.id.download_progress, length, count, false);
 
-        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-//        if (is){
-//            manager.notify(2, builder.build());
-//        }else {
+            builder.setCustomContentView(remoteViews);
+
+            NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+            manager.createNotificationChannel(channel);
             manager.notify(1, builder.build());
 //        }
     }
 
-    public void Window(){
+    public void window(){
         WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         //设置小窗口尺寸的类
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
         //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
+        //TYPE_APPLICATION_OVERLAY手机上显示
+        //TYPE_SYSTEM_ALERT模拟器显示
         layoutParams.type= WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
         //像素格式为透明的
         layoutParams.format = PixelFormat.TRANSPARENT;
@@ -213,18 +239,47 @@ public class FiannceService extends Service {
 
         //生成一个窗口的布局view，并且将该view添加到窗口里.
         View rootView = LayoutInflater.from(this).inflate(R.layout.window_ijk, null);
+
+        Button dis = rootView.findViewById(R.id.dis);
+        Button yes = rootView.findViewById(R.id.YES);
+
+        dis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                windowManager.removeView(rootView);
+            }
+        });
+
+        yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                windowManager.removeView(rootView);
+
+                install();
+            }
+        });
+
         windowManager.addView(rootView, layoutParams);
-
-
-//        ijkVideoView = rootView.findViewById(R.id.ijkVideoView);
-//        rootView.findViewById(R.id.close).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.d("LQS", "position:" + ijkVideoView.getCurrentPosition());
-//                ijkVideoView.stopPlayback();
-//                windowManager.removeView(rootView);
-//            }
-//        });
     }
 
+    public void install(){
+        File file = new File(Uri.parse(FiannceConstants.DOWNLOAD_PATH).getPath());
+        String filePath = file.getAbsolutePath();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Uri data = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {//判断版本大于等于7.0
+            // 生成文件的uri，，
+            // 注意 下面参数com.ausee.fileprovider 为apk的包名加上.fileprovider，
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            data = FileProvider.getUriForFile(this, "com.example.a1809fiannce", new File(filePath));
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);// 给目标应用一个临时授权
+        } else {
+            data = Uri.fromFile(file);
+        }
+
+        intent.setDataAndType(data, "applicationnd.android.package-archive");
+        startActivity(intent);
+    }
 }

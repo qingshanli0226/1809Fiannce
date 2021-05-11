@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.example.framework.manager.FiannceConnectManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
-import com.yatoooon.screenadaptation.ScreenAdapterTools;
+
 
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements IFragment, ToolBar.IToolbarListener, FiannceConnectManager.IConnectListener {
     protected T httpPresenter;
@@ -29,7 +29,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
                 return getLayoutId();
             }
         };
-        ScreenAdapterTools.getInstance().loadView(mView);
         return mView;
     }
 
@@ -62,6 +61,9 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     }
 
     public void destroy(){
+        if (loadingPage!=null){
+            loadingPage=null;
+        }
         if (httpPresenter!=null){
             httpPresenter.detachView();
         }

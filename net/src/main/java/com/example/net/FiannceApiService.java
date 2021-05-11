@@ -10,6 +10,7 @@ import com.example.net.mode.VersionBean;
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import okhttp3.internal.Version;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -43,4 +44,16 @@ public interface FiannceApiService {
     @GET
     @Streaming//防止占用内存过多，避免OOM问题也就是内存溢出
     Observable<ResponseBody> downloadFile(@Url String url);
+
+    @POST("logout")
+    Observable<RegisterBean> getLogout();
+
+    @POST("setGesturePassword")
+    Observable<RegisterBean> getGesturePassword(@Body ResponseBody responseBody);
+
+    @POST("loginByGesturePassword")
+    Observable<RegisterBean> loginGesturePassword(@Body ResponseBody responseBody);
+
+    @POST("clearByGesturePassword")
+    Observable<RegisterBean> clearGesturePassword(@Body ResponseBody responseBody);
 }

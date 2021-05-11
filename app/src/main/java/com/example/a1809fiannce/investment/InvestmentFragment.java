@@ -20,7 +20,7 @@ import com.example.a1809fiannce.investment.hotmoney.HotmoneyFragment;
 import com.example.framework.BaseFragment;
 import com.example.framework.view.ToolBar;
 import com.google.android.material.tabs.TabLayout;
-import com.yatoooon.screenadaptation.ScreenAdapterTools;
+
 
 import java.util.ArrayList;
 import java.util.List;

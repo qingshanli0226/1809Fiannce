@@ -1,5 +1,6 @@
 package com.example.a1809fiannce.welcome;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
@@ -7,11 +8,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -22,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.example.a1809fiannce.MainActivity;
@@ -32,13 +36,13 @@ import com.example.framework.FiannceService;
 import com.example.framework.manager.CacheManager;
 import com.example.net.mode.HomeBean;
 import com.example.net.mode.VersionBean;
-import com.yatoooon.screenadaptation.ScreenAdapterTools;
+
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
-//    private TextView text;
+    //    private TextView text;
     private Intent intent;
     private ProgressBar pro;
     private RelativeLayout re;
@@ -48,19 +52,19 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     private TextView versiontext;
     private AlphaAnimation alphaAnimation;
 
-    private boolean TIME=false;
-    private boolean HOME=false;
-    private boolean VERSION=false;
+    private boolean TIME = false;
+    private boolean HOME = false;
+    private boolean VERSION = false;
 
     private VersionBean version;
     private ServiceConnection serviceConnection;
 
-    private Handler handler=new Handler(){
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
-            if (msg.what==1){
-                if (TIME&&HOME&&VERSION){
+            if (msg.what == 1) {
+                if (TIME && HOME && VERSION) {
                     if (D_code < version.getResult().getVersionCode()) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
 
@@ -87,7 +91,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
                                         FiannceService fiannceService = fiannceBinder.getFiannceService();
 
-                                        fiannceService.DownLoad(version.getResult().getApkUrl());
+                                        fiannceService.downLoad(version.getResult().getApkUrl());
 
                                         Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                                         startActivity(intent);
@@ -100,7 +104,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                                     }
                                 };
 
-                                bindService(intent, serviceConnection,BIND_AUTO_CREATE);
+                                bindService(intent, serviceConnection, BIND_AUTO_CREATE);
 
 //                                ProgressDialog progressDialog = new ProgressDialog(WelcomeActivity.this);
 //
@@ -113,7 +117,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         });
 
                         builder.show();
-                    }else {
+                    } else {
                         Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
@@ -125,7 +129,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onHomeData(HomeBean homeBean) {
-        HOME=true;
+        HOME = true;
 
         CacheManager.getInstance().setHomeBean(homeBean);
 
@@ -136,9 +140,9 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     public void onVersionData(VersionBean versionBean) {
-        version=versionBean;
+        version = versionBean;
 
-        VERSION=true;
+        VERSION = true;
 
         handler.sendEmptyMessage(1);
 
@@ -161,11 +165,14 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initData() {
+        checkIsAndroid();
+
+        requestPermission();
 
         requestPermissions(new String[]{"android.permission.CALL_PHONE"
-        ,"android.permission.WRITE_EXTERNAL_STORAGE"
-        ,"android.permission.READ_EXTERNAL_STORAGE"
-        ,"android.permission.SYSTEM_ALERT_WINDOW"},100);
+                , "android.permission.WRITE_EXTERNAL_STORAGE"
+                , "android.permission.READ_EXTERNAL_STORAGE"
+                , "android.permission.SYSTEM_ALERT_WINDOW"}, 100);
 
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();
@@ -177,7 +184,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
         D_code = getCode();
 
-        versiontext.setText(getResources().getString(R.string.version)+D_code+".0");
+        versiontext.setText(getResources().getString(R.string.version) + D_code + ".0");
 
         alphaAnimation = new AlphaAnimation(0f, 1f);
 
@@ -191,7 +198,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
 
     @Override
     protected void initPresenter() {
-        httpPresenter=new WelcomePresenter(this);
+        httpPresenter = new WelcomePresenter(this);
     }
 
     @Override
@@ -209,7 +216,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
     @Override
     public void Error(String error) {
         LogUtils.d(error);
-        Toast.makeText(this, getResources().getString(R.string.RequestError)+error, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.RequestError) + error, Toast.LENGTH_SHORT).show();
 
 //        loadingPage.showError(error);
     }
@@ -230,10 +237,10 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                         count--;
 
                         if (count < 0) {
-                            TIME=true;
+                            TIME = true;
 
                             handler.sendEmptyMessage(1);
-                            
+
                             timer.cancel();
                         }
                     }
@@ -270,8 +277,27 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         alphaAnimation.cancel();
         handler.removeCallbacksAndMessages(null);
 
-        if (serviceConnection!=null){
+        if (serviceConnection != null) {
             unbindService(serviceConnection);
+        }
+    }
+
+    private void checkIsAndroid() {
+        if (Build.VERSION.SDK_INT >= 26) {
+            //请求安装未知应用来源的权限
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.REQUEST_INSTALL_PACKAGES}, 101);
+        }
+    }
+
+    private void requestPermission() {
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(WelcomeActivity.this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, 10);
+            } else {
+                Toast.makeText(WelcomeActivity.this, "granted show-- 悬浮窗", Toast.LENGTH_SHORT);
+            }
         }
     }
 
