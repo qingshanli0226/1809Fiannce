@@ -107,10 +107,10 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
                                 GestureStatus.getInstance().setPwdStatus(CommonConstant.STATUS_LOGIN);
                                 FrameArouter.getInstance().build(CommonConstant.APP_PWD_PATH).navigation();
                             } else{
-//                                fragmentTransaction.hide(homeFragment);
-//                                fragmentTransaction.hide(investFragment);
-//                                fragmentTransaction.show(mineFragment);
-//                                fragmentTransaction.hide(moreFragment);
+                                fragmentTransaction.hide(homeFragment);
+                                fragmentTransaction.hide(investFragment);
+                                fragmentTransaction.show(mineFragment);
+                                fragmentTransaction.hide(moreFragment);
                             }
                         } else {
                             //FrameArouter
@@ -201,4 +201,34 @@ public class MainActivity extends BaseActivity implements CacheUserManager.ILogi
         Log.i("TAG", "onLoginChange: "+loginBean);
 
     }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String oldTime = SpUtil.getString(CommonConstant.MINE_PWD_NAME, this, CommonConstant.MINE_PWD_CONTENT);
+        if(oldTime != null && twoBtn.isChecked()){
+            long old = Long.parseLong(oldTime);
+            if(old-System.currentTimeMillis() >= 1000*1*30){
+                GestureStatus.getInstance().setPwdStatus(CommonConstant.STATUS_LOGIN);
+                FrameArouter.getInstance().build(CommonConstant.APP_PWD_PATH).navigation();
+            }
+        }
+        Log.i("TAG", "onResume: ");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("TAG", "onPause: ");
+
+        SpUtil.putString(CommonConstant.MINE_PWD_NAME,this,CommonConstant.MINE_PWD_CONTENT,System.currentTimeMillis()+"");
+
+    }
+
 }

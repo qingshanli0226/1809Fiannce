@@ -4,4 +4,7 @@
         <external-path
             name="mypath"
             path="DCIM"/>
+        <!-- QQ 官方分享SDK 共享路径 -->
+        <root-path name="opensdk_root" path=""/>
+        <external-files-path name="opensdk_external" path="Images/tmp"/>
 </paths>

@@ -117,6 +117,8 @@ public class HomeFragment extends BaseFragment implements CacheUserManager.ILogi
         super.destroy();
         homeProgress.destroy();
         CacheUserManager.getInstance().unRegisterLogin(this);
+        homeBanner.clearAnimation();
+
     }
 
     @Override

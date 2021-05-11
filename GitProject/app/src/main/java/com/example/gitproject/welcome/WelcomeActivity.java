@@ -44,6 +44,7 @@ import com.example.gitproject.R;
 import com.example.net.bean.HomeBean;
 import com.example.net.bean.UpdateBean;
 import com.example.user.service.UserService;
+import com.umeng.socialize.UMShareAPI;
 
 import java.util.List;
 
@@ -79,16 +80,8 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.READ_EXTERNAL_STORAGE,
                     Manifest.permission.SYSTEM_ALERT_WINDOW,
-                    Manifest.permission.REQUEST_INSTALL_PACKAGES}, 100);
-        }
-        requestPermission();
-        countDown = (TextView) findViewById(R.id.countDown);
-        welImg = (ImageView) findViewById(R.id.wel_img);
-    }
-
-    //权限
-    private void requestPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    Manifest.permission.REQUEST_INSTALL_PACKAGES,
+                    Manifest.permission.CALL_PHONE}, 100);
             if (!Settings.canDrawOverlays(WelcomeActivity.this)) {
                 Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                         Uri.parse("package:" + getPackageName()));
@@ -97,9 +90,15 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 Toast.makeText(WelcomeActivity.this, "granted show-- 悬浮窗", Toast.LENGTH_SHORT);
             }
         }
+        countDown = (TextView) findViewById(R.id.countDown);
+        welImg = (ImageView) findViewById(R.id.wel_img);
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
 
 
     @Override
@@ -222,20 +221,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 10) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (!Settings.canDrawOverlays(this)) {
-                    // SYSTEM_ALERT_WINDOW permission not granted...
-                    Toast.makeText(WelcomeActivity.this, "not granted", Toast.LENGTH_SHORT);
-                } else {
-                    Toast.makeText(WelcomeActivity.this, "granted show 悬浮窗", Toast.LENGTH_SHORT);
-                }
-            }
-        }
-    }
+
 
     @Override
     public void onHomeData(HomeBean homeBean) {

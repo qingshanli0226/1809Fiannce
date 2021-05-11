@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import androidx.core.content.FileProvider;
 
 import com.bumptech.glide.Glide;
 import com.example.common.CommonConstant;
+import com.example.common.SpUtil;
 import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheUserManager;
 import com.example.framework.module.FrameArouter;
@@ -102,7 +104,7 @@ public class MineFragment extends BaseFragment implements CacheUserManager.ILogi
     public void onClickRight() {
         //跳转页面
         Bundle bundle = new Bundle();
-        bundle.getInt("img",R.drawable.my_user_bg_icon);
+        bundle.putInt("headImg",R.drawable.my_user_bg_icon);
         FrameArouter.getInstance().build(CommonConstant.USER_EXIT_PATH).with(bundle).navigation();
 
     }
@@ -120,4 +122,6 @@ public class MineFragment extends BaseFragment implements CacheUserManager.ILogi
         super.destroy();
         CacheUserManager.getInstance().unRegisterLogin(this);
     }
+
+
 }

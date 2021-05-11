@@ -1,6 +1,8 @@
 package com.example.gitproject.more;
 
 import android.app.UiAutomation;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -10,6 +12,7 @@ import com.example.framework.BaseFragment;
 import com.example.framework.manager.CacheUserManager;
 import com.example.framework.module.FrameArouter;
 import com.example.framework.view.ItemBar;
+import com.example.gitproject.MainActivity;
 import com.example.gitproject.R;
 import com.example.gitproject.more.password.status.GestureStatus;
 import com.example.net.RetrofitManager;
@@ -17,6 +20,11 @@ import com.example.net.bean.GesturePassword;
 import com.example.net.bean.LoginBean;
 import com.example.net.bean.ProductBean;
 import com.google.gson.Gson;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.editorpage.ShareActivity;
+import com.umeng.socialize.media.UMImage;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -29,6 +37,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
+import retrofit2.http.Url;
 
 
 public class MoreFragment extends BaseFragment implements CacheUserManager.ILoginChange {
@@ -156,8 +165,89 @@ public class MoreFragment extends BaseFragment implements CacheUserManager.ILogi
             }
         });
 
+        
+        itemPhone.setItemOnClickLisenter(new ItemBar.ItemOnClickLisenter() {
+            @Override
+            public void leftOnClick() {
+
+            }
+
+            @Override
+            public void rightOnClick() {
+
+            }
+
+            @Override
+            public void titleOnClick() {
+
+            }
+
+            @Override
+            public void rightTextOnClick() {
+
+            }
+
+            @Override
+            public void itemOnClick() {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:"+"110"));
+                startActivity(intent);
+            }
+        });
 
 
+        itemShare.setItemOnClickLisenter(new ItemBar.ItemOnClickLisenter() {
+            @Override
+            public void leftOnClick() {
+
+            }
+
+            @Override
+            public void rightOnClick() {
+
+            }
+
+            @Override
+            public void titleOnClick() {
+
+            }
+
+            @Override
+            public void rightTextOnClick() {
+
+            }
+
+            @Override
+            public void itemOnClick() {
+                UMImage image = new UMImage(getActivity(), "http://5b0988e595225.cdn.sohucs.com/images/20180523/93c796f46fd5417a9af7ba0b9ae87627.gif");//网络图片
+                new ShareAction(getActivity()).withText("hello")
+                        .withMedia(image)
+                        .setDisplayList(SHARE_MEDIA.SINA,SHARE_MEDIA.QQ,SHARE_MEDIA.WEIXIN)
+                        .setCallback(new UMShareListener() {
+                            @Override
+                            public void onStart(SHARE_MEDIA share_media) {
+
+                            }
+
+                            @Override
+                            public void onResult(SHARE_MEDIA share_media) {
+                                Toast.makeText(getActivity(), "成功", Toast.LENGTH_SHORT).show();
+
+                            }
+
+                            @Override
+                            public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+                                Toast.makeText(getActivity(), ""+throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onCancel(SHARE_MEDIA share_media) {
+
+                            }
+                        }).open();
+            }
+        });
     }
 
     @Override

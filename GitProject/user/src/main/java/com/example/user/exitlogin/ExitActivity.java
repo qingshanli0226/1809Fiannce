@@ -3,6 +3,7 @@ package com.example.user.exitlogin;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,7 +45,7 @@ public class ExitActivity extends BaseActivity<ExitPresenter> implements IExitVi
 
     @Override
     public void initData() {
-        int anInt = FrameArouter.getInstance().getIntent().getBundleExtra("param").getInt("img");
+        int anInt = FrameArouter.getInstance().getBundle().getInt("headImg");
         exitHead.setImageResource(anInt);
         exit.setOnClickListener(v -> {
 

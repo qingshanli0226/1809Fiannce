@@ -22,4 +22,8 @@ public class CommonConstant {
     public static final int STATUS_SET = 0;//设置手势密码
     public static final int STATUS_LOGIN = 1;//登录手势密码
     public static final int STATUS_CLEAR = 2;//清除手势密码
+
+
+    public static final String MINE_PWD_NAME = "logpwd";
+    public static final String MINE_PWD_CONTENT = "content";
 }
