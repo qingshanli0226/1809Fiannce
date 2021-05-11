@@ -1,5 +1,6 @@
 package com.example.a1809fiannce.Gesture;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.example.framwork.base.BasePresenter;
 import com.example.network.model.GesturePwd;
 import com.example.network.retrofit.RetrofitManager;
@@ -63,7 +64,7 @@ public class GesturePresenter extends BasePresenter<CallGesture> {
     public void ResetPwd(String aPwd){
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("aPwd",aPwd);
+            jsonObject.put("gPassword",aPwd);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -102,15 +103,15 @@ public class GesturePresenter extends BasePresenter<CallGesture> {
     public void VerityPwd(String aPwd){
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("aPwd",aPwd);
+            jsonObject.put("gPassword",aPwd);
         } catch (JSONException e) {
             e.printStackTrace();
         }
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), jsonObject.toString());
         RetrofitManager.getRetrofit()
-                .setReset(requestBody)
+                .setVerify(requestBody)
                 .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<GesturePwd>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
@@ -120,6 +121,7 @@ public class GesturePresenter extends BasePresenter<CallGesture> {
                     @Override
                     public void onNext(@NonNull GesturePwd gesturePwd) {
                         if (iView!=null){
+                            LogUtils.json(gesturePwd);
                             iView.OnVerityData(gesturePwd);
                         }
                     }

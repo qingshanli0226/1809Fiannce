@@ -30,6 +30,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void initData() {
         HomeBean homeBean = HomeCallBack.getHomeCallBack().getHomeBean();
+
         List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
         for (HomeBean.ResultBean.ImageArrBean imageArrBean : imageArr) {
             list.add(imageArrBean.getImaurl());
@@ -40,7 +41,6 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
                 String s= (String) path;
-                Log.i("zx", "displayImage: "+s);
                 Glide.with(getActivity()).load(s).into(imageView);
             }
         });
@@ -69,6 +69,7 @@ public class HomeFragment extends BaseFragment {
         name = baseView.findViewById(R.id.name);
 
         expect = (TextView) baseView.findViewById(R.id.expect);
+        list.clear();
     }
 
     @Override

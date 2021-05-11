@@ -36,6 +36,8 @@
     <dimen name="dp_270">270dp</dimen>
     <dimen name="dp_280">280dp</dimen>
     <dimen name="dp_300">300dp</dimen>
+    <dimen name="dp410">410dp</dimen>
+
     <dimen name="weight_05">0.5</dimen>
     <dimen name="weight_0.75">0.75</dimen>
     <dimen name="weight_1">1</dimen>

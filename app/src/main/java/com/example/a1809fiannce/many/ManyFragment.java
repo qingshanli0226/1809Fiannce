@@ -39,6 +39,7 @@ public class ManyFragment extends Fragment {
         tell = view.findViewById(R.id.tell);
         pwd = view.findViewById(R.id.pwd);
         reset = view.findViewById(R.id.reset);
+
         //注册
         us.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +64,7 @@ public class ManyFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
         tell.setiRightImgCallBack(new LinView.iRightImgCallBack() {
             @Override
             public void OnRightListener() {
@@ -79,7 +81,9 @@ public class ManyFragment extends Fragment {
             pwd.setRightIcon(R.mipmap.toggle_on);
 
         }else {
+
             pwd.setRightIcon(R.mipmap.toggle_off);
+
         }
 
         //手势密码点击事件
@@ -104,15 +108,16 @@ public class ManyFragment extends Fragment {
                 }
             }
         });
-
+        //重置手势密码点击
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), GestureActivity.class);
-                intent.putExtra("name","reset");
+                intent.putExtra("name","set");
                 startActivity(intent);
             }
         });
+        //重置手势密码右边图片点击
         reset.setiRightImgCallBack(new LinView.iRightImgCallBack() {
             @Override
             public void OnRightListener() {
@@ -125,6 +130,7 @@ public class ManyFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        //在Many页面关闭时,把手势密码关闭和打开存储起来
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("pwd", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPreferences.edit();
         edit.putBoolean("isPwd",isBoolean);

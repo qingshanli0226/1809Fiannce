@@ -26,13 +26,13 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+
         vp = (ViewPager) findViewById(R.id.vp);
 
         UserBroad userBroad = new UserBroad();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("log");
         registerReceiver(userBroad,intentFilter);
-
 
         List<Fragment> list=new ArrayList<>();
         list.add(new RegisterFragment());

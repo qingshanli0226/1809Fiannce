@@ -40,4 +40,5 @@ public class HotFragment extends BaseFragment {
     public void DisConnect() {
         hotText.setText("网络从已连接变为未连接");
     }
+
 }

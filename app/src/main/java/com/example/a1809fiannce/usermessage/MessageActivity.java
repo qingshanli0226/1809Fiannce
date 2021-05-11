@@ -7,11 +7,11 @@ import androidx.core.content.FileProvider;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
-import com.example.a1809fiannce.CallImgPath;
 import com.example.a1809fiannce.R;
 import com.example.common.Squilts;
 import com.example.common.UserCallBack;
@@ -100,9 +99,11 @@ public class MessageActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==104&&resultCode== Activity.RESULT_OK){
-            Log.i("zx", "onActivityResult: "+path);
-            CallImgPath.getInstance().setPath(path);
-           Glide.with(this)
+            SharedPreferences sharedPreferences = getSharedPreferences("imgPath", MODE_PRIVATE);
+            SharedPreferences.Editor edit = sharedPreferences.edit();
+            edit.putString("path",path);
+            edit.commit();
+            Glide.with(this)
                    .load(path)
                    .transform(new CircleCrop())
                    .into(messImg);

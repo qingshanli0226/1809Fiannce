@@ -2,18 +2,23 @@ package com.example.a1809fiannce.Gesture;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a1809fiannce.R;
 import com.example.framwork.base.BaseActivity;
+import com.example.framwork.view.TobView;
 import com.example.network.model.GesturePwd;
 import com.itsxtt.patternlock.PatternLockView;
 
 import java.util.ArrayList;
 
 public class GestureActivity extends BaseActivity<GesturePresenter> implements CallGesture{
-
+    private TextView textSucceed;
     private PatternLockView patternLockView;
     private String aPwd="";
     private String name;
@@ -39,12 +44,11 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
                  * if the pattern is not correct and you'd like change the pattern to error state, return false
                  * otherwise return true
                  */
-
+                aPwd="";
                 for (Integer integer : list) {
                     aPwd+=integer.toString();
                 }
 
-                Log.i("zx", "onComplete: "+aPwd);
                 if (name.equals("set")){
                     mPresenter.GestureData(aPwd);
                 }else if (name.equals("reset")){
@@ -60,6 +64,7 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
 
     @Override
     protected void initView() {
+        textSucceed =findViewById(R.id.text_succeed);
         patternLockView = findViewById(R.id.patternLockView);
         name=getIntent().getStringExtra("name");
     }
@@ -71,7 +76,12 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
 
     @Override
     public void OnGestureData(GesturePwd gesturePwd) {
-        Log.i("zx", "OnGestureData: "+gesturePwd.toString());
+        if (gesturePwd.getCode().equals("200")){
+            textSucceed.setText("再输入一遍");
+            name="verity";
+        }else {
+            Toast.makeText(this, ""+gesturePwd.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -81,7 +91,22 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
 
     @Override
     public void OnVerityData(GesturePwd gesturePwd) {
-        Log.i("zx", "OnVerityData: "+gesturePwd.toString());
+        if (gesturePwd.getCode().equals("200")){
+
+            Toast.makeText(this, "设置成功", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent();
+            intent.setAction("verity");
+            sendBroadcast(intent);
+
+            SharedPreferences sharedPreferences = getSharedPreferences("setSucceed", MODE_PRIVATE);
+            SharedPreferences.Editor edit = sharedPreferences.edit();
+            edit.putBoolean("isSet",true);
+            edit.commit();
+
+            finish();
+        }else {
+            textSucceed.setText("和上次输入不一致");
+        }
     }
 
     @Override
@@ -96,6 +121,9 @@ public class GestureActivity extends BaseActivity<GesturePresenter> implements C
 
     @Override
     public void Error(String error) {
+
         Log.i("zx", "Error: "+error);
+
     }
+
 }

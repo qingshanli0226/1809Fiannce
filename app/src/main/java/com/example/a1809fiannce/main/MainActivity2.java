@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -38,7 +39,6 @@ public class MainActivity2 extends AppCompatActivity {
     private ArrayList<Fragment> fragmentList = new ArrayList<>();
     private long CurrentTime = 0;
     private ViewPager vp;
-    private String name;
     private Broad broad;
 
     @Override
@@ -49,6 +49,7 @@ public class MainActivity2 extends AppCompatActivity {
         broad = new Broad();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("complete");
+        intentFilter.addAction("verity");
         registerReceiver(broad, intentFilter);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -59,6 +60,7 @@ public class MainActivity2 extends AppCompatActivity {
                     Manifest.permission.REQUEST_INSTALL_PACKAGES,
             }, 100);
         }
+        //判断文件是否已经下载
         SharedPreferences sharedPreferences = getSharedPreferences("install", MODE_PRIVATE);
         boolean isInstall = sharedPreferences.getBoolean("isInstall", false);
         if (isInstall) {
@@ -83,6 +85,8 @@ public class MainActivity2 extends AppCompatActivity {
         vp.setAdapter(mainFragment);
         tab.setTabData(list);
 
+
+        //ViewPager和TabLayout关联
         tab.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
@@ -95,6 +99,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        //ViewPager和TabLayout关联
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -121,7 +126,7 @@ public class MainActivity2 extends AppCompatActivity {
         tab.setCurrentTab(0);
         vp.setCurrentItem(0);
     }
-
+    //双击退出
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -135,25 +140,33 @@ public class MainActivity2 extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
+    //广播
     class Broad extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals("complete")) {
                 installwindow();
+            }else if (intent.getAction().equals("verity")){
+                vp.setCurrentItem(3);
+                tab.setCurrentTab(3);
             }
         }
     }
-
+    //弹窗
     private void installwindow() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity2.this);
         builder.setTitle("下载完成");
         builder.setMessage("是否安装");
         builder.setIcon(R.mipmap.app_name);
         builder.setPositiveButton("安装", new DialogInterface.OnClickListener() {
+            @SuppressLint("CommitPrefEdits")
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 openAPK("/sdcard/Download/a.apk");
+                SharedPreferences sharedPreferences = getSharedPreferences("install", MODE_PRIVATE);
+                SharedPreferences.Editor edit = sharedPreferences.edit();
+                edit.putBoolean("isInstall",false);
+                edit.commit();
                 dialog.dismiss();
             }
         });
@@ -196,5 +209,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(broad);
+        list.clear();
+        fragmentList.clear();
     }
 }
