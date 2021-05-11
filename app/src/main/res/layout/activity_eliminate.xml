@@ -14,14 +14,14 @@
         android:gravity="center"
         android:background="@color/colorShen"
         >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/dp_30"
-            android:textColor="@color/colorWhite"
-            android:text="@string/unlok"
             android:layout_gravity="center"
-            ></TextView>
+            android:text="@string/unlok"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/dp_30"></TextView>
     </LinearLayout>
 
     <LinearLayout

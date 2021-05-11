@@ -14,11 +14,17 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.designed.MainActivity;
 import com.example.designed.R;
 import com.example.designed.eliminate.EliminateActivity;
 import com.example.designed.shou.UnlockActivity;
 import com.example.user.register.RegisterActivity;
 import com.fiannce.bawei.framework.BaseFragment;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.editorpage.ShareActivity;
+import com.umeng.socialize.media.UMImage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,6 +66,42 @@ public class Fragment4 extends BaseFragment {
         user = (LinearLayout) findViewById(R.id.user);
         share = (LinearLayout) findViewById(R.id.share);
         about = (LinearLayout) findViewById(R.id.about);
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                UMImage image = new UMImage(getActivity(), "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2858426577,4189650377&fm=26&gp=0.jpg");//网络图片
+
+                new ShareAction(getActivity())
+                        .withMedia(image)
+                        .setPlatform(SHARE_MEDIA.QQ)//传入平台
+                        .withText("hello")//分享内容
+                        .setCallback(new UMShareListener() {
+                            @Override
+                            public void onStart(SHARE_MEDIA share_media) {
+
+                            }
+
+                            @Override
+                            public void onResult(SHARE_MEDIA share_media) {
+
+                            }
+
+                            @Override
+                            public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+                                Toast.makeText(getActivity(), "throwable:" + throwable, Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onCancel(SHARE_MEDIA share_media) {
+
+                            }
+                        })//回调监听器
+                        .share();
+
+            }
+        });
 
 
         unpassword.setOnClickListener(new View.OnClickListener() {

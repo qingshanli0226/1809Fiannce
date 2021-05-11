@@ -1,58 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Designed</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="jin">您的账户目前可用金额: </string>
-    <string name="shou">首页 </string>
-    <string name="gui">硅谷彩虹新手计划 </string>
-    <string name="ben">本息保障 </string>
-    <string name="mei">每日计息 </string>
-    <string name="gao">高额收益 </string>
-    <string name="yu">预期年利率 : 8.00% </string>
-    <string name="li">立即加入 </string>
-    <string name="feng">风险保障金由有道银行监管 </string>
-    <string name="tou">投资 </string>
-    <string name="unlok">设置手势密码 </string>
-    <string name="p">  手机号: </string>
-    <string name="name">  用户名: </string>
     <string name="in">  用户信息 </string>
-    <string name="paw">  密码: </string>
-    <string name="unpaw">  确认密码: </string>
-    <string name="my">我的投资 </string>
-    <string name="register">用户注册 </string>
-    <string name="dao">倒计时: 3 秒 </string>
-    <string name="xue">  学习提示 : </string>
-    <string name="chong">  充值我们将以集成支付宝sdk支付金额演示充值功能</string>
-    <string name="ti">  提现业务:在p2p金融平台中,提现都不是实时到账的,而是审核提</string>
-    <string name="xian">  现,系统将会告知24小时内进行转账,如果未收到,请联系客服...</string>
-    <string name="ch">充值</string>
-    <string name="yuan"> 元  </string>
-    <string name="zi">充值金额   |     </string>
-    <string name="xi">本期保息</string>
-    <string name="qing">请输入充值金额</string>
-    <string name="shuo">锁定期</string>
-    <string name="lv">预期年利率</string>
-    <string name="duo">更多</string>
-    <string name="mo">默认值</string>
-    <string name="e">产品金额</string>
-    <string name="t">提现</string>
-    <string name="guan">投资管理</string>
-    <string name="zhi">投资管理(直观)</string>
-    <string name="chang">资产管理</string>
-    <string name="one">万</string>
-    <string name="phone">010-56253825</string>
-    <string name="regist">  用户注册</string>
-    <string name="password">  手势密码</string>
-    <string name="unpassword">  重置手势密码</string>
-    <string name="contact">  联系客服</string>
-    <string name="user">  用户反馈</string>
-    <string name="share">  分享给好友</string>
-    <string name="About">  关于有道理财</string>
-    <string name="del">删除</string>
-    <string name="you">有道金融壕运当头,首投返现最高达188元</string>
-    <string name="Allfinancial">全部理财</string>
-    <string name="Recommendafinancial">推荐理财</string>
-
-
+    <string name="unlok">设置手势密码 </string>
+    <string name="unlock">手势密码</string>
+    <string name="app_name">Alipay SDK Demo</string>
+    <string name="demo_info_text">Warning: \n\nFor demonstration purpose, the assembling and signing of the request parameters are done on the client side.\nHowever, in practice, both assembling and signing MUST BE carried out on the server side.</string>
+    <string name="pay_with_alipay">Pay with Alipay</string>
+    <string name="pay_with_alipay_hk">Pay with AlipayHK</string>
+    <string name="auth_with_alipay">Authenticate with Alipay</string>
+    <string name="web_to_native">Call Alipay from Web Content</string>
+    <string name="check_sdk_version">Alipay SDK Version</string>
+    <string name="pay_success">Payment success:</string>
+    <string name="auth_failed">Authentication failed:</string>
+    <string name="error_missing_appid_rsa_private">Error: Missing \"APPID\" or \"RSA_PRIVATE\" in PayDemoActivity.</string>
+    <string name="error_missing_hk_partner_seller_rsa_private">Error: Missing \"PARTNER\", \"SELLER\", or \"RSA_PRIVATE\\ in OrderUtils1_0_HK.</string>
+    <string name="pay_result">Payment result:</string>
+    <string name="error_auth_missing_partner_appid_rsa_private_target_id">Error: Missing \"PARTNER\", \"APP_ID\", \"RSA_PRIVATE\", or \"TARGET_ID\" in PayDemoActivity.</string>
+    <string name="confirm">Confirm</string>
+    <string name="pay_failed">Payment failed:</string>
+    <string name="auth_success">Authentication success:</string>
+    <string name="alipay_sdk_version_is">"Alipay SDK version: "</string>
+    <string name="error_missing_h5_pay_url">Missing URL to load. Please configure in PayDemoActivity.h5Pay()</string>
+    <string name="error">Error</string>
+    <string name="pay_cross_border">Cross-border Pay with Alipay</string>
+    <string name="error_missing_global_partner_seller_rsa_private" >Error: Missing \"PARTNER\", \"SELLER\", or \"RSA_PRIVATE\\ in OrderUtils1_0_Global.</string>
+    <string name="payment_inst_hk">Payer: HK</string>
+    <string name="payment_inst_cn">Payer: CN</string>
 </resources>

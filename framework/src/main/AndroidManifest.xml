@@ -8,6 +8,18 @@
             android:name="com.fiannce.bawei.framework.FiannceService"
             android:enabled="true"
             android:exported="true"></service>
+        
+        <provider
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:authorities="com.example.designed"
+            android:name="androidx.core.content.FileProvider">
+
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+
+        </provider>
+        
     </application>
 
 </manifest>

@@ -52,7 +52,7 @@ public interface FiannceApiService {
     @POST("loginByGesturePassword")
     Observable<VerifyBean> getVerify(@Body String gpassword);
 
-    @POST("clearByGesturePassword")
+    @POST("clearGesturePassword")
     Observable<EliminateBean> getEliminate(@Body String gpassword);
 
 }

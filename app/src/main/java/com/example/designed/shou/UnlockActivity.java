@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.designed.R;
+import com.example.pay.BuildConfig;
 import com.fiannce.bawei.framework.BaseActivity;
 import com.fiannce.bawei.net.model.SetGesturesBean;
 import com.wangnan.library.GestureLockThumbnailView;
@@ -52,6 +54,7 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter>  implements Iu
     @Override
     protected void initPresenter() {
         unlockPresenter = new UnlockPresenter(this);
+        if (BuildConfig.DEBUG) Log.d("UnlockActivity", "unlockPresenter:" + unlockPresenter);
     }
 
     @Override
@@ -67,6 +70,7 @@ public class UnlockActivity extends BaseActivity<UnlockPresenter>  implements Iu
 
     @Override
     public void getUnlockData(SetGesturesBean setGesturesBean) {
+        if (BuildConfig.DEBUG) Log.d("UnlockActivity", "setGesturesBean:" + setGesturesBean);
         if (setGesturesBean.getCode().equals("200")){
             Toast.makeText(UnlockActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
             finish();

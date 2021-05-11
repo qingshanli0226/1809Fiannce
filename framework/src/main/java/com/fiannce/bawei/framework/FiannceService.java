@@ -5,15 +5,21 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.PixelFormat;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.RemoteViews;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.FileProvider;
 
 import com.example.commom.FiannceContants;
 import com.example.framework.R;
@@ -39,8 +45,14 @@ import static android.content.ContentValues.TAG;
 public class FiannceService extends Service {
     private  String string;
     private FileOutputStream fileOutputStream;
+
+    private WindowManager windowManager;
+    private WindowManager.LayoutParams layoutParams;
+    private Handler handler = new Handler();
     public FiannceService() {
     }
+
+
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -136,6 +148,14 @@ public class FiannceService extends Service {
 
                             setNotification((int) length,count,true);
 
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    showLittleWindow();
+                                }
+                            });
+
+
 
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -183,6 +203,7 @@ public class FiannceService extends Service {
 
         if (is){
             remoteViews.setTextViewText(R.id.down_title,getResources().getString(R.string.download));
+
         }
 
         remoteViews.setProgressBar(R.id.down_progress,length,count,false);
@@ -195,6 +216,63 @@ public class FiannceService extends Service {
         systemService.notify(1,builder.build());
     }
 
+    private void showLittleWindow() {
+        final WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        //设置小窗口尺寸的类
+         layoutParams = new WindowManager.LayoutParams();
+        //设置窗口的类型为系统类型，系统类型的窗口显示应用窗口的上方.系统窗口可以在Service中显示,普通Dialog不可以的
+        layoutParams.type= WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+                                                    //.TYPE_APPLICATION_OVERLAY;
 
+        //像素格式为透明的
+        layoutParams.format = PixelFormat.TRANSPARENT;
+
+        //设置该flag在显示该小窗口时，其他窗口的按钮或者其他控件都可以点击.
+        layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+
+        //设置小窗口的尺寸
+        //单位是像素
+        layoutParams.width=700;
+        layoutParams.height=500;
+
+        //生成一个窗口的布局view，并且将该view添加到窗口里.
+        final View rootView = LayoutInflater.from(this).inflate(R.layout.little_window, null);
+        rootView.findViewById(R.id.que).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                install();
+                windowManager.removeView(rootView);
+            }
+        });
+        rootView.findViewById(R.id.qu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                windowManager.removeView(rootView);
+            }
+        });
+        windowManager.addView(rootView, layoutParams);
+    }
+
+    public void install(){
+        File file = new File(Uri.parse(FiannceContants.DOWNLOAD_PATH).getPath());
+        String filePath = file.getAbsolutePath();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Uri data = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {//判断版本大于等于7.0
+            // 生成文件的uri，，
+            // 注意 下面参数com.ausee.fileprovider 为apk的包名加上.fileprovider，
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            data = FileProvider.getUriForFile(this, "com.example.designed", new File(filePath));
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);// 给目标应用一个临时授权
+        } else {
+            data = Uri.fromFile(file);
+        }
+
+        intent.setDataAndType(data, "applicationnd.android.package-archive");
+        startActivity(intent);
+    }
 
 }

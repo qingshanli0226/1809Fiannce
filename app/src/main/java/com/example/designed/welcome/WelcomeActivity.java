@@ -7,10 +7,12 @@ import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -84,7 +86,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
                 ,"android.permission.SYSTEM_OVERLAY_WINDOW"
                 ,"android.permission.ACCESS_NETWORK_STATE "
            ,"android.permission.ACTION_IMAGE_CAPTURE" },100);
-
+        requestPermission();
         welcomePresenter.getHomeData();
         welcomePresenter.getVersionData();
         welcomePresenter.getLiData();
@@ -93,6 +95,19 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         intent = new Intent(this,FiannceService.class);
         startService(intent);
 
+    }
+
+    private void requestPermission() {
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(WelcomeActivity.this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, 10);
+            } else {
+                Toast.makeText(WelcomeActivity.this, "granted show-- 悬浮窗", Toast.LENGTH_SHORT);
+
+            }
+        }
     }
 
     @Override

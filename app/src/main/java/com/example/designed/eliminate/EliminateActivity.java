@@ -47,11 +47,11 @@ public class EliminateActivity extends BaseActivity<EliminatePresenter> implemen
 
             @Override
             public void onComplete(String result) {
-                eliminatePresenter.getEliminate(result);
+
                 glv.clearView();
 
                 glt.setThumbnailView(result, Color.BLUE);
-
+                eliminatePresenter.getEliminate(result);
 
             }
         });

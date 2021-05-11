@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.designed.InActivity;
 import com.example.designed.R;
+import com.example.designed.demo.PayDemoActivity;
 import com.example.user.login.LoginActivity;
 import com.fiannce.bawei.framework.BaseFragment;
 
@@ -39,7 +40,7 @@ public class Fragment3 extends BaseFragment  {
     private LinearLayout invest;
     private LinearLayout manage;
     private LinearLayout property;
-    private String path;
+    private String path="";
 
     public Fragment3() {
         // Required empty public constructor
@@ -65,6 +66,13 @@ public class Fragment3 extends BaseFragment  {
         manage = (LinearLayout) findViewById(R.id.manage);
         property = (LinearLayout) findViewById(R.id.property);
 
+        moery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), PayDemoActivity.class));
+            }
+        });
+
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,25 +80,25 @@ public class Fragment3 extends BaseFragment  {
             }
         });
 
-//        pic.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                path = "/sdcard/DCIM/Camera/wang.jpg";
-//
-//                Intent intent = new Intent();
-//                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-//
-//                Uri uri = FileProvider.getUriForFile(getActivity(), "com.example.designed", new File(path));
-//
-//                intent.putExtra(MediaStore.EXTRA_OUTPUT,uri);
-//                startActivityForResult(intent,103);
-//
-//
-//                Glide.with(getActivity()).load(path).into(pic);
-//
-//            }
-//        });
+        pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                path = "/sdcard/DCIM/Camera/wang.jpg";
+
+                Intent intent = new Intent();
+                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                Uri uri = FileProvider.getUriForFile(getActivity(), "com.example.designed", new File(path));
+
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+                startActivityForResult(intent,103);
+
+
+
+
+            }
+        });
     }
 
 
@@ -100,5 +108,9 @@ public class Fragment3 extends BaseFragment  {
         return R.layout.fragment_blank_fragment3;
     }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Glide.with(getActivity()).load(path).into(pic);
+    }
 }
