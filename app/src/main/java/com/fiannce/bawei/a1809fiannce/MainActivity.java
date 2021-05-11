@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.fiannce.bawei.a1809fiannce.adapter.AdapterActivity;
 import com.fiannce.bawei.a1809fiannce.connect.ConnectActivity;
 import com.fiannce.bawei.a1809fiannce.leak.MVPActivity;
 import com.fiannce.bawei.a1809fiannce.leak.MemActivity;
@@ -89,9 +90,25 @@ public class MainActivity extends BaseActivity implements FiannceUserManager.IUs
         findViewById(R.id.menBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* Intent intent = new Intent(MainActivity.this,ThreadActivity.class);
-                startActivity(intent);*/
-               CacheManager.getInstance().init(MainActivity.this);
+                Intent intent = new Intent(MainActivity.this,ThreadActivity.class);
+                startActivity(intent);
+               //CacheManager.getInstance().init(MainActivity.this);
+            }
+        });
+        findViewById(R.id.adapterBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AdapterActivity.class);
+                startActivity(intent);
+                //CacheManager.getInstance().init(MainActivity.this);
+            }
+        });
+        findViewById(R.id.debugBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,DebugActivity.class);
+                startActivity(intent);
+                //CacheManager.getInstance().init(MainActivity.this);
             }
         });
 

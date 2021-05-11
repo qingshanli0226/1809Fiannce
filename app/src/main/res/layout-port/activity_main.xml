@@ -57,6 +57,11 @@
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="适配"
+                android:id="@+id/adapterBtn"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="调试"
                 android:id="@+id/debugBtn"/>
     </LinearLayout>
