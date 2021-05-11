@@ -79,10 +79,9 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.show(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
 
-                        SharedPreferences login1 = getSharedPreferences("login", MODE_PRIVATE);
-                        boolean is_login = login1.getBoolean("is_login", false);
-                        if (is_login){
-
+                        boolean login = FiannceUserManager.getInstance().isLogin();
+                        if (login){
+                            ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
                         }else {
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                             builder.setIcon(R.drawable.ic_launcher_foreground);
@@ -104,10 +103,6 @@ public class MainActivity extends BaseActivity {
                         }
 
 
-                        Boolean gestureBoolean = SpUtils.getGestureBoolean(MainActivity.this);
-                        if (gestureBoolean){
-                            ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
-                        }
 
                         break;
                     case R.id.btn_more:

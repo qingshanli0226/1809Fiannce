@@ -11,6 +11,7 @@ public class Demo {
     public static final String AROUTE_PATH = "/app/MainActivity";
     public static final String AROUTE_PATH_REGISTER = "/main/PersonRegisterActivity";
     public static final String AROUTE_PATH_LOGIN = "/demo/PersonLoginActivity";
+    public static final String AROUTE_PATH_CLEARGESTUREPASSWORD = "/demosss/ClearGesturePassword";
     public static final String AROUTE_PATH_LOGINBYGESTUREPASSWORD = "/abab/LoginGesturePassowrdActivity";
     public static final String AROUTE_PATH_EXIT_LOGIN = "/test/PersonLoginActivity";
     public static final String AROUTE_PATH_GESTUREPASSWORD = "/Demos/GesturePassowrdActivity";

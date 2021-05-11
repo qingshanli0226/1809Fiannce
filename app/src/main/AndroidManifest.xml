@@ -24,6 +24,7 @@
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".fragment.more.loginbygesturepassword.LoginByGestPasswordActivity"></activity>
         <activity android:name=".fragment.more.gesturepassword.GesturePasswordActivity" />
+        <activity android:name=".fragment.more.cleargesturepassword.ClearGesurepasswordActivity"></activity>
         <activity android:name=".welcome.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

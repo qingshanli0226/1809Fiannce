@@ -1,3 +1,4 @@
+
 package com.example.myapplication.fragment.mymoney;
 
 import android.Manifest;
@@ -73,9 +74,15 @@ public class MymoneyFragment extends BaseFragment {
 
         EventBus.getDefault().register(this);
 
-        SharedPreferences login = getActivity().getSharedPreferences("login", 0);
-        String name = login.getString("username", "");
-        userName.setText("" + name);
+        boolean login1 = FiannceUserManager.getInstance().isLogin();
+        if (login1){
+            SharedPreferences login = getActivity().getSharedPreferences("login", 0);
+            String name = login.getString("username", "");
+            userName.setText("" + name);
+        }else {
+            userName.setText("请登录");
+        }
+
 
         toolBar.setToolbarListener(new ToolBar.IToolbarListener() {
             @Override

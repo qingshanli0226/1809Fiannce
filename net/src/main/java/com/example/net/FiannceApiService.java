@@ -1,6 +1,7 @@
 package com.example.net;
 
 import com.example.model.AutoLoginBean;
+import com.example.model.ExitLoginBean;
 import com.example.model.GesturePasswordBean;
 import com.example.model.HomeBean;
 import com.example.model.LoginBean;
@@ -39,6 +40,9 @@ public interface FiannceApiService {
     @POST("autoLogin")
     Observable<AutoLoginBean> postAutoLogin(@Field("token") String token);
 
+    @POST("logout")
+    Observable<ExitLoginBean> postExitLogin();
+
     //设置手势密码
     @POST("setGesturePassword")
     Observable<GesturePasswordBean> setGesturePassword(@Body RequestBody requestBody);
@@ -46,6 +50,10 @@ public interface FiannceApiService {
     //验证手势密码
     @POST("loginByGesturePassword")
     Observable<GesturePasswordBean> setLoginByGesturePassword(@Body RequestBody requestBody);
+
+    //清除手势密码
+    @POST("clearByGesturePassword")
+    Observable<GesturePasswordBean> clearGesturePassword(@Body RequestBody requestBody);
 
     //下载文件
     @GET

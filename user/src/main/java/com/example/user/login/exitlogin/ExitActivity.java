@@ -1,9 +1,6 @@
-package com.example.user.login;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.user.login.exitlogin;
 
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -13,13 +10,14 @@ import com.example.demo.Demo;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.ToolBar;
+import com.example.model.ExitLoginBean;
 import com.example.sp.SpUtils;
 import com.example.user.R;
 
 import org.greenrobot.eventbus.EventBus;
 
 @Route(path = Demo.AROUTE_PATH_EXIT_LOGIN)
-public class ExitActivity extends BaseActivity {
+public class ExitActivity extends BaseActivity<ExitLoginPresenter> implements IExitLoginView {
 
     private ToolBar toolbar;
     private android.widget.Button exitLogin;
@@ -49,19 +47,9 @@ public class ExitActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                FiannceUserManager.getInstance().setLogin(false);
-//                String string = SpUtils.getString(ExitActivity.this);
-                SpUtils.putString(ExitActivity.this,"");
+                httpPresenter.exitLogin();
 
-                boolean login = FiannceUserManager.getInstance().isLogin();
-                if (login==false){
-                    Toast.makeText(ExitActivity.this, "退出成功", Toast.LENGTH_SHORT).show();
-                    SharedPreferences login1 = getSharedPreferences("login", 0);
-                    SharedPreferences.Editor edit = login1.edit();
-                    edit.putBoolean("is_login",false);
-                    edit.commit();
-                }
-                EventBus.getDefault().postSticky("exit_login");
+
 
                 finish();
             }
@@ -71,12 +59,11 @@ public class ExitActivity extends BaseActivity {
 
     @Override
     protected void initPresenter() {
-
+        httpPresenter = new ExitLoginPresenter(this);
     }
 
     @Override
     protected void initView() {
-
         toolbar = (ToolBar) findViewById(R.id.toolbar);
         exitLogin = (Button) findViewById(R.id.exit_login);
     }
@@ -84,5 +71,40 @@ public class ExitActivity extends BaseActivity {
     @Override
     protected int getLayoutId() {
         return R.layout.activity_exit;
+    }
+
+    @Override
+    public void onExitLoginData(ExitLoginBean exitLoginBean) {
+        if (exitLoginBean.getCode().equals("200")){
+            Toast.makeText(this, "退出成功sss", Toast.LENGTH_SHORT).show();
+            FiannceUserManager.getInstance().setLogin(false);
+//                String string = SpUtils.getString(ExitActivity.this);
+            SpUtils.putString(ExitActivity.this,"");
+
+            boolean login = FiannceUserManager.getInstance().isLogin();
+            if (login==false){
+                Toast.makeText(ExitActivity.this, "退出成功", Toast.LENGTH_SHORT).show();
+                SharedPreferences login1 = getSharedPreferences("login", 0);
+                SharedPreferences.Editor edit = login1.edit();
+                edit.putBoolean("is_login",false);
+                edit.commit();
+            }
+            EventBus.getDefault().postSticky("exit_login");
+        }
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showError(String error) {
+
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".login.ExitActivity">
+    tools:context=".login.exitlogin.ExitActivity">
 
     <com.example.framework.view.ToolBar
         android:layout_width="match_parent"

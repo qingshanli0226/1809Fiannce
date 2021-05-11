@@ -93,6 +93,7 @@
                 android:src="@drawable/icon_more_reset"></ImageView>
 
             <TextView
+                android:id="@+id/reset_password"
                 android:textColor="@color/mondel_blue"
                 android:layout_marginLeft="@dimen/dp_10"
                 android:textSize="@dimen/dm_dp_30dp"

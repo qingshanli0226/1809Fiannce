@@ -16,8 +16,7 @@ import com.example.framework.view.ToolBar;
 import com.example.myapplication.R;
 import com.example.sp.SpUtils;
 
-import retrofit2.http.Url;
-
+import static com.example.demo.Demo.AROUTE_PATH_CLEARGESTUREPASSWORD;
 import static com.example.demo.Demo.AROUTE_PATH_GESTUREPASSWORD;
 
 
@@ -29,6 +28,7 @@ public class MoreFragment extends BaseFragment {
     private ImageView showImg;
     private boolean isShow = false;
     private TextView callPerson;
+    private TextView resetPassword;
 
     @Override
     protected void initData() {
@@ -53,7 +53,6 @@ public class MoreFragment extends BaseFragment {
         showImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Boolean aBoolean = SpUtils.getGestureBoolean(getContext());
                 Log.i("zrf", "onClick: " + aBoolean);
 
@@ -68,7 +67,13 @@ public class MoreFragment extends BaseFragment {
                     Toast.makeText(getContext(), "请先登录,再进行设置手势密码", Toast.LENGTH_SHORT).show();
                     SpUtils.putGestureBoolean(getContext(), true);
                 }
+            }
+        });
 
+        resetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance().build(AROUTE_PATH_CLEARGESTUREPASSWORD).navigation();
             }
         });
 
@@ -85,6 +90,8 @@ public class MoreFragment extends BaseFragment {
         personRegister = (TextView) mView.findViewById(R.id.person_register);
         showImg = (ImageView) mView.findViewById(R.id.showImg);
         callPerson = (TextView) mView.findViewById(R.id.call_person);
+        resetPassword = (TextView) mView.findViewById(R.id.reset_password);
+
 
         Boolean aBoolean = SpUtils.getGestureBoolean(getContext());
         if (aBoolean) {

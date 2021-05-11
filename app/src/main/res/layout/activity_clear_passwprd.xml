@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragment.more.cleargesturepassword.ClearGesurepasswordActivity"
+    android:layout_height="match_parent">
+
+
+    <com.example.framework.view.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        app:titleTextColor="@color/small_blue"
+        android:id="@+id/toolbar"
+        app:titleText="@string/cleargesturepassword"></com.example.framework.view.ToolBar>
+
+    <com.wangnan.library.GestureLockView
+        android:layout_width="match_parent"
+        app:normal_color="@color/blueee"
+        app:press_color="@color/graty"
+        app:error_color="@color/reddd"
+        android:id="@+id/glv"
+        app:line_thickness="6dp"
+        android:layout_height="match_parent"></com.wangnan.library.GestureLockView>
+
+</LinearLayout>
