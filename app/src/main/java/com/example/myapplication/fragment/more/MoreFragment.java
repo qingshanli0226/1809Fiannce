@@ -54,7 +54,7 @@ public class MoreFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Boolean aBoolean = SpUtils.getGestureBoolean(getContext());
-                Log.i("zrf", "onClick: " + aBoolean);
+//                Log.i("zrf", "onClick: " + aBoolean);
 
                 if (aBoolean == true && FiannceUserManager.getInstance().isLogin() == true) {
                     showImg.setImageDrawable(getResources().getDrawable(R.drawable.toggle_off));

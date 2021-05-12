@@ -43,5 +43,18 @@ public class SpUtils {
         edit.putString("gestureresult",result);
         edit.commit();
     }
+    public static String getTime(Context context){
+        SharedPreferences login = context.getSharedPreferences("time", 0);
+        String time = login.getString("time", "");
+        return time;
+    }
+
+    public static void putTime(Context context,String time){
+        SharedPreferences time1 = context.getSharedPreferences("time", 0);
+        SharedPreferences.Editor edit = time1.edit();
+        edit.putString("time",time);
+        edit.commit();
+    }
+
 
 }

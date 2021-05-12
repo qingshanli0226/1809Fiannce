@@ -65,7 +65,10 @@ public class ClearGesurepasswordActivity extends BaseActivity<ClearGesurepasswor
 
     @Override
     public void clearPassword(GesturePasswordBean bean) {
-        Toast.makeText(this, ""+bean.getCode(), Toast.LENGTH_SHORT).show();
+        if (bean.getCode().equals("200")){
+            Toast.makeText(this, "清除手势密码", Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 
     @Override

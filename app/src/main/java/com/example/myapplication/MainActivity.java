@@ -118,6 +118,7 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+
     @Subscribe(sticky = true)
     public void Event(String event){
         if (event.equals("home_data")){
@@ -134,6 +135,7 @@ public class MainActivity extends BaseActivity {
     protected void onRestart() {
         super.onRestart();
         Log.i("zrf", "onRestart: ");
+
     }
 
     public void fragmentManger(){
@@ -171,11 +173,33 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("zrf", "onResume: "+"zrf");
+    }
+
+    @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
 
     private long keyBackTime = 0;
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("Zrf", "onStop: ");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("zrf", "onStart: ");
+//        boolean login = FiannceUserManager.getInstance().isLogin();
+//        if (login){
+//            ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
+//        }
+    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -190,6 +214,7 @@ public class MainActivity extends BaseActivity {
         }else if (event.getKeyCode() == KeyEvent.KEYCODE_HOME){
             return false;
         }
+
         return true;
     }
 }

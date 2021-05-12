@@ -52,7 +52,7 @@ public interface FiannceApiService {
     Observable<GesturePasswordBean> setLoginByGesturePassword(@Body RequestBody requestBody);
 
     //清除手势密码
-    @POST("clearByGesturePassword")
+    @POST("clearGesturePassword")
     Observable<GesturePasswordBean> clearGesturePassword(@Body RequestBody requestBody);
 
     //下载文件
