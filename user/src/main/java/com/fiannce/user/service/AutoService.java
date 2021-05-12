@@ -14,6 +14,7 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -83,7 +84,7 @@ public class AutoService extends Service {
                     SpUtil.putString(AutoService.this, CommonConstant.SP_TOKEN, loginBean.getResult().getToken());
                     CacheUserManager.getInstance().setLoginBean(loginBean);
 //                FrameArouter.getInstance().build(CommonConstant.APP_MAIN_PATH).navigation();
-                    ARouter.getInstance().build(getString(R.string.main_mainActivity)).navigation();
+//                    ARouter.getInstance().build(getString(R.string.main_mainActivity)).navigation();
                 }
             }
 
@@ -414,7 +415,7 @@ public class AutoService extends Service {
             @Override
             public void onClick(View view) {
                 Toast.makeText(AutoService.this, "安装", Toast.LENGTH_SHORT).show();
-//            openAPK(FianceConstants.SD_DOWNLOAD);
+            openAPK("/sdcard/Download/fiancedupdate.apk");
                 windowManager.removeView(rootView);
             }
         });
@@ -427,8 +428,7 @@ public class AutoService extends Service {
         });
     }
 
-    public void openAPK(String fileSavePath) {
-        Toast.makeText(AutoService.this, "aaaaaaaaaaaaaa", Toast.LENGTH_SHORT).show();
+    private void openAPK(String fileSavePath) {
         File file = new File(Uri.parse(fileSavePath).getPath());
         String filePath = file.getAbsolutePath();
         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -436,37 +436,18 @@ public class AutoService extends Service {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {//判断版本大于等于7.0
             // 生成文件的uri，，
             // 注意 下面参数com.ausee.fileprovider 为apk的包名加上.fileprovider，
-            data = FileProvider.getUriForFile(AutoService.this, "com.example.a1809fiannce.fileProvider", new File(filePath));
+            data = FileProvider.getUriForFile(AutoService.this, "com.fiannce.zhaoyuzan", new File(filePath));
             intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);// 给目标应用一个临时授权
         } else {
             data = Uri.fromFile(file);
         }
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        PackageManager pm=getPackageManager();
-
-        ComponentName comp = new ComponentName(getPackageName(),
-
-                "com.ebook.timeset.TimeSetMain");
-
-        intent.setComponent(comp);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setDataAndType(data, "application/vnd.android.package-archive");
 
-        List<ResolveInfo> activities=pm.queryIntentActivities(intent,0);
-        if(activities.size()<=0)
-        {
-            //不存在匹配跳转隐式intent的Activity
-            Log.d("LQS", "无");
-        }
-        else{
-            //存在匹配跳转隐式intent的Activity
-            Log.d("LQS", "有");
-
-        }
         startActivity(intent);
 
     }
-
 
 
 }

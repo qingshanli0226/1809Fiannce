@@ -23,12 +23,14 @@
         <activity android:name="com.fiannce.bawei.gesturelock.GestureLockActivity"></activity>
         <activity android:name="com.fiannce.bawei.welcome.WelcomeActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"
 
+                    />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name="com.fiannce.bawei.MainActivity"></activity>
+
     </application>
 
 </manifest>

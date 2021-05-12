@@ -5,19 +5,31 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import com.fiannce.bawei.gesturelock.GestureLockActivity;
+import com.fiannce.bawei.gesturelock.GesturePresenter;
+import com.fiannce.framework.manager.CacheManager;
+import com.fiannce.framework.manager.CacheUserManager;
 import com.fiannce.framework.view.ToolBar;
+import com.fiannce.user.login.LoginActivity;
 import com.fiannce.user.register.RegisterActivity;
 import com.fiannce.zhaoyuzan.R;
+
+import java.io.File;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,13 +39,14 @@ public class MoreFragment extends Fragment {
 
     private ToolBar toolbar;
     private TextView tvMoreRegist;
-    private ToggleButton toggleMore;
+    private ImageView toggleMore;
     private TextView tvMoreReset;
     private TextView tvMorePhone;
     private TextView tvMoreFankui;
     private TextView tvMoreShare;
     private TextView tvMoreAbout;
     private TextView tvPhone;
+    private RelativeLayout fragMoreVerifyPwd;
 
     public MoreFragment() {
         // Required empty public constructor
@@ -55,6 +68,7 @@ public class MoreFragment extends Fragment {
         tvMoreShare = inflate.findViewById(R.id.tv_more_share);
         tvMoreAbout = inflate.findViewById(R.id.tv_more_about);
         tvPhone = inflate.findViewById(R.id.tv_phone);
+        fragMoreVerifyPwd = inflate.findViewById(R.id.frag_more_verify_pwd);
 
         tvMoreRegist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,11 +108,50 @@ public class MoreFragment extends Fragment {
         toggleMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), GestureLockActivity.class);
-                startActivity(intent);
+                toggleMore.setImageResource(R.drawable.toggle_on);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("开启手势密码");
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        toggleMore.setImageResource(R.drawable.toggle_off);
+                    }
+                });
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (CacheUserManager.getInstance().getLoginBean() != null) {
+                            Intent intent = new Intent(getActivity(), GestureLockActivity.class);
+                            intent.putExtra("judge",1);
+                            startActivity(intent);
+                        } else {
+                            toggleMore.setImageResource(R.drawable.toggle_off);
+                            Intent intent = new Intent(getActivity(), LoginActivity.class);
+                            startActivity(intent);
+                            Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                builder.show();
             }
         });
 
+        fragMoreVerifyPwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (CacheManager.getInstance().gesture) {
+                    Intent intent = new Intent(getActivity(),GestureLockActivity.class);
+                    intent.putExtra("judge",3);
+                    toggleMore.setImageResource(R.drawable.toggle_off);
+                } else {
+                    Toast.makeText(getActivity(), "请检查是否开启了手势密码", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
         return inflate;
     }
+
+
 }

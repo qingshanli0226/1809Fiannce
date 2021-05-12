@@ -35,6 +35,7 @@ public class HomeFragment extends BaseFragment implements CacheUserManager.ILogi
     private List<HomeBean.ResultBean.ImageArrBean> list = new ArrayList<>();
     private List<HomeBean.ResultBean.ProInfoBean> proInfoBeanList = new ArrayList<>();
     private ProgressView progressView;
+    private List<HomeBean.ResultBean.ImageArrBean> imageArr;
 
     @Override
     protected void initPresenter() {
@@ -45,7 +46,9 @@ public class HomeFragment extends BaseFragment implements CacheUserManager.ILogi
     protected void initData() {
 
         HomeBean homeBean = CacheManager.getInstance().getHomeBean();
-        List<HomeBean.ResultBean.ImageArrBean> imageArr = homeBean.getResult().getImageArr();
+        imageArr = homeBean.getResult().getImageArr();
+
+
 
         list.addAll(imageArr);
 

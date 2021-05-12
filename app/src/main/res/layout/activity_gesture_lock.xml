@@ -10,17 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:id="@+id/toolbar"
-
         ></com.fiannce.framework.view.ToolBar>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="正确密码: 012345678"
-        android:layout_gravity="center_horizontal"
-        android:textStyle="bold"
-        android:layout_marginTop="12dp"/>
 
     <TextView
         android:id="@+id/tv_current_passord"

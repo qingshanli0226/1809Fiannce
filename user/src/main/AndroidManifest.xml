@@ -11,6 +11,16 @@
         <activity android:name=".exitLogin.ExitLoginActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".register.RegisterActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.fiannce.zhaoyuzan"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

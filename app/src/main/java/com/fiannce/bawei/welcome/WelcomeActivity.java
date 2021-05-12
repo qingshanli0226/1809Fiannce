@@ -1,5 +1,6 @@
 package com.fiannce.bawei.welcome;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
@@ -9,9 +10,12 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.WindowManager;
@@ -60,7 +64,23 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements I
         requestPermissions(new String[]{"android.permission.CALL_PHONE"
                 , "android.permission.WRITE_EXTERNAL_STORAGE"
                 , "android.permission.READ_EXTERNAL_STORAGE"
-                , "android.permission.SYSTEM_ALERT_WINDOW"}, 100);
+                , "android.permission.SYSTEM_ALERT_WINDOW"
+
+        }, 100);
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(WelcomeActivity.this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, 10);
+            } else {
+                Toast.makeText(WelcomeActivity.this, "granted show-- 悬浮窗", Toast.LENGTH_SHORT);
+            }
+        }
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{
+                    Manifest.permission.REQUEST_INSTALL_PACKAGES}, 100);
+        }
 
         httpPresenter.getHomeData();
         httpPresenter.getVersionData();

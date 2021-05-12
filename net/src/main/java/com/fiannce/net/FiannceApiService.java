@@ -51,6 +51,6 @@ public interface FiannceApiService {
     @POST("loginByGesturePassword")
     Observable<GestureBean> loginPassword(@Body RequestBody requestBody);
 
-    @POST("clearByGesturePassword")
+    @POST("clearGesturePassword")
     Observable<GestureBean> clearPassword(@Body RequestBody requestBody);
 }

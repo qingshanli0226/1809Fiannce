@@ -6,7 +6,7 @@ import com.fiannce.net.mode.VersionBean;
 public class CacheManager {
     private static CacheManager instance;
     private HomeBean homeBean;
-
+    public boolean gesture = false;
 
     private CacheManager() {
 
