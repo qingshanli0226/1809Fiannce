@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.framework.manager.FiannceArouter;
 import com.example.framework.manager.FiannceConnectManager;
 import com.example.framework.manager.FiannceUserManager;
 import com.example.framework.view.LoadingPage;
@@ -83,6 +84,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 
         if (System.currentTimeMillis() - newTime > 5 * 1000){
             ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
+            String time = System.currentTimeMillis() + "";
+            SpUtils.putTime(FrameModel.context,time);
+//            FiannceArouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
         }else {
             Toast.makeText(this, "时间未到5秒", Toast.LENGTH_SHORT).show();
         }
