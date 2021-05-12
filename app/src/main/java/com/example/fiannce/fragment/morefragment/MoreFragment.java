@@ -52,7 +52,7 @@ public class MoreFragment extends Fragment {
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FiannceARouter.getFiannceARouter().getUserManager().OpenRegisterActivity(getActivity(),null);
+                FiannceARouter.getFiannceARouter().getUserManager().OpenUserActivity(getActivity(),null);
             }
         });
 

@@ -19,12 +19,6 @@ public class MainModel implements FiannceARouter.iAppManager {
     public void OpenMainActivity(Context context, Bundle bundle) {
         Intent intent = new Intent(context, MainActivity.class);
 
-        int num = bundle.getInt("num");
-        String name = bundle.getString("name");
-
-        intent.putExtra("num",num);
-        intent.putExtra("name",name);
-
         if (context instanceof Activity){
             context.startActivity(intent);
         }else {

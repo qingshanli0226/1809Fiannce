@@ -46,8 +46,9 @@ public class LogPresenter extends BasePresenter<LogCallBack> {
 
                     @Override
                     public void onNext(@NonNull LogBean logBean) {
-                        Log.i("123", "onNext: 111111111111111");
-                        iView.LogData(logBean);
+                        if (iView != null){
+                            iView.LogData(logBean);
+                        }
                     }
 
                     @Override

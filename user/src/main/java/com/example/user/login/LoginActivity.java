@@ -3,6 +3,8 @@ package com.example.user.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.common.Squilts;
@@ -10,6 +12,7 @@ import com.example.common.UserCallBack;
 import com.example.framework.BaseActivity;
 import com.example.framework.FiannceARouter;
 import com.example.framework.manager.FiannceUserManager;
+import com.example.net.ToolBarView;
 import com.example.net.mode.LogBean;
 import com.example.user.R;
 
@@ -17,6 +20,13 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements LogCall
 
     private String pwd;
     private String name;
+    private ToolBarView tob;
+    private EditText logPhone;
+    private EditText logUse;
+    private EditText logPwd;
+    private EditText logPhoneTwo;
+    private Button log;
+
 
     @Override
     protected void initData() {
@@ -27,6 +37,13 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements LogCall
 
     @Override
     protected void initView() {
+
+        tob = (ToolBarView) findViewById(R.id.tob);
+        logPhone = (EditText) findViewById(R.id.log_phone);
+        logUse = (EditText) findViewById(R.id.log_use);
+        logPwd = (EditText) findViewById(R.id.log_pwd);
+        logPhoneTwo = (EditText) findViewById(R.id.log_phone_two);
+        log = (Button) findViewById(R.id.log);
 
         Intent intent = getIntent();
 
@@ -46,8 +63,7 @@ public class LoginActivity extends BaseActivity<LogPresenter> implements LogCall
     public void LogData(LogBean logBean) {
         //pageView.ShowSuccess();
         if (logBean.getCode().equals("200")){
-
-            FiannceUserManager.getInstance().setLogin(logBean);
+            FiannceUserManager.getInstance().setIsLog(logBean);
             Bundle bundle = new Bundle();
             bundle.putString("name",name);
             UserCallBack.getInstance().setName(name);

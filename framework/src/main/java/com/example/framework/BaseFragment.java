@@ -45,13 +45,17 @@ public abstract class BaseFragment<T extends BasePresenter>extends Fragment impl
         FiannceNetManager.getInstance().RegisterConnect(this);
     }
 
-    protected abstract int getLayoutId();
-
-    protected abstract void initPresenter();
+    public <V extends View> V FindById(int id){
+        return mView.findViewById(id);
+    }
 
     protected abstract void initData();
 
     protected abstract void initView();
+
+    protected abstract int getLayoutId();
+
+    protected abstract void initPresenter();
 
     @Override
     public void onDestroy() {

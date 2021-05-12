@@ -5,9 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.user.login.LoginActivity;
 import com.example.framework.FiannceARouter;
-import com.example.user.register.RegisterActivity;
+import com.example.user.user.UserActivity;
 
 public class UserModel implements FiannceARouter.iUserManager {
 
@@ -17,8 +16,8 @@ public class UserModel implements FiannceARouter.iUserManager {
     }
 
     @Override
-    public void OpenLoginActivity(Context context, Bundle bundle) {
-        Intent intent = new Intent(context, LoginActivity.class);
+    public void OpenUserActivity(Context context, Bundle bundle) {
+        Intent intent = new Intent(context, UserActivity.class);
         if (context instanceof Activity){
             context.startActivity(intent);
         }else {
@@ -26,16 +25,4 @@ public class UserModel implements FiannceARouter.iUserManager {
             context.startActivity(intent);
         }
     }
-
-    @Override
-    public void OpenRegisterActivity(Context context, Bundle bundle) {
-        Intent intent = new Intent(context, RegisterActivity.class);
-        if (context instanceof Activity){
-            context.startActivity(intent);
-        }else {
-            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
-        }
-    }
-
 }

@@ -8,46 +8,38 @@ import java.util.List;
 
 public class FiannceUserManager {
 
-    private List<IUserLoginChanged> iUserLoginChangedList = new ArrayList<>();
+    private List<IUserLoginChanged> list = new ArrayList<>();
 
-    private static FiannceUserManager instance;
+    private static FiannceUserManager manager;
 
-    private FiannceUserManager(){};
-
-    public static synchronized FiannceUserManager getInstance(){
-        if (instance == null){
-            instance = new FiannceUserManager();
+    public synchronized static FiannceUserManager getInstance(){
+        if (manager == null){
+            manager = new FiannceUserManager();
         }
-        return instance;
-    }
-
-    private boolean isLogin;
-
-    public boolean isLogin(){
-        return isLogin;
+        return manager;
     }
 
     public void register(IUserLoginChanged iUserLoginChanged){
-        iUserLoginChangedList.add(iUserLoginChanged);
+        list.add(iUserLoginChanged);
     }
 
     public void unRegister(IUserLoginChanged iUserLoginChanged){
-        iUserLoginChangedList.remove(iUserLoginChanged);
+        list.remove(iUserLoginChanged);
     }
 
     private LogBean isLog;
 
-    public LogBean getLog(){
+    public LogBean getIsLog(){
         return isLog;
     }
 
-    public void setLogin(LogBean isLog){
-        this.isLogin = isLogin;
+    public void setIsLog(LogBean isLog){
+        this.isLog = isLog;
 
     }
 
 
     public interface IUserLoginChanged{
-        void onLoginChange(LogBean isLogin);
+        void onLoginChange(LogBean islog);
     }
 }

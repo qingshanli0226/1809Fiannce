@@ -32,7 +32,7 @@ public class SelfService extends Service {
                     if (logBean.getCode().equals("200")){
                         UserCallBack.getInstance().setName(logBean.getResult().getName());
 
-                        FiannceUserManager.getInstance().setLogin(logBean);
+                        FiannceUserManager.getInstance().setIsLog(logBean);
 
                         Squilts.putString(SelfService.this,logBean.getResult().getToken());
                     }
