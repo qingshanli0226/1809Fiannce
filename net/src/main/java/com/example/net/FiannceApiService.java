@@ -47,4 +47,10 @@ public interface FiannceApiService {
 
     @POST("setGesturePassword")
     Observable<GestureBean> setGesturePwd(@Body RequestBody gPasswordBody);
+
+    @POST("loginByGesturePassword")
+    Observable<GestureBean> setVerify(@Body RequestBody gPasswordBody);
+
+    @POST("clearByGesturePassword")
+    Observable<GestureBean> setReset(@Body RequestBody gPasswordBody);
 }

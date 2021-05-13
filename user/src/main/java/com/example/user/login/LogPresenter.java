@@ -38,6 +38,12 @@ public class LogPresenter extends BasePresenter<LogCallBack> {
                         iView.hideLoading();
                     }
                 })
+                .doFinally(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        iView.hideLoading();
+                    }
+                })
                 .subscribe(new Observer<LogBean>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {

@@ -20,7 +20,7 @@ public class BasePresenter<V> {
     }
 
     public void detachView(){
-        this.iView = null;
+        iView = null;
 
         for (Disposable disposable : disposableList){
             if (disposable.isDisposed()){

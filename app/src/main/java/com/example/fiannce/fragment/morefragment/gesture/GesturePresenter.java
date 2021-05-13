@@ -1,5 +1,6 @@
 package com.example.fiannce.fragment.morefragment.gesture;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.example.framework.BasePresenter;
 import com.example.framework.manager.RetrofitManager;
 import com.example.net.mode.GestureBean;
@@ -45,6 +46,90 @@ public class GesturePresenter extends BasePresenter<CallGesture> {
                     public void onNext(@NonNull GestureBean gestureBean) {
                         if (iView != null){
                             iView.onGestureData(gestureBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (iView != null){
+                            iView.showError(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public void ResePwd(String aPwd){
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+            jsonObject.put("gPassword",aPwd);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"),jsonObject.toString());
+        RetrofitManager.getRetrofit()
+                .setReset(requestBody)
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io())
+                .subscribe(new Observer<GestureBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull GestureBean gestureBean) {
+                        if (iView != null){
+                            iView.onResetData(gestureBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        if (iView != null){
+                            iView.showError(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public void VerityPwd(String aPwd){
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+            jsonObject.put("gPassword",aPwd);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), jsonObject.toString());
+
+        RetrofitManager.getRetrofit()
+                .setVerify(requestBody)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<GestureBean>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull GestureBean gestureBean) {
+                        if (iView != null){
+                            LogUtils.json(gestureBean);
+                            iView.onVerityData(gestureBean);
                         }
                     }
 

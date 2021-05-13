@@ -22,15 +22,16 @@ import com.example.user.R;
 
 public class LoginFragment extends BaseFragment<LogPresenter> implements LogCallBack {
 
-    private ToolBarView tob;
     private EditText logPhone;
     private EditText logUse;
     private EditText logPwd;
     private EditText logPhoneTwo;
+
     private String user;
     private String pwd;
     private String phone;
     private String phonetwo;
+
     private Button log;
 
     public LoginFragment() {
@@ -49,7 +50,7 @@ public class LoginFragment extends BaseFragment<LogPresenter> implements LogCall
 
     @Override
     protected void initData() {
-        httpPresenter=new LogPresenter(this);
+        httpPresenter = new LogPresenter(this);
 
         log.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +71,6 @@ public class LoginFragment extends BaseFragment<LogPresenter> implements LogCall
 
     @Override
     protected void initView() {
-        tob =mView.findViewById(R.id.tob);
         logPhone =mView.findViewById(R.id.log_phone);
         logUse =mView.findViewById(R.id.log_use);
         logPwd =mView.findViewById(R.id.log_pwd);
