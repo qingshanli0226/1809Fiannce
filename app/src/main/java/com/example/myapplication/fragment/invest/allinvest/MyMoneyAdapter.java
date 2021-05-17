@@ -20,7 +20,7 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
 
     private int lastX;
     private View lastItemView;
-    private int lastposition;
+    private int lastPosition;
     private int scrollDiffx;
     private int viewWindh = 0;
     private TextView view1;
@@ -72,10 +72,10 @@ public class MyMoneyAdapter extends BaseQuickAdapter<ProductBean.ResultBean, Bas
                     case MotionEvent.ACTION_MOVE:
                         if (lastX > 500 && event.getRawX() < lastX){
                             baseViewHolder.itemView.getParent().requestDisallowInterceptTouchEvent(true);
-                            if (lastItemView!=null && lastposition!=position){
+                            if (lastItemView!=null && lastPosition!=position){
                                 lastItemView.scrollTo(0,0);
                             }
-                            lastposition = position;
+                            lastPosition = position;
                             lastItemView = baseViewHolder.itemView;
                             scrollDiffx = - (int) (event.getRawX() - lastX);
                             Log.i("zrf", "onTouch: "+scrollDiffx);

@@ -83,10 +83,13 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         Log.i("zrf", "onRestart: "+ l);
 
         if (System.currentTimeMillis() - newTime > 5 * 1000){
-            ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
-            String time = System.currentTimeMillis() + "";
-            SpUtils.putTime(FrameModel.context,time);
-//            FiannceArouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
+            if (FiannceUserManager.getInstance().isLogin()){
+                ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
+                String time = System.currentTimeMillis() + "";
+                SpUtils.putTime(FrameModel.context,time);
+            }else {
+                Toast.makeText(this, "为了您和他人的信息安全请你尽快登录,并且设置手势密码", Toast.LENGTH_SHORT).show();
+            }
         }else {
             Toast.makeText(this, "时间未到5秒", Toast.LENGTH_SHORT).show();
         }
@@ -96,7 +99,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onPause() {
         super.onPause();
         //存储数据
-        time = System.currentTimeMillis()+"";
+        time = System.currentTimeMillis() + "";
         SpUtils.putTime(FrameModel.context,System.currentTimeMillis()+"");
     }
 

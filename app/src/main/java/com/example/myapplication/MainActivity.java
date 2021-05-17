@@ -80,9 +80,10 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.hide(moreFragment);
 
                         boolean login = FiannceUserManager.getInstance().isLogin();
-                        if (login){
+                        Boolean gestureBoolean = SpUtils.getGestureBoolean(MainActivity.this);
+                        if (login && gestureBoolean){
                             ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
-                        }else {
+                        }else if (login==false && gestureBoolean==true){
                             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                             builder.setIcon(R.drawable.ic_launcher_foreground);
                             builder.setTitle("登录");

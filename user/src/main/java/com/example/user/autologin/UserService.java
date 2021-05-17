@@ -49,6 +49,7 @@ import static com.example.demo.Demo.SDCARD_DOWNLOAD_ADDRESS;
 
 public class UserService extends Service {
     public UserService() {
+
     }
 
     @Override
@@ -124,7 +125,7 @@ public class UserService extends Service {
 
                         InputStream inputStream = null;
                         FileOutputStream fileOutputStream = null;
-                        File file = new File("/sdcard/Download/aaa.apk");
+                        File file = new File(SDCARD_DOWNLOAD_ADDRESS);
 
                         try {
                             long totalByte  = responseBody.contentLength();
@@ -136,8 +137,6 @@ public class UserService extends Service {
 
                             while ((len = inputStream.read(bytes))!=-1){
                                 fileOutputStream.write(bytes,0,len);
-                                Log.i("zrfs", "onNexttotalByte: "+totalByte);
-                                Log.i("zrfs", "onNextlen: "+len);
 
                                 long curr = totalByte / len;
                                 count+=len;

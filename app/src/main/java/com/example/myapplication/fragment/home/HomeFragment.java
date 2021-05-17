@@ -33,22 +33,22 @@ import java.util.List;
 public class HomeFragment extends BaseFragment<WelcomePresenter> implements IWelcomeView {
     private Banner banner;
     private ProgressView progressBar;
-    private List<String> bannertitles = new ArrayList<>();
+    private List<String> bannerTitles = new ArrayList<>();
     private ToolBar toolBar;
 
     @Override
     protected void initData() {
 
-        bannertitles.add("分享砍学费");
-        bannertitles.add("人脉总动员");
-        bannertitles.add("想不到你是这样的app");
-        bannertitles.add("购物节，爱不单行");
+        bannerTitles.add("分享砍学费");
+        bannerTitles.add("人脉总动员");
+        bannerTitles.add("想不到你是这样的app");
+        bannerTitles.add("购物节，爱不单行");
 
         HomeBean homeBean = CacheManager.getInstance().getHomeBean();
         banner.setImages(homeBean.getResult().getImageArr());
         banner.setBannerAnimation(Transformer.Tablet);
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
-        banner.setBannerTitles(bannertitles);
+        banner.setBannerTitles(bannerTitles);
 
         banner.setImageLoader(new ImageLoader() {
             @Override
