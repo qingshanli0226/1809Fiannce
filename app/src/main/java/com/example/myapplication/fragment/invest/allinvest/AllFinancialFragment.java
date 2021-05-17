@@ -28,7 +28,6 @@ import java.util.List;
 
 public class AllFinancialFragment extends BaseFragment<WelcomePresenter> implements IWelcomeView {
 
-
     private ImageView img;
     private MyMoneyAdapter adapter;
     private RecyclerView moneyOneRv;
@@ -37,7 +36,6 @@ public class AllFinancialFragment extends BaseFragment<WelcomePresenter> impleme
 
     @Override
     protected void initData() {
-
         httpPresenter.getProductData();
         light.setSelected(true);
     }
