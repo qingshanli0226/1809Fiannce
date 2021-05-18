@@ -1,10 +1,6 @@
 package com.example.user.login;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -14,7 +10,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.demo.Demo;
 import com.example.framework.BaseActivity;
-import com.example.framework.manager.FiannceUserManager;
+import com.example.framework.manager.FinanceUserManager;
 import com.example.framework.view.ToolBar;
 import com.example.model.LoginBean;
 import com.example.sp.SpUtils;
@@ -89,8 +85,8 @@ public class PersonLoginActivity extends BaseActivity<PersonLoginPresenter> impl
     @Override
     public void onLogin(LoginBean loginBean) {
         if (loginBean.getCode().equals("200")){
-            FiannceUserManager.getInstance().setLogin(true);
-            boolean login1 = FiannceUserManager.getInstance().isLogin();
+            FinanceUserManager.getInstance().setLogin(true);
+            boolean login1 = FinanceUserManager.getInstance().isLogin();
             if (login1){
                 Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
                 SpUtils.putString(PersonLoginActivity.this,loginBean.getResult().getToken());

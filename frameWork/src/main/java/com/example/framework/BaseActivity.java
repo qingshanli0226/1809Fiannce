@@ -2,25 +2,22 @@ package com.example.framework;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.example.framework.manager.FiannceArouter;
-import com.example.framework.manager.FiannceConnectManager;
-import com.example.framework.manager.FiannceUserManager;
+import com.example.framework.manager.FinanceARouter;
+import com.example.framework.manager.FinanceConnectManager;
+import com.example.framework.manager.FinanceUserManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 import com.example.sp.SpUtils;
 
-import static com.example.demo.Demo.AROUTE_PATH_GESTUREPASSWORD;
-import static com.example.demo.Demo.AROUTE_PATH_GUANGGAO;
 import static com.example.demo.Demo.AROUTE_PATH_LOGINBYGESTUREPASSWORD;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener, FiannceConnectManager.IConnectListener, FiannceUserManager.IUserLoginChanged {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements ToolBar.IToolbarListener, FinanceConnectManager.IConnectListener, FinanceUserManager.IUserLoginChanged {
 
     protected T httpPresenter;
     protected ToolBar toolBar;
@@ -45,9 +42,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         initData();
 
         //页面启动时，注册网络回调接口
-        FiannceConnectManager.getInstance().registerConnectListenter(this);
+        FinanceConnectManager.getInstance().registerConnectListenter(this);
 
-        FiannceUserManager.getInstance().register(this);
+        FinanceUserManager.getInstance().register(this);
 
     }
 
@@ -63,8 +60,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onDestroy() {
         super.onDestroy();
         destroy();
-        FiannceConnectManager.getInstance().unRegisterConnectListenter(this);
-        FiannceUserManager.getInstance().unRegister(this);
+        FinanceConnectManager.getInstance().unRegisterConnectListenter(this);
+        FinanceUserManager.getInstance().unRegister(this);
     }
 
     public void destroy(){
@@ -83,10 +80,13 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         Log.i("zrf", "onRestart: "+ l);
 
         if (System.currentTimeMillis() - newTime > 5 * 1000){
-            if (FiannceUserManager.getInstance().isLogin()){
-                ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
+            if (FinanceUserManager.getInstance().isLogin()){
+//                ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
                 String time = System.currentTimeMillis() + "";
                 SpUtils.putTime(FrameModel.context,time);
+
+                FinanceARouter.getInstance().getAppManger().openGesturePassword(FrameModel.context,null);
+
             }else {
                 Toast.makeText(this, "为了您和他人的信息安全请你尽快登录,并且设置手势密码", Toast.LENGTH_SHORT).show();
             }

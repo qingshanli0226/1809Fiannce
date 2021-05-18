@@ -9,7 +9,6 @@ import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
-import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,10 +19,8 @@ import android.widget.Toast;
 
 import androidx.core.content.FileProvider;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.LogUtils;
-import com.example.demo.Demo;
-import com.example.framework.manager.FiannceUserManager;
+import com.example.framework.manager.FinanceUserManager;
 import com.example.model.AutoLoginBean;
 import com.example.net.RetrofitCretor;
 import com.example.sp.SpUtils;
@@ -73,8 +70,8 @@ public class UserService extends Service {
                     LogUtils.json(autoLoginBean);
                     //先判断code是否为200,如果登陆成功,调用USERMANGER改变全局登录状态
                     if (autoLoginBean.getCode().equals("200")){
-                        FiannceUserManager.getInstance().setLogin(true);
-                        Toast.makeText(UserService.this, "自动登录成功"+FiannceUserManager.getInstance().isLogin(), Toast.LENGTH_SHORT).show();
+                        FinanceUserManager.getInstance().setLogin(true);
+                        Toast.makeText(UserService.this, "自动登录成功"+ FinanceUserManager.getInstance().isLogin(), Toast.LENGTH_SHORT).show();
                         SpUtils.putString(UserService.this,autoLoginBean.getResult().getToken());
                     }
                 }

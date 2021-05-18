@@ -2,7 +2,6 @@ package com.example.myapplication.fragment.more;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,7 +10,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.demo.Demo;
 import com.example.framework.BaseFragment;
-import com.example.framework.manager.FiannceUserManager;
+import com.example.framework.manager.FinanceUserManager;
 import com.example.framework.view.ToolBar;
 import com.example.myapplication.R;
 import com.example.sp.SpUtils;
@@ -56,14 +55,14 @@ public class MoreFragment extends BaseFragment {
                 Boolean aBoolean = SpUtils.getGestureBoolean(getContext());
 //                Log.i("zrf", "onClick: " + aBoolean);
 
-                if (aBoolean == true && FiannceUserManager.getInstance().isLogin() == true) {
+                if (aBoolean == true && FinanceUserManager.getInstance().isLogin() == true) {
                     showImg.setImageDrawable(getResources().getDrawable(R.drawable.toggle_off));
                     SpUtils.putGestureBoolean(getContext(), false);
-                } else if (aBoolean == false && FiannceUserManager.getInstance().isLogin() == true) {
+                } else if (aBoolean == false && FinanceUserManager.getInstance().isLogin() == true) {
                     showImg.setImageDrawable(getResources().getDrawable(R.drawable.toggle_on));
                     SpUtils.putGestureBoolean(getContext(), true);
                     ARouter.getInstance().build(AROUTE_PATH_GESTUREPASSWORD).navigation();
-                } else if (aBoolean == false && FiannceUserManager.getInstance().isLogin() == false) {
+                } else if (aBoolean == false && FinanceUserManager.getInstance().isLogin() == false) {
                     Toast.makeText(getContext(), "请先登录,再进行设置手势密码", Toast.LENGTH_SHORT).show();
                     SpUtils.putGestureBoolean(getContext(), true);
                 }

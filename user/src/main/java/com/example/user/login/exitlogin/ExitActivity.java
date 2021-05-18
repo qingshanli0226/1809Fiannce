@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.demo.Demo;
 import com.example.framework.BaseActivity;
-import com.example.framework.manager.FiannceUserManager;
+import com.example.framework.manager.FinanceUserManager;
 import com.example.framework.view.ToolBar;
 import com.example.model.ExitLoginBean;
 import com.example.sp.SpUtils;
@@ -77,11 +77,11 @@ public class ExitActivity extends BaseActivity<ExitLoginPresenter> implements IE
     public void onExitLoginData(ExitLoginBean exitLoginBean) {
         if (exitLoginBean.getCode().equals("200")){
             Toast.makeText(this, "退出成功sss", Toast.LENGTH_SHORT).show();
-            FiannceUserManager.getInstance().setLogin(false);
+            FinanceUserManager.getInstance().setLogin(false);
 //                String string = SpUtils.getString(ExitActivity.this);
             SpUtils.putString(ExitActivity.this,"");
 
-            boolean login = FiannceUserManager.getInstance().isLogin();
+            boolean login = FinanceUserManager.getInstance().isLogin();
             if (login==false){
                 Toast.makeText(ExitActivity.this, "退出成功", Toast.LENGTH_SHORT).show();
                 SharedPreferences login1 = getSharedPreferences("login", 0);

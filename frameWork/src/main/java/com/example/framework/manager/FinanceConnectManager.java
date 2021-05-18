@@ -5,27 +5,26 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.net.Network;
 import android.net.NetworkInfo;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class FiannceConnectManager {
+public class FinanceConnectManager {
 
     private boolean isConnected;
     private Context context;
 
-    private static FiannceConnectManager instance;
+    private static FinanceConnectManager instance;
     private List<IConnectListener> connectListeners = new LinkedList<>();
 
-    public FiannceConnectManager(){
+    public FinanceConnectManager(){
 
     }
 
-    public static FiannceConnectManager getInstance() {
+    public static FinanceConnectManager getInstance() {
         if (instance==null){
-            instance = new FiannceConnectManager();
+            instance = new FinanceConnectManager();
         }
         return instance;
     }

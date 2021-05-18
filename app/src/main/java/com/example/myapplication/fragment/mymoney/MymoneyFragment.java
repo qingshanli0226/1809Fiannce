@@ -20,7 +20,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.example.framework.BaseFragment;
-import com.example.framework.manager.FiannceUserManager;
+import com.example.framework.manager.FinanceUserManager;
 import com.example.framework.view.ToolBar;
 import com.example.myapplication.R;
 
@@ -74,7 +74,7 @@ public class MymoneyFragment extends BaseFragment {
 
         EventBus.getDefault().register(this);
 
-        boolean login1 = FiannceUserManager.getInstance().isLogin();
+        boolean login1 = FinanceUserManager.getInstance().isLogin();
         if (login1){
             SharedPreferences login = getActivity().getSharedPreferences("login", 0);
             String name = login.getString("username", "");
@@ -108,7 +108,7 @@ public class MymoneyFragment extends BaseFragment {
     public void Events(String event) {
         if (event.equals("exit_login")) {
             userName.setText("");
-            FiannceUserManager.getInstance().setLogin(false);
+            FinanceUserManager.getInstance().setLogin(false);
         }
     }
 
@@ -118,7 +118,7 @@ public class MymoneyFragment extends BaseFragment {
             SharedPreferences login = getActivity().getSharedPreferences("login", 0);
             String name = login.getString("username", "");
             userName.setText("" + name);
-            FiannceUserManager.getInstance().setLogin(true);
+            FinanceUserManager.getInstance().setLogin(true);
         }
     }
 

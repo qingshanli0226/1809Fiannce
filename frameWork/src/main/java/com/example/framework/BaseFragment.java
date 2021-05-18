@@ -4,18 +4,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.framework.manager.FiannceConnectManager;
-import com.example.framework.manager.FiannceUserManager;
+import com.example.framework.manager.FinanceConnectManager;
+import com.example.framework.manager.FinanceUserManager;
 import com.example.framework.view.LoadingPage;
 import com.example.framework.view.ToolBar;
 
-public abstract class BaseFragment <T extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener,FiannceConnectManager.IConnectListener,FiannceUserManager.IUserLoginChanged{
+public abstract class BaseFragment <T extends BasePresenter> extends Fragment implements ToolBar.IToolbarListener, FinanceConnectManager.IConnectListener, FinanceUserManager.IUserLoginChanged{
 
     protected T httpPresenter;
     protected View mView;
@@ -40,8 +39,8 @@ public abstract class BaseFragment <T extends BasePresenter> extends Fragment im
         initPresenter();
         initData();
 
-        FiannceConnectManager.getInstance().registerConnectListenter(this);
-        FiannceUserManager.getInstance().unRegister(this);
+        FinanceConnectManager.getInstance().registerConnectListenter(this);
+        FinanceUserManager.getInstance().unRegister(this);
         return mView;
     }
 
@@ -49,7 +48,7 @@ public abstract class BaseFragment <T extends BasePresenter> extends Fragment im
     public void onDestroy() {
         super.onDestroy();
         destroy();
-        FiannceConnectManager.getInstance().unRegisterConnectListenter(this);
+        FinanceConnectManager.getInstance().unRegisterConnectListenter(this);
     }
 
     public void destroy(){

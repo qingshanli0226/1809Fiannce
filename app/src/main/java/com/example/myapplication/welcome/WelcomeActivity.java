@@ -3,16 +3,13 @@ package com.example.myapplication.welcome;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.core.content.FileProvider;
 
 import android.Manifest;
-import android.app.ActivityManager;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -20,18 +17,12 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.provider.Settings;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseActivity;
 import com.example.framework.manager.CacheManager;
-import com.example.framework.manager.FiannceUserManager;
 import com.example.model.HomeBean;
 import com.example.model.ProductBean;
 import com.example.model.VersionBean;
@@ -41,7 +32,6 @@ import com.example.demo.Demo;
 import com.example.user.autologin.UserService;
 
 import java.io.File;
-import java.util.List;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements IWelcomeView {
 

@@ -3,16 +3,16 @@ package com.example.framework.manager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FiannceUserManager {
+public class FinanceUserManager {
 
     private List<IUserLoginChanged> loginChangedList = new ArrayList<>();
 
-    private static FiannceUserManager instance;
-    private FiannceUserManager(){}
+    private static FinanceUserManager instance;
+    private FinanceUserManager(){}
 
-    public static synchronized FiannceUserManager getInstance(){
+    public static synchronized FinanceUserManager getInstance(){
         if (instance==null){
-            instance=new FiannceUserManager();
+            instance=new FinanceUserManager();
         }
         return instance;
     }

@@ -6,7 +6,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.WindowManager;
@@ -18,7 +17,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.framework.BaseActivity;
 import com.example.demo.Demo;
-import com.example.framework.manager.FiannceUserManager;
+import com.example.framework.manager.FinanceUserManager;
 import com.example.myapplication.fragment.home.HomeFragment;
 import com.example.myapplication.fragment.invest.InvestFragment;
 import com.example.myapplication.fragment.more.MoreFragment;
@@ -34,9 +33,6 @@ import static com.example.demo.Demo.AROUTE_PATH_LOGINBYGESTUREPASSWORD;
 public class MainActivity extends BaseActivity {
 
     private android.widget.RadioButton btnHome;
-    private android.widget.RadioButton btnMoney;
-    private android.widget.RadioButton btnMymoney;
-    private RadioButton btnMore;
     private RadioGroup group;
     private HomeFragment homeFragment;
     private InvestFragment investFragment;
@@ -79,7 +75,7 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.show(mymoneyFragment);
                         fragmentTransaction.hide(moreFragment);
 
-                        boolean login = FiannceUserManager.getInstance().isLogin();
+                        boolean login = FinanceUserManager.getInstance().isLogin();
                         Boolean gestureBoolean = SpUtils.getGestureBoolean(MainActivity.this);
                         if (login && gestureBoolean){
                             ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
@@ -167,9 +163,6 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN); //隐藏状态栏
         btnHome = (RadioButton) findViewById(R.id.btn_home);
-        btnMoney = (RadioButton) findViewById(R.id.btn_money);
-        btnMymoney = (RadioButton) findViewById(R.id.btn_mymoney);
-        btnMore = (RadioButton) findViewById(R.id.btn_more);
         group = (RadioGroup) findViewById(R.id.group);
     }
 
@@ -196,7 +189,7 @@ public class MainActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         Log.i("zrf", "onStart: ");
-//        boolean login = FiannceUserManager.getInstance().isLogin();
+//        boolean login = FinanceUserManager.getInstance().isLogin();
 //        if (login){
 //            ARouter.getInstance().build(AROUTE_PATH_LOGINBYGESTUREPASSWORD).navigation();
 //        }
